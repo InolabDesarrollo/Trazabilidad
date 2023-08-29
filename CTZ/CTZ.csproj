@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADA28947-9EE4-470A-BFEA-84436D1F42D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CTZ</RootNamespace>
+    <AssemblyName>CTZ</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET, Version=1.7.0.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autoupdater.NET.Official.1.7.0\lib\net45\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridViewAutoFilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataGridView-AutoFilter.1.1.0\lib\net20\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.6\lib\net45\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.WinForms.1.5.0.6\lib\net45\HtmlRenderer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.2.1\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.2\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCarta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCarta.Designer.cs">
+      <DependentUpon>AddCarta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCert.Designer.cs">
+      <DependentUpon>AddCert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDetalleCert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDetalleCert.Designer.cs">
+      <DependentUpon>AddDetalleCert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEquipo.Designer.cs">
+      <DependentUpon>AddEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEquipoP1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEquipoP1.Designer.cs">
+      <DependentUpon>AddEquipoP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddInstrumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddInstrumento.Designer.cs">
+      <DependentUpon>AddInstrumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddModelo.Designer.cs">
+      <DependentUpon>AddModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPuntos.Designer.cs">
+      <DependentUpon>AddPuntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUso.Designer.cs">
+      <DependentUpon>AddUso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsignacionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarP1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsignarP1.Designer.cs">
+      <DependentUpon>AsignarP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarP2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsignarP2.Designer.cs">
+      <DependentUpon>AsignarP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsignatedEQ2.cs">
+      <DependentUpon>AsignatedEQ2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AsignatedEQ2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsignatedEQ2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClientesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ctzWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctzWF.Designer.cs">
+      <DependentUpon>ctzWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetHistory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetHistory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Desasignar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desasignar.Designer.cs">
+      <DependentUpon>Desasignar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleCert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleCert.Designer.cs">
+      <DependentUpon>DetalleCert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleLabs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleLabs.Designer.cs">
+      <DependentUpon>DetalleLabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentacionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentacionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentacionDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentacionDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentacionDataSet1CTZ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentacionDataSet1CTZ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentacionDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentacionDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSctz.cs">
+      <DependentUpon>DSctz.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSctz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSctz.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functions.cs" />
+    <Compile Include="GetAvailableDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetAvailableDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GetCertGRL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetCertGRL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GetClienteDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetClienteDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GetCTZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetCTZ.Designer.cs">
+      <DependentUpon>GetCTZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getequipos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getequipos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="getequiposgrl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getequiposgrl.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GetIngesUnas.cs">
+      <DependentUpon>GetIngesUnas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GetIngesUnas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetIngesUnas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GetUsosCertDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetUsosCertDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GRL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRL.Designer.cs">
+      <DependentUpon>GRL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="grl2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>grl2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial.Designer.cs">
+      <DependentUpon>Historial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistorialCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialCliente.Designer.cs">
+      <DependentUpon>HistorialCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistorialFSR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialFSR.Designer.cs">
+      <DependentUpon>HistorialFSR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modEQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modEQ.Designer.cs">
+      <DependentUpon>modEQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModUsosCert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModUsosCert.Designer.cs">
+      <DependentUpon>ModUsosCert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preview.Designer.cs">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepFunctions.cs" />
+    <Compile Include="Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowUsosCert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowUsosCert.Designer.cs">
+      <DependentUpon>ShowUsosCert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Usr.cs" />
+    <EmbeddedResource Include="AddCarta.resx">
+      <DependentUpon>AddCarta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCert.resx">
+      <DependentUpon>AddCert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDetalleCert.resx">
+      <DependentUpon>AddDetalleCert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEquipo.resx">
+      <DependentUpon>AddEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEquipoP1.resx">
+      <DependentUpon>AddEquipoP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddInstrumento.resx">
+      <DependentUpon>AddInstrumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddModelo.resx">
+      <DependentUpon>AddModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPuntos.resx">
+      <DependentUpon>AddPuntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUso.resx">
+      <DependentUpon>AddUso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsignarP1.resx">
+      <DependentUpon>AsignarP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsignarP2.resx">
+      <DependentUpon>AsignarP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctzWF.resx">
+      <DependentUpon>ctzWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desasignar.resx">
+      <DependentUpon>Desasignar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleCert.resx">
+      <DependentUpon>DetalleCert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleLabs.resx">
+      <DependentUpon>DetalleLabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRL.resx">
+      <DependentUpon>GRL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial.resx">
+      <DependentUpon>Historial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialCliente.resx">
+      <DependentUpon>HistorialCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialFSR.resx">
+      <DependentUpon>HistorialFSR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modEQ.resx">
+      <DependentUpon>modEQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModUsosCert.resx">
+      <DependentUpon>ModUsosCert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preview.resx">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowUsosCert.resx">
+      <DependentUpon>ShowUsosCert.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AsignacionDataSet.xsc">
+      <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AsignacionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AsignacionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AsignacionDataSet.xss">
+      <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AsignatedEQ2.xsc">
+      <DependentUpon>AsignatedEQ2.xsd</DependentUpon>
+    </None>
+    <None Include="AsignatedEQ2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AsignatedEQ2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AsignatedEQ2.xss">
+      <DependentUpon>AsignatedEQ2.xsd</DependentUpon>
+    </None>
+    <None Include="ClientesDataSet.xsc">
+      <DependentUpon>ClientesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ClientesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClientesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClientesDataSet.xss">
+      <DependentUpon>ClientesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetHistory.xsc">
+      <DependentUpon>DatasetHistory.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetHistory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetHistory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatasetHistory.xss">
+      <DependentUpon>DatasetHistory.xsd</DependentUpon>
+    </None>
+    <None Include="DocumentacionDataSet.xsc">
+      <DependentUpon>DocumentacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DocumentacionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocumentacionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DocumentacionDataSet.xss">
+      <DependentUpon>DocumentacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DocumentacionDataSet1.xsc">
+      <DependentUpon>DocumentacionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DocumentacionDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocumentacionDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DocumentacionDataSet1.xss">
+      <DependentUpon>DocumentacionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DocumentacionDataSet1CTZ.xsc">
+      <DependentUpon>DocumentacionDataSet1CTZ.xsd</DependentUpon>
+    </None>
+    <None Include="DocumentacionDataSet1CTZ.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocumentacionDataSet1CTZ.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DocumentacionDataSet1CTZ.xss">
+      <DependentUpon>DocumentacionDataSet1CTZ.xsd</DependentUpon>
+    </None>
+    <None Include="DocumentacionDataSet2.xsc">
+      <DependentUpon>DocumentacionDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DocumentacionDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocumentacionDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DocumentacionDataSet2.xss">
+      <DependentUpon>DocumentacionDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DSctz.xsc">
+      <DependentUpon>DSctz.xsd</DependentUpon>
+    </None>
+    <None Include="DSctz.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSctz.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSctz.xss">
+      <DependentUpon>DSctz.xsd</DependentUpon>
+    </None>
+    <None Include="GetAvailableDataSet.xsc">
+      <DependentUpon>GetAvailableDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GetAvailableDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetAvailableDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GetAvailableDataSet.xss">
+      <DependentUpon>GetAvailableDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GetCertGRL.xsc">
+      <DependentUpon>GetCertGRL.xsd</DependentUpon>
+    </None>
+    <None Include="GetCertGRL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetCertGRL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GetCertGRL.xss">
+      <DependentUpon>GetCertGRL.xsd</DependentUpon>
+    </None>
+    <None Include="GetClienteDataSet.xsc">
+      <DependentUpon>GetClienteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GetClienteDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetClienteDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GetClienteDataSet.xss">
+      <DependentUpon>GetClienteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="getequipos.xsc">
+      <DependentUpon>getequipos.xsd</DependentUpon>
+    </None>
+    <None Include="getequipos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getequipos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="getequipos.xss">
+      <DependentUpon>getequipos.xsd</DependentUpon>
+    </None>
+    <None Include="getequiposgrl.xsc">
+      <DependentUpon>getequiposgrl.xsd</DependentUpon>
+    </None>
+    <None Include="getequiposgrl.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getequiposgrl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="getequiposgrl.xss">
+      <DependentUpon>getequiposgrl.xsd</DependentUpon>
+    </None>
+    <None Include="GetIngesUnas.xsc">
+      <DependentUpon>GetIngesUnas.xsd</DependentUpon>
+    </None>
+    <None Include="GetIngesUnas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetIngesUnas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GetIngesUnas.xss">
+      <DependentUpon>GetIngesUnas.xsd</DependentUpon>
+    </None>
+    <None Include="GetUsosCertDB.xsc">
+      <DependentUpon>GetUsosCertDB.xsd</DependentUpon>
+    </None>
+    <None Include="GetUsosCertDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetUsosCertDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GetUsosCertDB.xss">
+      <DependentUpon>GetUsosCertDB.xsd</DependentUpon>
+    </None>
+    <None Include="grl2.xsc">
+      <DependentUpon>grl2.xsd</DependentUpon>
+    </None>
+    <None Include="grl2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>grl2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="grl2.xss">
+      <DependentUpon>grl2.xsd</DependentUpon>
+    </None>
+    <None Include="IngesDataSet.xsc">
+      <DependentUpon>IngesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IngesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IngesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IngesDataSet.xss">
+      <DependentUpon>IngesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MailConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Temps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StampAlone.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
