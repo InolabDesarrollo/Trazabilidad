@@ -1,5 +1,7 @@
-﻿using MaterialSkin;
+﻿using CTZ.Modelo;
+using MaterialSkin;
 using MaterialSkin.Controls;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,23 +16,6 @@ namespace CTZ
     {
         public string connectionString = "Data Source=INOLABSERVER01;Initial Catalog=Documentacion;Persist Security Info=True;User ID=ventas;Password=V3ntas_17";
         public string connectionStringBrowser = "Data Source=INOLABSERVER01;Initial Catalog=Browser;Persist Security Info=True;User ID=ventas;Password=V3ntas_17";
-
-        public SqlDataReader GetLog(string usr, string pass)
-        {
-            string sql =
-              "select IdUsuario,IdRol,IdArea,Mail from Usuarios where Usuario='" + usr + "' and Password_='" + pass + "' and Activo='1'";
-            //MessageBox.Show(sql);
-            SqlConnection conn = new SqlConnection(connectionStringBrowser);
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                return reader;
-            }
-            return null;
-        }
 
         public void Material(MaterialSkin.Controls.MaterialForm form)
         {
@@ -60,7 +45,7 @@ namespace CTZ
             using (SqlConnection connection = new SqlConnection(
                        connectionString))
             {
-                //
+               
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
                 if (command.ExecuteNonQuery() > 0)
@@ -160,9 +145,9 @@ namespace CTZ
             }
         }
 
-        public DataSet GetCertU(string iduso, string ident)
+        public System.Data.DataSet GetCertU(string iduso, string ident)
         {
-            DataSet dt = new DataSet();
+            System.Data.DataSet dt = new System.Data.DataSet();
             try
             {
                 SqlConnection con = new SqlConnection(connectionString);
@@ -181,9 +166,9 @@ namespace CTZ
             return dt;
         }
 
-        public DataSet GetModeloIm(string idm)
+        public System.Data.DataSet GetModeloIm(string idm)
         {
-            DataSet dt = new DataSet();
+            System.Data.DataSet dt = new System.Data.DataSet();
             try
             {
                 SqlConnection con = new SqlConnection(connectionString);
@@ -201,9 +186,9 @@ namespace CTZ
             return dt;
         }
 
-        public DataSet GetCertU(string iduso)
+        public System.Data.DataSet GetCertU(string iduso)
         {
-            DataSet dt = new DataSet();
+            System.Data.DataSet dt = new System.Data.DataSet();
             try
             {
                 SqlConnection con = new SqlConnection(connectionString);
@@ -221,13 +206,13 @@ namespace CTZ
             return dt;
         }
 
-        public DataSet GetCertU1(string iduso)
+        public System.Data.DataSet GetCertU1(string iduso)
         {
             /* string sql = "select distinct(certificado.IdCertificado),certificado.certificado as 'cer' from Certificado " +
                            "inner join detalleCert on detalleCert.idUso = " + uso.SelectedValue + " and detalleCert.idCert = certificado.IdCertificado " +
                            "where detalleCert.actual !=1 " +
                             " order by certificado.certificado asc";*/
-            DataSet dt = new DataSet();
+            System.Data.DataSet dt = new System.Data.DataSet();
             try
             {
                 SqlConnection con = new SqlConnection(connectionString);
@@ -245,9 +230,9 @@ namespace CTZ
             return dt;
         }
 
-        public DataSet GetDataFromDatabaseinDataSet(string marca)
+        public System.Data.DataSet GetDataFromDatabaseinDataSet(string marca)
         {
-            DataSet ds = new DataSet();
+            System.Data.DataSet ds = new System.Data.DataSet();
             try
             {
                 // database Connection String
@@ -363,9 +348,9 @@ namespace CTZ
             }
         }
 
-        public DataSet DS(string conn, string query)
+        public System.Data.DataSet DS(string conn, string query)
         {
-            DataSet dt = new DataSet();
+            var dt = new System.Data.DataSet();
             try
             {
                 SqlConnection con = new SqlConnection(conn);

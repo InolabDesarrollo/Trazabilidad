@@ -67,6 +67,18 @@
             this.asignaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.identificacionDataGridViewTextBoxColumn2 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.Modelo = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.getEquiposBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.getequipos = new CTZ.getequipos();
             this.getCTZBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.documentacionDataSet1CTZ = new CTZ.DocumentacionDataSet1CTZ();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -98,21 +110,14 @@
             this.getEquiposBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.getEquiposBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.getEquiposBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.getEquiposBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.getequipos = new CTZ.getequipos();
             this.getEquiposTableAdapter1 = new CTZ.getequiposTableAdapters.GetEquiposTableAdapter();
-            this.identificacionDataGridViewTextBoxColumn2 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.Modelo = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.instrumentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estandaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getequipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCTZBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentacionDataSet1CTZ)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -121,8 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getequipos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -133,7 +136,10 @@
             this.calendariosToolStripMenuItem,
             this.historialToolStripMenuItem,
             this.asignaciónToolStripMenuItem,
-            this.imprimirToolStripMenuItem});
+            this.imprimirToolStripMenuItem,
+            this.instrumentoToolStripMenuItem1,
+            this.herramientasToolStripMenuItem,
+            this.estandaresToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 64);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(794, 24);
@@ -447,12 +453,103 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv.ShowEditingIcon = false;
             this.dgv.Size = new System.Drawing.Size(794, 337);
             this.dgv.TabIndex = 1;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_CellMouseDoubleClick);
             this.dgv.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
             this.dgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_RowPostPaint);
             this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
+            // 
+            // identificacionDataGridViewTextBoxColumn2
+            // 
+            this.identificacionDataGridViewTextBoxColumn2.DataPropertyName = "Identificacion";
+            this.identificacionDataGridViewTextBoxColumn2.HeaderText = "Identificacion";
+            this.identificacionDataGridViewTextBoxColumn2.Name = "identificacionDataGridViewTextBoxColumn2";
+            this.identificacionDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.identificacionDataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Modelo
+            // 
+            this.Modelo.DataPropertyName = "Modelo";
+            this.Modelo.HeaderText = "Modelo";
+            this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Uso";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Uso";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Estatus";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Estatus";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Certificado";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Certificado";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "FechaCalibracion";
+            this.dataGridViewTextBoxColumn4.HeaderText = "FechaCalibracion";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ProximaCalibracion";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ProximaCalibracion";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Descripcion";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Marca";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Id Registro";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Id Registro";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // getEquiposBindingSource4
+            // 
+            this.getEquiposBindingSource4.DataMember = "GetEquipos";
+            this.getEquiposBindingSource4.DataSource = this.getequipos;
+            // 
+            // getequipos
+            // 
+            this.getequipos.DataSetName = "getequipos";
+            this.getequipos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // getCTZBindingSource
             // 
@@ -475,6 +572,7 @@
             this.statusStrip1.Size = new System.Drawing.Size(794, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // FilterStatusLabel
             // 
@@ -629,98 +727,28 @@
             // 
             this.getEquiposBindingSource2.DataMember = "GetEquipos";
             // 
-            // getEquiposBindingSource4
-            // 
-            this.getEquiposBindingSource4.DataMember = "GetEquipos";
-            this.getEquiposBindingSource4.DataSource = this.getequipos;
-            // 
-            // getequipos
-            // 
-            this.getequipos.DataSetName = "getequipos";
-            this.getequipos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // getEquiposTableAdapter1
             // 
             this.getEquiposTableAdapter1.ClearBeforeFill = true;
             // 
-            // identificacionDataGridViewTextBoxColumn2
+            // instrumentoToolStripMenuItem1
             // 
-            this.identificacionDataGridViewTextBoxColumn2.DataPropertyName = "Identificacion";
-            this.identificacionDataGridViewTextBoxColumn2.HeaderText = "Identificacion";
-            this.identificacionDataGridViewTextBoxColumn2.Name = "identificacionDataGridViewTextBoxColumn2";
-            this.identificacionDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.identificacionDataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.instrumentoToolStripMenuItem1.Name = "instrumentoToolStripMenuItem1";
+            this.instrumentoToolStripMenuItem1.Size = new System.Drawing.Size(89, 20);
+            this.instrumentoToolStripMenuItem1.Text = "Instrumentos";
+            this.instrumentoToolStripMenuItem1.Click += new System.EventHandler(this.instrumentoToolStripMenuItem1_Click);
             // 
-            // Modelo
+            // herramientasToolStripMenuItem
             // 
-            this.Modelo.DataPropertyName = "Modelo";
-            this.Modelo.HeaderText = "Modelo";
-            this.Modelo.Name = "Modelo";
-            this.Modelo.ReadOnly = true;
+            this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
-            // dataGridViewTextBoxColumn1
+            // estandaresToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Uso";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Uso";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Estatus";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Estatus";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Certificado";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Certificado";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "FechaCalibracion";
-            this.dataGridViewTextBoxColumn4.HeaderText = "FechaCalibracion";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ProximaCalibracion";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ProximaCalibracion";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Descripcion";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Descripcion";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Marca";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Id Registro";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Id Registro";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estandaresToolStripMenuItem.Name = "estandaresToolStripMenuItem";
+            this.estandaresToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.estandaresToolStripMenuItem.Text = "Estandares";
             // 
             // Form1
             // 
@@ -740,6 +768,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getequipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCTZBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentacionDataSet1CTZ)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -749,8 +779,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getequipos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -840,6 +868,9 @@
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ToolStripMenuItem instrumentoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estandaresToolStripMenuItem;
     }
 }
 

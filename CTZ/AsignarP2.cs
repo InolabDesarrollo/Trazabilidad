@@ -252,7 +252,7 @@ namespace CTZ
             string query1 = "Select * from usuarios where IdUsuario= " + Ings.SelectedValue + ";";
             SqlDataReader sdr1 = ft.GetRead(query1, ft.connectionStringBrowser);
             Email = (string)sdr1.GetValue(sdr1.GetOrdinal("Mail"));
-            string ccEmail = Usr.Mail;
+            string ccEmail = User.Mail;
             if (Email != null)
             {
                 Body = "<html>\n" +
@@ -323,15 +323,15 @@ namespace CTZ
                     Body = Body + "<h5>" + eq[1] + "<h5>\n";
                 }
                 Body = Body + bodyFinal;
-                var smtpClient = new SmtpClient(Usr.host)
+                var smtpClient = new SmtpClient(User.host)
                 {
-                    Port = Usr.port,
-                    Credentials = new NetworkCredential(Usr.name, Usr.pass),
+                    Port = User.port,
+                    Credentials = new NetworkCredential(User.name, User.pass),
                     EnableSsl = false,
                 };
                 var mailMessage = new MailMessage
                 {
-                    From = new MailAddress(Usr.name),
+                    From = new MailAddress(User.name),
                     Subject = "Instrumentos Asignados",
                     Body = Body,
                     IsBodyHtml = true,

@@ -152,7 +152,7 @@ namespace CTZ
             string query = "Select Mail from usuarios where IdUsuario= " + inge.SelectedValue + ";";
             SqlDataReader sdr = ft.GetRead(query, ft.connectionStringBrowser);
             string Email = sdr.GetValue(sdr.GetOrdinal("Mail")).ToString();
-            string query1 = "Select Mail from usuarios where IdUsuario= " + Usr.K + ";";
+            string query1 = "Select Mail from usuarios where IdUsuario= " + User.IdUsuario + ";";
             SqlDataReader sdr1 = ft.GetRead(query1, ft.connectionStringBrowser);
             string ccEmail = sdr1.GetValue(sdr1.GetOrdinal("Mail")).ToString();
             DataGridViewSelectedRowCollection rows = dgv_asignados.SelectedRows;

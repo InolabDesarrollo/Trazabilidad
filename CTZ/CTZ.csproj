@@ -198,6 +198,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Controlador\C_Usuario.cs" />
     <Compile Include="ctzWF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +237,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentacionDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentacionDataSet1CTZ.cs">
+      <DependentUpon>DocumentacionDataSet1CTZ.xsd</DependentUpon>
     </Compile>
     <Compile Include="DocumentacionDataSet1CTZ.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -340,10 +344,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IngesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.cs">
+    <Compile Include="Modelo\Browser\ConexionBrowser.cs" />
+    <Compile Include="Modelo\Browser\UserRepository.cs" />
+    <Compile Include="Modelo\Conexion.cs" />
+    <Compile Include="Modelo\Trazabilidad\ConexionTrazabilidad.cs" />
+    <Compile Include="Vista\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
+    <Compile Include="Vista\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="modEQ.cs">
@@ -380,7 +394,7 @@
       <DependentUpon>ShowUsosCert.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Usr.cs" />
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="AddCarta.resx">
       <DependentUpon>AddCarta.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,7 +455,10 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn.resx">
+    <EmbeddedResource Include="Vista\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modEQ.resx">
@@ -686,6 +703,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Temps\" />
+    <Folder Include="Vista\Responsabilitis\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />

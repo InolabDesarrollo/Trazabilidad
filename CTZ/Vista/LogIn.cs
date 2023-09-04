@@ -2,7 +2,10 @@
 using CTZ;
 using MaterialSkin.Controls;
 using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing.Imaging;
+using System.Dynamic;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -14,33 +17,32 @@ namespace TestSpire
      * fuentes etc.
      */
 
-    public partial class LogIn : MaterialForm//Si se requiere usar Forms normales solo basta cambiar MaterialForm por Form en esta linea
+    public partial class LogIn : MaterialForm
     {
-        private string path = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-        private CTZ.Functions ft = new CTZ.Functions();
-
+        private CTZ.Functions function = new CTZ.Functions();
+        const int IntervalFiveMinutes = (1 * 1000 * 60 * 5);
+        const int Calidad = 4;
+        const int Gerencia = 5;
         private void Timer1_Tick(object sender, EventArgs e)
         {
             AutoUpdater.Start(@"\\192.168.15.134\Public\Ejecutables\CTZ\versions.xml");
-            AutoUpdater.ShowSkipButton = false;//Se pueden modificar elementos del AutoUpdater directo desde el código o desde el xml en public
+            AutoUpdater.ShowSkipButton = false;
         }
 
         public LogIn()
         {
             try
             {
-                //AutoUpdater activo cada 5 Minutos
                 Console.WriteLine(System.Reflection.Assembly.GetEntryAssembly().GetName().Version);
                 AutoUpdater.Start(@"\\192.168.15.134\Public\Ejecutables\CTZ\versions.xml");
                 AutoUpdater.ShowSkipButton = false;
                 InitializeComponent();
+
                 Timer timer = new Timer();
-                timer.Interval = 1 * 1000 * 60 * 5; // 5 Min
+                timer.Interval = IntervalFiveMinutes;
                 timer.Tick += new EventHandler(Timer1_Tick);
                 timer.Start();
-
-                ft.Material(this);
+                function.Material(this);
 
                 version.Text = Assembly.GetEntryAssembly().GetName().Version.ToString();
             }
@@ -50,30 +52,23 @@ namespace TestSpire
             }
         }
 
-        private Functions FT = new Functions();
-
         private void Ingresar()
         {
             try
-            {
-                SqlDataReader dr = ft.GetLog(user.Text, pass.Text);//Obtencion de información del usuario
-                if (dr != null)
+            {                          
+                if (User.validateUser(user.Text,pass.Text))
                 {
-                    Usr.K = (int)dr.GetValue(dr.GetOrdinal("IdUsuario"));
-                    Usr.Joi = (int)dr.GetValue(dr.GetOrdinal("IdRol"));
-                    Usr.Rick = (int)dr.GetValue(dr.GetOrdinal("IdArea"));
-                    if (dr.GetValue(dr.GetOrdinal("Mail")) is DBNull)
-                    {
-                    }
-                    else
-                    {
-                        Usr.Mail = (string)dr.GetValue(dr.GetOrdinal("Mail"));
-                    }
-                    if (Usr.Rick == 5 || Usr.Rick == 4)
+                    DataTable userInformation = User.loginUser(user.Text, pass.Text);
+
+                    User.IdUsuario = int.Parse(userInformation.Rows[0]["IdUsuario"].ToString());
+                    User.IdRol = int.Parse(userInformation.Rows[0]["IdRol"].ToString());
+                    User.IdArea = int.Parse(userInformation.Rows[0]["IdArea"].ToString());
+                    User.Mail = userInformation.Rows[0]["Mail"].ToString();
+
+                    if (User.IdArea == Gerencia || User.IdArea == Calidad)
                     {
                         this.Hide();
-
-                        Form1 Inicio = new Form1(Usr.K, Usr.Joi, Usr.Rick, Usr.Nombre);
+                        Form1 Inicio = new Form1(User.IdUsuario, User.IdRol, User.IdArea);
                         Inicio.Show();
                     }
                 }
@@ -82,26 +77,17 @@ namespace TestSpire
                     MessageBox.Show("Usuario o Contraseña no reconocidos");
                 }
             }
-            catch (SqlException sqle)
+            catch (SqlException exeption)
             {
-                if (sqle.ErrorCode == 40)
+                if (exeption.ErrorCode == 40)
                 {
                     MessageBox.Show("No se puede conectar con la BD.");
                 }
                 else
                 {
-                    MessageBox.Show(sqle.Message);
-                    MessageBox.Show(sqle.ToString());
+                    MessageBox.Show(exeption.Message.ToString());
                 }
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void LogIn_Activated(object sender, EventArgs e)
-        {
         }
 
         private void pass_KeyPress(object sender, KeyPressEventArgs e)
@@ -117,8 +103,5 @@ namespace TestSpire
             Ingresar();
         }
 
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

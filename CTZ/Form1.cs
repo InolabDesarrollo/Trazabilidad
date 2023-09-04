@@ -13,7 +13,7 @@ namespace CTZ
     public partial class Form1 : MaterialForm
     {
         private Functions ft = new Functions();
-        private int IDU, IDROL, IDA;
+        private int idUsuario, idRol, idArea;
 
         //Grid se mantiene sin parpadeos con esta funcion
         public new static void DoubleBuffered(DataGridView dgv, bool setting)
@@ -25,17 +25,20 @@ namespace CTZ
         }
 
         //carga los datos desde stored procedure GetEquipos
-        public Form1(int idu, int idrol, int ida, string nombre)
+        public Form1(int idUsuario, int idRol, int idArea)
         {
             //Form principal donde se muestran los ultimos certificados asignados a los equipos
             //en la tabla detalleequipo. Solo se muestran las tuplas de detalleequipo donde
             //la columna idcertificado es distinta de 0 o null
-            IDU = idu; IDA = ida; IDROL = idrol;
+            this.idArea = idUsuario; 
+            this.idArea = idArea; 
+            this.idRol = idRol;
+
             ft.Material(this);
             InitializeComponent();
             //Función para que el datagridview se mantenga renderizado y no "parpadee" al recorrerlo
             DoubleBuffered(dgv, true);
-            if (IDROL == 5)
+            if (this.idRol == 5)
             {
                 cartasTrazabilidadToolStripMenuItem.Enabled = true;
                 cartaDeTrazabilidadToolStripMenuItem.Enabled = true;
@@ -61,7 +64,7 @@ namespace CTZ
             au.ShowDialog(this);
         }
 
-        //abre formulario para agregar/cambiar la marca interna
+        //abre formulario para agregar/cambiar la marca interna   marcaToolStripMenuItem_Click
         private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddUso au = new AddUso("MarcaI");
@@ -111,7 +114,7 @@ namespace CTZ
         //abre form para crear nuevo equipo
         private void equipoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddEquipoP1 ae = new AddEquipoP1(IDU);
+            AddEquipoP1 ae = new AddEquipoP1(idUsuario);
             ae.ShowDialog(this);
             this.getEquiposTableAdapter1.Fill(this.getequipos.GetEquipos);
         }
@@ -124,7 +127,7 @@ namespace CTZ
 
         private void certificadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddCert ac = new AddCert(IDU);
+            AddCert ac = new AddCert(idUsuario);
             ac.ShowDialog(this);
         }
 
@@ -175,7 +178,7 @@ namespace CTZ
             int rows = dgv.Rows.Count;
             int cols = dgv.Columns.Count;
 
-            //Console.WriteLine("Cols: " + cols + " Rows: " + rows);
+            Console.WriteLine("Cols: " + cols + " Rows: " + rows);
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
@@ -253,13 +256,13 @@ namespace CTZ
             switch (e.ColumnIndex)
             {
                 case 0://Modificación del equipo
-                    modEQ meq = new modEQ(dgv[0, e.RowIndex].Value.ToString(), dgv[dgv.ColumnCount - 1, e.RowIndex].Value.ToString(), IDU, IDROL);
+                    modEQ meq = new modEQ(dgv[0, e.RowIndex].Value.ToString(), dgv[dgv.ColumnCount - 1, e.RowIndex].Value.ToString(), idUsuario, idRol);
                     meq.ShowDialog(this);
 
                     break;
 
                 case 2://Modificación del uso, solo si el usuario es administrador
-                    if (IDROL == 5)
+                    if (idRol == 5)
                     {
                         AddUso au = new AddUso("uso", dgv[2, e.RowIndex].Value.ToString());
                         au.ShowDialog(this);
@@ -272,7 +275,7 @@ namespace CTZ
 
                 case 4:
 
-                    if (IDROL == 5)
+                    if (idRol == 5)
                     {
                         if (ft.IsValid(dgv[4, e.RowIndex].Value.ToString()))//Modificación del Certificado, solo si el usuario es administrador
                         {
@@ -322,7 +325,7 @@ namespace CTZ
                     break;
 
                 case 1:
-                    if (IDROL == 5)//Modificación del uso mostrado, solo para los usuarios administradores
+                    if (idRol == 5)//Modificación del uso mostrado, solo para los usuarios administradores
                     {
                         AddUso au = new AddUso("modeloi", dgv[6, e.RowIndex].Value.ToString());
                         au.ShowDialog(this);
@@ -330,7 +333,7 @@ namespace CTZ
                     break;
 
                 case 8:
-                    if (IDROL == 5)//Modificación de la marca(interna) mostrada, solo para los usuarios administradores
+                    if (idRol == 5)//Modificación de la marca(interna) mostrada, solo para los usuarios administradores
                     {
                         AddUso au = new AddUso("marcai", dgv[7, e.RowIndex].Value.ToString());
                         au.ShowDialog(this);
@@ -342,7 +345,7 @@ namespace CTZ
 
         private void detalleEquipoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddEquipo ae = new AddEquipo(IDU);
+            AddEquipo ae = new AddEquipo(idUsuario);
             ae.ShowDialog(this);
             this.getEquiposTableAdapter1.Fill(this.getequipos.GetEquipos);
         }
@@ -373,7 +376,7 @@ namespace CTZ
 
         private void todosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GRL grl = new GRL(IDU, IDROL);
+            GRL grl = new GRL(idUsuario, idRol);
             grl.Owner = this;
             grl.Show(this);
         }
@@ -392,7 +395,7 @@ namespace CTZ
 
         private void certificadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DetalleCert dc = new DetalleCert(IDU, IDROL);
+            DetalleCert dc = new DetalleCert(idUsuario, idRol);
             dc.Show();
         }
 
@@ -406,19 +409,19 @@ namespace CTZ
 
         private void porFolioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HistorialFSR hf = new HistorialFSR(IDU, IDROL);
+            HistorialFSR hf = new HistorialFSR(idUsuario, idRol);
             hf.Show();
         }
 
         private void porClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HistorialCliente hc = new HistorialCliente(IDU, IDROL);
+            HistorialCliente hc = new HistorialCliente(idUsuario, idRol);
             hc.Show();
         }
 
         private void asignaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AsignarP1 ap1 = new AsignarP1(IDU, IDROL);
+            AsignarP1 ap1 = new AsignarP1(idUsuario, idRol);
             ap1.Owner = this;
             ap1.Show(this);
         }
@@ -450,7 +453,7 @@ namespace CTZ
 
         private void laboratoriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DetalleLabs dl = new DetalleLabs(IDU, IDROL, IDA);
+            DetalleLabs dl = new DetalleLabs(idUsuario, idRol, idArea);
             dl.Show();
         }
 
@@ -459,6 +462,21 @@ namespace CTZ
             Reporte r = new Reporte();
             r.SetREPORTE1("AcuseCalibracion");
             r.Show();
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void instrumentoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void usoToolStripMenuItem2_Click(object sender, EventArgs e)

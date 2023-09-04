@@ -6,7 +6,7 @@ namespace CTZ
 {
     public partial class AddCarta : Form
     {
-        private Functions ft = new Functions();
+        private Functions function = new Functions();
 
         //GUARDA EN LA TABLA CARTATRAZABILIDAD
 
@@ -18,7 +18,7 @@ namespace CTZ
                 //No carga los instrumentos en el combo
                 instChBx.Checked = false;
                 instrumento.Enabled = false;
-                DataSet dsDataFromDB = ft.GetDataFromDatabaseinDataSet("GetInstrumentos");
+                DataSet dsDataFromDB = function.GetDataFromDatabaseinDataSet("GetInstrumentos");
                 instrumento.DataSource = dsDataFromDB.Tables[0];
                 instrumento.DisplayMember = "Equipo";
                 instrumento.ValueMember = "IdDetalleinstrumento";
@@ -43,7 +43,7 @@ namespace CTZ
             {
                 query = "insert into cartatrazabilidad(idCertificado,iddetalleinstrumento,link)values(" + certificado.SelectedValue + ",0,'" + linked.Text + "')";
             }
-            ft.SetSql(query);
+            function.SetSql(query);
         }
 
         private void instChBx_CheckedChanged(object sender, EventArgs e)
