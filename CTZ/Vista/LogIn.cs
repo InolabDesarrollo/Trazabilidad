@@ -68,7 +68,7 @@ namespace TestSpire
                     if (User.IdArea == Gerencia || User.IdArea == Calidad)
                     {
                         this.Hide();
-                        Form1 Inicio = new Form1(User.IdUsuario, User.IdRol, User.IdArea);
+                        MenuPrincipal Inicio = new MenuPrincipal(User.IdUsuario, User.IdRol, User.IdArea);
                         Inicio.Show();
                     }
                 }

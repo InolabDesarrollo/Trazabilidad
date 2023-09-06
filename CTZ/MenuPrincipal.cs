@@ -1,4 +1,5 @@
 ﻿using AutoUpdaterDotNET;
+using CTZ.Vista;
 using DataGridViewAutoFilter;
 using MaterialSkin.Controls;
 using System;
@@ -6,11 +7,12 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace CTZ
 {
-    public partial class Form1 : MaterialForm
+    public partial class MenuPrincipal : MaterialForm
     {
         private Functions ft = new Functions();
         private int idUsuario, idRol, idArea;
@@ -25,7 +27,7 @@ namespace CTZ
         }
 
         //carga los datos desde stored procedure GetEquipos
-        public Form1(int idUsuario, int idRol, int idArea)
+        public MenuPrincipal(int idUsuario, int idRol, int idArea)
         {
             //Form principal donde se muestran los ultimos certificados asignados a los equipos
             //en la tabla detalleequipo. Solo se muestran las tuplas de detalleequipo donde
@@ -367,7 +369,6 @@ namespace CTZ
         {
         }
 
-
         //Actualiza y carga los datos para el formulario GRL 
         public void actualizar()
         {
@@ -447,7 +448,6 @@ namespace CTZ
             //muestra los instrumntos por fechas de uso, realiza filtrado por tipo de marca y estatus
             Reporte r = new Reporte();
             r.SetREPORTE1("CalendarioEstatus");
-
             r.Show();
         }
 
@@ -474,9 +474,32 @@ namespace CTZ
 
         }
 
-        private void instrumentoToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void Pestaña_Estandares_Click(object sender, EventArgs e)
         {
+            Estandares estandares = new Estandares();
+            estandares.Owner = this;
+            estandares.Show(this);
+        }
 
+        private void PestañaDataLogger_Click(object sender, EventArgs e)
+        {
+            DataLogger dataLogger = new DataLogger();   
+            dataLogger.Owner= this;
+            dataLogger.Show(this);
+        }
+
+        private void Pestaña_Herramientas_Click(object sender, EventArgs e)
+        {
+            Herramientas herramientas = new Herramientas();
+            herramientas.Owner = this;
+            herramientas.Show(this);
+        }
+
+        private void Pestaña_Instrumentos_Click(object sender, EventArgs e)
+        {
+            Instrumentos instrumento = new Instrumentos();
+            instrumento.Owner = this;
+            instrumento.Show(this);
         }
 
         private void usoToolStripMenuItem2_Click(object sender, EventArgs e)

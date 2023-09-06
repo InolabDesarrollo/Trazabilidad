@@ -156,7 +156,7 @@ namespace CTZ
         private void update()
         {
             //owner: pertenece al Form1
-            var main = this.Owner as Form1;
+            var main = this.Owner as MenuPrincipal;
             if (main != null)
             {
                 main.actualizar();

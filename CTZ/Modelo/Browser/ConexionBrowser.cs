@@ -16,7 +16,7 @@ namespace CTZ.Modelo
     {
         public ConexionBrowser()
         {
-            if (databaseProduction)
+            if (databaseTest)
             {
                 source = "INOLABSERVER03";
                 catalog = "Browser";

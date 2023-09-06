@@ -1,6 +1,6 @@
 ﻿namespace CTZ
 {
-    partial class Form1
+    partial class MenuPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +66,9 @@
             this.porClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Pestaña_Instrumentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.Pestaña_Herramientas = new System.Windows.Forms.ToolStripMenuItem();
+            this.Pestaña_Estandares = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.identificacionDataGridViewTextBoxColumn2 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Modelo = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -107,13 +110,11 @@
             this.dataGridViewAutoFilterTextBoxColumn8 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.dataGridViewAutoFilterTextBoxColumn9 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.getEquiposTableAdapter1 = new CTZ.getequiposTableAdapters.GetEquiposTableAdapter();
             this.getEquiposBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.getEquiposBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.getEquiposBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.getEquiposTableAdapter1 = new CTZ.getequiposTableAdapters.GetEquiposTableAdapter();
-            this.instrumentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estandaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PestañaDataLogger = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource4)).BeginInit();
@@ -130,6 +131,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoToolStripMenuItem,
             this.verToolStripMenuItem,
@@ -137,9 +139,10 @@
             this.historialToolStripMenuItem,
             this.asignaciónToolStripMenuItem,
             this.imprimirToolStripMenuItem,
-            this.instrumentoToolStripMenuItem1,
-            this.herramientasToolStripMenuItem,
-            this.estandaresToolStripMenuItem});
+            this.Pestaña_Instrumentos,
+            this.Pestaña_Herramientas,
+            this.Pestaña_Estandares,
+            this.PestañaDataLogger});
             this.menuStrip1.Location = new System.Drawing.Point(3, 64);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(794, 24);
@@ -405,6 +408,27 @@
             this.imprimirToolStripMenuItem.Text = "Imprimir";
             this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
+            // Pestaña_Instrumentos
+            // 
+            this.Pestaña_Instrumentos.Name = "Pestaña_Instrumentos";
+            this.Pestaña_Instrumentos.Size = new System.Drawing.Size(89, 20);
+            this.Pestaña_Instrumentos.Text = "Instrumentos";
+            this.Pestaña_Instrumentos.Click += new System.EventHandler(this.Pestaña_Instrumentos_Click);
+            // 
+            // Pestaña_Herramientas
+            // 
+            this.Pestaña_Herramientas.Name = "Pestaña_Herramientas";
+            this.Pestaña_Herramientas.Size = new System.Drawing.Size(90, 20);
+            this.Pestaña_Herramientas.Text = "Herramientas";
+            this.Pestaña_Herramientas.Click += new System.EventHandler(this.Pestaña_Herramientas_Click);
+            // 
+            // Pestaña_Estandares
+            // 
+            this.Pestaña_Estandares.Name = "Pestaña_Estandares";
+            this.Pestaña_Estandares.Size = new System.Drawing.Size(75, 20);
+            this.Pestaña_Estandares.Text = "Estandares";
+            this.Pestaña_Estandares.Click += new System.EventHandler(this.Pestaña_Estandares_Click);
+            // 
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
@@ -564,6 +588,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FilterStatusLabel,
             this.ShowAllLabel});
@@ -723,34 +748,22 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // getEquiposBindingSource2
-            // 
-            this.getEquiposBindingSource2.DataMember = "GetEquipos";
-            // 
             // getEquiposTableAdapter1
             // 
             this.getEquiposTableAdapter1.ClearBeforeFill = true;
             // 
-            // instrumentoToolStripMenuItem1
+            // getEquiposBindingSource2
             // 
-            this.instrumentoToolStripMenuItem1.Name = "instrumentoToolStripMenuItem1";
-            this.instrumentoToolStripMenuItem1.Size = new System.Drawing.Size(89, 20);
-            this.instrumentoToolStripMenuItem1.Text = "Instrumentos";
-            this.instrumentoToolStripMenuItem1.Click += new System.EventHandler(this.instrumentoToolStripMenuItem1_Click);
+            this.getEquiposBindingSource2.DataMember = "GetEquipos";
             // 
-            // herramientasToolStripMenuItem
+            // PestañaDataLogger
             // 
-            this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.herramientasToolStripMenuItem.Text = "Herramientas";
+            this.PestañaDataLogger.Name = "PestañaDataLogger";
+            this.PestañaDataLogger.Size = new System.Drawing.Size(80, 20);
+            this.PestañaDataLogger.Text = "DataLogger";
+            this.PestañaDataLogger.Click += new System.EventHandler(this.PestañaDataLogger_Click);
             // 
-            // estandaresToolStripMenuItem
-            // 
-            this.estandaresToolStripMenuItem.Name = "estandaresToolStripMenuItem";
-            this.estandaresToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.estandaresToolStripMenuItem.Text = "Estandares";
-            // 
-            // Form1
+            // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -760,7 +773,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Últimos certificados";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -868,9 +881,10 @@
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.ToolStripMenuItem instrumentoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estandaresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Pestaña_Instrumentos;
+        private System.Windows.Forms.ToolStripMenuItem Pestaña_Herramientas;
+        private System.Windows.Forms.ToolStripMenuItem Pestaña_Estandares;
+        private System.Windows.Forms.ToolStripMenuItem PestañaDataLogger;
     }
 }
 

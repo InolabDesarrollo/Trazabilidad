@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace CTZ.Vista
 {
-    public partial class Form1 : Form
+    public partial class Herramientas : MaterialForm
     {
-        public Form1()
+        public Herramientas()
         {
             InitializeComponent();
         }

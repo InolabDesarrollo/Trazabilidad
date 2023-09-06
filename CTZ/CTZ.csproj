@@ -259,11 +259,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSctz.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="GetAvailableDataSet.Designer.cs">
@@ -348,11 +348,29 @@
     <Compile Include="Modelo\Browser\UserRepository.cs" />
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\Trazabilidad\ConexionTrazabilidad.cs" />
-    <Compile Include="Vista\Form1.cs">
+    <Compile Include="Vista\DataLogger.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vista\DataLogger.Designer.cs">
+      <DependentUpon>DataLogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estandares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Estandares.Designer.cs">
+      <DependentUpon>Estandares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Herramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Herramientas.Designer.cs">
+      <DependentUpon>Herramientas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Instrumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instrumentos.Designer.cs">
+      <DependentUpon>Instrumentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\LogIn.cs">
       <SubType>Form</SubType>
@@ -395,6 +413,12 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="Vista\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCarta.resx">
       <DependentUpon>AddCarta.cs</DependentUpon>
     </EmbeddedResource>
@@ -440,8 +464,8 @@
     <EmbeddedResource Include="DetalleLabs.resx">
       <DependentUpon>DetalleLabs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GRL.resx">
       <DependentUpon>GRL.cs</DependentUpon>
@@ -455,8 +479,17 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\DataLogger.resx">
+      <DependentUpon>DataLogger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estandares.resx">
+      <DependentUpon>Estandares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Herramientas.resx">
+      <DependentUpon>Herramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instrumentos.resx">
+      <DependentUpon>Instrumentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -485,6 +518,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowUsosCert.resx">
       <DependentUpon>ShowUsosCert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AsignacionDataSet.xsc">
       <DependentUpon>AsignacionDataSet.xsd</DependentUpon>

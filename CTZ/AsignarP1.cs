@@ -16,7 +16,7 @@ namespace CTZ
         private void update()
         {
             /*Función para actualizar el datagridview del form principal*/
-            var main = this.Owner as Form1;
+            var main = this.Owner as MenuPrincipal;
             if (main != null)
             {
                 main.actualizar();
