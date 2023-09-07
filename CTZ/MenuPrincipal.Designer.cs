@@ -68,7 +68,8 @@
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Pestaña_Instrumentos = new System.Windows.Forms.ToolStripMenuItem();
             this.Pestaña_Herramientas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Pestaña_Estandares = new System.Windows.Forms.ToolStripMenuItem();
+            this.Pestaña_Accesorios = new System.Windows.Forms.ToolStripMenuItem();
+            this.PestañaDataLogger = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.identificacionDataGridViewTextBoxColumn2 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Modelo = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -114,7 +115,6 @@
             this.getEquiposBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.getEquiposBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.getEquiposBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.PestañaDataLogger = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEquiposBindingSource4)).BeginInit();
@@ -141,13 +141,14 @@
             this.imprimirToolStripMenuItem,
             this.Pestaña_Instrumentos,
             this.Pestaña_Herramientas,
-            this.Pestaña_Estandares,
+            this.Pestaña_Accesorios,
             this.PestañaDataLogger});
             this.menuStrip1.Location = new System.Drawing.Point(3, 64);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(794, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // nuevoToolStripMenuItem
             // 
@@ -422,12 +423,19 @@
             this.Pestaña_Herramientas.Text = "Herramientas";
             this.Pestaña_Herramientas.Click += new System.EventHandler(this.Pestaña_Herramientas_Click);
             // 
-            // Pestaña_Estandares
+            // Pestaña_Accesorios
             // 
-            this.Pestaña_Estandares.Name = "Pestaña_Estandares";
-            this.Pestaña_Estandares.Size = new System.Drawing.Size(75, 20);
-            this.Pestaña_Estandares.Text = "Estandares";
-            this.Pestaña_Estandares.Click += new System.EventHandler(this.Pestaña_Estandares_Click);
+            this.Pestaña_Accesorios.Name = "Pestaña_Accesorios";
+            this.Pestaña_Accesorios.Size = new System.Drawing.Size(76, 20);
+            this.Pestaña_Accesorios.Text = "Accesorios";
+            this.Pestaña_Accesorios.Click += new System.EventHandler(this.Pestaña_Accesorios_Click);
+            // 
+            // PestañaDataLogger
+            // 
+            this.PestañaDataLogger.Name = "PestañaDataLogger";
+            this.PestañaDataLogger.Size = new System.Drawing.Size(80, 20);
+            this.PestañaDataLogger.Text = "DataLogger";
+            this.PestañaDataLogger.Click += new System.EventHandler(this.PestañaDataLogger_Click);
             // 
             // dgv
             // 
@@ -756,13 +764,6 @@
             // 
             this.getEquiposBindingSource2.DataMember = "GetEquipos";
             // 
-            // PestañaDataLogger
-            // 
-            this.PestañaDataLogger.Name = "PestañaDataLogger";
-            this.PestañaDataLogger.Size = new System.Drawing.Size(80, 20);
-            this.PestañaDataLogger.Text = "DataLogger";
-            this.PestañaDataLogger.Click += new System.EventHandler(this.PestañaDataLogger_Click);
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -883,7 +884,7 @@
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.ToolStripMenuItem Pestaña_Instrumentos;
         private System.Windows.Forms.ToolStripMenuItem Pestaña_Herramientas;
-        private System.Windows.Forms.ToolStripMenuItem Pestaña_Estandares;
+        private System.Windows.Forms.ToolStripMenuItem Pestaña_Accesorios;
         private System.Windows.Forms.ToolStripMenuItem PestañaDataLogger;
     }
 }

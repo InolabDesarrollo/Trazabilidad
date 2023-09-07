@@ -413,11 +413,47 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Vista\Test.cs">
+    <Compile Include="Vista\Accesorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
+    <Compile Include="Vista\Accesorios.Designer.cs">
+      <DependentUpon>Accesorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\MenuAccesorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\MenuAccesorios.Designer.cs">
+      <DependentUpon>MenuAccesorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\MenuDataLogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\MenuDataLogger.Designer.cs">
+      <DependentUpon>MenuDataLogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\MenuEstandares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\MenuEstandares.Designer.cs">
+      <DependentUpon>MenuEstandares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\MenuHerramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\MenuHerramientas.Designer.cs">
+      <DependentUpon>MenuHerramientas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\MenuInstrumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\MenuInstrumentos.Designer.cs">
+      <DependentUpon>MenuInstrumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\SubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\SubMenu.Designer.cs">
+      <DependentUpon>SubMenu.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddCarta.resx">
       <DependentUpon>AddCarta.cs</DependentUpon>
@@ -519,8 +555,17 @@
     <EmbeddedResource Include="ShowUsosCert.resx">
       <DependentUpon>ShowUsosCert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Accesorios.resx">
+      <DependentUpon>Accesorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\MenuAccesorios.resx">
+      <DependentUpon>MenuAccesorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\MenuHerramientas.resx">
+      <DependentUpon>MenuHerramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\SubMenu.resx">
+      <DependentUpon>SubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AsignacionDataSet.xsc">
       <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
@@ -742,6 +787,7 @@
     <Folder Include="Vista\Responsabilitis\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\LOGO_Blanco_Lineas.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

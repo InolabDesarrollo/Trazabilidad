@@ -1,4 +1,5 @@
-﻿using CTZ.Modelo.Documentacion;
+﻿using CTZ.Modelo;
+using CTZ.Modelo.Documentacion;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CTZ.Vista
+namespace CTZ.Vista.Responsabilitis
 {
-    public partial class DataLogger : MaterialForm
+    public partial class Accesorios : MaterialForm
     {
-        public DataLogger()
+        public Accesorios()
         {
             InitializeComponent();
             cargarDatos();
@@ -23,7 +24,7 @@ namespace CTZ.Vista
         private void cargarDatos()
         {
             ConexionTrazabilidad conexion = new ConexionTrazabilidad();
-            Dgv_DataLogger.DataSource = conexion.getDataTable("SELECT * FROM DataLogger");
+            Dgv_Accesorios.DataSource = conexion.getDataTable("SELECT * FROM Accesorios");
         }
     }
 }

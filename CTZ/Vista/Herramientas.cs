@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using CTZ.Modelo.Documentacion;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,14 @@ namespace CTZ.Vista
         public Herramientas()
         {
             InitializeComponent();
+            cargarDatos();
+        }
+
+        private void cargarDatos()
+        {
+            ConexionTrazabilidad conexion = new ConexionTrazabilidad();
+            Dgv_Herramientas.DataSource = conexion.getDataTable("SELECT * FROM Herramientas");
         }
     }
+    
 }

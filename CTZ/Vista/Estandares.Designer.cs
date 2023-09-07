@@ -31,14 +31,6 @@
             this.TabPageEstandares = new System.Windows.Forms.TabPage();
             this.Dgv_Estandares = new System.Windows.Forms.DataGridView();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.Columna_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaEstandar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaUso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaPresentacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNoLote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaFabricacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaCaducidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaEstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabPageEstandares.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandares)).BeginInit();
             this.materialTabControl1.SuspendLayout();
@@ -58,15 +50,6 @@
             // Dgv_Estandares
             // 
             this.Dgv_Estandares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_Estandares.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Columna_Id,
-            this.ColumnaEstandar,
-            this.ColumnaUso,
-            this.ColumnaPresentacion,
-            this.ColumnaNoLote,
-            this.ColumnaFechaFabricacion,
-            this.ColumnaFechaCaducidad,
-            this.ColumnaEstatus});
             this.Dgv_Estandares.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dgv_Estandares.Location = new System.Drawing.Point(3, 3);
             this.Dgv_Estandares.Name = "Dgv_Estandares";
@@ -85,46 +68,6 @@
             this.materialTabControl1.SelectedIndex = 0;
             this.materialTabControl1.Size = new System.Drawing.Size(826, 383);
             this.materialTabControl1.TabIndex = 0;
-            // 
-            // Columna_Id
-            // 
-            this.Columna_Id.HeaderText = "ID";
-            this.Columna_Id.Name = "Columna_Id";
-            // 
-            // ColumnaEstandar
-            // 
-            this.ColumnaEstandar.HeaderText = "ESTANDAR";
-            this.ColumnaEstandar.Name = "ColumnaEstandar";
-            // 
-            // ColumnaUso
-            // 
-            this.ColumnaUso.HeaderText = "USO";
-            this.ColumnaUso.Name = "ColumnaUso";
-            // 
-            // ColumnaPresentacion
-            // 
-            this.ColumnaPresentacion.HeaderText = "PRESENTACION";
-            this.ColumnaPresentacion.Name = "ColumnaPresentacion";
-            // 
-            // ColumnaNoLote
-            // 
-            this.ColumnaNoLote.HeaderText = "NUMERO DE LOTE";
-            this.ColumnaNoLote.Name = "ColumnaNoLote";
-            // 
-            // ColumnaFechaFabricacion
-            // 
-            this.ColumnaFechaFabricacion.HeaderText = "FECHA FABRICACION";
-            this.ColumnaFechaFabricacion.Name = "ColumnaFechaFabricacion";
-            // 
-            // ColumnaFechaCaducidad
-            // 
-            this.ColumnaFechaCaducidad.HeaderText = "FECHA CADUCIDAD";
-            this.ColumnaFechaCaducidad.Name = "ColumnaFechaCaducidad";
-            // 
-            // ColumnaEstatus
-            // 
-            this.ColumnaEstatus.HeaderText = "ESTATUS";
-            this.ColumnaEstatus.Name = "ColumnaEstatus";
             // 
             // Estandares
             // 
@@ -145,13 +88,5 @@
         private System.Windows.Forms.TabPage TabPageEstandares;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.DataGridView Dgv_Estandares;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Columna_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstandar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaUso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPresentacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNoLote;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFechaFabricacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFechaCaducidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstatus;
     }
 }

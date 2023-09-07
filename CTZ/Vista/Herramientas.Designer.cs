@@ -31,14 +31,6 @@
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.TabPageHerramientas = new System.Windows.Forms.TabPage();
             this.Dgv_Herramientas = new System.Windows.Forms.DataGridView();
-            this.ColumnaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaInstrumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaEstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialTabControl1.SuspendLayout();
             this.TabPageHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Herramientas)).BeginInit();
@@ -70,60 +62,11 @@
             // Dgv_Herramientas
             // 
             this.Dgv_Herramientas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_Herramientas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnaID,
-            this.ColumnaInstrumento,
-            this.ColumnaMarca,
-            this.ColumnaModelo,
-            this.ColumnaNS,
-            this.ColumnaUbicacion,
-            this.ColumnaObservacion,
-            this.ColumnaEstatus});
             this.Dgv_Herramientas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dgv_Herramientas.Location = new System.Drawing.Point(3, 3);
             this.Dgv_Herramientas.Name = "Dgv_Herramientas";
             this.Dgv_Herramientas.Size = new System.Drawing.Size(780, 351);
             this.Dgv_Herramientas.TabIndex = 0;
-            // 
-            // ColumnaID
-            // 
-            this.ColumnaID.HeaderText = "ID";
-            this.ColumnaID.Name = "ColumnaID";
-            // 
-            // ColumnaInstrumento
-            // 
-            this.ColumnaInstrumento.HeaderText = "INSTRUMENTO";
-            this.ColumnaInstrumento.Name = "ColumnaInstrumento";
-            // 
-            // ColumnaMarca
-            // 
-            this.ColumnaMarca.HeaderText = "MARCA";
-            this.ColumnaMarca.Name = "ColumnaMarca";
-            // 
-            // ColumnaModelo
-            // 
-            this.ColumnaModelo.HeaderText = "MODELO";
-            this.ColumnaModelo.Name = "ColumnaModelo";
-            // 
-            // ColumnaNS
-            // 
-            this.ColumnaNS.HeaderText = "NS";
-            this.ColumnaNS.Name = "ColumnaNS";
-            // 
-            // ColumnaUbicacion
-            // 
-            this.ColumnaUbicacion.HeaderText = "UBICACION";
-            this.ColumnaUbicacion.Name = "ColumnaUbicacion";
-            // 
-            // ColumnaObservacion
-            // 
-            this.ColumnaObservacion.HeaderText = "OBSERVACION";
-            this.ColumnaObservacion.Name = "ColumnaObservacion";
-            // 
-            // ColumnaEstatus
-            // 
-            this.ColumnaEstatus.HeaderText = "ESTATUS";
-            this.ColumnaEstatus.Name = "ColumnaEstatus";
             // 
             // Herramientas
             // 
@@ -145,13 +88,5 @@
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         protected internal System.Windows.Forms.TabPage TabPageHerramientas;
         private System.Windows.Forms.DataGridView Dgv_Herramientas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaInstrumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaMarca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaModelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaUbicacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaObservacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstatus;
     }
 }

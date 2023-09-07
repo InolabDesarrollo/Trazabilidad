@@ -1,5 +1,6 @@
 ﻿using AutoUpdaterDotNET;
 using CTZ.Vista;
+using CTZ.Vista.Responsabilitis;
 using DataGridViewAutoFilter;
 using MaterialSkin.Controls;
 using System;
@@ -474,11 +475,11 @@ namespace CTZ
 
         }
 
-        private void Pestaña_Estandares_Click(object sender, EventArgs e)
+        private void Pestaña_Accesorios_Click(object sender, EventArgs e)
         {
-            Estandares estandares = new Estandares();
-            estandares.Owner = this;
-            estandares.Show(this);
+            Accesorios accesorios= new Accesorios();
+            accesorios.Owner = this;
+            accesorios.Show(this);
         }
 
         private void PestañaDataLogger_Click(object sender, EventArgs e)
@@ -500,6 +501,11 @@ namespace CTZ
             Instrumentos instrumento = new Instrumentos();
             instrumento.Owner = this;
             instrumento.Show(this);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
         private void usoToolStripMenuItem2_Click(object sender, EventArgs e)

@@ -30,14 +30,6 @@
         {
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.TabPageDataLogger = new System.Windows.Forms.TabPage();
-            this.ColumnaEstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaInstrumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dgv_DataLogger = new System.Windows.Forms.DataGridView();
             this.materialTabControl1.SuspendLayout();
             this.TabPageDataLogger.SuspendLayout();
@@ -68,58 +60,9 @@
             this.TabPageDataLogger.Text = "DataLogger";
             this.TabPageDataLogger.UseVisualStyleBackColor = true;
             // 
-            // ColumnaEstatus
-            // 
-            this.ColumnaEstatus.HeaderText = "ESTATUS";
-            this.ColumnaEstatus.Name = "ColumnaEstatus";
-            // 
-            // ColumnaObservacion
-            // 
-            this.ColumnaObservacion.HeaderText = "OBSERVACION";
-            this.ColumnaObservacion.Name = "ColumnaObservacion";
-            // 
-            // ColumnaUbicacion
-            // 
-            this.ColumnaUbicacion.HeaderText = "UBICACION";
-            this.ColumnaUbicacion.Name = "ColumnaUbicacion";
-            // 
-            // ColumnaNS
-            // 
-            this.ColumnaNS.HeaderText = "NS";
-            this.ColumnaNS.Name = "ColumnaNS";
-            // 
-            // ColumnaModelo
-            // 
-            this.ColumnaModelo.HeaderText = "MODELO";
-            this.ColumnaModelo.Name = "ColumnaModelo";
-            // 
-            // ColumnaMarca
-            // 
-            this.ColumnaMarca.HeaderText = "MARCA";
-            this.ColumnaMarca.Name = "ColumnaMarca";
-            // 
-            // ColumnaInstrumento
-            // 
-            this.ColumnaInstrumento.HeaderText = "INSTRUMENTO";
-            this.ColumnaInstrumento.Name = "ColumnaInstrumento";
-            // 
-            // ColumnaID
-            // 
-            this.ColumnaID.HeaderText = "ID";
-            this.ColumnaID.Name = "ColumnaID";
-            // 
             // Dgv_DataLogger
             // 
             this.Dgv_DataLogger.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_DataLogger.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnaID,
-            this.ColumnaInstrumento,
-            this.ColumnaMarca,
-            this.ColumnaModelo,
-            this.ColumnaNS,
-            this.ColumnaUbicacion,
-            this.ColumnaObservacion,
-            this.ColumnaEstatus});
             this.Dgv_DataLogger.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dgv_DataLogger.Location = new System.Drawing.Point(3, 3);
             this.Dgv_DataLogger.Name = "Dgv_DataLogger";
@@ -146,13 +89,5 @@
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage TabPageDataLogger;
         private System.Windows.Forms.DataGridView Dgv_DataLogger;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaInstrumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaMarca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaModelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaUbicacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaObservacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstatus;
     }
 }

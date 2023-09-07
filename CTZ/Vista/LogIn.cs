@@ -1,5 +1,6 @@
 ﻿using AutoUpdaterDotNET;
 using CTZ;
+using CTZ.Vista;
 using MaterialSkin.Controls;
 using System;
 using System.Data;
@@ -68,8 +69,10 @@ namespace TestSpire
                     if (User.IdArea == Gerencia || User.IdArea == Calidad)
                     {
                         this.Hide();
-                        MenuPrincipal Inicio = new MenuPrincipal(User.IdUsuario, User.IdRol, User.IdArea);
-                        Inicio.Show();
+                        //MenuPrincipal Inicio = new MenuPrincipal(User.IdUsuario, User.IdRol, User.IdArea);
+                        //Inicio.Show();
+                        SubMenu subMenu = new SubMenu();
+                        subMenu.Show();
                     }
                 }
                 else
