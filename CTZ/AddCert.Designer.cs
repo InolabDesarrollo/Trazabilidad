@@ -250,7 +250,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(470, 431);
+            this.materialButton1.Location = new System.Drawing.Point(265, 505);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -273,7 +273,7 @@
             this.unassign.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.unassign.MouseState = MaterialSkin.MouseState.HOVER;
             this.unassign.Name = "unassign";
-            this.unassign.Size = new System.Drawing.Size(158, 36);
+            this.unassign.Size = new System.Drawing.Size(111, 36);
             this.unassign.TabIndex = 22;
             this.unassign.Text = "Desasignar";
             this.unassign.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;

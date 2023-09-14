@@ -1,5 +1,4 @@
-﻿using CTZ.Vista.Responsabilitis;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CTZ.Vista
 {
-    public partial class MenuAccesorios : Form
+    public partial class MenuDataLogger : Form
     {
-        public MenuAccesorios()
+        public MenuDataLogger()
         {
             InitializeComponent();
         }
 
-        private void Btn_Ver_Click(object sender, EventArgs e)
+        private void Btn_See_Click(object sender, EventArgs e)
         {
             showMenu(Pnl_See);
         }
@@ -55,10 +54,5 @@ namespace CTZ.Vista
             }
         }
 
-        private void Btn_All_Click(object sender, EventArgs e)
-        {
-            //Accesorios accesorios = new Accesorios();
-            //accesorios.Show();
-        }
     }
 }

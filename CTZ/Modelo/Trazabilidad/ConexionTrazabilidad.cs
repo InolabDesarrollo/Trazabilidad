@@ -16,14 +16,14 @@ namespace CTZ.Modelo.Documentacion
             if (databaseTest)
             {
                 source = "INOLABSERVER03";
-                catalog = "Trazabilidad";
+                catalog = "TrazabilidadTest";
                 user = "ventas";
                 password = "V3ntas_17";
             }
             else
             {
                 source = "INOLABSERVER03";
-                catalog = "TrazabilidadTest";
+                catalog = "Trazabilidad";
                 user = "ventas";
                 password = "V3ntas_17";
             }

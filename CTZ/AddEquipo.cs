@@ -284,6 +284,11 @@ namespace CTZ
             }
         }
 
+        private void Range_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         /*
          CONTAINS:
             Devuelve un valor que indica si una cadena especificada aparece dentro de esta cadena, mediante las reglas de comparación especificadas.

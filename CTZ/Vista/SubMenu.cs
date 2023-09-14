@@ -27,8 +27,8 @@ namespace CTZ.Vista
 
         private void Btn_Herramientas_Click(object sender, EventArgs e)
         {
-            MenuHerramientas menuHerramientas = new MenuHerramientas();
-            menuHerramientas.Show();
+            MenuHerramientas herramientas = new MenuHerramientas();
+            herramientas.Show();
         }
 
         private void Btn_DataLogger_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace CTZ.Vista
         private void Btn_Instrumentos_Click(object sender, EventArgs e)
         {
             MenuInstrumentos instrumentos = new MenuInstrumentos();
-            instrumentos.Show();    
+            instrumentos.Show();
         }
     }
 }

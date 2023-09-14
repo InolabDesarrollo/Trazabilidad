@@ -477,30 +477,28 @@ namespace CTZ
 
         private void Pestaña_Accesorios_Click(object sender, EventArgs e)
         {
-            Accesorios accesorios= new Accesorios();
-            accesorios.Owner = this;
-            accesorios.Show(this);
+            //Accesorios accesorios= new Accesorios();
+            //accesorios.Owner = this;
+            //accesorios.Show(this);
         }
 
         private void PestañaDataLogger_Click(object sender, EventArgs e)
         {
-            DataLogger dataLogger = new DataLogger();   
-            dataLogger.Owner= this;
-            dataLogger.Show(this);
+            //DataLogger dataLogger = new DataLogger();   
+            //dataLogger.Owner= this;
+            //dataLogger.Show(this);
         }
 
         private void Pestaña_Herramientas_Click(object sender, EventArgs e)
         {
-            Herramientas herramientas = new Herramientas();
-            herramientas.Owner = this;
-            herramientas.Show(this);
+            //Herramientas herramientas = new Herramientas();
+            //herramientas.Owner = this;
+            //herramientas.Show(this);
         }
 
         private void Pestaña_Instrumentos_Click(object sender, EventArgs e)
         {
-            Instrumentos instrumento = new Instrumentos();
-            instrumento.Owner = this;
-            instrumento.Show(this);
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

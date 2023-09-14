@@ -1,6 +1,6 @@
 ﻿namespace CTZ.Vista
 {
-    partial class MenuAccesorios
+    partial class MenuHerramientas
     {
         /// <summary>
         /// Required designer variable.
@@ -62,8 +62,8 @@
             this.Pnl_Head.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_Head.Location = new System.Drawing.Point(0, 0);
             this.Pnl_Head.Name = "Pnl_Head";
-            this.Pnl_Head.Size = new System.Drawing.Size(796, 75);
-            this.Pnl_Head.TabIndex = 0;
+            this.Pnl_Head.Size = new System.Drawing.Size(800, 75);
+            this.Pnl_Head.TabIndex = 1;
             // 
             // panel1
             // 
@@ -134,13 +134,13 @@
             this.Btn_See.FlatAppearance.BorderSize = 0;
             this.Btn_See.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_See.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_See.Location = new System.Drawing.Point(0, 46);
+            this.Btn_See.Location = new System.Drawing.Point(-3, 46);
             this.Btn_See.Name = "Btn_See";
             this.Btn_See.Size = new System.Drawing.Size(77, 29);
             this.Btn_See.TabIndex = 0;
             this.Btn_See.Text = "Ver";
             this.Btn_See.UseVisualStyleBackColor = false;
-            this.Btn_See.Click += new System.EventHandler(this.Btn_Ver_Click);
+            this.Btn_See.Click += new System.EventHandler(this.Btn_See_Click);
             // 
             // pictureBox1
             // 
@@ -162,8 +162,8 @@
             this.Pnl_Body.Controls.Add(this.Pnl_See);
             this.Pnl_Body.Location = new System.Drawing.Point(0, 73);
             this.Pnl_Body.Name = "Pnl_Body";
-            this.Pnl_Body.Size = new System.Drawing.Size(800, 374);
-            this.Pnl_Body.TabIndex = 1;
+            this.Pnl_Body.Size = new System.Drawing.Size(797, 326);
+            this.Pnl_Body.TabIndex = 2;
             // 
             // Pnl_Asign
             // 
@@ -222,18 +222,16 @@
             this.Btn_All.TabIndex = 1;
             this.Btn_All.Text = "Todos";
             this.Btn_All.UseVisualStyleBackColor = false;
-            this.Btn_All.Click += new System.EventHandler(this.Btn_All_Click);
             // 
-            // MenuAccesorios
+            // MenuHerramientas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(796, 446);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Pnl_Body);
             this.Controls.Add(this.Pnl_Head);
-            this.Name = "MenuAccesorios";
-            this.Text = "MenuAccesorios";
+            this.Name = "MenuHerramientas";
+            this.Text = "MenuHerramientas";
             this.Pnl_Head.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Pnl_Body.ResumeLayout(false);
@@ -245,19 +243,19 @@
         #endregion
 
         private System.Windows.Forms.Panel Pnl_Head;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel Pnl_Body;
-        private System.Windows.Forms.Button Btn_See;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button Btn_Asign;
+        private System.Windows.Forms.Button Btn_History;
         private System.Windows.Forms.Button Btn_Schedule;
         private System.Windows.Forms.Button Btn_File;
-        private System.Windows.Forms.Button Btn_History;
-        private System.Windows.Forms.Button Btn_Asign;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel Pnl_See;
-        private System.Windows.Forms.Button Btn_All;
-        private System.Windows.Forms.Panel Pnl_File;
+        private System.Windows.Forms.Button Btn_See;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Pnl_Body;
         private System.Windows.Forms.Panel Pnl_Asign;
         private System.Windows.Forms.Panel Pnl_History;
         private System.Windows.Forms.Panel Pnl_Schedule;
+        private System.Windows.Forms.Panel Pnl_File;
+        private System.Windows.Forms.Panel Pnl_See;
+        private System.Windows.Forms.Button Btn_All;
     }
 }

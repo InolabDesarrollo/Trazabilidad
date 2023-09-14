@@ -1,6 +1,6 @@
 ﻿namespace CTZ.Vista
 {
-    partial class MenuAccesorios
+    partial class MenuEstandares
     {
         /// <summary>
         /// Required designer variable.
@@ -37,10 +37,10 @@
             this.Btn_See = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Pnl_Body = new System.Windows.Forms.Panel();
+            this.Pnl_File = new System.Windows.Forms.Panel();
             this.Pnl_Asign = new System.Windows.Forms.Panel();
             this.Pnl_History = new System.Windows.Forms.Panel();
             this.Pnl_Schedule = new System.Windows.Forms.Panel();
-            this.Pnl_File = new System.Windows.Forms.Panel();
             this.Pnl_See = new System.Windows.Forms.Panel();
             this.Btn_All = new System.Windows.Forms.Button();
             this.Pnl_Head.SuspendLayout();
@@ -62,8 +62,8 @@
             this.Pnl_Head.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_Head.Location = new System.Drawing.Point(0, 0);
             this.Pnl_Head.Name = "Pnl_Head";
-            this.Pnl_Head.Size = new System.Drawing.Size(796, 75);
-            this.Pnl_Head.TabIndex = 0;
+            this.Pnl_Head.Size = new System.Drawing.Size(800, 78);
+            this.Pnl_Head.TabIndex = 2;
             // 
             // panel1
             // 
@@ -140,7 +140,7 @@
             this.Btn_See.TabIndex = 0;
             this.Btn_See.Text = "Ver";
             this.Btn_See.UseVisualStyleBackColor = false;
-            this.Btn_See.Click += new System.EventHandler(this.Btn_Ver_Click);
+            this.Btn_See.Click += new System.EventHandler(this.Btn_See_Click);
             // 
             // pictureBox1
             // 
@@ -155,15 +155,24 @@
             // Pnl_Body
             // 
             this.Pnl_Body.BackColor = System.Drawing.Color.LightBlue;
+            this.Pnl_Body.Controls.Add(this.Pnl_File);
             this.Pnl_Body.Controls.Add(this.Pnl_Asign);
             this.Pnl_Body.Controls.Add(this.Pnl_History);
             this.Pnl_Body.Controls.Add(this.Pnl_Schedule);
-            this.Pnl_Body.Controls.Add(this.Pnl_File);
             this.Pnl_Body.Controls.Add(this.Pnl_See);
             this.Pnl_Body.Location = new System.Drawing.Point(0, 73);
             this.Pnl_Body.Name = "Pnl_Body";
-            this.Pnl_Body.Size = new System.Drawing.Size(800, 374);
-            this.Pnl_Body.TabIndex = 1;
+            this.Pnl_Body.Size = new System.Drawing.Size(800, 322);
+            this.Pnl_Body.TabIndex = 3;
+            // 
+            // Pnl_File
+            // 
+            this.Pnl_File.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Pnl_File.Location = new System.Drawing.Point(73, 0);
+            this.Pnl_File.Name = "Pnl_File";
+            this.Pnl_File.Size = new System.Drawing.Size(86, 111);
+            this.Pnl_File.TabIndex = 6;
+            this.Pnl_File.Visible = false;
             // 
             // Pnl_Asign
             // 
@@ -171,35 +180,26 @@
             this.Pnl_Asign.Location = new System.Drawing.Point(304, 0);
             this.Pnl_Asign.Name = "Pnl_Asign";
             this.Pnl_Asign.Size = new System.Drawing.Size(80, 111);
-            this.Pnl_Asign.TabIndex = 4;
+            this.Pnl_Asign.TabIndex = 5;
             this.Pnl_Asign.Visible = false;
             // 
             // Pnl_History
             // 
             this.Pnl_History.BackColor = System.Drawing.SystemColors.Highlight;
-            this.Pnl_History.Location = new System.Drawing.Point(219, 0);
+            this.Pnl_History.Location = new System.Drawing.Point(229, 0);
             this.Pnl_History.Name = "Pnl_History";
-            this.Pnl_History.Size = new System.Drawing.Size(90, 111);
-            this.Pnl_History.TabIndex = 3;
+            this.Pnl_History.Size = new System.Drawing.Size(80, 111);
+            this.Pnl_History.TabIndex = 4;
             this.Pnl_History.Visible = false;
             // 
             // Pnl_Schedule
             // 
             this.Pnl_Schedule.BackColor = System.Drawing.SystemColors.Highlight;
-            this.Pnl_Schedule.Location = new System.Drawing.Point(145, 0);
+            this.Pnl_Schedule.Location = new System.Drawing.Point(153, 0);
             this.Pnl_Schedule.Name = "Pnl_Schedule";
-            this.Pnl_Schedule.Size = new System.Drawing.Size(78, 111);
-            this.Pnl_Schedule.TabIndex = 2;
+            this.Pnl_Schedule.Size = new System.Drawing.Size(80, 111);
+            this.Pnl_Schedule.TabIndex = 3;
             this.Pnl_Schedule.Visible = false;
-            // 
-            // Pnl_File
-            // 
-            this.Pnl_File.BackColor = System.Drawing.SystemColors.Highlight;
-            this.Pnl_File.Location = new System.Drawing.Point(73, 0);
-            this.Pnl_File.Name = "Pnl_File";
-            this.Pnl_File.Size = new System.Drawing.Size(73, 111);
-            this.Pnl_File.TabIndex = 1;
-            this.Pnl_File.Visible = false;
             // 
             // Pnl_See
             // 
@@ -222,18 +222,16 @@
             this.Btn_All.TabIndex = 1;
             this.Btn_All.Text = "Todos";
             this.Btn_All.UseVisualStyleBackColor = false;
-            this.Btn_All.Click += new System.EventHandler(this.Btn_All_Click);
             // 
-            // MenuAccesorios
+            // MenuEstandares
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(796, 446);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Pnl_Body);
             this.Controls.Add(this.Pnl_Head);
-            this.Name = "MenuAccesorios";
-            this.Text = "MenuAccesorios";
+            this.Name = "MenuEstandares";
+            this.Text = "MenuEstandares";
             this.Pnl_Head.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Pnl_Body.ResumeLayout(false);
@@ -245,19 +243,19 @@
         #endregion
 
         private System.Windows.Forms.Panel Pnl_Head;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel Pnl_Body;
-        private System.Windows.Forms.Button Btn_See;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button Btn_Asign;
+        private System.Windows.Forms.Button Btn_History;
         private System.Windows.Forms.Button Btn_Schedule;
         private System.Windows.Forms.Button Btn_File;
-        private System.Windows.Forms.Button Btn_History;
-        private System.Windows.Forms.Button Btn_Asign;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel Pnl_See;
-        private System.Windows.Forms.Button Btn_All;
-        private System.Windows.Forms.Panel Pnl_File;
+        private System.Windows.Forms.Button Btn_See;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Pnl_Body;
         private System.Windows.Forms.Panel Pnl_Asign;
         private System.Windows.Forms.Panel Pnl_History;
         private System.Windows.Forms.Panel Pnl_Schedule;
+        private System.Windows.Forms.Panel Pnl_See;
+        private System.Windows.Forms.Button Btn_All;
+        private System.Windows.Forms.Panel Pnl_File;
     }
 }

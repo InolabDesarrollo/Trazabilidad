@@ -226,7 +226,7 @@
             this.modelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.modelo.DataSource = this.modeloIBindingSource1;
             this.modelo.Depth = 0;
-            this.modelo.DisplayMember = "ModeloI";
+            this.modelo.DisplayMember = "IdMarcaI";
             this.modelo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.modelo.DropDownHeight = 174;
             this.modelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -394,7 +394,7 @@
             this.Range.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Range.Depth = 0;
             this.Range.Enabled = false;
-            this.Range.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Range.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Range.Hint = "Rango";
             this.Range.LeadingIcon = null;
             this.Range.Location = new System.Drawing.Point(42, 399);
@@ -406,6 +406,7 @@
             this.Range.TabIndex = 53;
             this.Range.Text = "";
             this.Range.TrailingIcon = null;
+            this.Range.TextChanged += new System.EventHandler(this.Range_TextChanged);
             // 
             // brand
             // 
@@ -454,7 +455,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(480, 726);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(480, 726);
+            this.MinimumSize = new System.Drawing.Size(480, 718);
             this.Name = "AddEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle del equipo";
