@@ -52,6 +52,10 @@ namespace CTZ.Vista.Responsabilitis
             controler.delete(numberCertificate);
         }
 
+        public string getCelValue(int idSqlCertificate, string cell)
+        {
+            return controler.getValueCell(idSqlCertificate, cell);
+        }
 
     }
 }

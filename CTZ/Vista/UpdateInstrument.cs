@@ -18,6 +18,7 @@ namespace CTZ.Vista
         private  string id;
         private  string idSql;
         Instruments instrument;
+        DataTable certificates;
 
         public UpdateInstrument(string id)
         {
@@ -47,7 +48,7 @@ namespace CTZ.Vista
             TxtBox_Observation.Text = informationIntrument.Rows[0]["OBSERVACIÓN"].ToString() ;
 
             checkStatus(informationIntrument.Rows[0]["ESTATUS"].ToString());
-
+            getCertificatesFromInstrument(Convert.ToInt32(idSql));
         }
 
         private void checkStatus(string status)
@@ -70,6 +71,18 @@ namespace CTZ.Vista
             }
         }
 
+        private void getCertificatesFromInstrument(int idSqlInstrument)
+        {
+            RelationCertificateInstrument relation = new RelationCertificateInstrument(idSqlInstrument);
+            certificates =  relation.getAllCertificatesForInstrument();
+            Certificate certificate = new Certificate();
+
+            for (int i =0; i< certificates.Rows.Count; i++)
+            {
+                int idCertificate = Convert.ToInt32(certificates.Rows[i]["Id_Certificado"].ToString());
+                ComboBox_Certificate.Items.Add(certificate.getCelValue(idCertificate, "Numero"));
+            }
+        }
 
         private void Btn_Update_Instrument_Click(object sender, EventArgs e)
         {
@@ -106,6 +119,22 @@ namespace CTZ.Vista
         {
             Certificate certificate = new Certificate();
             certificate.delete(ComboBox_Certificate.SelectedItem.ToString());
+        }
+
+        private void BtnUnassign_Certificate_Click(object sender, EventArgs e)
+        {          
+            Certificate certificate = new Certificate();    
+            for (int i=0; i< certificates.Rows.Count; i++)
+            {
+                int idCertificate =Convert.ToInt32(certificates.Rows[i]["Id_Certificado"].ToString());
+                string numberCerCertificate= certificate.getCelValue(idCertificate, "Numero");
+
+                if (numberCerCertificate == ComboBox_Certificate.SelectedItem.ToString())
+                {
+                    RelationCertificateInstrument relation = new RelationCertificateInstrument(Convert.ToInt32(idSql), idCertificate);
+                    relation.deleteRelation();
+                }
+            }
         }
     }
 }

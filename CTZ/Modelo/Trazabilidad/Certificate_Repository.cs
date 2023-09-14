@@ -37,6 +37,10 @@ namespace CTZ.Modelo.Trazabilidad
             conexion.executeQuery("DELETE  FROM Certificados WHERE Numero = '"+ numberCertificate + "';");
         }
 
+        public string getValueCell(int idSqlCertificate, string cell)
+        {
+            return conexion.getText("SELECT "+cell+ " FROM Certificados WHERE ID = " + idSqlCertificate + "; ");
+        }
 
     }
 }

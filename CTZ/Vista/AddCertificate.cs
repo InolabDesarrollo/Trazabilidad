@@ -38,6 +38,8 @@ namespace CTZ.Vista.Responsabilitis
             certificate.add();
 
             createAsosiation();
+            MessageBox.Show("Nuevo certificado creado y agregado a Instrumento");
+            Close();
         }
 
         private string convertToValidDate(string date)

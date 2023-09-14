@@ -34,5 +34,12 @@ namespace CTZ.Controlador
         {
             repository.delete(number);
         }
+
+       public string getValueCell(int idSqlCertificate, string cell)
+       {
+            return repository.getValueCell(idSqlCertificate, cell);
+       }
+
+
     }
 }

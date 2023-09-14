@@ -269,6 +269,7 @@
             this.BtnUnassign_Certificate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.BtnUnassign_Certificate.UseAccentColor = false;
             this.BtnUnassign_Certificate.UseVisualStyleBackColor = true;
+            this.BtnUnassign_Certificate.Click += new System.EventHandler(this.BtnUnassign_Certificate_Click);
             // 
             // Lbl_Certificate
             // 

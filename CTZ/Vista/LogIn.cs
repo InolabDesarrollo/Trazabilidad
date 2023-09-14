@@ -12,12 +12,6 @@ using System.Windows.Forms;
 
 namespace TestSpire
 {
-    /*
-     * Este proyecto ocupa una libreria llamada MaterialForms que le da ese aspecto Material Design
-     * e incluye los elementos comolos campos de texto y comboboxes con pequeñas animaciones, los colores
-     * fuentes etc.
-     */
-
     public partial class LogIn : MaterialForm
     {
         private CTZ.Functions function = new CTZ.Functions();
