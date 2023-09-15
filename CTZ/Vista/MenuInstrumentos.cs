@@ -19,8 +19,8 @@ namespace CTZ.Vista
         public MenuInstrumentos()
         {
             InitializeComponent();
-
         }
+
         private void Btn_See_Click(object sender, EventArgs e)
         {
             showMenu(Pnl_See);
@@ -45,7 +45,32 @@ namespace CTZ.Vista
 
         private void Btn_All_Click(object sender, EventArgs e)
         {
-            Dgv_Instrumentos.DataSource = instrument.getAllRegister();         
+            Dgv_Instrumentos.DataSource = instrument.getAllRegister();
+            colorCells();
+        }
+
+        private void colorCells()
+        {
+            for (int i = 0; i < Dgv_Instrumentos.Rows.Count-1; i++)
+            {
+                string valor = Dgv_Instrumentos.Rows[i].Cells[8].Value.ToString();
+                if (valor.Equals("FUERA DE USO"))
+                {
+                    Dgv_Instrumentos.Rows[i].Cells[8].Style.BackColor = Color.Red;
+                }
+                if (valor.Equals("ACTIVO"))
+                {
+                    Dgv_Instrumentos.Rows[i].Cells[8].Style.BackColor = Color.LightGreen;
+                }
+                if (valor.Equals("CALIBRANDO"))
+                {
+                    Dgv_Instrumentos.Rows[i].Cells[8].Style.BackColor = Color.Orange;
+                }
+                if (valor.Equals("PENDIENTE"))
+                {
+                    Dgv_Instrumentos.Rows[i].Cells[8].Style.BackColor = Color.Blue;
+                }
+            }
         }
 
         private void Btn_Actives_Click(object sender, EventArgs e)
@@ -69,10 +94,6 @@ namespace CTZ.Vista
         {
             SerchInstrument serchInstrument = new SerchInstrument();    
             serchInstrument.Show();
-        }
-        private void Dgv_Instrumentos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int a = 10;
         }
 
         private void Dgv_Instrumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)

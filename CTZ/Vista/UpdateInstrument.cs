@@ -98,6 +98,7 @@ namespace CTZ.Vista
 
             instrument.updateInstrument();
             clearMenu();
+            MessageBox.Show("Instrumento Actualizado");
         }
 
         private void clearMenu()
@@ -123,18 +124,19 @@ namespace CTZ.Vista
 
         private void BtnUnassign_Certificate_Click(object sender, EventArgs e)
         {          
-            Certificate certificate = new Certificate();    
+            Certificate certificate = new Certificate();
+            string numberCerCertificate="";
             for (int i=0; i< certificates.Rows.Count; i++)
             {
                 int idCertificate =Convert.ToInt32(certificates.Rows[i]["Id_Certificado"].ToString());
-                string numberCerCertificate= certificate.getCelValue(idCertificate, "Numero");
-
+                numberCerCertificate= certificate.getCelValue(idCertificate, "Numero");
                 if (numberCerCertificate == ComboBox_Certificate.SelectedItem.ToString())
                 {
                     RelationCertificateInstrument relation = new RelationCertificateInstrument(Convert.ToInt32(idSql), idCertificate);
                     relation.deleteRelation();
                 }
             }
+            MessageBox.Show("Certificado con Numero " + numberCerCertificate);
         }
     }
 }

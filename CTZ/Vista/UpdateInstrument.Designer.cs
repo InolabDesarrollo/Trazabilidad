@@ -38,7 +38,6 @@
             this.TxtBox_Ubication = new MaterialSkin.Controls.MaterialTextBox();
             this.ComboBox_Certificate = new MaterialSkin.Controls.MaterialComboBox();
             this.BtnNew_Certificate = new MaterialSkin.Controls.MaterialButton();
-            this.BtnDelete_Certificate = new MaterialSkin.Controls.MaterialButton();
             this.BtnUnassign_Certificate = new MaterialSkin.Controls.MaterialButton();
             this.Lbl_Certificate = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
@@ -221,7 +220,7 @@
             this.BtnNew_Certificate.Depth = 0;
             this.BtnNew_Certificate.HighEmphasis = true;
             this.BtnNew_Certificate.Icon = null;
-            this.BtnNew_Certificate.Location = new System.Drawing.Point(416, 545);
+            this.BtnNew_Certificate.Location = new System.Drawing.Point(584, 545);
             this.BtnNew_Certificate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnNew_Certificate.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnNew_Certificate.Name = "BtnNew_Certificate";
@@ -232,25 +231,6 @@
             this.BtnNew_Certificate.UseAccentColor = false;
             this.BtnNew_Certificate.UseVisualStyleBackColor = true;
             this.BtnNew_Certificate.Click += new System.EventHandler(this.BtnNew_Certificate_Click);
-            // 
-            // BtnDelete_Certificate
-            // 
-            this.BtnDelete_Certificate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnDelete_Certificate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.BtnDelete_Certificate.Depth = 0;
-            this.BtnDelete_Certificate.HighEmphasis = true;
-            this.BtnDelete_Certificate.Icon = null;
-            this.BtnDelete_Certificate.Location = new System.Drawing.Point(275, 545);
-            this.BtnDelete_Certificate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.BtnDelete_Certificate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BtnDelete_Certificate.Name = "BtnDelete_Certificate";
-            this.BtnDelete_Certificate.Size = new System.Drawing.Size(88, 36);
-            this.BtnDelete_Certificate.TabIndex = 61;
-            this.BtnDelete_Certificate.Text = "Eliminar ";
-            this.BtnDelete_Certificate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.BtnDelete_Certificate.UseAccentColor = false;
-            this.BtnDelete_Certificate.UseVisualStyleBackColor = true;
-            this.BtnDelete_Certificate.Click += new System.EventHandler(this.BtnDelete_Certificate_Click);
             // 
             // BtnUnassign_Certificate
             // 
@@ -290,7 +270,6 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(817, 616);
             this.Controls.Add(this.Lbl_Certificate);
-            this.Controls.Add(this.BtnDelete_Certificate);
             this.Controls.Add(this.BtnNew_Certificate);
             this.Controls.Add(this.ComboBox_Certificate);
             this.Controls.Add(this.BtnUnassign_Certificate);
@@ -321,7 +300,6 @@
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Ubication;
         private MaterialSkin.Controls.MaterialComboBox ComboBox_Certificate;
         private MaterialSkin.Controls.MaterialButton BtnNew_Certificate;
-        private MaterialSkin.Controls.MaterialButton BtnDelete_Certificate;
         private MaterialSkin.Controls.MaterialButton BtnUnassign_Certificate;
         private MaterialSkin.Controls.MaterialLabel Lbl_Certificate;
     }
