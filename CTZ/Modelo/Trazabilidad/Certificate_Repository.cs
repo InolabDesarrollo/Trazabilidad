@@ -42,5 +42,10 @@ namespace CTZ.Modelo.Trazabilidad
             return conexion.getText("SELECT "+cell+ " FROM Certificados WHERE ID = " + idSqlCertificate + "; ");
         }
 
+        public bool checkIfNumberExist(string number)
+        {
+            return conexion.isThereSomeInformation("SELECT Numero FROM Certificados where Numero = '"+ number + "';");
+        }
+
     }
 }

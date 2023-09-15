@@ -3,8 +3,10 @@ using CTZ.Modelo.Trazabilidad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace CTZ.Vista.Responsabilitis
 {
@@ -56,6 +58,13 @@ namespace CTZ.Vista.Responsabilitis
         {
             return controler.getValueCell(idSqlCertificate, cell);
         }
+
+        public bool checkIfNumberExist()
+        {
+            return controler.checkIfNumberExist(number);
+        }
+
+
 
     }
 }

@@ -37,7 +37,12 @@ namespace CTZ.Controlador
 
        public string getValueCell(int idSqlCertificate, string cell)
        {
-            return repository.getValueCell(idSqlCertificate, cell);
+           return repository.getValueCell(idSqlCertificate, cell);
+       }
+
+       public bool checkIfNumberExist(string number)
+       {
+           return repository.checkIfNumberExist(number);
        }
 
 
