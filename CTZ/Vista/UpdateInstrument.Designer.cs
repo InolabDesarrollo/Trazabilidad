@@ -40,6 +40,7 @@
             this.BtnNew_Certificate = new MaterialSkin.Controls.MaterialButton();
             this.BtnUnassign_Certificate = new MaterialSkin.Controls.MaterialButton();
             this.Lbl_Certificate = new MaterialSkin.Controls.MaterialLabel();
+            this.Lbl_Id_Instrument = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // TxtBox_Instrument
@@ -49,7 +50,7 @@
             this.TxtBox_Instrument.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Instrument.Hint = "INSTRUMENTO";
             this.TxtBox_Instrument.LeadingIcon = null;
-            this.TxtBox_Instrument.Location = new System.Drawing.Point(23, 84);
+            this.TxtBox_Instrument.Location = new System.Drawing.Point(23, 133);
             this.TxtBox_Instrument.MaxLength = 50;
             this.TxtBox_Instrument.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Instrument.Multiline = false;
@@ -66,7 +67,7 @@
             this.TxtBox_Brand.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Brand.Hint = "MARCA";
             this.TxtBox_Brand.LeadingIcon = null;
-            this.TxtBox_Brand.Location = new System.Drawing.Point(416, 84);
+            this.TxtBox_Brand.Location = new System.Drawing.Point(416, 133);
             this.TxtBox_Brand.MaxLength = 50;
             this.TxtBox_Brand.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Brand.Multiline = false;
@@ -83,7 +84,7 @@
             this.TxtBox_Model.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Model.Hint = "MODELO";
             this.TxtBox_Model.LeadingIcon = null;
-            this.TxtBox_Model.Location = new System.Drawing.Point(23, 158);
+            this.TxtBox_Model.Location = new System.Drawing.Point(23, 213);
             this.TxtBox_Model.MaxLength = 50;
             this.TxtBox_Model.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Model.Multiline = false;
@@ -100,7 +101,7 @@
             this.TxtBox_NumSerie.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_NumSerie.Hint = "NUMSERIE";
             this.TxtBox_NumSerie.LeadingIcon = null;
-            this.TxtBox_NumSerie.Location = new System.Drawing.Point(416, 158);
+            this.TxtBox_NumSerie.Location = new System.Drawing.Point(416, 213);
             this.TxtBox_NumSerie.MaxLength = 50;
             this.TxtBox_NumSerie.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_NumSerie.Multiline = false;
@@ -117,7 +118,7 @@
             this.TxtBox_Observation.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Observation.Hint = "OBSERVACION";
             this.TxtBox_Observation.LeadingIcon = null;
-            this.TxtBox_Observation.Location = new System.Drawing.Point(416, 241);
+            this.TxtBox_Observation.Location = new System.Drawing.Point(416, 292);
             this.TxtBox_Observation.MaxLength = 50;
             this.TxtBox_Observation.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Observation.Multiline = false;
@@ -147,7 +148,7 @@
             "FUERA DE USO",
             "CALIBRANDO",
             "PENDIENTE"});
-            this.ComboBox_Status.Location = new System.Drawing.Point(23, 315);
+            this.ComboBox_Status.Location = new System.Drawing.Point(23, 369);
             this.ComboBox_Status.MaxDropDownItems = 4;
             this.ComboBox_Status.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Status.Name = "ComboBox_Status";
@@ -162,7 +163,7 @@
             this.Btn_Update_Instrument.Depth = 0;
             this.Btn_Update_Instrument.HighEmphasis = true;
             this.Btn_Update_Instrument.Icon = null;
-            this.Btn_Update_Instrument.Location = new System.Drawing.Point(457, 328);
+            this.Btn_Update_Instrument.Location = new System.Drawing.Point(449, 382);
             this.Btn_Update_Instrument.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Update_Instrument.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Update_Instrument.Name = "Btn_Update_Instrument";
@@ -181,7 +182,7 @@
             this.TxtBox_Ubication.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Ubication.Hint = "UBICACION";
             this.TxtBox_Ubication.LeadingIcon = null;
-            this.TxtBox_Ubication.Location = new System.Drawing.Point(23, 241);
+            this.TxtBox_Ubication.Location = new System.Drawing.Point(23, 292);
             this.TxtBox_Ubication.MaxLength = 50;
             this.TxtBox_Ubication.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Ubication.Multiline = false;
@@ -205,7 +206,7 @@
             this.ComboBox_Certificate.FormattingEnabled = true;
             this.ComboBox_Certificate.IntegralHeight = false;
             this.ComboBox_Certificate.ItemHeight = 43;
-            this.ComboBox_Certificate.Location = new System.Drawing.Point(23, 462);
+            this.ComboBox_Certificate.Location = new System.Drawing.Point(23, 494);
             this.ComboBox_Certificate.MaxDropDownItems = 4;
             this.ComboBox_Certificate.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Certificate.Name = "ComboBox_Certificate";
@@ -220,7 +221,7 @@
             this.BtnNew_Certificate.Depth = 0;
             this.BtnNew_Certificate.HighEmphasis = true;
             this.BtnNew_Certificate.Icon = null;
-            this.BtnNew_Certificate.Location = new System.Drawing.Point(584, 545);
+            this.BtnNew_Certificate.Location = new System.Drawing.Point(584, 567);
             this.BtnNew_Certificate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnNew_Certificate.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnNew_Certificate.Name = "BtnNew_Certificate";
@@ -239,7 +240,7 @@
             this.BtnUnassign_Certificate.Depth = 0;
             this.BtnUnassign_Certificate.HighEmphasis = true;
             this.BtnUnassign_Certificate.Icon = null;
-            this.BtnUnassign_Certificate.Location = new System.Drawing.Point(23, 545);
+            this.BtnUnassign_Certificate.Location = new System.Drawing.Point(23, 567);
             this.BtnUnassign_Certificate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnUnassign_Certificate.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnUnassign_Certificate.Name = "BtnUnassign_Certificate";
@@ -256,19 +257,32 @@
             this.Lbl_Certificate.AutoSize = true;
             this.Lbl_Certificate.Depth = 0;
             this.Lbl_Certificate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Certificate.Location = new System.Drawing.Point(20, 411);
+            this.Lbl_Certificate.Location = new System.Drawing.Point(20, 448);
             this.Lbl_Certificate.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Certificate.Name = "Lbl_Certificate";
             this.Lbl_Certificate.Size = new System.Drawing.Size(109, 19);
             this.Lbl_Certificate.TabIndex = 62;
             this.Lbl_Certificate.Text = "CERTIFICADOS";
             // 
+            // Lbl_Id_Instrument
+            // 
+            this.Lbl_Id_Instrument.AutoSize = true;
+            this.Lbl_Id_Instrument.Depth = 0;
+            this.Lbl_Id_Instrument.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Id_Instrument.Location = new System.Drawing.Point(23, 85);
+            this.Lbl_Id_Instrument.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Lbl_Id_Instrument.Name = "Lbl_Id_Instrument";
+            this.Lbl_Id_Instrument.Size = new System.Drawing.Size(107, 19);
+            this.Lbl_Id_Instrument.TabIndex = 63;
+            this.Lbl_Id_Instrument.Text = "materialLabel1";
+            // 
             // UpdateInstrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(817, 616);
+            this.ClientSize = new System.Drawing.Size(817, 628);
+            this.Controls.Add(this.Lbl_Id_Instrument);
             this.Controls.Add(this.Lbl_Certificate);
             this.Controls.Add(this.BtnNew_Certificate);
             this.Controls.Add(this.ComboBox_Certificate);
@@ -302,5 +316,6 @@
         private MaterialSkin.Controls.MaterialButton BtnNew_Certificate;
         private MaterialSkin.Controls.MaterialButton BtnUnassign_Certificate;
         private MaterialSkin.Controls.MaterialLabel Lbl_Certificate;
+        private MaterialSkin.Controls.MaterialLabel Lbl_Id_Instrument;
     }
 }

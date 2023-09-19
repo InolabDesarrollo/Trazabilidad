@@ -91,7 +91,10 @@ namespace CTZ.Vista.Responsabilitis
             return controler.selectAllFromInstrument(id);
         }
 
-        
-        
+        public DataTable selectAllRegistAndCertificates()
+        {
+            return controler.selectAllRegistAndCertificates();
+        }
+
     }
 }

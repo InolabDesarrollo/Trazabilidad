@@ -2,6 +2,7 @@
 using CTZ.Modelo.Trazabilidad;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -18,18 +19,19 @@ namespace CTZ.Vista.Responsabilitis
         public  string number;
         public  string use;
         public  string laboratory;
-
+        public  string dateOfRegist;
         C_Certificate controler = new C_Certificate();
 
         public Certificate(string dateCalibration,string nextCalibration,string link,
-            string number,string use, string laboratory) {
+            string number,string use, string laboratory,string dateOfRegist) {
 
             this.dateCalibration = dateCalibration;
             this.nextCalibration = nextCalibration;
             this.link = link;
             this.number = number;
             this.use = use;
-            this.laboratory = laboratory;            
+            this.laboratory = laboratory;
+            this.dateOfRegist = dateOfRegist;
         }
 
         public Certificate()
@@ -40,7 +42,7 @@ namespace CTZ.Vista.Responsabilitis
         public void add()
         {
             Certificate certificate = new Certificate(this.dateCalibration, this.nextCalibration, this.link,
-                this.number, this.use, this.laboratory);
+                this.number, this.use, this.laboratory,this.dateOfRegist);
             controler.add(certificate);
         }
 
@@ -64,7 +66,6 @@ namespace CTZ.Vista.Responsabilitis
             return controler.checkIfNumberExist(number);
         }
 
-
-
+       
     }
 }

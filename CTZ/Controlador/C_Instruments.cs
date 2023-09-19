@@ -27,6 +27,11 @@ namespace CTZ.Controlador
             return repository.consultarTodosLosRegistros();
         }
 
+        public DataTable selectInstrumentsAndCertificates()
+        {
+            return repository.selectInstrumentsAndCertificates();
+        }
+
         public void addNewInstrument(Instruments instrument)
         {
             repository.addNewInstrument(instrument);
@@ -48,6 +53,11 @@ namespace CTZ.Controlador
         public DataTable selectAllFromInstrument(string id)
         {
             return repository.serchAllFromInstrument(id);
+        }
+
+        public DataTable selectAllRegistAndCertificates()
+        {
+            return repository.selectAllRegistAndCertificates();
         }
 
     }

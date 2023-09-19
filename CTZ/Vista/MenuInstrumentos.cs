@@ -46,36 +46,37 @@ namespace CTZ.Vista
         private void Btn_All_Click(object sender, EventArgs e)
         {
             Dgv_Instrumentos.DataSource = instrument.getAllRegister();
-            colorCells();
-        }
-
-        private void colorCells()
-        {
-            for (int i = 0; i < Dgv_Instrumentos.Rows.Count-1; i++)
-            {
-                string valor = Dgv_Instrumentos.Rows[i].Cells[8].Value.ToString();
-                if (valor.Equals("FUERA DE USO"))
-                {
-                    Dgv_Instrumentos.Rows[i].Cells[8].Style.BackColor = Color.Red;
-                }
-                if (valor.Equals("ACTIVO"))
-                {
-                    Dgv_Instrumentos.Rows[i].Cells[8].Style.BackColor = Color.LightGreen;
-                }
-                if (valor.Equals("CALIBRANDO"))
-                {
-                    Dgv_Instrumentos.Rows[i].Cells[8].Style.BackColor = Color.Orange;
-                }
-                if (valor.Equals("PENDIENTE"))
-                {
-                    Dgv_Instrumentos.Rows[i].Cells[8].Style.BackColor = Color.Blue;
-                }
-            }
+            colorCells(8);
         }
 
         private void Btn_Actives_Click(object sender, EventArgs e)
         {
             Dgv_Instrumentos.DataSource = instrument.getActiveRegist();
+            colorCells(8);
+        }
+
+        private void colorCells(int columnThatNeedColor)
+        {
+            for (int i = 0; i < Dgv_Instrumentos.Rows.Count - 1; i++)
+            {
+                string valor = Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Value.ToString();
+                if (valor.Equals("FUERA DE USO"))
+                {
+                    Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
+                }
+                if (valor.Equals("ACTIVO"))
+                {
+                    Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
+                }
+                if (valor.Equals("CALIBRANDO"))
+                {
+                    Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
+                }
+                if (valor.Equals("PENDIENTE"))
+                {
+                    Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Blue;
+                }
+            }
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -106,10 +107,13 @@ namespace CTZ.Vista
                     UpdateInstrument instrument = new UpdateInstrument(idInstrument, idSql);
                     instrument.Show();
                     break;
-                case 2:
-                    int c = 0;
-                    break;
             }
+        }
+
+        private void Btn_Instruments_Certificates_Click(object sender, EventArgs e)
+        {
+            Dgv_Instrumentos.DataSource = instrument.selectAllRegistAndCertificates();
+            colorCells(8);
         }
     }
 }

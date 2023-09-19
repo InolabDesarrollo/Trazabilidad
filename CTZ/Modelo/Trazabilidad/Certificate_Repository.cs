@@ -2,6 +2,7 @@
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,9 @@ namespace CTZ.Modelo.Trazabilidad
         
         public void add(Certificate certificate)
         {
-            conexion.executeQuery("INSERT INTO Certificados(Fecha_De_Calibracion,Proxima_Calibracion,Link,Numero,Uso,Laboratorio)" +
+            conexion.executeQuery("INSERT INTO Certificados(Fecha_De_Calibracion,Proxima_Calibracion,Link,Numero,Uso,Laboratorio,Fecha_De_Registro)" +
                 "\r\nVALUES('"+certificate.dateCalibration+"','"+certificate.nextCalibration+"', '"+certificate.link+"'," +
-                " '"+certificate.number+"','"+certificate.use+"','"+certificate.laboratory+"' )");
+                " '"+certificate.number+"','"+certificate.use+"','"+certificate.laboratory+"', '"+certificate.dateOfRegist+"' )");
         }
 
         public string getColumn(string column,string number)
@@ -46,6 +47,8 @@ namespace CTZ.Modelo.Trazabilidad
         {
             return conexion.isThereSomeInformation("SELECT Numero FROM Certificados where Numero = '"+ number + "';");
         }
+
+        
 
     }
 }

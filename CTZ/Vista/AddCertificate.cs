@@ -40,7 +40,8 @@ namespace CTZ.Vista.Responsabilitis
                 string dateNextCalibration = convertToValidDate(DatePicker_NextCalibration.Text);
 
                 certificate = new Certificate(dateCalibration, dateNextCalibration,
-                    TxtBox_Link.Text, TxtBox_Number.Text, ComboBox_Use.SelectedItem.ToString(), TxtBox_Laboratory.Text);
+                    TxtBox_Link.Text, TxtBox_Number.Text, ComboBox_Use.SelectedItem.ToString(), TxtBox_Laboratory.Text,
+                    DateTime.Now.ToString("yyyy-MM-dd HH:mm"));
                 if (certificate.checkIfNumberExist())
                 {
                     MessageBox.Show("El numero de Certificado ya existe");

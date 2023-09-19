@@ -41,6 +41,7 @@
             this.BtnUpdate_Instrument = new System.Windows.Forms.Button();
             this.BtnDelete_Instruments = new System.Windows.Forms.Button();
             this.Btn_Add = new System.Windows.Forms.Button();
+            this.Btn_Instruments_Certificates = new System.Windows.Forms.Button();
             this.Pnl_Head.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).BeginInit();
@@ -124,11 +125,12 @@
             // Pnl_See
             // 
             this.Pnl_See.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pnl_See.Controls.Add(this.Btn_Instruments_Certificates);
             this.Pnl_See.Controls.Add(this.Btn_Actives);
             this.Pnl_See.Controls.Add(this.Btn_All);
             this.Pnl_See.Location = new System.Drawing.Point(0, 104);
             this.Pnl_See.Name = "Pnl_See";
-            this.Pnl_See.Size = new System.Drawing.Size(85, 87);
+            this.Pnl_See.Size = new System.Drawing.Size(85, 135);
             this.Pnl_See.TabIndex = 5;
             this.Pnl_See.Visible = false;
             // 
@@ -138,7 +140,7 @@
             this.Btn_Actives.FlatAppearance.BorderSize = 0;
             this.Btn_Actives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Actives.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Actives.Location = new System.Drawing.Point(-3, 41);
+            this.Btn_Actives.Location = new System.Drawing.Point(0, 43);
             this.Btn_Actives.Name = "Btn_Actives";
             this.Btn_Actives.Size = new System.Drawing.Size(85, 46);
             this.Btn_Actives.TabIndex = 8;
@@ -168,7 +170,7 @@
             this.Pnl_Regist.Controls.Add(this.Btn_Add);
             this.Pnl_Regist.Location = new System.Drawing.Point(80, 104);
             this.Pnl_Regist.Name = "Pnl_Regist";
-            this.Pnl_Regist.Size = new System.Drawing.Size(100, 127);
+            this.Pnl_Regist.Size = new System.Drawing.Size(100, 135);
             this.Pnl_Regist.TabIndex = 6;
             this.Pnl_Regist.Visible = false;
             // 
@@ -178,9 +180,9 @@
             this.BtnUpdate_Instrument.FlatAppearance.BorderSize = 0;
             this.BtnUpdate_Instrument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUpdate_Instrument.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUpdate_Instrument.Location = new System.Drawing.Point(0, 83);
+            this.BtnUpdate_Instrument.Location = new System.Drawing.Point(0, 79);
             this.BtnUpdate_Instrument.Name = "BtnUpdate_Instrument";
-            this.BtnUpdate_Instrument.Size = new System.Drawing.Size(100, 44);
+            this.BtnUpdate_Instrument.Size = new System.Drawing.Size(100, 56);
             this.BtnUpdate_Instrument.TabIndex = 10;
             this.BtnUpdate_Instrument.Text = "Actualizar";
             this.BtnUpdate_Instrument.UseVisualStyleBackColor = false;
@@ -213,6 +215,20 @@
             this.Btn_Add.Text = "Agregar";
             this.Btn_Add.UseVisualStyleBackColor = false;
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
+            // 
+            // Btn_Instruments_Certificates
+            // 
+            this.Btn_Instruments_Certificates.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Instruments_Certificates.FlatAppearance.BorderSize = 0;
+            this.Btn_Instruments_Certificates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Instruments_Certificates.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Instruments_Certificates.Location = new System.Drawing.Point(0, 84);
+            this.Btn_Instruments_Certificates.Name = "Btn_Instruments_Certificates";
+            this.Btn_Instruments_Certificates.Size = new System.Drawing.Size(82, 51);
+            this.Btn_Instruments_Certificates.TabIndex = 9;
+            this.Btn_Instruments_Certificates.Text = "UNION";
+            this.Btn_Instruments_Certificates.UseVisualStyleBackColor = false;
+            this.Btn_Instruments_Certificates.Click += new System.EventHandler(this.Btn_Instruments_Certificates_Click);
             // 
             // MenuInstrumentos
             // 
@@ -252,5 +268,6 @@
         private System.Windows.Forms.Button Btn_Add;
         private System.Windows.Forms.Button BtnDelete_Instruments;
         private System.Windows.Forms.Button BtnUpdate_Instrument;
+        private System.Windows.Forms.Button Btn_Instruments_Certificates;
     }
 }
