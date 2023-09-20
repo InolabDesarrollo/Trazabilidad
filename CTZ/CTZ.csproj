@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ADGV.0.1.0.10\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="AutoUpdater.NET, Version=1.7.0.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Autoupdater.NET.Official.1.7.0\lib\net45\AutoUpdater.NET.dll</HintPath>
     </Reference>
@@ -354,6 +357,26 @@
     <Compile Include="Modelo\Trazabilidad\ConexionTrazabilidad.cs" />
     <Compile Include="Modelo\Trazabilidad\Instrument_Repository.cs" />
     <Compile Include="Modelo\Trazabilidad\RelationCertificateInstrument_Repository.cs" />
+    <Compile Include="TrazabilidadTestDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrazabilidadTestDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TrazabilidadTestDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrazabilidadTestDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TrazabilidadTestDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrazabilidadTestDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TrazabilidadTest_Instrumentos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vista\DeleteInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -796,6 +819,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TrazabilidadTestDataSet.xsc">
+      <DependentUpon>TrazabilidadTestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTestDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TrazabilidadTestDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrazabilidadTestDataSet.xss">
+      <DependentUpon>TrazabilidadTestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTestDataSet1.xsc">
+      <DependentUpon>TrazabilidadTestDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTestDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TrazabilidadTestDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrazabilidadTestDataSet1.xss">
+      <DependentUpon>TrazabilidadTestDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTestDataSet2.xsc">
+      <DependentUpon>TrazabilidadTestDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTestDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TrazabilidadTestDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrazabilidadTestDataSet2.xss">
+      <DependentUpon>TrazabilidadTestDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTest_Instrumentos.xsc">
+      <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTest_Instrumentos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TrazabilidadTest_Instrumentos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrazabilidadTest_Instrumentos.xss">
+      <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

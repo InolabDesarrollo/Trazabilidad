@@ -1783,13 +1783,7 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\System.Text.Json
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\System.ValueTuple.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\EnvDTE.dll
-C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
-C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\stdole.dll
-C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
-C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
-C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
-C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Microsoft.MSXML.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\AutoUpdater.NET.pdb
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\AutoUpdater.NET.xml
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\HtmlRenderer.pdb
@@ -1888,3 +1882,7 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Delete
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.UpdateInstrument.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.SerchInstrument.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Responsabilitis.AddCertificate.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\AdvancedDataGridView.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\AdvancedDataGridView.xml
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\fr\AdvancedDataGridView.resources.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\ru\AdvancedDataGridView.resources.dll

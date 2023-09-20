@@ -1,4 +1,5 @@
-﻿using CTZ.Modelo.Documentacion;
+﻿using ADGV;
+using CTZ.Modelo.Documentacion;
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,58 @@ namespace CTZ.Vista
     public partial class MenuInstrumentos : Form
     {
         Instruments instrument = new Instruments();
+        const int columnStatus = 8;
         public MenuInstrumentos()
         {
             InitializeComponent();
+            colorCells(columnStatus, Dgv_Instruments_Certificates);
+        }
+        private void MenuInstrumentos_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTest_Instrumentos.Instrumentos' Puede moverla o quitarla según sea necesario.
+            this.instrumentosTableAdapter.Fill(this.trazabilidadTest_Instrumentos.Instrumentos);
+            this.instrumentos_CertificadoTableAdapter1.Fill(this.trazabilidadTestDataSet2.Instrumentos_Certificado);
+            colorCells(columnStatus, Dgv_Instruments_Certificates);
+            colorDatesOfCalibration(10, Dgv_Instruments_Certificates);
+        }
+        private void Dgv_Instruments_Certificates_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.instrumentosCertificadoBindingSource1.Filter = Dgv_Instruments_Certificates.FilterString;
+            colorCells(columnStatus, Dgv_Instruments_Certificates);
+        }
+
+        private void Dgv_Instruments_Certificates_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    updateInstrument(Dgv_Instruments_Certificates, e);
+                    break;
+            }
+        }
+
+        private void Dgv_Instrumentos_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.instrumentosBindingSource.Filter = Dgv_Instrumentos.FilterString;
+            colorCells(columnStatus, Dgv_Instrumentos);
+        }
+
+        private void Dgv_Instrumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    updateInstrument(Dgv_Instrumentos, e);
+                    break;
+            }
+        }
+
+        private void updateInstrument(DataGridView dataGridView, DataGridViewCellEventArgs e)
+        {
+            string idSql = Dgv_Instrumentos[0, e.RowIndex].Value.ToString();
+            string idInstrument = Dgv_Instrumentos[1, e.RowIndex].Value.ToString();
+            UpdateInstrument instrument = new UpdateInstrument(idInstrument, idSql);
+            instrument.Show();
         }
 
         private void Btn_See_Click(object sender, EventArgs e)
@@ -43,39 +93,63 @@ namespace CTZ.Vista
             }
         }
 
-        private void Btn_All_Click(object sender, EventArgs e)
+        private void Btn_All_Instruments_Click(object sender, EventArgs e)
         {
-            Dgv_Instrumentos.DataSource = instrument.getAllRegister();
-            colorCells(8);
+            colorCells(columnStatus, Dgv_Instrumentos);
+            Dgv_Instruments_Certificates.Visible = false;
         }
 
-        private void Btn_Actives_Click(object sender, EventArgs e)
+        private void colorCells(int columnThatNeedColor,DataGridView dataGridView)
         {
-            Dgv_Instrumentos.DataSource = instrument.getActiveRegist();
-            colorCells(8);
-        }
-
-        private void colorCells(int columnThatNeedColor)
-        {
-            for (int i = 0; i < Dgv_Instrumentos.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
             {
-                string valor = Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Value.ToString();
+                string valor = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
                 if (valor.Equals("FUERA DE USO"))
                 {
-                    Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
+                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
                 }
                 if (valor.Equals("ACTIVO"))
                 {
-                    Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
+                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
                 }
                 if (valor.Equals("CALIBRANDO"))
                 {
-                    Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
+                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
                 }
                 if (valor.Equals("PENDIENTE"))
                 {
-                    Dgv_Instrumentos.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Blue;
+                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Blue;
                 }
+            }
+        }
+
+        private void colorDatesOfCalibration(int columnThatNeedColor, DataGridView dataGridView)
+        {
+            DateTime dateOfToday = DateTime.Now;
+
+            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
+            {
+                string valor = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
+                if (!valor.Equals(""))
+                {
+                    DateTime dateOfNextCalibration = Convert.ToDateTime(valor);
+                    int daysOfDiference = (dateOfNextCalibration-dateOfToday).Days;
+                    if(daysOfDiference >= 0 && daysOfDiference <= 10)
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
+
+                    }else if(daysOfDiference > 10 && daysOfDiference <=30)
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
+                    }else if (daysOfDiference > 30)
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
+                    }
+                    else
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGray;
+                    }
+                }             
             }
         }
 
@@ -97,23 +171,12 @@ namespace CTZ.Vista
             serchInstrument.Show();
         }
 
-        private void Dgv_Instrumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            switch (e.ColumnIndex)
-            {
-                case 1:
-                    string idSql = Dgv_Instrumentos[0, e.RowIndex].Value.ToString();
-                    string idInstrument = Dgv_Instrumentos[1,e.RowIndex].Value.ToString();
-                    UpdateInstrument instrument = new UpdateInstrument(idInstrument, idSql);
-                    instrument.Show();
-                    break;
-            }
-        }
-
         private void Btn_Instruments_Certificates_Click(object sender, EventArgs e)
         {
-            Dgv_Instrumentos.DataSource = instrument.selectAllRegistAndCertificates();
-            colorCells(8);
+            Dgv_Instruments_Certificates.Visible = true;
+            colorCells(columnStatus, Dgv_Instruments_Certificates);
         }
+
+
     }
 }
