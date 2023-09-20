@@ -47,11 +47,24 @@ namespace TestSpire
             }
         }
 
+        private void pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                Ingresar();
+            }
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            Ingresar();
+        }
+
         private void Ingresar()
         {
             try
-            {                          
-                if (User.validateUser(user.Text,pass.Text))
+            {
+                if (User.validateUser(user.Text, pass.Text))
                 {
                     DataTable userInformation = User.loginUser(user.Text, pass.Text);
 
@@ -85,19 +98,6 @@ namespace TestSpire
                     MessageBox.Show(exeption.Message.ToString());
                 }
             }
-        }
-
-        private void pass_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                Ingresar();
-            }
-        }
-
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-            Ingresar();
         }
 
     }
