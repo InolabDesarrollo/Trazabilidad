@@ -14,17 +14,18 @@ namespace CTZ.Vista
 {
     public partial class DeleteInstrument : MaterialForm
     {
-        Instruments instrument;
+        Responsabilitis.Instruments instrument;
         public DeleteInstrument()
         {
             InitializeComponent();
-            instrument = new Instruments();
+            instrument = new Responsabilitis.Instruments();
         }
 
         private void BtnDelete_Instrument_Click(object sender, EventArgs e)
         {
             instrument.deleteInstrument(TxtBox_Id.Text);
             TxtBox_Id.Clear();
+            MessageBox.Show("Instrumento con eliminado");
         }
     }
 }

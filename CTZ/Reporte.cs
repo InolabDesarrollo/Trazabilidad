@@ -198,7 +198,6 @@ namespace CTZ
             parameter.Values.Add(ft.DateToString(f1));
 
             reportViewer1.ServerReport.SetParameters(new ReportParameter[] { parameter });
-
             reportViewer1.RefreshReport();
         }
 
@@ -218,7 +217,6 @@ namespace CTZ
             {
                 reportViewer1.ShowParameterPrompts = true;
             }
-
             reportViewer1.RefreshReport();
         }
 
@@ -293,7 +291,6 @@ namespace CTZ
                 //muestra acuse desde Form1
                 case "AcuseCalibracion":
                     Text = "Acuse De Calibración";
-
                     Ver(reportViewer1, GetREPORTE1(), DateTime.Now, true);
                     break;
 
@@ -305,7 +302,6 @@ namespace CTZ
 
                 case "CalendarioCalibracionGeneral":
                     Text = "Calendario De Calibración General";
-
                     Ver(reportViewer1, GetREPORTE1(), DateTime.Now.AddYears(-1), DateTime.Now, true);
                     break;
 

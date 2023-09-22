@@ -17,14 +17,13 @@ namespace CTZ.Vista
     {
         private  string id;
         private  string idSql;
-        Instruments instrument;
+        Responsabilitis.Instruments instrument;
         DataTable certificates;
-
         public UpdateInstrument(string id)
         {
             InitializeComponent();
             this.id = id;
-            instrument = new Instruments();
+            instrument = new Responsabilitis.Instruments();
             getInformationFromInstrument(id);
         }
 
@@ -33,7 +32,7 @@ namespace CTZ.Vista
             InitializeComponent();
             this.id = idInstrument;
             this.idSql = idSql;
-            instrument = new Instruments();
+            instrument = new Responsabilitis.Instruments();
             getInformationFromInstrument(idInstrument);
         }
 
@@ -88,7 +87,7 @@ namespace CTZ.Vista
 
         private void Btn_Update_Instrument_Click(object sender, EventArgs e)
         {
-            Instruments instruments = new Instruments();
+            Responsabilitis.Instruments instruments = new Responsabilitis.Instruments();
             instrument.id = id;
             instrument.instrument = TxtBox_Instrument.Text;
             instrument.brand = TxtBox_Brand.Text;

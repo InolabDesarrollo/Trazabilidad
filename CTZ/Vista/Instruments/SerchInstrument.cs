@@ -14,11 +14,11 @@ namespace CTZ.Vista
 {
     public partial class SerchInstrument : MaterialForm
     {
-        Instruments instrument;
+        Responsabilitis.Instruments instrument;
         public SerchInstrument()
         {
             InitializeComponent();
-            instrument = new Instruments();
+            instrument = new Responsabilitis.Instruments();
         }
 
         private void Btn_Serch_Instrument_Click(object sender, EventArgs e)

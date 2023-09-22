@@ -377,11 +377,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Vista\DeleteInstrument.cs">
+    <Compile Include="Vista\Instruments\DeleteInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\DeleteInstrument.Designer.cs">
+    <Compile Include="Vista\Instruments\DeleteInstrument.Designer.cs">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Instruments\Instrument_General_Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\Instrument_General_Calendar.Designer.cs">
+      <DependentUpon>Instrument_General_Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\LogIn.cs">
       <SubType>Form</SubType>
@@ -448,10 +454,10 @@
     <Compile Include="Vista\MenuHerramientas.Designer.cs">
       <DependentUpon>MenuHerramientas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\MenuInstrumentos.cs">
+    <Compile Include="Vista\Instruments\MenuInstrumentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\MenuInstrumentos.Designer.cs">
+    <Compile Include="Vista\Instruments\MenuInstrumentos.Designer.cs">
       <DependentUpon>MenuInstrumentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\AddCertificate.cs">
@@ -460,19 +466,19 @@
     <Compile Include="Vista\AddCertificate.Designer.cs">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Responsabilitis\AddInstrument.cs">
+    <Compile Include="Vista\Instruments\AddInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Responsabilitis\AddInstrument.Designer.cs">
+    <Compile Include="Vista\Instruments\AddInstrument.Designer.cs">
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Responsabilitis\Certificate.cs" />
     <Compile Include="Vista\Responsabilitis\Instruments.cs" />
     <Compile Include="Vista\Responsabilitis\RelationCertificateInstrument.cs" />
-    <Compile Include="Vista\SerchInstrument.cs">
+    <Compile Include="Vista\Instruments\SerchInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\SerchInstrument.Designer.cs">
+    <Compile Include="Vista\Instruments\SerchInstrument.Designer.cs">
       <DependentUpon>SerchInstrument.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\SubMenu.cs">
@@ -481,10 +487,10 @@
     <Compile Include="Vista\SubMenu.Designer.cs">
       <DependentUpon>SubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\UpdateInstrument.cs">
+    <Compile Include="Vista\Instruments\UpdateInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\UpdateInstrument.Designer.cs">
+    <Compile Include="Vista\Instruments\UpdateInstrument.Designer.cs">
       <DependentUpon>UpdateInstrument.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddCarta.resx">
@@ -550,8 +556,11 @@
     <EmbeddedResource Include="Vista\AddCertificate.resx">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\DeleteInstrument.resx">
+    <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\Instrument_General_Calendar.resx">
+      <DependentUpon>Instrument_General_Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -593,19 +602,19 @@
     <EmbeddedResource Include="Vista\MenuHerramientas.resx">
       <DependentUpon>MenuHerramientas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\MenuInstrumentos.resx">
+    <EmbeddedResource Include="Vista\Instruments\MenuInstrumentos.resx">
       <DependentUpon>MenuInstrumentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Responsabilitis\AddInstrument.resx">
+    <EmbeddedResource Include="Vista\Instruments\AddInstrument.resx">
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\SerchInstrument.resx">
+    <EmbeddedResource Include="Vista\Instruments\SerchInstrument.resx">
       <DependentUpon>SerchInstrument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\SubMenu.resx">
       <DependentUpon>SubMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\UpdateInstrument.resx">
+    <EmbeddedResource Include="Vista\Instruments\UpdateInstrument.resx">
       <DependentUpon>UpdateInstrument.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AsignacionDataSet.xsc">

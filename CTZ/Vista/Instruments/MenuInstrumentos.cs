@@ -1,5 +1,6 @@
 ﻿using ADGV;
 using CTZ.Modelo.Documentacion;
+using CTZ.Vista.Instruments;
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace CTZ.Vista
 {
     public partial class MenuInstrumentos : Form
     {
-        Instruments instrument = new Instruments();
+        Responsabilitis.Instruments instrument = new Responsabilitis.Instruments();
         const int columnStatus = 8;
         public MenuInstrumentos()
         {
@@ -35,7 +36,6 @@ namespace CTZ.Vista
         private void colorDatesOfCalibration(int columnThatNeedColor, DataGridView dataGridView)
         {
             DateTime dateOfToday = DateTime.Now;
-
             for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
             {
                 string valor = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
@@ -43,10 +43,10 @@ namespace CTZ.Vista
                 {
                     DateTime dateOfNextCalibration = Convert.ToDateTime(valor);
                     int daysOfDiference = (dateOfNextCalibration - dateOfToday).Days;
+
                     if (daysOfDiference >= 0 && daysOfDiference <= 10)
                     {
                         dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
-
                     }
                     else if (daysOfDiference > 10 && daysOfDiference <= 30)
                     {
@@ -165,6 +165,15 @@ namespace CTZ.Vista
         {
             showMenu(Pnl_Regist);
         }
+        private void Btn_Certificates_Click(object sender, EventArgs e)
+        {
+            showMenu(Pnl_Certificates);
+        }
+        private void Btn_General_Certificate_Click(object sender, EventArgs e)
+        {
+            Instrument_General_Calendar general_Calendar = new Instrument_General_Calendar();
+            general_Calendar.Show();
+        }
 
         private void showMenu(System.Windows.Forms.Panel panel)
         {
@@ -177,5 +186,7 @@ namespace CTZ.Vista
                 panel.Visible = false;
             }
         }
+
+        
     }
 }

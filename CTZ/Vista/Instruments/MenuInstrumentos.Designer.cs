@@ -72,9 +72,12 @@
             this.uBICACIÓNDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oBSERVACIÓNDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eSTATUSDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trazabilidadTest_Instrumentos = new CTZ.TrazabilidadTest_Instrumentos();
             this.instrumentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trazabilidadTest_Instrumentos = new CTZ.TrazabilidadTest_Instrumentos();
             this.instrumentosTableAdapter = new CTZ.TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter();
+            this.Btn_Certificates = new System.Windows.Forms.Button();
+            this.Pnl_Certificates = new System.Windows.Forms.Panel();
+            this.Btn_General_Certificate = new System.Windows.Forms.Button();
             this.Pnl_Head.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).BeginInit();
@@ -86,14 +89,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instrumentos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTest_Instrumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTest_Instrumentos)).BeginInit();
+            this.Pnl_Certificates.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_Head
             // 
             this.Pnl_Head.AutoSize = true;
             this.Pnl_Head.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Pnl_Head.Controls.Add(this.Btn_Certificates);
             this.Pnl_Head.Controls.Add(this.Btn_Regist);
             this.Pnl_Head.Controls.Add(this.Btn_See);
             this.Pnl_Head.Controls.Add(this.pictureBox1);
@@ -518,25 +523,64 @@
             this.eSTATUSDataGridViewTextBoxColumn1.Name = "eSTATUSDataGridViewTextBoxColumn1";
             this.eSTATUSDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // trazabilidadTest_Instrumentos
-            // 
-            this.trazabilidadTest_Instrumentos.DataSetName = "TrazabilidadTest_Instrumentos";
-            this.trazabilidadTest_Instrumentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // instrumentosBindingSource
             // 
             this.instrumentosBindingSource.DataMember = "Instrumentos";
             this.instrumentosBindingSource.DataSource = this.trazabilidadTest_Instrumentos;
             // 
+            // trazabilidadTest_Instrumentos
+            // 
+            this.trazabilidadTest_Instrumentos.DataSetName = "TrazabilidadTest_Instrumentos";
+            this.trazabilidadTest_Instrumentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // instrumentosTableAdapter
             // 
             this.instrumentosTableAdapter.ClearBeforeFill = true;
+            // 
+            // Btn_Certificates
+            // 
+            this.Btn_Certificates.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Certificates.FlatAppearance.BorderSize = 0;
+            this.Btn_Certificates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Certificates.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Certificates.Location = new System.Drawing.Point(226, 40);
+            this.Btn_Certificates.Name = "Btn_Certificates";
+            this.Btn_Certificates.Size = new System.Drawing.Size(115, 64);
+            this.Btn_Certificates.TabIndex = 10;
+            this.Btn_Certificates.Text = "Certificados";
+            this.Btn_Certificates.UseVisualStyleBackColor = false;
+            this.Btn_Certificates.Click += new System.EventHandler(this.Btn_Certificates_Click);
+            // 
+            // Pnl_Certificates
+            // 
+            this.Pnl_Certificates.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pnl_Certificates.Controls.Add(this.Btn_General_Certificate);
+            this.Pnl_Certificates.Location = new System.Drawing.Point(226, 104);
+            this.Pnl_Certificates.Name = "Pnl_Certificates";
+            this.Pnl_Certificates.Size = new System.Drawing.Size(115, 120);
+            this.Pnl_Certificates.TabIndex = 10;
+            this.Pnl_Certificates.Visible = false;
+            // 
+            // Btn_General_Certificate
+            // 
+            this.Btn_General_Certificate.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_General_Certificate.FlatAppearance.BorderSize = 0;
+            this.Btn_General_Certificate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_General_Certificate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_General_Certificate.Location = new System.Drawing.Point(0, 0);
+            this.Btn_General_Certificate.Name = "Btn_General_Certificate";
+            this.Btn_General_Certificate.Size = new System.Drawing.Size(115, 54);
+            this.Btn_General_Certificate.TabIndex = 11;
+            this.Btn_General_Certificate.Text = "General";
+            this.Btn_General_Certificate.UseVisualStyleBackColor = false;
+            this.Btn_General_Certificate.Click += new System.EventHandler(this.Btn_General_Certificate_Click);
             // 
             // MenuInstrumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 488);
+            this.Controls.Add(this.Pnl_Certificates);
             this.Controls.Add(this.Pnl_Regist);
             this.Controls.Add(this.Pnl_See);
             this.Controls.Add(this.Pnl_Head);
@@ -557,8 +601,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instrumentos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTest_Instrumentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTest_Instrumentos)).EndInit();
+            this.Pnl_Certificates.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,5 +657,8 @@
         private TrazabilidadTest_Instrumentos trazabilidadTest_Instrumentos;
         private System.Windows.Forms.BindingSource instrumentosBindingSource;
         private TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter instrumentosTableAdapter;
+        private System.Windows.Forms.Button Btn_Certificates;
+        private System.Windows.Forms.Panel Pnl_Certificates;
+        private System.Windows.Forms.Button Btn_General_Certificate;
     }
 }
