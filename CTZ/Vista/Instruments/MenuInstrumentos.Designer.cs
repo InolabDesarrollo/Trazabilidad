@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Pnl_Head = new System.Windows.Forms.Panel();
+            this.Btn_Calendar = new System.Windows.Forms.Button();
             this.Btn_Regist = new System.Windows.Forms.Button();
             this.Btn_See = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -75,9 +76,8 @@
             this.instrumentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTest_Instrumentos = new CTZ.TrazabilidadTest_Instrumentos();
             this.instrumentosTableAdapter = new CTZ.TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter();
-            this.Btn_Certificates = new System.Windows.Forms.Button();
-            this.Pnl_Certificates = new System.Windows.Forms.Panel();
-            this.Btn_General_Certificate = new System.Windows.Forms.Button();
+            this.Pnl_Calendar = new System.Windows.Forms.Panel();
+            this.Btn_General_Calendar = new System.Windows.Forms.Button();
             this.Pnl_Head.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).BeginInit();
@@ -91,14 +91,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instrumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTest_Instrumentos)).BeginInit();
-            this.Pnl_Certificates.SuspendLayout();
+            this.Pnl_Calendar.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_Head
             // 
             this.Pnl_Head.AutoSize = true;
             this.Pnl_Head.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Pnl_Head.Controls.Add(this.Btn_Certificates);
+            this.Pnl_Head.Controls.Add(this.Btn_Calendar);
             this.Pnl_Head.Controls.Add(this.Btn_Regist);
             this.Pnl_Head.Controls.Add(this.Btn_See);
             this.Pnl_Head.Controls.Add(this.pictureBox1);
@@ -107,6 +107,20 @@
             this.Pnl_Head.Name = "Pnl_Head";
             this.Pnl_Head.Size = new System.Drawing.Size(921, 107);
             this.Pnl_Head.TabIndex = 1;
+            // 
+            // Btn_Calendar
+            // 
+            this.Btn_Calendar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Calendar.FlatAppearance.BorderSize = 0;
+            this.Btn_Calendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Calendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Calendar.Location = new System.Drawing.Point(226, 40);
+            this.Btn_Calendar.Name = "Btn_Calendar";
+            this.Btn_Calendar.Size = new System.Drawing.Size(127, 64);
+            this.Btn_Calendar.TabIndex = 10;
+            this.Btn_Calendar.Text = "Calendarios";
+            this.Btn_Calendar.UseVisualStyleBackColor = false;
+            this.Btn_Calendar.Click += new System.EventHandler(this.Btn_Calendars_Click);
             // 
             // Btn_Regist
             // 
@@ -537,50 +551,36 @@
             // 
             this.instrumentosTableAdapter.ClearBeforeFill = true;
             // 
-            // Btn_Certificates
+            // Pnl_Calendar
             // 
-            this.Btn_Certificates.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Btn_Certificates.FlatAppearance.BorderSize = 0;
-            this.Btn_Certificates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Certificates.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Certificates.Location = new System.Drawing.Point(226, 40);
-            this.Btn_Certificates.Name = "Btn_Certificates";
-            this.Btn_Certificates.Size = new System.Drawing.Size(115, 64);
-            this.Btn_Certificates.TabIndex = 10;
-            this.Btn_Certificates.Text = "Certificados";
-            this.Btn_Certificates.UseVisualStyleBackColor = false;
-            this.Btn_Certificates.Click += new System.EventHandler(this.Btn_Certificates_Click);
+            this.Pnl_Calendar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pnl_Calendar.Controls.Add(this.Btn_General_Calendar);
+            this.Pnl_Calendar.Location = new System.Drawing.Point(226, 104);
+            this.Pnl_Calendar.Name = "Pnl_Calendar";
+            this.Pnl_Calendar.Size = new System.Drawing.Size(127, 120);
+            this.Pnl_Calendar.TabIndex = 10;
+            this.Pnl_Calendar.Visible = false;
             // 
-            // Pnl_Certificates
+            // Btn_General_Calendar
             // 
-            this.Pnl_Certificates.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Pnl_Certificates.Controls.Add(this.Btn_General_Certificate);
-            this.Pnl_Certificates.Location = new System.Drawing.Point(226, 104);
-            this.Pnl_Certificates.Name = "Pnl_Certificates";
-            this.Pnl_Certificates.Size = new System.Drawing.Size(115, 120);
-            this.Pnl_Certificates.TabIndex = 10;
-            this.Pnl_Certificates.Visible = false;
-            // 
-            // Btn_General_Certificate
-            // 
-            this.Btn_General_Certificate.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Btn_General_Certificate.FlatAppearance.BorderSize = 0;
-            this.Btn_General_Certificate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_General_Certificate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_General_Certificate.Location = new System.Drawing.Point(0, 0);
-            this.Btn_General_Certificate.Name = "Btn_General_Certificate";
-            this.Btn_General_Certificate.Size = new System.Drawing.Size(115, 54);
-            this.Btn_General_Certificate.TabIndex = 11;
-            this.Btn_General_Certificate.Text = "General";
-            this.Btn_General_Certificate.UseVisualStyleBackColor = false;
-            this.Btn_General_Certificate.Click += new System.EventHandler(this.Btn_General_Certificate_Click);
+            this.Btn_General_Calendar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_General_Calendar.FlatAppearance.BorderSize = 0;
+            this.Btn_General_Calendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_General_Calendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_General_Calendar.Location = new System.Drawing.Point(0, 0);
+            this.Btn_General_Calendar.Name = "Btn_General_Calendar";
+            this.Btn_General_Calendar.Size = new System.Drawing.Size(124, 54);
+            this.Btn_General_Calendar.TabIndex = 11;
+            this.Btn_General_Calendar.Text = "General";
+            this.Btn_General_Calendar.UseVisualStyleBackColor = false;
+            this.Btn_General_Calendar.Click += new System.EventHandler(this.Btn_General_Calendar_Click);
             // 
             // MenuInstrumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 488);
-            this.Controls.Add(this.Pnl_Certificates);
+            this.Controls.Add(this.Pnl_Calendar);
             this.Controls.Add(this.Pnl_Regist);
             this.Controls.Add(this.Pnl_See);
             this.Controls.Add(this.Pnl_Head);
@@ -603,7 +603,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instrumentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTest_Instrumentos)).EndInit();
-            this.Pnl_Certificates.ResumeLayout(false);
+            this.Pnl_Calendar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,8 +657,8 @@
         private TrazabilidadTest_Instrumentos trazabilidadTest_Instrumentos;
         private System.Windows.Forms.BindingSource instrumentosBindingSource;
         private TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter instrumentosTableAdapter;
-        private System.Windows.Forms.Button Btn_Certificates;
-        private System.Windows.Forms.Panel Pnl_Certificates;
-        private System.Windows.Forms.Button Btn_General_Certificate;
+        private System.Windows.Forms.Button Btn_Calendar;
+        private System.Windows.Forms.Panel Pnl_Calendar;
+        private System.Windows.Forms.Button Btn_General_Calendar;
     }
 }

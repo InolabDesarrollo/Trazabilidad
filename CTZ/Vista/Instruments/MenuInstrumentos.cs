@@ -165,14 +165,16 @@ namespace CTZ.Vista
         {
             showMenu(Pnl_Regist);
         }
-        private void Btn_Certificates_Click(object sender, EventArgs e)
+
+        private void Btn_Calendars_Click(object sender, EventArgs e)
         {
-            showMenu(Pnl_Certificates);
+            showMenu(Pnl_Calendar);
         }
-        private void Btn_General_Certificate_Click(object sender, EventArgs e)
+
+        private void Btn_General_Calendar_Click(object sender, EventArgs e)
         {
-            Instrument_General_Calendar general_Calendar = new Instrument_General_Calendar();
-            general_Calendar.Show();
+            Report report = new Report("Calendario_Instrumentos_General");
+            report.Show();
         }
 
         private void showMenu(System.Windows.Forms.Panel panel)
@@ -187,6 +189,6 @@ namespace CTZ.Vista
             }
         }
 
-        
+       
     }
 }

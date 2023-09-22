@@ -383,12 +383,6 @@
     <Compile Include="Vista\Instruments\DeleteInstrument.Designer.cs">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Instrument_General_Calendar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Instruments\Instrument_General_Calendar.Designer.cs">
-      <DependentUpon>Instrument_General_Calendar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -481,6 +475,12 @@
     <Compile Include="Vista\Instruments\SerchInstrument.Designer.cs">
       <DependentUpon>SerchInstrument.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Responsabilitis\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Responsabilitis\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -559,9 +559,6 @@
     <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Instrument_General_Calendar.resx">
-      <DependentUpon>Instrument_General_Calendar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -610,6 +607,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\SerchInstrument.resx">
       <DependentUpon>SerchInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Responsabilitis\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\SubMenu.resx">
       <DependentUpon>SubMenu.cs</DependentUpon>
