@@ -1886,5 +1886,6 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\AdvancedDataGrid
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\AdvancedDataGridView.xml
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\fr\AdvancedDataGridView.resources.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\ru\AdvancedDataGridView.resources.dll
-C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instruments.Instrument_General_Calendar.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Responsabilitis.Report.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Certificates.SerchCertificate.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Traceability.AddTraceability_Letter.resources

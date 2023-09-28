@@ -204,6 +204,7 @@
     <Compile Include="Controlador\C_Certificate.cs" />
     <Compile Include="Controlador\C_Instruments.cs" />
     <Compile Include="Controlador\C_RelationCertificateInstrument.cs" />
+    <Compile Include="Controlador\C_TraceabilityRepository.cs" />
     <Compile Include="Controlador\C_Usuario.cs" />
     <Compile Include="ctzWF.cs">
       <SubType>Form</SubType>
@@ -357,6 +358,7 @@
     <Compile Include="Modelo\Trazabilidad\ConexionTrazabilidad.cs" />
     <Compile Include="Modelo\Trazabilidad\Instrument_Repository.cs" />
     <Compile Include="Modelo\Trazabilidad\RelationCertificateInstrument_Repository.cs" />
+    <Compile Include="Modelo\Trazabilidad\Traceability_Repository.cs" />
     <Compile Include="TrazabilidadTestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -376,6 +378,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Certificates\SerchCertificate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Certificates\SerchCertificate.Designer.cs">
+      <DependentUpon>SerchCertificate.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Instruments\DeleteInstrument.cs">
       <SubType>Form</SubType>
@@ -454,10 +462,10 @@
     <Compile Include="Vista\Instruments\MenuInstrumentos.Designer.cs">
       <DependentUpon>MenuInstrumentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\AddCertificate.cs">
+    <Compile Include="Vista\Certificates\AddCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\AddCertificate.Designer.cs">
+    <Compile Include="Vista\Certificates\AddCertificate.Designer.cs">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Instruments\AddInstrument.cs">
@@ -466,7 +474,7 @@
     <Compile Include="Vista\Instruments\AddInstrument.Designer.cs">
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Responsabilitis\Certificate.cs" />
+    <Compile Include="Vista\Certificates\Certificate.cs" />
     <Compile Include="Vista\Responsabilitis\Instruments.cs" />
     <Compile Include="Vista\Responsabilitis\RelationCertificateInstrument.cs" />
     <Compile Include="Vista\Instruments\SerchInstrument.cs">
@@ -493,6 +501,13 @@
     <Compile Include="Vista\Instruments\UpdateInstrument.Designer.cs">
       <DependentUpon>UpdateInstrument.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Traceability\AddTraceability_Letter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Traceability\AddTraceability_Letter.Designer.cs">
+      <DependentUpon>AddTraceability_Letter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Traceability\Traceability_Letter.cs" />
     <EmbeddedResource Include="AddCarta.resx">
       <DependentUpon>AddCarta.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,8 +568,11 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\AddCertificate.resx">
+    <EmbeddedResource Include="Vista\Certificates\AddCertificate.resx">
       <DependentUpon>AddCertificate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Certificates\SerchCertificate.resx">
+      <DependentUpon>SerchCertificate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
@@ -616,6 +634,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\UpdateInstrument.resx">
       <DependentUpon>UpdateInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Traceability\AddTraceability_Letter.resx">
+      <DependentUpon>AddTraceability_Letter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AsignacionDataSet.xsc">
       <DependentUpon>AsignacionDataSet.xsd</DependentUpon>

@@ -78,6 +78,9 @@
             this.instrumentosTableAdapter = new CTZ.TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter();
             this.Pnl_Calendar = new System.Windows.Forms.Panel();
             this.Btn_General_Calendar = new System.Windows.Forms.Button();
+            this.Btn_Traceability = new System.Windows.Forms.Button();
+            this.Pnl_Traceability = new System.Windows.Forms.Panel();
+            this.Btn_AddTraceability = new System.Windows.Forms.Button();
             this.Pnl_Head.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).BeginInit();
@@ -92,12 +95,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTest_Instrumentos)).BeginInit();
             this.Pnl_Calendar.SuspendLayout();
+            this.Pnl_Traceability.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_Head
             // 
             this.Pnl_Head.AutoSize = true;
             this.Pnl_Head.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Pnl_Head.Controls.Add(this.Btn_Traceability);
             this.Pnl_Head.Controls.Add(this.Btn_Calendar);
             this.Pnl_Head.Controls.Add(this.Btn_Regist);
             this.Pnl_Head.Controls.Add(this.Btn_See);
@@ -575,11 +580,50 @@
             this.Btn_General_Calendar.UseVisualStyleBackColor = false;
             this.Btn_General_Calendar.Click += new System.EventHandler(this.Btn_General_Calendar_Click);
             // 
+            // Btn_Traceability
+            // 
+            this.Btn_Traceability.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Traceability.FlatAppearance.BorderSize = 0;
+            this.Btn_Traceability.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Traceability.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Traceability.Location = new System.Drawing.Point(349, 40);
+            this.Btn_Traceability.Name = "Btn_Traceability";
+            this.Btn_Traceability.Size = new System.Drawing.Size(126, 64);
+            this.Btn_Traceability.TabIndex = 11;
+            this.Btn_Traceability.Text = "Trazabilidad";
+            this.Btn_Traceability.UseVisualStyleBackColor = false;
+            this.Btn_Traceability.Click += new System.EventHandler(this.Btn_Traceability_Click);
+            // 
+            // Pnl_Traceability
+            // 
+            this.Pnl_Traceability.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pnl_Traceability.Controls.Add(this.Btn_AddTraceability);
+            this.Pnl_Traceability.Location = new System.Drawing.Point(349, 104);
+            this.Pnl_Traceability.Name = "Pnl_Traceability";
+            this.Pnl_Traceability.Size = new System.Drawing.Size(126, 120);
+            this.Pnl_Traceability.TabIndex = 11;
+            this.Pnl_Traceability.Visible = false;
+            // 
+            // Btn_AddTraceability
+            // 
+            this.Btn_AddTraceability.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_AddTraceability.FlatAppearance.BorderSize = 0;
+            this.Btn_AddTraceability.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_AddTraceability.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddTraceability.Location = new System.Drawing.Point(0, 0);
+            this.Btn_AddTraceability.Name = "Btn_AddTraceability";
+            this.Btn_AddTraceability.Size = new System.Drawing.Size(126, 49);
+            this.Btn_AddTraceability.TabIndex = 11;
+            this.Btn_AddTraceability.Text = "Agregar";
+            this.Btn_AddTraceability.UseVisualStyleBackColor = false;
+            this.Btn_AddTraceability.Click += new System.EventHandler(this.Btn_AddTraceability_Click);
+            // 
             // MenuInstrumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 488);
+            this.Controls.Add(this.Pnl_Traceability);
             this.Controls.Add(this.Pnl_Calendar);
             this.Controls.Add(this.Pnl_Regist);
             this.Controls.Add(this.Pnl_See);
@@ -604,6 +648,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTest_Instrumentos)).EndInit();
             this.Pnl_Calendar.ResumeLayout(false);
+            this.Pnl_Traceability.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,5 +705,8 @@
         private System.Windows.Forms.Button Btn_Calendar;
         private System.Windows.Forms.Panel Pnl_Calendar;
         private System.Windows.Forms.Button Btn_General_Calendar;
+        private System.Windows.Forms.Button Btn_Traceability;
+        private System.Windows.Forms.Panel Pnl_Traceability;
+        private System.Windows.Forms.Button Btn_AddTraceability;
     }
 }
