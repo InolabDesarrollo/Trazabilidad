@@ -8,21 +8,14 @@ using System.Windows;
 
 namespace CTZ.Vista.Traceability
 {
-    public class Traceability_Letter
+    public class InternTraceability_Letter: TraceabilityLetter
     {
         public string numberCertificate;
         public string title;
-        public string enterprise;
         public string internEnterprise;
-        public string equipment;
-        public string team;
-        public string brand;
-        public string model;
-        public string numberOfSerie;
-        public string uncertainty;
 
         C_TraceabilityRepository controller;
-        public Traceability_Letter(string numberCertificate,string title,string enterprise,string internEnterprise, string equipment
+        public InternTraceability_Letter(string numberCertificate,string title,string enterprise,string internEnterprise, string equipment
             , string brand,string model,string numberOfSerie, string uncertainty) {
 
             this.numberCertificate = numberCertificate;
@@ -37,11 +30,16 @@ namespace CTZ.Vista.Traceability
             controller = new C_TraceabilityRepository();
         }
 
+        public InternTraceability_Letter(string numberCertificate)
+        {
+            this.numberCertificate=numberCertificate;
+            controller = new C_TraceabilityRepository();
+        }
+
         public void add()
         {
-            Traceability_Letter letter = new Traceability_Letter(this.numberCertificate,this.title,"",this.enterprise
+            InternTraceability_Letter letter = new InternTraceability_Letter(this.numberCertificate,this.title,"",this.enterprise
                 ,this.equipment,this.brand,this.model,this.numberOfSerie,this.uncertainty);
-
             controller.add(letter);
         }
         public string selectColumn(string column,string numberOfCertificate)
@@ -57,5 +55,12 @@ namespace CTZ.Vista.Traceability
                     "Certificado con numero " + numberOfCertificate);
             }
         }
+
+        public bool verifiTraceabilityIdLetter()
+        {
+            return controller.verifiIdTraceability(numberCertificate);
+        }
+
+       
     }
 }

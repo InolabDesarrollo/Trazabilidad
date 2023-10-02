@@ -1,4 +1,5 @@
-﻿using CTZ.Modelo.Trazabilidad;
+﻿using CTZ.Modelo;
+using CTZ.Modelo.Trazabilidad;
 using CTZ.Vista.Traceability;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace CTZ.Controlador
             repository = new Traceability_Repository();
         }
 
-        public void add(Traceability_Letter traceability)
+        public void add(InternTraceability_Letter traceability)
         {
             repository.add(traceability);
         }
@@ -25,5 +26,9 @@ namespace CTZ.Controlador
             return repository.selectColumn(column, numberOfCertificate);
         }
 
+        public bool verifiIdTraceability(string numberCertificate)
+        {
+            return repository.verifiTraceability(numberCertificate);
+        }
     }
 }

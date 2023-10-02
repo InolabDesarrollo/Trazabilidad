@@ -15,7 +15,7 @@ namespace CTZ.Modelo.Trazabilidad
             conexion = new Conexion();
         } 
         
-        public void add(Traceability_Letter traceability)
+        public void add(InternTraceability_Letter traceability)
         {
             conexion.executeQuery(" INSERT INTO CartasTrazabilidad(Numero_Certificado,Titulo,Empresa,Empresa_Interna,Equipo, Marca,Modelo,Serie,Incertidumbre)\r\n" +
                 " VALUES("+traceability.numberCertificate+",'"+traceability.title+"','"+traceability.enterprise+"','"+traceability.internEnterprise+"','"+traceability.equipment+"','"+traceability.brand+"','"+traceability.model+"','"+traceability.numberOfSerie+"','"+traceability.uncertainty+"' )");
@@ -24,6 +24,12 @@ namespace CTZ.Modelo.Trazabilidad
         public string selectColumn(string campo, string numberCertificate)
         {
             return conexion.getText("SELECT "+ campo+ " from CartasTrazabilidad WHERE Numero_Certificado = "+ numberCertificate + ";");
+        }
+
+        public bool verifiTraceability(string numberCertificate)
+        {
+            return conexion.isThereSomeInformation("SELECT Numero_Certificado FROM " +
+                " CartasTrazabilidad where Numero_Certificado = "+ numberCertificate + ";");
         }
 
     }

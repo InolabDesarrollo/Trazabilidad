@@ -1889,3 +1889,4 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\ru\AdvancedDataG
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Responsabilitis.Report.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Certificates.SerchCertificate.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Traceability.AddTraceability_Letter.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Traceability.AddExternTraceability_Letter.resources

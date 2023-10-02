@@ -15,16 +15,24 @@ namespace CTZ.Vista.Traceability
     {
         private string numberOfCertificate;
         int idTraceabilityLetter;
+        InternTraceability_Letter traceability;
         public AddTraceability_Letter(string numberOfCertificate)
         {
             InitializeComponent();
             Lbl_NumberOfCertificate.Text = "Numero de Certificado: "+numberOfCertificate;
             this.numberOfCertificate = numberOfCertificate;
+            traceability = new InternTraceability_Letter(numberOfCertificate);
+            if (traceability.verifiTraceabilityIdLetter())
+            {
+                Lbl_Warning.Text = "El certificado numero "+ numberOfCertificate + " Ya tiene carta de " +
+                    " trazabilidad interna asignada, solo agrega la externa ";
+                Btn_AddTraceabilityLetter.Visible = false;
+            }
         }
 
         private void Btn_AddTraceabilityLetter_Click(object sender, EventArgs e)
         {
-            Traceability_Letter traceability = new Traceability_Letter(numberOfCertificate, TxtBox_Title.Text,
+            traceability = new InternTraceability_Letter(numberOfCertificate, TxtBox_Title.Text,
                 "", TxtBox_Enterprise.Text, TxtBox_Team.Text, TxtBox_Brand.Text, TxtBox_Model.Text, TxtBox_NumberOfSerie.Text
                 ,TxtBox_Uncertainty.Text);
 
@@ -45,6 +53,23 @@ namespace CTZ.Vista.Traceability
             TxtBox_Uncertainty.Clear();
         }
 
- 
+        private void BtnAdd_ExternTraceability_Click(object sender, EventArgs e)
+        {
+            checkId(idTraceabilityLetter);
+        }
+
+        private void checkId(int idTraceabilityLetter)
+        {
+            if (idTraceabilityLetter != 0)
+            {
+                AddExternTraceability_Letter externTraceability = new AddExternTraceability_Letter(idTraceabilityLetter, numberOfCertificate);
+                externTraceability.Show();
+            }
+            else
+            {
+                MessageBox.Show("Debes agregar la carta de trazabilidad interna antes de la Externa");
+            }
+        }
+
     }
 }
