@@ -29,6 +29,7 @@ namespace CTZ.Vista.Certificates
             {
                 AddTraceability_Letter traceability = new AddTraceability_Letter(TxtBox_Certificate.Text);
                 traceability.Show();
+                this.Close();
             }
             else
             {

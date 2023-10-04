@@ -22,12 +22,14 @@ namespace CTZ.Vista.Traceability
             Lbl_NumberOfCertificate.Text = "Numero de Certificado: "+numberOfCertificate;
             this.numberOfCertificate = numberOfCertificate;
             traceability = new InternTraceability_Letter(numberOfCertificate);
+
             if (traceability.verifiTraceabilityIdLetter())
             {
                 Lbl_Warning.Text = "El certificado numero "+ numberOfCertificate + " Ya tiene carta de " +
                     " trazabilidad interna asignada, solo agrega la externa ";
                 Btn_AddTraceabilityLetter.Visible = false;
             }
+
         }
 
         private void Btn_AddTraceabilityLetter_Click(object sender, EventArgs e)
@@ -55,13 +57,14 @@ namespace CTZ.Vista.Traceability
 
         private void BtnAdd_ExternTraceability_Click(object sender, EventArgs e)
         {
-            checkId(idTraceabilityLetter);
+            checkId(traceability.verifiTraceabilityIdLetter());
         }
 
-        private void checkId(int idTraceabilityLetter)
+        private void checkId(bool verifiIfThereIsTraceabilityLetter)
         {
-            if (idTraceabilityLetter != 0)
+            if (verifiIfThereIsTraceabilityLetter == true)
             {
+                idTraceabilityLetter = Convert.ToInt32(traceability.selectColumn("ID", numberOfCertificate));
                 AddExternTraceability_Letter externTraceability = new AddExternTraceability_Letter(idTraceabilityLetter, numberOfCertificate);
                 externTraceability.Show();
             }
@@ -70,6 +73,7 @@ namespace CTZ.Vista.Traceability
                 MessageBox.Show("Debes agregar la carta de trazabilidad interna antes de la Externa");
             }
         }
+
 
     }
 }

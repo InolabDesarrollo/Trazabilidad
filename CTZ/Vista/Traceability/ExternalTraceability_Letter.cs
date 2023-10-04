@@ -26,8 +26,7 @@ namespace CTZ.Vista.Traceability
             this.brand = brand;
             this.model = model;
             this.numberOfSerie = numberOfSerie;
-            this.uncertainty = ununcertainty;
-            
+            this.uncertainty = ununcertainty;            
         }
 
        

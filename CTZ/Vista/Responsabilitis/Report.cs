@@ -48,5 +48,7 @@ namespace CTZ.Vista.Responsabilitis
             ReportViewer.ServerReport.ReportPath = "/Trazabilidad/" + nameOfReport;
             ReportViewer.ShowParameterPrompts = false;
         }
+
+       
     }
 }
