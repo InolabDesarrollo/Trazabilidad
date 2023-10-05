@@ -38,7 +38,7 @@ namespace CTZ.Vista.Traceability
 
         public void add()
         {
-            InternTraceability_Letter letter = new InternTraceability_Letter(this.numberCertificate,this.title,"",this.enterprise
+            InternTraceability_Letter letter = new InternTraceability_Letter(this.numberCertificate,this.title,this.internEnterprise,this.enterprise
                 ,this.equipment,this.brand,this.model,this.numberOfSerie,this.uncertainty);
             controller.add(letter);
         }
@@ -61,6 +61,5 @@ namespace CTZ.Vista.Traceability
             return controller.verifiIdTraceability(numberCertificate);
         }
 
-       
     }
 }

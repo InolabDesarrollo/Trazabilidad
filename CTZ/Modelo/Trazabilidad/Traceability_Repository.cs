@@ -18,7 +18,7 @@ namespace CTZ.Modelo.Trazabilidad
         public void add(InternTraceability_Letter traceability)
         {
             conexion.executeQuery(" INSERT INTO CartasTrazabilidad(Numero_Certificado,Titulo,Empresa,Empresa_Interna,Equipo, Marca,Modelo,Serie,Incertidumbre)\r\n" +
-                " VALUES("+traceability.numberCertificate+",'"+traceability.title+"','"+traceability.enterprise+"','"+traceability.internEnterprise+"','"+traceability.equipment+"','"+traceability.brand+"','"+traceability.model+"','"+traceability.numberOfSerie+"','"+traceability.uncertainty+"' )");
+                " VALUES("+traceability.numberCertificate+",'"+traceability.title+"','"+"Inolab Especialistas de Servicio S.A de C.V."+"','"+traceability.internEnterprise+"','"+traceability.equipment+"','"+traceability.brand+"','"+traceability.model+"','"+traceability.numberOfSerie+"','"+traceability.uncertainty+"' )");
         }
 
         public string selectColumn(string campo, string numberCertificate)

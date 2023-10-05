@@ -339,7 +339,7 @@
             // 
             this.Lbl_NumberOfLetters.AutoSize = true;
             this.Lbl_NumberOfLetters.Depth = 0;
-            this.Lbl_NumberOfLetters.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_NumberOfLetters.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Lbl_NumberOfLetters.Location = new System.Drawing.Point(27, 117);
             this.Lbl_NumberOfLetters.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_NumberOfLetters.Name = "Lbl_NumberOfLetters";
@@ -370,7 +370,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 676);
+            this.ClientSize = new System.Drawing.Size(935, 676);
             this.Controls.Add(this.Btn_See_Report);
             this.Controls.Add(this.Lbl_NumberOfLetters);
             this.Controls.Add(this.TxtBox_Equipment);
