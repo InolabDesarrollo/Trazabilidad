@@ -57,7 +57,7 @@ namespace CTZ.Vista.Traceability
         private void checkNumberOfExternTraceability_Letters(int idInternTraceabilityLetter)
         {
             DataTable externalTrazabilityLetters= controler.selectExternalTrazabilityLetters(idInternTraceabilityLetter);
-            Lbl_NumberOfLetters.Text = "Cartas de Trazabilidad externas actuales: "+idInternTraceabilityLetter;
+            Lbl_NumberOfLetters.Text = "Cartas de Trazabilidad externas actuales: "+ (externalTrazabilityLetters.Rows.Count);
             if (externalTrazabilityLetters.Rows.Count > 4)
             {
                 Btn_Add.Visible = false;

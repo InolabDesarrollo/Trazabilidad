@@ -29,7 +29,6 @@ namespace CTZ.Vista.Traceability
                     " trazabilidad interna asignada, solo agrega la externa ";
                 Btn_AddTraceabilityLetter.Visible = false;
             }
-
         }
 
         private void Btn_AddTraceabilityLetter_Click(object sender, EventArgs e)
