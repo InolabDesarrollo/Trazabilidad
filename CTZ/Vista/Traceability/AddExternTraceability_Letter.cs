@@ -67,7 +67,7 @@ namespace CTZ.Vista.Traceability
 
         private void Btn_See_Report_Click(object sender, EventArgs e)
         {
-            ReportTraceabilityLetter report = new ReportTraceabilityLetter("Carta_Trazabilidad",Convert.ToString(idInternTraceabilityLetter),numberOfCertificate);
+            ReportTraceabilityLetter report = new ReportTraceabilityLetter(Convert.ToString(idInternTraceabilityLetter),numberOfCertificate);
             report.Show();
         }
     }

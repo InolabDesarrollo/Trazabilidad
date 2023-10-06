@@ -523,6 +523,12 @@
     <Compile Include="Vista\Traceability\ReportTraceabilityLetter.Designer.cs">
       <DependentUpon>ReportTraceabilityLetter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Traceability\SerchTraceabilityLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Traceability\SerchTraceabilityLetter.Designer.cs">
+      <DependentUpon>SerchTraceabilityLetter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Traceability\TraceabilityLetter.cs" />
     <EmbeddedResource Include="AddCarta.resx">
       <DependentUpon>AddCarta.cs</DependentUpon>
@@ -659,6 +665,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Traceability\ReportTraceabilityLetter.resx">
       <DependentUpon>ReportTraceabilityLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Traceability\SerchTraceabilityLetter.resx">
+      <DependentUpon>SerchTraceabilityLetter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AsignacionDataSet.xsc">
       <DependentUpon>AsignacionDataSet.xsd</DependentUpon>

@@ -12,7 +12,8 @@ namespace CTZ.Controlador
     public class C_TraceabilityRepository
     {
         Traceability_Repository repository;
-        public C_TraceabilityRepository() {
+        public C_TraceabilityRepository()
+        {
             repository = new Traceability_Repository();
         }
 

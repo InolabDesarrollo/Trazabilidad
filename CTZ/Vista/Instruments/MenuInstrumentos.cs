@@ -2,6 +2,7 @@
 using CTZ.Modelo.Documentacion;
 using CTZ.Vista.Certificates;
 using CTZ.Vista.Responsabilitis;
+using CTZ.Vista.Traceability;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -198,6 +199,10 @@ namespace CTZ.Vista
             }
         }
 
-        
+        private void Btn_Serch_Traceability_Click(object sender, EventArgs e)
+        {
+            SerchTraceabilityLetter traceabilityLetter = new SerchTraceabilityLetter();
+            traceabilityLetter.Show();
+        }
     }
 }

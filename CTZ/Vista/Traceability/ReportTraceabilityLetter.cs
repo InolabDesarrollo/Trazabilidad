@@ -21,14 +21,14 @@ namespace CTZ.Vista.Traceability
         private  string _idTrazabilityLetter;
         private string _certificateNumber;
 
-        public ReportTraceabilityLetter(string nameOfReport,string idTrazabilityLetter,string certificateNumber)
+        public ReportTraceabilityLetter(string idTrazabilityLetter,string certificateNumber)
         {
             InitializeComponent();
             System.Net.NetworkCredential credentials = new NetworkCredential("administrador", "Inolab_2023*");
             Report_TraceabilityLetter.ServerReport.ReportServerCredentials.NetworkCredentials = credentials;
             Report_TraceabilityLetter.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             Report_TraceabilityLetter.ServerReport.ReportServerUrl = new Uri(serverUrl);
-            this.nameOfReport = nameOfReport;
+            this.nameOfReport = "Carta_Trazabilidad";
 
             this._idTrazabilityLetter = idTrazabilityLetter;
             this._certificateNumber = certificateNumber;
