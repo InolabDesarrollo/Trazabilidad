@@ -1,6 +1,7 @@
 ﻿using ADGV;
 using CTZ.Modelo.Documentacion;
 using CTZ.Vista.Certificates;
+using CTZ.Vista.Instruments;
 using CTZ.Vista.Responsabilitis;
 using CTZ.Vista.Traceability;
 using System;
@@ -27,6 +28,8 @@ namespace CTZ.Vista
         }
         private void MenuInstrumentos_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet3.Instrumentos_Certificado' Puede moverla o quitarla según sea necesario.
+            this.instrumentos_CertificadoTableAdapter2.Fill(this.trazabilidadTestDataSet3.Instrumentos_Certificado);
             this.instrumentosTableAdapter.Fill(this.trazabilidadTest_Instrumentos.Instrumentos);
             this.instrumentos_CertificadoTableAdapter1.Fill(this.trazabilidadTestDataSet2.Instrumentos_Certificado);
             colorCells(columnStatus, Dgv_Instruments_Certificates);
@@ -181,6 +184,10 @@ namespace CTZ.Vista
         {
             showMenu(Pnl_Traceability);
         }
+        private void Btn_Assignments_Click(object sender, EventArgs e)
+        {
+            showMenu(Pnl_Assignments);
+        }
         private void Btn_AddTraceability_Click(object sender, EventArgs e)
         {
             SerchCertificate serchCertificate = new SerchCertificate();
@@ -203,6 +210,12 @@ namespace CTZ.Vista
         {
             SerchTraceabilityLetter traceabilityLetter = new SerchTraceabilityLetter();
             traceabilityLetter.Show();
+        }
+
+        private void Btn_Serch_Assignments_Click(object sender, EventArgs e)
+        {
+            Serch_Assignments_Instruments assignments_Instruments = new Serch_Assignments_Instruments();
+            assignments_Instruments.Show();
         }
     }
 }

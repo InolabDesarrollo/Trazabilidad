@@ -376,6 +376,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTestDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TrazabilidadTestDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrazabilidadTestDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TrazabilidadTest_Instrumentos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -392,6 +397,12 @@
     </Compile>
     <Compile Include="Vista\Instruments\DeleteInstrument.Designer.cs">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Instruments\Serch_Assignments_Instruments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\Serch_Assignments_Instruments.Designer.cs">
+      <DependentUpon>Serch_Assignments_Instruments.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\LogIn.cs">
       <SubType>Form</SubType>
@@ -598,6 +609,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\Serch_Assignments_Instruments.resx">
+      <DependentUpon>Serch_Assignments_Instruments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -912,6 +926,17 @@
     </None>
     <None Include="TrazabilidadTestDataSet2.xss">
       <DependentUpon>TrazabilidadTestDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTestDataSet3.xsc">
+      <DependentUpon>TrazabilidadTestDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTestDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TrazabilidadTestDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrazabilidadTestDataSet3.xss">
+      <DependentUpon>TrazabilidadTestDataSet3.xsd</DependentUpon>
     </None>
     <None Include="TrazabilidadTest_Instrumentos.xsc">
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
