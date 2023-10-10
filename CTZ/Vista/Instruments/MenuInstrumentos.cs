@@ -214,8 +214,14 @@ namespace CTZ.Vista
 
         private void Btn_Serch_Assignments_Click(object sender, EventArgs e)
         {
-            Serch_Assignments_Instruments assignments_Instruments = new Serch_Assignments_Instruments();
+            Serch_Instruments_Assignments assignments_Instruments = new Serch_Instruments_Assignments();
             assignments_Instruments.Show();
+        }
+
+        private void Btn_Add_Assignments_Click(object sender, EventArgs e)
+        {
+            Add_Instrument_Assignment assignment = new Add_Instrument_Assignment();
+            assignment.Show();
         }
     }
 }

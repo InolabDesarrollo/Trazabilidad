@@ -1,6 +1,6 @@
 ﻿namespace CTZ.Vista.Instruments
 {
-    partial class Serch_Assignments_Instruments
+    partial class Serch_Instruments_Assignments
     {
         /// <summary>
         /// Required designer variable.

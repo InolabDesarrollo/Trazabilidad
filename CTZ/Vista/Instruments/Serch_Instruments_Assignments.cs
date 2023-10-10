@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace CTZ.Vista.Instruments
 {
-    public partial class Serch_Assignments_Instruments : MaterialForm 
+    public partial class Serch_Instruments_Assignments : MaterialForm 
     {
-        public Serch_Assignments_Instruments()
+        public Serch_Instruments_Assignments()
         {
             InitializeComponent();
         }

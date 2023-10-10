@@ -358,6 +358,7 @@
     <Compile Include="Modelo\Trazabilidad\Certificate_Repository.cs" />
     <Compile Include="Modelo\Trazabilidad\ConexionTrazabilidad.cs" />
     <Compile Include="Modelo\Trazabilidad\ExternalTraceability_Repository.cs" />
+    <Compile Include="Modelo\Trazabilidad\Instrument_Assignment_Repository.cs" />
     <Compile Include="Modelo\Trazabilidad\Instrument_Repository.cs" />
     <Compile Include="Modelo\Trazabilidad\RelationCertificateInstrument_Repository.cs" />
     <Compile Include="Modelo\Trazabilidad\Traceability_Repository.cs" />
@@ -392,17 +393,35 @@
     <Compile Include="Vista\Certificates\SerchCertificate.Designer.cs">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Instruments\Add_Delivery_Instrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\Add_Delivery_Instrument.Designer.cs">
+      <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Instruments\Add_Instrument_Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\Add_Instrument_Assignment.Designer.cs">
+      <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Instruments\DeleteInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Instruments\DeleteInstrument.Designer.cs">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Serch_Assignments_Instruments.cs">
+    <Compile Include="Vista\Instruments\Instrument_Assignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\Serch_Assignments_Instruments.Designer.cs">
-      <DependentUpon>Serch_Assignments_Instruments.cs</DependentUpon>
+    <Compile Include="Vista\Instruments\Instrument_Assignment.Designer.cs">
+      <DependentUpon>Instrument_Assignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Instruments\Serch_Instruments_Assignments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\Serch_Instruments_Assignments.Designer.cs">
+      <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\LogIn.cs">
       <SubType>Form</SubType>
@@ -607,11 +626,20 @@
     <EmbeddedResource Include="Vista\Certificates\SerchCertificate.resx">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\Add_Delivery_Instrument.resx">
+      <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\Add_Instrument_Assignment.resx">
+      <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Serch_Assignments_Instruments.resx">
-      <DependentUpon>Serch_Assignments_Instruments.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Instruments\Instrument_Assignment.resx">
+      <DependentUpon>Instrument_Assignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\Serch_Instruments_Assignments.resx">
+      <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
