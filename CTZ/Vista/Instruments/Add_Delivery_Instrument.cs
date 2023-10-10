@@ -19,6 +19,10 @@ namespace CTZ.Vista.Instruments
             Lbl_Instrument.Text = idInstrument;
         }
 
-
+        private void Btn_Enginner_Sign_Click(object sender, EventArgs e)
+        {
+            EngineerSignature signature = new EngineerSignature();
+            signature.Show();
+        }
     }
 }

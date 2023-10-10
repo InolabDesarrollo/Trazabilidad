@@ -63,6 +63,16 @@ namespace CTZ.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fondo_Blanco {
+            get {
+                object obj = ResourceManager.GetObject("Fondo_Blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LOGO_Blanco_Lineas {
             get {
                 object obj = ResourceManager.GetObject("LOGO_Blanco_Lineas", resourceCulture);

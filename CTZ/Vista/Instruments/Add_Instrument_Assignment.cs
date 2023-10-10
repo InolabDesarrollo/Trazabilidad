@@ -30,6 +30,7 @@ namespace CTZ.Vista.Instruments
                 {
                     Add_Delivery_Instrument deliveryInstrument = new Add_Delivery_Instrument(TxtBox_Instrument.Text);
                     deliveryInstrument.Show();
+                    this.Close();
                 }
                 else
                 {

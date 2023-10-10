@@ -217,6 +217,7 @@
             this.Btn_Enginner_Sign.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Enginner_Sign.UseAccentColor = false;
             this.Btn_Enginner_Sign.UseVisualStyleBackColor = true;
+            this.Btn_Enginner_Sign.Click += new System.EventHandler(this.Btn_Enginner_Sign_Click);
             // 
             // Lbl_Sign
             // 
@@ -271,7 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 617);
+            this.ClientSize = new System.Drawing.Size(683, 617);
             this.Controls.Add(this.Btn_Add_Delivery);
             this.Controls.Add(this.TimePicker_Date_Estimate_Return);
             this.Controls.Add(this.Lbl_Estimate_Date_Return);

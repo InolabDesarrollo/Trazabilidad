@@ -417,6 +417,12 @@
     <Compile Include="Vista\Instruments\DeleteInstrument.Designer.cs">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Instruments\EngineerSignature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\EngineerSignature.Designer.cs">
+      <DependentUpon>EngineerSignature.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Instruments\Instrument_Assignment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -643,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\EngineerSignature.resx">
+      <DependentUpon>EngineerSignature.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\Instrument_Assignment.resx">
       <DependentUpon>Instrument_Assignment.cs</DependentUpon>
@@ -994,7 +1003,9 @@
     <Folder Include="Temps\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\Fondo_Blanco.png" />
     <Content Include="Imagenes\LOGO_Blanco_Lineas.png" />
+    <None Include="Resources\Fondo_Blanco.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
