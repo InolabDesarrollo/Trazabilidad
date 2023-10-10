@@ -405,6 +405,12 @@
     <Compile Include="Vista\Instruments\Add_Instrument_Assignment.Designer.cs">
       <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Instruments\Add_Return_Instrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\Add_Return_Instrument.Designer.cs">
+      <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Instruments\DeleteInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -631,6 +637,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\Add_Instrument_Assignment.resx">
       <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\Add_Return_Instrument.resx">
+      <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>

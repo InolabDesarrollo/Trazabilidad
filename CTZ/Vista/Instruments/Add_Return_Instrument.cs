@@ -11,14 +11,12 @@ using System.Windows.Forms;
 
 namespace CTZ.Vista.Instruments
 {
-    public partial class Add_Delivery_Instrument : MaterialForm
+    public partial class Add_Return_Instrument : MaterialForm
     {
-        public Add_Delivery_Instrument(string idInstrument)
+        public Add_Return_Instrument()
         {
             InitializeComponent();
-            Lbl_Instrument.Text = idInstrument;
         }
-
 
     }
 }

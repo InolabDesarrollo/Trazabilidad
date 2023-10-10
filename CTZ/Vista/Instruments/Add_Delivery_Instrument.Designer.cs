@@ -44,6 +44,7 @@
             this.Lbl_Sign = new MaterialSkin.Controls.MaterialLabel();
             this.Lbl_Estimate_Date_Return = new MaterialSkin.Controls.MaterialLabel();
             this.TimePicker_Date_Estimate_Return = new System.Windows.Forms.DateTimePicker();
+            this.Btn_Add_Delivery = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // Lbl_Instrument
@@ -74,7 +75,7 @@
             // 
             this.TimePicker_Date_Delivery.Location = new System.Drawing.Point(46, 162);
             this.TimePicker_Date_Delivery.Name = "TimePicker_Date_Delivery";
-            this.TimePicker_Date_Delivery.Size = new System.Drawing.Size(710, 20);
+            this.TimePicker_Date_Delivery.Size = new System.Drawing.Size(329, 20);
             this.TimePicker_Date_Delivery.TabIndex = 2;
             // 
             // Lbl_Enginner
@@ -94,13 +95,13 @@
             this.materialListBox1.BackColor = System.Drawing.Color.White;
             this.materialListBox1.BorderColor = System.Drawing.Color.LightGray;
             this.materialListBox1.Depth = 0;
-            this.materialListBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialListBox1.Location = new System.Drawing.Point(46, 246);
             this.materialListBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox1.Name = "materialListBox1";
             this.materialListBox1.SelectedIndex = -1;
             this.materialListBox1.SelectedItem = null;
-            this.materialListBox1.Size = new System.Drawing.Size(710, 23);
+            this.materialListBox1.Size = new System.Drawing.Size(329, 23);
             this.materialListBox1.TabIndex = 5;
             // 
             // Lbl_Number_Enterprise
@@ -126,7 +127,7 @@
             this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox1.Multiline = false;
             this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(710, 50);
+            this.materialTextBox1.Size = new System.Drawing.Size(329, 50);
             this.materialTextBox1.TabIndex = 7;
             this.materialTextBox1.Text = "";
             this.materialTextBox1.TrailingIcon = null;
@@ -147,14 +148,14 @@
             // 
             this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox2.LeadingIcon = null;
             this.materialTextBox2.Location = new System.Drawing.Point(46, 429);
             this.materialTextBox2.MaxLength = 50;
             this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox2.Multiline = false;
             this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(710, 50);
+            this.materialTextBox2.Size = new System.Drawing.Size(329, 50);
             this.materialTextBox2.TabIndex = 9;
             this.materialTextBox2.Text = "";
             this.materialTextBox2.TrailingIcon = null;
@@ -175,14 +176,14 @@
             // 
             this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox3.LeadingIcon = null;
             this.materialTextBox3.Location = new System.Drawing.Point(46, 532);
             this.materialTextBox3.MaxLength = 50;
             this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox3.Multiline = false;
             this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(710, 50);
+            this.materialTextBox3.Size = new System.Drawing.Size(316, 50);
             this.materialTextBox3.TabIndex = 11;
             this.materialTextBox3.Text = "";
             this.materialTextBox3.TrailingIcon = null;
@@ -192,7 +193,7 @@
             this.Lbl_Enginner_Sign.AutoSize = true;
             this.Lbl_Enginner_Sign.Depth = 0;
             this.Lbl_Enginner_Sign.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Enginner_Sign.Location = new System.Drawing.Point(43, 606);
+            this.Lbl_Enginner_Sign.Location = new System.Drawing.Point(413, 97);
             this.Lbl_Enginner_Sign.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Enginner_Sign.Name = "Lbl_Enginner_Sign";
             this.Lbl_Enginner_Sign.Size = new System.Drawing.Size(111, 19);
@@ -206,7 +207,7 @@
             this.Btn_Enginner_Sign.Depth = 0;
             this.Btn_Enginner_Sign.HighEmphasis = true;
             this.Btn_Enginner_Sign.Icon = null;
-            this.Btn_Enginner_Sign.Location = new System.Drawing.Point(46, 643);
+            this.Btn_Enginner_Sign.Location = new System.Drawing.Point(416, 146);
             this.Btn_Enginner_Sign.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Enginner_Sign.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Enginner_Sign.Name = "Btn_Enginner_Sign";
@@ -222,7 +223,7 @@
             this.Lbl_Sign.AutoSize = true;
             this.Lbl_Sign.Depth = 0;
             this.Lbl_Sign.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Sign.Location = new System.Drawing.Point(645, 606);
+            this.Lbl_Sign.Location = new System.Drawing.Point(551, 97);
             this.Lbl_Sign.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Sign.Name = "Lbl_Sign";
             this.Lbl_Sign.Size = new System.Drawing.Size(42, 19);
@@ -234,7 +235,7 @@
             this.Lbl_Estimate_Date_Return.AutoSize = true;
             this.Lbl_Estimate_Date_Return.Depth = 0;
             this.Lbl_Estimate_Date_Return.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Estimate_Date_Return.Location = new System.Drawing.Point(46, 705);
+            this.Lbl_Estimate_Date_Return.Location = new System.Drawing.Point(413, 204);
             this.Lbl_Estimate_Date_Return.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Estimate_Date_Return.Name = "Lbl_Estimate_Date_Return";
             this.Lbl_Estimate_Date_Return.Size = new System.Drawing.Size(219, 19);
@@ -243,16 +244,35 @@
             // 
             // TimePicker_Date_Estimate_Return
             // 
-            this.TimePicker_Date_Estimate_Return.Location = new System.Drawing.Point(46, 736);
+            this.TimePicker_Date_Estimate_Return.Location = new System.Drawing.Point(416, 246);
             this.TimePicker_Date_Estimate_Return.Name = "TimePicker_Date_Estimate_Return";
-            this.TimePicker_Date_Estimate_Return.Size = new System.Drawing.Size(710, 20);
+            this.TimePicker_Date_Estimate_Return.Size = new System.Drawing.Size(237, 20);
             this.TimePicker_Date_Estimate_Return.TabIndex = 16;
+            // 
+            // Btn_Add_Delivery
+            // 
+            this.Btn_Add_Delivery.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_Add_Delivery.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Btn_Add_Delivery.Depth = 0;
+            this.Btn_Add_Delivery.HighEmphasis = true;
+            this.Btn_Add_Delivery.Icon = null;
+            this.Btn_Add_Delivery.Location = new System.Drawing.Point(424, 546);
+            this.Btn_Add_Delivery.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_Add_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_Add_Delivery.Name = "Btn_Add_Delivery";
+            this.Btn_Add_Delivery.Size = new System.Drawing.Size(229, 36);
+            this.Btn_Add_Delivery.TabIndex = 17;
+            this.Btn_Add_Delivery.Text = "Agregar Datos de Entrega";
+            this.Btn_Add_Delivery.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Btn_Add_Delivery.UseAccentColor = false;
+            this.Btn_Add_Delivery.UseVisualStyleBackColor = true;
             // 
             // Add_Delivery_Instrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 806);
+            this.ClientSize = new System.Drawing.Size(688, 617);
+            this.Controls.Add(this.Btn_Add_Delivery);
             this.Controls.Add(this.TimePicker_Date_Estimate_Return);
             this.Controls.Add(this.Lbl_Estimate_Date_Return);
             this.Controls.Add(this.Lbl_Sign);
@@ -294,5 +314,6 @@
         private MaterialSkin.Controls.MaterialLabel Lbl_Sign;
         private MaterialSkin.Controls.MaterialLabel Lbl_Estimate_Date_Return;
         private System.Windows.Forms.DateTimePicker TimePicker_Date_Estimate_Return;
+        private MaterialSkin.Controls.MaterialButton Btn_Add_Delivery;
     }
 }

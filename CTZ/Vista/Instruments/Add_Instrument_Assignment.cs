@@ -28,7 +28,8 @@ namespace CTZ.Vista.Instruments
                 DataTable instrumentInformation = instrumentControler.selectAllFromInstrument(TxtBox_Instrument.Text);
                 if (instrumentInformation.Rows[0]["ESTATUS_ASIGNACION"].ToString().Equals("DISPONIBLE"))
                 {
-                    MessageBox.Show("Instrumento Disponible");
+                    Add_Delivery_Instrument deliveryInstrument = new Add_Delivery_Instrument(TxtBox_Instrument.Text);
+                    deliveryInstrument.Show();
                 }
                 else
                 {
