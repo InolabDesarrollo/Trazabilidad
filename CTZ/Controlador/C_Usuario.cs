@@ -16,6 +16,10 @@ namespace CTZ.Controlador
         {
             this.repository = repository;
         }
+        public C_Usuario()
+        {
+            repository = new UserRepository();
+        }
         public DataTable loginUser(string user, string password)
         {
             return repository.loginUser(user, password);
@@ -24,6 +28,11 @@ namespace CTZ.Controlador
         public bool validateUser(string user, string password)
         {
             return repository.validateUser(user, password);
+        }
+
+        public DataTable getEngineers()
+        {
+            return repository.getEngineers();
         }
     }
 }

@@ -24,6 +24,11 @@ namespace CTZ.Modelo.Browser
             return conexion.isThereSomeInformation(query);
         }
 
+        public DataTable getEngineers()
+        {
+            return conexion.getDataTable("SELECT * FROM Usuarios where IdArea = 6;");
+        }
+
 
     }
 }

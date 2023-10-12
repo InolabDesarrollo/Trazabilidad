@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Modelo.Browser;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -17,6 +18,7 @@ namespace CTZ.Vista.Instruments
     public partial class Add_Delivery_Instrument : MaterialForm
     {
         C_Instrument_Assignments controler;
+        C_Usuario userControler;
         Instrument_Assignments instrumentAssignments;
         DateForReport dateForReport;
         private  int idInstrument;
@@ -27,13 +29,25 @@ namespace CTZ.Vista.Instruments
             InitializeComponent();
             Lbl_Instrument.Text = equinoInstrument;
             controler = new C_Instrument_Assignments();
+            userControler = new C_Usuario();
+
             instrumentAssignments = new Instrument_Assignments();
             dateForReport = new DateForReport();    
             this.idInstrument = idInstrument;
             this.equinoInstrument = equinoInstrument;
-            MaterialComboBox_Engineers.Items.Add("Ingeniero");
+            
+            fillMaterialComboBoxEngineers();
         }
 
+        private void fillMaterialComboBoxEngineers()
+        {
+            DataTable engineers = userControler.getEngineers();
+            for (int i =0;  i <engineers.Rows.Count; i++ )
+            {
+                string item = engineers.Rows[i]["Nombre"].ToString() +" "+ engineers.Rows[i]["Apellidos"].ToString();
+                MaterialComboBox_Engineers.Items.Add(item);
+            }  
+        }
         private void Btn_Add_Delivery_Click(object sender, EventArgs e)
         {
             instrumentAssignments.idInstrument = idInstrument;
