@@ -134,7 +134,7 @@
             this.TxtBox_NumSerie.TabIndex = 43;
             this.TxtBox_NumSerie.Text = "";
             this.TxtBox_NumSerie.TrailingIcon = null;
-            this.TxtBox_NumSerie.TextChanged += new System.EventHandler(this.TxtBox_NumSerie_TextChanged);
+          
             // 
             // TxtBox_Observation
             // 

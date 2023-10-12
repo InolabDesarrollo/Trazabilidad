@@ -18,11 +18,6 @@ namespace CTZ.Vista.Responsabilitis
             InitializeComponent();
         }
 
-        private void TxtBox_NumSerie_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_Add_Instrument_Click(object sender, EventArgs e)
         {
             Instruments instrument = new Instruments(TxtBox_Id.Text,TxtBox_Instrument.Text,TxBox_Brand.Text,TxtBox_Model.Text

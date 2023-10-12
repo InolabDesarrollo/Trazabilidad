@@ -1,5 +1,6 @@
 ﻿using CTZ.Controlador;
 using CTZ.Vista.Responsabilitis;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace CTZ.Vista.Instruments
             dateForReport = new DateForReport();    
             this.idInstrument = idInstrument;
             this.equinoInstrument = equinoInstrument;
+            MaterialComboBox_Engineers.Items.Add("Ingeniero");
         }
 
         private void Btn_Add_Delivery_Click(object sender, EventArgs e)
@@ -37,8 +39,8 @@ namespace CTZ.Vista.Instruments
             instrumentAssignments.idInstrument = idInstrument;
             instrumentAssignments.equinoInstrument = equinoInstrument;
             instrumentAssignments.dateDelivery = dateForReport.convertToValidDate(TimePicker_Date_Delivery.Text);
-
-            instrumentAssignments.engineer =ListBoxEngineers.SelectedIndex.ToString();
+            
+            instrumentAssignments.engineer = MaterialComboBox_Engineers.SelectedItem.ToString();
             instrumentAssignments.numberEnterprise = TxtBox_Enterprise.Text;
             instrumentAssignments.observationDelivery = TxtBox_ObservationDelivery.Text;
 

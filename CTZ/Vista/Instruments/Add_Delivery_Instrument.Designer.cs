@@ -32,7 +32,6 @@
             this.Lbl_Date_Delivery = new MaterialSkin.Controls.MaterialLabel();
             this.TimePicker_Date_Delivery = new System.Windows.Forms.DateTimePicker();
             this.Lbl_Enginner = new MaterialSkin.Controls.MaterialLabel();
-            this.ListBoxEngineers = new MaterialSkin.Controls.MaterialListBox();
             this.Lbl_Number_Enterprise = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_Enterprise = new MaterialSkin.Controls.MaterialTextBox();
             this.Lbl_Name_Enterprise = new MaterialSkin.Controls.MaterialLabel();
@@ -42,6 +41,7 @@
             this.Lbl_Estimate_Date_Return = new MaterialSkin.Controls.MaterialLabel();
             this.TimePicker_Date_Estimate_Return = new System.Windows.Forms.DateTimePicker();
             this.Btn_Add_Delivery = new MaterialSkin.Controls.MaterialButton();
+            this.MaterialComboBox_Engineers = new MaterialSkin.Controls.MaterialComboBox();
             this.SuspendLayout();
             // 
             // Lbl_Instrument
@@ -87,26 +87,12 @@
             this.Lbl_Enginner.TabIndex = 3;
             this.Lbl_Enginner.Text = "Ingeniero";
             // 
-            // ListBoxEngineers
-            // 
-            this.ListBoxEngineers.BackColor = System.Drawing.Color.White;
-            this.ListBoxEngineers.BorderColor = System.Drawing.Color.LightGray;
-            this.ListBoxEngineers.Depth = 0;
-            this.ListBoxEngineers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ListBoxEngineers.Location = new System.Drawing.Point(46, 246);
-            this.ListBoxEngineers.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ListBoxEngineers.Name = "ListBoxEngineers";
-            this.ListBoxEngineers.SelectedIndex = -1;
-            this.ListBoxEngineers.SelectedItem = null;
-            this.ListBoxEngineers.Size = new System.Drawing.Size(329, 23);
-            this.ListBoxEngineers.TabIndex = 5;
-            // 
             // Lbl_Number_Enterprise
             // 
             this.Lbl_Number_Enterprise.AutoSize = true;
             this.Lbl_Number_Enterprise.Depth = 0;
             this.Lbl_Number_Enterprise.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Number_Enterprise.Location = new System.Drawing.Point(46, 297);
+            this.Lbl_Number_Enterprise.Location = new System.Drawing.Point(46, 321);
             this.Lbl_Number_Enterprise.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Number_Enterprise.Name = "Lbl_Number_Enterprise";
             this.Lbl_Number_Enterprise.Size = new System.Drawing.Size(125, 19);
@@ -119,7 +105,7 @@
             this.TxtBox_Enterprise.Depth = 0;
             this.TxtBox_Enterprise.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Enterprise.LeadingIcon = null;
-            this.TxtBox_Enterprise.Location = new System.Drawing.Point(46, 336);
+            this.TxtBox_Enterprise.Location = new System.Drawing.Point(46, 356);
             this.TxtBox_Enterprise.MaxLength = 50;
             this.TxtBox_Enterprise.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Enterprise.Multiline = false;
@@ -134,7 +120,7 @@
             this.Lbl_Name_Enterprise.AutoSize = true;
             this.Lbl_Name_Enterprise.Depth = 0;
             this.Lbl_Name_Enterprise.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Name_Enterprise.Location = new System.Drawing.Point(46, 407);
+            this.Lbl_Name_Enterprise.Location = new System.Drawing.Point(46, 419);
             this.Lbl_Name_Enterprise.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Name_Enterprise.Name = "Lbl_Name_Enterprise";
             this.Lbl_Name_Enterprise.Size = new System.Drawing.Size(127, 19);
@@ -147,7 +133,7 @@
             this.TxtBox_NameEnterprise.Depth = 0;
             this.TxtBox_NameEnterprise.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_NameEnterprise.LeadingIcon = null;
-            this.TxtBox_NameEnterprise.Location = new System.Drawing.Point(46, 429);
+            this.TxtBox_NameEnterprise.Location = new System.Drawing.Point(46, 450);
             this.TxtBox_NameEnterprise.MaxLength = 50;
             this.TxtBox_NameEnterprise.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_NameEnterprise.Multiline = false;
@@ -162,7 +148,7 @@
             this.Lbl_Observation_Delivery.AutoSize = true;
             this.Lbl_Observation_Delivery.Depth = 0;
             this.Lbl_Observation_Delivery.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Observation_Delivery.Location = new System.Drawing.Point(43, 498);
+            this.Lbl_Observation_Delivery.Location = new System.Drawing.Point(46, 513);
             this.Lbl_Observation_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Observation_Delivery.Name = "Lbl_Observation_Delivery";
             this.Lbl_Observation_Delivery.Size = new System.Drawing.Size(163, 19);
@@ -175,7 +161,7 @@
             this.TxtBox_ObservationDelivery.Depth = 0;
             this.TxtBox_ObservationDelivery.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_ObservationDelivery.LeadingIcon = null;
-            this.TxtBox_ObservationDelivery.Location = new System.Drawing.Point(46, 532);
+            this.TxtBox_ObservationDelivery.Location = new System.Drawing.Point(46, 546);
             this.TxtBox_ObservationDelivery.MaxLength = 50;
             this.TxtBox_ObservationDelivery.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_ObservationDelivery.Multiline = false;
@@ -211,7 +197,7 @@
             this.Btn_Add_Delivery.Depth = 0;
             this.Btn_Add_Delivery.HighEmphasis = true;
             this.Btn_Add_Delivery.Icon = null;
-            this.Btn_Add_Delivery.Location = new System.Drawing.Point(424, 546);
+            this.Btn_Add_Delivery.Location = new System.Drawing.Point(424, 560);
             this.Btn_Add_Delivery.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Delivery.Name = "Btn_Add_Delivery";
@@ -223,11 +209,34 @@
             this.Btn_Add_Delivery.UseVisualStyleBackColor = true;
             this.Btn_Add_Delivery.Click += new System.EventHandler(this.Btn_Add_Delivery_Click);
             // 
+            // MaterialComboBox_Engineers
+            // 
+            this.MaterialComboBox_Engineers.AutoResize = false;
+            this.MaterialComboBox_Engineers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MaterialComboBox_Engineers.Depth = 0;
+            this.MaterialComboBox_Engineers.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.MaterialComboBox_Engineers.DropDownHeight = 174;
+            this.MaterialComboBox_Engineers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MaterialComboBox_Engineers.DropDownWidth = 121;
+            this.MaterialComboBox_Engineers.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.MaterialComboBox_Engineers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MaterialComboBox_Engineers.FormattingEnabled = true;
+            this.MaterialComboBox_Engineers.IntegralHeight = false;
+            this.MaterialComboBox_Engineers.ItemHeight = 43;
+            this.MaterialComboBox_Engineers.Location = new System.Drawing.Point(46, 244);
+            this.MaterialComboBox_Engineers.MaxDropDownItems = 4;
+            this.MaterialComboBox_Engineers.MouseState = MaterialSkin.MouseState.OUT;
+            this.MaterialComboBox_Engineers.Name = "MaterialComboBox_Engineers";
+            this.MaterialComboBox_Engineers.Size = new System.Drawing.Size(329, 49);
+            this.MaterialComboBox_Engineers.StartIndex = 0;
+            this.MaterialComboBox_Engineers.TabIndex = 18;
+            // 
             // Add_Delivery_Instrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 617);
+            this.ClientSize = new System.Drawing.Size(686, 620);
+            this.Controls.Add(this.MaterialComboBox_Engineers);
             this.Controls.Add(this.Btn_Add_Delivery);
             this.Controls.Add(this.TimePicker_Date_Estimate_Return);
             this.Controls.Add(this.Lbl_Estimate_Date_Return);
@@ -237,7 +246,6 @@
             this.Controls.Add(this.Lbl_Name_Enterprise);
             this.Controls.Add(this.TxtBox_Enterprise);
             this.Controls.Add(this.Lbl_Number_Enterprise);
-            this.Controls.Add(this.ListBoxEngineers);
             this.Controls.Add(this.Lbl_Enginner);
             this.Controls.Add(this.TimePicker_Date_Delivery);
             this.Controls.Add(this.Lbl_Date_Delivery);
@@ -255,7 +263,6 @@
         private MaterialSkin.Controls.MaterialLabel Lbl_Date_Delivery;
         private System.Windows.Forms.DateTimePicker TimePicker_Date_Delivery;
         private MaterialSkin.Controls.MaterialLabel Lbl_Enginner;
-        private MaterialSkin.Controls.MaterialListBox ListBoxEngineers;
         private MaterialSkin.Controls.MaterialLabel Lbl_Number_Enterprise;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Enterprise;
         private MaterialSkin.Controls.MaterialLabel Lbl_Name_Enterprise;
@@ -265,5 +272,6 @@
         private MaterialSkin.Controls.MaterialLabel Lbl_Estimate_Date_Return;
         private System.Windows.Forms.DateTimePicker TimePicker_Date_Estimate_Return;
         private MaterialSkin.Controls.MaterialButton Btn_Add_Delivery;
+        private MaterialSkin.Controls.MaterialComboBox MaterialComboBox_Engineers;
     }
 }
