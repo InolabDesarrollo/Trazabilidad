@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CTZ.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,16 +15,23 @@ namespace CTZ.Vista.Instruments
 {
     public partial class EngineerSignature : Form
     {
-        public EngineerSignature()
-        {
-            InitializeComponent();
-        }
         float pointX = 0;
         float pointY = 0;
 
         float lastX = 0;
         float lastY = 0;
-
+        private readonly int idInstrument;
+        private readonly string equinoInstrument;
+        C_Instrument_Assignments controler;
+        public EngineerSignature(int idInstrument, string equinoInstrument)
+        {
+            InitializeComponent();
+            Lbl_Instrument.Text = equinoInstrument;
+            this.idInstrument = idInstrument;
+            this.equinoInstrument = equinoInstrument;
+            controler = new C_Instrument_Assignments();
+        }
+ 
         private void Pnl_Signature_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics= Pnl_Signature.CreateGraphics();
@@ -58,10 +66,11 @@ namespace CTZ.Vista.Instruments
             signature.Save("Firma.jpg", ImageFormat.Jpeg);
             string signatureBase64 = converImageToStringBase64(signature);
 
+            controler.updateSignatureEngineer(idInstrument, signatureBase64);
             MessageBox.Show("Firma agregada correctamente");
             this.Close();            
         }
-
+        
         public string converImageToStringBase64(Image image)
         {
             string imageBase64;

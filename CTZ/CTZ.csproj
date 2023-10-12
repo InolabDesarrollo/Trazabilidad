@@ -204,6 +204,7 @@
     <Compile Include="Controlador\C_Certificate.cs" />
     <Compile Include="Controlador\C_ExternTraceabilityRepository.cs" />
     <Compile Include="Controlador\C_Instruments.cs" />
+    <Compile Include="Controlador\C_Instrument_Assignments.cs" />
     <Compile Include="Controlador\C_RelationCertificateInstrument.cs" />
     <Compile Include="Controlador\C_TraceabilityRepository.cs" />
     <Compile Include="Controlador\C_Usuario.cs" />
@@ -423,12 +424,6 @@
     <Compile Include="Vista\Instruments\EngineerSignature.Designer.cs">
       <DependentUpon>EngineerSignature.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Instrument_Assignment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Instruments\Instrument_Assignment.Designer.cs">
-      <DependentUpon>Instrument_Assignment.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Instruments\Serch_Instruments_Assignments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -519,7 +514,9 @@
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Certificates\Certificate.cs" />
+    <Compile Include="Vista\Responsabilitis\DateForReport.cs" />
     <Compile Include="Vista\Responsabilitis\Instruments.cs" />
+    <Compile Include="Vista\Responsabilitis\Instrument_Assignments.cs" />
     <Compile Include="Vista\Responsabilitis\RelationCertificateInstrument.cs" />
     <Compile Include="Vista\Instruments\SerchInstrument.cs">
       <SubType>Form</SubType>
@@ -652,9 +649,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\EngineerSignature.resx">
       <DependentUpon>EngineerSignature.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Instrument_Assignment.resx">
-      <DependentUpon>Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\Serch_Instruments_Assignments.resx">
       <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>

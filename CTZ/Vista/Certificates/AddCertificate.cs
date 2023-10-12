@@ -18,6 +18,7 @@ namespace CTZ.Vista.Responsabilitis
         private  string idSqlInstrument;
         Certificate certificate;
         RelationCertificateInstrument relation;
+        DateForReport dateForReport;
         public AddCertificate()
         {
             InitializeComponent(); 
@@ -26,6 +27,7 @@ namespace CTZ.Vista.Responsabilitis
         {
             InitializeComponent();
             this.idSqlInstrument = idSqlInstrument;
+            dateForReport = new DateForReport();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -36,8 +38,8 @@ namespace CTZ.Vista.Responsabilitis
             }
             else
             {
-                string dateCalibration = convertToValidDate(DatePicker_Calibration.Text);
-                string dateNextCalibration = convertToValidDate(DatePicker_NextCalibration.Text);
+                string dateCalibration = dateForReport.convertToValidDate(DatePicker_Calibration.Text);
+                string dateNextCalibration = dateForReport.convertToValidDate(DatePicker_NextCalibration.Text);
 
                 certificate = new Certificate(dateCalibration, dateNextCalibration,
                     TxtBox_Link.Text, TxtBox_Number.Text, ComboBox_Use.SelectedItem.ToString(), TxtBox_Laboratory.Text,
@@ -54,12 +56,6 @@ namespace CTZ.Vista.Responsabilitis
                     Close();
                 }
             }        
-        }
-
-        private string convertToValidDate(string date)
-        {
-            DateTime validDate = Convert.ToDateTime(date);
-            return validDate.ToString("yyyy/MM/dd");
         }
 
         private void createAsosiation()

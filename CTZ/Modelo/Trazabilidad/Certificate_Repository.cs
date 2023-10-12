@@ -46,9 +46,7 @@ namespace CTZ.Modelo.Trazabilidad
         public bool checkIfNumberExist(string number)
         {
             return conexion.isThereSomeInformation("SELECT Numero FROM Certificados where Numero = '"+ number + "';");
-        }
-
-        
+        }     
 
     }
 }
