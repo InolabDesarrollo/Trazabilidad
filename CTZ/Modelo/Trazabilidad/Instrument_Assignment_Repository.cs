@@ -23,11 +23,15 @@ namespace CTZ.Modelo.Trazabilidad
                 "VALUES("+instrumentAssignments.idInstrument+",'"+instrumentAssignments.dateDelivery+"','"+instrumentAssignments.engineer+"','"+instrumentAssignments.numberEnterprise+"','"+instrumentAssignments.nameEnterprise
                 +"','"+instrumentAssignments.observationDelivery+"','"+instrumentAssignments.equinoInstrument+"')");
         }
-
+        
         public void updateSignatureEngineer(int idInstrument, string engineerSignature)
         {
             conexion.executeQuery("UPDATE AsignacionInstrumentos SET Firma_Ingeniero = '"+engineerSignature+"' where ID_Instrumento = " + idInstrument + ";");
         }
         
+        public void updateStatusInstrumentAssignment(int idInstrument, string status)
+        {
+            conexion.executeQuery("UPDATE Instrumentos SET ESTATUS_ASIGNACION = '"+status+"' WHERE ID = "+idInstrument+";");
+        }
     }
 }

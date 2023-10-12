@@ -27,20 +27,19 @@ namespace CTZ.Vista.Instruments
         public Add_Delivery_Instrument(int idInstrument, string equinoInstrument)
         {
             InitializeComponent();
-            Lbl_Instrument.Text = equinoInstrument;
-            controler = new C_Instrument_Assignments();
-            userControler = new C_Usuario();
+            Lbl_Instrument.Text = equinoInstrument;       
 
             instrumentAssignments = new Instrument_Assignments();
             dateForReport = new DateForReport();    
             this.idInstrument = idInstrument;
             this.equinoInstrument = equinoInstrument;
-            
+
             fillMaterialComboBoxEngineers();
         }
-
+        
         private void fillMaterialComboBoxEngineers()
         {
+            userControler= new C_Usuario();
             DataTable engineers = userControler.getEngineers();
             for (int i =0;  i <engineers.Rows.Count; i++ )
             {
@@ -50,6 +49,8 @@ namespace CTZ.Vista.Instruments
         }
         private void Btn_Add_Delivery_Click(object sender, EventArgs e)
         {
+            controler = new C_Instrument_Assignments();
+
             instrumentAssignments.idInstrument = idInstrument;
             instrumentAssignments.equinoInstrument = equinoInstrument;
             instrumentAssignments.dateDelivery = dateForReport.convertToValidDate(TimePicker_Date_Delivery.Text);
@@ -59,10 +60,19 @@ namespace CTZ.Vista.Instruments
             instrumentAssignments.observationDelivery = TxtBox_ObservationDelivery.Text;
 
             instrumentAssignments.approximateDateOfReturn = dateForReport.convertToValidDate(TimePicker_Date_Estimate_Return.Text);
-            controler.registerDeliveryInstrument(instrumentAssignments);
+            bool updateData= controler.registerDeliveryInstrument(instrumentAssignments);
+            updateStatusInstrument(updateData);
 
             EngineerSignature signature = new EngineerSignature(idInstrument,equinoInstrument);
             signature.Show();
+        }
+
+        private void updateStatusInstrument(bool update)
+        {
+            if (update)
+            {
+                controler.updateStatusInstrumentAssignment(idInstrument, "OCUPADO");
+            }
         }
     }
 }

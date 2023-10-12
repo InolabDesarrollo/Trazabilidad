@@ -1,4 +1,5 @@
-﻿using CTZ.Modelo.Trazabilidad;
+﻿using CTZ.Modelo;
+using CTZ.Modelo.Trazabilidad;
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace CTZ.Controlador
         public void updateSignatureEngineer(int idInstrument, string engineerSignature)
         {
             _repository.updateSignatureEngineer(idInstrument, engineerSignature);
+        }
+
+        public void updateStatusInstrumentAssignment(int idInstrument, string status)
+        {
+           _repository.updateStatusInstrumentAssignment(idInstrument, status);
         }
     }
 }
