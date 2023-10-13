@@ -3,6 +3,7 @@ using CTZ.Vista.Instruments;
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,10 +29,21 @@ namespace CTZ.Modelo.Trazabilidad
         {
             conexion.executeQuery("UPDATE AsignacionInstrumentos SET Firma_Ingeniero = '"+engineerSignature+"' where ID_Instrumento = " + idInstrument + ";");
         }
+
+        public void updateSignatureQuality(int idInstrument, string engineerSignature)
+        {
+            conexion.executeQuery("UPDATE AsignacionInstrumentos SET Firma_Calidad  = '"+ engineerSignature + "' WHERE ID_Instrumento = "+idInstrument+ " " +
+                " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) FROM AsignacionInstrumentos WHERE ID_Instrumento ="+ idInstrument + ");");
+        }
         
         public void updateStatusInstrumentAssignment(int idInstrument, string status)
         {
             conexion.executeQuery("UPDATE Instrumentos SET ESTATUS_ASIGNACION = '"+status+"' WHERE ID = "+idInstrument+";");
+        }
+
+        public DataTable selectInformationInstrumenAssignment(int idInstrument)
+        {
+            return conexion.getDataTable("");
         }
     }
 }

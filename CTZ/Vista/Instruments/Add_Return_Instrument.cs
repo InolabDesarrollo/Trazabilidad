@@ -18,5 +18,9 @@ namespace CTZ.Vista.Instruments
             InitializeComponent();
         }
 
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

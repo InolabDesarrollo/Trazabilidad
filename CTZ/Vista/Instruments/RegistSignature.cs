@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CTZ.Vista.Instruments
 {
-    public partial class EngineerSignature : Form
+    public partial class RegistSignature : Form
     {
         float pointX = 0;
         float pointY = 0;
@@ -22,16 +22,17 @@ namespace CTZ.Vista.Instruments
         float lastY = 0;
         private readonly int idInstrument;
         private readonly string equinoInstrument;
+        private readonly string typeOfSignature;
         C_Instrument_Assignments controler;
-        public EngineerSignature(int idInstrument, string equinoInstrument)
+        public RegistSignature(int idInstrument, string equinoInstrument, string typeOfSignature)
         {
             InitializeComponent();
             Lbl_Instrument.Text = equinoInstrument;
             this.idInstrument = idInstrument;
             this.equinoInstrument = equinoInstrument;
+            this.typeOfSignature = typeOfSignature;
             controler = new C_Instrument_Assignments();
         }
- 
         private void Pnl_Signature_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics= Pnl_Signature.CreateGraphics();
@@ -39,7 +40,6 @@ namespace CTZ.Vista.Instruments
             lastX = pointX;
             lastY = pointY;
         }
-
         private void Pnl_Signature_MouseDown(object sender, MouseEventArgs e)
         {
             lastX = e.X;
@@ -64,23 +64,29 @@ namespace CTZ.Vista.Instruments
 
             graphic.CopyFromScreen(rectangle.Location, Point.Empty, Pnl_Signature.Size);
             signature.Save("Firma.jpg", ImageFormat.Jpeg);
-            string signatureBase64 = converImageToStringBase64(signature);
 
-            controler.updateSignatureEngineer(idInstrument, signatureBase64);
-            MessageBox.Show("Firma agregada correctamente");
-            this.Close();            
+            if(typeOfSignature.Equals("Engineer"))
+            {
+                registEngineerSignature(signature);
+
+            }else if (typeOfSignature.Equals("Quality"))
+            {
+                registQualitySignature(signature);
+            }                      
         }
         
-        public string converImageToStringBase64(Image image)
+        private void registEngineerSignature(Image engineerSignature)
         {
-            string imageBase64;
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                image.Save(memoryStream, ImageFormat.Jpeg);
-                byte[] bytes = memoryStream.ToArray();
-                imageBase64 = Convert.ToBase64String(bytes);
-            }
-            return imageBase64;
+            controler.updateSignatureEngineer(idInstrument, engineerSignature);
+            MessageBox.Show("Firma de ingeniero agregada correctamente");
+            this.Close();
+        }
+
+        private void registQualitySignature(Image qualitySignature)
+        {
+            controler.updateSignatureQuality(idInstrument, qualitySignature);
+            MessageBox.Show("Firma de calidad agregada correctamente");
+            this.Close();
         }
     }
 }

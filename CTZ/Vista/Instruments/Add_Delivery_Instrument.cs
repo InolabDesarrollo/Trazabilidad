@@ -63,8 +63,9 @@ namespace CTZ.Vista.Instruments
             bool updateData= controler.registerDeliveryInstrument(instrumentAssignments);
             updateStatusInstrument(updateData);
 
-            EngineerSignature signature = new EngineerSignature(idInstrument,equinoInstrument);
+            RegistSignature signature = new RegistSignature(idInstrument,equinoInstrument, "Engineer");
             signature.Show();
+            this.Close();
         }
 
         private void updateStatusInstrument(bool update)

@@ -223,5 +223,10 @@ namespace CTZ.Vista
             Add_Instrument_Assignment assignment = new Add_Instrument_Assignment();
             assignment.Show();
         }
+
+        private void Btn_Regist_Return_Instrument_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

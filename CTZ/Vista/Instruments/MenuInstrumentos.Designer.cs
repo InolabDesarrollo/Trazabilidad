@@ -91,6 +91,7 @@
             this.Btn_Serch_Assignments = new System.Windows.Forms.Button();
             this.Btn_See_Assignments = new System.Windows.Forms.Button();
             this.instrumentos_CertificadoTableAdapter2 = new CTZ.TrazabilidadTestDataSet3TableAdapters.Instrumentos_CertificadoTableAdapter();
+            this.Btn_Regist_Return_Instrument = new System.Windows.Forms.Button();
             this.Pnl_Head.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).BeginInit();
@@ -683,12 +684,13 @@
             // Pnl_Assignments
             // 
             this.Pnl_Assignments.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pnl_Assignments.Controls.Add(this.Btn_Regist_Return_Instrument);
             this.Pnl_Assignments.Controls.Add(this.Btn_Add_Assignments);
             this.Pnl_Assignments.Controls.Add(this.Btn_Serch_Assignments);
             this.Pnl_Assignments.Controls.Add(this.Btn_See_Assignments);
             this.Pnl_Assignments.Location = new System.Drawing.Point(471, 104);
             this.Pnl_Assignments.Name = "Pnl_Assignments";
-            this.Pnl_Assignments.Size = new System.Drawing.Size(126, 130);
+            this.Pnl_Assignments.Size = new System.Drawing.Size(126, 233);
             this.Pnl_Assignments.TabIndex = 12;
             this.Pnl_Assignments.Visible = false;
             // 
@@ -697,12 +699,12 @@
             this.Btn_Add_Assignments.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.Btn_Add_Assignments.FlatAppearance.BorderSize = 0;
             this.Btn_Add_Assignments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Add_Assignments.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add_Assignments.Location = new System.Drawing.Point(3, 90);
+            this.Btn_Add_Assignments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add_Assignments.Location = new System.Drawing.Point(0, 104);
             this.Btn_Add_Assignments.Name = "Btn_Add_Assignments";
-            this.Btn_Add_Assignments.Size = new System.Drawing.Size(126, 40);
+            this.Btn_Add_Assignments.Size = new System.Drawing.Size(126, 63);
             this.Btn_Add_Assignments.TabIndex = 13;
-            this.Btn_Add_Assignments.Text = "Agregar";
+            this.Btn_Add_Assignments.Text = "Registrar Entrega de Instrumento";
             this.Btn_Add_Assignments.UseVisualStyleBackColor = false;
             this.Btn_Add_Assignments.Click += new System.EventHandler(this.Btn_Add_Assignments_Click);
             // 
@@ -736,6 +738,20 @@
             // instrumentos_CertificadoTableAdapter2
             // 
             this.instrumentos_CertificadoTableAdapter2.ClearBeforeFill = true;
+            // 
+            // Btn_Regist_Return_Instrument
+            // 
+            this.Btn_Regist_Return_Instrument.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Regist_Return_Instrument.FlatAppearance.BorderSize = 0;
+            this.Btn_Regist_Return_Instrument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Regist_Return_Instrument.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Regist_Return_Instrument.Location = new System.Drawing.Point(0, 170);
+            this.Btn_Regist_Return_Instrument.Name = "Btn_Regist_Return_Instrument";
+            this.Btn_Regist_Return_Instrument.Size = new System.Drawing.Size(126, 63);
+            this.Btn_Regist_Return_Instrument.TabIndex = 14;
+            this.Btn_Regist_Return_Instrument.Text = "Registrar Devolucion de Instrumento";
+            this.Btn_Regist_Return_Instrument.UseVisualStyleBackColor = false;
+            this.Btn_Regist_Return_Instrument.Click += new System.EventHandler(this.Btn_Regist_Return_Instrument_Click);
             // 
             // MenuInstrumentos
             // 
@@ -841,5 +857,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistroDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button Btn_Serch_Assignments;
         private System.Windows.Forms.Button Btn_Add_Assignments;
+        private System.Windows.Forms.Button Btn_Regist_Return_Instrument;
     }
 }

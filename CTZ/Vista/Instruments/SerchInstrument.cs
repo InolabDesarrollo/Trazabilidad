@@ -28,8 +28,6 @@ namespace CTZ.Vista
                 UpdateInstrument updateInstrument = new UpdateInstrument(TxtBox_Instrument.Text); 
                 updateInstrument.Show();
             }
-            
-
         }
     }
 }

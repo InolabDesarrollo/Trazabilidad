@@ -45,8 +45,5 @@ namespace CTZ.Controlador
        {
            return repository.checkIfNumberExist(number);
        }
-
-      
-
     }
 }

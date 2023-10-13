@@ -24,7 +24,5 @@ namespace CTZ.Controlador
         {
             return repository.selectExternalTrazabilityLetters(idInternTrazabilityLetter);
         }
-
-
     }
 }

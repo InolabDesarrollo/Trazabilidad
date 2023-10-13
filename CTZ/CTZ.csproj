@@ -418,11 +418,11 @@
     <Compile Include="Vista\Instruments\DeleteInstrument.Designer.cs">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\EngineerSignature.cs">
+    <Compile Include="Vista\Instruments\RegistSignature.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\EngineerSignature.Designer.cs">
-      <DependentUpon>EngineerSignature.cs</DependentUpon>
+    <Compile Include="Vista\Instruments\RegistSignature.Designer.cs">
+      <DependentUpon>RegistSignature.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Instruments\Serch_Instruments_Assignments.cs">
       <SubType>Form</SubType>
@@ -647,8 +647,8 @@
     <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\EngineerSignature.resx">
-      <DependentUpon>EngineerSignature.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Instruments\RegistSignature.resx">
+      <DependentUpon>RegistSignature.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\Serch_Instruments_Assignments.resx">
       <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>
