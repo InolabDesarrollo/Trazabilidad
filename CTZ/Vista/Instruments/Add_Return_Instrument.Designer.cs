@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DatePicker_DateOfReturn = new System.Windows.Forms.DateTimePicker();
             this.Lbl_Date_Of_Return = new MaterialSkin.Controls.MaterialLabel();
             this.Lbl_Observations = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.Btn_Add = new MaterialSkin.Controls.MaterialButton();
+            this.TxtBox_ObservationReturn = new MaterialSkin.Controls.MaterialTextBox();
+            this.Btn_Regist_InformationReturn = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // DatePicker_DateOfReturn
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(38, 134);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(301, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.DatePicker_DateOfReturn.Location = new System.Drawing.Point(38, 134);
+            this.DatePicker_DateOfReturn.Name = "DatePicker_DateOfReturn";
+            this.DatePicker_DateOfReturn.Size = new System.Drawing.Size(301, 20);
+            this.DatePicker_DateOfReturn.TabIndex = 0;
             // 
             // Lbl_Date_Of_Return
             // 
@@ -66,51 +66,51 @@
             this.Lbl_Observations.TabIndex = 2;
             this.Lbl_Observations.Text = "Observaciones";
             // 
-            // materialTextBox1
+            // TxtBox_ObservationReturn
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(38, 227);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(683, 50);
-            this.materialTextBox1.TabIndex = 3;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.TxtBox_ObservationReturn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_ObservationReturn.Depth = 0;
+            this.TxtBox_ObservationReturn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_ObservationReturn.LeadingIcon = null;
+            this.TxtBox_ObservationReturn.Location = new System.Drawing.Point(38, 227);
+            this.TxtBox_ObservationReturn.MaxLength = 50;
+            this.TxtBox_ObservationReturn.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_ObservationReturn.Multiline = false;
+            this.TxtBox_ObservationReturn.Name = "TxtBox_ObservationReturn";
+            this.TxtBox_ObservationReturn.Size = new System.Drawing.Size(683, 50);
+            this.TxtBox_ObservationReturn.TabIndex = 3;
+            this.TxtBox_ObservationReturn.Text = "";
+            this.TxtBox_ObservationReturn.TrailingIcon = null;
             // 
-            // Btn_Add
+            // Btn_Regist_InformationReturn
             // 
-            this.Btn_Add.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Btn_Add.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.Btn_Add.Depth = 0;
-            this.Btn_Add.HighEmphasis = true;
-            this.Btn_Add.Icon = null;
-            this.Btn_Add.Location = new System.Drawing.Point(38, 402);
-            this.Btn_Add.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Btn_Add.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(306, 36);
-            this.Btn_Add.TabIndex = 6;
-            this.Btn_Add.Text = "Agregar Informacion de Devolucion";
-            this.Btn_Add.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.Btn_Add.UseAccentColor = false;
-            this.Btn_Add.UseVisualStyleBackColor = true;
-            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
+            this.Btn_Regist_InformationReturn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_Regist_InformationReturn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Btn_Regist_InformationReturn.Depth = 0;
+            this.Btn_Regist_InformationReturn.HighEmphasis = true;
+            this.Btn_Regist_InformationReturn.Icon = null;
+            this.Btn_Regist_InformationReturn.Location = new System.Drawing.Point(38, 402);
+            this.Btn_Regist_InformationReturn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_Regist_InformationReturn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_Regist_InformationReturn.Name = "Btn_Regist_InformationReturn";
+            this.Btn_Regist_InformationReturn.Size = new System.Drawing.Size(306, 36);
+            this.Btn_Regist_InformationReturn.TabIndex = 6;
+            this.Btn_Regist_InformationReturn.Text = "Registrar Informacion de Devolucion";
+            this.Btn_Regist_InformationReturn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Btn_Regist_InformationReturn.UseAccentColor = false;
+            this.Btn_Regist_InformationReturn.UseVisualStyleBackColor = true;
+            this.Btn_Regist_InformationReturn.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Add_Return_Instrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 493);
-            this.Controls.Add(this.Btn_Add);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.Btn_Regist_InformationReturn);
+            this.Controls.Add(this.TxtBox_ObservationReturn);
             this.Controls.Add(this.Lbl_Observations);
             this.Controls.Add(this.Lbl_Date_Of_Return);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DatePicker_DateOfReturn);
             this.Name = "Add_Return_Instrument";
             this.Text = "Registrar Devolucion de Instrumento";
             this.ResumeLayout(false);
@@ -120,10 +120,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DatePicker_DateOfReturn;
         private MaterialSkin.Controls.MaterialLabel Lbl_Date_Of_Return;
         private MaterialSkin.Controls.MaterialLabel Lbl_Observations;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
-        private MaterialSkin.Controls.MaterialButton Btn_Add;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_ObservationReturn;
+        private MaterialSkin.Controls.MaterialButton Btn_Regist_InformationReturn;
     }
 }

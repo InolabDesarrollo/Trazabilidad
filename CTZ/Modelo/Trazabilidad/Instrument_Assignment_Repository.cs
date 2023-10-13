@@ -24,6 +24,13 @@ namespace CTZ.Modelo.Trazabilidad
                 "VALUES("+instrumentAssignments.idInstrument+",'"+instrumentAssignments.dateDelivery+"','"+instrumentAssignments.engineer+"','"+instrumentAssignments.numberEnterprise+"','"+instrumentAssignments.nameEnterprise
                 +"','"+instrumentAssignments.observationDelivery+"','"+instrumentAssignments.equinoInstrument+"')");
         }
+
+        public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments)
+        {
+            return conexion.executeQuery("UPDATE AsignacionInstrumentos SET Fecha_Devolucion  = '"+instrumentAssignments.dateOfReturn+"', \r\nObservaciones_Devolucion ='"+instrumentAssignments.observationsReturn+"' \r\n" +
+                " WHERE ID_Instrumento = "+instrumentAssignments.idInstrument+" AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
+                " FROM AsignacionInstrumentos WHERE ID_Instrumento =18);");
+        }
         
         public void updateSignatureEngineer(int idInstrument, string engineerSignature)
         {

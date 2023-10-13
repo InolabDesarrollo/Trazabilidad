@@ -24,6 +24,11 @@ namespace CTZ.Controlador
             return _repository.registerDeliveryInstrument(instrumentAssignments);
         }
 
+        public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments)
+        {
+            return _repository.registerReturnInstrument(instrumentAssignments);
+        }
+
         public void updateSignatureEngineer(int idInstrument, Image engineerSignature)
         {
             string stringSignatureBase64 = converImageToStringBase64(engineerSignature);
