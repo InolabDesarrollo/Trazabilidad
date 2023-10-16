@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +26,7 @@ namespace CTZ.Vista.Instruments
         private readonly string equinoInstrument;
         private readonly string typeOfSignature;
         C_Instrument_Assignments controler;
+        private DataTable instrumentAssignmentsInformation;
         public RegistSignature(int idInstrument, string equinoInstrument, string typeOfSignature)
         {
             InitializeComponent();
@@ -32,7 +35,9 @@ namespace CTZ.Vista.Instruments
             this.equinoInstrument = equinoInstrument;
             this.typeOfSignature = typeOfSignature;
             controler = new C_Instrument_Assignments();
+            instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(idInstrument);
         }
+
         private void Pnl_Signature_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics= Pnl_Signature.CreateGraphics();
@@ -79,6 +84,7 @@ namespace CTZ.Vista.Instruments
         {
             controler.updateSignatureEngineer(idInstrument, engineerSignature);
             MessageBox.Show("Firma de ingeniero agregada correctamente");
+            sendEngineerEmailNotification("omar.andreas.sotomayor@gmail.com");
             this.Close();
         }
 
@@ -87,6 +93,30 @@ namespace CTZ.Vista.Instruments
             controler.updateSignatureQuality(idInstrument, qualitySignature);
             MessageBox.Show("Firma de calidad agregada correctamente");
             this.Close();
+        }
+
+        private void sendEngineerEmailNotification(string emailRecipient)
+        {
+            string emailSubject = "Notificacion entrega de Instrumento";
+            MailAddress emailSender = new MailAddress("notificaciones@inolab.com");
+            MailAddress mailRecipient = new MailAddress(emailRecipient);
+            MailMessage message = new MailMessage(emailSender,mailRecipient);
+
+            message.Bcc.Add("omarflores@inolab.com");
+            message.Subject = emailSubject;
+            message.Body = bodyEmailForEngineer();
+
+            Email email = new Email("notificaciones@inolab.com", "Notificaciones2021*");
+            email.send(message);
+        }
+
+        private string bodyEmailForEngineer()
+        {
+            string body = "Se le notifica la entrega de Instrumento con Equino: " + equinoInstrument + " \n" +
+                " La fecha estimada de devolucion es " + instrumentAssignmentsInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString() + " " +
+                "\n La Empresa receptora de servicio es " + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + " " +
+                "\n Las observaciones de la entrega son " + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString();
+            return body;
         }
     }
 }

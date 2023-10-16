@@ -25,7 +25,7 @@ namespace CTZ.Vista.Responsabilitis
 
         public string approximateDateOfReturn;
 
-        public string dateOfReturn;
+        public string dateOfReturn { get; set; }
 
         public string observationsReturn;
 

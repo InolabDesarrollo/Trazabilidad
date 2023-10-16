@@ -3,6 +3,7 @@ using CTZ.Modelo.Trazabilidad;
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -15,8 +16,10 @@ namespace CTZ.Controlador
     public class C_Instrument_Assignments
     {
         Instrument_Assignment_Repository _repository;
+        DateForReport _dateForReport;
         public C_Instrument_Assignments() {
             _repository = new Instrument_Assignment_Repository();
+            _dateForReport = new DateForReport();
         }
 
         public bool registerDeliveryInstrument(Instrument_Assignments instrumentAssignments)
@@ -26,6 +29,7 @@ namespace CTZ.Controlador
 
         public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments)
         {
+            instrumentAssignments.dateOfReturn = _dateForReport.convertToValidDate(instrumentAssignments.dateOfReturn);
             return _repository.registerReturnInstrument(instrumentAssignments);
         }
 
@@ -55,6 +59,13 @@ namespace CTZ.Controlador
                 imageBase64 = Convert.ToBase64String(bytes);
             }
             return imageBase64;
+        }
+
+
+
+        public DataTable selectMoreRecentInformationInstrumenAssignment(int idInstrument)
+        {
+            return _repository.selectMoreRecentInformationInstrumenAssignment(idInstrument);
         }
     }
 }

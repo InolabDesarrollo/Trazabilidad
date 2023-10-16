@@ -19,9 +19,9 @@ namespace CTZ.Modelo.Trazabilidad
 
         public bool registerDeliveryInstrument(Instrument_Assignments instrumentAssignments)
         {
-            return conexion.executeQuery("INSERT INTO AsignacionInstrumentos(ID_Instrumento,Fecha_Entrega,Ingeniero,Folio_Empresa,Nombre_Empresa,Observaciones_Entrega," +
+            return conexion.executeQuery("INSERT INTO AsignacionInstrumentos(ID_Instrumento,Fecha_Entrega,Fecha_Estimada_Devolucion,Ingeniero,Folio_Empresa,Nombre_Empresa,Observaciones_Entrega," +
                 "\r\n Equino_Instrumento)\r\n" +
-                "VALUES("+instrumentAssignments.idInstrument+",'"+instrumentAssignments.dateDelivery+"','"+instrumentAssignments.engineer+"','"+instrumentAssignments.numberEnterprise+"','"+instrumentAssignments.nameEnterprise
+                "VALUES("+instrumentAssignments.idInstrument+",'"+instrumentAssignments.dateDelivery+"','"+instrumentAssignments.approximateDateOfReturn+"','" +instrumentAssignments.engineer+"','"+instrumentAssignments.numberEnterprise+"','"+instrumentAssignments.nameEnterprise
                 +"','"+instrumentAssignments.observationDelivery+"','"+instrumentAssignments.equinoInstrument+"')");
         }
 
@@ -29,7 +29,7 @@ namespace CTZ.Modelo.Trazabilidad
         {
             return conexion.executeQuery("UPDATE AsignacionInstrumentos SET Fecha_Devolucion  = '"+instrumentAssignments.dateOfReturn+"', \r\nObservaciones_Devolucion ='"+instrumentAssignments.observationsReturn+"' \r\n" +
                 " WHERE ID_Instrumento = "+instrumentAssignments.idInstrument+" AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
-                " FROM AsignacionInstrumentos WHERE ID_Instrumento =18);");
+                " FROM AsignacionInstrumentos WHERE ID_Instrumento ="+instrumentAssignments.idInstrument+");");
         }
         
         public void updateSignatureEngineer(int idInstrument, string engineerSignature)
@@ -48,9 +48,11 @@ namespace CTZ.Modelo.Trazabilidad
             conexion.executeQuery("UPDATE Instrumentos SET ESTATUS_ASIGNACION = '"+status+"' WHERE ID = "+idInstrument+";");
         }
 
-        public DataTable selectInformationInstrumenAssignment(int idInstrument)
+        public DataTable selectMoreRecentInformationInstrumenAssignment(int idInstrument)
         {
-            return conexion.getDataTable("");
+            return conexion.getDataTable("SELECT * from AsignacionInstrumentos \r\n" +
+                " WHERE ID_Instrumento = "+ idInstrument + " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
+                " FROM AsignacionInstrumentos WHERE ID_Instrumento ="+ idInstrument + ");");
         }
     }
 }

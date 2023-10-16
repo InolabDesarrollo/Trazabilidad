@@ -33,13 +33,14 @@
             this.Lbl_Observations = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_ObservationReturn = new MaterialSkin.Controls.MaterialTextBox();
             this.Btn_Regist_InformationReturn = new MaterialSkin.Controls.MaterialButton();
+            this.Lbl_Estimate_Date_Return = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // DatePicker_DateOfReturn
             // 
-            this.DatePicker_DateOfReturn.Location = new System.Drawing.Point(38, 134);
+            this.DatePicker_DateOfReturn.Location = new System.Drawing.Point(38, 206);
             this.DatePicker_DateOfReturn.Name = "DatePicker_DateOfReturn";
-            this.DatePicker_DateOfReturn.Size = new System.Drawing.Size(301, 20);
+            this.DatePicker_DateOfReturn.Size = new System.Drawing.Size(308, 20);
             this.DatePicker_DateOfReturn.TabIndex = 0;
             // 
             // Lbl_Date_Of_Return
@@ -47,7 +48,7 @@
             this.Lbl_Date_Of_Return.AutoSize = true;
             this.Lbl_Date_Of_Return.Depth = 0;
             this.Lbl_Date_Of_Return.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Date_Of_Return.Location = new System.Drawing.Point(35, 103);
+            this.Lbl_Date_Of_Return.Location = new System.Drawing.Point(35, 166);
             this.Lbl_Date_Of_Return.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Date_Of_Return.Name = "Lbl_Date_Of_Return";
             this.Lbl_Date_Of_Return.Size = new System.Drawing.Size(148, 19);
@@ -59,7 +60,7 @@
             this.Lbl_Observations.AutoSize = true;
             this.Lbl_Observations.Depth = 0;
             this.Lbl_Observations.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Observations.Location = new System.Drawing.Point(35, 191);
+            this.Lbl_Observations.Location = new System.Drawing.Point(35, 246);
             this.Lbl_Observations.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Observations.Name = "Lbl_Observations";
             this.Lbl_Observations.Size = new System.Drawing.Size(105, 19);
@@ -72,7 +73,7 @@
             this.TxtBox_ObservationReturn.Depth = 0;
             this.TxtBox_ObservationReturn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_ObservationReturn.LeadingIcon = null;
-            this.TxtBox_ObservationReturn.Location = new System.Drawing.Point(38, 227);
+            this.TxtBox_ObservationReturn.Location = new System.Drawing.Point(38, 289);
             this.TxtBox_ObservationReturn.MaxLength = 50;
             this.TxtBox_ObservationReturn.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_ObservationReturn.Multiline = false;
@@ -93,7 +94,7 @@
             this.Btn_Regist_InformationReturn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Regist_InformationReturn.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Regist_InformationReturn.Name = "Btn_Regist_InformationReturn";
-            this.Btn_Regist_InformationReturn.Size = new System.Drawing.Size(306, 36);
+            this.Btn_Regist_InformationReturn.Size = new System.Drawing.Size(318, 36);
             this.Btn_Regist_InformationReturn.TabIndex = 6;
             this.Btn_Regist_InformationReturn.Text = "Registrar Informacion de Devolucion";
             this.Btn_Regist_InformationReturn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -101,11 +102,24 @@
             this.Btn_Regist_InformationReturn.UseVisualStyleBackColor = true;
             this.Btn_Regist_InformationReturn.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
+            // Lbl_Estimate_Date_Return
+            // 
+            this.Lbl_Estimate_Date_Return.AutoSize = true;
+            this.Lbl_Estimate_Date_Return.Depth = 0;
+            this.Lbl_Estimate_Date_Return.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Estimate_Date_Return.Location = new System.Drawing.Point(35, 88);
+            this.Lbl_Estimate_Date_Return.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Lbl_Estimate_Date_Return.Name = "Lbl_Estimate_Date_Return";
+            this.Lbl_Estimate_Date_Return.Size = new System.Drawing.Size(221, 19);
+            this.Lbl_Estimate_Date_Return.TabIndex = 7;
+            this.Lbl_Estimate_Date_Return.Text = "Fecha registrada de devolucion";
+            // 
             // Add_Return_Instrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 493);
+            this.ClientSize = new System.Drawing.Size(756, 493);
+            this.Controls.Add(this.Lbl_Estimate_Date_Return);
             this.Controls.Add(this.Btn_Regist_InformationReturn);
             this.Controls.Add(this.TxtBox_ObservationReturn);
             this.Controls.Add(this.Lbl_Observations);
@@ -125,5 +139,6 @@
         private MaterialSkin.Controls.MaterialLabel Lbl_Observations;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_ObservationReturn;
         private MaterialSkin.Controls.MaterialButton Btn_Regist_InformationReturn;
+        private MaterialSkin.Controls.MaterialLabel Lbl_Estimate_Date_Return;
     }
 }

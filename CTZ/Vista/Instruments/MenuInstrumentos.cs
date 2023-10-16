@@ -226,7 +226,8 @@ namespace CTZ.Vista
 
         private void Btn_Regist_Return_Instrument_Click(object sender, EventArgs e)
         {
-
+            Add_Instrument_Assignment assignment = new Add_Instrument_Assignment();
+            assignment.Show();
         }
     }
 }
