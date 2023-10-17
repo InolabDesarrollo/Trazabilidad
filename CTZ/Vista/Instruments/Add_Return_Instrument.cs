@@ -19,6 +19,7 @@ namespace CTZ.Vista.Instruments
         private string equinoInstrument;
         Instrument_Assignments instrumentAssignments;
         C_Instrument_Assignments controler;
+        DataTable instrumentAssignmentInformation;
         public Add_Return_Instrument(int idInstrument, string equinoInstrument)
         {
             instrumentAssignments = new Instrument_Assignments();
@@ -31,8 +32,9 @@ namespace CTZ.Vista.Instruments
 
         private void dataInstrument()
         {
-            DataTable instrmentAssignmentInformation= controler.selectMoreRecentInformationInstrumenAssignment(idInstrument);
-            Lbl_Estimate_Date_Return.Text = "Fecha de devolucion Registrada "+instrmentAssignmentInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString();
+            instrumentAssignmentInformation= controler.selectMoreRecentInformationInstrumenAssignment(idInstrument);
+            string date = "Fecha de devolucion Registrada " + instrumentAssignmentInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString();
+            Lbl_Estimate_Date_Return.Text = date.ToString().Substring(0, 42);
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -43,10 +45,9 @@ namespace CTZ.Vista.Instruments
             instrumentAssignments.observationsReturn=TxtBox_ObservationReturn.Text;
            
             controler.registerReturnInstrument(instrumentAssignments);
-            RegistSignature signatureQualityAgent = new RegistSignature(idInstrument,equinoInstrument, "Quality","");
+            RegistSignature signatureQualityAgent = new RegistSignature(idInstrument,equinoInstrument, "Quality", instrumentAssignmentInformation.Rows[0]["Correo_Ingeniero"].ToString());
             signatureQualityAgent.Show();
             this.Hide();
         }
-
     }
 }

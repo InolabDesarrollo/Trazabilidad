@@ -66,7 +66,6 @@ namespace CTZ.Vista
                 }
             }
         }
-
         private void Dgv_Instruments_Certificates_FilterStringChanged(object sender, EventArgs e)
         {
             this.instrumentosCertificadoBindingSource1.Filter = Dgv_Instruments_Certificates.FilterString;

@@ -134,7 +134,7 @@ namespace CTZ.Vista.Instruments
             MailAddress mailRecipient = new MailAddress(emailRecipient);
             MailMessage message = new MailMessage(emailSender, mailRecipient);
 
-            message.Bcc.Add("omarflores@inolab.com");
+            message.Bcc.Add(emailEngineer);
             message.Subject = emailSubject;
             message.IsBodyHtml = false;
             message.Body = emailBodyForQuality();
