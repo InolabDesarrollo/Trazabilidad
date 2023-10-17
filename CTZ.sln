@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1340
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTZ", "CTZ\CTZ.csproj", "{ADA28947-9EE4-470A-BFEA-84436D1F42D2}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup3", "Setup3\Setup3.vdproj", "{98793A26-AF79-4BCB-8D92-0125FA395140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProyect", "TestProyect\TestProyect.csproj", "{685AFB2A-2187-4132-BD91-A78BB46DF5D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{ADA28947-9EE4-470A-BFEA-84436D1F42D2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{98793A26-AF79-4BCB-8D92-0125FA395140}.Debug|Any CPU.ActiveCfg = Debug
 		{98793A26-AF79-4BCB-8D92-0125FA395140}.Release|Any CPU.ActiveCfg = Release
+		{685AFB2A-2187-4132-BD91-A78BB46DF5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685AFB2A-2187-4132-BD91-A78BB46DF5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685AFB2A-2187-4132-BD91-A78BB46DF5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685AFB2A-2187-4132-BD91-A78BB46DF5D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

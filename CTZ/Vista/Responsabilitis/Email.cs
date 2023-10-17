@@ -10,9 +10,10 @@ namespace CTZ.Vista.Responsabilitis
 {
     public class Email
     {
-        SmtpClient smtpClient = new SmtpClient();
+        SmtpClient smtpClient;
         public Email(string senderEmail, string emailPassword)
         {
+            smtpClient = new SmtpClient();
             smtpClient.Host = "smtp.inolab.com";
             smtpClient.EnableSsl = false;
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;

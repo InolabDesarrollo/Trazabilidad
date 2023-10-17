@@ -1,0 +1,5 @@
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\Test\obj\Debug\netcoreapp3.0\Test.csproj.AssemblyReference.cache
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\Test\obj\Debug\netcoreapp3.0\Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\Test\obj\Debug\netcoreapp3.0\Test.AssemblyInfoInputs.cache
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\Test\obj\Debug\netcoreapp3.0\Test.AssemblyInfo.cs
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\Test\obj\Debug\netcoreapp3.0\Test.csproj.CoreCompileInputs.cache

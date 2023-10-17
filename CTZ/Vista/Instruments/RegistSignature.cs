@@ -104,6 +104,7 @@ namespace CTZ.Vista.Instruments
 
             message.Bcc.Add("omarflores@inolab.com");
             message.Subject = emailSubject;
+            message.IsBodyHtml = false;
             message.Body = bodyEmailForEngineer();
 
             Email email = new Email("notificaciones@inolab.com", "Notificaciones2021*");
