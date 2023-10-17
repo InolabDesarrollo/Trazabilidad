@@ -20,9 +20,9 @@ namespace CTZ.Modelo.Trazabilidad
         public bool registerDeliveryInstrument(Instrument_Assignments instrumentAssignments)
         {
             return conexion.executeQuery("INSERT INTO AsignacionInstrumentos(ID_Instrumento,Fecha_Entrega,Fecha_Estimada_Devolucion,Ingeniero,Folio_Empresa,Nombre_Empresa,Observaciones_Entrega," +
-                "\r\n Equino_Instrumento)\r\n" +
+                "\r\n Equino_Instrumento,Correo_Ingeniero)\r\n" +
                 "VALUES("+instrumentAssignments.idInstrument+",'"+instrumentAssignments.dateDelivery+"','"+instrumentAssignments.approximateDateOfReturn+"','" +instrumentAssignments.engineer+"','"+instrumentAssignments.numberEnterprise+"','"+instrumentAssignments.nameEnterprise
-                +"','"+instrumentAssignments.observationDelivery+"','"+instrumentAssignments.equinoInstrument+"')");
+                +"','"+instrumentAssignments.observationDelivery+"','"+instrumentAssignments.equinoInstrument+"','"+instrumentAssignments.mailEngineer+"')");
         }
 
         public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments)

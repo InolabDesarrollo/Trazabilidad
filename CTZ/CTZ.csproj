@@ -535,7 +535,6 @@
     <Compile Include="Vista\Responsabilitis\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Responsabilitis\Sum.cs" />
     <Compile Include="Vista\SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>

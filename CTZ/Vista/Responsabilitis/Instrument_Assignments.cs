@@ -23,6 +23,8 @@ namespace CTZ.Vista.Responsabilitis
 
         public string engineerSignature;
 
+        public string mailEngineer;
+
         public string approximateDateOfReturn;
 
         public string dateOfReturn { get; set; }

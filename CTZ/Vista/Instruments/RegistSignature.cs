@@ -9,6 +9,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,15 +26,19 @@ namespace CTZ.Vista.Instruments
         private readonly int idInstrument;
         private readonly string equinoInstrument;
         private readonly string typeOfSignature;
+        private  string emailEngineer;
+
         C_Instrument_Assignments controler;
         private DataTable instrumentAssignmentsInformation;
-        public RegistSignature(int idInstrument, string equinoInstrument, string typeOfSignature)
+        public RegistSignature(int idInstrument, string equinoInstrument, string typeOfSignature,string emailEngineer)
         {
             InitializeComponent();
             Lbl_Instrument.Text = equinoInstrument;
             this.idInstrument = idInstrument;
             this.equinoInstrument = equinoInstrument;
             this.typeOfSignature = typeOfSignature;
+            this.emailEngineer = emailEngineer;
+
             controler = new C_Instrument_Assignments();
             instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(idInstrument);
         }
@@ -84,14 +89,7 @@ namespace CTZ.Vista.Instruments
         {
             controler.updateSignatureEngineer(idInstrument, engineerSignature);
             MessageBox.Show("Firma de ingeniero agregada correctamente");
-            sendEngineerEmailNotification("omar.andreas.sotomayor@gmail.com");
-            this.Close();
-        }
-
-        private void registQualitySignature(Image qualitySignature)
-        {
-            controler.updateSignatureQuality(idInstrument, qualitySignature);
-            MessageBox.Show("Firma de calidad agregada correctamente");
+            sendEngineerEmailNotification(emailEngineer);
             this.Close();
         }
 
@@ -105,18 +103,52 @@ namespace CTZ.Vista.Instruments
             message.Bcc.Add("omarflores@inolab.com");
             message.Subject = emailSubject;
             message.IsBodyHtml = false;
-            message.Body = bodyEmailForEngineer();
+            message.Body = emailBodyForEngineer();
 
             Email email = new Email("notificaciones@inolab.com", "Notificaciones2021*");
             email.send(message);
         }
 
-        private string bodyEmailForEngineer()
+        private string emailBodyForEngineer()
         {
-            string body = "Se le notifica la entrega de Instrumento con Equino: " + equinoInstrument + " \n" +
+            string body = "Se le notifica la entrega de Instrumento con Equino: " + equinoInstrument + ", \n" +
                 " La fecha estimada de devolucion es " + instrumentAssignmentsInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString() + " " +
-                "\n La Empresa receptora de servicio es " + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + " " +
-                "\n Las observaciones de la entrega son " + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString();
+                "\nLa Empresa receptora de servicio es '" + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + "' " +
+                "\n Las observaciones de la entrega son '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString()+"' " +
+                "\nSaludos. ";
+            return body;
+        }
+
+        private void registQualitySignature(Image qualitySignature)
+        {
+            controler.updateSignatureQuality(idInstrument, qualitySignature);
+            MessageBox.Show("Firma de calidad agregada correctamente");
+            sendQualityMailNotification("omar.andreas.sotomayor@gmail.com");
+            this.Close();
+        }
+
+        private void sendQualityMailNotification(string emailRecipient)
+        {
+            string emailSubject = "Notificacion de devolucion de Instrumento";
+            MailAddress emailSender = new MailAddress("notificaciones@inolab.com");
+            MailAddress mailRecipient = new MailAddress(emailRecipient);
+            MailMessage message = new MailMessage(emailSender, mailRecipient);
+
+            message.Bcc.Add("omarflores@inolab.com");
+            message.Subject = emailSubject;
+            message.IsBodyHtml = false;
+            message.Body = emailBodyForQuality();
+
+            Email email = new Email("notificaciones@inolab.com", "Notificaciones2021*");
+            email.send(message);
+        }
+
+        private string emailBodyForQuality()
+        {
+            string body = "Se notifica la devolucion de instrumento con Equino: " + equinoInstrument + ". " +
+                "\n Registrado para servicio a la Empresa " + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + ". " +
+                "\n Devuelto a la fecha  " + DateTime.Today + ". " +
+                "\n Las observaciones de calidad son: '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Devolucion"].ToString() + "'.";
             return body;
         }
     }

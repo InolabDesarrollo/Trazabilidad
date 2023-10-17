@@ -61,8 +61,6 @@ namespace CTZ.Controlador
             return imageBase64;
         }
 
-
-
         public DataTable selectMoreRecentInformationInstrumenAssignment(int idInstrument)
         {
             return _repository.selectMoreRecentInformationInstrumenAssignment(idInstrument);

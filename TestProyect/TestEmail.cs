@@ -29,7 +29,7 @@ namespace TestProyect
             email.send(message);
 
             //Assert
-           Assert.IsTrue(message.IsBodyHtml);
+            Assert.IsTrue(message.IsBodyHtml);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace CTZ.Vista.Instruments
             instrumentAssignments.observationsReturn=TxtBox_ObservationReturn.Text;
            
             controler.registerReturnInstrument(instrumentAssignments);
-            RegistSignature signatureQualityAgent = new RegistSignature(idInstrument,equinoInstrument, "Quality");
+            RegistSignature signatureQualityAgent = new RegistSignature(idInstrument,equinoInstrument, "Quality","");
             signatureQualityAgent.Show();
             this.Hide();
         }
