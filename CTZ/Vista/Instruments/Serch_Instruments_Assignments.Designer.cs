@@ -81,6 +81,7 @@
             this.Btn_Serch_By_Instrument.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Serch_By_Instrument.UseAccentColor = false;
             this.Btn_Serch_By_Instrument.UseVisualStyleBackColor = true;
+            this.Btn_Serch_By_Instrument.Click += new System.EventHandler(this.Btn_Serch_By_Instrument_Click);
             // 
             // Lbl_Number_Enterprise
             // 
@@ -98,7 +99,7 @@
             // 
             this.TxtBox_Number_Enterprise.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Number_Enterprise.Depth = 0;
-            this.TxtBox_Number_Enterprise.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Number_Enterprise.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Number_Enterprise.LeadingIcon = null;
             this.TxtBox_Number_Enterprise.Location = new System.Drawing.Point(41, 339);
             this.TxtBox_Number_Enterprise.MaxLength = 50;
@@ -121,14 +122,15 @@
             this.Btn_Number_Enterprise.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Number_Enterprise.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Number_Enterprise.Name = "Btn_Number_Enterprise";
-            this.Btn_Number_Enterprise.Size = new System.Drawing.Size(216, 36);
+            this.Btn_Number_Enterprise.Size = new System.Drawing.Size(247, 36);
             this.Btn_Number_Enterprise.TabIndex = 5;
             this.Btn_Number_Enterprise.Text = "Buscar Por Folio de Empresa";
             this.Btn_Number_Enterprise.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Number_Enterprise.UseAccentColor = false;
             this.Btn_Number_Enterprise.UseVisualStyleBackColor = true;
+            this.Btn_Number_Enterprise.Click += new System.EventHandler(this.Btn_Number_Enterprise_Click);
             // 
-            // Serch_Assignments_Instruments
+            // Serch_Instruments_Assignments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +141,7 @@
             this.Controls.Add(this.Btn_Serch_By_Instrument);
             this.Controls.Add(this.TxtBox_Instrument);
             this.Controls.Add(this.Lbl_Instrument);
-            this.Name = "Serch_Assignments_Instruments";
+            this.Name = "Serch_Instruments_Assignments";
             this.Text = "Buscar Asignacion de Instrumento";
             this.ResumeLayout(false);
             this.PerformLayout();

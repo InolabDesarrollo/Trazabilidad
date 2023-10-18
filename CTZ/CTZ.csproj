@@ -428,6 +428,12 @@
     <Compile Include="Vista\Instruments\RegistSignature.Designer.cs">
       <DependentUpon>RegistSignature.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Instruments\See_Instrument_Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\See_Instrument_Assignment.Designer.cs">
+      <DependentUpon>See_Instrument_Assignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Instruments\Serch_Instruments_Assignments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -654,6 +660,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\RegistSignature.resx">
       <DependentUpon>RegistSignature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\See_Instrument_Assignment.resx">
+      <DependentUpon>See_Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\Serch_Instruments_Assignments.resx">
       <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>

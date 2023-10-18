@@ -113,8 +113,8 @@ namespace CTZ.Vista.Instruments
         {
             string body = "Se le notifica la entrega de Instrumento con Equino: " + equinoInstrument + ", \n" +
                 " La fecha estimada de devolucion es " + instrumentAssignmentsInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString() + " " +
-                "\nLa Empresa receptora de servicio es '" + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + "' " +
-                "\n Las observaciones de la entrega son '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString()+"' " +
+                "\nLa Empresa receptora de servicio es: '" + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + "' " +
+                "\nLas observaciones de la entrega son: '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString()+"' " +
                 "\nSaludos. ";
             return body;
         }

@@ -61,6 +61,20 @@ namespace CTZ.Controlador
             return imageBase64;
         }
 
+        public DataTable selectAllInformationInstrumentAssignment(string EquinoInstrument)
+        {
+            return _repository.selectAllByEquino(EquinoInstrument);
+        }
+        public DataTable selectAllByNumberEnterprise(string numberEnterprise)
+        {
+            return _repository.selectAllByNumberEnterprise(numberEnterprise);
+        }
+
+        public bool checkInformationWidthNumberEnterprise(string numberEnterprise)
+        {
+            return _repository.checkInformationWidthNumberEnterprise(numberEnterprise);
+        }
+
         public DataTable selectMoreRecentInformationInstrumenAssignment(int idInstrument)
         {
             return _repository.selectMoreRecentInformationInstrumenAssignment(idInstrument);
