@@ -21,7 +21,6 @@ namespace CTZ.Vista.Instruments
             InitializeComponent();
             controler = new C_Instruments();
         }
-
         private void Btn_Serch_By_Instrument_Click(object sender, EventArgs e)
         {
             if(controler.serchInstrumen(TxtBox_Instrument.Text)){
@@ -33,6 +32,7 @@ namespace CTZ.Vista.Instruments
             else
             {
                 MessageBox.Show("El Equino del instrumento no existe");
+                TxtBox_Instrument.Text = string.Empty;
             }       
         }
 
@@ -49,6 +49,7 @@ namespace CTZ.Vista.Instruments
             else
             {
                 MessageBox.Show("El numero de empresa no existe");
+                TxtBox_Number_Enterprise.Text = "";
             }
         }
     }

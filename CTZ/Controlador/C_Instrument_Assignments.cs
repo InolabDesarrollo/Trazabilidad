@@ -70,6 +70,11 @@ namespace CTZ.Controlador
             return _repository.selectAllByNumberEnterprise(numberEnterprise);
         }
 
+        public DataTable selectAllById(int id)
+        {
+            return _repository.selectAllById(id);
+        }
+
         public bool checkInformationWidthNumberEnterprise(string numberEnterprise)
         {
             return _repository.checkInformationWidthNumberEnterprise(numberEnterprise);

@@ -15,6 +15,8 @@ namespace CTZ.Vista.Instruments
     public partial class See_Instrument_Assignment : Form
     {
         C_Instrument_Assignments controler;
+        private const int engineerSignature = 7;
+        private const int qualitySignature = 11;
         public See_Instrument_Assignment(string equinoInstrument)
         {
             InitializeComponent();
@@ -31,5 +33,23 @@ namespace CTZ.Vista.Instruments
             Lbl_Equino_Instrument.Text = nameEnterprise;
         }
 
+        private void Dgv_Instrument_Assignment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == engineerSignature)
+            {
+                showSignature(e);
+            }
+            if (e.ColumnIndex == qualitySignature)
+            {
+                showSignature(e);
+            }
+        }
+
+        private void showSignature(DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(Dgv_Instrument_Assignment[0, e.RowIndex].Value.ToString());
+            Signature signature = new Signature(id);
+            signature.Show();
+        }
     }
 }

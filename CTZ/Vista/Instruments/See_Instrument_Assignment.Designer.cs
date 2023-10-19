@@ -77,11 +77,13 @@
             this.Dgv_Instrument_Assignment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dgv_Instrument_Assignment.BackgroundColor = System.Drawing.Color.White;
             this.Dgv_Instrument_Assignment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_Instrument_Assignment.Location = new System.Drawing.Point(0, 3);
+            this.Dgv_Instrument_Assignment.Location = new System.Drawing.Point(0, 0);
             this.Dgv_Instrument_Assignment.Name = "Dgv_Instrument_Assignment";
-            this.Dgv_Instrument_Assignment.Size = new System.Drawing.Size(819, 399);
+            this.Dgv_Instrument_Assignment.Size = new System.Drawing.Size(819, 402);
             this.Dgv_Instrument_Assignment.TabIndex = 0;
+            this.Dgv_Instrument_Assignment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Instrument_Assignment_CellDoubleClick);
             // 
             // See_Instrument_Assignment
             // 

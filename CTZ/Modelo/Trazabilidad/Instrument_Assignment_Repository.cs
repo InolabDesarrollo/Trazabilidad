@@ -54,6 +54,11 @@ namespace CTZ.Modelo.Trazabilidad
                 " WHERE Equino_Instrumento = '"+ EquinoInstrument + "';");
         }
 
+        public DataTable selectAllById(int id)
+        {
+            return conexion.getDataTable("Select * from AsignacionInstrumentos where ID = " + id + ";");
+        }
+
         public DataTable selectAllByNumberEnterprise(string numberEnterprise)
         {
             return conexion.getDataTable("Select * from AsignacionInstrumentos " +
@@ -72,5 +77,6 @@ namespace CTZ.Modelo.Trazabilidad
                 " WHERE ID_Instrumento = "+ idInstrument + " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
                 " FROM AsignacionInstrumentos WHERE ID_Instrumento ="+ idInstrument + ");");
         }
+        
     }
 }
