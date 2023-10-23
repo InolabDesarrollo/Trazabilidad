@@ -1,4 +1,5 @@
-﻿using CTZ.Modelo.Browser;
+﻿using CTZ.Modelo;
+using CTZ.Modelo.Browser;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -33,6 +34,11 @@ namespace CTZ.Controlador
         public DataTable getEngineers()
         {
             return repository.getEngineers();
+        }
+
+        public bool checkIfExistEngineer(string engineerName)
+        {
+            return repository.checkIfExistEngineer(engineerName);
         }
     }
 }

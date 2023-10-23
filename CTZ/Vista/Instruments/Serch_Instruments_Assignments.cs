@@ -23,11 +23,12 @@ namespace CTZ.Vista.Instruments
         }
         private void Btn_Serch_By_Instrument_Click(object sender, EventArgs e)
         {
-            if(controler.serchInstrumen(TxtBox_Instrument.Text)){
+            controler = new C_Instruments();
+            if (controler.serchInstrumen(TxtBox_Instrument.Text)){
                 string equinoInstrument = TxtBox_Instrument.Text;
                 See_Instrument_Assignment instrument_Assignment = new See_Instrument_Assignment(equinoInstrument);
                 instrument_Assignment.Show();
-                this.Close();
+                TxtBox_Instrument.Text = string.Empty;
             }
             else
             {
@@ -45,12 +46,40 @@ namespace CTZ.Vista.Instruments
                 See_Instrument_Assignment instrumentAssignment = new See_Instrument_Assignment(TxtBox_Number_Enterprise.Text,
                     informationInstrumentAssignment.Rows[0]["Nombre_Empresa"].ToString());
                 instrumentAssignment.Show();
+                TxtBox_Instrument.Text = string.Empty;
             }
             else
             {
                 MessageBox.Show("El numero de empresa no existe");
                 TxtBox_Number_Enterprise.Text = "";
             }
+        }
+
+        private void Btn_Engineer_Click(object sender, EventArgs e)
+        {
+            C_Usuario userControler = new C_Usuario();
+            if (userControler.checkIfExistEngineer(TxtBox_Engineer.Text))
+            {
+                controlerInstrumentAssignment = new C_Instrument_Assignments();
+                if (controlerInstrumentAssignment.checkIfEngineerHasAssignment(TxtBox_Engineer.Text))
+                {
+                    controlerInstrumentAssignment = new C_Instrument_Assignments();
+                    DataTable instrumenAssignmentInformation = controlerInstrumentAssignment.selectAllByEngineer(TxtBox_Engineer.Text);
+                    See_Instrument_Assignment instrument_Assignment = new See_Instrument_Assignment(instrumenAssignmentInformation);
+                    instrument_Assignment.Show();
+                    TxtBox_Instrument.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("El ingeniero no tiene Asignaciones");
+                    TxtBox_Instrument.Text = string.Empty;
+                }
+            }
+            else
+            {
+                MessageBox.Show("El ingeniero no Existe");
+                TxtBox_Instrument.Text = string.Empty;
+            }   
         }
     }
 }

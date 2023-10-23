@@ -377,6 +377,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTestDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TrazabilidadTestDataSet2.cs">
+      <DependentUpon>TrazabilidadTestDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TrazabilidadTestDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -386,6 +389,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTestDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TrazabilidadTestDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrazabilidadTestDataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="TrazabilidadTest_Instrumentos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -403,6 +411,12 @@
     </Compile>
     <Compile Include="Vista\Instruments\Add_Delivery_Instrument.Designer.cs">
       <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Instruments\Add_Delivery_Instrument_ByGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\Add_Delivery_Instrument_ByGroup.Designer.cs">
+      <DependentUpon>Add_Delivery_Instrument_ByGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Instruments\Add_Instrument_Assignment.cs">
       <SubType>Form</SubType>
@@ -654,6 +668,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\Add_Delivery_Instrument.resx">
       <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\Add_Delivery_Instrument_ByGroup.resx">
+      <DependentUpon>Add_Delivery_Instrument_ByGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\Add_Instrument_Assignment.resx">
       <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
@@ -1000,6 +1017,17 @@
     </None>
     <None Include="TrazabilidadTestDataSet3.xss">
       <DependentUpon>TrazabilidadTestDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTestDataSet4.xsc">
+      <DependentUpon>TrazabilidadTestDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="TrazabilidadTestDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TrazabilidadTestDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrazabilidadTestDataSet4.xss">
+      <DependentUpon>TrazabilidadTestDataSet4.xsd</DependentUpon>
     </None>
     <None Include="TrazabilidadTest_Instrumentos.xsc">
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>

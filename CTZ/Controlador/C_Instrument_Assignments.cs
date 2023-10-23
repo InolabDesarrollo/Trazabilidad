@@ -65,14 +65,37 @@ namespace CTZ.Controlador
         {
             return _repository.selectAllByEquino(EquinoInstrument);
         }
+        public DataTable selectAllByEquinoAndDates(string EquinoInstrument, DateForReport dates)
+        {
+            return _repository.selectAllByEquinoAndDates(EquinoInstrument,dates);
+        }
+
         public DataTable selectAllByNumberEnterprise(string numberEnterprise)
         {
             return _repository.selectAllByNumberEnterprise(numberEnterprise);
         }
 
+        public DataTable selectAllByNumberEnterpriseAndDates(string numberEnterprise, DateForReport dates)
+        {
+            return _repository.selectAllByNumberEnterpriseAndDates(numberEnterprise,dates);
+        }
+
         public DataTable selectAllById(int id)
         {
             return _repository.selectAllById(id);
+        }
+        public DataTable selectAllByEngineer(string engineer)
+        {
+            return _repository.selectAllByEngineer(engineer);
+        }
+
+        public DataTable selectAllByEngineer(string engineer, DateForReport dates)
+        {
+            return _repository.selectAllByEngineer(engineer,dates);
+        }
+        public bool checkIfEngineerHasAssignment(string engineer)
+        {
+            return _repository.checkIfEngineerHasAssignment(engineer);
         }
 
         public bool checkInformationWidthNumberEnterprise(string numberEnterprise)

@@ -19,8 +19,8 @@ namespace CTZ.Vista
 {
     public partial class MenuInstrumentos : Form
     {
-        Responsabilitis.Instruments instrument = new Responsabilitis.Instruments();
         const int columnStatus = 8;
+        const int columnInstrumenAssigmments = 14;
         public MenuInstrumentos()
         {
             InitializeComponent();
@@ -28,11 +28,15 @@ namespace CTZ.Vista
         }
         private void MenuInstrumentos_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Instrumentos' Puede moverla o quitarla según sea necesario.
+            this.instrumentosTableAdapter1.Fill(this.trazabilidadTestDataSet4.Instrumentos);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet3.Instrumentos_Certificado' Puede moverla o quitarla según sea necesario.
             this.instrumentos_CertificadoTableAdapter2.Fill(this.trazabilidadTestDataSet3.Instrumentos_Certificado);
             this.instrumentosTableAdapter.Fill(this.trazabilidadTest_Instrumentos.Instrumentos);
             this.instrumentos_CertificadoTableAdapter1.Fill(this.trazabilidadTestDataSet2.Instrumentos_Certificado);
+            
             colorCells(columnStatus, Dgv_Instruments_Certificates);
+            colorCells(columnInstrumenAssigmments, Dgv_Instruments_Certificates);
             colorDatesOfCalibration(10, Dgv_Instruments_Certificates);
         }
 
@@ -67,18 +71,16 @@ namespace CTZ.Vista
             }
         }
         private void Dgv_Instruments_Certificates_FilterStringChanged(object sender, EventArgs e)
-        {
+        {         
             this.instrumentosCertificadoBindingSource1.Filter = Dgv_Instruments_Certificates.FilterString;
             colorCells(columnStatus, Dgv_Instruments_Certificates);
         }
 
         private void Dgv_Instruments_Certificates_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            switch (e.ColumnIndex)
+            if (e.ColumnIndex==1)
             {
-                case 1:
-                    updateInstrument(Dgv_Instruments_Certificates, e);
-                    break;
+                updateInstrument(Dgv_Instruments_Certificates, e);
             }
         }
         private void Btn_Instruments_Certificates_Click(object sender, EventArgs e)
@@ -95,6 +97,7 @@ namespace CTZ.Vista
         private void Btn_All_Instruments_Click(object sender, EventArgs e)
         {
             colorCells(columnStatus, Dgv_Instrumentos);
+            colorCells(7, Dgv_Instrumentos);
             Dgv_Instruments_Certificates.Visible = false;
         }
 
@@ -119,22 +122,28 @@ namespace CTZ.Vista
                 {
                     dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Blue;
                 }
+                if (valor.Equals("DISPONIBLE"))
+                {
+                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
+                }
+                if (valor.Equals("OCUPADO"))
+                {
+                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor= Color.Orange;
+                }
             }
         }
 
         private void Dgv_Instrumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            switch (e.ColumnIndex)
+            if(e.ColumnIndex == 1)
             {
-                case 1:
-                    updateInstrument(Dgv_Instrumentos, e);
-                    break;
+                updateInstrument(Dgv_Instrumentos, e);
             }
         }
 
         private void updateInstrument(DataGridView dataGridView, DataGridViewCellEventArgs e)
         {
-            string idSql = Dgv_Instrumentos[0, e.RowIndex].Value.ToString();
+            string idSql = Dgv_Instrumentos[0, e.RowIndex].Value.ToString(); 
             string idInstrument = Dgv_Instrumentos[1, e.RowIndex].Value.ToString();
             UpdateInstrument instrument = new UpdateInstrument(idInstrument, idSql);
             instrument.Show();
@@ -227,6 +236,16 @@ namespace CTZ.Vista
         {
             Add_Instrument_Assignment assignment = new Add_Instrument_Assignment();
             assignment.Show();
+        }
+
+        private void Btn_Add_Assignments_ByGroup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Regist_Return_Instrument_ByGroup_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

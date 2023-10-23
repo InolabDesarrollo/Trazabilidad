@@ -49,7 +49,6 @@ namespace CTZ.Vista
             checkStatus(informationIntrument.Rows[0]["ESTATUS"].ToString());
             getCertificatesFromInstrument(Convert.ToInt32(idSql));
             Lbl_Id_Instrument.Text = informationIntrument.Rows[0]["ID_Instrumentos"].ToString();
-
         }
 
         private void checkStatus(string status)

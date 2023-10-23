@@ -53,6 +53,11 @@ namespace CTZ.Modelo.Trazabilidad
             return conexion.getDataTable("SELECT * FROM AsignacionInstrumentos " +
                 " WHERE Equino_Instrumento = '"+ EquinoInstrument + "';");
         }
+        public DataTable selectAllByEquinoAndDates(string EquinoInstrument, DateForReport dates)
+        {
+            return conexion.getDataTable("SELECT * FROM AsignacionInstrumentos  WHERE Fecha_Entrega BETWEEN '"+dates.dateBegan+"' AND '"+dates.dateFinal+"' " +
+                " AND Equino_Instrumento = '"+ EquinoInstrument + "' ");
+        }
 
         public DataTable selectAllById(int id)
         {
@@ -64,7 +69,31 @@ namespace CTZ.Modelo.Trazabilidad
             return conexion.getDataTable("Select * from AsignacionInstrumentos " +
                 " WHERE Folio_Empresa = '"+ numberEnterprise + "';");
         }
-         
+
+        public DataTable selectAllByNumberEnterpriseAndDates(string numberEnterprise,DateForReport dates)
+        {
+            return conexion.getDataTable("SELECT * FROM AsignacionInstrumentos  WHERE Fecha_Entrega " +
+                " BETWEEN '"+dates.dateBegan+"' AND '"+dates.dateFinal+"' AND Folio_Empresa = '"+numberEnterprise+"';");
+        }
+
+        public DataTable selectAllByEngineer(string engineer)
+        {
+            return conexion.getDataTable("Select  * from AsignacionInstrumentos Where Ingeniero " +
+                " Like '%"+engineer+"%';");
+        }
+
+        public DataTable selectAllByEngineer(string engineer, DateForReport dates)
+        {
+            return conexion.getDataTable("Select  * from AsignacionInstrumentos Where Ingeniero " +
+                " Like '%" + engineer + "%';");
+        }
+
+        public bool checkIfEngineerHasAssignment(string engineer)
+        {
+            return conexion.isThereSomeInformation("Select  * from AsignacionInstrumentos Where Ingeniero " +
+                " Like '%" + engineer + "%';");
+        }
+
         public bool checkInformationWidthNumberEnterprise(string numberEnterprise)
         {
             return conexion.isThereSomeInformation("Select * from AsignacionInstrumentos " +

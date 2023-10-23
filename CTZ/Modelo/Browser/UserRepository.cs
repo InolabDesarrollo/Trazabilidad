@@ -29,5 +29,11 @@ namespace CTZ.Modelo.Browser
             return conexion.getDataTable("SELECT * FROM Usuarios where IdArea = 6;");
         }
 
+        public bool checkIfExistEngineer(string engineerName)
+        {
+            return conexion.isThereSomeInformation("Select  Nombre,Apellidos  FROM Usuarios " +
+                " WHERE Nombre LIKE '%"+ engineerName + "%' OR Apellidos LIKE '%"+ engineerName + "%' ;");
+        }
+
     }
 }
