@@ -240,7 +240,8 @@ namespace CTZ.Vista
 
         private void Btn_Add_Assignments_ByGroup_Click(object sender, EventArgs e)
         {
-
+            Add_Delivery_Instrument_ByGroup deliveryInstrument= new Add_Delivery_Instrument_ByGroup();
+            deliveryInstrument.Show();
         }
 
         private void Btn_Regist_Return_Instrument_ByGroup_Click(object sender, EventArgs e)

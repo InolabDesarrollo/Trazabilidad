@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CTZ.Controlador
 {
@@ -25,6 +26,14 @@ namespace CTZ.Controlador
         public bool registerDeliveryInstrument(Instrument_Assignments instrumentAssignments)
         {
             return _repository.registerDeliveryInstrument(instrumentAssignments);
+        }
+
+        public void registerDeliveryInstrument(Instrument_Assignments instrumentAssignments, Dictionary<int,string> informationId_Equino)
+        {
+            foreach (KeyValuePair<int, string> id_Equino in informationId_Equino)
+            {
+                _repository.registerDeliveryInstrument(instrumentAssignments, id_Equino.Key,id_Equino.Value);
+            }   
         }
 
         public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments)

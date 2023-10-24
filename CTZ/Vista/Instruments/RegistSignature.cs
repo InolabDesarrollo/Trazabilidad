@@ -26,6 +26,8 @@ namespace CTZ.Vista.Instruments
         private readonly int idInstrument;
         private readonly string equinoInstrument;
         private readonly string typeOfSignature;
+        private readonly List<int> idInstruments;
+        private readonly List<string> equinosInstruments;
         private  string emailEngineer;
 
         C_Instrument_Assignments controler;
@@ -41,6 +43,17 @@ namespace CTZ.Vista.Instruments
 
             controler = new C_Instrument_Assignments();
             instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(idInstrument);
+        }
+
+        public RegistSignature(List<int>idInstruments,string typeOfSignature, string emailEngineer)
+        {
+            InitializeComponent();
+            this.idInstruments = idInstruments;
+            this.typeOfSignature = typeOfSignature;
+            this.emailEngineer = emailEngineer;
+            int iddd = int.Parse(idInstruments[0].ToString());
+            controler = new C_Instrument_Assignments();
+            instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(int.Parse(idInstruments[0].ToString()));
         }
 
         private void Pnl_Signature_Paint(object sender, PaintEventArgs e)
@@ -82,12 +95,25 @@ namespace CTZ.Vista.Instruments
             }else if (typeOfSignature.Equals("Quality"))
             {
                 registQualitySignature(signature);
+            }else if (typeOfSignature.Equals("EngineerByGroup"))
+            {
+                registEngineerSignatureByGroup(signature);
             }                      
         }
         
         private void registEngineerSignature(Image engineerSignature)
         {
             controler.updateSignatureEngineer(idInstrument, engineerSignature);
+            MessageBox.Show("Firma de ingeniero agregada correctamente");
+            sendEngineerEmailNotification(emailEngineer);
+            this.Close();
+        }
+        private void registEngineerSignatureByGroup(Image engineerSignature)
+        {
+            foreach (int id in idInstruments)
+            {
+                controler.updateSignatureEngineer(id, engineerSignature);
+            }
             MessageBox.Show("Firma de ingeniero agregada correctamente");
             sendEngineerEmailNotification(emailEngineer);
             this.Close();
@@ -111,11 +137,23 @@ namespace CTZ.Vista.Instruments
 
         private string emailBodyForEngineer()
         {
-            string body = "Se le notifica la entrega de Instrumento con Equino: " + equinoInstrument + ", \n" +
+            string body="";
+            if (typeOfSignature.Equals("Engineer"))
+            {
+                body = "Se le notifica la entrega de Instrumento con Equino: " + equinoInstrument + ", \n" +
                 " La fecha estimada de devolucion es " + instrumentAssignmentsInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString() + " " +
                 "\nLa Empresa receptora de servicio es: '" + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + "' " +
-                "\nLas observaciones de la entrega son: '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString()+"' " +
+                "\nLas observaciones de la entrega son: '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString() + "' " +
                 "\nSaludos. ";
+            }
+            if (typeOfSignature.Equals("EngineerByGroup"))
+            {
+                body = "Se le notifica la entrega de Instrumentos con Equinos: " + "varios" + ", \n" +
+                " La fecha estimada de devolucion es " + instrumentAssignmentsInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString() + " " +
+                "\nLa Empresa receptora de servicio es: '" + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + "' " +
+                "\nLas observaciones de la entrega son: '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString() + "' " +
+                "\nSaludos. ";
+            }
             return body;
         }
 
@@ -151,5 +189,7 @@ namespace CTZ.Vista.Instruments
                 "\n Las observaciones de calidad son: '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Devolucion"].ToString() + "'.";
             return body;
         }
+
+        
     }
 }
