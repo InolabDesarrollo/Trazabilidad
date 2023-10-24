@@ -145,7 +145,7 @@
             this.Lbl_Name_Enterprise.AutoSize = true;
             this.Lbl_Name_Enterprise.Depth = 0;
             this.Lbl_Name_Enterprise.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Name_Enterprise.Location = new System.Drawing.Point(402, 573);
+            this.Lbl_Name_Enterprise.Location = new System.Drawing.Point(389, 437);
             this.Lbl_Name_Enterprise.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Name_Enterprise.Name = "Lbl_Name_Enterprise";
             this.Lbl_Name_Enterprise.Size = new System.Drawing.Size(127, 19);
@@ -158,7 +158,7 @@
             this.TxtBox_NameEnterprise.Depth = 0;
             this.TxtBox_NameEnterprise.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_NameEnterprise.LeadingIcon = null;
-            this.TxtBox_NameEnterprise.Location = new System.Drawing.Point(392, 607);
+            this.TxtBox_NameEnterprise.Location = new System.Drawing.Point(392, 489);
             this.TxtBox_NameEnterprise.MaxLength = 50;
             this.TxtBox_NameEnterprise.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_NameEnterprise.Multiline = false;
@@ -173,7 +173,7 @@
             this.Lbl_Observation_Delivery.AutoSize = true;
             this.Lbl_Observation_Delivery.Depth = 0;
             this.Lbl_Observation_Delivery.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Observation_Delivery.Location = new System.Drawing.Point(389, 304);
+            this.Lbl_Observation_Delivery.Location = new System.Drawing.Point(389, 174);
             this.Lbl_Observation_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Observation_Delivery.Name = "Lbl_Observation_Delivery";
             this.Lbl_Observation_Delivery.Size = new System.Drawing.Size(163, 19);
@@ -186,7 +186,7 @@
             this.TxtBox_ObservationDelivery.Depth = 0;
             this.TxtBox_ObservationDelivery.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_ObservationDelivery.LeadingIcon = null;
-            this.TxtBox_ObservationDelivery.Location = new System.Drawing.Point(392, 343);
+            this.TxtBox_ObservationDelivery.Location = new System.Drawing.Point(392, 230);
             this.TxtBox_ObservationDelivery.MaxLength = 50;
             this.TxtBox_ObservationDelivery.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_ObservationDelivery.Multiline = false;
@@ -201,7 +201,7 @@
             this.Lbl_Estimate_Date_Return.AutoSize = true;
             this.Lbl_Estimate_Date_Return.Depth = 0;
             this.Lbl_Estimate_Date_Return.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Estimate_Date_Return.Location = new System.Drawing.Point(389, 426);
+            this.Lbl_Estimate_Date_Return.Location = new System.Drawing.Point(389, 304);
             this.Lbl_Estimate_Date_Return.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Estimate_Date_Return.Name = "Lbl_Estimate_Date_Return";
             this.Lbl_Estimate_Date_Return.Size = new System.Drawing.Size(219, 19);
@@ -210,7 +210,7 @@
             // 
             // TimePicker_Date_Estimate_Return
             // 
-            this.TimePicker_Date_Estimate_Return.Location = new System.Drawing.Point(392, 519);
+            this.TimePicker_Date_Estimate_Return.Location = new System.Drawing.Point(392, 373);
             this.TimePicker_Date_Estimate_Return.Name = "TimePicker_Date_Estimate_Return";
             this.TimePicker_Date_Estimate_Return.Size = new System.Drawing.Size(316, 20);
             this.TimePicker_Date_Estimate_Return.TabIndex = 27;
@@ -279,7 +279,7 @@
             this.Btn_Regist_kit.Depth = 0;
             this.Btn_Regist_kit.HighEmphasis = true;
             this.Btn_Regist_kit.Icon = null;
-            this.Btn_Regist_kit.Location = new System.Drawing.Point(480, 693);
+            this.Btn_Regist_kit.Location = new System.Drawing.Point(471, 621);
             this.Btn_Regist_kit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Regist_kit.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Regist_kit.Name = "Btn_Regist_kit";
@@ -295,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 766);
+            this.ClientSize = new System.Drawing.Size(744, 690);
             this.Controls.Add(this.Btn_Regist_kit);
             this.Controls.Add(this.ComboBox_Instruments);
             this.Controls.Add(this.Btn_Add_Equino);

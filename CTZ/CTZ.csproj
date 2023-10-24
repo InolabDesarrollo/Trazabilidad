@@ -546,6 +546,7 @@
     <Compile Include="Vista\Certificates\Certificate.cs" />
     <Compile Include="Vista\Responsabilitis\DateForReport.cs" />
     <Compile Include="Vista\Responsabilitis\Email.cs" />
+    <Compile Include="Vista\Responsabilitis\Engineer.cs" />
     <Compile Include="Vista\Responsabilitis\Instruments.cs" />
     <Compile Include="Vista\Responsabilitis\Instrument_Assignments.cs" />
     <Compile Include="Vista\Responsabilitis\RelationCertificateInstrument.cs" />

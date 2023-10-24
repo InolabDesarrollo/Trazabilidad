@@ -18,9 +18,10 @@ namespace CTZ.Vista.Instruments
     public partial class Add_Delivery_Instrument : MaterialForm
     {
         C_Instrument_Assignments controler;
-        C_Usuario userControler;
         Instrument_Assignments instrumentAssignments;
         DateForReport dateForReport;
+        Engineer engineer;
+
         private  int idInstrument;
         private string equinoInstrument;
         DataTable engineers;
@@ -34,23 +35,24 @@ namespace CTZ.Vista.Instruments
             this.idInstrument = idInstrument;
             this.equinoInstrument = equinoInstrument;
 
+            engineer = new Engineer();
+            engineers = engineer.getEngineers();
+
             fillMaterialComboBoxEngineers();
         }
         
         private void fillMaterialComboBoxEngineers()
         {
-            userControler= new C_Usuario();
-            engineers = userControler.getEngineers();
-            for (int i =0;  i <engineers.Rows.Count; i++ )
+            for (int i = 0; i < engineers.Rows.Count; i++)
             {
-                string item = engineers.Rows[i]["Nombre"].ToString() +" "+ engineers.Rows[i]["Apellidos"].ToString();
-                MaterialComboBox_Engineers.Items.Add(item);
-            }  
+                string completeNameEngineer = engineers.Rows[i]["Nombre"].ToString() + " " + engineers.Rows[i]["Apellidos"].ToString();
+                MaterialComboBox_Engineers.Items.Add(completeNameEngineer);
+            }
         }
         private void Btn_Add_Delivery_Click(object sender, EventArgs e)
         {
             controler = new C_Instrument_Assignments();
-            string emailEngineer = serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
+            string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());  
 
             instrumentAssignments.idInstrument = idInstrument;
             instrumentAssignments.equinoInstrument = equinoInstrument;
@@ -71,19 +73,6 @@ namespace CTZ.Vista.Instruments
             this.Close();
         }
 
-        private string serchEmailEngineer(string name)
-        {
-            string emailEngineer ="";
-            for (int i=0; i<engineers.Rows.Count; i++)
-            {
-                string nameEngineer = engineers.Rows[i]["Nombre"].ToString() + " " + engineers.Rows[i]["Apellidos"].ToString();
-                if (nameEngineer.Equals(name))
-                {
-                    emailEngineer= engineers.Rows[i]["Mail"].ToString();
-                }
-            }
-            return emailEngineer;
-        }
 
         private void updateStatusInstrument(bool update)
         {

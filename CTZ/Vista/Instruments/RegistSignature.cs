@@ -25,9 +25,8 @@ namespace CTZ.Vista.Instruments
         float lastY = 0;
         private readonly int idInstrument;
         private readonly string equinoInstrument;
+        private readonly Dictionary<int, string> informationId_Equino;
         private readonly string typeOfSignature;
-        private readonly List<int> idInstruments;
-        private readonly List<string> equinosInstruments;
         private  string emailEngineer;
 
         C_Instrument_Assignments controler;
@@ -45,15 +44,14 @@ namespace CTZ.Vista.Instruments
             instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(idInstrument);
         }
 
-        public RegistSignature(List<int>idInstruments,string typeOfSignature, string emailEngineer)
+        public RegistSignature(Dictionary<int, string> informationId_Equino,string typeOfSignature, string emailEngineer)
         {
             InitializeComponent();
-            this.idInstruments = idInstruments;
+            this.informationId_Equino = informationId_Equino;
             this.typeOfSignature = typeOfSignature;
             this.emailEngineer = emailEngineer;
-            int iddd = int.Parse(idInstruments[0].ToString());
             controler = new C_Instrument_Assignments();
-            instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(int.Parse(idInstruments[0].ToString()));
+            instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(informationId_Equino.Keys.First());
         }
 
         private void Pnl_Signature_Paint(object sender, PaintEventArgs e)
@@ -110,10 +108,11 @@ namespace CTZ.Vista.Instruments
         }
         private void registEngineerSignatureByGroup(Image engineerSignature)
         {
-            foreach (int id in idInstruments)
+            foreach (KeyValuePair<int,string>id in informationId_Equino)
             {
-                controler.updateSignatureEngineer(id, engineerSignature);
+                controler.updateSignatureEngineer(id.Key, engineerSignature);
             }
+
             MessageBox.Show("Firma de ingeniero agregada correctamente");
             sendEngineerEmailNotification(emailEngineer);
             this.Close();
