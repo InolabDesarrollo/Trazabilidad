@@ -17,25 +17,22 @@ namespace CTZ.Vista.Instruments
 {
     public partial class Add_Delivery_Instrument : MaterialForm
     {
-        C_Instrument_Assignments controler;
         Instrument_Assignments instrumentAssignments;
         Engineer engineer;
 
+        DataTable engineers;
         private  int idInstrument;
         private string equinoInstrument;
-        DataTable engineers;
+        
         public Add_Delivery_Instrument(int idInstrument, string equinoInstrument)
         {
             InitializeComponent();
-            Lbl_Instrument.Text = equinoInstrument;       
-
-            instrumentAssignments = new Instrument_Assignments();  
+            Lbl_Instrument.Text = equinoInstrument;        
             this.idInstrument = idInstrument;
             this.equinoInstrument = equinoInstrument;
 
             engineer = new Engineer();
             engineers = engineer.getEngineers();
-
             fillMaterialComboBoxEngineers();
         }
         
@@ -49,35 +46,19 @@ namespace CTZ.Vista.Instruments
         }
         private void Btn_Add_Delivery_Click(object sender, EventArgs e)
         {
-            controler = new C_Instrument_Assignments();
-            string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());  
-
-            instrumentAssignments.idInstrument = idInstrument;
-            instrumentAssignments.equinoInstrument = equinoInstrument;
-            instrumentAssignments.dateDelivery = TimePicker_Date_Delivery.Text;
+            string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
             
-            instrumentAssignments.engineer = MaterialComboBox_Engineers.SelectedItem.ToString();
-            instrumentAssignments.numberEnterprise = TxtBox_Enterprise.Text;
-            instrumentAssignments.nameEnterprise = TxtBox_NameEnterprise.Text;
-            instrumentAssignments.observationDelivery = TxtBox_ObservationDelivery.Text;
+            instrumentAssignments = new Instrument_Assignments(idInstrument,equinoInstrument,TimePicker_Date_Delivery.Text
+                , MaterialComboBox_Engineers.SelectedItem.ToString(),TxtBox_Enterprise.Text,TxtBox_NameEnterprise.Text,
+                TxtBox_ObservationDelivery.Text,emailEngineer, TimePicker_Date_Estimate_Return.Text);
 
-            instrumentAssignments.mailEngineer = emailEngineer;
-            instrumentAssignments.approximateDateOfReturn = TimePicker_Date_Estimate_Return.Text;
-            bool updateData= controler.registerDeliveryInstrument(instrumentAssignments);
-            updateStatusInstrument(updateData);
+            instrumentAssignments.addDeliveryInstrument();
+            instrumentAssignments.updateStatus("OCUPADO");
             
             RegistSignature signature = new RegistSignature(idInstrument,equinoInstrument, "Engineer",emailEngineer);
             signature.Show();
             this.Close();
         }
 
-
-        private void updateStatusInstrument(bool update)
-        {
-            if (update)
-            {
-                controler.updateStatusInstrumentAssignment(idInstrument, "OCUPADO");
-            }
-        }
     }
 }
