@@ -25,11 +25,17 @@ namespace CTZ.Controlador
 
         public bool registerDeliveryInstrument(Instrument_Assignments instrumentAssignments)
         {
+            instrumentAssignments.dateDelivery = _dateForReport.convertToValidDate(instrumentAssignments.dateDelivery);
+            instrumentAssignments.approximateDateOfReturn = _dateForReport.convertToValidDate(instrumentAssignments.approximateDateOfReturn);
+
             return _repository.registerDeliveryInstrument(instrumentAssignments);
         }
 
         public void registerDeliveryInstrument(Instrument_Assignments instrumentAssignments, Dictionary<int,string> informationId_Equino)
         {
+            instrumentAssignments.dateDelivery = _dateForReport.convertToValidDate(instrumentAssignments.dateDelivery);
+            instrumentAssignments.approximateDateOfReturn = _dateForReport.convertToValidDate(instrumentAssignments.approximateDateOfReturn);
+            
             foreach (KeyValuePair<int, string> id_Equino in informationId_Equino)
             {
                 _repository.registerDeliveryInstrument(instrumentAssignments, id_Equino.Key,id_Equino.Value);

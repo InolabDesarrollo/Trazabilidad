@@ -17,7 +17,7 @@ namespace CTZ.Vista.Instruments
     public partial class Add_Delivery_Instrument_ByGroup : MaterialForm
     {
         C_Instruments instrumentsControler;
-        C_Instrument_Assignments controlerInstrumentAssignments;
+        C_Instrument_Assignments instrumentAssignmentsControler;
         Engineer engineer;
 
         static Dictionary<int, string> informationId_Equino;
@@ -74,22 +74,21 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Regist_kit_Click(object sender, EventArgs e)
         {
-            DateForReport dates = new DateForReport();
             string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
 
             Instrument_Assignments instrument_Assignments = new Instrument_Assignments();
-            instrument_Assignments.dateDelivery = dates.convertToValidDate(TimePicker_Date_Delivery.Text);
+            instrument_Assignments.dateDelivery = TimePicker_Date_Delivery.Text;
             instrument_Assignments.engineer = MaterialComboBox_Engineers.Text;
             instrument_Assignments.numberEnterprise = TxtBox_Enterprise.Text;
             instrument_Assignments.observationDelivery =TxtBox_ObservationDelivery.Text;
-            instrument_Assignments.approximateDateOfReturn = dates.convertToValidDate(TimePicker_Date_Estimate_Return.Text);
+            instrument_Assignments.approximateDateOfReturn = TimePicker_Date_Estimate_Return.Text;
             instrument_Assignments.nameEnterprise =TxtBox_NameEnterprise.Text;
             instrument_Assignments.mailEngineer = emailEngineer;
             instrument_Assignments.equinoInstrument = equinoInstrument;
             instrument_Assignments.idInstrument = idInstrument;
 
-            controlerInstrumentAssignments = new C_Instrument_Assignments();
-            controlerInstrumentAssignments.registerDeliveryInstrument(instrument_Assignments, informationId_Equino);
+            instrumentAssignmentsControler = new C_Instrument_Assignments();
+            instrumentAssignmentsControler.registerDeliveryInstrument(instrument_Assignments, informationId_Equino);
 
             RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup",emailEngineer);
             signature.Show();

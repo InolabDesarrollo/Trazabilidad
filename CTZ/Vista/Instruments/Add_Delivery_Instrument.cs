@@ -19,7 +19,6 @@ namespace CTZ.Vista.Instruments
     {
         C_Instrument_Assignments controler;
         Instrument_Assignments instrumentAssignments;
-        DateForReport dateForReport;
         Engineer engineer;
 
         private  int idInstrument;
@@ -30,8 +29,7 @@ namespace CTZ.Vista.Instruments
             InitializeComponent();
             Lbl_Instrument.Text = equinoInstrument;       
 
-            instrumentAssignments = new Instrument_Assignments();
-            dateForReport = new DateForReport();    
+            instrumentAssignments = new Instrument_Assignments();  
             this.idInstrument = idInstrument;
             this.equinoInstrument = equinoInstrument;
 
@@ -56,7 +54,7 @@ namespace CTZ.Vista.Instruments
 
             instrumentAssignments.idInstrument = idInstrument;
             instrumentAssignments.equinoInstrument = equinoInstrument;
-            instrumentAssignments.dateDelivery = dateForReport.convertToValidDate(TimePicker_Date_Delivery.Text);
+            instrumentAssignments.dateDelivery = TimePicker_Date_Delivery.Text;
             
             instrumentAssignments.engineer = MaterialComboBox_Engineers.SelectedItem.ToString();
             instrumentAssignments.numberEnterprise = TxtBox_Enterprise.Text;
@@ -64,7 +62,7 @@ namespace CTZ.Vista.Instruments
             instrumentAssignments.observationDelivery = TxtBox_ObservationDelivery.Text;
 
             instrumentAssignments.mailEngineer = emailEngineer;
-            instrumentAssignments.approximateDateOfReturn = dateForReport.convertToValidDate(TimePicker_Date_Estimate_Return.Text);
+            instrumentAssignments.approximateDateOfReturn = TimePicker_Date_Estimate_Return.Text;
             bool updateData= controler.registerDeliveryInstrument(instrumentAssignments);
             updateStatusInstrument(updateData);
             
