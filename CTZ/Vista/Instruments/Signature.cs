@@ -18,13 +18,23 @@ namespace CTZ.Vista.Instruments
         C_Instrument_Assignments controler;
         DataTable instrumenAssignmentInformation;
         string base64StrigSignature;
-        public Signature(int id)
+        private const int engineerSignature = 7;
+        private const int qualitySignature = 11;
+        public Signature(int id, int  columnToShow)
         {
             this.id = id;
             InitializeComponent();
             controler = new C_Instrument_Assignments();
             instrumenAssignmentInformation = controler.selectAllById(id);
-            base64StrigSignature = instrumenAssignmentInformation.Rows[0]["Firma_Ingeniero"].ToString();
+            if (columnToShow.Equals(engineerSignature))
+            {
+                base64StrigSignature = instrumenAssignmentInformation.Rows[0]["Firma_Ingeniero"].ToString();
+            }
+            if (columnToShow.Equals(qualitySignature))
+            {
+                base64StrigSignature = instrumenAssignmentInformation.Rows[0]["Firma_Calidad"].ToString();
+            }
+            
             PictureBoxSignature.Image =converStringToImage(base64StrigSignature);
         }
 

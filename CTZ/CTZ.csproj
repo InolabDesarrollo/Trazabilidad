@@ -430,6 +430,12 @@
     <Compile Include="Vista\Instruments\Add_Return_Instrument.Designer.cs">
       <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Instruments\Add_Return_Instrument_ByGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\Add_Return_Instrument_ByGroup.Designer.cs">
+      <DependentUpon>Add_Return_Instrument_ByGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Instruments\DeleteInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -678,6 +684,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\Add_Return_Instrument.resx">
       <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\Add_Return_Instrument_ByGroup.resx">
+      <DependentUpon>Add_Return_Instrument_ByGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>

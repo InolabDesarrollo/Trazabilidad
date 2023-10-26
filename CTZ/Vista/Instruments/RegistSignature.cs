@@ -20,14 +20,16 @@ namespace CTZ.Vista.Instruments
     {
         float pointX = 0;
         float pointY = 0;
-
         float lastX = 0;
         float lastY = 0;
+
         private readonly int idInstrument;
         private readonly string equinoInstrument;
         private readonly Dictionary<int, string> informationId_Equino;
+        private readonly List<int> idInstruments;
         private readonly string typeOfSignature;
         private  string emailEngineer;
+        Image signature;
 
         C_Instrument_Assignments controler;
         private DataTable instrumentAssignmentsInformation;
@@ -52,6 +54,16 @@ namespace CTZ.Vista.Instruments
             this.emailEngineer = emailEngineer;
             controler = new C_Instrument_Assignments();
             instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(informationId_Equino.Keys.First());
+        }
+
+        public RegistSignature(List<int> idInstruments, string typeOfSignature, string emailEngineer)
+        {
+            InitializeComponent();
+            this.idInstruments = idInstruments;
+            this.typeOfSignature = typeOfSignature;
+            this.emailEngineer = emailEngineer;
+            controler = new C_Instrument_Assignments();
+            instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(Convert.ToInt32(idInstruments[0].ToString()));
         }
 
         private void Pnl_Signature_Paint(object sender, PaintEventArgs e)
@@ -79,7 +91,7 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Save_Signature_Click(object sender, EventArgs e)
         {
-            Image signature = new Bitmap(Pnl_Signature.Width, Pnl_Signature.Height);
+            signature = new Bitmap(Pnl_Signature.Width, Pnl_Signature.Height);
             var graphic = Graphics.FromImage(signature);
             var rectangle = Pnl_Signature.RectangleToScreen(Pnl_Signature.ClientRectangle);
 
@@ -93,9 +105,14 @@ namespace CTZ.Vista.Instruments
             }else if (typeOfSignature.Equals("Quality"))
             {
                 registQualitySignature(signature);
+
             }else if (typeOfSignature.Equals("EngineerByGroup"))
             {
                 registEngineerSignatureByGroup(signature);
+
+            }else if (typeOfSignature.Equals("QualityByGroup"))
+            {
+                registQualitySignatureByGroup(signature);
             }                      
         }
         
@@ -115,6 +132,16 @@ namespace CTZ.Vista.Instruments
 
             MessageBox.Show("Firma de ingeniero agregada correctamente");
             sendEngineerEmailNotification(emailEngineer);
+            this.Close();
+        }
+        private void registQualitySignatureByGroup(Image qualitySignature)
+        {
+            foreach (int id in idInstruments)
+            {
+                controler.updateSignatureQuality(id, qualitySignature);
+            }
+            MessageBox.Show("Firma de ingeniero agregada correctamente");
+            sendQualityMailNotification("omarflores@inolab.com");
             this.Close();
         }
 
@@ -171,7 +198,7 @@ namespace CTZ.Vista.Instruments
             MailAddress mailRecipient = new MailAddress(emailRecipient);
             MailMessage message = new MailMessage(emailSender, mailRecipient);
 
-            message.Bcc.Add(emailEngineer);
+            message.Bcc.Add(mailRecipient);
             message.Subject = emailSubject;
             message.IsBodyHtml = false;
             message.Body = emailBodyForQuality();

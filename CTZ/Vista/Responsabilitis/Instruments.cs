@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CTZ.Vista.Responsabilitis
 {
@@ -95,6 +96,7 @@ namespace CTZ.Vista.Responsabilitis
         {
             return controler.selectAllRegistAndCertificates();
         }
+
 
     }
 }

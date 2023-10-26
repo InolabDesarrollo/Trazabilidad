@@ -45,6 +45,8 @@ namespace CTZ.Vista.Instruments
             instrumentAssignments.observationsReturn=TxtBox_ObservationReturn.Text;
            
             controler.registerReturnInstrument(instrumentAssignments);
+            controler.updateStatusInstrumentAssignment(idInstrument,"DISPONIBLE");
+
             RegistSignature signatureQualityAgent = new RegistSignature(idInstrument,equinoInstrument, "Quality", instrumentAssignmentInformation.Rows[0]["Correo_Ingeniero"].ToString());
             signatureQualityAgent.Show();
             this.Hide();

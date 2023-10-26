@@ -72,6 +72,7 @@ namespace CTZ.Vista.Instruments
             }
         }
 
+
         private void Btn_Regist_kit_Click(object sender, EventArgs e)
         {
             string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
@@ -89,10 +90,19 @@ namespace CTZ.Vista.Instruments
 
             instrumentAssignmentsControler = new C_Instrument_Assignments();
             instrumentAssignmentsControler.registerDeliveryInstrument(instrument_Assignments, informationId_Equino);
+            updateStatusInstruments();
 
             RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup",emailEngineer);
             signature.Show();
             this.Close();
+        }
+
+        private void updateStatusInstruments()
+        {
+            foreach (KeyValuePair<int,string> id_Equino in informationId_Equino)
+            {
+                instrumentAssignmentsControler.updateStatusInstrumentAssignment(id_Equino.Key, "OCUPADO");
+            }
         }
 
     }

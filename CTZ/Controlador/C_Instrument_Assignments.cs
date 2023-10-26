@@ -47,6 +47,14 @@ namespace CTZ.Controlador
             instrumentAssignments.dateOfReturn = _dateForReport.convertToValidDate(instrumentAssignments.dateOfReturn);
             return _repository.registerReturnInstrument(instrumentAssignments);
         }
+        public void registerReturnInstrument(Instrument_Assignments instrumentAssignments, List<int> idInstruments)
+        {
+            instrumentAssignments.dateOfReturn = _dateForReport.convertToValidDate(instrumentAssignments.dateOfReturn);
+            foreach (int element in idInstruments)
+            {
+              _repository.registerReturnInstrument(instrumentAssignments, element);
+            }
+        }
 
         public void updateSignatureEngineer(int idInstrument, Image engineerSignature)
         {
@@ -54,9 +62,9 @@ namespace CTZ.Controlador
             _repository.updateSignatureEngineer(idInstrument, stringSignatureBase64);
         }
 
-        public void updateSignatureQuality(int idInstrument, Image engineerSignature)
+        public void updateSignatureQuality(int idInstrument, Image signature)
         {
-            string stringSignatureBase64 = converImageToStringBase64(engineerSignature);
+            string stringSignatureBase64 = converImageToStringBase64(signature);
             _repository.updateSignatureQuality(idInstrument, stringSignatureBase64);
         }
         public void updateStatusInstrumentAssignment(int idInstrument, string status)
