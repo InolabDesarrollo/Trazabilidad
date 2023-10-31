@@ -9,9 +9,11 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Net.Mime;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace CTZ.Vista.Instruments
@@ -29,7 +31,8 @@ namespace CTZ.Vista.Instruments
         private readonly List<int> idInstruments;
         private readonly string typeOfSignature;
         private  string emailEngineer;
-        Image signature;
+        Image imageSignature;
+        Notification notification = new Notification();
 
         C_Instrument_Assignments controler;
         private DataTable instrumentAssignmentsInformation;
@@ -91,131 +94,99 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Save_Signature_Click(object sender, EventArgs e)
         {
-            signature = new Bitmap(Pnl_Signature.Width, Pnl_Signature.Height);
-            var graphic = Graphics.FromImage(signature);
+            imageSignature = new Bitmap(Pnl_Signature.Width, Pnl_Signature.Height);
+            var graphic = Graphics.FromImage(imageSignature);
             var rectangle = Pnl_Signature.RectangleToScreen(Pnl_Signature.ClientRectangle);
 
-            graphic.CopyFromScreen(rectangle.Location, Point.Empty, Pnl_Signature.Size);
-            signature.Save("Firma.jpg", ImageFormat.Jpeg);
+            graphic.CopyFromScreen(rectangle.Location, System.Drawing.Point.Empty, Pnl_Signature.Size);
+            imageSignature.Save("Firma.jpg", ImageFormat.Jpeg);
 
+            Signature signature = new Signature();
+           
             if(typeOfSignature.Equals("Engineer"))
             {
-                registEngineerSignature(signature);
-
-            }else if (typeOfSignature.Equals("Quality"))
-            {
-                registQualitySignature(signature);
-
-            }else if (typeOfSignature.Equals("EngineerByGroup"))
-            {
-                registEngineerSignatureByGroup(signature);
-
-            }else if (typeOfSignature.Equals("QualityByGroup"))
-            {
-                registQualitySignatureByGroup(signature);
-            }                      
-        }
-        
-        private void registEngineerSignature(Image engineerSignature)
-        {
-            controler.updateSignatureEngineer(idInstrument, engineerSignature);
-            MessageBox.Show("Firma de ingeniero agregada correctamente");
-            sendEngineerEmailNotification(emailEngineer);
-            this.Close();
-        }
-        private void registEngineerSignatureByGroup(Image engineerSignature)
-        {
-            foreach (KeyValuePair<int,string>id in informationId_Equino)
-            {
-                controler.updateSignatureEngineer(id.Key, engineerSignature);
+                signature.registEngineerSignature(imageSignature, idInstrument);
+                sendEngineerNotification();
             }
-
-            MessageBox.Show("Firma de ingeniero agregada correctamente");
-            sendEngineerEmailNotification(emailEngineer);
-            this.Close();
-        }
-        private void registQualitySignatureByGroup(Image qualitySignature)
-        {
-            foreach (int id in idInstruments)
+            else if (typeOfSignature.Equals("Quality"))
             {
-                controler.updateSignatureQuality(id, qualitySignature);
+                signature.registQualitySignature(imageSignature, idInstrument);
+                sendQualityMailNotification();
             }
-            MessageBox.Show("Firma de ingeniero agregada correctamente");
-            sendQualityMailNotification("omarflores@inolab.com");
+            else if (typeOfSignature.Equals("EngineerByGroup"))
+            {
+                signature.registEngineerSignatureByGroup(imageSignature, informationId_Equino);
+                sendEngineerNotification();
+            }
+            else if (typeOfSignature.Equals("QualityByGroup"))
+            {
+                signature.registQualitySignatureByGroup(imageSignature, idInstruments);
+                sendQualityMailNotification();
+            }
+            System.Windows.MessageBox.Show("Firma agregada correctamente");
             this.Close();
         }
-
-        private void sendEngineerEmailNotification(string emailRecipient)
+        private void sendEngineerNotification()
         {
+            string emailBody = emailBodyForEngineer();
             string emailSubject = "Notificacion entrega de Instrumento";
-            MailAddress emailSender = new MailAddress("notificaciones@inolab.com");
-            MailAddress mailRecipient = new MailAddress(emailRecipient);
-            MailMessage message = new MailMessage(emailSender,mailRecipient);
-
-            message.Bcc.Add("omarflores@inolab.com");
-            message.Subject = emailSubject;
-            message.IsBodyHtml = false;
-            message.Body = emailBodyForEngineer();
-
-            Email email = new Email("notificaciones@inolab.com", "Notificaciones2021*");
-            email.send(message);
+            notification.sendMailNotification(emailEngineer, emailBody, emailSubject);
         }
 
         private string emailBodyForEngineer()
         {
-            string body="";
+            string body = "";
+            string nameEngineer = instrumentAssignmentsInformation.Rows[0]["Ingeniero"].ToString();
+            string enterprise = instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString();
+            string numberEnterprise = instrumentAssignmentsInformation.Rows[0]["Folio_Empresa"].ToString();
+            string deliveryDate = instrumentAssignmentsInformation.Rows[0]["Fecha_Entrega"].ToString();
+            string equinoInstrument = instrumentAssignmentsInformation.Rows[0]["Equino_Instrumento"].ToString();
+            string aproximateDateOfReturn = instrumentAssignmentsInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString();
+            string deliveryObservation = instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString();
+
             if (typeOfSignature.Equals("Engineer"))
             {
-                body = "Se le notifica la entrega de Instrumento con Equino: " + equinoInstrument + ", \n" +
-                " La fecha estimada de devolucion es " + instrumentAssignmentsInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString() + " " +
-                "\nLa Empresa receptora de servicio es: '" + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + "' " +
-                "\nLas observaciones de la entrega son: '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString() + "' " +
-                "\nSaludos. ";
+                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\\\"utf-8\"\\  />\r\n</head>\r\n<body>\r\n   <h2>Entrega de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\ >\r\n        <tr>\r\n            <td colspan= \\\"4\"\\ >\r\n                <p>\r\n                    <font COLOR= " + "'purple'" + "   >Buen día estimado Ingeniero                         " + nameEngineer + " \r\n                    Se le informa que se le ha   asignado el Instrumento con las siguientes caracteristicas:    </font>  <br />\r\n                    <font COLOR= " + "'blue'" + "  > Equino:</font>                                   <b>" + equinoInstrument + "  </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "  > Fecha De Entrega:</font></b>                          <b>" + deliveryDate.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Fecha registrada de devolucion:</font></b>            <b>" + aproximateDateOfReturn.Substring(0,10) + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + " > Observaciones de Entrega:</font></b>                  <b>" + deliveryObservation + " </b>  <br />\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
             }
             if (typeOfSignature.Equals("EngineerByGroup"))
             {
-                body = "Se le notifica la entrega de Instrumentos con Equinos: " + "varios" + ", \n" +
-                " La fecha estimada de devolucion es " + instrumentAssignmentsInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString() + " " +
-                "\nLa Empresa receptora de servicio es: '" + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + "' " +
-                "\nLas observaciones de la entrega son: '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString() + "' " +
-                "\nSaludos. ";
+                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\\\"utf-8\"\\  />\r\n</head>\r\n<body>\r\n   <h2>Entrega de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\ >\r\n        <tr>\r\n            <td colspan= \\\"4\"\\ >\r\n                <p>\r\n                    <font COLOR= " + "'purple'" + " >Buen día estimado Ingeniero                         " + nameEngineer + "</font>  <br />\r\n                    Se le informa que se le ha   asignado el Instrumento con las siguientes caracteristicas:  <br />\r\n <b><font COLOR= " + "'blue'" + "> Fecha De Entrega:</font></b>                          <b>" + deliveryDate.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Fecha registrada de devolucion:</font></b>            <b>" + aproximateDateOfReturn.Substring(0,9) + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + " > Observaciones de Entrega:</font></b>                  <b>" + deliveryObservation + " </b>  <br />\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
             }
             return body;
         }
 
-        private void registQualitySignature(Image qualitySignature)
+        private void sendQualityMailNotification()
         {
-            controler.updateSignatureQuality(idInstrument, qualitySignature);
-            MessageBox.Show("Firma de calidad agregada correctamente");
-            sendQualityMailNotification("omar.andreas.sotomayor@gmail.com");
-            this.Close();
-        }
+            string[] qualityEmail = new string[3];
+            qualityEmail[0] = emailEngineer;
+            qualityEmail[1] = "omarflores@inolab.com";
+            qualityEmail[2] = "calidad@inolab.com";
 
-        private void sendQualityMailNotification(string emailRecipient)
-        {
             string emailSubject = "Notificacion de devolucion de Instrumento";
-            MailAddress emailSender = new MailAddress("notificaciones@inolab.com");
-            MailAddress mailRecipient = new MailAddress(emailRecipient);
-            MailMessage message = new MailMessage(emailSender, mailRecipient);
-
-            message.Bcc.Add(mailRecipient);
-            message.Subject = emailSubject;
-            message.IsBodyHtml = false;
-            message.Body = emailBodyForQuality();
-
-            Email email = new Email("notificaciones@inolab.com", "Notificaciones2021*");
-            email.send(message);
+            string emailBody = emailBodyForQuality();
+            notification.sendMailNotification(qualityEmail, emailBody, emailSubject);
         }
 
         private string emailBodyForQuality()
         {
-            string body = "Se notifica la devolucion de instrumento con Equino: " + equinoInstrument + ". " +
-                "\n Registrado para servicio a la Empresa " + instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString() + ". " +
-                "\n Devuelto a la fecha  " + DateTime.Today + ". " +
-                "\n Las observaciones de calidad son: '" + instrumentAssignmentsInformation.Rows[0]["Observaciones_Devolucion"].ToString() + "'.";
+            string body = "";
+            string equinoInstrument = instrumentAssignmentsInformation.Rows[0]["Equino_Instrumento"].ToString();
+            string dateOfReturn = instrumentAssignmentsInformation.Rows[0]["Fecha_Devolucion"].ToString();
+            string returnObservation = instrumentAssignmentsInformation.Rows[0]["Observaciones_Devolucion"].ToString();
+            string enterprise = instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString();
+            string numberEnterprise = instrumentAssignmentsInformation.Rows[0]["Folio_Empresa"].ToString();
+            string nameEngineer = instrumentAssignmentsInformation.Rows[0]["Ingeniero"].ToString();
+
+            if (typeOfSignature.Equals("Quality"))
+            {
+                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\>\r\n        <tr>\r\n            <td colspan=\\\"4\"\\ >\r\n                <p  >\r\n                    <font COLOR=" + "'purple'" + "  >Buen día  Ingeniero " + nameEngineer + "  y responsable del area de  calidad se notifica que se ha devuelto el Instrumento con las siguientes caracteristicas</font><br /> \r\n                  \r\n                    <b><font COLOR=" + "'blue'" + " >Equino:</font></b>                                     <b>" + equinoInstrument + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Fecha De Devolucion:</font></b>                        <b>" + dateOfReturn.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Observaciones de Devolucion:</font></b>                  <b>" + returnObservation + "</b>  <br />\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
+            }
+            if (typeOfSignature.Equals("QualityByGroup"))
+            {
+                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\>\r\n        <tr>\r\n            <td colspan=\\\"4\"\\ >\r\n                <p  >\r\n                    <font COLOR=" + "'purple'" + "  >Buen día  Ingeniero " + nameEngineer + "  y responsable del area de  calidad se notifica que se ha devuelto el Instrumento con las siguientes caracteristicas</font><br /> \r\n                  <b><font COLOR=" + "'blue'" + " >Fecha De Devolucion:</font></b>                        <b>" + dateOfReturn.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Observaciones de Devolucion:</font></b>                  <b>" + returnObservation + "</b>  <br />\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
+            }
+            
             return body;
         }
-
-        
     }
 }

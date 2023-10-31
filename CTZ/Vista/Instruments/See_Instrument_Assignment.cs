@@ -69,7 +69,7 @@ namespace CTZ.Vista.Instruments
         private void showSignature(DataGridViewCellEventArgs e)
         {
             int id = Convert.ToInt32(Dgv_Instrument_Assignment[0, e.RowIndex].Value.ToString());
-            Signature signature = new Signature(id,e.ColumnIndex);
+            ShowSignature signature = new ShowSignature(id,e.ColumnIndex);
             signature.Show();
         }
 

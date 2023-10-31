@@ -38,6 +38,7 @@
             this.Lbl_Observations = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_ObservationReturn = new MaterialSkin.Controls.MaterialTextBox();
             this.Btn_Regist_ReturnOfInstruments = new MaterialSkin.Controls.MaterialButton();
+            this.Btn_Delete_Instrument = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // Lbl_Instrument
@@ -63,7 +64,7 @@
             this.TxtBox_Instrumenst.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Instrumenst.Multiline = false;
             this.TxtBox_Instrumenst.Name = "TxtBox_Instrumenst";
-            this.TxtBox_Instrumenst.Size = new System.Drawing.Size(316, 50);
+            this.TxtBox_Instrumenst.Size = new System.Drawing.Size(413, 50);
             this.TxtBox_Instrumenst.TabIndex = 29;
             this.TxtBox_Instrumenst.Text = "";
             this.TxtBox_Instrumenst.TrailingIcon = null;
@@ -86,7 +87,7 @@
             this.ComboBox_Instruments.MaxDropDownItems = 4;
             this.ComboBox_Instruments.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Instruments.Name = "ComboBox_Instruments";
-            this.ComboBox_Instruments.Size = new System.Drawing.Size(316, 49);
+            this.ComboBox_Instruments.Size = new System.Drawing.Size(413, 49);
             this.ComboBox_Instruments.StartIndex = 0;
             this.ComboBox_Instruments.TabIndex = 31;
             // 
@@ -145,7 +146,7 @@
             this.Lbl_Observations.AutoSize = true;
             this.Lbl_Observations.Depth = 0;
             this.Lbl_Observations.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Observations.Location = new System.Drawing.Point(363, 89);
+            this.Lbl_Observations.Location = new System.Drawing.Point(527, 89);
             this.Lbl_Observations.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Observations.Name = "Lbl_Observations";
             this.Lbl_Observations.Size = new System.Drawing.Size(105, 19);
@@ -158,7 +159,7 @@
             this.TxtBox_ObservationReturn.Depth = 0;
             this.TxtBox_ObservationReturn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_ObservationReturn.LeadingIcon = null;
-            this.TxtBox_ObservationReturn.Location = new System.Drawing.Point(366, 132);
+            this.TxtBox_ObservationReturn.Location = new System.Drawing.Point(530, 122);
             this.TxtBox_ObservationReturn.MaxLength = 50;
             this.TxtBox_ObservationReturn.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_ObservationReturn.Multiline = false;
@@ -175,7 +176,7 @@
             this.Btn_Regist_ReturnOfInstruments.Depth = 0;
             this.Btn_Regist_ReturnOfInstruments.HighEmphasis = true;
             this.Btn_Regist_ReturnOfInstruments.Icon = null;
-            this.Btn_Regist_ReturnOfInstruments.Location = new System.Drawing.Point(650, 220);
+            this.Btn_Regist_ReturnOfInstruments.Location = new System.Drawing.Point(814, 207);
             this.Btn_Regist_ReturnOfInstruments.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Regist_ReturnOfInstruments.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Regist_ReturnOfInstruments.Name = "Btn_Regist_ReturnOfInstruments";
@@ -187,11 +188,31 @@
             this.Btn_Regist_ReturnOfInstruments.UseVisualStyleBackColor = true;
             this.Btn_Regist_ReturnOfInstruments.Click += new System.EventHandler(this.Btn_Regist_ReturnOfInstruments_Click);
             // 
+            // Btn_Delete_Instrument
+            // 
+            this.Btn_Delete_Instrument.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_Delete_Instrument.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Btn_Delete_Instrument.Depth = 0;
+            this.Btn_Delete_Instrument.HighEmphasis = true;
+            this.Btn_Delete_Instrument.Icon = null;
+            this.Btn_Delete_Instrument.Location = new System.Drawing.Point(249, 280);
+            this.Btn_Delete_Instrument.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_Delete_Instrument.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_Delete_Instrument.Name = "Btn_Delete_Instrument";
+            this.Btn_Delete_Instrument.Size = new System.Drawing.Size(194, 36);
+            this.Btn_Delete_Instrument.TabIndex = 39;
+            this.Btn_Delete_Instrument.Text = "Eliminar Instrumento";
+            this.Btn_Delete_Instrument.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Btn_Delete_Instrument.UseAccentColor = false;
+            this.Btn_Delete_Instrument.UseVisualStyleBackColor = true;
+            this.Btn_Delete_Instrument.Click += new System.EventHandler(this.Btn_Delete_Instrument_Click);
+            // 
             // Add_Return_Instrument_ByGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 515);
+            this.ClientSize = new System.Drawing.Size(1151, 515);
+            this.Controls.Add(this.Btn_Delete_Instrument);
             this.Controls.Add(this.Btn_Regist_ReturnOfInstruments);
             this.Controls.Add(this.TxtBox_ObservationReturn);
             this.Controls.Add(this.Lbl_Observations);
@@ -221,5 +242,6 @@
         private MaterialSkin.Controls.MaterialLabel Lbl_Observations;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_ObservationReturn;
         private MaterialSkin.Controls.MaterialButton Btn_Regist_ReturnOfInstruments;
+        private MaterialSkin.Controls.MaterialButton Btn_Delete_Instrument;
     }
 }

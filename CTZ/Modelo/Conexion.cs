@@ -125,7 +125,5 @@ namespace CTZ.Modelo
                 return false;
             }
         }
-
-
     }
 }

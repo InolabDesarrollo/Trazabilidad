@@ -153,3 +153,7 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\x
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\xunit.assert.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\xunit.core.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\grpc_csharp_ext.x86.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\grpc_csharp_ext.x64.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\libgrpc_csharp_ext.x64.so
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\libgrpc_csharp_ext.x64.dylib

@@ -22,9 +22,9 @@ namespace CTZ.Vista.Instruments
 
         static Dictionary<int, string> informationId_Equino;
         DataTable engineers;
-        private  int idInstrument;
-        private  string equinoInstrument;
-        
+        private int idInstrument;
+        private string equinoInstrument;
+
         public Add_Delivery_Instrument_ByGroup()
         {
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace CTZ.Vista.Instruments
 
                 equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
                 idInstrument = Convert.ToInt32(instrumentInformation.Rows[0]["ID"].ToString());
-                
+
                 if (statusAssignments.Equals("DISPONIBLE"))
                 {
                     informationId_Equino.Add(idInstrument, equinoInstrument);
@@ -81,9 +81,9 @@ namespace CTZ.Vista.Instruments
             instrument_Assignments.dateDelivery = TimePicker_Date_Delivery.Text;
             instrument_Assignments.engineer = MaterialComboBox_Engineers.Text;
             instrument_Assignments.numberEnterprise = TxtBox_Enterprise.Text;
-            instrument_Assignments.observationDelivery =TxtBox_ObservationDelivery.Text;
+            instrument_Assignments.observationDelivery = TxtBox_ObservationDelivery.Text;
             instrument_Assignments.approximateDateOfReturn = TimePicker_Date_Estimate_Return.Text;
-            instrument_Assignments.nameEnterprise =TxtBox_NameEnterprise.Text;
+            instrument_Assignments.nameEnterprise = TxtBox_NameEnterprise.Text;
             instrument_Assignments.mailEngineer = emailEngineer;
             instrument_Assignments.equinoInstrument = equinoInstrument;
             instrument_Assignments.idInstrument = idInstrument;
@@ -92,18 +92,34 @@ namespace CTZ.Vista.Instruments
             instrumentAssignmentsControler.registerDeliveryInstrument(instrument_Assignments, informationId_Equino);
             updateStatusInstruments();
 
-            RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup",emailEngineer);
+            RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup", emailEngineer);
             signature.Show();
             this.Close();
         }
 
         private void updateStatusInstruments()
         {
-            foreach (KeyValuePair<int,string> id_Equino in informationId_Equino)
+            foreach (KeyValuePair<int, string> id_Equino in informationId_Equino)
             {
                 instrumentAssignmentsControler.updateStatusInstrumentAssignment(id_Equino.Key, "OCUPADO");
             }
         }
 
+        private void Btn_Delete_Instrument_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string equino = ComboBox_Instruments.SelectedItem.ToString();
+                int index= ComboBox_Instruments.FindString(equino);
+                ComboBox_Instruments.Items.RemoveAt(index);
+                MessageBox.Show("Equino "+ equino + " Eliminado");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                MessageBox.Show("No seleccionaste un Equino");
+            }
+            
+        }
     }
 }

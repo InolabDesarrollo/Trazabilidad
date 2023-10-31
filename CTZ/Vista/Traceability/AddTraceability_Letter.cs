@@ -73,6 +73,5 @@ namespace CTZ.Vista.Traceability
             }
         }
 
-
     }
 }

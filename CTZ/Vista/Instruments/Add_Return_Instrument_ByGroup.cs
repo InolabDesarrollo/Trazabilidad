@@ -86,6 +86,21 @@ namespace CTZ.Vista.Instruments
                 instrumentAssignmentsControler.updateStatusInstrumentAssignment(id,"DISPONIBLE");
             }
         }
-            
+
+        private void Btn_Delete_Instrument_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string equino = ComboBox_Instruments.SelectedItem.ToString();
+                int index = ComboBox_Instruments.FindString(equino);
+                ComboBox_Instruments.Items.RemoveAt(index);
+                MessageBox.Show("Equino " + equino + " Eliminado");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                MessageBox.Show("No seleccionaste un Equino");
+            }
+        }
     }
 }

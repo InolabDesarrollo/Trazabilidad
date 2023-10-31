@@ -33,8 +33,15 @@ namespace CTZ.Vista.Instruments
         private void dataInstrument()
         {
             instrumentAssignmentInformation= controler.selectMoreRecentInformationInstrumenAssignment(idInstrument);
-            string date = "Fecha de devolucion Registrada " + instrumentAssignmentInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString();
-            Lbl_Estimate_Date_Return.Text = date.ToString().Substring(0, 42);
+            try
+            {
+                string date = "Fecha de devolucion Registrada " + instrumentAssignmentInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString();
+                Lbl_Estimate_Date_Return.Text = date.ToString().Substring(0, 42);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message," The instrument Assignment does not have register the date of return");
+            }
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -46,7 +53,6 @@ namespace CTZ.Vista.Instruments
            
             controler.registerReturnInstrument(instrumentAssignments);
             controler.updateStatusInstrumentAssignment(idInstrument,"DISPONIBLE");
-
             RegistSignature signatureQualityAgent = new RegistSignature(idInstrument,equinoInstrument, "Quality", instrumentAssignmentInformation.Rows[0]["Correo_Ingeniero"].ToString());
             signatureQualityAgent.Show();
             this.Hide();

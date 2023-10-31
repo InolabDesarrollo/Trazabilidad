@@ -1898,6 +1898,16 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instru
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instruments.Add_Return_Instrument.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instruments.RegistSignature.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instruments.See_Instrument_Assignment.resources
-C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instruments.Signature.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instruments.Add_Delivery_Instrument_ByGroup.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instruments.Add_Return_Instrument_ByGroup.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instruments.ShowSignature.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\grpc_csharp_ext.x86.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\grpc_csharp_ext.x64.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\libgrpc_csharp_ext.x64.so
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\libgrpc_csharp_ext.x64.dylib
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Grpc.Core.Api.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Grpc.Core.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Grpc.Core.pdb
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Grpc.Core.xml
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Grpc.Core.Api.pdb
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Grpc.Core.Api.xml
