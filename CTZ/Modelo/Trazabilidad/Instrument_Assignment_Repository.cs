@@ -49,7 +49,8 @@ namespace CTZ.Modelo.Trazabilidad
 
         public void updateSignatureEngineer(int idInstrument, string engineerSignature)
         {
-            conexion.executeQuery("UPDATE AsignacionInstrumentos SET Firma_Ingeniero = '"+engineerSignature+"' where ID_Instrumento = " + idInstrument + ";");
+            conexion.executeQuery("UPDATE AsignacionInstrumentos SET Firma_Ingeniero  = '"+ engineerSignature + "' WHERE ID_Instrumento = "+ idInstrument + " \r\n" +
+                " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) FROM AsignacionInstrumentos WHERE ID_Instrumento = "+ idInstrument + ");");
         }
 
         public void updateSignatureQuality(int idInstrument, string signature)
