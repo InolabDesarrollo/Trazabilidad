@@ -56,10 +56,7 @@ namespace CTZ.Vista.Instruments
 
                 if (statusAssignments.Equals("DISPONIBLE"))
                 {
-                    informationId_Equino.Add(idInstrument, equinoInstrument);
-                    ComboBox_Instruments.Items.Add(equinoInstrument);
-                    MessageBox.Show("Se agrego Equino " + equinoInstrument);
-                    TxtBox_Instrumenst.Clear();
+                    addEquinoToKit();
                 }
                 else
                 {
@@ -72,29 +69,64 @@ namespace CTZ.Vista.Instruments
             }
         }
 
+        private void addEquinoToKit()
+        {
+            RelationCertificateInstrument relation = new RelationCertificateInstrument();
+            string dateOfCalibrationForInstrument = relation.getDateForNextCalibration(equinoInstrument);
+            if (dateOfCalibrationForInstrument.Equals("Sin fecha"))
+            {
+                addEquino();
+            }
+            else
+            {   
+                if(relation.calculateDaysForNextCalibration(equinoInstrument) < 10)
+                {
+                    MessageBox.Show("Faltan menos de 10 dias para la calibracion de este instrumento "+ equinoInstrument+" \n " +
+                        "NO puede ser asignado");
+                }
+                else
+                {
+                    addEquino();
+                }
+            }
+        }
+
+        private void addEquino()
+        {
+            informationId_Equino.Add(idInstrument, equinoInstrument);
+            ComboBox_Instruments.Items.Add(equinoInstrument);
+            MessageBox.Show("Se agrego Equino " + equinoInstrument);
+            TxtBox_Instrumenst.Clear();
+        }
 
         private void Btn_Regist_kit_Click(object sender, EventArgs e)
         {
-            string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
+            if (MaterialComboBox_Engineers.SelectedItem ==null)
+            {
+                MessageBox.Show("No haz seleccionado al Ingeniero");
+            }
+            else
+            {
+                string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
+                Instrument_Assignments instrument_Assignments = new Instrument_Assignments();
+                instrument_Assignments.dateDelivery = TimePicker_Date_Delivery.Text;
+                instrument_Assignments.engineer = MaterialComboBox_Engineers.Text;
+                instrument_Assignments.numberEnterprise = TxtBox_Enterprise.Text;
+                instrument_Assignments.observationDelivery = TxtBox_ObservationDelivery.Text;
+                instrument_Assignments.approximateDateOfReturn = TimePicker_Date_Estimate_Return.Text;
+                instrument_Assignments.nameEnterprise = TxtBox_NameEnterprise.Text;
+                instrument_Assignments.mailEngineer = emailEngineer;
+                instrument_Assignments.equinoInstrument = equinoInstrument;
+                instrument_Assignments.idInstrument = idInstrument;
 
-            Instrument_Assignments instrument_Assignments = new Instrument_Assignments();
-            instrument_Assignments.dateDelivery = TimePicker_Date_Delivery.Text;
-            instrument_Assignments.engineer = MaterialComboBox_Engineers.Text;
-            instrument_Assignments.numberEnterprise = TxtBox_Enterprise.Text;
-            instrument_Assignments.observationDelivery = TxtBox_ObservationDelivery.Text;
-            instrument_Assignments.approximateDateOfReturn = TimePicker_Date_Estimate_Return.Text;
-            instrument_Assignments.nameEnterprise = TxtBox_NameEnterprise.Text;
-            instrument_Assignments.mailEngineer = emailEngineer;
-            instrument_Assignments.equinoInstrument = equinoInstrument;
-            instrument_Assignments.idInstrument = idInstrument;
+                instrumentAssignmentsControler = new C_Instrument_Assignments();
+                instrumentAssignmentsControler.registerDeliveryInstrument(instrument_Assignments, informationId_Equino);
+                updateStatusInstruments();
 
-            instrumentAssignmentsControler = new C_Instrument_Assignments();
-            instrumentAssignmentsControler.registerDeliveryInstrument(instrument_Assignments, informationId_Equino);
-            updateStatusInstruments();
-
-            RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup", emailEngineer);
-            signature.Show();
-            this.Close();
+                RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup", emailEngineer);
+                signature.Show();
+                this.Close();
+            }
         }
 
         private void updateStatusInstruments()

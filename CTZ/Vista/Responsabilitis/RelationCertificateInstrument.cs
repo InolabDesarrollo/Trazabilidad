@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CTZ.Vista.Responsabilitis
 {
@@ -13,9 +14,11 @@ namespace CTZ.Vista.Responsabilitis
         private  int idInstrument;
         private  int idCertificate;
         C_RelationCertificateInstrument controler;
+        
         public RelationCertificateInstrument(int idInstrument, int idCertificate) {
 
             controler = new C_RelationCertificateInstrument();
+
             this.idInstrument = idInstrument;
             this.idCertificate = idCertificate;
         }
@@ -24,6 +27,11 @@ namespace CTZ.Vista.Responsabilitis
         {
             controler = new C_RelationCertificateInstrument();
             this.idInstrument = idInstrument;
+        }
+
+        public RelationCertificateInstrument()
+        {
+
         }
         public void create()
         {
@@ -38,6 +46,23 @@ namespace CTZ.Vista.Responsabilitis
         public void deleteRelation()
         {
             controler.deleteRelation(idInstrument, idCertificate);
+        }
+
+        public int calculateDaysForNextCalibration(string equino)
+        {
+            C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
+            DataTable instrumentCertificate = controler.getAllInstrumentCertificate(equino);
+            DateTime todayDate = DateTime.Today;
+            DateTime nextCalibrationDate = Convert.ToDateTime(instrumentCertificate.Rows[0]["Proxima_Calibracion"].ToString());
+
+            int dayDiference = (nextCalibrationDate - todayDate).Days;
+            return dayDiference;
+        }
+
+        public string getDateForNextCalibration(string equino)
+        {
+            C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
+            return controler.getDateForNextCalibration(equino);
         }
 
     }

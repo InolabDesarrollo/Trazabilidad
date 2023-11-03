@@ -220,6 +220,7 @@
     <Compile Include="Controlador\C_RelationCertificateInstrument.cs" />
     <Compile Include="Controlador\C_TraceabilityRepository.cs" />
     <Compile Include="Controlador\C_Usuario.cs" />
+    <Compile Include="Controlador\C_View_Instrument_Certificate.cs" />
     <Compile Include="ctzWF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,6 +376,7 @@
     <Compile Include="Modelo\Trazabilidad\Instrument_Repository.cs" />
     <Compile Include="Modelo\Trazabilidad\RelationCertificateInstrument_Repository.cs" />
     <Compile Include="Modelo\Trazabilidad\Traceability_Repository.cs" />
+    <Compile Include="Modelo\Trazabilidad\View_Instrument_Certificate_Repository.cs" />
     <Compile Include="TrazabilidadTestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

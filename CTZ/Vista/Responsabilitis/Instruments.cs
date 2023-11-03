@@ -87,15 +87,16 @@ namespace CTZ.Vista.Responsabilitis
         {
             return controler.serchInstrumen(id);
         }
-        public DataTable selectAllFromInstrument(string id)
+        public DataTable selectAllFromInstrument(string equino)
         {
-            return controler.selectAllFromInstrument(id);
+            return controler.selectAllFromInstrument(equino);
         }
 
         public DataTable selectAllRegistAndCertificates()
         {
             return controler.selectAllRegistAndCertificates();
         }
+
 
 
     }

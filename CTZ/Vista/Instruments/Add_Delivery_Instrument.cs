@@ -13,17 +13,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CTZ.Vista.Instruments
 {
     public partial class Add_Delivery_Instrument : MaterialForm
     {
         Instrument_Assignments instrumentAssignments;
         Engineer engineer;
-
+        RelationCertificateInstrument instrumentCertificate;
         DataTable engineers;
+
         private  int idInstrument;
         private string equinoInstrument;
-        
+        private string dateForNextCalibration;
         public Add_Delivery_Instrument(int idInstrument, string equinoInstrument)
         {
             InitializeComponent();
@@ -34,6 +36,9 @@ namespace CTZ.Vista.Instruments
             engineer = new Engineer();
             engineers = engineer.getEngineers();
             fillMaterialComboBoxEngineers();
+            instrumentCertificate = new RelationCertificateInstrument();
+            dateForNextCalibration = Convert.ToString(instrumentCertificate.getDateForNextCalibration(equinoInstrument));
+            Lbl_DaysForNextCalibration.Text= "Proxima calibracion de Instrumento: "+ dateForNextCalibration;
         }
         
         private void fillMaterialComboBoxEngineers()
@@ -44,20 +49,54 @@ namespace CTZ.Vista.Instruments
                 MaterialComboBox_Engineers.Items.Add(completeNameEngineer);
             }
         }
+        
         private void Btn_Add_Delivery_Click(object sender, EventArgs e)
+        { 
+            if (dateForNextCalibration.Equals("Sin fecha"))
+            {
+               registInstrumentAssignment();
+            }
+            else
+            {
+                int nextCalibration = daysForNextCalibration(equinoInstrument);
+                if (nextCalibration <= 10)
+                {
+                    MessageBox.Show("Faltan menos de 10 dias para la calibracion del Instrumento \n " +
+                        "NO puedes asignarlo");
+                }
+                else
+                {
+                    registInstrumentAssignment();
+                }
+            }
+        }
+        
+        private int daysForNextCalibration(string equino)
         {
-            string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
-            
-            instrumentAssignments = new Instrument_Assignments(idInstrument,equinoInstrument,TimePicker_Date_Delivery.Text
-                , MaterialComboBox_Engineers.SelectedItem.ToString(),TxtBox_Enterprise.Text,TxtBox_NameEnterprise.Text,
-                TxtBox_ObservationDelivery.Text,emailEngineer, TimePicker_Date_Estimate_Return.Text);
+            int daysOfDifference = instrumentCertificate.calculateDaysForNextCalibration(equino);
+            return daysOfDifference;
+        }
 
-            instrumentAssignments.addDeliveryInstrument();
-            instrumentAssignments.updateStatus("OCUPADO");
-            
-            RegistSignature signature = new RegistSignature(idInstrument,equinoInstrument, "Engineer",emailEngineer);
-            signature.Show();
-            this.Close();
+        private void registInstrumentAssignment()
+        { 
+            if (MaterialComboBox_Engineers.SelectedItem == null)
+            {
+                MessageBox.Show("No haz seleccionado Ingeniero para hacer la asignación");
+            }
+            else
+            {
+                string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
+                instrumentAssignments = new Instrument_Assignments(idInstrument, equinoInstrument, TimePicker_Date_Delivery.Text
+                    , MaterialComboBox_Engineers.SelectedItem.ToString(), TxtBox_Enterprise.Text, TxtBox_NameEnterprise.Text,
+                    TxtBox_ObservationDelivery.Text, emailEngineer, TimePicker_Date_Estimate_Return.Text);
+
+                instrumentAssignments.addDeliveryInstrument();
+                instrumentAssignments.updateStatus("OCUPADO");
+
+                RegistSignature signature = new RegistSignature(idInstrument, equinoInstrument, "Engineer", emailEngineer);
+                signature.Show();
+                this.Close();
+            }
         }
 
     }

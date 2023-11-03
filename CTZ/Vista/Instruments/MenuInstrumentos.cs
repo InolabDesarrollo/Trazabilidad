@@ -42,14 +42,14 @@ namespace CTZ.Vista
 
         private void colorDatesOfCalibration(int columnThatNeedColor, DataGridView dataGridView)
         {
-            DateTime dateOfToday = DateTime.Now;
+            DateTime todayDate = DateTime.Now;
             for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
             {
-                string valor = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
-                if (!valor.Equals(""))
+                string date = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
+                if (!date.Equals(""))
                 {
-                    DateTime dateOfNextCalibration = Convert.ToDateTime(valor);
-                    int daysOfDiference = (dateOfNextCalibration - dateOfToday).Days;
+                    DateTime dateOfNextCalibration = Convert.ToDateTime(date);
+                    int daysOfDiference = (dateOfNextCalibration - todayDate).Days;
 
                     if (daysOfDiference >= 0 && daysOfDiference <= 10)
                     {
