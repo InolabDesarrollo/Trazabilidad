@@ -18,6 +18,7 @@ namespace CTZ.Vista.Instruments
         C_Instrument_Assignments controler;
         private const int engineerSignature = 7;
         private const int qualitySignature = 11;
+        private const int updateAssignment = 0;
         private string kindOfSerch;
         DataTable instrumentAssignment;
         
@@ -64,6 +65,10 @@ namespace CTZ.Vista.Instruments
             {
                 showSignature(e);
             }
+            if (e.ColumnIndex==updateAssignment)
+            {
+                updateInstrumentAssignment(e);
+            }
         }
 
         private void showSignature(DataGridViewCellEventArgs e)
@@ -71,6 +76,14 @@ namespace CTZ.Vista.Instruments
             int id = Convert.ToInt32(Dgv_Instrument_Assignment[0, e.RowIndex].Value.ToString());
             ShowSignature signature = new ShowSignature(id,e.ColumnIndex);
             signature.Show();
+        }
+        private void updateInstrumentAssignment(DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(Dgv_Instrument_Assignment[0, e.RowIndex].Value.ToString());
+            string idEquino = Dgv_Instrument_Assignment[12, e.RowIndex].Value.ToString();
+
+            Update_Instrument_Assignment update = new Update_Instrument_Assignment(id, idEquino);
+            update.Show();
         }
 
         private void See_Instrument_Assignment_Load(object sender, EventArgs e)

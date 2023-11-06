@@ -55,7 +55,7 @@ namespace CTZ.Vista.Responsabilitis
         }
         public Instrument_Assignments()
         {
-
+            controler = new C_Instrument_Assignments();
         }
 
         public void addDeliveryInstrument()
@@ -72,5 +72,18 @@ namespace CTZ.Vista.Responsabilitis
         {
             controler.updateStatusInstrumentAssignment(idInstrument, status);
         }
+
+        public void updateInstrumentAssignments()
+        {
+            Instrument_Assignments instrument_Assignments = new Instrument_Assignments();
+            instrument_Assignments.idInstrument = this.idInstrument;
+            instrument_Assignments.numberEnterprise = this.numberEnterprise;
+            instrument_Assignments.nameEnterprise = this.nameEnterprise;
+            instrument_Assignments.observationDelivery = this.observationDelivery;
+            instrument_Assignments.observationsReturn = this.observationsReturn;
+
+            controler.updateInstrumentAssignment(instrument_Assignments);
+        }
+
     }
 }

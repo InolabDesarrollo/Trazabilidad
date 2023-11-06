@@ -130,5 +130,10 @@ namespace CTZ.Controlador
         {
             return _repository.selectMoreRecentInformationInstrumenAssignment(idInstrument);
         }
+
+        public void updateInstrumentAssignment(Instrument_Assignments instrument_Assignments)
+        {
+            _repository.updateInstrumentAssignment(instrument_Assignments);
+        }
     }
 }

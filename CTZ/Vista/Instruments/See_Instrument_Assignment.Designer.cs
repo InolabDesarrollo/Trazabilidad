@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Pnl_Instrument = new System.Windows.Forms.Panel();
+            this.Btn_Clean = new System.Windows.Forms.Button();
+            this.Btn_Filter = new System.Windows.Forms.Button();
+            this.TimePicker_DateFinal = new System.Windows.Forms.DateTimePicker();
+            this.Lbl_Date_Return = new System.Windows.Forms.Label();
+            this.Lbl_Date_Delivery = new System.Windows.Forms.Label();
             this.TimePicker_DateBegan = new System.Windows.Forms.DateTimePicker();
             this.Lbl_Title = new System.Windows.Forms.Label();
             this.Pnl_Body = new System.Windows.Forms.Panel();
@@ -37,11 +42,6 @@
             this.trazabilidadTestDataSet4 = new CTZ.TrazabilidadTestDataSet4();
             this.instrumentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentosTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.InstrumentosTableAdapter();
-            this.Lbl_Date_Delivery = new System.Windows.Forms.Label();
-            this.Lbl_Date_Return = new System.Windows.Forms.Label();
-            this.TimePicker_DateFinal = new System.Windows.Forms.DateTimePicker();
-            this.Btn_Filter = new System.Windows.Forms.Button();
-            this.Btn_Clean = new System.Windows.Forms.Button();
             this.Pnl_Instrument.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instrument_Assignment)).BeginInit();
@@ -68,6 +68,58 @@
             this.Pnl_Instrument.Size = new System.Drawing.Size(822, 93);
             this.Pnl_Instrument.TabIndex = 0;
             // 
+            // Btn_Clean
+            // 
+            this.Btn_Clean.Location = new System.Drawing.Point(668, 13);
+            this.Btn_Clean.Name = "Btn_Clean";
+            this.Btn_Clean.Size = new System.Drawing.Size(87, 49);
+            this.Btn_Clean.TabIndex = 6;
+            this.Btn_Clean.Text = "Limpiar Filtro";
+            this.Btn_Clean.UseVisualStyleBackColor = true;
+            this.Btn_Clean.Click += new System.EventHandler(this.Btn_Clean_Click);
+            // 
+            // Btn_Filter
+            // 
+            this.Btn_Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Filter.Location = new System.Drawing.Point(561, 12);
+            this.Btn_Filter.Name = "Btn_Filter";
+            this.Btn_Filter.Size = new System.Drawing.Size(83, 50);
+            this.Btn_Filter.TabIndex = 5;
+            this.Btn_Filter.Text = "Filtar Fechas";
+            this.Btn_Filter.UseVisualStyleBackColor = true;
+            this.Btn_Filter.Click += new System.EventHandler(this.Btn_Filter_Click);
+            // 
+            // TimePicker_DateFinal
+            // 
+            this.TimePicker_DateFinal.Location = new System.Drawing.Point(300, 42);
+            this.TimePicker_DateFinal.Name = "TimePicker_DateFinal";
+            this.TimePicker_DateFinal.Size = new System.Drawing.Size(200, 20);
+            this.TimePicker_DateFinal.TabIndex = 4;
+            // 
+            // Lbl_Date_Return
+            // 
+            this.Lbl_Date_Return.AutoSize = true;
+            this.Lbl_Date_Return.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Lbl_Date_Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Date_Return.ForeColor = System.Drawing.SystemColors.Window;
+            this.Lbl_Date_Return.Location = new System.Drawing.Point(143, 42);
+            this.Lbl_Date_Return.Name = "Lbl_Date_Return";
+            this.Lbl_Date_Return.Size = new System.Drawing.Size(80, 20);
+            this.Lbl_Date_Return.TabIndex = 3;
+            this.Lbl_Date_Return.Text = "Fecha Fin";
+            // 
+            // Lbl_Date_Delivery
+            // 
+            this.Lbl_Date_Delivery.AutoSize = true;
+            this.Lbl_Date_Delivery.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Lbl_Date_Delivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Date_Delivery.ForeColor = System.Drawing.SystemColors.Window;
+            this.Lbl_Date_Delivery.Location = new System.Drawing.Point(143, 11);
+            this.Lbl_Date_Delivery.Name = "Lbl_Date_Delivery";
+            this.Lbl_Date_Delivery.Size = new System.Drawing.Size(117, 20);
+            this.Lbl_Date_Delivery.TabIndex = 2;
+            this.Lbl_Date_Delivery.Text = "Fecha de Inicio";
+            // 
             // TimePicker_DateBegan
             // 
             this.TimePicker_DateBegan.Location = new System.Drawing.Point(300, 13);
@@ -79,11 +131,11 @@
             // 
             this.Lbl_Title.AutoSize = true;
             this.Lbl_Title.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Title.ForeColor = System.Drawing.Color.White;
             this.Lbl_Title.Location = new System.Drawing.Point(15, 9);
             this.Lbl_Title.Name = "Lbl_Title";
-            this.Lbl_Title.Size = new System.Drawing.Size(62, 24);
+            this.Lbl_Title.Size = new System.Drawing.Size(53, 20);
             this.Lbl_Title.TabIndex = 0;
             this.Lbl_Title.Text = "Titulo";
             // 
@@ -127,58 +179,6 @@
             // instrumentosTableAdapter
             // 
             this.instrumentosTableAdapter.ClearBeforeFill = true;
-            // 
-            // Lbl_Date_Delivery
-            // 
-            this.Lbl_Date_Delivery.AutoSize = true;
-            this.Lbl_Date_Delivery.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Lbl_Date_Delivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Date_Delivery.ForeColor = System.Drawing.SystemColors.Window;
-            this.Lbl_Date_Delivery.Location = new System.Drawing.Point(143, 11);
-            this.Lbl_Date_Delivery.Name = "Lbl_Date_Delivery";
-            this.Lbl_Date_Delivery.Size = new System.Drawing.Size(117, 20);
-            this.Lbl_Date_Delivery.TabIndex = 2;
-            this.Lbl_Date_Delivery.Text = "Fecha de Inicio";
-            // 
-            // Lbl_Date_Return
-            // 
-            this.Lbl_Date_Return.AutoSize = true;
-            this.Lbl_Date_Return.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Lbl_Date_Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Date_Return.ForeColor = System.Drawing.SystemColors.Window;
-            this.Lbl_Date_Return.Location = new System.Drawing.Point(143, 42);
-            this.Lbl_Date_Return.Name = "Lbl_Date_Return";
-            this.Lbl_Date_Return.Size = new System.Drawing.Size(80, 20);
-            this.Lbl_Date_Return.TabIndex = 3;
-            this.Lbl_Date_Return.Text = "Fecha Fin";
-            // 
-            // TimePicker_DateFinal
-            // 
-            this.TimePicker_DateFinal.Location = new System.Drawing.Point(300, 42);
-            this.TimePicker_DateFinal.Name = "TimePicker_DateFinal";
-            this.TimePicker_DateFinal.Size = new System.Drawing.Size(200, 20);
-            this.TimePicker_DateFinal.TabIndex = 4;
-            // 
-            // Btn_Filter
-            // 
-            this.Btn_Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Filter.Location = new System.Drawing.Point(561, 12);
-            this.Btn_Filter.Name = "Btn_Filter";
-            this.Btn_Filter.Size = new System.Drawing.Size(83, 50);
-            this.Btn_Filter.TabIndex = 5;
-            this.Btn_Filter.Text = "Filtar Fechas";
-            this.Btn_Filter.UseVisualStyleBackColor = true;
-            this.Btn_Filter.Click += new System.EventHandler(this.Btn_Filter_Click);
-            // 
-            // Btn_Clean
-            // 
-            this.Btn_Clean.Location = new System.Drawing.Point(668, 13);
-            this.Btn_Clean.Name = "Btn_Clean";
-            this.Btn_Clean.Size = new System.Drawing.Size(87, 49);
-            this.Btn_Clean.TabIndex = 6;
-            this.Btn_Clean.Text = "Limpiar Filtro";
-            this.Btn_Clean.UseVisualStyleBackColor = true;
-            this.Btn_Clean.Click += new System.EventHandler(this.Btn_Clean_Click);
             // 
             // See_Instrument_Assignment
             // 

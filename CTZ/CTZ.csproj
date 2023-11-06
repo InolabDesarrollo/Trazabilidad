@@ -476,6 +476,12 @@
     <Compile Include="Vista\Instruments\ShowSignature.Designer.cs">
       <DependentUpon>ShowSignature.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Instruments\Update_Instrument_Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Instruments\Update_Instrument_Assignment.Designer.cs">
+      <DependentUpon>Update_Instrument_Assignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -714,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Instruments\ShowSignature.resx">
       <DependentUpon>ShowSignature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Instruments\Update_Instrument_Assignment.resx">
+      <DependentUpon>Update_Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>

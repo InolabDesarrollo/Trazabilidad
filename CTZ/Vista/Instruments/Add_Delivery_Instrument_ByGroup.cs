@@ -81,7 +81,7 @@ namespace CTZ.Vista.Instruments
             {   
                 if(relation.calculateDaysForNextCalibration(equinoInstrument) < 10)
                 {
-                    MessageBox.Show("Faltan menos de 10 dias para la calibracion de este instrumento "+ equinoInstrument+" \n " +
+                    MessageBox.Show("Faltan menos de 10 dias para la calibracion de este instrumento "+ equinoInstrument+" \n" +
                         "NO puede ser asignado");
                 }
                 else

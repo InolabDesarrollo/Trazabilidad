@@ -123,7 +123,12 @@ namespace CTZ.Modelo.Trazabilidad
                 " FROM AsignacionInstrumentos WHERE ID_Instrumento ="+ idInstrument + ");");
         }
 
-        
+        public void updateInstrumentAssignment(Instrument_Assignments instrument_Assignments)
+        {
+            conexion.executeQuery(" UPDATE AsignacionInstrumentos SET Folio_Empresa = '"+ instrument_Assignments.numberEnterprise+ "', Nombre_Empresa = '"+ instrument_Assignments.nameEnterprise + "', Observaciones_Entrega = '"+ instrument_Assignments .observationDelivery+ "', " +
+                " Observaciones_Devolucion = '"+ instrument_Assignments.observationsReturn + "'" +
+                "\r\n WHERE ID = "+ instrument_Assignments.idInstrument + ";");
+        }
         
     }
 }
