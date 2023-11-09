@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pnl_Head = new System.Windows.Forms.Panel();
             this.Btn_Assignments = new System.Windows.Forms.Button();
             this.Btn_Traceability = new System.Windows.Forms.Button();
@@ -91,13 +91,13 @@
             this.Btn_Serch_Traceability = new System.Windows.Forms.Button();
             this.Btn_AddTraceability = new System.Windows.Forms.Button();
             this.Pnl_Assignments = new System.Windows.Forms.Panel();
+            this.Btn_Regist_Return_Instrument_ByGroup = new System.Windows.Forms.Button();
+            this.Btn_Add_Assignments_ByGroup = new System.Windows.Forms.Button();
             this.Btn_Regist_Return_Instrument = new System.Windows.Forms.Button();
             this.Btn_Add_Assignments = new System.Windows.Forms.Button();
             this.Btn_Serch_Assignments = new System.Windows.Forms.Button();
             this.instrumentos_CertificadoTableAdapter2 = new CTZ.TrazabilidadTestDataSet3TableAdapters.Instrumentos_CertificadoTableAdapter();
             this.instrumentosTableAdapter1 = new CTZ.TrazabilidadTestDataSet4TableAdapters.InstrumentosTableAdapter();
-            this.Btn_Add_Assignments_ByGroup = new System.Windows.Forms.Button();
-            this.Btn_Regist_Return_Instrument_ByGroup = new System.Windows.Forms.Button();
             this.Pnl_Head.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).BeginInit();
@@ -123,7 +123,7 @@
             // Pnl_Head
             // 
             this.Pnl_Head.AutoSize = true;
-            this.Pnl_Head.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Pnl_Head.BackColor = System.Drawing.Color.SteelBlue;
             this.Pnl_Head.Controls.Add(this.Btn_Assignments);
             this.Pnl_Head.Controls.Add(this.Btn_Traceability);
             this.Pnl_Head.Controls.Add(this.Btn_Calendar);
@@ -138,7 +138,7 @@
             // 
             // Btn_Assignments
             // 
-            this.Btn_Assignments.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Assignments.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Assignments.FlatAppearance.BorderSize = 0;
             this.Btn_Assignments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Assignments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,7 +152,7 @@
             // 
             // Btn_Traceability
             // 
-            this.Btn_Traceability.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Traceability.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Traceability.FlatAppearance.BorderSize = 0;
             this.Btn_Traceability.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Traceability.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,10 +166,11 @@
             // 
             // Btn_Calendar
             // 
-            this.Btn_Calendar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Calendar.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Calendar.FlatAppearance.BorderSize = 0;
             this.Btn_Calendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Calendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Calendar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Btn_Calendar.Location = new System.Drawing.Point(229, 40);
             this.Btn_Calendar.Name = "Btn_Calendar";
             this.Btn_Calendar.Size = new System.Drawing.Size(124, 64);
@@ -180,10 +181,11 @@
             // 
             // Btn_Regist
             // 
-            this.Btn_Regist.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Regist.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Regist.FlatAppearance.BorderSize = 0;
             this.Btn_Regist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Regist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Regist.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Btn_Regist.Location = new System.Drawing.Point(106, 40);
             this.Btn_Regist.Name = "Btn_Regist";
             this.Btn_Regist.Size = new System.Drawing.Size(124, 64);
@@ -194,10 +196,11 @@
             // 
             // Btn_See
             // 
-            this.Btn_See.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_See.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_See.FlatAppearance.BorderSize = 0;
             this.Btn_See.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_See.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_See.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Btn_See.Location = new System.Drawing.Point(0, 40);
             this.Btn_See.Name = "Btn_See";
             this.Btn_See.Size = new System.Drawing.Size(110, 64);
@@ -224,7 +227,7 @@
             // 
             // Pnl_See
             // 
-            this.Pnl_See.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pnl_See.BackColor = System.Drawing.Color.SkyBlue;
             this.Pnl_See.Controls.Add(this.Btn_Instruments_Certificates);
             this.Pnl_See.Controls.Add(this.Btn_All_Instruments);
             this.Pnl_See.Location = new System.Drawing.Point(0, 104);
@@ -235,7 +238,7 @@
             // 
             // Btn_Instruments_Certificates
             // 
-            this.Btn_Instruments_Certificates.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Instruments_Certificates.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Instruments_Certificates.FlatAppearance.BorderSize = 0;
             this.Btn_Instruments_Certificates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Instruments_Certificates.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -249,7 +252,7 @@
             // 
             // Btn_All_Instruments
             // 
-            this.Btn_All_Instruments.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_All_Instruments.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_All_Instruments.FlatAppearance.BorderSize = 0;
             this.Btn_All_Instruments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_All_Instruments.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -275,7 +278,7 @@
             // 
             // BtnUpdate_Instrument
             // 
-            this.BtnUpdate_Instrument.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnUpdate_Instrument.BackColor = System.Drawing.Color.SkyBlue;
             this.BtnUpdate_Instrument.FlatAppearance.BorderSize = 0;
             this.BtnUpdate_Instrument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUpdate_Instrument.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -289,7 +292,7 @@
             // 
             // BtnDelete_Instruments
             // 
-            this.BtnDelete_Instruments.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnDelete_Instruments.BackColor = System.Drawing.Color.SkyBlue;
             this.BtnDelete_Instruments.FlatAppearance.BorderSize = 0;
             this.BtnDelete_Instruments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDelete_Instruments.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,7 +306,7 @@
             // 
             // Btn_Add
             // 
-            this.Btn_Add.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Add.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Add.FlatAppearance.BorderSize = 0;
             this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -339,14 +342,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_Instruments_Certificates.AutoGenerateColumns = false;
             this.Dgv_Instruments_Certificates.AutoGenerateContextFilters = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Instruments_Certificates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Instruments_Certificates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Dgv_Instruments_Certificates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_Instruments_Certificates.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -684,7 +687,7 @@
             // 
             // Pnl_Calendar
             // 
-            this.Pnl_Calendar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pnl_Calendar.BackColor = System.Drawing.Color.SkyBlue;
             this.Pnl_Calendar.Controls.Add(this.Btn_General_Calendar);
             this.Pnl_Calendar.Location = new System.Drawing.Point(226, 104);
             this.Pnl_Calendar.Name = "Pnl_Calendar";
@@ -694,7 +697,7 @@
             // 
             // Btn_General_Calendar
             // 
-            this.Btn_General_Calendar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_General_Calendar.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_General_Calendar.FlatAppearance.BorderSize = 0;
             this.Btn_General_Calendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_General_Calendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -708,7 +711,7 @@
             // 
             // Pnl_Traceability
             // 
-            this.Pnl_Traceability.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pnl_Traceability.BackColor = System.Drawing.Color.SkyBlue;
             this.Pnl_Traceability.Controls.Add(this.Btn_Serch_Traceability);
             this.Pnl_Traceability.Controls.Add(this.Btn_AddTraceability);
             this.Pnl_Traceability.Location = new System.Drawing.Point(349, 104);
@@ -719,7 +722,7 @@
             // 
             // Btn_Serch_Traceability
             // 
-            this.Btn_Serch_Traceability.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Serch_Traceability.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Serch_Traceability.FlatAppearance.BorderSize = 0;
             this.Btn_Serch_Traceability.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Serch_Traceability.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -733,7 +736,7 @@
             // 
             // Btn_AddTraceability
             // 
-            this.Btn_AddTraceability.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_AddTraceability.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_AddTraceability.FlatAppearance.BorderSize = 0;
             this.Btn_AddTraceability.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_AddTraceability.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -747,7 +750,7 @@
             // 
             // Pnl_Assignments
             // 
-            this.Pnl_Assignments.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pnl_Assignments.BackColor = System.Drawing.Color.SkyBlue;
             this.Pnl_Assignments.Controls.Add(this.Btn_Regist_Return_Instrument_ByGroup);
             this.Pnl_Assignments.Controls.Add(this.Btn_Add_Assignments_ByGroup);
             this.Pnl_Assignments.Controls.Add(this.Btn_Regist_Return_Instrument);
@@ -759,9 +762,37 @@
             this.Pnl_Assignments.TabIndex = 12;
             this.Pnl_Assignments.Visible = false;
             // 
+            // Btn_Regist_Return_Instrument_ByGroup
+            // 
+            this.Btn_Regist_Return_Instrument_ByGroup.BackColor = System.Drawing.Color.SkyBlue;
+            this.Btn_Regist_Return_Instrument_ByGroup.FlatAppearance.BorderSize = 0;
+            this.Btn_Regist_Return_Instrument_ByGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Regist_Return_Instrument_ByGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Regist_Return_Instrument_ByGroup.Location = new System.Drawing.Point(0, 245);
+            this.Btn_Regist_Return_Instrument_ByGroup.Name = "Btn_Regist_Return_Instrument_ByGroup";
+            this.Btn_Regist_Return_Instrument_ByGroup.Size = new System.Drawing.Size(126, 63);
+            this.Btn_Regist_Return_Instrument_ByGroup.TabIndex = 15;
+            this.Btn_Regist_Return_Instrument_ByGroup.Text = "Devolucion de Instrumento Por Grupo";
+            this.Btn_Regist_Return_Instrument_ByGroup.UseVisualStyleBackColor = false;
+            this.Btn_Regist_Return_Instrument_ByGroup.Click += new System.EventHandler(this.Btn_Regist_Return_Instrument_ByGroup_Click);
+            // 
+            // Btn_Add_Assignments_ByGroup
+            // 
+            this.Btn_Add_Assignments_ByGroup.BackColor = System.Drawing.Color.SkyBlue;
+            this.Btn_Add_Assignments_ByGroup.FlatAppearance.BorderSize = 0;
+            this.Btn_Add_Assignments_ByGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Add_Assignments_ByGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add_Assignments_ByGroup.Location = new System.Drawing.Point(0, 179);
+            this.Btn_Add_Assignments_ByGroup.Name = "Btn_Add_Assignments_ByGroup";
+            this.Btn_Add_Assignments_ByGroup.Size = new System.Drawing.Size(126, 63);
+            this.Btn_Add_Assignments_ByGroup.TabIndex = 15;
+            this.Btn_Add_Assignments_ByGroup.Text = "Entrega de Instrumento Por Grupo";
+            this.Btn_Add_Assignments_ByGroup.UseVisualStyleBackColor = false;
+            this.Btn_Add_Assignments_ByGroup.Click += new System.EventHandler(this.Btn_Add_Assignments_ByGroup_Click);
+            // 
             // Btn_Regist_Return_Instrument
             // 
-            this.Btn_Regist_Return_Instrument.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Regist_Return_Instrument.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Regist_Return_Instrument.FlatAppearance.BorderSize = 0;
             this.Btn_Regist_Return_Instrument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Regist_Return_Instrument.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -775,7 +806,7 @@
             // 
             // Btn_Add_Assignments
             // 
-            this.Btn_Add_Assignments.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Add_Assignments.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Add_Assignments.FlatAppearance.BorderSize = 0;
             this.Btn_Add_Assignments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Add_Assignments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -789,7 +820,7 @@
             // 
             // Btn_Serch_Assignments
             // 
-            this.Btn_Serch_Assignments.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Btn_Serch_Assignments.BackColor = System.Drawing.Color.SkyBlue;
             this.Btn_Serch_Assignments.FlatAppearance.BorderSize = 0;
             this.Btn_Serch_Assignments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Serch_Assignments.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -808,34 +839,6 @@
             // instrumentosTableAdapter1
             // 
             this.instrumentosTableAdapter1.ClearBeforeFill = true;
-            // 
-            // Btn_Add_Assignments_ByGroup
-            // 
-            this.Btn_Add_Assignments_ByGroup.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Btn_Add_Assignments_ByGroup.FlatAppearance.BorderSize = 0;
-            this.Btn_Add_Assignments_ByGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Add_Assignments_ByGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add_Assignments_ByGroup.Location = new System.Drawing.Point(0, 179);
-            this.Btn_Add_Assignments_ByGroup.Name = "Btn_Add_Assignments_ByGroup";
-            this.Btn_Add_Assignments_ByGroup.Size = new System.Drawing.Size(126, 63);
-            this.Btn_Add_Assignments_ByGroup.TabIndex = 15;
-            this.Btn_Add_Assignments_ByGroup.Text = "Entrega de Instrumento Por Grupo";
-            this.Btn_Add_Assignments_ByGroup.UseVisualStyleBackColor = false;
-            this.Btn_Add_Assignments_ByGroup.Click += new System.EventHandler(this.Btn_Add_Assignments_ByGroup_Click);
-            // 
-            // Btn_Regist_Return_Instrument_ByGroup
-            // 
-            this.Btn_Regist_Return_Instrument_ByGroup.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Btn_Regist_Return_Instrument_ByGroup.FlatAppearance.BorderSize = 0;
-            this.Btn_Regist_Return_Instrument_ByGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Regist_Return_Instrument_ByGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Regist_Return_Instrument_ByGroup.Location = new System.Drawing.Point(0, 245);
-            this.Btn_Regist_Return_Instrument_ByGroup.Name = "Btn_Regist_Return_Instrument_ByGroup";
-            this.Btn_Regist_Return_Instrument_ByGroup.Size = new System.Drawing.Size(126, 63);
-            this.Btn_Regist_Return_Instrument_ByGroup.TabIndex = 15;
-            this.Btn_Regist_Return_Instrument_ByGroup.Text = "Devolucion de Instrumento Por Grupo";
-            this.Btn_Regist_Return_Instrument_ByGroup.UseVisualStyleBackColor = false;
-            this.Btn_Regist_Return_Instrument_ByGroup.Click += new System.EventHandler(this.Btn_Regist_Return_Instrument_ByGroup_Click);
             // 
             // MenuInstrumentos
             // 

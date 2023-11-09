@@ -77,6 +77,7 @@ namespace CTZ.Vista.Instruments
             ShowSignature signature = new ShowSignature(id,e.ColumnIndex);
             signature.Show();
         }
+
         private void updateInstrumentAssignment(DataGridViewCellEventArgs e)
         {
             int id = Convert.ToInt32(Dgv_Instrument_Assignment[0, e.RowIndex].Value.ToString());
@@ -94,11 +95,7 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Filter_Click(object sender, EventArgs e)
         {
-            DateForReport dates = new DateForReport();
-
-            dates.dateBegan=  dates.convertToValidDate(TimePicker_DateBegan.Text);
-            dates.dateFinal= dates.convertToValidDate(TimePicker_DateFinal.Text);
-            
+            DateForReport dates = new DateForReport(TimePicker_DateBegan.Text, TimePicker_DateFinal.Text);        
             switch (kindOfSerch)
             {
                 case "Instrument":
@@ -106,7 +103,7 @@ namespace CTZ.Vista.Instruments
                         dates);
                     break;
                 case "Enterprise":
-                    string numberEnterprise = instrumentAssignment.Rows[0]["Ingeniero"].ToString();
+                    string numberEnterprise = instrumentAssignment.Rows[0]["Folio_Empresa"].ToString();
                     Dgv_Instrument_Assignment.DataSource = controler.selectAllByNumberEnterpriseAndDates(numberEnterprise, dates);
                     break;
                 case "Engineer":

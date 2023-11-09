@@ -101,7 +101,7 @@ namespace CTZ.Modelo.Trazabilidad
         public DataTable selectAllByEngineer(string engineer, DateForReport dates)
         {
             return conexion.getDataTable("Select  * from AsignacionInstrumentos Where Ingeniero " +
-                " Like '%" + engineer + "%';");
+                " Like '%" + engineer + "%' AND Fecha_Entrega BETWEEN '"+dates.dateBegan+"' AND '"+dates.dateFinal+"' ;");
         }
 
         public bool checkIfEngineerHasAssignment(string engineer)
@@ -129,6 +129,5 @@ namespace CTZ.Modelo.Trazabilidad
                 " Observaciones_Devolucion = '"+ instrument_Assignments.observationsReturn + "'" +
                 "\r\n WHERE ID = "+ instrument_Assignments.idInstrument + ";");
         }
-        
     }
 }

@@ -10,6 +10,14 @@ namespace CTZ.Vista.Responsabilitis
     {
         public string dateBegan;
         public string dateFinal;
+        public DateForReport(string dateBegan, string dateFinal)
+        {
+            this.dateBegan = convertToValidDate(dateBegan);
+            this.dateFinal = convertToValidDate(dateFinal);
+        }
+        public DateForReport()
+        {
+        }
         public string convertToValidDate(string date)
         {
             DateTime validDate = Convert.ToDateTime(date);

@@ -34,7 +34,9 @@ namespace CTZ.Vista
             this.instrumentos_CertificadoTableAdapter2.Fill(this.trazabilidadTestDataSet3.Instrumentos_Certificado);
             this.instrumentosTableAdapter.Fill(this.trazabilidadTest_Instrumentos.Instrumentos);
             this.instrumentos_CertificadoTableAdapter1.Fill(this.trazabilidadTestDataSet2.Instrumentos_Certificado);
-            
+
+            Pnl_Head.BackColor = Color.FromArgb(54, 95, 145);
+
             colorCells(columnStatus, Dgv_Instruments_Certificates);
             colorCells(columnInstrumenAssigmments, Dgv_Instruments_Certificates);
             colorDatesOfCalibration(10, Dgv_Instruments_Certificates);

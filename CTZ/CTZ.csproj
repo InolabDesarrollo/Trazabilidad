@@ -213,14 +213,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Controlador\C_Certificate.cs" />
-    <Compile Include="Controlador\C_ExternTraceabilityRepository.cs" />
-    <Compile Include="Controlador\C_Instruments.cs" />
-    <Compile Include="Controlador\C_Instrument_Assignments.cs" />
-    <Compile Include="Controlador\C_RelationCertificateInstrument.cs" />
-    <Compile Include="Controlador\C_TraceabilityRepository.cs" />
-    <Compile Include="Controlador\C_Usuario.cs" />
-    <Compile Include="Controlador\C_View_Instrument_Certificate.cs" />
+    <Compile Include="Controler\C_Certificate.cs" />
+    <Compile Include="Controler\C_ExternTraceabilityRepository.cs" />
+    <Compile Include="Controler\C_Instruments.cs" />
+    <Compile Include="Controler\C_Instrument_Assignments.cs" />
+    <Compile Include="Controler\C_RelationCertificateInstrument.cs" />
+    <Compile Include="Controler\C_TraceabilityRepository.cs" />
+    <Compile Include="Controler\C_Usuario.cs" />
+    <Compile Include="Controler\C_View_Instrument_Certificate.cs" />
     <Compile Include="ctzWF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,17 +366,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IngesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Browser\ConexionBrowser.cs" />
-    <Compile Include="Modelo\Browser\UserRepository.cs" />
-    <Compile Include="Modelo\Conexion.cs" />
-    <Compile Include="Modelo\Trazabilidad\Certificate_Repository.cs" />
-    <Compile Include="Modelo\Trazabilidad\ConexionTrazabilidad.cs" />
-    <Compile Include="Modelo\Trazabilidad\ExternalTraceability_Repository.cs" />
-    <Compile Include="Modelo\Trazabilidad\Instrument_Assignment_Repository.cs" />
-    <Compile Include="Modelo\Trazabilidad\Instrument_Repository.cs" />
-    <Compile Include="Modelo\Trazabilidad\RelationCertificateInstrument_Repository.cs" />
-    <Compile Include="Modelo\Trazabilidad\Traceability_Repository.cs" />
-    <Compile Include="Modelo\Trazabilidad\View_Instrument_Certificate_Repository.cs" />
+    <Compile Include="Model\Browser\ConexionBrowser.cs" />
+    <Compile Include="Model\Browser\UserRepository.cs" />
+    <Compile Include="Model\Conexion.cs" />
+    <Compile Include="Model\Trazabilidad\Certificate_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\ConexionTrazabilidad.cs" />
+    <Compile Include="Model\Trazabilidad\ExternalTraceability_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instrument_Assignment_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instrument_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\RelationCertificateInstrument_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Traceability_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\View_Instrument_Certificate_Repository.cs" />
     <Compile Include="TrazabilidadTestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -410,82 +410,82 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Certificates\SerchCertificate.cs">
+    <Compile Include="View\Certificates\SerchCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Certificates\SerchCertificate.Designer.cs">
+    <Compile Include="View\Certificates\SerchCertificate.Designer.cs">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Delivery_Instrument.cs">
+    <Compile Include="View\Instruments\Add_Delivery_Instrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Delivery_Instrument.Designer.cs">
+    <Compile Include="View\Instruments\Add_Delivery_Instrument.Designer.cs">
       <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Delivery_Instrument_ByGroup.cs">
+    <Compile Include="View\Instruments\Add_Delivery_Instrument_ByGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Delivery_Instrument_ByGroup.Designer.cs">
+    <Compile Include="View\Instruments\Add_Delivery_Instrument_ByGroup.Designer.cs">
       <DependentUpon>Add_Delivery_Instrument_ByGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Instrument_Assignment.cs">
+    <Compile Include="View\Instruments\Add_Instrument_Assignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Instrument_Assignment.Designer.cs">
+    <Compile Include="View\Instruments\Add_Instrument_Assignment.Designer.cs">
       <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Return_Instrument.cs">
+    <Compile Include="View\Instruments\Add_Return_Instrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Return_Instrument.Designer.cs">
+    <Compile Include="View\Instruments\Add_Return_Instrument.Designer.cs">
       <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Return_Instrument_ByGroup.cs">
+    <Compile Include="View\Instruments\Add_Return_Instrument_ByGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\Add_Return_Instrument_ByGroup.Designer.cs">
+    <Compile Include="View\Instruments\Add_Return_Instrument_ByGroup.Designer.cs">
       <DependentUpon>Add_Return_Instrument_ByGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\DeleteInstrument.cs">
+    <Compile Include="View\Instruments\DeleteInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\DeleteInstrument.Designer.cs">
+    <Compile Include="View\Instruments\DeleteInstrument.Designer.cs">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\RegistSignature.cs">
+    <Compile Include="View\Instruments\RegistSignature.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\RegistSignature.Designer.cs">
+    <Compile Include="View\Instruments\RegistSignature.Designer.cs">
       <DependentUpon>RegistSignature.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\See_Instrument_Assignment.cs">
+    <Compile Include="View\Instruments\See_Instrument_Assignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\See_Instrument_Assignment.Designer.cs">
+    <Compile Include="View\Instruments\See_Instrument_Assignment.Designer.cs">
       <DependentUpon>See_Instrument_Assignment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Serch_Instruments_Assignments.cs">
+    <Compile Include="View\Instruments\Serch_Instruments_Assignments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\Serch_Instruments_Assignments.Designer.cs">
+    <Compile Include="View\Instruments\Serch_Instruments_Assignments.Designer.cs">
       <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\ShowSignature.cs">
+    <Compile Include="View\Instruments\ShowSignature.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\ShowSignature.Designer.cs">
+    <Compile Include="View\Instruments\ShowSignature.Designer.cs">
       <DependentUpon>ShowSignature.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\Update_Instrument_Assignment.cs">
+    <Compile Include="View\Instruments\Update_Instrument_Assignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\Update_Instrument_Assignment.Designer.cs">
+    <Compile Include="View\Instruments\Update_Instrument_Assignment.Designer.cs">
       <DependentUpon>Update_Instrument_Assignment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\LogIn.cs">
+    <Compile Include="View\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\LogIn.Designer.cs">
+    <Compile Include="View\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="modEQ.cs">
@@ -523,108 +523,108 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Vista\MenuAccesorios.cs">
+    <Compile Include="View\MenuAccesorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\MenuAccesorios.Designer.cs">
+    <Compile Include="View\MenuAccesorios.Designer.cs">
       <DependentUpon>MenuAccesorios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\MenuDataLogger.cs">
+    <Compile Include="View\MenuDataLogger.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\MenuDataLogger.Designer.cs">
+    <Compile Include="View\MenuDataLogger.Designer.cs">
       <DependentUpon>MenuDataLogger.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\MenuEstandares.cs">
+    <Compile Include="View\MenuEstandares.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\MenuEstandares.Designer.cs">
+    <Compile Include="View\MenuEstandares.Designer.cs">
       <DependentUpon>MenuEstandares.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\MenuHerramientas.cs">
+    <Compile Include="View\MenuHerramientas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\MenuHerramientas.Designer.cs">
+    <Compile Include="View\MenuHerramientas.Designer.cs">
       <DependentUpon>MenuHerramientas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\MenuInstrumentos.cs">
+    <Compile Include="View\Instruments\MenuInstrumentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\MenuInstrumentos.Designer.cs">
+    <Compile Include="View\Instruments\MenuInstrumentos.Designer.cs">
       <DependentUpon>MenuInstrumentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Certificates\AddCertificate.cs">
+    <Compile Include="View\Certificates\AddCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Certificates\AddCertificate.Designer.cs">
+    <Compile Include="View\Certificates\AddCertificate.Designer.cs">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\AddInstrument.cs">
+    <Compile Include="View\Instruments\AddInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\AddInstrument.Designer.cs">
+    <Compile Include="View\Instruments\AddInstrument.Designer.cs">
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Certificates\Certificate.cs" />
-    <Compile Include="Vista\Responsabilitis\DateForReport.cs" />
-    <Compile Include="Vista\Responsabilitis\Email.cs" />
-    <Compile Include="Vista\Responsabilitis\Engineer.cs" />
-    <Compile Include="Vista\Responsabilitis\Instruments.cs" />
-    <Compile Include="Vista\Responsabilitis\Instrument_Assignments.cs" />
-    <Compile Include="Vista\Responsabilitis\Notification.cs" />
-    <Compile Include="Vista\Responsabilitis\RelationCertificateInstrument.cs" />
-    <Compile Include="Vista\Instruments\SerchInstrument.cs">
+    <Compile Include="View\Certificates\Certificate.cs" />
+    <Compile Include="View\Responsabilitis\DateForReport.cs" />
+    <Compile Include="View\Responsabilitis\Email.cs" />
+    <Compile Include="View\Responsabilitis\Engineer.cs" />
+    <Compile Include="View\Responsabilitis\Instruments.cs" />
+    <Compile Include="View\Responsabilitis\Instrument_Assignments.cs" />
+    <Compile Include="View\Responsabilitis\Notification.cs" />
+    <Compile Include="View\Responsabilitis\RelationCertificateInstrument.cs" />
+    <Compile Include="View\Instruments\SerchInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\SerchInstrument.Designer.cs">
+    <Compile Include="View\Instruments\SerchInstrument.Designer.cs">
       <DependentUpon>SerchInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Responsabilitis\Report.cs">
+    <Compile Include="View\Responsabilitis\Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Responsabilitis\Report.Designer.cs">
+    <Compile Include="View\Responsabilitis\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Responsabilitis\Signature.cs" />
-    <Compile Include="Vista\SubMenu.cs">
+    <Compile Include="View\Responsabilitis\Signature.cs" />
+    <Compile Include="View\SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\SubMenu.Designer.cs">
+    <Compile Include="View\SubMenu.Designer.cs">
       <DependentUpon>SubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Instruments\UpdateInstrument.cs">
+    <Compile Include="View\Instruments\UpdateInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Instruments\UpdateInstrument.Designer.cs">
+    <Compile Include="View\Instruments\UpdateInstrument.Designer.cs">
       <DependentUpon>UpdateInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Traceability\AddExternTraceability_Letter.cs">
+    <Compile Include="View\Traceability\AddExternTraceability_Letter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Traceability\AddExternTraceability_Letter.Designer.cs">
+    <Compile Include="View\Traceability\AddExternTraceability_Letter.Designer.cs">
       <DependentUpon>AddExternTraceability_Letter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Traceability\AddTraceability_Letter.cs">
+    <Compile Include="View\Traceability\AddTraceability_Letter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Traceability\AddTraceability_Letter.Designer.cs">
+    <Compile Include="View\Traceability\AddTraceability_Letter.Designer.cs">
       <DependentUpon>AddTraceability_Letter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Traceability\ExternalTraceability_Letter.cs" />
-    <Compile Include="Vista\Traceability\InternTraceability_Letter.cs" />
-    <Compile Include="Vista\Traceability\ReportTraceabilityLetter.cs">
+    <Compile Include="View\Traceability\ExternalTraceability_Letter.cs" />
+    <Compile Include="View\Traceability\InternTraceability_Letter.cs" />
+    <Compile Include="View\Traceability\ReportTraceabilityLetter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Traceability\ReportTraceabilityLetter.Designer.cs">
+    <Compile Include="View\Traceability\ReportTraceabilityLetter.Designer.cs">
       <DependentUpon>ReportTraceabilityLetter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Traceability\SerchTraceabilityLetter.cs">
+    <Compile Include="View\Traceability\SerchTraceabilityLetter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Traceability\SerchTraceabilityLetter.Designer.cs">
+    <Compile Include="View\Traceability\SerchTraceabilityLetter.Designer.cs">
       <DependentUpon>SerchTraceabilityLetter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Traceability\TraceabilityLetter.cs" />
+    <Compile Include="View\Traceability\TraceabilityLetter.cs" />
     <EmbeddedResource Include="AddCarta.resx">
       <DependentUpon>AddCarta.cs</DependentUpon>
     </EmbeddedResource>
@@ -685,46 +685,46 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Certificates\AddCertificate.resx">
+    <EmbeddedResource Include="View\Certificates\AddCertificate.resx">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Certificates\SerchCertificate.resx">
+    <EmbeddedResource Include="View\Certificates\SerchCertificate.resx">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Add_Delivery_Instrument.resx">
+    <EmbeddedResource Include="View\Instruments\Add_Delivery_Instrument.resx">
       <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Add_Delivery_Instrument_ByGroup.resx">
+    <EmbeddedResource Include="View\Instruments\Add_Delivery_Instrument_ByGroup.resx">
       <DependentUpon>Add_Delivery_Instrument_ByGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Add_Instrument_Assignment.resx">
+    <EmbeddedResource Include="View\Instruments\Add_Instrument_Assignment.resx">
       <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Add_Return_Instrument.resx">
+    <EmbeddedResource Include="View\Instruments\Add_Return_Instrument.resx">
       <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Add_Return_Instrument_ByGroup.resx">
+    <EmbeddedResource Include="View\Instruments\Add_Return_Instrument_ByGroup.resx">
       <DependentUpon>Add_Return_Instrument_ByGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\DeleteInstrument.resx">
+    <EmbeddedResource Include="View\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\RegistSignature.resx">
+    <EmbeddedResource Include="View\Instruments\RegistSignature.resx">
       <DependentUpon>RegistSignature.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\See_Instrument_Assignment.resx">
+    <EmbeddedResource Include="View\Instruments\See_Instrument_Assignment.resx">
       <DependentUpon>See_Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Serch_Instruments_Assignments.resx">
+    <EmbeddedResource Include="View\Instruments\Serch_Instruments_Assignments.resx">
       <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\ShowSignature.resx">
+    <EmbeddedResource Include="View\Instruments\ShowSignature.resx">
       <DependentUpon>ShowSignature.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\Update_Instrument_Assignment.resx">
+    <EmbeddedResource Include="View\Instruments\Update_Instrument_Assignment.resx">
       <DependentUpon>Update_Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\LogIn.resx">
+    <EmbeddedResource Include="View\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modEQ.resx">
@@ -752,46 +752,46 @@
     <EmbeddedResource Include="ShowUsosCert.resx">
       <DependentUpon>ShowUsosCert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\MenuAccesorios.resx">
+    <EmbeddedResource Include="View\MenuAccesorios.resx">
       <DependentUpon>MenuAccesorios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\MenuDataLogger.resx">
+    <EmbeddedResource Include="View\MenuDataLogger.resx">
       <DependentUpon>MenuDataLogger.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\MenuEstandares.resx">
+    <EmbeddedResource Include="View\MenuEstandares.resx">
       <DependentUpon>MenuEstandares.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\MenuHerramientas.resx">
+    <EmbeddedResource Include="View\MenuHerramientas.resx">
       <DependentUpon>MenuHerramientas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\MenuInstrumentos.resx">
+    <EmbeddedResource Include="View\Instruments\MenuInstrumentos.resx">
       <DependentUpon>MenuInstrumentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\AddInstrument.resx">
+    <EmbeddedResource Include="View\Instruments\AddInstrument.resx">
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\SerchInstrument.resx">
+    <EmbeddedResource Include="View\Instruments\SerchInstrument.resx">
       <DependentUpon>SerchInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Responsabilitis\Report.resx">
+    <EmbeddedResource Include="View\Responsabilitis\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\SubMenu.resx">
+    <EmbeddedResource Include="View\SubMenu.resx">
       <DependentUpon>SubMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Instruments\UpdateInstrument.resx">
+    <EmbeddedResource Include="View\Instruments\UpdateInstrument.resx">
       <DependentUpon>UpdateInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Traceability\AddExternTraceability_Letter.resx">
+    <EmbeddedResource Include="View\Traceability\AddExternTraceability_Letter.resx">
       <DependentUpon>AddExternTraceability_Letter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Traceability\AddTraceability_Letter.resx">
+    <EmbeddedResource Include="View\Traceability\AddTraceability_Letter.resx">
       <DependentUpon>AddTraceability_Letter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Traceability\ReportTraceabilityLetter.resx">
+    <EmbeddedResource Include="View\Traceability\ReportTraceabilityLetter.resx">
       <DependentUpon>ReportTraceabilityLetter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Traceability\SerchTraceabilityLetter.resx">
+    <EmbeddedResource Include="View\Traceability\SerchTraceabilityLetter.resx">
       <DependentUpon>SerchTraceabilityLetter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AsignacionDataSet.xsc">
@@ -1081,7 +1081,7 @@
   <ItemGroup>
     <Content Include="Imagenes\Fondo_Blanco.png" />
     <Content Include="Imagenes\LOGO_Blanco_Lineas.png" />
-    <Content Include="Vista\EmailBodyEngineer.html" />
+    <Content Include="View\EmailBodyEngineer.html" />
     <None Include="Resources\Fondo_Blanco.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

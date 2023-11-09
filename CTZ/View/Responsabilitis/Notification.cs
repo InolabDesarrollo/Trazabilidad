@@ -9,10 +9,13 @@ namespace CTZ.Vista.Responsabilitis
 {
     public class Notification
     {
+        Email email;
+        public Notification() {
+            email = new Email("notificaciones@inolab.com", "Notificaciones2021*");
+        }
 
         public void sendMailNotification(string emailRecipient, string emailBody, string emailSubject)
         {
-            Email email = new Email("notificaciones@inolab.com", "Notificaciones2021*");
             MailAddress emailSender = new MailAddress("notificaciones@inolab.com");
             MailAddress mailRecipient = new MailAddress(emailRecipient);
             MailMessage message = new MailMessage(emailSender, mailRecipient);
@@ -28,7 +31,6 @@ namespace CTZ.Vista.Responsabilitis
 
         public void sendMailNotification(string[] emailRecipient, string emailBody, string emailSubject)
         {
-            Email email = new Email("notificaciones@inolab.com", "Notificaciones2021*");
             MailAddress emailSender = new MailAddress("notificaciones@inolab.com");
             List<string> emailList = new List<string>();
             var emailsToCopy ="";
