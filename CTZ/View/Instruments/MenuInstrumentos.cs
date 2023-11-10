@@ -198,6 +198,18 @@ namespace CTZ.Vista
         {
             showMenu(Pnl_Assignments);
         }
+
+
+        private void Btn_Calibration_Click(object sender, EventArgs e)
+        {
+            showMenu(Pnl_Calibration);
+        }
+
+        private void Btn_Add_Calibration_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void Btn_AddTraceability_Click(object sender, EventArgs e)
         {
             SerchCertificate serchCertificate = new SerchCertificate();
@@ -252,5 +264,7 @@ namespace CTZ.Vista
             Add_Return_Instrument_ByGroup returnOfInstrumentByGroup = new Add_Return_Instrument_ByGroup();
             returnOfInstrumentByGroup.Show();   
         }
+
+       
     }
 }

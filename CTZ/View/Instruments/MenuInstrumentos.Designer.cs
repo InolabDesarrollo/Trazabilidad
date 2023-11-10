@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pnl_Head = new System.Windows.Forms.Panel();
+            this.Btn_Calibration = new System.Windows.Forms.Button();
             this.Btn_Assignments = new System.Windows.Forms.Button();
             this.Btn_Traceability = new System.Windows.Forms.Button();
             this.Btn_Calendar = new System.Windows.Forms.Button();
             this.Btn_Regist = new System.Windows.Forms.Button();
             this.Btn_See = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.asignacionDataSet1 = new CTZ.AsignacionDataSet();
             this.Pnl_See = new System.Windows.Forms.Panel();
             this.Btn_Instruments_Certificates = new System.Windows.Forms.Button();
@@ -98,8 +98,10 @@
             this.Btn_Serch_Assignments = new System.Windows.Forms.Button();
             this.instrumentos_CertificadoTableAdapter2 = new CTZ.TrazabilidadTestDataSet3TableAdapters.Instrumentos_CertificadoTableAdapter();
             this.instrumentosTableAdapter1 = new CTZ.TrazabilidadTestDataSet4TableAdapters.InstrumentosTableAdapter();
+            this.Pnl_Calibration = new System.Windows.Forms.Panel();
+            this.Btn_Add_Calibration = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Pnl_Head.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).BeginInit();
             this.Pnl_See.SuspendLayout();
             this.Pnl_Regist.SuspendLayout();
@@ -118,12 +120,15 @@
             this.Pnl_Calendar.SuspendLayout();
             this.Pnl_Traceability.SuspendLayout();
             this.Pnl_Assignments.SuspendLayout();
+            this.Pnl_Calibration.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Pnl_Head
             // 
             this.Pnl_Head.AutoSize = true;
             this.Pnl_Head.BackColor = System.Drawing.Color.SteelBlue;
+            this.Pnl_Head.Controls.Add(this.Btn_Calibration);
             this.Pnl_Head.Controls.Add(this.Btn_Assignments);
             this.Pnl_Head.Controls.Add(this.Btn_Traceability);
             this.Pnl_Head.Controls.Add(this.Btn_Calendar);
@@ -133,8 +138,22 @@
             this.Pnl_Head.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_Head.Location = new System.Drawing.Point(0, 0);
             this.Pnl_Head.Name = "Pnl_Head";
-            this.Pnl_Head.Size = new System.Drawing.Size(1135, 107);
+            this.Pnl_Head.Size = new System.Drawing.Size(1135, 115);
             this.Pnl_Head.TabIndex = 1;
+            // 
+            // Btn_Calibration
+            // 
+            this.Btn_Calibration.BackColor = System.Drawing.Color.SkyBlue;
+            this.Btn_Calibration.FlatAppearance.BorderSize = 0;
+            this.Btn_Calibration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Calibration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Calibration.Location = new System.Drawing.Point(597, 40);
+            this.Btn_Calibration.Name = "Btn_Calibration";
+            this.Btn_Calibration.Size = new System.Drawing.Size(126, 72);
+            this.Btn_Calibration.TabIndex = 13;
+            this.Btn_Calibration.Text = "Acuse de Calibracion";
+            this.Btn_Calibration.UseVisualStyleBackColor = false;
+            this.Btn_Calibration.Click += new System.EventHandler(this.Btn_Calibration_Click);
             // 
             // Btn_Assignments
             // 
@@ -144,7 +163,7 @@
             this.Btn_Assignments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Assignments.Location = new System.Drawing.Point(471, 40);
             this.Btn_Assignments.Name = "Btn_Assignments";
-            this.Btn_Assignments.Size = new System.Drawing.Size(126, 64);
+            this.Btn_Assignments.Size = new System.Drawing.Size(126, 72);
             this.Btn_Assignments.TabIndex = 12;
             this.Btn_Assignments.Text = "Asignaciones";
             this.Btn_Assignments.UseVisualStyleBackColor = false;
@@ -158,7 +177,7 @@
             this.Btn_Traceability.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Traceability.Location = new System.Drawing.Point(349, 40);
             this.Btn_Traceability.Name = "Btn_Traceability";
-            this.Btn_Traceability.Size = new System.Drawing.Size(126, 64);
+            this.Btn_Traceability.Size = new System.Drawing.Size(126, 72);
             this.Btn_Traceability.TabIndex = 11;
             this.Btn_Traceability.Text = "Trazabilidad";
             this.Btn_Traceability.UseVisualStyleBackColor = false;
@@ -173,7 +192,7 @@
             this.Btn_Calendar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Btn_Calendar.Location = new System.Drawing.Point(229, 40);
             this.Btn_Calendar.Name = "Btn_Calendar";
-            this.Btn_Calendar.Size = new System.Drawing.Size(124, 64);
+            this.Btn_Calendar.Size = new System.Drawing.Size(124, 72);
             this.Btn_Calendar.TabIndex = 10;
             this.Btn_Calendar.Text = "Calendarios";
             this.Btn_Calendar.UseVisualStyleBackColor = false;
@@ -188,7 +207,7 @@
             this.Btn_Regist.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Btn_Regist.Location = new System.Drawing.Point(106, 40);
             this.Btn_Regist.Name = "Btn_Regist";
-            this.Btn_Regist.Size = new System.Drawing.Size(124, 64);
+            this.Btn_Regist.Size = new System.Drawing.Size(124, 72);
             this.Btn_Regist.TabIndex = 1;
             this.Btn_Regist.Text = "Instrumentos";
             this.Btn_Regist.UseVisualStyleBackColor = false;
@@ -203,22 +222,11 @@
             this.Btn_See.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Btn_See.Location = new System.Drawing.Point(0, 40);
             this.Btn_See.Name = "Btn_See";
-            this.Btn_See.Size = new System.Drawing.Size(110, 64);
+            this.Btn_See.Size = new System.Drawing.Size(110, 72);
             this.Btn_See.TabIndex = 0;
             this.Btn_See.Text = "Ver";
             this.Btn_See.UseVisualStyleBackColor = false;
             this.Btn_See.Click += new System.EventHandler(this.Btn_See_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::CTZ.Properties.Resources.LOGO_Blanco_Lineas1;
-            this.pictureBox1.Location = new System.Drawing.Point(959, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 107);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // asignacionDataSet1
             // 
@@ -230,7 +238,7 @@
             this.Pnl_See.BackColor = System.Drawing.Color.SkyBlue;
             this.Pnl_See.Controls.Add(this.Btn_Instruments_Certificates);
             this.Pnl_See.Controls.Add(this.Btn_All_Instruments);
-            this.Pnl_See.Location = new System.Drawing.Point(0, 104);
+            this.Pnl_See.Location = new System.Drawing.Point(0, 107);
             this.Pnl_See.Name = "Pnl_See";
             this.Pnl_See.Size = new System.Drawing.Size(110, 130);
             this.Pnl_See.TabIndex = 5;
@@ -266,13 +274,13 @@
             // 
             // Pnl_Regist
             // 
-            this.Pnl_Regist.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Pnl_Regist.BackColor = System.Drawing.Color.SkyBlue;
             this.Pnl_Regist.Controls.Add(this.BtnUpdate_Instrument);
             this.Pnl_Regist.Controls.Add(this.BtnDelete_Instruments);
             this.Pnl_Regist.Controls.Add(this.Btn_Add);
-            this.Pnl_Regist.Location = new System.Drawing.Point(106, 104);
+            this.Pnl_Regist.Location = new System.Drawing.Point(106, 110);
             this.Pnl_Regist.Name = "Pnl_Regist";
-            this.Pnl_Regist.Size = new System.Drawing.Size(124, 130);
+            this.Pnl_Regist.Size = new System.Drawing.Size(124, 124);
             this.Pnl_Regist.TabIndex = 6;
             this.Pnl_Regist.Visible = false;
             // 
@@ -310,7 +318,7 @@
             this.Btn_Add.FlatAppearance.BorderSize = 0;
             this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add.Location = new System.Drawing.Point(0, 0);
+            this.Btn_Add.Location = new System.Drawing.Point(0, 3);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(121, 44);
             this.Btn_Add.TabIndex = 8;
@@ -342,14 +350,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_Instruments_Certificates.AutoGenerateColumns = false;
             this.Dgv_Instruments_Certificates.AutoGenerateContextFilters = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Instruments_Certificates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Instruments_Certificates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_Instruments_Certificates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_Instruments_Certificates.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -369,10 +377,10 @@
             this.ASIGNACION_INSTRUMENTO});
             this.Dgv_Instruments_Certificates.DataSource = this.instrumentosCertificadoBindingSource2;
             this.Dgv_Instruments_Certificates.DateWithTime = false;
-            this.Dgv_Instruments_Certificates.Location = new System.Drawing.Point(1, 107);
+            this.Dgv_Instruments_Certificates.Location = new System.Drawing.Point(1, 113);
             this.Dgv_Instruments_Certificates.Name = "Dgv_Instruments_Certificates";
             this.Dgv_Instruments_Certificates.ReadOnly = true;
-            this.Dgv_Instruments_Certificates.Size = new System.Drawing.Size(1135, 381);
+            this.Dgv_Instruments_Certificates.Size = new System.Drawing.Size(1131, 375);
             this.Dgv_Instruments_Certificates.TabIndex = 8;
             this.Dgv_Instruments_Certificates.TimeFilter = false;
             this.Dgv_Instruments_Certificates.FilterStringChanged += new System.EventHandler(this.Dgv_Instruments_Certificates_FilterStringChanged);
@@ -824,9 +832,9 @@
             this.Btn_Serch_Assignments.FlatAppearance.BorderSize = 0;
             this.Btn_Serch_Assignments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Serch_Assignments.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Serch_Assignments.Location = new System.Drawing.Point(0, -1);
+            this.Btn_Serch_Assignments.Location = new System.Drawing.Point(0, 0);
             this.Btn_Serch_Assignments.Name = "Btn_Serch_Assignments";
-            this.Btn_Serch_Assignments.Size = new System.Drawing.Size(126, 51);
+            this.Btn_Serch_Assignments.Size = new System.Drawing.Size(126, 50);
             this.Btn_Serch_Assignments.TabIndex = 14;
             this.Btn_Serch_Assignments.Text = "Buscar";
             this.Btn_Serch_Assignments.UseVisualStyleBackColor = false;
@@ -840,11 +848,47 @@
             // 
             this.instrumentosTableAdapter1.ClearBeforeFill = true;
             // 
+            // Pnl_Calibration
+            // 
+            this.Pnl_Calibration.BackColor = System.Drawing.Color.SkyBlue;
+            this.Pnl_Calibration.Controls.Add(this.Btn_Add_Calibration);
+            this.Pnl_Calibration.Location = new System.Drawing.Point(594, 107);
+            this.Pnl_Calibration.Name = "Pnl_Calibration";
+            this.Pnl_Calibration.Size = new System.Drawing.Size(129, 127);
+            this.Pnl_Calibration.TabIndex = 13;
+            this.Pnl_Calibration.Visible = false;
+            // 
+            // Btn_Add_Calibration
+            // 
+            this.Btn_Add_Calibration.BackColor = System.Drawing.Color.SkyBlue;
+            this.Btn_Add_Calibration.FlatAppearance.BorderSize = 0;
+            this.Btn_Add_Calibration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Add_Calibration.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add_Calibration.Location = new System.Drawing.Point(3, 0);
+            this.Btn_Add_Calibration.Name = "Btn_Add_Calibration";
+            this.Btn_Add_Calibration.Size = new System.Drawing.Size(126, 51);
+            this.Btn_Add_Calibration.TabIndex = 15;
+            this.Btn_Add_Calibration.Text = "Crear";
+            this.Btn_Add_Calibration.UseVisualStyleBackColor = false;
+            this.Btn_Add_Calibration.Click += new System.EventHandler(this.Btn_Add_Calibration_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::CTZ.Properties.Resources.LOGO_Blanco_Lineas1;
+            this.pictureBox1.Location = new System.Drawing.Point(959, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(176, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // MenuInstrumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 488);
+            this.Controls.Add(this.Pnl_Calibration);
             this.Controls.Add(this.Pnl_Assignments);
             this.Controls.Add(this.Pnl_Traceability);
             this.Controls.Add(this.Pnl_Calendar);
@@ -858,7 +902,6 @@
             this.Text = "MenuInstrumentos";
             this.Load += new System.EventHandler(this.MenuInstrumentos_Load);
             this.Pnl_Head.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).EndInit();
             this.Pnl_See.ResumeLayout(false);
             this.Pnl_Regist.ResumeLayout(false);
@@ -877,6 +920,8 @@
             this.Pnl_Calendar.ResumeLayout(false);
             this.Pnl_Traceability.ResumeLayout(false);
             this.Pnl_Assignments.ResumeLayout(false);
+            this.Pnl_Calibration.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -952,5 +997,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTATUS_ASIGNACION;
         private System.Windows.Forms.Button Btn_Add_Assignments_ByGroup;
         private System.Windows.Forms.Button Btn_Regist_Return_Instrument_ByGroup;
+        private System.Windows.Forms.Button Btn_Calibration;
+        private System.Windows.Forms.Panel Pnl_Calibration;
+        private System.Windows.Forms.Button Btn_Add_Calibration;
     }
 }

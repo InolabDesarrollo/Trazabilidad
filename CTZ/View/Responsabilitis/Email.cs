@@ -33,8 +33,7 @@ namespace CTZ.Vista.Responsabilitis
             }catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-            }
-            
+            }           
         }
     }
 }
