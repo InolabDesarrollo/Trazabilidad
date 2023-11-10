@@ -410,11 +410,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Calibration\Calibration_Request.cs">
+    <Compile Include="View\Calibration\CalibrationRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Calibration\Calibration_Request.Designer.cs">
-      <DependentUpon>Calibration_Request.cs</DependentUpon>
+    <Compile Include="View\Calibration\CalibrationRequest.Designer.cs">
+      <DependentUpon>CalibrationRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Certificates\SerchCertificate.cs">
       <SubType>Form</SubType>
@@ -691,8 +691,8 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Calibration\Calibration_Request.resx">
-      <DependentUpon>Calibration_Request.cs</DependentUpon>
+    <EmbeddedResource Include="View\Calibration\CalibrationRequest.resx">
+      <DependentUpon>CalibrationRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Certificates\AddCertificate.resx">
       <DependentUpon>AddCertificate.cs</DependentUpon>

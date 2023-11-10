@@ -1,5 +1,6 @@
 ﻿using ADGV;
 using CTZ.Modelo.Documentacion;
+using CTZ.View.Calibration;
 using CTZ.Vista.Certificates;
 using CTZ.Vista.Instruments;
 using CTZ.Vista.Responsabilitis;
@@ -207,7 +208,8 @@ namespace CTZ.Vista
 
         private void Btn_Add_Calibration_Click(object sender, EventArgs e)
         {
-            
+            CalibrationRequest calibration_Request = new CalibrationRequest();
+            calibration_Request.Show();
         }
 
         private void Btn_AddTraceability_Click(object sender, EventArgs e)

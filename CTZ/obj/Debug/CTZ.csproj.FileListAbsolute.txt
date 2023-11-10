@@ -1912,3 +1912,4 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Grpc.Core.xml
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Grpc.Core.Api.pdb
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\bin\Debug\Grpc.Core.Api.xml
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instruments.Update_Instrument_Assignment.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Calibration.CalibrationRequest.resources
