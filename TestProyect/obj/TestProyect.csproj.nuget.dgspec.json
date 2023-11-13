@@ -63,6 +63,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MaterialSkin": {
+              "target": "Package",
+              "version": "[0.2.1, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.5.0, )"

@@ -1,6 +1,7 @@
 ﻿using CTZ.Controlador;
 using CTZ.Modelo;
 using CTZ.Modelo.Documentacion;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -97,7 +98,21 @@ namespace CTZ.Vista.Responsabilitis
             return controler.selectAllRegistAndCertificates();
         }
 
-
+        public void deleteEquinoFromComboBox(MaterialComboBox comboBox)
+        {
+            try
+            {
+                string equino = comboBox.SelectedItem.ToString();
+                int index = comboBox.FindString(equino);
+                comboBox.Items.RemoveAt(index);
+                MessageBox.Show("Equino " + equino + " Eliminado");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                MessageBox.Show("No seleccionaste un Equino");
+            }
+        }
 
     }
 }

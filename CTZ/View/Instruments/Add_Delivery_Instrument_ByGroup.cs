@@ -139,19 +139,8 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Delete_Instrument_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string equino = ComboBox_Instruments.SelectedItem.ToString();
-                int index= ComboBox_Instruments.FindString(equino);
-                ComboBox_Instruments.Items.RemoveAt(index);
-                MessageBox.Show("Equino "+ equino + " Eliminado");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message.ToString());
-                MessageBox.Show("No seleccionaste un Equino");
-            }
-            
+            CTZ.Vista.Responsabilitis.Instruments instrument = new CTZ.Vista.Responsabilitis.Instruments();
+            instrument.deleteEquinoFromComboBox(ComboBox_Instruments);
         }
     }
 }

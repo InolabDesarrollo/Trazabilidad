@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "BMIOgdzNpmeu8lN8eHRUnSgggEpccRCGsUPRUIpwKIjMa/WycAYOMGyu0MlWu+835wLp5LVIbRdpA7aDb45/cA==",
+  "dgSpecHash": "kFyWdboCam+ox3JCUOSS9rgeg+of4kBXemvJHsV/HDkb7v5sD8vjbVknWDqZqWpHF927j9jbbZmx0OhgHFqo9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Omar Sotomayor\\source\\repos\\Trazabilidad\\TestProyect\\TestProyect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Omar Sotomayor\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
+    "C:\\Users\\Omar Sotomayor\\.nuget\\packages\\materialskin\\0.2.1\\materialskin.0.2.1.nupkg.sha512",
     "C:\\Users\\Omar Sotomayor\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",
     "C:\\Users\\Omar Sotomayor\\.nuget\\packages\\microsoft.net.test.sdk\\17.5.0\\microsoft.net.test.sdk.17.5.0.nupkg.sha512",
     "C:\\Users\\Omar Sotomayor\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
@@ -25,5 +26,16 @@
     "C:\\Users\\Omar Sotomayor\\.nuget\\packages\\xunit.extensibility.core\\2.5.3\\xunit.extensibility.core.2.5.3.nupkg.sha512",
     "C:\\Users\\Omar Sotomayor\\.nuget\\packages\\xunit.extensibility.execution\\2.5.3\\xunit.extensibility.execution.2.5.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"MaterialSkin 0.2.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "MaterialSkin",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

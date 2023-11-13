@@ -221,6 +221,7 @@
     <Compile Include="Controler\C_TraceabilityRepository.cs" />
     <Compile Include="Controler\C_Usuario.cs" />
     <Compile Include="Controler\C_View_Instrument_Certificate.cs" />
+    <Compile Include="Controler\Trazabilidad\C_Laboratories.cs" />
     <Compile Include="ctzWF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +375,7 @@
     <Compile Include="Model\Trazabilidad\ExternalTraceability_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instrument_Assignment_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instrument_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Laboratory_Repository.cs" />
     <Compile Include="Model\Trazabilidad\RelationCertificateInstrument_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Traceability_Repository.cs" />
     <Compile Include="Model\Trazabilidad\View_Instrument_Certificate_Repository.cs" />

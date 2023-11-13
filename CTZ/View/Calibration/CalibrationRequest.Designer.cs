@@ -161,6 +161,7 @@
             this.Btn_Delete_Instrument.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Delete_Instrument.UseAccentColor = false;
             this.Btn_Delete_Instrument.UseVisualStyleBackColor = true;
+            this.Btn_Delete_Instrument.Click += new System.EventHandler(this.Btn_Delete_Instrument_Click);
             // 
             // Btn_MakeRequest
             // 
@@ -179,6 +180,7 @@
             this.Btn_MakeRequest.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_MakeRequest.UseAccentColor = false;
             this.Btn_MakeRequest.UseVisualStyleBackColor = true;
+            this.Btn_MakeRequest.Click += new System.EventHandler(this.Btn_MakeRequest_Click);
             // 
             // CalibrationRequest
             // 
@@ -194,7 +196,7 @@
             this.Controls.Add(this.ComboBox_Laboratory);
             this.Controls.Add(this.Lbl_Lab);
             this.Name = "CalibrationRequest";
-            this.Text = "Calibration__Request";
+            this.Text = "Solicitud de Calibracion";
             this.ResumeLayout(false);
             this.PerformLayout();
 
