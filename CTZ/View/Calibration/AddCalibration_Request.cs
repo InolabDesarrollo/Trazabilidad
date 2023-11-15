@@ -89,7 +89,9 @@ namespace CTZ.View.Calibration
             DateTime dateOfRequest = DateTime.Today;
             CalibrationRequest calibrationRequest = new CalibrationRequest(idLaboratory, dateOfRequest.ToString("dd/MM/yyyy"),idInstruments);
             calibrationRequest.create();
-            CalibrationRequestReport report = new CalibrationRequestReport(calibrationRequest);
+            string idCalibrationRequest = calibrationRequest.idCalibrationRequest.ToString();
+
+            CalibrationRequestReport report = new CalibrationRequestReport(idLaboratory,idCalibrationRequest);
             report.Show();
             this.Close();
         }

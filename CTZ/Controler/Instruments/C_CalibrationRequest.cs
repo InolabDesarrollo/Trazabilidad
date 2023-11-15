@@ -5,6 +5,7 @@ using CTZ.View.Responsabilitis;
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,15 @@ namespace CTZ.Controler.Instruments
         public void addInstrumentsToRequest(int idCalibrationRequest, List<string> idInstruments)
         {
            repository.addInstrumentsToRequest(idCalibrationRequest, idInstruments);
+        }
+
+        public DataTable getAll()
+        {
+            return repository.getAll();
+        }
+        public DataTable getAllByEquinoInstrument(string equinoInstrument)
+        {
+            return repository.getAllByEquinoInstrument(equinoInstrument);
         }
     }
 }

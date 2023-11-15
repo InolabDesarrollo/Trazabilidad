@@ -19,15 +19,18 @@ namespace CTZ.View.Calibration
     {
         string serverUrl = "http://INOLABSERVER03/Reportes_Inolab";
         private readonly CalibrationRequest calibrationRequest;
+        private readonly int idLaboratory;
+        private readonly string idCalibrationRequest;
 
-        public CalibrationRequestReport(CalibrationRequest calibrationRequest)
+        public CalibrationRequestReport(int idLaboratory, string idCalibrationRequest)
         {
             InitializeComponent();
             System.Net.NetworkCredential credentials = new NetworkCredential("administrador", "Inolab_2023*");
             Report_CalibrationRequest.ServerReport.ReportServerCredentials.NetworkCredentials = credentials;
             Report_CalibrationRequest.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             Report_CalibrationRequest.ServerReport.ReportServerUrl = new Uri(serverUrl);
-            this.calibrationRequest = calibrationRequest;
+            this.idLaboratory = idLaboratory;
+            this.idCalibrationRequest = idCalibrationRequest;
         }
 
         private void CalibrationRequestReport_Load(object sender, EventArgs e)
@@ -41,8 +44,8 @@ namespace CTZ.View.Calibration
             Report_CalibrationRequest.ServerReport.ReportPath = "/Trazabilidad/" + "Acuse_De_Calibracion";
             Report_CalibrationRequest.ShowParameterPrompts = false;
 
-            addParameter("IdLaboratorio", Convert.ToString(calibrationRequest.idLaboratory));
-            addParameter("ID_Socitud_Calibracion", calibrationRequest.idCalibrationRequest.ToString());
+            addParameter("IdLaboratorio", Convert.ToString(this.idLaboratory));
+            addParameter("ID_Socitud_Calibracion", this.idCalibrationRequest);
             Report_CalibrationRequest.RefreshReport();
         }
 
