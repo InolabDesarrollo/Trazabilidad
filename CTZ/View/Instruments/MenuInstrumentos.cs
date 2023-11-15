@@ -208,7 +208,7 @@ namespace CTZ.Vista
 
         private void Btn_Add_Calibration_Click(object sender, EventArgs e)
         {
-            CalibrationRequest calibrationRequest = new CalibrationRequest();
+            AddCalibration_Request calibrationRequest = new AddCalibration_Request();
             calibrationRequest.Show();
         }
 
@@ -267,6 +267,10 @@ namespace CTZ.Vista
             returnOfInstrumentByGroup.Show();   
         }
 
-       
+        private void Btn_SerchCalibration_Click(object sender, EventArgs e)
+        {
+            SeeCalibrationRequest seeCalibrationRequest = new SeeCalibrationRequest();
+            seeCalibrationRequest.Show();   
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CTZ.View.Calibration
 {
-    partial class CalibrationRequest
+    partial class AddCalibration_Request
     {
         /// <summary>
         /// Required designer variable.

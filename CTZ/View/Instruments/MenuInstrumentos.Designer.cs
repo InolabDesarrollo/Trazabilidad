@@ -100,6 +100,9 @@
             this.instrumentosTableAdapter1 = new CTZ.TrazabilidadTestDataSet4TableAdapters.InstrumentosTableAdapter();
             this.Pnl_Calibration = new System.Windows.Forms.Panel();
             this.Btn_Add_Calibration = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.Btn_SerchCalibration = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Pnl_Head.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).BeginInit();
@@ -851,6 +854,7 @@
             // Pnl_Calibration
             // 
             this.Pnl_Calibration.BackColor = System.Drawing.Color.SkyBlue;
+            this.Pnl_Calibration.Controls.Add(this.Btn_SerchCalibration);
             this.Pnl_Calibration.Controls.Add(this.Btn_Add_Calibration);
             this.Pnl_Calibration.Location = new System.Drawing.Point(594, 107);
             this.Pnl_Calibration.Name = "Pnl_Calibration";
@@ -872,6 +876,38 @@
             this.Btn_Add_Calibration.UseVisualStyleBackColor = false;
             this.Btn_Add_Calibration.Click += new System.EventHandler(this.Btn_Add_Calibration_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1048, 464);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1097, 453);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // Btn_SerchCalibration
+            // 
+            this.Btn_SerchCalibration.BackColor = System.Drawing.Color.SkyBlue;
+            this.Btn_SerchCalibration.FlatAppearance.BorderSize = 0;
+            this.Btn_SerchCalibration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_SerchCalibration.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_SerchCalibration.Location = new System.Drawing.Point(0, 52);
+            this.Btn_SerchCalibration.Name = "Btn_SerchCalibration";
+            this.Btn_SerchCalibration.Size = new System.Drawing.Size(126, 51);
+            this.Btn_SerchCalibration.TabIndex = 16;
+            this.Btn_SerchCalibration.Text = "Buscar";
+            this.Btn_SerchCalibration.UseVisualStyleBackColor = false;
+            this.Btn_SerchCalibration.Click += new System.EventHandler(this.Btn_SerchCalibration_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -888,6 +924,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 488);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Pnl_Calibration);
             this.Controls.Add(this.Pnl_Assignments);
             this.Controls.Add(this.Pnl_Traceability);
@@ -1000,5 +1038,8 @@
         private System.Windows.Forms.Button Btn_Calibration;
         private System.Windows.Forms.Panel Pnl_Calibration;
         private System.Windows.Forms.Button Btn_Add_Calibration;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Btn_SerchCalibration;
     }
 }

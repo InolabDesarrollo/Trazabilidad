@@ -221,7 +221,8 @@
     <Compile Include="Controler\C_TraceabilityRepository.cs" />
     <Compile Include="Controler\C_Usuario.cs" />
     <Compile Include="Controler\C_View_Instrument_Certificate.cs" />
-    <Compile Include="Controler\Trazabilidad\C_Laboratories.cs" />
+    <Compile Include="Controler\C_Laboratories.cs" />
+    <Compile Include="Controler\Instruments\C_CalibrationRequest.cs" />
     <Compile Include="ctzWF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +374,7 @@
     <Compile Include="Model\Trazabilidad\Certificate_Repository.cs" />
     <Compile Include="Model\Trazabilidad\ConexionTrazabilidad.cs" />
     <Compile Include="Model\Trazabilidad\ExternalTraceability_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\CalibrationRequest_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instrument_Assignment_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instrument_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Laboratory_Repository.cs" />
@@ -412,11 +414,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Calibration\CalibrationRequest.cs">
+    <Compile Include="View\Calibration\AddCalibration_Request.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Calibration\CalibrationRequest.Designer.cs">
-      <DependentUpon>CalibrationRequest.cs</DependentUpon>
+    <Compile Include="View\Calibration\AddCalibration_Request.Designer.cs">
+      <DependentUpon>AddCalibration_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Calibration\CalibrationRequestReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Calibration\CalibrationRequestReport.Designer.cs">
+      <DependentUpon>CalibrationRequestReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Calibration\SeeCalibrationRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Calibration\SeeCalibrationRequest.Designer.cs">
+      <DependentUpon>SeeCalibrationRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Certificates\SerchCertificate.cs">
       <SubType>Form</SubType>
@@ -574,6 +588,7 @@
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Certificates\Certificate.cs" />
+    <Compile Include="View\Responsabilitis\CalibrationRequest.cs" />
     <Compile Include="View\Responsabilitis\DateForReport.cs" />
     <Compile Include="View\Responsabilitis\Email.cs" />
     <Compile Include="View\Responsabilitis\Engineer.cs" />
@@ -693,8 +708,14 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Calibration\CalibrationRequest.resx">
-      <DependentUpon>CalibrationRequest.cs</DependentUpon>
+    <EmbeddedResource Include="View\Calibration\AddCalibration_Request.resx">
+      <DependentUpon>AddCalibration_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Calibration\CalibrationRequestReport.resx">
+      <DependentUpon>CalibrationRequestReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Calibration\SeeCalibrationRequest.resx">
+      <DependentUpon>SeeCalibrationRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Certificates\AddCertificate.resx">
       <DependentUpon>AddCertificate.cs</DependentUpon>
