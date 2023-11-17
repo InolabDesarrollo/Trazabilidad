@@ -21,7 +21,7 @@ namespace CTZ.Vista.Responsabilitis
         public string convertToValidDate(string date)
         {
             DateTime validDate = Convert.ToDateTime(date);
-            return validDate.ToString("yyyy/MM/dd");
+            return validDate.ToString("dd/MMMM/yyyy");
         }
     }
 }

@@ -15,9 +15,11 @@ namespace CTZ.Controler.Instruments
     public class C_CalibrationRequest
     {
         CalibrationRequest_Repository repository;
+        DateForReport dates;
         
         public C_CalibrationRequest() {
             repository = new CalibrationRequest_Repository();
+            dates = new DateForReport();    
         }
         public void create(CalibrationRequest calibrationRequest)
         {
@@ -41,6 +43,19 @@ namespace CTZ.Controler.Instruments
         public DataTable getAllByEquinoInstrument(string equinoInstrument)
         {
             return repository.getAllByEquinoInstrument(equinoInstrument);
+        }
+
+        public DataTable getAllByLaboratory(string laboratory)
+        {
+            return repository.getAllByLaboratory(laboratory);
+        }
+
+        public DataTable getAllByDates(string beganDate, string finalDate)
+        {
+            beganDate = dates.convertToValidDate(beganDate);
+            finalDate = dates.convertToValidDate(finalDate);
+
+            return repository.getAllByDates(beganDate, finalDate);
         }
     }
 }

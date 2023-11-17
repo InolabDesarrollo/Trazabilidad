@@ -47,5 +47,17 @@ namespace CTZ.Model.Trazabilidad.Instruments
                 "WHERE ID_Instrumentos = '"+ equinoInstrument + "';");
         }
 
+        public DataTable getAllByLaboratory(string laboratory)
+        {
+            return conexion.getDataTable("Select * from Solicitudes_de_calibracion " +
+                " WHERE Nombre_Abreviado = '"+ laboratory + "';");
+        }
+
+        public DataTable getAllByDates(string beganDate, string finalDate)
+        {
+            return conexion.getDataTable("Select * from Solicitudes_de_calibracion where Fecha " +
+                " Between '"+beganDate+"' AND   '"+ finalDate + "';");
+        }
+
     }
 }
