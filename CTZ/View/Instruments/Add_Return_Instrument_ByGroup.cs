@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Controler.Instruments;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
@@ -71,7 +72,9 @@ namespace CTZ.Vista.Instruments
             instrumentAssignments.equinoInstrument = equinoInstrument;
             instrumentAssignments.dateOfReturn = DatePicker_DateOfReturn.Text;
             instrumentAssignments.observationsReturn = TxtBox_ObservationReturn.Text;
-            instrumentAssignmentsControler.registerReturnInstrument(instrumentAssignments, idInstruments);
+            C_ReturnOfInstrument returnOfInstrument = new C_ReturnOfInstrument();
+
+            returnOfInstrument.registerReturnInstrument(instrumentAssignments, idInstruments);
             updateStatusInstruments();
 
             RegistSignature signatureQualityAgent = new RegistSignature(idInstruments,  "QualityByGroup", engineerMail);

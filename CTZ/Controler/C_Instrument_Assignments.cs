@@ -42,20 +42,6 @@ namespace CTZ.Controlador
             }   
         }
 
-        public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments)
-        {
-            instrumentAssignments.dateOfReturn = _dateForReport.convertToValidDate(instrumentAssignments.dateOfReturn);
-            return _repository.registerReturnInstrument(instrumentAssignments);
-        }
-        public void registerReturnInstrument(Instrument_Assignments instrumentAssignments, List<int> idInstruments)
-        {
-            instrumentAssignments.dateOfReturn = _dateForReport.convertToValidDate(instrumentAssignments.dateOfReturn);
-            foreach (int element in idInstruments)
-            {
-              _repository.registerReturnInstrument(instrumentAssignments, element);
-            }
-        }
-
         public void updateStatusInstrumentAssignment(int idInstrument, string status)
         {
            _repository.updateStatusInstrumentAssignment(idInstrument, status);

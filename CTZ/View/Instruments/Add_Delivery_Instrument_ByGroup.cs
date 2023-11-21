@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Model.Browser.Interfaces;
 using CTZ.Modelo.Browser;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
@@ -110,6 +111,8 @@ namespace CTZ.Vista.Instruments
             }
             else
             {
+                UserRepository userRepository = new UserRepository();
+                usuarioControler = new C_Usuario(userRepository);
                 string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
                 Instrument_Assignments instrument_Assignments = new Instrument_Assignments();
                 instrument_Assignments.dateDelivery = TimePicker_Date_Delivery.Text;
