@@ -96,7 +96,6 @@ namespace CTZ.Modelo
                 conexion.Close();
                 Trace.WriteLine("PASS SUCCES");
                 return table.Tables[0];
-
             }
             catch (SqlException ex)
             {

@@ -37,6 +37,7 @@
             this.Btn_Calendar = new System.Windows.Forms.Button();
             this.Btn_Regist = new System.Windows.Forms.Button();
             this.Btn_See = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.asignacionDataSet1 = new CTZ.AsignacionDataSet();
             this.Pnl_See = new System.Windows.Forms.Panel();
             this.Btn_Instruments_Certificates = new System.Windows.Forms.Button();
@@ -99,12 +100,9 @@
             this.instrumentos_CertificadoTableAdapter2 = new CTZ.TrazabilidadTestDataSet3TableAdapters.Instrumentos_CertificadoTableAdapter();
             this.instrumentosTableAdapter1 = new CTZ.TrazabilidadTestDataSet4TableAdapters.InstrumentosTableAdapter();
             this.Pnl_Calibration = new System.Windows.Forms.Panel();
-            this.Btn_Add_Calibration = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.Btn_SerchCalibration = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Pnl_Head.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).BeginInit();
             this.Pnl_See.SuspendLayout();
             this.Pnl_Regist.SuspendLayout();
@@ -124,7 +122,6 @@
             this.Pnl_Traceability.SuspendLayout();
             this.Pnl_Assignments.SuspendLayout();
             this.Pnl_Calibration.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Pnl_Head
@@ -230,6 +227,17 @@
             this.Btn_See.Text = "Ver";
             this.Btn_See.UseVisualStyleBackColor = false;
             this.Btn_See.Click += new System.EventHandler(this.Btn_See_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::CTZ.Properties.Resources.LOGO_Blanco_Lineas1;
+            this.pictureBox1.Location = new System.Drawing.Point(959, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(176, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // asignacionDataSet1
             // 
@@ -855,44 +863,11 @@
             // 
             this.Pnl_Calibration.BackColor = System.Drawing.Color.SkyBlue;
             this.Pnl_Calibration.Controls.Add(this.Btn_SerchCalibration);
-            this.Pnl_Calibration.Controls.Add(this.Btn_Add_Calibration);
             this.Pnl_Calibration.Location = new System.Drawing.Point(594, 107);
             this.Pnl_Calibration.Name = "Pnl_Calibration";
             this.Pnl_Calibration.Size = new System.Drawing.Size(129, 127);
             this.Pnl_Calibration.TabIndex = 13;
             this.Pnl_Calibration.Visible = false;
-            // 
-            // Btn_Add_Calibration
-            // 
-            this.Btn_Add_Calibration.BackColor = System.Drawing.Color.SkyBlue;
-            this.Btn_Add_Calibration.FlatAppearance.BorderSize = 0;
-            this.Btn_Add_Calibration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Add_Calibration.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add_Calibration.Location = new System.Drawing.Point(3, 0);
-            this.Btn_Add_Calibration.Name = "Btn_Add_Calibration";
-            this.Btn_Add_Calibration.Size = new System.Drawing.Size(126, 51);
-            this.Btn_Add_Calibration.TabIndex = 15;
-            this.Btn_Add_Calibration.Text = "Crear";
-            this.Btn_Add_Calibration.UseVisualStyleBackColor = false;
-            this.Btn_Add_Calibration.Click += new System.EventHandler(this.Btn_Add_Calibration_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1048, 464);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1097, 453);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Btn_SerchCalibration
             // 
@@ -900,7 +875,7 @@
             this.Btn_SerchCalibration.FlatAppearance.BorderSize = 0;
             this.Btn_SerchCalibration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_SerchCalibration.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_SerchCalibration.Location = new System.Drawing.Point(0, 52);
+            this.Btn_SerchCalibration.Location = new System.Drawing.Point(0, 0);
             this.Btn_SerchCalibration.Name = "Btn_SerchCalibration";
             this.Btn_SerchCalibration.Size = new System.Drawing.Size(126, 51);
             this.Btn_SerchCalibration.TabIndex = 16;
@@ -908,24 +883,11 @@
             this.Btn_SerchCalibration.UseVisualStyleBackColor = false;
             this.Btn_SerchCalibration.Click += new System.EventHandler(this.Btn_SerchCalibration_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::CTZ.Properties.Resources.LOGO_Blanco_Lineas1;
-            this.pictureBox1.Location = new System.Drawing.Point(959, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 115);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // MenuInstrumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 488);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Pnl_Calibration);
             this.Controls.Add(this.Pnl_Assignments);
             this.Controls.Add(this.Pnl_Traceability);
@@ -940,6 +902,7 @@
             this.Text = "MenuInstrumentos";
             this.Load += new System.EventHandler(this.MenuInstrumentos_Load);
             this.Pnl_Head.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionDataSet1)).EndInit();
             this.Pnl_See.ResumeLayout(false);
             this.Pnl_Regist.ResumeLayout(false);
@@ -959,7 +922,6 @@
             this.Pnl_Traceability.ResumeLayout(false);
             this.Pnl_Assignments.ResumeLayout(false);
             this.Pnl_Calibration.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1037,9 +999,6 @@
         private System.Windows.Forms.Button Btn_Regist_Return_Instrument_ByGroup;
         private System.Windows.Forms.Button Btn_Calibration;
         private System.Windows.Forms.Panel Pnl_Calibration;
-        private System.Windows.Forms.Button Btn_Add_Calibration;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button Btn_SerchCalibration;
     }
 }

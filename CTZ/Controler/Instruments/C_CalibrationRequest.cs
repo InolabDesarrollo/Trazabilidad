@@ -52,8 +52,8 @@ namespace CTZ.Controler.Instruments
 
         public DataTable getAllByDates(string beganDate, string finalDate)
         {
-            beganDate = dates.convertToValidDate(beganDate);
-            finalDate = dates.convertToValidDate(finalDate);
+            beganDate = dates.convertToValidDateDatePicker(beganDate);
+            finalDate = dates.convertToValidDateDatePicker(finalDate);
 
             return repository.getAllByDates(beganDate, finalDate);
         }

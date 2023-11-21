@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Modelo.Browser;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -57,7 +58,8 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Engineer_Click(object sender, EventArgs e)
         {
-            C_Usuario userControler = new C_Usuario();
+            UserRepository userRepository = new UserRepository();
+            C_Usuario userControler = new C_Usuario(userRepository);
             if (userControler.checkIfExistEngineer(TxtBox_Engineer.Text))
             {
                 controlerInstrumentAssignment = new C_Instrument_Assignments();

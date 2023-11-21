@@ -27,7 +27,7 @@ namespace CTZ.Controlador
         {
             instrumentAssignments.dateDelivery = _dateForReport.convertToValidDate(instrumentAssignments.dateDelivery);
             instrumentAssignments.approximateDateOfReturn = _dateForReport.convertToValidDate(instrumentAssignments.approximateDateOfReturn);
-
+            
             return _repository.registerDeliveryInstrument(instrumentAssignments);
         }
 
@@ -56,32 +56,9 @@ namespace CTZ.Controlador
             }
         }
 
-        public void updateSignatureEngineer(int idInstrument, Image engineerSignature)
-        {
-            string stringSignatureBase64 = converImageToStringBase64(engineerSignature);
-            _repository.updateSignatureEngineer(idInstrument, stringSignatureBase64);
-        }
-
-        public void updateSignatureQuality(int idInstrument, Image signature)
-        {
-            string stringSignatureBase64 = converImageToStringBase64(signature);
-            _repository.updateSignatureQuality(idInstrument, stringSignatureBase64);
-        }
         public void updateStatusInstrumentAssignment(int idInstrument, string status)
         {
            _repository.updateStatusInstrumentAssignment(idInstrument, status);
-        }
-
-        public string converImageToStringBase64(Image image)
-        {
-            string imageBase64;
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                image.Save(memoryStream, ImageFormat.Jpeg);
-                byte[] bytes = memoryStream.ToArray();
-                imageBase64 = Convert.ToBase64String(bytes);
-            }
-            return imageBase64;
         }
 
         public DataTable selectAllInformationInstrumentAssignment(string EquinoInstrument)

@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Modelo.Browser;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
@@ -18,7 +19,7 @@ namespace CTZ.Vista.Instruments
     {
         C_Instruments instrumentsControler;
         C_Instrument_Assignments instrumentAssignmentsControler;
-        Engineer engineer;
+        C_Usuario usuarioControler;
 
         static Dictionary<int, string> informationId_Equino;
         DataTable engineers;
@@ -29,8 +30,10 @@ namespace CTZ.Vista.Instruments
         {
             InitializeComponent();
             informationId_Equino = new Dictionary<int, string>();
-            engineer = new Engineer();
-            engineers = engineer.getEngineers();
+            UserRepository userRepository = new UserRepository();
+            usuarioControler = new C_Usuario(userRepository);
+
+            engineers = usuarioControler.getEngineers();
             fillMaterialComboBoxEngineers();
         }
 
@@ -107,7 +110,7 @@ namespace CTZ.Vista.Instruments
             }
             else
             {
-                string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
+                string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
                 Instrument_Assignments instrument_Assignments = new Instrument_Assignments();
                 instrument_Assignments.dateDelivery = TimePicker_Date_Delivery.Text;
                 instrument_Assignments.engineer = MaterialComboBox_Engineers.Text;

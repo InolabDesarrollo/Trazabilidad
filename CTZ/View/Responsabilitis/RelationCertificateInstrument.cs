@@ -55,7 +55,13 @@ namespace CTZ.Vista.Responsabilitis
             DateTime todayDate = DateTime.Today;
             DateTime nextCalibrationDate = Convert.ToDateTime(instrumentCertificate.Rows[0]["Proxima_Calibracion"].ToString());
 
-            int dayDiference = (nextCalibrationDate - todayDate).Days;
+            int dayDiference = getDayDiference(nextCalibrationDate,todayDate);
+            return dayDiference;
+        }
+
+        private int getDayDiference(DateTime beganDate, DateTime finalDate)
+        {
+            int dayDiference = (finalDate-beganDate).Days;
             return dayDiference;
         }
 

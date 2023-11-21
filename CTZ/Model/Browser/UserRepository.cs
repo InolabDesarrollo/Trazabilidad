@@ -1,4 +1,5 @@
-﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+﻿using CTZ.Model.Browser.Interfaces;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CTZ.Modelo.Browser
 {
-    public class UserRepository
+    public class UserRepository :IUserRepository
     {
         ConexionBrowser conexion = new ConexionBrowser();
         public DataTable loginUser(string user, string password)

@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Controler;
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
@@ -101,26 +102,26 @@ namespace CTZ.Vista.Instruments
             graphic.CopyFromScreen(rectangle.Location, System.Drawing.Point.Empty, Pnl_Signature.Size);
             imageSignature.Save("Firma.jpg", ImageFormat.Jpeg);
 
-            Signature signature = new Signature();
-           
+            C_UpdateSignature controlerUpdateSignature = new C_UpdateSignature();
+
             if(typeOfSignature.Equals("Engineer"))
             {
-                signature.registEngineerSignature(imageSignature, idInstrument);
+                controlerUpdateSignature.updateSignatureEngineer(idInstrument, imageSignature);
                 sendEngineerNotification();
             }
             else if (typeOfSignature.Equals("Quality"))
             {
-                signature.registQualitySignature(imageSignature, idInstrument);
+                controlerUpdateSignature.updateSignatureQuality(idInstrument, imageSignature);
                 sendQualityMailNotification();
             }
             else if (typeOfSignature.Equals("EngineerByGroup"))
             {
-                signature.registEngineerSignatureByGroup(imageSignature, informationId_Equino);
+                controlerUpdateSignature.registEngineerSignatureByGroup(imageSignature, informationId_Equino);
                 sendEngineerNotification();
             }
             else if (typeOfSignature.Equals("QualityByGroup"))
             {
-                signature.registQualitySignatureByGroup(imageSignature, idInstruments);
+                controlerUpdateSignature.registQualitySignatureByGroup(imageSignature, idInstruments);
                 sendQualityMailNotification();
             }
             System.Windows.MessageBox.Show("Firma agregada correctamente");

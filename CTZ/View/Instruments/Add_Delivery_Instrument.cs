@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Model.Browser.Interfaces;
 using CTZ.Modelo.Browser;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin;
@@ -19,7 +20,7 @@ namespace CTZ.Vista.Instruments
     public partial class Add_Delivery_Instrument : MaterialForm
     {
         Instrument_Assignments instrumentAssignments;
-        Engineer engineer;
+        C_Usuario userControler;
         RelationCertificateInstrument instrumentCertificate;
         DataTable engineers;
 
@@ -32,9 +33,10 @@ namespace CTZ.Vista.Instruments
             Lbl_Instrument.Text = equinoInstrument;        
             this.idInstrument = idInstrument;
             this.equinoInstrument = equinoInstrument;
+            UserRepository userRepository = new UserRepository();
+            userControler = new C_Usuario(userRepository);
 
-            engineer = new Engineer();
-            engineers = engineer.getEngineers();
+            engineers = userControler.getEngineers();
             fillMaterialComboBoxEngineers();
             instrumentCertificate = new RelationCertificateInstrument();
             dateForNextCalibration = Convert.ToString(instrumentCertificate.getDateForNextCalibration(equinoInstrument));
@@ -85,7 +87,10 @@ namespace CTZ.Vista.Instruments
             }
             else
             {
-                string emailEngineer = engineer.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
+                UserRepository userRepository = new UserRepository();
+                userControler = new C_Usuario(userRepository);
+
+                string emailEngineer = userControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
                 instrumentAssignments = new Instrument_Assignments(idInstrument, equinoInstrument, TimePicker_Date_Delivery.Text
                     , MaterialComboBox_Engineers.SelectedItem.ToString(), TxtBox_Enterprise.Text, TxtBox_NameEnterprise.Text,
                     TxtBox_ObservationDelivery.Text, emailEngineer, TimePicker_Date_Estimate_Return.Text);

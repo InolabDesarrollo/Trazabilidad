@@ -27,7 +27,7 @@ namespace TestProyect
 
             //Assert
             Assert.AreEqual(body, "Body mail");
-            
         }
+
     }
 }
