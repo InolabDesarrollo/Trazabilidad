@@ -23,12 +23,17 @@ namespace CTZ.Controler.Instruments
         }
         public void create(CalibrationRequest calibrationRequest)
         {
-            repository.create(calibrationRequest);
+            //repository.create(calibrationRequest);
         }
 
         public int getId()
         {
             return repository.getId();
+        }
+
+        public DataTable getAllById(string id)
+        {
+            return repository.getAllById(id);
         }
 
         public void addInstrumentsToRequest(int idCalibrationRequest, List<string> idInstruments)

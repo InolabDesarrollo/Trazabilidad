@@ -1,5 +1,6 @@
 ﻿using CTZ.Controlador;
 using CTZ.Controler.Instruments;
+using CTZ.Controler.Instruments.Calibration;
 using CTZ.Controler.Trazabilidad;
 using CTZ.View.Responsabilitis;
 using CTZ.Vista.Responsabilitis;
@@ -18,7 +19,7 @@ namespace CTZ.View.Calibration
 {
     public partial class AddCalibration_Request : MaterialForm
     {
-        Instruments instrument;
+        CTZ.Vista.Responsabilitis.Instruments  instrument;
         C_Laboratories controller;
         private string equinoInstrument;
         private string idInstrument;
@@ -28,7 +29,7 @@ namespace CTZ.View.Calibration
         public AddCalibration_Request()
         {
             InitializeComponent();
-            instrument = new Instruments();
+            instrument = new CTZ.Vista.Responsabilitis.Instruments();
             idInstruments = new List<string>();
             fillMaterialComboBoxLaboratories();
         }
@@ -46,7 +47,7 @@ namespace CTZ.View.Calibration
 
         private void Btn_Add_Equino_Click(object sender, EventArgs e)
         {
-            instrument = new Instruments();
+            instrument = new CTZ.Vista.Responsabilitis.Instruments();
             if (instrument.serchInstrument(TxtBox_Instrumenst.Text))
             {
                 DataTable instrumentInformation = instrument.selectAllFromInstrument(TxtBox_Instrumenst.Text);
@@ -85,16 +86,19 @@ namespace CTZ.View.Calibration
                     idLaboratory = Convert.ToInt32(laboratories.Rows[i]["ID"].ToString());
                 }
             }
-            
-            DateTime dateOfRequest = DateTime.Today;
-            CalibrationRequest calibrationRequest = new CalibrationRequest(idLaboratory, dateOfRequest.ToString("dd/MM/yyyy"),idInstruments);
-            calibrationRequest.create();
-            string idCalibrationRequest = calibrationRequest.idCalibrationRequest.ToString();
 
-            CalibrationRequestReport report = new CalibrationRequestReport(idLaboratory,idCalibrationRequest);
+            DateTime dateOfRequest = Convert.ToDateTime(TimePicker_Date.Text);
+
+            C_CreateCalibrationRequest createCalibrationRequest = new C_CreateCalibrationRequest(idLaboratory, dateOfRequest.ToString("dd/MM/yyyy"),idInstruments, TxtBox_Number.Text);
+            createCalibrationRequest.create();
+            string idCalibrationRequest = Convert.ToString(createCalibrationRequest.getId());
+
+            CalibrationRequestReport report = new CalibrationRequestReport(idCalibrationRequest);
             report.Show();
             this.Close();
         }
+
+        
 
         
     }

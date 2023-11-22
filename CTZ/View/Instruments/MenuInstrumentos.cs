@@ -146,8 +146,8 @@ namespace CTZ.Vista
 
         private void updateInstrument(DataGridView dataGridView, DataGridViewCellEventArgs e)
         {
-            string idSql = Dgv_Instrumentos[0, e.RowIndex].Value.ToString(); 
-            string idInstrument = Dgv_Instrumentos[1, e.RowIndex].Value.ToString();
+            string idSql = dataGridView[0, e.RowIndex].Value.ToString(); 
+            string idInstrument = dataGridView[1, e.RowIndex].Value.ToString();
             UpdateInstrument instrument = new UpdateInstrument(idInstrument, idSql);
             instrument.Show();
         }

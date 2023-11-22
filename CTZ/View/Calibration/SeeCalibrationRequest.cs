@@ -18,7 +18,7 @@ namespace CTZ.View.Calibration
 
     public partial class SeeCalibrationRequest : Form
     {
-        Instruments instrument;
+        CTZ.Vista.Responsabilitis.Instruments instrument;
         C_CalibrationRequest controller;
         C_Laboratories controllerlaboratories;
         private DataTable laboratories;
@@ -51,16 +51,15 @@ namespace CTZ.View.Calibration
         {
             if (e.ColumnIndex == 0)
             {
-                int idLaboratory = Convert.ToInt32(dataGridView[8, e.RowIndex].Value.ToString());
                 string idCalibrationRequest = dataGridView[5, e.RowIndex].Value.ToString();
-                CalibrationRequestReport calibrationRequestReport = new CalibrationRequestReport(idLaboratory, idCalibrationRequest);
+                CalibrationRequestReport calibrationRequestReport = new CalibrationRequestReport(idCalibrationRequest);
                 calibrationRequestReport.Show();
             }
         }
 
         private void Btn_Serch_Instrument_Click(object sender, EventArgs e)
         {
-            instrument = new Instruments();
+            instrument = new CTZ.Vista.Responsabilitis.Instruments();
             if (instrument.serchInstrument(TxtBox_Instrument.Text))
             {
                 Dgv_CalibrationRequestByInstrument.DataSource = controller.getAllByEquinoInstrument(TxtBox_Instrument.Text);

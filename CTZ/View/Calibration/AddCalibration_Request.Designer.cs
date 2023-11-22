@@ -36,6 +36,10 @@
             this.Btn_Add_Equino = new MaterialSkin.Controls.MaterialButton();
             this.Btn_Delete_Instrument = new MaterialSkin.Controls.MaterialButton();
             this.Btn_MakeRequest = new MaterialSkin.Controls.MaterialButton();
+            this.Lbl_Number = new System.Windows.Forms.Label();
+            this.TxtBox_Number = new MaterialSkin.Controls.MaterialTextBox();
+            this.Lbl_Date = new System.Windows.Forms.Label();
+            this.TimePicker_Date = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // Lbl_Lab
@@ -43,7 +47,7 @@
             this.Lbl_Lab.AutoSize = true;
             this.Lbl_Lab.Depth = 0;
             this.Lbl_Lab.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Lab.Location = new System.Drawing.Point(23, 86);
+            this.Lbl_Lab.Location = new System.Drawing.Point(23, 64);
             this.Lbl_Lab.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.Lbl_Lab.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Lab.Name = "Lbl_Lab";
@@ -65,7 +69,7 @@
             this.ComboBox_Laboratory.FormattingEnabled = true;
             this.ComboBox_Laboratory.IntegralHeight = false;
             this.ComboBox_Laboratory.ItemHeight = 43;
-            this.ComboBox_Laboratory.Location = new System.Drawing.Point(26, 128);
+            this.ComboBox_Laboratory.Location = new System.Drawing.Point(26, 96);
             this.ComboBox_Laboratory.MaxDropDownItems = 4;
             this.ComboBox_Laboratory.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Laboratory.Name = "ComboBox_Laboratory";
@@ -78,7 +82,7 @@
             this.Lbl_Instument.AutoSize = true;
             this.Lbl_Instument.Depth = 0;
             this.Lbl_Instument.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Instument.Location = new System.Drawing.Point(23, 218);
+            this.Lbl_Instument.Location = new System.Drawing.Point(23, 247);
             this.Lbl_Instument.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Instument.Name = "Lbl_Instument";
             this.Lbl_Instument.Size = new System.Drawing.Size(148, 19);
@@ -91,7 +95,7 @@
             this.TxtBox_Instrumenst.Depth = 0;
             this.TxtBox_Instrumenst.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Instrumenst.LeadingIcon = null;
-            this.TxtBox_Instrumenst.Location = new System.Drawing.Point(26, 253);
+            this.TxtBox_Instrumenst.Location = new System.Drawing.Point(26, 278);
             this.TxtBox_Instrumenst.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_Instrumenst.MaxLength = 50;
             this.TxtBox_Instrumenst.MouseState = MaterialSkin.MouseState.OUT;
@@ -116,7 +120,7 @@
             this.ComboBox_Instruments.FormattingEnabled = true;
             this.ComboBox_Instruments.IntegralHeight = false;
             this.ComboBox_Instruments.ItemHeight = 43;
-            this.ComboBox_Instruments.Location = new System.Drawing.Point(26, 323);
+            this.ComboBox_Instruments.Location = new System.Drawing.Point(26, 347);
             this.ComboBox_Instruments.Margin = new System.Windows.Forms.Padding(0);
             this.ComboBox_Instruments.MaxDropDownItems = 4;
             this.ComboBox_Instruments.MouseState = MaterialSkin.MouseState.OUT;
@@ -132,7 +136,7 @@
             this.Btn_Add_Equino.Depth = 0;
             this.Btn_Add_Equino.HighEmphasis = true;
             this.Btn_Add_Equino.Icon = null;
-            this.Btn_Add_Equino.Location = new System.Drawing.Point(26, 396);
+            this.Btn_Add_Equino.Location = new System.Drawing.Point(26, 415);
             this.Btn_Add_Equino.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Equino.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Equino.Name = "Btn_Add_Equino";
@@ -151,7 +155,7 @@
             this.Btn_Delete_Instrument.Depth = 0;
             this.Btn_Delete_Instrument.HighEmphasis = true;
             this.Btn_Delete_Instrument.Icon = null;
-            this.Btn_Delete_Instrument.Location = new System.Drawing.Point(272, 396);
+            this.Btn_Delete_Instrument.Location = new System.Drawing.Point(281, 415);
             this.Btn_Delete_Instrument.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Delete_Instrument.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Delete_Instrument.Name = "Btn_Delete_Instrument";
@@ -182,11 +186,58 @@
             this.Btn_MakeRequest.UseVisualStyleBackColor = true;
             this.Btn_MakeRequest.Click += new System.EventHandler(this.Btn_MakeRequest_Click);
             // 
-            // CalibrationRequest
+            // Lbl_Number
+            // 
+            this.Lbl_Number.AutoSize = true;
+            this.Lbl_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Number.Location = new System.Drawing.Point(22, 148);
+            this.Lbl_Number.Name = "Lbl_Number";
+            this.Lbl_Number.Size = new System.Drawing.Size(125, 20);
+            this.Lbl_Number.TabIndex = 49;
+            this.Lbl_Number.Text = "Numero de Folio";
+            // 
+            // TxtBox_Number
+            // 
+            this.TxtBox_Number.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Number.Depth = 0;
+            this.TxtBox_Number.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Number.LeadingIcon = null;
+            this.TxtBox_Number.Location = new System.Drawing.Point(26, 171);
+            this.TxtBox_Number.MaxLength = 50;
+            this.TxtBox_Number.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Number.Multiline = false;
+            this.TxtBox_Number.Name = "TxtBox_Number";
+            this.TxtBox_Number.Size = new System.Drawing.Size(226, 50);
+            this.TxtBox_Number.TabIndex = 50;
+            this.TxtBox_Number.Text = "";
+            this.TxtBox_Number.TrailingIcon = null;
+            // 
+            // Lbl_Date
+            // 
+            this.Lbl_Date.AutoSize = true;
+            this.Lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Date.Location = new System.Drawing.Point(380, 148);
+            this.Lbl_Date.Name = "Lbl_Date";
+            this.Lbl_Date.Size = new System.Drawing.Size(54, 20);
+            this.Lbl_Date.TabIndex = 51;
+            this.Lbl_Date.Text = "Fecha";
+            // 
+            // TimePicker_Date
+            // 
+            this.TimePicker_Date.Location = new System.Drawing.Point(384, 171);
+            this.TimePicker_Date.Name = "TimePicker_Date";
+            this.TimePicker_Date.Size = new System.Drawing.Size(308, 20);
+            this.TimePicker_Date.TabIndex = 52;
+            // 
+            // AddCalibration_Request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 527);
+            this.Controls.Add(this.TimePicker_Date);
+            this.Controls.Add(this.Lbl_Date);
+            this.Controls.Add(this.TxtBox_Number);
+            this.Controls.Add(this.Lbl_Number);
             this.Controls.Add(this.Btn_MakeRequest);
             this.Controls.Add(this.Btn_Delete_Instrument);
             this.Controls.Add(this.Btn_Add_Equino);
@@ -195,7 +246,7 @@
             this.Controls.Add(this.Lbl_Instument);
             this.Controls.Add(this.ComboBox_Laboratory);
             this.Controls.Add(this.Lbl_Lab);
-            this.Name = "CalibrationRequest";
+            this.Name = "AddCalibration_Request";
             this.Text = "Solicitud de Calibracion";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,5 +263,9 @@
         private MaterialSkin.Controls.MaterialButton Btn_Add_Equino;
         private MaterialSkin.Controls.MaterialButton Btn_Delete_Instrument;
         private MaterialSkin.Controls.MaterialButton Btn_MakeRequest;
+        private System.Windows.Forms.Label Lbl_Number;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Number;
+        private System.Windows.Forms.Label Lbl_Date;
+        private System.Windows.Forms.DateTimePicker TimePicker_Date;
     }
 }

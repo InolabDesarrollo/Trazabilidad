@@ -1915,3 +1915,5 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.Vista.Instru
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Calibration.CalibrationRequestReport.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Calibration.AddCalibration_Request.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Calibration.SeeCalibrationRequest.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Instruments.Instruments_Menu.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Instruments.Instruments_SubMenu.resources

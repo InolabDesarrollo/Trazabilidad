@@ -17,10 +17,11 @@ namespace CTZ.Model.Trazabilidad.Instruments
             conexion = new ConexionTrazabilidad();
         }
 
-        public void create(CalibrationRequest calibrationRequest)
+        public void create(int idLaboratory,string date,string numberOfReport)
         {
-            conexion.executeQuery("INSERT INTO Solicitud_Calibracion (ID_Laboratorio,Fecha) " +
-                "\r\n values("+ calibrationRequest.idLaboratory+ ",'"+calibrationRequest.dateOfRequest+"') ");
+            conexion.executeQuery("INSERT INTO Solicitud_Calibracion " +
+                "(ID_Laboratorio,Fecha,Numero_De_Folio) " +
+                "\r\n values('2','17/12/2023','1A')");
         }
 
         public int getId()
@@ -40,6 +41,11 @@ namespace CTZ.Model.Trazabilidad.Instruments
         public DataTable getAll()
         {
             return conexion.getDataTable("Select * from Solicitudes_de_calibracion");
+        }
+        public DataTable getAllById(string id)
+        {
+            return conexion.getDataTable("Select * from Solicitudes_de_calibracion " +
+                " WHERE ID_Socitud_Calibracion = '"+id+"';");
         }
         public DataTable getAllByEquinoInstrument(string equinoInstrument)
         {

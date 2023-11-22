@@ -223,7 +223,8 @@
     <Compile Include="Controler\C_Usuario.cs" />
     <Compile Include="Controler\C_View_Instrument_Certificate.cs" />
     <Compile Include="Controler\C_Laboratories.cs" />
-    <Compile Include="Controler\Instruments\C_CalibrationRequest.cs" />
+    <Compile Include="Controler\Instruments\Calibration\C_CalibrationRequest.cs" />
+    <Compile Include="Controler\Instruments\Calibration\C_CreateCalibrationRequest.cs" />
     <Compile Include="Controler\Instruments\C_ReturnOfInstrument.cs" />
     <Compile Include="ctzWF.cs">
       <SubType>Form</SubType>
@@ -477,6 +478,18 @@
     </Compile>
     <Compile Include="View\Instruments\DeleteInstrument.Designer.cs">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Instruments\Instruments_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Instruments\Instruments_Menu.Designer.cs">
+      <DependentUpon>Instruments_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Instruments\Instruments_SubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Instruments\Instruments_SubMenu.Designer.cs">
+      <DependentUpon>Instruments_SubMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\RegistSignature.cs">
       <SubType>Form</SubType>
@@ -742,6 +755,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\DeleteInstrument.resx">
       <DependentUpon>DeleteInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Instruments\Instruments_Menu.resx">
+      <DependentUpon>Instruments_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Instruments\Instruments_SubMenu.resx">
+      <DependentUpon>Instruments_SubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\RegistSignature.resx">
       <DependentUpon>RegistSignature.cs</DependentUpon>
