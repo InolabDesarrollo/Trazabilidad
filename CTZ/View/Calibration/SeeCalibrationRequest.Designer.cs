@@ -67,7 +67,7 @@
             this.Page_Laboratory.Location = new System.Drawing.Point(4, 22);
             this.Page_Laboratory.Name = "Page_Laboratory";
             this.Page_Laboratory.Padding = new System.Windows.Forms.Padding(3);
-            this.Page_Laboratory.Size = new System.Drawing.Size(805, 380);
+            this.Page_Laboratory.Size = new System.Drawing.Size(807, 331);
             this.Page_Laboratory.TabIndex = 1;
             this.Page_Laboratory.Text = "Laboratorio";
             this.Page_Laboratory.UseVisualStyleBackColor = true;
@@ -79,12 +79,13 @@
             this.Dgv_CalibrationRequestByLaboratory.AutoGenerateContextFilters = true;
             this.Dgv_CalibrationRequestByLaboratory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_CalibrationRequestByLaboratory.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.Dgv_CalibrationRequestByLaboratory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_CalibrationRequestByLaboratory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Dgv_CalibrationRequestByLaboratory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_CalibrationRequestByLaboratory.DateWithTime = false;
             this.Dgv_CalibrationRequestByLaboratory.Location = new System.Drawing.Point(6, 79);
             this.Dgv_CalibrationRequestByLaboratory.Name = "Dgv_CalibrationRequestByLaboratory";
-            this.Dgv_CalibrationRequestByLaboratory.Size = new System.Drawing.Size(760, 283);
+            this.Dgv_CalibrationRequestByLaboratory.Size = new System.Drawing.Size(795, 246);
             this.Dgv_CalibrationRequestByLaboratory.TabIndex = 7;
             this.Dgv_CalibrationRequestByLaboratory.TimeFilter = false;
             this.Dgv_CalibrationRequestByLaboratory.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CalibrationRequestByLaboratory_CellContentDoubleClick);
@@ -130,7 +131,7 @@
             this.Page_Instruents.Location = new System.Drawing.Point(4, 22);
             this.Page_Instruents.Name = "Page_Instruents";
             this.Page_Instruents.Padding = new System.Windows.Forms.Padding(3);
-            this.Page_Instruents.Size = new System.Drawing.Size(805, 380);
+            this.Page_Instruents.Size = new System.Drawing.Size(807, 331);
             this.Page_Instruents.TabIndex = 0;
             this.Page_Instruents.Text = "Instrumento";
             this.Page_Instruents.UseVisualStyleBackColor = true;
@@ -161,9 +162,9 @@
             this.Dgv_CalibrationRequestByInstrument.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Dgv_CalibrationRequestByInstrument.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_CalibrationRequestByInstrument.DateWithTime = false;
-            this.Dgv_CalibrationRequestByInstrument.Location = new System.Drawing.Point(6, 90);
+            this.Dgv_CalibrationRequestByInstrument.Location = new System.Drawing.Point(6, 75);
             this.Dgv_CalibrationRequestByInstrument.Name = "Dgv_CalibrationRequestByInstrument";
-            this.Dgv_CalibrationRequestByInstrument.Size = new System.Drawing.Size(793, 284);
+            this.Dgv_CalibrationRequestByInstrument.Size = new System.Drawing.Size(795, 254);
             this.Dgv_CalibrationRequestByInstrument.TabIndex = 6;
             this.Dgv_CalibrationRequestByInstrument.TimeFilter = false;
             this.Dgv_CalibrationRequestByInstrument.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CalibrationRequestByInstrument_CellContentDoubleClick);
@@ -206,10 +207,11 @@
             this.Tab_Principal.Controls.Add(this.Page_Instruents);
             this.Tab_Principal.Controls.Add(this.Page_Laboratory);
             this.Tab_Principal.Controls.Add(this.PageDate);
-            this.Tab_Principal.Location = new System.Drawing.Point(8, 22);
+            this.Tab_Principal.Location = new System.Drawing.Point(6, 80);
+            this.Tab_Principal.Margin = new System.Windows.Forms.Padding(3, 3, 3, 9);
             this.Tab_Principal.Name = "Tab_Principal";
             this.Tab_Principal.SelectedIndex = 0;
-            this.Tab_Principal.Size = new System.Drawing.Size(813, 406);
+            this.Tab_Principal.Size = new System.Drawing.Size(815, 357);
             this.Tab_Principal.TabIndex = 0;
             // 
             // PageDate
@@ -222,9 +224,10 @@
             this.PageDate.Controls.Add(this.Lbl_BeganDate);
             this.PageDate.Controls.Add(this.TimePicker_Began);
             this.PageDate.Location = new System.Drawing.Point(4, 22);
+            this.PageDate.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.PageDate.Name = "PageDate";
             this.PageDate.Padding = new System.Windows.Forms.Padding(3);
-            this.PageDate.Size = new System.Drawing.Size(805, 380);
+            this.PageDate.Size = new System.Drawing.Size(807, 331);
             this.PageDate.TabIndex = 2;
             this.PageDate.Text = "Fechas";
             this.PageDate.UseVisualStyleBackColor = true;
@@ -263,12 +266,14 @@
             this.Dgv_CalibrationRequestByDates.AutoGenerateContextFilters = true;
             this.Dgv_CalibrationRequestByDates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_CalibrationRequestByDates.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.Dgv_CalibrationRequestByDates.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_CalibrationRequestByDates.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Dgv_CalibrationRequestByDates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_CalibrationRequestByDates.DateWithTime = false;
             this.Dgv_CalibrationRequestByDates.Location = new System.Drawing.Point(6, 90);
+            this.Dgv_CalibrationRequestByDates.Margin = new System.Windows.Forms.Padding(3, 1, 6, 1);
             this.Dgv_CalibrationRequestByDates.Name = "Dgv_CalibrationRequestByDates";
-            this.Dgv_CalibrationRequestByDates.Size = new System.Drawing.Size(793, 284);
+            this.Dgv_CalibrationRequestByDates.Size = new System.Drawing.Size(795, 226);
             this.Dgv_CalibrationRequestByDates.TabIndex = 4;
             this.Dgv_CalibrationRequestByDates.TimeFilter = false;
             this.Dgv_CalibrationRequestByDates.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CalibrationRequestByDates_CellContentDoubleClick);
@@ -311,10 +316,11 @@
             // 
             this.Btn_CreateCalibrationRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
             this.Btn_CreateCalibrationRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_CreateCalibrationRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_CreateCalibrationRequest.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_CreateCalibrationRequest.Location = new System.Drawing.Point(119, 434);
+            this.Btn_CreateCalibrationRequest.Location = new System.Drawing.Point(41, 449);
             this.Btn_CreateCalibrationRequest.Name = "Btn_CreateCalibrationRequest";
-            this.Btn_CreateCalibrationRequest.Size = new System.Drawing.Size(96, 39);
+            this.Btn_CreateCalibrationRequest.Size = new System.Drawing.Size(129, 55);
             this.Btn_CreateCalibrationRequest.TabIndex = 6;
             this.Btn_CreateCalibrationRequest.Text = "Crear Solicitud ";
             this.Btn_CreateCalibrationRequest.UseVisualStyleBackColor = false;
@@ -325,7 +331,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(833, 481);
+            this.ClientSize = new System.Drawing.Size(833, 510);
             this.Controls.Add(this.Btn_CreateCalibrationRequest);
             this.Controls.Add(this.Tab_Principal);
             this.Name = "SeeCalibrationRequest";

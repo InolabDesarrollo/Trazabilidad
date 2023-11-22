@@ -605,7 +605,6 @@
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Certificates\Certificate.cs" />
-    <Compile Include="View\Responsabilitis\CalibrationRequest.cs" />
     <Compile Include="View\Responsabilitis\DateForReport.cs" />
     <Compile Include="View\Responsabilitis\Email.cs" />
     <Compile Include="View\Responsabilitis\Instruments.cs" />

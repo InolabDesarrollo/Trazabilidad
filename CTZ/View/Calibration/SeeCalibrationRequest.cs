@@ -12,11 +12,12 @@ using CTZ.Controler.Instruments;
 using CTZ.Controler.Trazabilidad;
 using CTZ.Vista.Instruments;
 using CTZ.Vista.Responsabilitis;
+using MaterialSkin.Controls;
 
 namespace CTZ.View.Calibration
 {
 
-    public partial class SeeCalibrationRequest : Form
+    public partial class SeeCalibrationRequest : MaterialForm
     {
         CTZ.Vista.Responsabilitis.Instruments instrument;
         C_CalibrationRequest controller;
