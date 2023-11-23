@@ -2,7 +2,6 @@
 using CTZ.Controler.Instruments;
 using CTZ.Controler.Instruments.Calibration;
 using CTZ.Controler.Trazabilidad;
-using CTZ.View.Responsabilitis;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;

@@ -419,22 +419,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Calibration\AddCalibration_Request.cs">
+    <Compile Include="View\Instruments\Assignment\Assignment_SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Calibration\AddCalibration_Request.Designer.cs">
+    <Compile Include="View\Instruments\Assignment\Assignment_SubMenu.Designer.cs">
+      <DependentUpon>Assignment_SubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Instruments\Calibration\AddCalibration_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Instruments\Calibration\AddCalibration_Request.Designer.cs">
       <DependentUpon>AddCalibration_Request.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Calibration\CalibrationRequestReport.cs">
+    <Compile Include="View\Instruments\Calibration\CalibrationRequestReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Calibration\CalibrationRequestReport.Designer.cs">
+    <Compile Include="View\Instruments\Calibration\CalibrationRequestReport.Designer.cs">
       <DependentUpon>CalibrationRequestReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Calibration\SeeCalibrationRequest.cs">
+    <Compile Include="View\Instruments\Calibration\SeeCalibrationRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Calibration\SeeCalibrationRequest.Designer.cs">
+    <Compile Include="View\Instruments\Calibration\SeeCalibrationRequest.Designer.cs">
       <DependentUpon>SeeCalibrationRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Certificates\SerchCertificate.cs">
@@ -443,34 +449,34 @@
     <Compile Include="View\Certificates\SerchCertificate.Designer.cs">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\Add_Delivery_Instrument.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Delivery_Instrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Instruments\Add_Delivery_Instrument.Designer.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Delivery_Instrument.Designer.cs">
       <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\Add_Delivery_Instrument_ByGroup.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Delivery_Instrument_ByGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Instruments\Add_Delivery_Instrument_ByGroup.Designer.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Delivery_Instrument_ByGroup.Designer.cs">
       <DependentUpon>Add_Delivery_Instrument_ByGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\Add_Instrument_Assignment.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Instrument_Assignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Instruments\Add_Instrument_Assignment.Designer.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Instrument_Assignment.Designer.cs">
       <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\Add_Return_Instrument.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Return_Instrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Instruments\Add_Return_Instrument.Designer.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Return_Instrument.Designer.cs">
       <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\Add_Return_Instrument_ByGroup.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Return_Instrument_ByGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Instruments\Add_Return_Instrument_ByGroup.Designer.cs">
+    <Compile Include="View\Instruments\Assignment\Add_Return_Instrument_ByGroup.Designer.cs">
       <DependentUpon>Add_Return_Instrument_ByGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\DeleteInstrument.cs">
@@ -497,16 +503,22 @@
     <Compile Include="View\Instruments\RegistSignature.Designer.cs">
       <DependentUpon>RegistSignature.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\See_Instrument_Assignment.cs">
+    <Compile Include="View\Instruments\Schedule\Schedule_SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Instruments\See_Instrument_Assignment.Designer.cs">
+    <Compile Include="View\Instruments\Schedule\Schedule_SubMenu.Designer.cs">
+      <DependentUpon>Schedule_SubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Instruments\Assignment\See_Instrument_Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Instruments\Assignment\See_Instrument_Assignment.Designer.cs">
       <DependentUpon>See_Instrument_Assignment.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\Serch_Instruments_Assignments.cs">
+    <Compile Include="View\Instruments\Assignment\Serch_Instruments_Assignments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Instruments\Serch_Instruments_Assignments.Designer.cs">
+    <Compile Include="View\Instruments\Assignment\Serch_Instruments_Assignments.Designer.cs">
       <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\ShowSignature.cs">
@@ -515,10 +527,16 @@
     <Compile Include="View\Instruments\ShowSignature.Designer.cs">
       <DependentUpon>ShowSignature.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\Update_Instrument_Assignment.cs">
+    <Compile Include="View\Instruments\Trazability\Trazability_SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Instruments\Update_Instrument_Assignment.Designer.cs">
+    <Compile Include="View\Instruments\Trazability\Trazability_SubMenu.Designer.cs">
+      <DependentUpon>Trazability_SubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Instruments\Assignment\Update_Instrument_Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Instruments\Assignment\Update_Instrument_Assignment.Designer.cs">
       <DependentUpon>Update_Instrument_Assignment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LogIn.cs">
@@ -722,13 +740,16 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Calibration\AddCalibration_Request.resx">
+    <EmbeddedResource Include="View\Instruments\Assignment\Assignment_SubMenu.resx">
+      <DependentUpon>Assignment_SubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Instruments\Calibration\AddCalibration_Request.resx">
       <DependentUpon>AddCalibration_Request.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Calibration\CalibrationRequestReport.resx">
+    <EmbeddedResource Include="View\Instruments\Calibration\CalibrationRequestReport.resx">
       <DependentUpon>CalibrationRequestReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Calibration\SeeCalibrationRequest.resx">
+    <EmbeddedResource Include="View\Instruments\Calibration\SeeCalibrationRequest.resx">
       <DependentUpon>SeeCalibrationRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Certificates\AddCertificate.resx">
@@ -737,19 +758,19 @@
     <EmbeddedResource Include="View\Certificates\SerchCertificate.resx">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Add_Delivery_Instrument.resx">
+    <EmbeddedResource Include="View\Instruments\Assignment\Add_Delivery_Instrument.resx">
       <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Add_Delivery_Instrument_ByGroup.resx">
+    <EmbeddedResource Include="View\Instruments\Assignment\Add_Delivery_Instrument_ByGroup.resx">
       <DependentUpon>Add_Delivery_Instrument_ByGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Add_Instrument_Assignment.resx">
+    <EmbeddedResource Include="View\Instruments\Assignment\Add_Instrument_Assignment.resx">
       <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Add_Return_Instrument.resx">
+    <EmbeddedResource Include="View\Instruments\Assignment\Add_Return_Instrument.resx">
       <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Add_Return_Instrument_ByGroup.resx">
+    <EmbeddedResource Include="View\Instruments\Assignment\Add_Return_Instrument_ByGroup.resx">
       <DependentUpon>Add_Return_Instrument_ByGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\DeleteInstrument.resx">
@@ -764,16 +785,22 @@
     <EmbeddedResource Include="View\Instruments\RegistSignature.resx">
       <DependentUpon>RegistSignature.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\See_Instrument_Assignment.resx">
+    <EmbeddedResource Include="View\Instruments\Schedule\Schedule_SubMenu.resx">
+      <DependentUpon>Schedule_SubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Instruments\Assignment\See_Instrument_Assignment.resx">
       <DependentUpon>See_Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Serch_Instruments_Assignments.resx">
+    <EmbeddedResource Include="View\Instruments\Assignment\Serch_Instruments_Assignments.resx">
       <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\ShowSignature.resx">
       <DependentUpon>ShowSignature.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Update_Instrument_Assignment.resx">
+    <EmbeddedResource Include="View\Instruments\Trazability\Trazability_SubMenu.resx">
+      <DependentUpon>Trazability_SubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Instruments\Assignment\Update_Instrument_Assignment.resx">
       <DependentUpon>Update_Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LogIn.resx">

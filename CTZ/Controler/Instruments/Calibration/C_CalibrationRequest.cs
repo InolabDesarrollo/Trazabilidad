@@ -1,7 +1,6 @@
 ﻿using CTZ.Model.Trazabilidad.Instruments;
 using CTZ.Modelo;
 using CTZ.View.Calibration;
-using CTZ.View.Responsabilitis;
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
@@ -21,10 +20,7 @@ namespace CTZ.Controler.Instruments
             repository = new CalibrationRequest_Repository();
             dates = new DateForReport();    
         }
-        public void create(CalibrationRequest calibrationRequest)
-        {
-            //repository.create(calibrationRequest);
-        }
+
 
         public int getId()
         {

@@ -134,7 +134,6 @@
             this.TxtBox_NumSerie.TabIndex = 43;
             this.TxtBox_NumSerie.Text = "";
             this.TxtBox_NumSerie.TrailingIcon = null;
-          
             // 
             // TxtBox_Observation
             // 
@@ -240,6 +239,7 @@
             this.Controls.Add(this.TxtBox_Id);
             this.Controls.Add(this.Btn_Add_Instrument);
             this.Name = "AddInstrument";
+            this.Sizable = false;
             this.Text = "Agregar Instrumento";
             this.ResumeLayout(false);
             this.PerformLayout();

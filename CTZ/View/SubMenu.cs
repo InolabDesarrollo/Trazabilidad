@@ -1,4 +1,5 @@
-﻿using CTZ.Vista.Responsabilitis;
+﻿using CTZ.View.Instruments;
+using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -45,8 +46,8 @@ namespace CTZ.Vista
 
         private void Btn_Instrumentos_Click(object sender, EventArgs e)
         {
-            MenuInstrumentos instrumentos = new MenuInstrumentos();
-            instrumentos.Show();
+            Instruments_Menu menu = new Instruments_Menu();
+            menu.Show();
         }
     }
 }

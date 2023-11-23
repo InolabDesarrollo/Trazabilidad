@@ -1,6 +1,5 @@
 ﻿using CTZ.Modelo.Documentacion;
 using CTZ.View.Calibration;
-using CTZ.View.Responsabilitis;
 using System;
 using System.Collections.Generic;
 using System.Data;

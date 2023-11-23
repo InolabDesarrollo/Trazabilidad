@@ -1,5 +1,4 @@
 ﻿using CTZ.Model.Trazabilidad.Instruments;
-using CTZ.View.Responsabilitis;
 using System;
 using System.Collections.Generic;
 using System.Linq;

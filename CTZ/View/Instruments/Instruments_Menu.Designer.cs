@@ -52,6 +52,7 @@
             this.Btn_Instruments.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Instruments.UseAccentColor = false;
             this.Btn_Instruments.UseVisualStyleBackColor = true;
+            this.Btn_Instruments.Click += new System.EventHandler(this.Btn_Instruments_Click);
             // 
             // Btn_Schedule
             // 
@@ -70,6 +71,7 @@
             this.Btn_Schedule.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Schedule.UseAccentColor = false;
             this.Btn_Schedule.UseVisualStyleBackColor = true;
+            this.Btn_Schedule.Click += new System.EventHandler(this.Btn_Schedule_Click);
             // 
             // Btn_Trazability
             // 
@@ -88,6 +90,7 @@
             this.Btn_Trazability.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Trazability.UseAccentColor = false;
             this.Btn_Trazability.UseVisualStyleBackColor = true;
+            this.Btn_Trazability.Click += new System.EventHandler(this.Btn_Trazability_Click);
             // 
             // Btn_Calibration
             // 
@@ -125,6 +128,7 @@
             this.Btn_Assignment.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Assignment.UseAccentColor = false;
             this.Btn_Assignment.UseVisualStyleBackColor = true;
+            this.Btn_Assignment.Click += new System.EventHandler(this.Btn_Assignment_Click);
             // 
             // Instruments_Menu
             // 

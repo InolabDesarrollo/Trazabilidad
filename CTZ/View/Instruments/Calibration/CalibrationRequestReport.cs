@@ -1,5 +1,4 @@
 ﻿using CTZ.Controler.Instruments;
-using CTZ.View.Responsabilitis;
 using CTZ.Vista.Traceability;
 using MaterialSkin.Controls;
 using Microsoft.Reporting.WinForms;
@@ -19,7 +18,7 @@ namespace CTZ.View.Calibration
     public partial class CalibrationRequestReport : MaterialForm
     {
         string serverUrl = "http://INOLABSERVER03/Reportes_Inolab";
-        private readonly CalibrationRequest calibrationRequest;
+
         private readonly string idLaboratory;
         private readonly string idCalibrationRequest;
         private readonly string numberOfReport;
