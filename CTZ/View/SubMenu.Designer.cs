@@ -44,7 +44,7 @@
             this.Btn_Herramientas.ForeColor = System.Drawing.SystemColors.Highlight;
             this.Btn_Herramientas.HighEmphasis = true;
             this.Btn_Herramientas.Icon = null;
-            this.Btn_Herramientas.Location = new System.Drawing.Point(27, 89);
+            this.Btn_Herramientas.Location = new System.Drawing.Point(330, 90);
             this.Btn_Herramientas.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Herramientas.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Herramientas.Name = "Btn_Herramientas";
@@ -65,7 +65,7 @@
             this.Btn_Accesorios.Depth = 0;
             this.Btn_Accesorios.HighEmphasis = true;
             this.Btn_Accesorios.Icon = null;
-            this.Btn_Accesorios.Location = new System.Drawing.Point(27, 148);
+            this.Btn_Accesorios.Location = new System.Drawing.Point(342, 153);
             this.Btn_Accesorios.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Accesorios.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Accesorios.Name = "Btn_Accesorios";
@@ -85,7 +85,7 @@
             this.Btn_DataLogger.Depth = 0;
             this.Btn_DataLogger.HighEmphasis = true;
             this.Btn_DataLogger.Icon = null;
-            this.Btn_DataLogger.Location = new System.Drawing.Point(27, 209);
+            this.Btn_DataLogger.Location = new System.Drawing.Point(337, 216);
             this.Btn_DataLogger.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_DataLogger.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_DataLogger.Name = "Btn_DataLogger";
@@ -105,7 +105,7 @@
             this.Btn_Instrumentos.Depth = 0;
             this.Btn_Instrumentos.HighEmphasis = true;
             this.Btn_Instrumentos.Icon = null;
-            this.Btn_Instrumentos.Location = new System.Drawing.Point(27, 273);
+            this.Btn_Instrumentos.Location = new System.Drawing.Point(330, 277);
             this.Btn_Instrumentos.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Instrumentos.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Instrumentos.Name = "Btn_Instrumentos";
@@ -125,7 +125,7 @@
             this.Btn_Estandares.Depth = 0;
             this.Btn_Estandares.HighEmphasis = true;
             this.Btn_Estandares.Icon = null;
-            this.Btn_Estandares.Location = new System.Drawing.Point(27, 333);
+            this.Btn_Estandares.Location = new System.Drawing.Point(342, 336);
             this.Btn_Estandares.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Estandares.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Estandares.Name = "Btn_Estandares";

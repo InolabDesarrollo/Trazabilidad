@@ -226,6 +226,7 @@
     <Compile Include="Controler\Instruments\Calibration\C_CalibrationRequest.cs" />
     <Compile Include="Controler\Instruments\Calibration\C_CreateCalibrationRequest.cs" />
     <Compile Include="Controler\Instruments\C_ReturnOfInstrument.cs" />
+    <Compile Include="Controler\Instruments\C_SerchInstrument.cs" />
     <Compile Include="ctzWF.cs">
       <SubType>Form</SubType>
     </Compile>

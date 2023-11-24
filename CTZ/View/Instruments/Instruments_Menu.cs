@@ -33,20 +33,18 @@ namespace CTZ.View.Instruments
         {
             Instruments_SubMenu menu = new Instruments_SubMenu();
             menu.Show();
-            this.Close();
         }
 
         private void Btn_Schedule_Click(object sender, EventArgs e)
         {
             Schedule_SubMenu menu = new Schedule_SubMenu();
             menu.Show();
-            this.Close();
         }
 
         private void Btn_Trazability_Click(object sender, EventArgs e)
         {
             Trazability_SubMenu menu = new Trazability_SubMenu();
-            menu.Show();    
+            menu.Show();
         }
 
         private void Btn_Assignment_Click(object sender, EventArgs e)
