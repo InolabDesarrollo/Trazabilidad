@@ -20,6 +20,16 @@ namespace CTZ.Modelo.Trazabilidad
             return conexion.getDataTable("SELECT * FROM Instrumentos_Certificado WHERE ID_Instrumentos = '"+ equino + "';");
         }
 
+        public DataTable getAllInstrumentCertificateByInstrument(string instrument)
+        {
+            return conexion.getDataTable("SELECT * from Instrumentos_Certificado WHERE INSTRUMENTO like '%"+ instrument + "%';");
+        }
+
+        public DataTable getAllInstrumentCertificateByBrand(string brand)
+        {
+            return conexion.getDataTable("SELECT * from Instrumentos_Certificado WHERE MARCA like '%"+brand+ "%';;");
+        }
+
 
     }
 }

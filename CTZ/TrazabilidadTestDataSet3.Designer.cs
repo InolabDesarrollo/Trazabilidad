@@ -309,6 +309,20 @@ namespace CTZ {
             
             private global::System.Data.DataColumn columnFecha_Registro;
             
+            private global::System.Data.DataColumn columnMAGNITUD;
+            
+            private global::System.Data.DataColumn columnRANGO;
+            
+            private global::System.Data.DataColumn columnACCESORIOS;
+            
+            private global::System.Data.DataColumn columnTEMPERATURA;
+            
+            private global::System.Data.DataColumn columnHUMEDAD;
+            
+            private global::System.Data.DataColumn columnACCESORIOS_TEMPERATURA;
+            
+            private global::System.Data.DataColumn columnACCESORIOS_HUMEDAD;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Instrumentos_CertificadoDataTable() {
@@ -464,6 +478,62 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MAGNITUDColumn {
+                get {
+                    return this.columnMAGNITUD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RANGOColumn {
+                get {
+                    return this.columnRANGO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ACCESORIOSColumn {
+                get {
+                    return this.columnACCESORIOS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TEMPERATURAColumn {
+                get {
+                    return this.columnTEMPERATURA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn HUMEDADColumn {
+                get {
+                    return this.columnHUMEDAD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ACCESORIOS_TEMPERATURAColumn {
+                get {
+                    return this.columnACCESORIOS_TEMPERATURA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ACCESORIOS_HUMEDADColumn {
+                get {
+                    return this.columnACCESORIOS_HUMEDAD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -499,7 +569,29 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Instrumentos_CertificadoRow AddInstrumentos_CertificadoRow(int ID, string ID_Instrumentos, string INSTRUMENTO, string MARCA, string MODELO, string _N_S_, string UBICACIÓN, string OBSERVACIÓN, string ESTATUS, string ESTATUS_ASIGNACION, System.DateTime Fecha_De_Calibracion, System.DateTime Proxima_Calibracion, string Numero, string Laboratorio, System.DateTime Fecha_Registro) {
+            public Instrumentos_CertificadoRow AddInstrumentos_CertificadoRow(
+                        int ID, 
+                        string ID_Instrumentos, 
+                        string INSTRUMENTO, 
+                        string MARCA, 
+                        string MODELO, 
+                        string _N_S_, 
+                        string UBICACIÓN, 
+                        string OBSERVACIÓN, 
+                        string ESTATUS, 
+                        string ESTATUS_ASIGNACION, 
+                        System.DateTime Fecha_De_Calibracion, 
+                        System.DateTime Proxima_Calibracion, 
+                        string Numero, 
+                        string Laboratorio, 
+                        System.DateTime Fecha_Registro, 
+                        string MAGNITUD, 
+                        string RANGO, 
+                        string ACCESORIOS, 
+                        string TEMPERATURA, 
+                        string HUMEDAD, 
+                        string ACCESORIOS_TEMPERATURA, 
+                        string ACCESORIOS_HUMEDAD) {
                 Instrumentos_CertificadoRow rowInstrumentos_CertificadoRow = ((Instrumentos_CertificadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -516,7 +608,14 @@ namespace CTZ {
                         Proxima_Calibracion,
                         Numero,
                         Laboratorio,
-                        Fecha_Registro};
+                        Fecha_Registro,
+                        MAGNITUD,
+                        RANGO,
+                        ACCESORIOS,
+                        TEMPERATURA,
+                        HUMEDAD,
+                        ACCESORIOS_TEMPERATURA,
+                        ACCESORIOS_HUMEDAD};
                 rowInstrumentos_CertificadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInstrumentos_CertificadoRow);
                 return rowInstrumentos_CertificadoRow;
@@ -561,6 +660,13 @@ namespace CTZ {
                 this.columnNumero = base.Columns["Numero"];
                 this.columnLaboratorio = base.Columns["Laboratorio"];
                 this.columnFecha_Registro = base.Columns["Fecha_Registro"];
+                this.columnMAGNITUD = base.Columns["MAGNITUD"];
+                this.columnRANGO = base.Columns["RANGO"];
+                this.columnACCESORIOS = base.Columns["ACCESORIOS"];
+                this.columnTEMPERATURA = base.Columns["TEMPERATURA"];
+                this.columnHUMEDAD = base.Columns["HUMEDAD"];
+                this.columnACCESORIOS_TEMPERATURA = base.Columns["ACCESORIOS_TEMPERATURA"];
+                this.columnACCESORIOS_HUMEDAD = base.Columns["ACCESORIOS_HUMEDAD"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -598,6 +704,20 @@ namespace CTZ {
                 base.Columns.Add(this.columnLaboratorio);
                 this.columnFecha_Registro = new global::System.Data.DataColumn("Fecha_Registro", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha_Registro);
+                this.columnMAGNITUD = new global::System.Data.DataColumn("MAGNITUD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAGNITUD);
+                this.columnRANGO = new global::System.Data.DataColumn("RANGO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRANGO);
+                this.columnACCESORIOS = new global::System.Data.DataColumn("ACCESORIOS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnACCESORIOS);
+                this.columnTEMPERATURA = new global::System.Data.DataColumn("TEMPERATURA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTEMPERATURA);
+                this.columnHUMEDAD = new global::System.Data.DataColumn("HUMEDAD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHUMEDAD);
+                this.columnACCESORIOS_TEMPERATURA = new global::System.Data.DataColumn("ACCESORIOS_TEMPERATURA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnACCESORIOS_TEMPERATURA);
+                this.columnACCESORIOS_HUMEDAD = new global::System.Data.DataColumn("ACCESORIOS_HUMEDAD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnACCESORIOS_HUMEDAD);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -613,6 +733,13 @@ namespace CTZ {
                 this.columnESTATUS_ASIGNACION.MaxLength = 50;
                 this.columnNumero.MaxLength = 500;
                 this.columnLaboratorio.MaxLength = 500;
+                this.columnMAGNITUD.MaxLength = 1000;
+                this.columnRANGO.MaxLength = 1000;
+                this.columnACCESORIOS.MaxLength = 500;
+                this.columnTEMPERATURA.MaxLength = 1000;
+                this.columnHUMEDAD.MaxLength = 1000;
+                this.columnACCESORIOS_TEMPERATURA.MaxLength = 500;
+                this.columnACCESORIOS_HUMEDAD.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1002,6 +1129,124 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MAGNITUD {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.MAGNITUDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MAGNITUD\' de la tabla \'Instrumentos_Certificado\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.MAGNITUDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string RANGO {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.RANGOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'RANGO\' de la tabla \'Instrumentos_Certificado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.RANGOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ACCESORIOS {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.ACCESORIOSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ACCESORIOS\' de la tabla \'Instrumentos_Certificado\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.ACCESORIOSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TEMPERATURA {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.TEMPERATURAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TEMPERATURA\' de la tabla \'Instrumentos_Certificado\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.TEMPERATURAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string HUMEDAD {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.HUMEDADColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'HUMEDAD\' de la tabla \'Instrumentos_Certificado\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.HUMEDADColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ACCESORIOS_TEMPERATURA {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.ACCESORIOS_TEMPERATURAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ACCESORIOS_TEMPERATURA\' de la tabla \'Instrumentos_Certifi" +
+                                "cado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.ACCESORIOS_TEMPERATURAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ACCESORIOS_HUMEDAD {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.ACCESORIOS_HUMEDADColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ACCESORIOS_HUMEDAD\' de la tabla \'Instrumentos_Certificado" +
+                                "\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.ACCESORIOS_HUMEDADColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsID_InstrumentosNull() {
                 return this.IsNull(this.tableInstrumentos_Certificado.ID_InstrumentosColumn);
             }
@@ -1166,6 +1411,90 @@ namespace CTZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetFecha_RegistroNull() {
                 this[this.tableInstrumentos_Certificado.Fecha_RegistroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMAGNITUDNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.MAGNITUDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMAGNITUDNull() {
+                this[this.tableInstrumentos_Certificado.MAGNITUDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRANGONull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.RANGOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRANGONull() {
+                this[this.tableInstrumentos_Certificado.RANGOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsACCESORIOSNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.ACCESORIOSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetACCESORIOSNull() {
+                this[this.tableInstrumentos_Certificado.ACCESORIOSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTEMPERATURANull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.TEMPERATURAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTEMPERATURANull() {
+                this[this.tableInstrumentos_Certificado.TEMPERATURAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsHUMEDADNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.HUMEDADColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetHUMEDADNull() {
+                this[this.tableInstrumentos_Certificado.HUMEDADColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsACCESORIOS_TEMPERATURANull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.ACCESORIOS_TEMPERATURAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetACCESORIOS_TEMPERATURANull() {
+                this[this.tableInstrumentos_Certificado.ACCESORIOS_TEMPERATURAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsACCESORIOS_HUMEDADNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.ACCESORIOS_HUMEDADColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetACCESORIOS_HUMEDADNull() {
+                this[this.tableInstrumentos_Certificado.ACCESORIOS_HUMEDADColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1343,6 +1672,13 @@ namespace CTZ.TrazabilidadTestDataSet3TableAdapters {
             tableMapping.ColumnMappings.Add("Numero", "Numero");
             tableMapping.ColumnMappings.Add("Laboratorio", "Laboratorio");
             tableMapping.ColumnMappings.Add("Fecha_Registro", "Fecha_Registro");
+            tableMapping.ColumnMappings.Add("MAGNITUD", "MAGNITUD");
+            tableMapping.ColumnMappings.Add("RANGO", "RANGO");
+            tableMapping.ColumnMappings.Add("ACCESORIOS", "ACCESORIOS");
+            tableMapping.ColumnMappings.Add("TEMPERATURA", "TEMPERATURA");
+            tableMapping.ColumnMappings.Add("HUMEDAD", "HUMEDAD");
+            tableMapping.ColumnMappings.Add("ACCESORIOS_TEMPERATURA", "ACCESORIOS_TEMPERATURA");
+            tableMapping.ColumnMappings.Add("ACCESORIOS_HUMEDAD", "ACCESORIOS_HUMEDAD");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1359,9 +1695,7 @@ namespace CTZ.TrazabilidadTestDataSet3TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERVAC" +
-                "IÓN, ESTATUS, ESTATUS_ASIGNACION, Fecha_De_Calibracion, Proxima_Calibracion, Num" +
-                "ero, Laboratorio, Fecha_Registro FROM dbo.Instrumentos_Certificado";
+            this._commandCollection[0].CommandText = "Select * from Instrumentos_Certificado;\r\n\r\n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

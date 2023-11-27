@@ -1,4 +1,5 @@
 ﻿using ADGV;
+using CTZ.Controlador;
 using CTZ.Controler.Instruments;
 using CTZ.Vista;
 using CTZ.Vista.Responsabilitis;
@@ -18,8 +19,9 @@ namespace CTZ.View.Instruments
 {
     public partial class Instruments_SubMenu : MaterialForm
     {
-        C_SerchInstrument controler;
-        static DataTable instrumentTable;
+        private C_SerchInstrument controler;
+        private static DataTable instrumentTable;
+        private const int columnNextCalibration = 14;
         public Instruments_SubMenu()
         {
             InitializeComponent();
@@ -60,7 +62,7 @@ namespace CTZ.View.Instruments
 
         private void colorCellsStatus(int columnThatNeedColor, DataGridView dataGridView)
         {
-            for (int i = 0; i < dataGridView.Rows.Count-1; i++)
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
                 string valor = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
                 if (valor.Equals("FUERA DE USO"))
@@ -112,39 +114,45 @@ namespace CTZ.View.Instruments
         {
             if (TabControl_Instruments.SelectedIndex == 1)
             {
-                colorDatesOfCalibration(10, Dgv_Instruments_Certificates);
-                colorCellsStatus(8,Dgv_Instruments_Certificates);
+                colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
+                colorCellsStatus(12,Dgv_Instruments_Certificates);
             }
         }
 
         private void colorDatesOfCalibration(int columnThatNeedColor, DataGridView dataGridView)
         {
-            DateTime todayDate = DateTime.Now;
-            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
-            {
-                string date = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
-                if (!date.Equals(""))
+            try
+            { 
+                DateTime todayDate = DateTime.Now;
+                for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
                 {
-                    DateTime dateOfNextCalibration = Convert.ToDateTime(date);
-                    int daysOfDiference = (dateOfNextCalibration - todayDate).Days;
+                    string date = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
+                    if (!date.Equals(""))
+                    {
+                        DateTime dateOfNextCalibration = Convert.ToDateTime(date);
+                        int daysOfDiference = (dateOfNextCalibration - todayDate).Days;
 
-                    if (daysOfDiference >= 0 && daysOfDiference <= 10)
-                    {
-                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
-                    }
-                    else if (daysOfDiference > 10 && daysOfDiference <= 30)
-                    {
-                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
-                    }
-                    else if (daysOfDiference > 30)
-                    {
-                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
-                    }
-                    else
-                    {
-                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGray;
+                        if (daysOfDiference >= 0 && daysOfDiference <= 10)
+                        {
+                            dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
+                        }
+                        else if (daysOfDiference > 10 && daysOfDiference <= 30)
+                        {
+                            dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
+                        }
+                        else if (daysOfDiference > 30)
+                        {
+                            dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
+                        }
+                        else
+                        {
+                            dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGray;
+                        }
                     }
                 }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error  " + ex.Message);
             }
         }
 
@@ -185,7 +193,60 @@ namespace CTZ.View.Instruments
         {
             Dgv_Instruments.DataSource = instrumentosBindingSource1;
             colorCellsStatus(8, Dgv_Instruments);
+
+            TxtBox_Brand.Clear();
+            TxtBox_Equino.Clear();
+            TxtBox_InstrumentName.Clear();
         }
 
+        private void Btn_Equino_InstrumentsCertificates_Click(object sender, EventArgs e)
+        {
+
+            if (controler.serchInstrumenByEquino(TxtBox_InstrumentsCertificatesEquino.Text))
+            {
+                C_View_Instrument_Certificate cotrolerInstrumentCertificate = new C_View_Instrument_Certificate();
+                Dgv_Instruments_Certificates.DataSource = cotrolerInstrumentCertificate.getAllInstrumentCertificate(TxtBox_InstrumentsCertificatesEquino.Text);
+                colorCellsStatus(12, Dgv_Instruments_Certificates);
+                colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
+            }
+            else
+            {
+                MessageBox.Show("El instrumento no existe, o dejaste el campo vacio");
+            }
+        }
+
+        private void Dgv_Instruments_Certificates_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.instrumentosCertificadoBindingSource2.Filter =this.Dgv_Instruments_Certificates.FilterString;
+            colorCellsStatus(12,Dgv_Instruments_Certificates);
+        }
+
+        private void Btn_Instruments_Certificates_Click(object sender, EventArgs e)
+        {
+            C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
+            Dgv_Instruments_Certificates.DataSource=controler.getAllInstrumentCertificateByInstrument(TxtBox_InstrumentNameCertificates.Text);
+            colorCellsStatus(12, Dgv_Instruments_Certificates);
+            colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
+        }
+
+        private void Btn_Serch_Instrument_CertificatesBrand_Click(object sender, EventArgs e)
+        {
+            C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
+            Dgv_Instruments_Certificates.DataSource = controler.getAllInstrumentCertificateByBrand(TxtBox_InstrumentsCertificatesBrand.Text);
+            colorCellsStatus(12, Dgv_Instruments_Certificates);
+            colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
+        }
+
+        private void Btn_ClearFilterInstrumentCertificate_Click(object sender, EventArgs e)
+        {
+            Dgv_Instruments_Certificates.DataSource = instrumentosCertificadoBindingSource2;
+            colorCellsStatus(12, Dgv_Instruments_Certificates);
+            colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
+            TxtBox_InstrumentNameCertificates.Clear();
+            TxtBox_InstrumentsCertificatesBrand.Clear();
+            TxtBox_InstrumentsCertificatesEquino.Clear();
+        }
+
+        
     }
 }

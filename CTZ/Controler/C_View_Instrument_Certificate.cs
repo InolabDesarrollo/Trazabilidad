@@ -33,5 +33,16 @@ namespace CTZ.Controlador
             }
             return dateOfNextCalibration.Substring(0,11);
         }
+
+        public DataTable getAllInstrumentCertificateByInstrument(string instrument)
+        {
+            return repository.getAllInstrumentCertificateByInstrument(instrument);
+        }
+
+        public DataTable getAllInstrumentCertificateByBrand(string brand)
+        {
+            return repository.getAllInstrumentCertificateByBrand(brand);
+        }
+
     }
 }
