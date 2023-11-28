@@ -95,6 +95,9 @@ namespace CTZ.Vista
             instrument.ubication = TxtBox_Ubication.Text;
             instrument.observation = TxtBox_Observation.Text;
             instrument.status = ComboBox_Status.SelectedItem.ToString();
+            instrument.magnitude =TxtBox_Magnitude.Text;
+            instrument.range = TxtBox_Range.Text;
+            instrument.accessories = TxtBox_Accessories.Text;
 
             instrument.updateInstrument();
             clearMenu();

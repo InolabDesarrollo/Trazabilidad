@@ -52,7 +52,8 @@ namespace CTZ.Modelo.Trazabilidad
         {
             return conexion.executeQuery("UPDATE Instrumentos SET ID_Instrumentos = '"+instrument.id+"', " +
                 " INSTRUMENTO = '"+instrument.instrument +"', MARCA = '"+instrument.brand+"', MODELO='"+instrument.model+"',N#S# = '"+instrument.numberOfSerie+"', \r\n" +
-                " UBICACIÓN='"+instrument.ubication+"',OBSERVACIÓN='"+instrument.observation+"', ESTATUS='"+instrument.status+"' WHERE ID_Instrumentos = '"+instrument.id+"';");
+                " UBICACIÓN='"+instrument.ubication+"',OBSERVACIÓN='"+instrument.observation+"', ESTATUS='"+instrument.status+ "', MAGNITUD ='"+instrument.magnitude+"', RANGO= '"+instrument.range+ "', ACCESORIOS = '"+instrument.accessories+"' " +
+                " WHERE ID_Instrumentos = '" + instrument.id+"';");
         }
 
         public bool serchInstrument(string id)

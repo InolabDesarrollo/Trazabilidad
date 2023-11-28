@@ -41,6 +41,9 @@
             this.BtnUnassign_Certificate = new MaterialSkin.Controls.MaterialButton();
             this.Lbl_Certificate = new MaterialSkin.Controls.MaterialLabel();
             this.Lbl_Id_Instrument = new MaterialSkin.Controls.MaterialLabel();
+            this.TxtBox_Magnitude = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Range = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Accessories = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // TxtBox_Instrument
@@ -55,7 +58,7 @@
             this.TxtBox_Instrument.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Instrument.Multiline = false;
             this.TxtBox_Instrument.Name = "TxtBox_Instrument";
-            this.TxtBox_Instrument.Size = new System.Drawing.Size(374, 50);
+            this.TxtBox_Instrument.Size = new System.Drawing.Size(308, 50);
             this.TxtBox_Instrument.TabIndex = 48;
             this.TxtBox_Instrument.Text = "";
             this.TxtBox_Instrument.TrailingIcon = null;
@@ -67,12 +70,12 @@
             this.TxtBox_Brand.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Brand.Hint = "MARCA";
             this.TxtBox_Brand.LeadingIcon = null;
-            this.TxtBox_Brand.Location = new System.Drawing.Point(416, 133);
+            this.TxtBox_Brand.Location = new System.Drawing.Point(337, 368);
             this.TxtBox_Brand.MaxLength = 50;
             this.TxtBox_Brand.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Brand.Multiline = false;
             this.TxtBox_Brand.Name = "TxtBox_Brand";
-            this.TxtBox_Brand.Size = new System.Drawing.Size(374, 50);
+            this.TxtBox_Brand.Size = new System.Drawing.Size(281, 50);
             this.TxtBox_Brand.TabIndex = 49;
             this.TxtBox_Brand.Text = "";
             this.TxtBox_Brand.TrailingIcon = null;
@@ -89,7 +92,7 @@
             this.TxtBox_Model.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Model.Multiline = false;
             this.TxtBox_Model.Name = "TxtBox_Model";
-            this.TxtBox_Model.Size = new System.Drawing.Size(374, 50);
+            this.TxtBox_Model.Size = new System.Drawing.Size(308, 50);
             this.TxtBox_Model.TabIndex = 50;
             this.TxtBox_Model.Text = "";
             this.TxtBox_Model.TrailingIcon = null;
@@ -101,12 +104,12 @@
             this.TxtBox_NumSerie.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_NumSerie.Hint = "NUMSERIE";
             this.TxtBox_NumSerie.LeadingIcon = null;
-            this.TxtBox_NumSerie.Location = new System.Drawing.Point(416, 213);
+            this.TxtBox_NumSerie.Location = new System.Drawing.Point(637, 133);
             this.TxtBox_NumSerie.MaxLength = 50;
             this.TxtBox_NumSerie.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_NumSerie.Multiline = false;
             this.TxtBox_NumSerie.Name = "TxtBox_NumSerie";
-            this.TxtBox_NumSerie.Size = new System.Drawing.Size(374, 50);
+            this.TxtBox_NumSerie.Size = new System.Drawing.Size(281, 50);
             this.TxtBox_NumSerie.TabIndex = 51;
             this.TxtBox_NumSerie.Text = "";
             this.TxtBox_NumSerie.TrailingIcon = null;
@@ -118,12 +121,12 @@
             this.TxtBox_Observation.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Observation.Hint = "OBSERVACION";
             this.TxtBox_Observation.LeadingIcon = null;
-            this.TxtBox_Observation.Location = new System.Drawing.Point(416, 292);
+            this.TxtBox_Observation.Location = new System.Drawing.Point(637, 213);
             this.TxtBox_Observation.MaxLength = 50;
             this.TxtBox_Observation.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Observation.Multiline = false;
             this.TxtBox_Observation.Name = "TxtBox_Observation";
-            this.TxtBox_Observation.Size = new System.Drawing.Size(374, 50);
+            this.TxtBox_Observation.Size = new System.Drawing.Size(281, 50);
             this.TxtBox_Observation.TabIndex = 53;
             this.TxtBox_Observation.Text = "";
             this.TxtBox_Observation.TrailingIcon = null;
@@ -152,7 +155,7 @@
             this.ComboBox_Status.MaxDropDownItems = 4;
             this.ComboBox_Status.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Status.Name = "ComboBox_Status";
-            this.ComboBox_Status.Size = new System.Drawing.Size(374, 49);
+            this.ComboBox_Status.Size = new System.Drawing.Size(308, 49);
             this.ComboBox_Status.StartIndex = 0;
             this.ComboBox_Status.TabIndex = 54;
             // 
@@ -163,7 +166,7 @@
             this.Btn_Update_Instrument.Depth = 0;
             this.Btn_Update_Instrument.HighEmphasis = true;
             this.Btn_Update_Instrument.Icon = null;
-            this.Btn_Update_Instrument.Location = new System.Drawing.Point(449, 382);
+            this.Btn_Update_Instrument.Location = new System.Drawing.Point(637, 382);
             this.Btn_Update_Instrument.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Update_Instrument.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Update_Instrument.Name = "Btn_Update_Instrument";
@@ -187,7 +190,7 @@
             this.TxtBox_Ubication.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Ubication.Multiline = false;
             this.TxtBox_Ubication.Name = "TxtBox_Ubication";
-            this.TxtBox_Ubication.Size = new System.Drawing.Size(374, 50);
+            this.TxtBox_Ubication.Size = new System.Drawing.Size(308, 50);
             this.TxtBox_Ubication.TabIndex = 56;
             this.TxtBox_Ubication.Text = "";
             this.TxtBox_Ubication.TrailingIcon = null;
@@ -206,11 +209,11 @@
             this.ComboBox_Certificate.FormattingEnabled = true;
             this.ComboBox_Certificate.IntegralHeight = false;
             this.ComboBox_Certificate.ItemHeight = 43;
-            this.ComboBox_Certificate.Location = new System.Drawing.Point(23, 494);
+            this.ComboBox_Certificate.Location = new System.Drawing.Point(23, 529);
             this.ComboBox_Certificate.MaxDropDownItems = 4;
             this.ComboBox_Certificate.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Certificate.Name = "ComboBox_Certificate";
-            this.ComboBox_Certificate.Size = new System.Drawing.Size(726, 49);
+            this.ComboBox_Certificate.Size = new System.Drawing.Size(895, 49);
             this.ComboBox_Certificate.StartIndex = 0;
             this.ComboBox_Certificate.TabIndex = 59;
             // 
@@ -221,7 +224,7 @@
             this.BtnNew_Certificate.Depth = 0;
             this.BtnNew_Certificate.HighEmphasis = true;
             this.BtnNew_Certificate.Icon = null;
-            this.BtnNew_Certificate.Location = new System.Drawing.Point(584, 567);
+            this.BtnNew_Certificate.Location = new System.Drawing.Point(753, 587);
             this.BtnNew_Certificate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnNew_Certificate.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnNew_Certificate.Name = "BtnNew_Certificate";
@@ -240,7 +243,7 @@
             this.BtnUnassign_Certificate.Depth = 0;
             this.BtnUnassign_Certificate.HighEmphasis = true;
             this.BtnUnassign_Certificate.Icon = null;
-            this.BtnUnassign_Certificate.Location = new System.Drawing.Point(23, 567);
+            this.BtnUnassign_Certificate.Location = new System.Drawing.Point(23, 587);
             this.BtnUnassign_Certificate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnUnassign_Certificate.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnUnassign_Certificate.Name = "BtnUnassign_Certificate";
@@ -257,7 +260,7 @@
             this.Lbl_Certificate.AutoSize = true;
             this.Lbl_Certificate.Depth = 0;
             this.Lbl_Certificate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Certificate.Location = new System.Drawing.Point(20, 448);
+            this.Lbl_Certificate.Location = new System.Drawing.Point(23, 497);
             this.Lbl_Certificate.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Certificate.Name = "Lbl_Certificate";
             this.Lbl_Certificate.Size = new System.Drawing.Size(109, 19);
@@ -276,12 +279,66 @@
             this.Lbl_Id_Instrument.TabIndex = 63;
             this.Lbl_Id_Instrument.Text = "materialLabel1";
             // 
+            // TxtBox_Magnitude
+            // 
+            this.TxtBox_Magnitude.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Magnitude.Depth = 0;
+            this.TxtBox_Magnitude.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Magnitude.Hint = "MAGNITUD";
+            this.TxtBox_Magnitude.LeadingIcon = null;
+            this.TxtBox_Magnitude.Location = new System.Drawing.Point(350, 133);
+            this.TxtBox_Magnitude.MaxLength = 50;
+            this.TxtBox_Magnitude.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Magnitude.Multiline = false;
+            this.TxtBox_Magnitude.Name = "TxtBox_Magnitude";
+            this.TxtBox_Magnitude.Size = new System.Drawing.Size(268, 50);
+            this.TxtBox_Magnitude.TabIndex = 64;
+            this.TxtBox_Magnitude.Text = "";
+            this.TxtBox_Magnitude.TrailingIcon = null;
+            // 
+            // TxtBox_Range
+            // 
+            this.TxtBox_Range.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Range.Depth = 0;
+            this.TxtBox_Range.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Range.Hint = "RANGO";
+            this.TxtBox_Range.LeadingIcon = null;
+            this.TxtBox_Range.Location = new System.Drawing.Point(350, 213);
+            this.TxtBox_Range.MaxLength = 50;
+            this.TxtBox_Range.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Range.Multiline = false;
+            this.TxtBox_Range.Name = "TxtBox_Range";
+            this.TxtBox_Range.Size = new System.Drawing.Size(268, 50);
+            this.TxtBox_Range.TabIndex = 65;
+            this.TxtBox_Range.Text = "";
+            this.TxtBox_Range.TrailingIcon = null;
+            // 
+            // TxtBox_Accessories
+            // 
+            this.TxtBox_Accessories.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Accessories.Depth = 0;
+            this.TxtBox_Accessories.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Accessories.Hint = "ACCESORIOS";
+            this.TxtBox_Accessories.LeadingIcon = null;
+            this.TxtBox_Accessories.Location = new System.Drawing.Point(350, 291);
+            this.TxtBox_Accessories.MaxLength = 50;
+            this.TxtBox_Accessories.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Accessories.Multiline = false;
+            this.TxtBox_Accessories.Name = "TxtBox_Accessories";
+            this.TxtBox_Accessories.Size = new System.Drawing.Size(268, 50);
+            this.TxtBox_Accessories.TabIndex = 66;
+            this.TxtBox_Accessories.Text = "";
+            this.TxtBox_Accessories.TrailingIcon = null;
+            // 
             // UpdateInstrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(817, 628);
+            this.ClientSize = new System.Drawing.Size(949, 697);
+            this.Controls.Add(this.TxtBox_Accessories);
+            this.Controls.Add(this.TxtBox_Range);
+            this.Controls.Add(this.TxtBox_Magnitude);
             this.Controls.Add(this.Lbl_Id_Instrument);
             this.Controls.Add(this.Lbl_Certificate);
             this.Controls.Add(this.BtnNew_Certificate);
@@ -317,5 +374,8 @@
         private MaterialSkin.Controls.MaterialButton BtnUnassign_Certificate;
         private MaterialSkin.Controls.MaterialLabel Lbl_Certificate;
         private MaterialSkin.Controls.MaterialLabel Lbl_Id_Instrument;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Magnitude;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Range;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Accessories;
     }
 }

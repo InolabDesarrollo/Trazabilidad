@@ -91,6 +91,10 @@ namespace CTZ.Vista.Responsabilitis
             instruments.ubication = ubication;
             instruments.observation = observation;
             instruments.status = status;
+            instruments.magnitude = magnitude;
+            instruments.range = range;
+            instruments.accessories = accessories;
+
             controler.updateInstrument(instruments);
         }
         public bool serchInstrument(string id)
