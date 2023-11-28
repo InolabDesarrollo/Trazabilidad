@@ -11,9 +11,9 @@ namespace CTZ.Model.Trazabilidad
 {
     public class Laboratory_Repository
     {
-        ConexionTrazabilidad conexion;
+        ConexionTrazability conexion;
         public Laboratory_Repository() {
-            conexion= new ConexionTrazabilidad();
+            conexion= new ConexionTrazability();
         }
 
         public DataTable selectLaboratories()

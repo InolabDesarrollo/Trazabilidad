@@ -11,9 +11,9 @@ namespace CTZ.Modelo.Trazabilidad
 {
     public class Instrument_Repository
     {
-        ConexionTrazabilidad conexion;
+        ConexionTrazability conexion;
         public Instrument_Repository() {
-            conexion = new ConexionTrazabilidad();
+            conexion = new ConexionTrazability();
         }
 
         public DataTable consultarRegistrosActivos()
@@ -37,9 +37,10 @@ namespace CTZ.Modelo.Trazabilidad
         }
         public void addNewInstrument(Instruments instrument)
         {
-            conexion.executeQuery("INSERT Instrumentos(ID_Instrumentos,INSTRUMENTO,MARCA,MODELO,N#S#,UBICACIÓN,OBSERVACIÓN,ESTATUS) \r\n" +
+            conexion.executeQuery("INSERT Instrumentos(ID_Instrumentos,INSTRUMENTO,MARCA,MODELO,N#S#,UBICACIÓN,OBSERVACIÓN,ESTATUS,MAGNITUD,RANGO,ACCESORIOS) \r\n" +
                 "values('"+instrument.id+"','"+instrument.instrument+"','"+instrument.brand+"','"+instrument.model+"','"
-                +instrument.numberOfSerie+"','"+instrument.ubication+"','"+instrument.observation+"','"+instrument.status+"');");
+                +instrument.numberOfSerie+"','"+instrument.ubication+"','"+instrument.observation+"','"+instrument.status+"','"
+                +instrument.magnitude+"','"+instrument.range+"', '"+instrument.accessories+"');");
         }
 
         public void deleteInstrument(string id )

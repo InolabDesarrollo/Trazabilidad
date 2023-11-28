@@ -10,9 +10,9 @@ namespace CTZ.Modelo.Trazabilidad
 {
     public class RelationCertificateInstrument_Repository
     {
-        ConexionTrazabilidad conexion;
+        ConexionTrazability conexion;
         public RelationCertificateInstrument_Repository() {
-            conexion = new ConexionTrazabilidad();
+            conexion = new ConexionTrazability();
         }
 
         public bool create(int idInstrument, int idCertificate)

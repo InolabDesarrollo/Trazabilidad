@@ -12,9 +12,9 @@ namespace CTZ.Modelo.Trazabilidad
 {
     public class ExternalTraceability_Repository
     {
-        ConexionTrazabilidad conexion;
+        ConexionTrazability conexion;
         public ExternalTraceability_Repository() {
-            conexion = new ConexionTrazabilidad();         
+            conexion = new ConexionTrazability();         
         }
 
         public void add(ExternalTraceability_Letter traceability_Letter)

@@ -11,10 +11,10 @@ namespace CTZ.Controlador
 {
     public class C_TraceabilityRepository
     {
-        Traceability_Repository repository;
+        TraceabilityLetter_Repository repository;
         public C_TraceabilityRepository()
         {
-            repository = new Traceability_Repository();
+            repository = new TraceabilityLetter_Repository();
         }
 
         public void add(InternTraceability_Letter traceability)

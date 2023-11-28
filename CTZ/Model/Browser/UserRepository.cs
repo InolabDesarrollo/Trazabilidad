@@ -11,7 +11,12 @@ namespace CTZ.Modelo.Browser
 {
     public class UserRepository :IUserRepository
     {
-        ConexionBrowser conexion = new ConexionBrowser();
+        private ConexionBrowser conexion;
+
+        public UserRepository()
+        {
+            conexion = new ConexionBrowser();
+        }
         public DataTable loginUser(string user, string password)
         {
             string query = "select IdUsuario,IdRol,IdArea,Mail from Usuarios where Usuario='" + user + "' and Password_='"

@@ -10,9 +10,9 @@ namespace CTZ.Modelo.Trazabilidad
 {
     public class View_Instrument_Certificate_Repository
     {
-        ConexionTrazabilidad conexion;
+        ConexionTrazability conexion;
         public View_Instrument_Certificate_Repository() {
-            conexion = new ConexionTrazabilidad();  
+            conexion = new ConexionTrazability();  
         }
 
         public DataTable getAllInstrumentCertificate(string equino)

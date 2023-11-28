@@ -12,9 +12,9 @@ namespace CTZ.Modelo.Trazabilidad
 {
     public class Instrument_Assignment_Repository
     {
-        ConexionTrazabilidad conexion;      
+        ConexionTrazability conexion;      
         public Instrument_Assignment_Repository() {
-            conexion = new ConexionTrazabilidad();
+            conexion = new ConexionTrazability();
         }
 
         public bool registerDeliveryInstrument(Instrument_Assignments instrumentAssignments)

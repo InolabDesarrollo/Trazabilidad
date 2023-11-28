@@ -11,9 +11,9 @@ namespace CTZ.Modelo.Trazabilidad
 {
     public class Certificate_Repository
     {
-        ConexionTrazabilidad conexion;
+        ConexionTrazability conexion;
         public Certificate_Repository() {
-            conexion = new ConexionTrazabilidad();
+            conexion = new ConexionTrazability();
         }
         
         public void add(Certificate certificate)

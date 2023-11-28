@@ -38,6 +38,9 @@
             this.TxtBox_Instrument = new MaterialSkin.Controls.MaterialTextBox();
             this.ComboBox_Status = new MaterialSkin.Controls.MaterialComboBox();
             this.ComboBox_Ubication = new MaterialSkin.Controls.MaterialComboBox();
+            this.TxtBox_Magnitud = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Accessories = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Range = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // Btn_Add_Instrument
@@ -47,7 +50,7 @@
             this.Btn_Add_Instrument.Depth = 0;
             this.Btn_Add_Instrument.HighEmphasis = true;
             this.Btn_Add_Instrument.Icon = null;
-            this.Btn_Add_Instrument.Location = new System.Drawing.Point(321, 659);
+            this.Btn_Add_Instrument.Location = new System.Drawing.Point(716, 429);
             this.Btn_Add_Instrument.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Instrument.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Instrument.Name = "Btn_Add_Instrument";
@@ -72,7 +75,7 @@
             this.TxtBox_Id.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Id.Depth = 0;
             this.TxtBox_Id.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_Id.Hint = "ID";
+            this.TxtBox_Id.Hint = "Equino";
             this.TxtBox_Id.LeadingIcon = null;
             this.TxtBox_Id.Location = new System.Drawing.Point(25, 76);
             this.TxtBox_Id.MaxLength = 50;
@@ -89,7 +92,7 @@
             this.TxBox_Brand.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxBox_Brand.Depth = 0;
             this.TxBox_Brand.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxBox_Brand.Hint = "MARCA";
+            this.TxBox_Brand.Hint = "Marca";
             this.TxBox_Brand.LeadingIcon = null;
             this.TxBox_Brand.Location = new System.Drawing.Point(25, 214);
             this.TxBox_Brand.MaxLength = 50;
@@ -106,7 +109,7 @@
             this.TxtBox_Model.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Model.Depth = 0;
             this.TxtBox_Model.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_Model.Hint = "MODELO";
+            this.TxtBox_Model.Hint = "Modelo";
             this.TxtBox_Model.LeadingIcon = null;
             this.TxtBox_Model.Location = new System.Drawing.Point(25, 283);
             this.TxtBox_Model.MaxLength = 50;
@@ -123,9 +126,9 @@
             this.TxtBox_NumSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_NumSerie.Depth = 0;
             this.TxtBox_NumSerie.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_NumSerie.Hint = "NUMSERIE";
+            this.TxtBox_NumSerie.Hint = "Numero de serie";
             this.TxtBox_NumSerie.LeadingIcon = null;
-            this.TxtBox_NumSerie.Location = new System.Drawing.Point(25, 363);
+            this.TxtBox_NumSerie.Location = new System.Drawing.Point(25, 349);
             this.TxtBox_NumSerie.MaxLength = 50;
             this.TxtBox_NumSerie.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_NumSerie.Multiline = false;
@@ -140,9 +143,9 @@
             this.TxtBox_Observation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Observation.Depth = 0;
             this.TxtBox_Observation.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_Observation.Hint = "OBSERVACION";
+            this.TxtBox_Observation.Hint = "Observacion";
             this.TxtBox_Observation.LeadingIcon = null;
-            this.TxtBox_Observation.Location = new System.Drawing.Point(25, 517);
+            this.TxtBox_Observation.Location = new System.Drawing.Point(430, 283);
             this.TxtBox_Observation.MaxLength = 50;
             this.TxtBox_Observation.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Observation.Multiline = false;
@@ -157,7 +160,7 @@
             this.TxtBox_Instrument.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Instrument.Depth = 0;
             this.TxtBox_Instrument.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_Instrument.Hint = "INSTRUMENTO";
+            this.TxtBox_Instrument.Hint = "Instrumento";
             this.TxtBox_Instrument.LeadingIcon = null;
             this.TxtBox_Instrument.Location = new System.Drawing.Point(25, 145);
             this.TxtBox_Instrument.MaxLength = 50;
@@ -181,7 +184,7 @@
             this.ComboBox_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.ComboBox_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ComboBox_Status.FormattingEnabled = true;
-            this.ComboBox_Status.Hint = "ESTATUS";
+            this.ComboBox_Status.Hint = "Estatus";
             this.ComboBox_Status.IntegralHeight = false;
             this.ComboBox_Status.ItemHeight = 43;
             this.ComboBox_Status.Items.AddRange(new object[] {
@@ -189,7 +192,7 @@
             "FUERA DE USO",
             "CALIBRANDO",
             "PENDIENTE"});
-            this.ComboBox_Status.Location = new System.Drawing.Point(25, 587);
+            this.ComboBox_Status.Location = new System.Drawing.Point(430, 359);
             this.ComboBox_Status.MaxDropDownItems = 4;
             this.ComboBox_Status.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Status.Name = "ComboBox_Status";
@@ -209,14 +212,14 @@
             this.ComboBox_Ubication.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.ComboBox_Ubication.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ComboBox_Ubication.FormattingEnabled = true;
-            this.ComboBox_Ubication.Hint = "UBICACION";
+            this.ComboBox_Ubication.Hint = "Ubicacion";
             this.ComboBox_Ubication.IntegralHeight = false;
             this.ComboBox_Ubication.ItemHeight = 43;
             this.ComboBox_Ubication.Items.AddRange(new object[] {
             "GUADALAJARA",
             "ALMACEN",
             "PENDIENTE"});
-            this.ComboBox_Ubication.Location = new System.Drawing.Point(25, 441);
+            this.ComboBox_Ubication.Location = new System.Drawing.Point(430, 215);
             this.ComboBox_Ubication.MaxDropDownItems = 4;
             this.ComboBox_Ubication.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Ubication.Name = "ComboBox_Ubication";
@@ -224,11 +227,65 @@
             this.ComboBox_Ubication.StartIndex = 0;
             this.ComboBox_Ubication.TabIndex = 49;
             // 
+            // TxtBox_Magnitud
+            // 
+            this.TxtBox_Magnitud.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Magnitud.Depth = 0;
+            this.TxtBox_Magnitud.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Magnitud.Hint = "Magnitud";
+            this.TxtBox_Magnitud.LeadingIcon = null;
+            this.TxtBox_Magnitud.Location = new System.Drawing.Point(25, 415);
+            this.TxtBox_Magnitud.MaxLength = 50;
+            this.TxtBox_Magnitud.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Magnitud.Multiline = false;
+            this.TxtBox_Magnitud.Name = "TxtBox_Magnitud";
+            this.TxtBox_Magnitud.Size = new System.Drawing.Size(374, 50);
+            this.TxtBox_Magnitud.TabIndex = 50;
+            this.TxtBox_Magnitud.Text = "";
+            this.TxtBox_Magnitud.TrailingIcon = null;
+            // 
+            // TxtBox_Accessories
+            // 
+            this.TxtBox_Accessories.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Accessories.Depth = 0;
+            this.TxtBox_Accessories.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Accessories.Hint = "Accesorios";
+            this.TxtBox_Accessories.LeadingIcon = null;
+            this.TxtBox_Accessories.Location = new System.Drawing.Point(430, 144);
+            this.TxtBox_Accessories.MaxLength = 50;
+            this.TxtBox_Accessories.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Accessories.Multiline = false;
+            this.TxtBox_Accessories.Name = "TxtBox_Accessories";
+            this.TxtBox_Accessories.Size = new System.Drawing.Size(374, 50);
+            this.TxtBox_Accessories.TabIndex = 52;
+            this.TxtBox_Accessories.Text = "";
+            this.TxtBox_Accessories.TrailingIcon = null;
+            // 
+            // TxtBox_Range
+            // 
+            this.TxtBox_Range.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Range.Depth = 0;
+            this.TxtBox_Range.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Range.Hint = "Rango";
+            this.TxtBox_Range.LeadingIcon = null;
+            this.TxtBox_Range.Location = new System.Drawing.Point(430, 76);
+            this.TxtBox_Range.MaxLength = 50;
+            this.TxtBox_Range.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Range.Multiline = false;
+            this.TxtBox_Range.Name = "TxtBox_Range";
+            this.TxtBox_Range.Size = new System.Drawing.Size(374, 50);
+            this.TxtBox_Range.TabIndex = 53;
+            this.TxtBox_Range.Text = "";
+            this.TxtBox_Range.TrailingIcon = null;
+            // 
             // AddInstrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 720);
+            this.ClientSize = new System.Drawing.Size(834, 537);
+            this.Controls.Add(this.TxtBox_Range);
+            this.Controls.Add(this.TxtBox_Accessories);
+            this.Controls.Add(this.TxtBox_Magnitud);
             this.Controls.Add(this.ComboBox_Ubication);
             this.Controls.Add(this.ComboBox_Status);
             this.Controls.Add(this.TxtBox_Instrument);
@@ -257,5 +314,8 @@
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Instrument;
         private MaterialSkin.Controls.MaterialComboBox ComboBox_Status;
         private MaterialSkin.Controls.MaterialComboBox ComboBox_Ubication;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Magnitud;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Accessories;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Range;
     }
 }

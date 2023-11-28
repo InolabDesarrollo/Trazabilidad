@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using CTZ.Controler.Instruments;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,9 +22,11 @@ namespace CTZ.Vista.Responsabilitis
         private void Btn_Add_Instrument_Click(object sender, EventArgs e)
         {
             Instruments instrument = new Instruments(TxtBox_Id.Text,TxtBox_Instrument.Text,TxBox_Brand.Text,TxtBox_Model.Text
-                ,TxtBox_NumSerie.Text,ComboBox_Ubication.SelectedItem.ToString(),TxtBox_Observation.Text, ComboBox_Status.SelectedItem.ToString()); 
+                ,TxtBox_NumSerie.Text,ComboBox_Ubication.SelectedItem.ToString(),TxtBox_Observation.Text, ComboBox_Status.SelectedItem.ToString(),
+                TxtBox_Magnitud.Text,TxtBox_Range.Text,TxtBox_Accessories.Text);
             instrument.addNewInstrument();
             clearMenu();
+            MessageBox.Show("Instrumento agregado correctamente");
         }
 
         private void clearMenu()
@@ -34,6 +37,9 @@ namespace CTZ.Vista.Responsabilitis
             TxtBox_Model.Clear();
             TxtBox_NumSerie.Clear();
             TxtBox_Observation.Clear();
+            TxtBox_Magnitud.Clear();
+            TxtBox_Range.Clear();
+            TxtBox_Accessories.Clear();
         }
     }
 }

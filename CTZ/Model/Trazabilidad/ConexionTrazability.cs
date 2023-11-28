@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CTZ.Modelo.Documentacion
 {
-    public class ConexionTrazabilidad :Conexion
+    public class ConexionTrazability :Conexion
     {
-        public ConexionTrazabilidad()
+        public ConexionTrazability()
         {
             if (databaseTest)
             {

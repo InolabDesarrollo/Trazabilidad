@@ -307,6 +307,12 @@ namespace CTZ {
             
             private global::System.Data.DataColumn columnACCESORIOS_HUMEDAD;
             
+            private global::System.Data.DataColumn columnMAGNITUD;
+            
+            private global::System.Data.DataColumn columnRANGO;
+            
+            private global::System.Data.DataColumn columnACCESORIOS;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public InstrumentosDataTable() {
@@ -454,6 +460,30 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MAGNITUDColumn {
+                get {
+                    return this.columnMAGNITUD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RANGOColumn {
+                get {
+                    return this.columnRANGO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ACCESORIOSColumn {
+                get {
+                    return this.columnACCESORIOS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +519,23 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public InstrumentosRow AddInstrumentosRow(string ID_Instrumentos, string INSTRUMENTO, string MARCA, string MODELO, string _N_S_, string UBICACIÓN, string OBSERVACIÓN, string ESTATUS, string ESTATUS_ASIGNACION, string TEMPERATURA, string HUMEDAD, string ACCESORIOS_TEMPERATURA, string ACCESORIOS_HUMEDAD) {
+            public InstrumentosRow AddInstrumentosRow(
+                        string ID_Instrumentos, 
+                        string INSTRUMENTO, 
+                        string MARCA, 
+                        string MODELO, 
+                        string _N_S_, 
+                        string UBICACIÓN, 
+                        string OBSERVACIÓN, 
+                        string ESTATUS, 
+                        string ESTATUS_ASIGNACION, 
+                        string TEMPERATURA, 
+                        string HUMEDAD, 
+                        string ACCESORIOS_TEMPERATURA, 
+                        string ACCESORIOS_HUMEDAD, 
+                        string MAGNITUD, 
+                        string RANGO, 
+                        string ACCESORIOS) {
                 InstrumentosRow rowInstrumentosRow = ((InstrumentosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -505,7 +551,10 @@ namespace CTZ {
                         TEMPERATURA,
                         HUMEDAD,
                         ACCESORIOS_TEMPERATURA,
-                        ACCESORIOS_HUMEDAD};
+                        ACCESORIOS_HUMEDAD,
+                        MAGNITUD,
+                        RANGO,
+                        ACCESORIOS};
                 rowInstrumentosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInstrumentosRow);
                 return rowInstrumentosRow;
@@ -549,6 +598,9 @@ namespace CTZ {
                 this.columnHUMEDAD = base.Columns["HUMEDAD"];
                 this.columnACCESORIOS_TEMPERATURA = base.Columns["ACCESORIOS_TEMPERATURA"];
                 this.columnACCESORIOS_HUMEDAD = base.Columns["ACCESORIOS_HUMEDAD"];
+                this.columnMAGNITUD = base.Columns["MAGNITUD"];
+                this.columnRANGO = base.Columns["RANGO"];
+                this.columnACCESORIOS = base.Columns["ACCESORIOS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -584,6 +636,12 @@ namespace CTZ {
                 base.Columns.Add(this.columnACCESORIOS_TEMPERATURA);
                 this.columnACCESORIOS_HUMEDAD = new global::System.Data.DataColumn("ACCESORIOS_HUMEDAD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnACCESORIOS_HUMEDAD);
+                this.columnMAGNITUD = new global::System.Data.DataColumn("MAGNITUD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAGNITUD);
+                this.columnRANGO = new global::System.Data.DataColumn("RANGO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRANGO);
+                this.columnACCESORIOS = new global::System.Data.DataColumn("ACCESORIOS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnACCESORIOS);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -605,6 +663,9 @@ namespace CTZ {
                 this.columnHUMEDAD.MaxLength = 1000;
                 this.columnACCESORIOS_TEMPERATURA.MaxLength = 500;
                 this.columnACCESORIOS_HUMEDAD.MaxLength = 500;
+                this.columnMAGNITUD.MaxLength = 1000;
+                this.columnRANGO.MaxLength = 1000;
+                this.columnACCESORIOS.MaxLength = 1000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -969,6 +1030,54 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MAGNITUD {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos.MAGNITUDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MAGNITUD\' de la tabla \'Instrumentos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos.MAGNITUDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string RANGO {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos.RANGOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'RANGO\' de la tabla \'Instrumentos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos.RANGOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ACCESORIOS {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos.ACCESORIOSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ACCESORIOS\' de la tabla \'Instrumentos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos.ACCESORIOSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsID_InstrumentosNull() {
                 return this.IsNull(this.tableInstrumentos.ID_InstrumentosColumn);
             }
@@ -1121,6 +1230,42 @@ namespace CTZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetACCESORIOS_HUMEDADNull() {
                 this[this.tableInstrumentos.ACCESORIOS_HUMEDADColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMAGNITUDNull() {
+                return this.IsNull(this.tableInstrumentos.MAGNITUDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMAGNITUDNull() {
+                this[this.tableInstrumentos.MAGNITUDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRANGONull() {
+                return this.IsNull(this.tableInstrumentos.RANGOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRANGONull() {
+                this[this.tableInstrumentos.RANGOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsACCESORIOSNull() {
+                return this.IsNull(this.tableInstrumentos.ACCESORIOSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetACCESORIOSNull() {
+                this[this.tableInstrumentos.ACCESORIOSColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1297,10 +1442,13 @@ namespace CTZ.TrazabilidadTest_InstrumentosTableAdapters {
             tableMapping.ColumnMappings.Add("HUMEDAD", "HUMEDAD");
             tableMapping.ColumnMappings.Add("ACCESORIOS_TEMPERATURA", "ACCESORIOS_TEMPERATURA");
             tableMapping.ColumnMappings.Add("ACCESORIOS_HUMEDAD", "ACCESORIOS_HUMEDAD");
+            tableMapping.ColumnMappings.Add("MAGNITUD", "MAGNITUD");
+            tableMapping.ColumnMappings.Add("RANGO", "RANGO");
+            tableMapping.ColumnMappings.Add("ACCESORIOS", "ACCESORIOS");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Instrumentos] WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Instrumentos = 1 AND [ID_Instrumentos] IS NULL) OR ([ID_Instrumentos] = @Original_ID_Instrumentos)) AND ((@IsNull_INSTRUMENTO = 1 AND [INSTRUMENTO] IS NULL) OR ([INSTRUMENTO] = @Original_INSTRUMENTO)) AND ((@IsNull_MARCA = 1 AND [MARCA] IS NULL) OR ([MARCA] = @Original_MARCA)) AND ((@IsNull_MODELO = 1 AND [MODELO] IS NULL) OR ([MODELO] = @Original_MODELO)) AND ((@IsNull_N#S# = 1 AND [N#S#] IS NULL) OR ([N#S#] = @Original_N#S#)) AND ((@IsNull_UBICACIÓN = 1 AND [UBICACIÓN] IS NULL) OR ([UBICACIÓN] = @Original_UBICACIÓN)) AND ((@IsNull_OBSERVACIÓN = 1 AND [OBSERVACIÓN] IS NULL) OR ([OBSERVACIÓN] = @Original_OBSERVACIÓN)) AND ((@IsNull_ESTATUS = 1 AND [ESTATUS] IS NULL) OR ([ESTATUS] = @Original_ESTATUS)) AND ((@IsNull_ESTATUS_ASIGNACION = 1 AND [ESTATUS_ASIGNACION] IS NULL) OR ([ESTATUS_ASIGNACION] = @Original_ESTATUS_ASIGNACION)) AND ((@IsNull_TEMPERATURA = 1 AND [TEMPERATURA] IS NULL) OR ([TEMPERATURA] = @Original_TEMPERATURA)) AND ((@IsNull_HUMEDAD = 1 AND [HUMEDAD] IS NULL) OR ([HUMEDAD] = @Original_HUMEDAD)) AND ((@IsNull_ACCESORIOS_TEMPERATURA = 1 AND [ACCESORIOS_TEMPERATURA] IS NULL) OR ([ACCESORIOS_TEMPERATURA] = @Original_ACCESORIOS_TEMPERATURA)) AND ((@IsNull_ACCESORIOS_HUMEDAD = 1 AND [ACCESORIOS_HUMEDAD] IS NULL) OR ([ACCESORIOS_HUMEDAD] = @Original_ACCESORIOS_HUMEDAD)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Instrumentos] WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Instrumentos = 1 AND [ID_Instrumentos] IS NULL) OR ([ID_Instrumentos] = @Original_ID_Instrumentos)) AND ((@IsNull_INSTRUMENTO = 1 AND [INSTRUMENTO] IS NULL) OR ([INSTRUMENTO] = @Original_INSTRUMENTO)) AND ((@IsNull_MARCA = 1 AND [MARCA] IS NULL) OR ([MARCA] = @Original_MARCA)) AND ((@IsNull_MODELO = 1 AND [MODELO] IS NULL) OR ([MODELO] = @Original_MODELO)) AND ((@IsNull_N#S# = 1 AND [N#S#] IS NULL) OR ([N#S#] = @Original_N#S#)) AND ((@IsNull_UBICACIÓN = 1 AND [UBICACIÓN] IS NULL) OR ([UBICACIÓN] = @Original_UBICACIÓN)) AND ((@IsNull_OBSERVACIÓN = 1 AND [OBSERVACIÓN] IS NULL) OR ([OBSERVACIÓN] = @Original_OBSERVACIÓN)) AND ((@IsNull_ESTATUS = 1 AND [ESTATUS] IS NULL) OR ([ESTATUS] = @Original_ESTATUS)) AND ((@IsNull_ESTATUS_ASIGNACION = 1 AND [ESTATUS_ASIGNACION] IS NULL) OR ([ESTATUS_ASIGNACION] = @Original_ESTATUS_ASIGNACION)) AND ((@IsNull_MAGNITUD = 1 AND [MAGNITUD] IS NULL) OR ([MAGNITUD] = @Original_MAGNITUD)) AND ((@IsNull_RANGO = 1 AND [RANGO] IS NULL) OR ([RANGO] = @Original_RANGO)) AND ((@IsNull_ACCESORIOS = 1 AND [ACCESORIOS] IS NULL) OR ([ACCESORIOS] = @Original_ACCESORIOS)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Instrumentos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1321,18 +1469,16 @@ namespace CTZ.TrazabilidadTest_InstrumentosTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESTATUS_ASIGNACION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS_ASIGNACION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTATUS_ASIGNACION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS_ASIGNACION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TEMPERATURA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEMPERATURA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEMPERATURA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEMPERATURA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HUMEDAD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HUMEDAD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HUMEDAD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HUMEDAD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ACCESORIOS_TEMPERATURA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_TEMPERATURA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCESORIOS_TEMPERATURA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_TEMPERATURA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ACCESORIOS_HUMEDAD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_HUMEDAD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCESORIOS_HUMEDAD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_HUMEDAD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MAGNITUD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAGNITUD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MAGNITUD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAGNITUD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RANGO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RANGO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ACCESORIOS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCESORIOS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Instrumentos] ([ID_Instrumentos], [INSTRUMENTO], [MARCA], [MODELO], [N#S#], [UBICACIÓN], [OBSERVACIÓN], [ESTATUS], [ESTATUS_ASIGNACION], [TEMPERATURA], [HUMEDAD], [ACCESORIOS_TEMPERATURA], [ACCESORIOS_HUMEDAD]) VALUES (@ID_Instrumentos, @INSTRUMENTO, @MARCA, @MODELO, @N#S#, @UBICACIÓN, @OBSERVACIÓN, @ESTATUS, @ESTATUS_ASIGNACION, @TEMPERATURA, @HUMEDAD, @ACCESORIOS_TEMPERATURA, @ACCESORIOS_HUMEDAD);
-SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNACION, TEMPERATURA, HUMEDAD, ACCESORIOS_TEMPERATURA, ACCESORIOS_HUMEDAD FROM Instrumentos WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Instrumentos] ([ID_Instrumentos], [INSTRUMENTO], [MARCA], [MODELO], [N#S#], [UBICACIÓN], [OBSERVACIÓN], [ESTATUS], [ESTATUS_ASIGNACION], [MAGNITUD], [RANGO], [ACCESORIOS]) VALUES (@ID_Instrumentos, @INSTRUMENTO, @MARCA, @MODELO, @N#S#, @UBICACIÓN, @OBSERVACIÓN, @ESTATUS, @ESTATUS_ASIGNACION, @MAGNITUD, @RANGO, @ACCESORIOS);
+SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNACION, MAGNITUD, RANGO, ACCESORIOS FROM Instrumentos WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Instrumentos", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INSTRUMENTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INSTRUMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1343,37 +1489,32 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBSERVACIÓN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBSERVACIÓN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTATUS_ASIGNACION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS_ASIGNACION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEMPERATURA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEMPERATURA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HUMEDAD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HUMEDAD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCESORIOS_TEMPERATURA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_TEMPERATURA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCESORIOS_HUMEDAD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_HUMEDAD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAGNITUD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAGNITUD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RANGO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCESORIOS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [Instrumentos] SET [ID_Instrumentos] = @ID_Instrumentos, [INSTRUMENTO] = @" +
                 "INSTRUMENTO, [MARCA] = @MARCA, [MODELO] = @MODELO, [N#S#] = @N#S#, [UBICACIÓN] =" +
                 " @UBICACIÓN, [OBSERVACIÓN] = @OBSERVACIÓN, [ESTATUS] = @ESTATUS, [ESTATUS_ASIGNA" +
-                "CION] = @ESTATUS_ASIGNACION, [TEMPERATURA] = @TEMPERATURA, [HUMEDAD] = @HUMEDAD," +
-                " [ACCESORIOS_TEMPERATURA] = @ACCESORIOS_TEMPERATURA, [ACCESORIOS_HUMEDAD] = @ACC" +
-                "ESORIOS_HUMEDAD WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Instrumentos = 1 A" +
-                "ND [ID_Instrumentos] IS NULL) OR ([ID_Instrumentos] = @Original_ID_Instrumentos)" +
-                ") AND ((@IsNull_INSTRUMENTO = 1 AND [INSTRUMENTO] IS NULL) OR ([INSTRUMENTO] = @" +
-                "Original_INSTRUMENTO)) AND ((@IsNull_MARCA = 1 AND [MARCA] IS NULL) OR ([MARCA] " +
-                "= @Original_MARCA)) AND ((@IsNull_MODELO = 1 AND [MODELO] IS NULL) OR ([MODELO] " +
-                "= @Original_MODELO)) AND ((@IsNull_N#S# = 1 AND [N#S#] IS NULL) OR ([N#S#] = @Or" +
-                "iginal_N#S#)) AND ((@IsNull_UBICACIÓN = 1 AND [UBICACIÓN] IS NULL) OR ([UBICACIÓ" +
-                "N] = @Original_UBICACIÓN)) AND ((@IsNull_OBSERVACIÓN = 1 AND [OBSERVACIÓN] IS NU" +
-                "LL) OR ([OBSERVACIÓN] = @Original_OBSERVACIÓN)) AND ((@IsNull_ESTATUS = 1 AND [E" +
-                "STATUS] IS NULL) OR ([ESTATUS] = @Original_ESTATUS)) AND ((@IsNull_ESTATUS_ASIGN" +
-                "ACION = 1 AND [ESTATUS_ASIGNACION] IS NULL) OR ([ESTATUS_ASIGNACION] = @Original" +
-                "_ESTATUS_ASIGNACION)) AND ((@IsNull_TEMPERATURA = 1 AND [TEMPERATURA] IS NULL) O" +
-                "R ([TEMPERATURA] = @Original_TEMPERATURA)) AND ((@IsNull_HUMEDAD = 1 AND [HUMEDA" +
-                "D] IS NULL) OR ([HUMEDAD] = @Original_HUMEDAD)) AND ((@IsNull_ACCESORIOS_TEMPERA" +
-                "TURA = 1 AND [ACCESORIOS_TEMPERATURA] IS NULL) OR ([ACCESORIOS_TEMPERATURA] = @O" +
-                "riginal_ACCESORIOS_TEMPERATURA)) AND ((@IsNull_ACCESORIOS_HUMEDAD = 1 AND [ACCES" +
-                "ORIOS_HUMEDAD] IS NULL) OR ([ACCESORIOS_HUMEDAD] = @Original_ACCESORIOS_HUMEDAD)" +
-                "));\r\nSELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OB" +
-                "SERVACIÓN, ESTATUS, ESTATUS_ASIGNACION, TEMPERATURA, HUMEDAD, ACCESORIOS_TEMPERA" +
-                "TURA, ACCESORIOS_HUMEDAD FROM Instrumentos WHERE (ID = @ID)";
+                "CION] = @ESTATUS_ASIGNACION, [MAGNITUD] = @MAGNITUD, [RANGO] = @RANGO, [ACCESORI" +
+                "OS] = @ACCESORIOS WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Instrumentos = 1" +
+                " AND [ID_Instrumentos] IS NULL) OR ([ID_Instrumentos] = @Original_ID_Instrumento" +
+                "s)) AND ((@IsNull_INSTRUMENTO = 1 AND [INSTRUMENTO] IS NULL) OR ([INSTRUMENTO] =" +
+                " @Original_INSTRUMENTO)) AND ((@IsNull_MARCA = 1 AND [MARCA] IS NULL) OR ([MARCA" +
+                "] = @Original_MARCA)) AND ((@IsNull_MODELO = 1 AND [MODELO] IS NULL) OR ([MODELO" +
+                "] = @Original_MODELO)) AND ((@IsNull_N#S# = 1 AND [N#S#] IS NULL) OR ([N#S#] = @" +
+                "Original_N#S#)) AND ((@IsNull_UBICACIÓN = 1 AND [UBICACIÓN] IS NULL) OR ([UBICAC" +
+                "IÓN] = @Original_UBICACIÓN)) AND ((@IsNull_OBSERVACIÓN = 1 AND [OBSERVACIÓN] IS " +
+                "NULL) OR ([OBSERVACIÓN] = @Original_OBSERVACIÓN)) AND ((@IsNull_ESTATUS = 1 AND " +
+                "[ESTATUS] IS NULL) OR ([ESTATUS] = @Original_ESTATUS)) AND ((@IsNull_ESTATUS_ASI" +
+                "GNACION = 1 AND [ESTATUS_ASIGNACION] IS NULL) OR ([ESTATUS_ASIGNACION] = @Origin" +
+                "al_ESTATUS_ASIGNACION)) AND ((@IsNull_MAGNITUD = 1 AND [MAGNITUD] IS NULL) OR ([" +
+                "MAGNITUD] = @Original_MAGNITUD)) AND ((@IsNull_RANGO = 1 AND [RANGO] IS NULL) OR" +
+                " ([RANGO] = @Original_RANGO)) AND ((@IsNull_ACCESORIOS = 1 AND [ACCESORIOS] IS N" +
+                "ULL) OR ([ACCESORIOS] = @Original_ACCESORIOS)));\r\nSELECT ID, ID_Instrumentos, IN" +
+                "STRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNAC" +
+                "ION, MAGNITUD, RANGO, ACCESORIOS FROM Instrumentos WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Instrumentos", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INSTRUMENTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INSTRUMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1384,10 +1525,9 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBSERVACIÓN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBSERVACIÓN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTATUS_ASIGNACION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS_ASIGNACION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEMPERATURA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEMPERATURA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HUMEDAD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HUMEDAD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCESORIOS_TEMPERATURA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_TEMPERATURA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCESORIOS_HUMEDAD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_HUMEDAD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAGNITUD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAGNITUD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RANGO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCESORIOS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Instrumentos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Instrumentos", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1407,14 +1547,12 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESTATUS_ASIGNACION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS_ASIGNACION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTATUS_ASIGNACION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTATUS_ASIGNACION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TEMPERATURA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEMPERATURA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEMPERATURA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEMPERATURA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HUMEDAD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HUMEDAD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HUMEDAD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HUMEDAD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ACCESORIOS_TEMPERATURA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_TEMPERATURA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCESORIOS_TEMPERATURA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_TEMPERATURA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ACCESORIOS_HUMEDAD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_HUMEDAD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCESORIOS_HUMEDAD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS_HUMEDAD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MAGNITUD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAGNITUD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MAGNITUD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAGNITUD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RANGO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RANGO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ACCESORIOS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCESORIOS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1492,7 +1630,7 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_ID_Instrumentos, string Original_INSTRUMENTO, string Original_MARCA, string Original_MODELO, string _Original_N_S_, string Original_UBICACIÓN, string Original_OBSERVACIÓN, string Original_ESTATUS, string Original_ESTATUS_ASIGNACION, string Original_TEMPERATURA, string Original_HUMEDAD, string Original_ACCESORIOS_TEMPERATURA, string Original_ACCESORIOS_HUMEDAD) {
+        public virtual int Delete(int Original_ID, string Original_ID_Instrumentos, string Original_INSTRUMENTO, string Original_MARCA, string Original_MODELO, string _Original_N_S_, string Original_UBICACIÓN, string Original_OBSERVACIÓN, string Original_ESTATUS, string Original_ESTATUS_ASIGNACION, string Original_MAGNITUD, string Original_RANGO, string Original_ACCESORIOS) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_ID_Instrumentos == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1566,37 +1704,29 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_ESTATUS_ASIGNACION));
             }
-            if ((Original_TEMPERATURA == null)) {
+            if ((Original_MAGNITUD == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_TEMPERATURA));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_MAGNITUD));
             }
-            if ((Original_HUMEDAD == null)) {
+            if ((Original_RANGO == null)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_HUMEDAD));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_RANGO));
             }
-            if ((Original_ACCESORIOS_TEMPERATURA == null)) {
+            if ((Original_ACCESORIOS == null)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_ACCESORIOS_TEMPERATURA));
-            }
-            if ((Original_ACCESORIOS_HUMEDAD == null)) {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_ACCESORIOS_HUMEDAD));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_ACCESORIOS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1618,7 +1748,7 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ID_Instrumentos, string INSTRUMENTO, string MARCA, string MODELO, string _N_S_, string UBICACIÓN, string OBSERVACIÓN, string ESTATUS, string ESTATUS_ASIGNACION, string TEMPERATURA, string HUMEDAD, string ACCESORIOS_TEMPERATURA, string ACCESORIOS_HUMEDAD) {
+        public virtual int Insert(string ID_Instrumentos, string INSTRUMENTO, string MARCA, string MODELO, string _N_S_, string UBICACIÓN, string OBSERVACIÓN, string ESTATUS, string ESTATUS_ASIGNACION, string MAGNITUD, string RANGO, string ACCESORIOS) {
             if ((ID_Instrumentos == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1673,29 +1803,23 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(ESTATUS_ASIGNACION));
             }
-            if ((TEMPERATURA == null)) {
+            if ((MAGNITUD == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(TEMPERATURA));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(MAGNITUD));
             }
-            if ((HUMEDAD == null)) {
+            if ((RANGO == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(HUMEDAD));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(RANGO));
             }
-            if ((ACCESORIOS_TEMPERATURA == null)) {
+            if ((ACCESORIOS == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(ACCESORIOS_TEMPERATURA));
-            }
-            if ((ACCESORIOS_HUMEDAD == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(ACCESORIOS_HUMEDAD));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(ACCESORIOS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1727,10 +1851,9 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                     string OBSERVACIÓN, 
                     string ESTATUS, 
                     string ESTATUS_ASIGNACION, 
-                    string TEMPERATURA, 
-                    string HUMEDAD, 
-                    string ACCESORIOS_TEMPERATURA, 
-                    string ACCESORIOS_HUMEDAD, 
+                    string MAGNITUD, 
+                    string RANGO, 
+                    string ACCESORIOS, 
                     int Original_ID, 
                     string Original_ID_Instrumentos, 
                     string Original_INSTRUMENTO, 
@@ -1741,10 +1864,9 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                     string Original_OBSERVACIÓN, 
                     string Original_ESTATUS, 
                     string Original_ESTATUS_ASIGNACION, 
-                    string Original_TEMPERATURA, 
-                    string Original_HUMEDAD, 
-                    string Original_ACCESORIOS_TEMPERATURA, 
-                    string Original_ACCESORIOS_HUMEDAD, 
+                    string Original_MAGNITUD, 
+                    string Original_RANGO, 
+                    string Original_ACCESORIOS, 
                     int ID) {
             if ((ID_Instrumentos == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -1800,136 +1922,122 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(ESTATUS_ASIGNACION));
             }
-            if ((TEMPERATURA == null)) {
+            if ((MAGNITUD == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(TEMPERATURA));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(MAGNITUD));
             }
-            if ((HUMEDAD == null)) {
+            if ((RANGO == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(HUMEDAD));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(RANGO));
             }
-            if ((ACCESORIOS_TEMPERATURA == null)) {
+            if ((ACCESORIOS == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(ACCESORIOS_TEMPERATURA));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(ACCESORIOS));
             }
-            if ((ACCESORIOS_HUMEDAD == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(ACCESORIOS_HUMEDAD));
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ID));
             if ((Original_ID_Instrumentos == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_ID_Instrumentos));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ID_Instrumentos));
             }
             if ((Original_INSTRUMENTO == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_INSTRUMENTO));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_INSTRUMENTO));
             }
             if ((Original_MARCA == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_MARCA));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_MARCA));
             }
             if ((Original_MODELO == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_MODELO));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_MODELO));
             }
             if ((_Original_N_S_ == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(_Original_N_S_));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(_Original_N_S_));
             }
             if ((Original_UBICACIÓN == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_UBICACIÓN));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_UBICACIÓN));
             }
             if ((Original_OBSERVACIÓN == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_OBSERVACIÓN));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_OBSERVACIÓN));
             }
             if ((Original_ESTATUS == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_ESTATUS));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_ESTATUS));
             }
             if ((Original_ESTATUS_ASIGNACION == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_ESTATUS_ASIGNACION));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_ESTATUS_ASIGNACION));
             }
-            if ((Original_TEMPERATURA == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_TEMPERATURA));
-            }
-            if ((Original_HUMEDAD == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            if ((Original_MAGNITUD == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_HUMEDAD));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_MAGNITUD));
             }
-            if ((Original_ACCESORIOS_TEMPERATURA == null)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_ACCESORIOS_TEMPERATURA));
-            }
-            if ((Original_ACCESORIOS_HUMEDAD == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            if ((Original_RANGO == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_ACCESORIOS_HUMEDAD));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_RANGO));
             }
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(ID));
+            if ((Original_ACCESORIOS == null)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_ACCESORIOS));
+            }
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1960,10 +2068,9 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                     string OBSERVACIÓN, 
                     string ESTATUS, 
                     string ESTATUS_ASIGNACION, 
-                    string TEMPERATURA, 
-                    string HUMEDAD, 
-                    string ACCESORIOS_TEMPERATURA, 
-                    string ACCESORIOS_HUMEDAD, 
+                    string MAGNITUD, 
+                    string RANGO, 
+                    string ACCESORIOS, 
                     int Original_ID, 
                     string Original_ID_Instrumentos, 
                     string Original_INSTRUMENTO, 
@@ -1974,11 +2081,10 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                     string Original_OBSERVACIÓN, 
                     string Original_ESTATUS, 
                     string Original_ESTATUS_ASIGNACION, 
-                    string Original_TEMPERATURA, 
-                    string Original_HUMEDAD, 
-                    string Original_ACCESORIOS_TEMPERATURA, 
-                    string Original_ACCESORIOS_HUMEDAD) {
-            return this.Update(ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, _N_S_, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNACION, TEMPERATURA, HUMEDAD, ACCESORIOS_TEMPERATURA, ACCESORIOS_HUMEDAD, Original_ID, Original_ID_Instrumentos, Original_INSTRUMENTO, Original_MARCA, Original_MODELO, _Original_N_S_, Original_UBICACIÓN, Original_OBSERVACIÓN, Original_ESTATUS, Original_ESTATUS_ASIGNACION, Original_TEMPERATURA, Original_HUMEDAD, Original_ACCESORIOS_TEMPERATURA, Original_ACCESORIOS_HUMEDAD, Original_ID);
+                    string Original_MAGNITUD, 
+                    string Original_RANGO, 
+                    string Original_ACCESORIOS) {
+            return this.Update(ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, _N_S_, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNACION, MAGNITUD, RANGO, ACCESORIOS, Original_ID, Original_ID_Instrumentos, Original_INSTRUMENTO, Original_MARCA, Original_MODELO, _Original_N_S_, Original_UBICACIÓN, Original_OBSERVACIÓN, Original_ESTATUS, Original_ESTATUS_ASIGNACION, Original_MAGNITUD, Original_RANGO, Original_ACCESORIOS, Original_ID);
         }
     }
     

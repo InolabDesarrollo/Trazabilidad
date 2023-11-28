@@ -8,10 +8,10 @@ using System.Windows.Documents;
 
 namespace CTZ.Modelo.Trazabilidad
 {
-    public class Traceability_Repository
+    public class TraceabilityLetter_Repository
     {
         Conexion conexion;
-        public Traceability_Repository() {
+        public TraceabilityLetter_Repository() {
             conexion = new Conexion();
         } 
         

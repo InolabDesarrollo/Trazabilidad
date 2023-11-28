@@ -11,9 +11,9 @@ namespace CTZ.Model.Trazabilidad.Instruments
 {
     public class CalibrationRequest_Repository
     {
-        ConexionTrazabilidad conexion;
+        ConexionTrazability conexion;
         public CalibrationRequest_Repository() {
-            conexion = new ConexionTrazabilidad();
+            conexion = new ConexionTrazability();
         }
 
         public void create(int idLaboratory,string date,string numberOfReport)

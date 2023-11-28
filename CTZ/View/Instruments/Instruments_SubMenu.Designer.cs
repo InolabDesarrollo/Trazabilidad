@@ -63,9 +63,9 @@
             this.BtnDelete_Instruments = new System.Windows.Forms.Button();
             this.BtnUpdate_Instrument = new System.Windows.Forms.Button();
             this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
-            this.trazabilidadTestInstrumentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trazabilidadTest_Instrumentos = new CTZ.TrazabilidadTest_Instrumentos();
-            this.instrumentosTableAdapter = new CTZ.TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter();
+            this.MAGNITUD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RANGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ACCESORIOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDInstrumentosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNSTRUMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,10 +75,9 @@
             this.uBICACIÓNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oBSERVACIÓNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEMPERATURA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HUMEDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ACCESORIOS_TEMPERATURA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ACCESORIOS_HUMEDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trazabilidadTestInstrumentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trazabilidadTest_Instrumentos = new CTZ.TrazabilidadTest_Instrumentos();
+            this.instrumentosTableAdapter = new CTZ.TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter();
             this.instrumentosCertificadoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTestDataSet3 = new CTZ.TrazabilidadTestDataSet3();
             this.instrumentosCertificadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -95,7 +94,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FECHA_DE_CALIBRACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proxima_Calibracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -260,11 +258,10 @@
             this.nSDataGridViewTextBoxColumn,
             this.uBICACIÓNDataGridViewTextBoxColumn,
             this.oBSERVACIÓNDataGridViewTextBoxColumn,
-            this.eSTATUSDataGridViewTextBoxColumn,
-            this.TEMPERATURA,
-            this.HUMEDAD,
-            this.ACCESORIOS_TEMPERATURA,
-            this.ACCESORIOS_HUMEDAD});
+            this.MAGNITUD,
+            this.RANGO,
+            this.ACCESORIOS,
+            this.eSTATUSDataGridViewTextBoxColumn});
             this.Dgv_Instruments.DataSource = this.instrumentosBindingSource1;
             this.Dgv_Instruments.DateWithTime = false;
             this.Dgv_Instruments.Location = new System.Drawing.Point(3, 63);
@@ -431,7 +428,6 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.FECHA_DE_CALIBRACION,
             this.Proxima_Calibracion,
@@ -504,19 +500,29 @@
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
             this.materialContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // trazabilidadTestInstrumentosBindingSource
+            // MAGNITUD
             // 
-            this.trazabilidadTestInstrumentosBindingSource.DataSource = this.trazabilidadTest_Instrumentos;
-            this.trazabilidadTestInstrumentosBindingSource.Position = 0;
+            this.MAGNITUD.DataPropertyName = "MAGNITUD";
+            this.MAGNITUD.HeaderText = "MAGNITUD";
+            this.MAGNITUD.MinimumWidth = 22;
+            this.MAGNITUD.Name = "MAGNITUD";
+            this.MAGNITUD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // trazabilidadTest_Instrumentos
+            // RANGO
             // 
-            this.trazabilidadTest_Instrumentos.DataSetName = "TrazabilidadTest_Instrumentos";
-            this.trazabilidadTest_Instrumentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.RANGO.DataPropertyName = "RANGO";
+            this.RANGO.HeaderText = "RANGO";
+            this.RANGO.MinimumWidth = 22;
+            this.RANGO.Name = "RANGO";
+            this.RANGO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // instrumentosTableAdapter
+            // ACCESORIOS
             // 
-            this.instrumentosTableAdapter.ClearBeforeFill = true;
+            this.ACCESORIOS.DataPropertyName = "ACCESORIOS";
+            this.ACCESORIOS.HeaderText = "ACCESORIOS";
+            this.ACCESORIOS.MinimumWidth = 22;
+            this.ACCESORIOS.Name = "ACCESORIOS";
+            this.ACCESORIOS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -591,37 +597,19 @@
             this.eSTATUSDataGridViewTextBoxColumn.Name = "eSTATUSDataGridViewTextBoxColumn";
             this.eSTATUSDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // TEMPERATURA
+            // trazabilidadTestInstrumentosBindingSource
             // 
-            this.TEMPERATURA.DataPropertyName = "TEMPERATURA";
-            this.TEMPERATURA.HeaderText = "TEMPERATURA";
-            this.TEMPERATURA.MinimumWidth = 22;
-            this.TEMPERATURA.Name = "TEMPERATURA";
-            this.TEMPERATURA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.trazabilidadTestInstrumentosBindingSource.DataSource = this.trazabilidadTest_Instrumentos;
+            this.trazabilidadTestInstrumentosBindingSource.Position = 0;
             // 
-            // HUMEDAD
+            // trazabilidadTest_Instrumentos
             // 
-            this.HUMEDAD.DataPropertyName = "HUMEDAD";
-            this.HUMEDAD.HeaderText = "HUMEDAD";
-            this.HUMEDAD.MinimumWidth = 22;
-            this.HUMEDAD.Name = "HUMEDAD";
-            this.HUMEDAD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.trazabilidadTest_Instrumentos.DataSetName = "TrazabilidadTest_Instrumentos";
+            this.trazabilidadTest_Instrumentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ACCESORIOS_TEMPERATURA
+            // instrumentosTableAdapter
             // 
-            this.ACCESORIOS_TEMPERATURA.DataPropertyName = "ACCESORIOS_TEMPERATURA";
-            this.ACCESORIOS_TEMPERATURA.HeaderText = "ACCESORIOS_TEMPERATURA";
-            this.ACCESORIOS_TEMPERATURA.MinimumWidth = 22;
-            this.ACCESORIOS_TEMPERATURA.Name = "ACCESORIOS_TEMPERATURA";
-            this.ACCESORIOS_TEMPERATURA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ACCESORIOS_HUMEDAD
-            // 
-            this.ACCESORIOS_HUMEDAD.DataPropertyName = "ACCESORIOS_HUMEDAD";
-            this.ACCESORIOS_HUMEDAD.HeaderText = "ACCESORIOS_HUMEDAD";
-            this.ACCESORIOS_HUMEDAD.MinimumWidth = 22;
-            this.ACCESORIOS_HUMEDAD.Name = "ACCESORIOS_HUMEDAD";
-            this.ACCESORIOS_HUMEDAD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.instrumentosTableAdapter.ClearBeforeFill = true;
             // 
             // instrumentosCertificadoBindingSource2
             // 
@@ -729,43 +717,33 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TEMPERATURA";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TEMPERATURA";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MAGNITUD";
+            this.dataGridViewTextBoxColumn2.HeaderText = "MAGNITUD";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 22;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn2.Width = 137;
+            this.dataGridViewTextBoxColumn2.Width = 106;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "HUMEDAD";
-            this.dataGridViewTextBoxColumn3.HeaderText = "HUMEDAD";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "RANGO";
+            this.dataGridViewTextBoxColumn3.HeaderText = "RANGO";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 22;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn3.Width = 102;
+            this.dataGridViewTextBoxColumn3.Width = 84;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ACCESORIOS_TEMPERATURA";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ACCESORIOS_TEMPERATURA";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ACCESORIOS";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ACCESORIOS";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 22;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn4.Width = 234;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "ACCESORIOS_HUMEDAD";
-            this.dataGridViewTextBoxColumn12.HeaderText = "ACCESORIOS_HUMEDAD";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn12.Width = 199;
+            this.dataGridViewTextBoxColumn4.Width = 122;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -919,11 +897,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uBICACIÓNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oBSERVACIÓNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAGNITUD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RANGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ACCESORIOS;
         private System.Windows.Forms.DataGridViewTextBoxColumn eSTATUSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEMPERATURA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HUMEDAD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ACCESORIOS_TEMPERATURA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ACCESORIOS_HUMEDAD;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -935,7 +912,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_DE_CALIBRACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proxima_Calibracion;

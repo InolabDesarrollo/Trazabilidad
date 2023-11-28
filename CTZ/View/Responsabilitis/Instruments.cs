@@ -22,13 +22,16 @@ namespace CTZ.Vista.Responsabilitis
         public  string observation;
         public  string status;
         public string model;
+        public string magnitude;
+        public string range;
+        public string accessories;
 
         C_Instruments controler = new C_Instruments();
 
         public Instruments() { }
 
         public Instruments(string id,string instrument, string brand,string model, string numberOfSerie,string ubication,
-            string observation, string status)
+            string observation, string status,string magnitude,string range,string accessories)
         {
             this.id = id;
             this.instrument = instrument;
@@ -38,6 +41,9 @@ namespace CTZ.Vista.Responsabilitis
             this.ubication = ubication;
             this.observation = observation;
             this.status = status;
+            this.magnitude = magnitude;
+            this.range = range;
+            this.accessories = accessories;
         }
 
         public DataTable getActiveRegist()
@@ -61,6 +67,9 @@ namespace CTZ.Vista.Responsabilitis
             instruments.ubication = ubication;
             instruments.observation = observation;  
             instruments.status = status;
+            instruments.magnitude = magnitude;
+            instruments.range = range;  
+            instruments.accessories = accessories;
 
             controler.addNewInstrument(instruments);
         }
