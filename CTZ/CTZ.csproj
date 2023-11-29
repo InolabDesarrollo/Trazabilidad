@@ -213,20 +213,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Controler\Instruments\C_Certificate.cs" />
-    <Compile Include="Controler\C_ExternTraceabilityRepository.cs" />
+    <Compile Include="Controler\Instruments\Certificates_\C_Certificate.cs" />
+    <Compile Include="Controler\Instruments\Traceability\C_ExternTraceabilityRepository.cs" />
     <Compile Include="Controler\Instruments\C_Instruments.cs" />
-    <Compile Include="Controler\C_Instrument_Assignments.cs" />
-    <Compile Include="Controler\C_RelationCertificateInstrument.cs" />
-    <Compile Include="Controler\C_UpdateSignature.cs" />
-    <Compile Include="Controler\C_TraceabilityRepository.cs" />
+    <Compile Include="Controler\Instruments\Assignments_\C_Instrument_Assignments.cs" />
+    <Compile Include="Controler\Instruments\Certificates_\C_RelationCertificateInstrument.cs" />
+    <Compile Include="Controler\Instruments\Assignments_\C_UpdateSignature.cs" />
+    <Compile Include="Controler\Instruments\Traceability\C_TraceabilityRepository.cs" />
     <Compile Include="Controler\C_Usuario.cs" />
-    <Compile Include="Controler\C_View_Instrument_Certificate.cs" />
-    <Compile Include="Controler\C_Laboratories.cs" />
+    <Compile Include="Controler\Instruments\Certificates_\C_View_Instrument_Certificate.cs" />
+    <Compile Include="Controler\Instruments\Calibration\C_Laboratories.cs" />
     <Compile Include="Controler\Instruments\Calibration\C_CalibrationRequest.cs" />
     <Compile Include="Controler\Instruments\Calibration\C_CreateCalibrationRequest.cs" />
-    <Compile Include="Controler\Instruments\Calibration\C_SerchInstrument_Certificate.cs" />
-    <Compile Include="Controler\Instruments\C_ReturnOfInstrument.cs" />
+    <Compile Include="Controler\Instruments\Certificates_\C_SerchInstrument_Certificate.cs" />
+    <Compile Include="Controler\Instruments\Assignments_\C_ReturnOfInstrument.cs" />
     <Compile Include="Controler\Instruments\C_SerchInstrument.cs" />
     <Compile Include="ctzWF.cs">
       <SubType>Form</SubType>
@@ -377,17 +377,17 @@
     <Compile Include="Model\Browser\Interfaces\IUserRepository.cs" />
     <Compile Include="Model\Browser\UserRepository.cs" />
     <Compile Include="Model\Conexion.cs" />
-    <Compile Include="Model\Trazabilidad\Certificate_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\Certificate_Repository.cs" />
     <Compile Include="Model\Trazabilidad\ConexionTrazability.cs" />
-    <Compile Include="Model\Trazabilidad\ExternalTraceability_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\ExternalTraceability_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\CalibrationRequest_Repository.cs" />
-    <Compile Include="Model\Trazabilidad\Instrument_Assignment_Repository.cs" />
-    <Compile Include="Model\Trazabilidad\Instrument_Repository.cs" />
-    <Compile Include="Model\Trazabilidad\Interfaces\IRelationCertificateInstrument_Repository.cs" />
-    <Compile Include="Model\Trazabilidad\Laboratory_Repository.cs" />
-    <Compile Include="Model\Trazabilidad\RelationCertificateInstrument_Repository.cs" />
-    <Compile Include="Model\Trazabilidad\TraceabilityLetter_Repository.cs" />
-    <Compile Include="Model\Trazabilidad\View_Instrument_Certificate_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\Instrument_Assignment_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\Instrument_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\Interfaces\IRelationCertificateInstrument_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\Laboratory_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\RelationCertificateInstrument_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\TraceabilityLetter_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\View_Instrument_Certificate_Repository.cs" />
     <Compile Include="TrazabilidadTestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -424,6 +424,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Estandard\Estandards_SubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Estandard\Estandards_SubMenu.Designer.cs">
+      <DependentUpon>Estandards_SubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Estandard\SubMenu_Estandards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Estandard\SubMenu_Estandards.Designer.cs">
+      <DependentUpon>SubMenu_Estandards.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Instruments\Assignment\Assignment_SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,10 +460,10 @@
     <Compile Include="View\Instruments\Calibration\SeeCalibrationRequest.Designer.cs">
       <DependentUpon>SeeCalibrationRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Certificates\SerchCertificate.cs">
+    <Compile Include="View\Instruments\Certificates_\SerchCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Certificates\SerchCertificate.Designer.cs">
+    <Compile Include="View\Instruments\Certificates_\SerchCertificate.Designer.cs">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Assignment\Add_Delivery_Instrument.cs">
@@ -502,10 +514,10 @@
     <Compile Include="View\Instruments\Instruments_SubMenu.Designer.cs">
       <DependentUpon>Instruments_SubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\RegistSignature.cs">
+    <Compile Include="View\Instruments\Assignment\RegistSignature.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Instruments\RegistSignature.Designer.cs">
+    <Compile Include="View\Instruments\Assignment\RegistSignature.Designer.cs">
       <DependentUpon>RegistSignature.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Schedule\Schedule_SubMenu.cs">
@@ -615,10 +627,10 @@
     <Compile Include="View\Instruments\MenuInstrumentos.Designer.cs">
       <DependentUpon>MenuInstrumentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Certificates\AddCertificate.cs">
+    <Compile Include="View\Instruments\Certificates_\AddCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Certificates\AddCertificate.Designer.cs">
+    <Compile Include="View\Instruments\Certificates_\AddCertificate.Designer.cs">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\AddInstrument.cs">
@@ -627,7 +639,7 @@
     <Compile Include="View\Instruments\AddInstrument.Designer.cs">
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Certificates\Certificate.cs" />
+    <Compile Include="View\Instruments\Certificates_\Certificate.cs" />
     <Compile Include="View\Responsabilitis\DateForReport.cs" />
     <Compile Include="View\Responsabilitis\Email.cs" />
     <Compile Include="View\Responsabilitis\Instruments.cs" />
@@ -658,33 +670,33 @@
     <Compile Include="View\Instruments\UpdateInstrument.Designer.cs">
       <DependentUpon>UpdateInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Traceability\AddExternTraceability_Letter.cs">
+    <Compile Include="View\Instruments\Traceability_\AddExternTraceability_Letter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Traceability\AddExternTraceability_Letter.Designer.cs">
+    <Compile Include="View\Instruments\Traceability_\AddExternTraceability_Letter.Designer.cs">
       <DependentUpon>AddExternTraceability_Letter.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Traceability\AddTraceability_Letter.cs">
+    <Compile Include="View\Instruments\Traceability_\AddTraceability_Letter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Traceability\AddTraceability_Letter.Designer.cs">
+    <Compile Include="View\Instruments\Traceability_\AddTraceability_Letter.Designer.cs">
       <DependentUpon>AddTraceability_Letter.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Traceability\ExternalTraceability_Letter.cs" />
-    <Compile Include="View\Traceability\InternTraceability_Letter.cs" />
-    <Compile Include="View\Traceability\ReportTraceabilityLetter.cs">
+    <Compile Include="View\Instruments\Traceability_\ExternalTraceability_Letter.cs" />
+    <Compile Include="View\Instruments\Traceability_\InternTraceability_Letter.cs" />
+    <Compile Include="View\Instruments\Traceability_\ReportTraceabilityLetter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Traceability\ReportTraceabilityLetter.Designer.cs">
+    <Compile Include="View\Instruments\Traceability_\ReportTraceabilityLetter.Designer.cs">
       <DependentUpon>ReportTraceabilityLetter.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Traceability\SerchTraceabilityLetter.cs">
+    <Compile Include="View\Instruments\Traceability_\SerchTraceabilityLetter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Traceability\SerchTraceabilityLetter.Designer.cs">
+    <Compile Include="View\Instruments\Traceability_\SerchTraceabilityLetter.Designer.cs">
       <DependentUpon>SerchTraceabilityLetter.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Traceability\TraceabilityLetter.cs" />
+    <Compile Include="View\Instruments\Traceability_\TraceabilityLetter.cs" />
     <EmbeddedResource Include="AddCarta.resx">
       <DependentUpon>AddCarta.cs</DependentUpon>
     </EmbeddedResource>
@@ -745,6 +757,9 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Estandard\Estandards_SubMenu.resx">
+      <DependentUpon>Estandards_SubMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Assignment_SubMenu.resx">
       <DependentUpon>Assignment_SubMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -757,10 +772,10 @@
     <EmbeddedResource Include="View\Instruments\Calibration\SeeCalibrationRequest.resx">
       <DependentUpon>SeeCalibrationRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Certificates\AddCertificate.resx">
+    <EmbeddedResource Include="View\Instruments\Certificates_\AddCertificate.resx">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Certificates\SerchCertificate.resx">
+    <EmbeddedResource Include="View\Instruments\Certificates_\SerchCertificate.resx">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Add_Delivery_Instrument.resx">
@@ -787,7 +802,7 @@
     <EmbeddedResource Include="View\Instruments\Instruments_SubMenu.resx">
       <DependentUpon>Instruments_SubMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\RegistSignature.resx">
+    <EmbeddedResource Include="View\Instruments\Assignment\RegistSignature.resx">
       <DependentUpon>RegistSignature.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Schedule\Schedule_SubMenu.resx">
@@ -866,16 +881,16 @@
     <EmbeddedResource Include="View\Instruments\UpdateInstrument.resx">
       <DependentUpon>UpdateInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Traceability\AddExternTraceability_Letter.resx">
+    <EmbeddedResource Include="View\Instruments\Traceability_\AddExternTraceability_Letter.resx">
       <DependentUpon>AddExternTraceability_Letter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Traceability\AddTraceability_Letter.resx">
+    <EmbeddedResource Include="View\Instruments\Traceability_\AddTraceability_Letter.resx">
       <DependentUpon>AddTraceability_Letter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Traceability\ReportTraceabilityLetter.resx">
+    <EmbeddedResource Include="View\Instruments\Traceability_\ReportTraceabilityLetter.resx">
       <DependentUpon>ReportTraceabilityLetter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Traceability\SerchTraceabilityLetter.resx">
+    <EmbeddedResource Include="View\Instruments\Traceability_\SerchTraceabilityLetter.resx">
       <DependentUpon>SerchTraceabilityLetter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AsignacionDataSet.xsc">
