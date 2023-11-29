@@ -213,7 +213,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Controler\C_Certificate.cs" />
+    <Compile Include="Controler\Instruments\C_Certificate.cs" />
     <Compile Include="Controler\C_ExternTraceabilityRepository.cs" />
     <Compile Include="Controler\Instruments\C_Instruments.cs" />
     <Compile Include="Controler\C_Instrument_Assignments.cs" />
