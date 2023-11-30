@@ -1920,3 +1920,5 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Instrum
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Instruments.Schedule.Schedule_SubMenu.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Instruments.Trazability.Trazability_SubMenu.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Instruments.Assignment.Assignment_SubMenu.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Estandard.Estandards_Menu.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Estandard.Estandars_SubMenu.resources

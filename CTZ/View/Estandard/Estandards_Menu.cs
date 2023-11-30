@@ -20,7 +20,8 @@ namespace CTZ.View.Estandard
 
         private void Btn_Estandards_Click(object sender, EventArgs e)
         {
-
+            Estandars_SubMenu menu = new Estandars_SubMenu();   
+            menu.Show();
         }
     }
 }

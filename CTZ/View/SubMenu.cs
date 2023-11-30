@@ -1,4 +1,5 @@
-﻿using CTZ.View.Instruments;
+﻿using CTZ.View.Estandard;
+using CTZ.View.Instruments;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
@@ -40,8 +41,8 @@ namespace CTZ.Vista
 
         private void Btn_Estandares_Click(object sender, EventArgs e)
         {
-            MenuEstandares estandares = new MenuEstandares();
-            estandares.Show();
+            Estandards_Menu menu = new Estandards_Menu();
+            menu.Show();    
         }
 
         private void Btn_Instrumentos_Click(object sender, EventArgs e)

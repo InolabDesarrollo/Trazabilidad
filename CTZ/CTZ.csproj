@@ -377,6 +377,7 @@
     <Compile Include="Model\Browser\Interfaces\IUserRepository.cs" />
     <Compile Include="Model\Browser\UserRepository.cs" />
     <Compile Include="Model\Conexion.cs" />
+    <Compile Include="Model\Trazabilidad\Estandard\Estandards_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\Certificate_Repository.cs" />
     <Compile Include="Model\Trazabilidad\ConexionTrazability.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\ExternalTraceability_Repository.cs" />
@@ -424,17 +425,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Estandard\Estandards_SubMenu.cs">
+    <Compile Include="View\Estandard\Estandards_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Estandard\Estandards_SubMenu.Designer.cs">
-      <DependentUpon>Estandards_SubMenu.cs</DependentUpon>
+    <Compile Include="View\Estandard\Estandards_Menu.Designer.cs">
+      <DependentUpon>Estandards_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Estandard\SubMenu_Estandards.cs">
+    <Compile Include="View\Estandard\Estandars_SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Estandard\SubMenu_Estandards.Designer.cs">
-      <DependentUpon>SubMenu_Estandards.cs</DependentUpon>
+    <Compile Include="View\Estandard\Estandars_SubMenu.Designer.cs">
+      <DependentUpon>Estandars_SubMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Assignment\Assignment_SubMenu.cs">
       <SubType>Form</SubType>
@@ -757,8 +758,11 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Estandard\Estandards_SubMenu.resx">
-      <DependentUpon>Estandards_SubMenu.cs</DependentUpon>
+    <EmbeddedResource Include="View\Estandard\Estandards_Menu.resx">
+      <DependentUpon>Estandards_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Estandard\Estandars_SubMenu.resx">
+      <DependentUpon>Estandars_SubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Assignment_SubMenu.resx">
       <DependentUpon>Assignment_SubMenu.cs</DependentUpon>
