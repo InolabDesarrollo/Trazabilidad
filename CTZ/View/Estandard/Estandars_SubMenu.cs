@@ -27,7 +27,8 @@ namespace CTZ.View.Estandard
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-
+            AddEstandard estandard = new AddEstandard();
+            estandard.Show();
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)

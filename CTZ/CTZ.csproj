@@ -213,6 +213,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Controler\Estandard\C_AddEstandard.cs" />
+    <Compile Include="Controler\Estandard\C_CheckEstatusEstandard.cs" />
     <Compile Include="Controler\Instruments\Certificates_\C_Certificate.cs" />
     <Compile Include="Controler\Instruments\Traceability\C_ExternTraceabilityRepository.cs" />
     <Compile Include="Controler\Instruments\C_Instruments.cs" />
@@ -649,6 +651,7 @@
     <Compile Include="View\Instruments\Certificates_\Certificate.cs" />
     <Compile Include="View\Responsabilitis\DateForReport.cs" />
     <Compile Include="View\Responsabilitis\Email.cs" />
+    <Compile Include="View\Responsabilitis\Estandard.cs" />
     <Compile Include="View\Responsabilitis\Instruments.cs" />
     <Compile Include="View\Responsabilitis\Instrument_Assignments.cs" />
     <Compile Include="View\Responsabilitis\Notification.cs" />

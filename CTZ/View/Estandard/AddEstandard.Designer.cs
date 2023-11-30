@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Lbl_Este = new MaterialSkin.Controls.MaterialLabel();
+            this.Lbl_Est = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_ESTE = new MaterialSkin.Controls.MaterialTextBox();
             this.Lbl_Estandard = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_Estandard = new MaterialSkin.Controls.MaterialTextBox();
@@ -55,17 +55,17 @@
             this.Btn_Add = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
-            // Lbl_Este
+            // Lbl_Est
             // 
-            this.Lbl_Este.AutoSize = true;
-            this.Lbl_Este.Depth = 0;
-            this.Lbl_Este.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Este.Location = new System.Drawing.Point(48, 79);
-            this.Lbl_Este.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Lbl_Este.Name = "Lbl_Este";
-            this.Lbl_Este.Size = new System.Drawing.Size(39, 19);
-            this.Lbl_Este.TabIndex = 0;
-            this.Lbl_Este.Text = "ESTE";
+            this.Lbl_Est.AutoSize = true;
+            this.Lbl_Est.Depth = 0;
+            this.Lbl_Est.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Est.Location = new System.Drawing.Point(48, 79);
+            this.Lbl_Est.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Lbl_Est.Name = "Lbl_Est";
+            this.Lbl_Est.Size = new System.Drawing.Size(30, 19);
+            this.Lbl_Est.TabIndex = 0;
+            this.Lbl_Est.Text = "EST";
             // 
             // TxtBox_ESTE
             // 
@@ -200,7 +200,7 @@
             this.Lbl_Number.AutoSize = true;
             this.Lbl_Number.Depth = 0;
             this.Lbl_Number.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Number.Location = new System.Drawing.Point(48, 592);
+            this.Lbl_Number.Location = new System.Drawing.Point(419, 79);
             this.Lbl_Number.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Number.Name = "Lbl_Number";
             this.Lbl_Number.Size = new System.Drawing.Size(113, 19);
@@ -213,7 +213,7 @@
             this.TxtBox_Number.Depth = 0;
             this.TxtBox_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Number.LeadingIcon = null;
-            this.TxtBox_Number.Location = new System.Drawing.Point(51, 627);
+            this.TxtBox_Number.Location = new System.Drawing.Point(422, 115);
             this.TxtBox_Number.MaxLength = 50;
             this.TxtBox_Number.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Number.Multiline = false;
@@ -228,7 +228,7 @@
             this.Lbl_FabricationDate.AutoSize = true;
             this.Lbl_FabricationDate.Depth = 0;
             this.Lbl_FabricationDate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_FabricationDate.Location = new System.Drawing.Point(424, 79);
+            this.Lbl_FabricationDate.Location = new System.Drawing.Point(424, 206);
             this.Lbl_FabricationDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_FabricationDate.Name = "Lbl_FabricationDate";
             this.Lbl_FabricationDate.Size = new System.Drawing.Size(152, 19);
@@ -237,7 +237,7 @@
             // 
             // TimePicker_FabricationDate
             // 
-            this.TimePicker_FabricationDate.Location = new System.Drawing.Point(422, 125);
+            this.TimePicker_FabricationDate.Location = new System.Drawing.Point(422, 259);
             this.TimePicker_FabricationDate.Name = "TimePicker_FabricationDate";
             this.TimePicker_FabricationDate.Size = new System.Drawing.Size(285, 20);
             this.TimePicker_FabricationDate.TabIndex = 13;
@@ -247,7 +247,7 @@
             this.Lbl_ExpirationDate.AutoSize = true;
             this.Lbl_ExpirationDate.Depth = 0;
             this.Lbl_ExpirationDate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_ExpirationDate.Location = new System.Drawing.Point(419, 192);
+            this.Lbl_ExpirationDate.Location = new System.Drawing.Point(424, 315);
             this.Lbl_ExpirationDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_ExpirationDate.Name = "Lbl_ExpirationDate";
             this.Lbl_ExpirationDate.Size = new System.Drawing.Size(157, 19);
@@ -256,7 +256,7 @@
             // 
             // TimePicker_ExpirationDate
             // 
-            this.TimePicker_ExpirationDate.Location = new System.Drawing.Point(422, 238);
+            this.TimePicker_ExpirationDate.Location = new System.Drawing.Point(422, 355);
             this.TimePicker_ExpirationDate.Name = "TimePicker_ExpirationDate";
             this.TimePicker_ExpirationDate.Size = new System.Drawing.Size(285, 20);
             this.TimePicker_ExpirationDate.TabIndex = 15;
@@ -266,7 +266,7 @@
             this.Lbl_Quantity.AutoSize = true;
             this.Lbl_Quantity.Depth = 0;
             this.Lbl_Quantity.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Quantity.Location = new System.Drawing.Point(419, 288);
+            this.Lbl_Quantity.Location = new System.Drawing.Point(424, 392);
             this.Lbl_Quantity.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Quantity.Name = "Lbl_Quantity";
             this.Lbl_Quantity.Size = new System.Drawing.Size(65, 19);
@@ -279,7 +279,7 @@
             this.TxtBox_Quantity.Depth = 0;
             this.TxtBox_Quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Quantity.LeadingIcon = null;
-            this.TxtBox_Quantity.Location = new System.Drawing.Point(422, 325);
+            this.TxtBox_Quantity.Location = new System.Drawing.Point(422, 428);
             this.TxtBox_Quantity.MaxLength = 50;
             this.TxtBox_Quantity.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Quantity.Multiline = false;
@@ -294,7 +294,7 @@
             this.Lbl_Ubication.AutoSize = true;
             this.Lbl_Ubication.Depth = 0;
             this.Lbl_Ubication.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Ubication.Location = new System.Drawing.Point(419, 392);
+            this.Lbl_Ubication.Location = new System.Drawing.Point(424, 496);
             this.Lbl_Ubication.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Ubication.Name = "Lbl_Ubication";
             this.Lbl_Ubication.Size = new System.Drawing.Size(71, 19);
@@ -307,7 +307,7 @@
             this.TxtBox_Ubication.Depth = 0;
             this.TxtBox_Ubication.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Ubication.LeadingIcon = null;
-            this.TxtBox_Ubication.Location = new System.Drawing.Point(422, 428);
+            this.TxtBox_Ubication.Location = new System.Drawing.Point(422, 527);
             this.TxtBox_Ubication.MaxLength = 50;
             this.TxtBox_Ubication.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Ubication.Multiline = false;
@@ -322,7 +322,7 @@
             this.Lbl_Estatus.AutoSize = true;
             this.Lbl_Estatus.Depth = 0;
             this.Lbl_Estatus.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Estatus.Location = new System.Drawing.Point(419, 496);
+            this.Lbl_Estatus.Location = new System.Drawing.Point(736, 79);
             this.Lbl_Estatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Estatus.Name = "Lbl_Estatus";
             this.Lbl_Estatus.Size = new System.Drawing.Size(54, 19);
@@ -335,7 +335,7 @@
             this.TxtBox_Estatus.Depth = 0;
             this.TxtBox_Estatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Estatus.LeadingIcon = null;
-            this.TxtBox_Estatus.Location = new System.Drawing.Point(422, 527);
+            this.TxtBox_Estatus.Location = new System.Drawing.Point(739, 125);
             this.TxtBox_Estatus.MaxLength = 50;
             this.TxtBox_Estatus.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Estatus.Multiline = false;
@@ -350,7 +350,7 @@
             this.Lbl_Inventory.AutoSize = true;
             this.Lbl_Inventory.Depth = 0;
             this.Lbl_Inventory.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Inventory.Location = new System.Drawing.Point(419, 592);
+            this.Lbl_Inventory.Location = new System.Drawing.Point(736, 192);
             this.Lbl_Inventory.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Inventory.Name = "Lbl_Inventory";
             this.Lbl_Inventory.Size = new System.Drawing.Size(71, 19);
@@ -363,7 +363,7 @@
             this.TxtBox_Inventory.Depth = 0;
             this.TxtBox_Inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Inventory.LeadingIcon = null;
-            this.TxtBox_Inventory.Location = new System.Drawing.Point(422, 627);
+            this.TxtBox_Inventory.Location = new System.Drawing.Point(739, 239);
             this.TxtBox_Inventory.MaxLength = 50;
             this.TxtBox_Inventory.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Inventory.Multiline = false;
@@ -380,7 +380,7 @@
             this.Btn_Add.Depth = 0;
             this.Btn_Add.HighEmphasis = true;
             this.Btn_Add.Icon = null;
-            this.Btn_Add.Location = new System.Drawing.Point(619, 705);
+            this.Btn_Add.Location = new System.Drawing.Point(936, 339);
             this.Btn_Add.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add.Name = "Btn_Add";
@@ -390,12 +390,13 @@
             this.Btn_Add.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Add.UseAccentColor = false;
             this.Btn_Add.UseVisualStyleBackColor = true;
+            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // AddEstandard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 781);
+            this.ClientSize = new System.Drawing.Size(1072, 631);
             this.Controls.Add(this.Btn_Add);
             this.Controls.Add(this.TxtBox_Inventory);
             this.Controls.Add(this.Lbl_Inventory);
@@ -420,7 +421,7 @@
             this.Controls.Add(this.TxtBox_Estandard);
             this.Controls.Add(this.Lbl_Estandard);
             this.Controls.Add(this.TxtBox_ESTE);
-            this.Controls.Add(this.Lbl_Este);
+            this.Controls.Add(this.Lbl_Est);
             this.Name = "AddEstandard";
             this.Text = "Agregar Estandar ";
             this.ResumeLayout(false);
@@ -430,7 +431,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialLabel Lbl_Este;
+        private MaterialSkin.Controls.MaterialLabel Lbl_Est;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_ESTE;
         private MaterialSkin.Controls.MaterialLabel Lbl_Estandard;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Estandard;
