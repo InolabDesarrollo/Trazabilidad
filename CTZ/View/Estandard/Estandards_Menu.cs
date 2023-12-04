@@ -23,5 +23,13 @@ namespace CTZ.View.Estandard
             Estandars_SubMenu menu = new Estandars_SubMenu();   
             menu.Show();
         }
+
+        private void Btn_Assignment_Click(object sender, EventArgs e)
+        {
+            Assignments_Menu assignments = new Assignments_Menu();
+            assignments.Show();
+        }
+
+
     }
 }
