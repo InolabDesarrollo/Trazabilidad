@@ -31,6 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.TabControl_Estandards = new System.Windows.Forms.TabControl();
             this.Page_Instruments = new System.Windows.Forms.TabPage();
+            this.Btn_CleanSerch = new System.Windows.Forms.Button();
+            this.Btn_Brand = new System.Windows.Forms.Button();
+            this.Lbl_Brand = new System.Windows.Forms.Label();
+            this.TxtBox_Brand = new System.Windows.Forms.TextBox();
+            this.Btn_SerchByEstandardName = new System.Windows.Forms.Button();
+            this.TxtBox_EstandardName = new System.Windows.Forms.TextBox();
+            this.Lbl_Estandard = new System.Windows.Forms.Label();
+            this.Btn_SerchEST = new System.Windows.Forms.Button();
+            this.TxtBox_EST = new System.Windows.Forms.TextBox();
+            this.Lbl_EST = new System.Windows.Forms.Label();
             this.Dgv_Estandards = new ADGV.AdvancedDataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEstandaresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,22 +73,120 @@
             this.TabControl_Estandards.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControl_Estandards.Controls.Add(this.Page_Instruments);
-            this.TabControl_Estandards.Location = new System.Drawing.Point(17, 80);
+            this.TabControl_Estandards.Location = new System.Drawing.Point(17, 67);
             this.TabControl_Estandards.Name = "TabControl_Estandards";
             this.TabControl_Estandards.SelectedIndex = 0;
-            this.TabControl_Estandards.Size = new System.Drawing.Size(954, 317);
+            this.TabControl_Estandards.Size = new System.Drawing.Size(1024, 330);
             this.TabControl_Estandards.TabIndex = 0;
             // 
             // Page_Instruments
             // 
+            this.Page_Instruments.Controls.Add(this.Btn_CleanSerch);
+            this.Page_Instruments.Controls.Add(this.Btn_Brand);
+            this.Page_Instruments.Controls.Add(this.Lbl_Brand);
+            this.Page_Instruments.Controls.Add(this.TxtBox_Brand);
+            this.Page_Instruments.Controls.Add(this.Btn_SerchByEstandardName);
+            this.Page_Instruments.Controls.Add(this.TxtBox_EstandardName);
+            this.Page_Instruments.Controls.Add(this.Lbl_Estandard);
+            this.Page_Instruments.Controls.Add(this.Btn_SerchEST);
+            this.Page_Instruments.Controls.Add(this.TxtBox_EST);
+            this.Page_Instruments.Controls.Add(this.Lbl_EST);
             this.Page_Instruments.Controls.Add(this.Dgv_Estandards);
             this.Page_Instruments.Location = new System.Drawing.Point(4, 22);
             this.Page_Instruments.Name = "Page_Instruments";
             this.Page_Instruments.Padding = new System.Windows.Forms.Padding(3);
-            this.Page_Instruments.Size = new System.Drawing.Size(946, 291);
+            this.Page_Instruments.Size = new System.Drawing.Size(1016, 304);
             this.Page_Instruments.TabIndex = 0;
             this.Page_Instruments.Text = "Estandares";
             this.Page_Instruments.UseVisualStyleBackColor = true;
+            // 
+            // Btn_CleanSerch
+            // 
+            this.Btn_CleanSerch.Location = new System.Drawing.Point(896, 14);
+            this.Btn_CleanSerch.Name = "Btn_CleanSerch";
+            this.Btn_CleanSerch.Size = new System.Drawing.Size(114, 23);
+            this.Btn_CleanSerch.TabIndex = 23;
+            this.Btn_CleanSerch.Text = "Limpiar Busqueda";
+            this.Btn_CleanSerch.UseVisualStyleBackColor = true;
+            this.Btn_CleanSerch.Click += new System.EventHandler(this.Btn_CleanSerch_Click);
+            // 
+            // Btn_Brand
+            // 
+            this.Btn_Brand.Location = new System.Drawing.Point(817, 14);
+            this.Btn_Brand.Name = "Btn_Brand";
+            this.Btn_Brand.Size = new System.Drawing.Size(63, 23);
+            this.Btn_Brand.TabIndex = 22;
+            this.Btn_Brand.Text = "Buscar";
+            this.Btn_Brand.UseVisualStyleBackColor = true;
+            this.Btn_Brand.Click += new System.EventHandler(this.Btn_Brand_Click);
+            // 
+            // Lbl_Brand
+            // 
+            this.Lbl_Brand.AutoSize = true;
+            this.Lbl_Brand.Location = new System.Drawing.Point(617, 19);
+            this.Lbl_Brand.Name = "Lbl_Brand";
+            this.Lbl_Brand.Size = new System.Drawing.Size(37, 13);
+            this.Lbl_Brand.TabIndex = 21;
+            this.Lbl_Brand.Text = "Marca";
+            // 
+            // TxtBox_Brand
+            // 
+            this.TxtBox_Brand.Location = new System.Drawing.Point(658, 16);
+            this.TxtBox_Brand.Name = "TxtBox_Brand";
+            this.TxtBox_Brand.Size = new System.Drawing.Size(151, 20);
+            this.TxtBox_Brand.TabIndex = 20;
+            // 
+            // Btn_SerchByEstandardName
+            // 
+            this.Btn_SerchByEstandardName.Location = new System.Drawing.Point(537, 14);
+            this.Btn_SerchByEstandardName.Name = "Btn_SerchByEstandardName";
+            this.Btn_SerchByEstandardName.Size = new System.Drawing.Size(74, 23);
+            this.Btn_SerchByEstandardName.TabIndex = 18;
+            this.Btn_SerchByEstandardName.Text = "Buscar";
+            this.Btn_SerchByEstandardName.UseVisualStyleBackColor = true;
+            this.Btn_SerchByEstandardName.Click += new System.EventHandler(this.Btn_SerchByEstandardName_Click);
+            // 
+            // TxtBox_EstandardName
+            // 
+            this.TxtBox_EstandardName.Location = new System.Drawing.Point(377, 14);
+            this.TxtBox_EstandardName.Name = "TxtBox_EstandardName";
+            this.TxtBox_EstandardName.Size = new System.Drawing.Size(154, 20);
+            this.TxtBox_EstandardName.TabIndex = 17;
+            // 
+            // Lbl_Estandard
+            // 
+            this.Lbl_Estandard.AutoSize = true;
+            this.Lbl_Estandard.Location = new System.Drawing.Point(316, 17);
+            this.Lbl_Estandard.Name = "Lbl_Estandard";
+            this.Lbl_Estandard.Size = new System.Drawing.Size(55, 13);
+            this.Lbl_Estandard.TabIndex = 16;
+            this.Lbl_Estandard.Text = "Estandard";
+            // 
+            // Btn_SerchEST
+            // 
+            this.Btn_SerchEST.Location = new System.Drawing.Point(236, 14);
+            this.Btn_SerchEST.Name = "Btn_SerchEST";
+            this.Btn_SerchEST.Size = new System.Drawing.Size(74, 23);
+            this.Btn_SerchEST.TabIndex = 15;
+            this.Btn_SerchEST.Text = "Buscar";
+            this.Btn_SerchEST.UseVisualStyleBackColor = true;
+            this.Btn_SerchEST.Click += new System.EventHandler(this.Btn_SerchEST_Click);
+            // 
+            // TxtBox_EST
+            // 
+            this.TxtBox_EST.Location = new System.Drawing.Point(97, 17);
+            this.TxtBox_EST.Name = "TxtBox_EST";
+            this.TxtBox_EST.Size = new System.Drawing.Size(133, 20);
+            this.TxtBox_EST.TabIndex = 14;
+            // 
+            // Lbl_EST
+            // 
+            this.Lbl_EST.AutoSize = true;
+            this.Lbl_EST.Location = new System.Drawing.Point(63, 20);
+            this.Lbl_EST.Name = "Lbl_EST";
+            this.Lbl_EST.Size = new System.Drawing.Size(28, 13);
+            this.Lbl_EST.TabIndex = 2;
+            this.Lbl_EST.Text = "EST";
             // 
             // Dgv_Estandards
             // 
@@ -106,9 +214,9 @@
             this.inventarioDataGridViewTextBoxColumn});
             this.Dgv_Estandards.DataSource = this.estandaresBindingSource;
             this.Dgv_Estandards.DateWithTime = false;
-            this.Dgv_Estandards.Location = new System.Drawing.Point(6, 17);
+            this.Dgv_Estandards.Location = new System.Drawing.Point(6, 61);
             this.Dgv_Estandards.Name = "Dgv_Estandards";
-            this.Dgv_Estandards.Size = new System.Drawing.Size(934, 256);
+            this.Dgv_Estandards.Size = new System.Drawing.Size(1004, 237);
             this.Dgv_Estandards.TabIndex = 0;
             this.Dgv_Estandards.TimeFilter = false;
             this.Dgv_Estandards.FilterStringChanged += new System.EventHandler(this.Dgv_Estandards_FilterStringChanged);
@@ -278,7 +386,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 467);
+            this.ClientSize = new System.Drawing.Size(1047, 467);
             this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.Btn_Add);
@@ -288,6 +396,7 @@
             this.Load += new System.EventHandler(this.Estandars_SubMenu_Load);
             this.TabControl_Estandards.ResumeLayout(false);
             this.Page_Instruments.ResumeLayout(false);
+            this.Page_Instruments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandards)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estandaresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet4)).EndInit();
@@ -319,5 +428,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn inventarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label Lbl_EST;
+        private System.Windows.Forms.TextBox TxtBox_EST;
+        private System.Windows.Forms.Button Btn_SerchEST;
+        private System.Windows.Forms.Label Lbl_Estandard;
+        private System.Windows.Forms.TextBox TxtBox_EstandardName;
+        private System.Windows.Forms.Button Btn_SerchByEstandardName;
+        private System.Windows.Forms.TextBox TxtBox_Brand;
+        private System.Windows.Forms.Label Lbl_Brand;
+        private System.Windows.Forms.Button Btn_Brand;
+        private System.Windows.Forms.Button Btn_CleanSerch;
     }
 }

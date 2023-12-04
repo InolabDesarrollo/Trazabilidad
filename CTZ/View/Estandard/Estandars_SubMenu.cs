@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using CTZ.Controler.Estandard;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,10 @@ namespace CTZ.View.Estandard
 {
     public partial class Estandars_SubMenu : MaterialForm
     {
+        private C_Estandard controler;
         public Estandars_SubMenu()
         {
+            controler = new C_Estandard();
             InitializeComponent();
         }
 
@@ -30,21 +33,48 @@ namespace CTZ.View.Estandard
             AddEstandard estandard = new AddEstandard();
             estandard.Show();
         }
-
+       
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
-
+            DeleteEstandard estandard = new DeleteEstandard();
+            estandard.Show();
         }
 
         private void Btn_Update_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void Dgv_Estandards_FilterStringChanged(object sender, EventArgs e)
         {
             this.estandaresBindingSource.Filter = this.Dgv_Estandards.FilterString;
+        }
 
+        private void Btn_SerchEST_Click(object sender, EventArgs e)
+        {
+            if (controler.check(TxtBox_EST.Text))
+            {
+                Dgv_Estandards.DataSource = controler.selectEstandardByEST(TxtBox_EST.Text);
+            }
+            else
+            {
+                MessageBox.Show("El estandard no existe ");
+            }
+        }
+
+        private void Btn_CleanSerch_Click(object sender, EventArgs e)
+        {
+            Dgv_Estandards.DataSource = estandaresBindingSource;
+        }
+
+        private void Btn_SerchByEstandardName_Click(object sender, EventArgs e)
+        {
+            Dgv_Estandards.DataSource = controler.selectByEstandard(TxtBox_EstandardName.Text);
+        }
+
+        private void Btn_Brand_Click(object sender, EventArgs e)
+        {
+            Dgv_Estandards.DataSource = controler.selectByBrand(TxtBox_Brand.Text);
         }
     }
 }

@@ -33,6 +33,26 @@ namespace CTZ.Model.Trazabilidad.Estandard
         {
             return conexion.isThereSomeInformation("Select * from Estandares where Id_Estandares = '"+ idEstandardEst + "';");
         }
-        
+
+        public void delete(string idEstandardEst)
+        {
+            conexion.executeQuery("DELETE  FROM Estandares WHERE Id_Estandares = '"+idEstandardEst+"';");
+        }
+
+        public DataTable selectByEST(string idEstandard)
+        {
+            return conexion.getDataTable("Select * from " +
+                " Estandares where Id_Estandares = '"+ idEstandard + "';");
+        }
+
+        public DataTable selectByEstandard(string estandard)
+        {
+            return conexion.getDataTable("SELECT * FROM Estandares WHERE Estandar LIKE  '%"+ estandard + "%';");
+        }
+
+        public DataTable selectByBrand(string brand)
+        {
+            return conexion.getDataTable("SELECT * FROM Estandares WHERE Marca LIKE  '%"+brand+"%';");
+        }
     }
 }

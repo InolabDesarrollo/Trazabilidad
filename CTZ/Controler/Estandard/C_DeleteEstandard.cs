@@ -7,16 +7,19 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controler.Estandard
 {
-    public class C_CheckEstatusEstandard
+    public class C_DeleteEstandard
     {
+        private readonly string idEstandardEst;
         Estandards_Repository repository;
-        public C_CheckEstatusEstandard() { 
+        public C_DeleteEstandard(string idEstandardEst) {
             repository = new Estandards_Repository();
+            this.idEstandardEst = idEstandardEst;
         }
 
-        public bool check(string idEstandartEst)
+        public void Delete()
         {
-            return repository.checkEstandard(idEstandartEst); 
+            repository.delete(idEstandardEst);
         }
+
     }
 }

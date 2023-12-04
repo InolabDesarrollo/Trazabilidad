@@ -41,7 +41,6 @@
             this.TxtBox_InstrumentName = new System.Windows.Forms.TextBox();
             this.Lbl_Instrument = new System.Windows.Forms.Label();
             this.Btn_ClearFilterInstruments = new System.Windows.Forms.Button();
-            this.Btn_SerchInstrument = new System.Windows.Forms.Button();
             this.TxtBox_Equino = new System.Windows.Forms.TextBox();
             this.Dgv_Instruments = new ADGV.AdvancedDataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,6 +100,7 @@
             this.instrumentosCertificadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentos_CertificadoTableAdapter = new CTZ.TrazabilidadTestDataSet3TableAdapters.Instrumentos_CertificadoTableAdapter();
             this.instrumentosCertificadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Btn_SerchInstrument = new System.Windows.Forms.Button();
             this.TabControl_Instruments.SuspendLayout();
             this.Page_Instruments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instruments)).BeginInit();
@@ -218,16 +218,6 @@
             this.Btn_ClearFilterInstruments.Text = "Limpiar Busqueda";
             this.Btn_ClearFilterInstruments.UseVisualStyleBackColor = true;
             this.Btn_ClearFilterInstruments.Click += new System.EventHandler(this.Btn_ClearFilterInstruments_Click);
-            // 
-            // Btn_SerchInstrument
-            // 
-            this.Btn_SerchInstrument.Location = new System.Drawing.Point(252, 16);
-            this.Btn_SerchInstrument.Name = "Btn_SerchInstrument";
-            this.Btn_SerchInstrument.Size = new System.Drawing.Size(74, 23);
-            this.Btn_SerchInstrument.TabIndex = 12;
-            this.Btn_SerchInstrument.Text = "Buscar";
-            this.Btn_SerchInstrument.UseVisualStyleBackColor = true;
-            this.Btn_SerchInstrument.Click += new System.EventHandler(this.Btn_SerchInstrument_Click);
             // 
             // TxtBox_Equino
             // 
@@ -816,6 +806,16 @@
             this.instrumentosCertificadoBindingSource1.DataMember = "Instrumentos_Certificado";
             this.instrumentosCertificadoBindingSource1.DataSource = this.trazabilidadTestDataSet3;
             // 
+            // Btn_SerchInstrument
+            // 
+            this.Btn_SerchInstrument.Location = new System.Drawing.Point(252, 16);
+            this.Btn_SerchInstrument.Name = "Btn_SerchInstrument";
+            this.Btn_SerchInstrument.Size = new System.Drawing.Size(74, 23);
+            this.Btn_SerchInstrument.TabIndex = 12;
+            this.Btn_SerchInstrument.Text = "Buscar";
+            this.Btn_SerchInstrument.UseVisualStyleBackColor = true;
+            this.Btn_SerchInstrument.Click += new System.EventHandler(this.Btn_SerchInstrument_Click);
+            // 
             // Instruments_SubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -870,7 +870,6 @@
         private System.Windows.Forms.Button BtnDelete_Instruments;
         private System.Windows.Forms.Button BtnUpdate_Instrument;
         private System.Windows.Forms.Label Lbl_Equino;
-        private System.Windows.Forms.Button Btn_SerchInstrument;
         private System.Windows.Forms.TextBox TxtBox_Equino;
         private System.Windows.Forms.Label Lbl_Instrument;
         private System.Windows.Forms.Button Btn_ClearFilterInstruments;
@@ -920,5 +919,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Laboratorio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Registro;
         private System.Windows.Forms.DataGridViewTextBoxColumn ASIGNACION_INSTRUMENTO;
+        private System.Windows.Forms.Button Btn_SerchInstrument;
     }
 }

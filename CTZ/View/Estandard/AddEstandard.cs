@@ -28,7 +28,7 @@ namespace CTZ.View.Estandard
             }
             else
             {
-                C_CheckEstatusEstandard controler = new C_CheckEstatusEstandard();
+                C_Estandard controler = new C_Estandard();
                 if (!controler.check(TxtBox_ESTE.Text))
                 {
                     addEstandart();
