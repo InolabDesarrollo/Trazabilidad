@@ -22,7 +22,7 @@ namespace CTZ.Vista.Instruments
         C_Instrument_Assignments instrumentAssignmentsControler;
         C_Usuario usuarioControler;
 
-        static Dictionary<int, string> informationId_Equino;
+        private static Dictionary<int, string> informationId_Equino;
         DataTable engineers;
         private int idInstrument;
         private string equinoInstrument;

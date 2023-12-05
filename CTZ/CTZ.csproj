@@ -215,6 +215,7 @@
     </Compile>
     <Compile Include="Controler\Estandard\C_AddEstandard.cs" />
     <Compile Include="Controler\Estandard\C_DeleteEstandard.cs" />
+    <Compile Include="Controler\Estandard\C_DeliveryOfEstandard.cs" />
     <Compile Include="Controler\Estandard\C_Estandard.cs" />
     <Compile Include="Controler\Instruments\Certificates_\C_Certificate.cs" />
     <Compile Include="Controler\Instruments\Traceability\C_ExternTraceabilityRepository.cs" />
@@ -380,6 +381,7 @@
     <Compile Include="Model\Browser\Interfaces\IUserRepository.cs" />
     <Compile Include="Model\Browser\UserRepository.cs" />
     <Compile Include="Model\Conexion.cs" />
+    <Compile Include="Model\Trazabilidad\Estandard\EstandardAssignment_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Estandard\Estandards_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\Certificate_Repository.cs" />
     <Compile Include="Model\Trazabilidad\ConexionTrazability.cs" />
@@ -446,6 +448,12 @@
     <Compile Include="View\Estandard\Assignment\Assignments_Menu.Designer.cs">
       <DependentUpon>Assignments_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Estandard\Assignment\RegistSignature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Estandard\Assignment\RegistSignature.Designer.cs">
+      <DependentUpon>RegistSignature.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Estandard\DeleteEstandard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +466,7 @@
     <Compile Include="View\Estandard\Estandards_Menu.Designer.cs">
       <DependentUpon>Estandards_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Estandard\Estandard_Assignment.cs" />
     <Compile Include="View\Estandard\Estandars_SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -693,6 +702,7 @@
     <Compile Include="View\Responsabilitis\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Responsabilitis\Signature.cs" />
     <Compile Include="View\SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -800,6 +810,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\Assignment\Assignments_Menu.resx">
       <DependentUpon>Assignments_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Estandard\Assignment\RegistSignature.resx">
+      <DependentUpon>RegistSignature.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\DeleteEstandard.resx">
       <DependentUpon>DeleteEstandard.cs</DependentUpon>

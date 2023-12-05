@@ -223,7 +223,7 @@
             this.Btn_Add_Delivery.Depth = 0;
             this.Btn_Add_Delivery.HighEmphasis = true;
             this.Btn_Add_Delivery.Icon = null;
-            this.Btn_Add_Delivery.Location = new System.Drawing.Point(554, 500);
+            this.Btn_Add_Delivery.Location = new System.Drawing.Point(554, 525);
             this.Btn_Add_Delivery.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Delivery.Name = "Btn_Add_Delivery";
@@ -233,6 +233,7 @@
             this.Btn_Add_Delivery.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Add_Delivery.UseAccentColor = false;
             this.Btn_Add_Delivery.UseVisualStyleBackColor = true;
+            this.Btn_Add_Delivery.Click += new System.EventHandler(this.Btn_Add_Delivery_Click);
             // 
             // TxtBox_Estandards
             // 
