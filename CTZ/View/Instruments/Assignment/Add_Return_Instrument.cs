@@ -54,6 +54,7 @@ namespace CTZ.Vista.Instruments
             C_ReturnOfInstrument controlerReturnOfInstrument = new C_ReturnOfInstrument();  
             controlerReturnOfInstrument.registerReturnInstrument(instrumentAssignments);
 
+
             //controler.registerReturnInstrument(instrumentAssignments);
             controler.updateStatusInstrumentAssignment(idInstrument,"DISPONIBLE");
             RegistSignature signatureQualityAgent = new RegistSignature(idInstrument,equinoInstrument, "Quality", instrumentAssignmentInformation.Rows[0]["Correo_Ingeniero"].ToString());

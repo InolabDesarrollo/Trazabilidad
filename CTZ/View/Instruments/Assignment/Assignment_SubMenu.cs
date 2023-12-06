@@ -27,8 +27,8 @@ namespace CTZ.View.Instruments.Assignment
 
         private void Btn_Add_Assignments_Click(object sender, EventArgs e)
         {
-            Serch_Instruments_Assignments assignments_Instruments = new Serch_Instruments_Assignments();
-            assignments_Instruments.Show();
+            Add_Instrument_Assignment assignment = new Add_Instrument_Assignment();
+            assignment.Show();
         }
 
         private void Btn_Regist_Return_Instrument_Click(object sender, EventArgs e)

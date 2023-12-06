@@ -17,19 +17,17 @@ namespace CTZ.Controler
             repository = new Instrument_Assignment_Repository();
         }
 
-        public void updateSignatureEngineer(int idInstrument, Image engineerSignature)
+        public void updateSignatureEngineer(int idInstrument, string engineerSignature)
         {
-            string stringSignatureBase64 = converImageToStringBase64(engineerSignature);
-            repository.updateSignatureEngineer(idInstrument, stringSignatureBase64);
+            repository.updateSignatureEngineer(idInstrument, engineerSignature);
         }
 
-        public void updateSignatureQuality(int idInstrument, Image signature)
+        public void updateSignatureQuality(int idInstrument, string signature)
         {
-            string stringSignatureBase64 = converImageToStringBase64(signature);
-            repository.updateSignatureQuality(idInstrument, stringSignatureBase64);
+            repository.updateSignatureQuality(idInstrument, signature);
         }
 
-        public void registEngineerSignatureByGroup(Image engineerSignature, Dictionary<int, string> informationId_Equino)
+        public void registEngineerSignatureByGroup(string engineerSignature, Dictionary<int, string> informationId_Equino)
         {
             foreach (KeyValuePair<int, string> id in informationId_Equino)
             {
@@ -37,7 +35,7 @@ namespace CTZ.Controler
             }
         }
 
-        public void registQualitySignatureByGroup(Image qualitySignature, List<int> idInstruments)
+        public void registQualitySignatureByGroup(string qualitySignature, List<int> idInstruments)
         {
             foreach (int id in idInstruments)
             {
@@ -45,16 +43,5 @@ namespace CTZ.Controler
             }
         }
 
-        private string converImageToStringBase64(Image image)
-        {
-            string imageBase64;
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                image.Save(memoryStream, ImageFormat.Jpeg);
-                byte[] bytes = memoryStream.ToArray();
-                imageBase64 = Convert.ToBase64String(bytes);
-            }
-            return imageBase64;
-        }
     }
 }

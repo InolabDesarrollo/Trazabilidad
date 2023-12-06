@@ -59,9 +59,11 @@ namespace CTZ.View.Estandard.Assignment
         {
             CTZ.View.Responsabilitis.Signature signature = new Responsabilitis.Signature();         
             assignment.EngineerSignature= signature.createStringOfSignature(Pnl_Signature);
+
             C_DeliveryOfEstandard controler = new C_DeliveryOfEstandard();
             controler.registerDeliveryEstandard(assignment, estandardInformation);
-
+            MessageBox.Show("Se creo la asignacion para los estandares ");
+            this.Close();
         }
 
  
