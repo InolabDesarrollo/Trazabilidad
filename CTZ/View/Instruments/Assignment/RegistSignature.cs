@@ -33,6 +33,7 @@ namespace CTZ.Vista.Instruments
         private readonly List<int> idInstruments;
         private readonly string typeOfSignature;
         private  string emailEngineer;
+        private readonly List<string> instrumentsWithCertificates;
         Image imageSignature;
         Notification notification = new Notification();
 
@@ -51,12 +52,13 @@ namespace CTZ.Vista.Instruments
             instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(idInstrument);
         }
 
-        public RegistSignature(Dictionary<int, string> informationId_Equino,string typeOfSignature, string emailEngineer)
+        public RegistSignature(Dictionary<int, string> informationId_Equino,string typeOfSignature, string emailEngineer, List<string> instrumentsWithCertificates)
         {
             InitializeComponent();
             this.informationId_Equino = informationId_Equino;
             this.typeOfSignature = typeOfSignature;
             this.emailEngineer = emailEngineer;
+            this.instrumentsWithCertificates = instrumentsWithCertificates;
             controler = new C_Instrument_Assignments();
             instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(informationId_Equino.Keys.First());
         }
@@ -143,17 +145,32 @@ namespace CTZ.Vista.Instruments
             
             C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
             DataTable certificateInformation= controler.getAllInstrumentCertificate(equinoInstrument);
-            string certificateLink = certificateInformation.Rows[0]["Link"].ToString();
+            string certificateLink;
 
             if (typeOfSignature.Equals("Engineer"))
             {
+                certificateLink = certificateInformation.Rows[0]["Link"].ToString();
                 body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\\\"utf-8\"\\  />\r\n</head>\r\n<body>\r\n   <h2>Entrega de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\ >\r\n        <tr>\r\n            <td colspan= \\\"4\"\\ >\r\n                <p>\r\n                    <font COLOR= " + "'purple'" + "   >Buen día estimado Ingeniero                         " + nameEngineer + " \r\n                    Se le informa que se le ha   asignado el Instrumento con las siguientes caracteristicas:    </font>  <br />\r\n                    <font COLOR= " + "'blue'" + "  > Equino:</font>                                   <b>" + equinoInstrument + "  </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "  > Fecha De Entrega:</font></b>                          <b>" + deliveryDate.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Fecha registrada de devolucion:</font></b>            <b>" + aproximateDateOfReturn.Substring(0,10) + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + " > Observaciones de Entrega:</font></b>                  <b>" + deliveryObservation + " </b>  <br /> \r\n                </p><br /><b><font COLOR=\"blue\" >Link del certificado:</font></b>                  <b>"+ certificateLink + "</b>  <br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
             }
             if (typeOfSignature.Equals("EngineerByGroup"))
             {
-                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\\\"utf-8\"\\  />\r\n</head>\r\n<body>\r\n   <h2>Entrega de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\ >\r\n        <tr>\r\n            <td colspan= \\\"4\"\\ >\r\n                <p>\r\n                    <font COLOR= " + "'purple'" + " >Buen día estimado Ingeniero                         " + nameEngineer + "</font>  <br />\r\n                    Se le informa que se le ha   asignado el Instrumento con las siguientes caracteristicas:  <br />\r\n <b><font COLOR= " + "'blue'" + "> Fecha De Entrega:</font></b>                          <b>" + deliveryDate.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Fecha registrada de devolucion:</font></b>            <b>" + aproximateDateOfReturn.Substring(0,9) + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + " > Observaciones de Entrega:</font></b>                  <b>" + deliveryObservation + " </b>  <br />\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
+                certificateLink = serchCertificates(instrumentsWithCertificates);
+
+                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\\\"utf-8\"\\  />\r\n</head>\r\n<body>\r\n   <h2>Entrega de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\ >\r\n        <tr>\r\n            <td colspan= \\\"4\"\\ >\r\n                <p>\r\n                    <font COLOR= " + "'purple'" + " >Buen día estimado Ingeniero                         " + nameEngineer + "</font>  <br />\r\n                    Se le informa que se le han   asignado los Instrumentos  con las siguientes caracteristicas:  <br />\r\n <b><font COLOR= " + "'blue'" + "> Fecha De Entrega:</font></b>                          <b>" + deliveryDate.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Fecha registrada de devolucion:</font></b>            <b>" + aproximateDateOfReturn.Substring(0,9) + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + " > Observaciones de Entrega:</font></b>                  <b>" + deliveryObservation + " </b>  <br />   <b> <font COLOR=\"blue\" >Link de certificados:</font></b>                  <b>"+certificateLink+"</b>  <br />                \r\n</p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
             }
             return body;
+        }
+
+        private string serchCertificates(List<string> instrumentsWithCertificates)
+        {
+            C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
+            string certificates = "";
+            foreach (string equino in instrumentsWithCertificates)
+            {
+                DataTable instrumentInformation = controler.getAllInstrumentCertificate(equino);
+                certificates = string.Join(",", instrumentInformation.Rows[0]["Link"].ToString());
+            }
+            return certificates;
         }
 
         private void sendQualityMailNotification()
@@ -170,6 +187,7 @@ namespace CTZ.Vista.Instruments
 
         private string emailBodyForQuality()
         {
+            
             string body = "";
             string equinoInstrument = instrumentAssignmentsInformation.Rows[0]["Equino_Instrumento"].ToString();
             string dateOfReturn = instrumentAssignmentsInformation.Rows[0]["Fecha_Devolucion"].ToString();
@@ -189,5 +207,7 @@ namespace CTZ.Vista.Instruments
             
             return body;
         }
+
+
     }
 }

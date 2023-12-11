@@ -214,6 +214,7 @@
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controler\Estandard\C_AddEstandard.cs" />
+    <Compile Include="Controler\Estandard\C_Certificate.cs" />
     <Compile Include="Controler\Estandard\C_DeleteEstandard.cs" />
     <Compile Include="Controler\Estandard\C_DeliveryOfEstandard.cs" />
     <Compile Include="Controler\Estandard\C_Estandard.cs" />
@@ -381,6 +382,7 @@
     <Compile Include="Model\Browser\Interfaces\IUserRepository.cs" />
     <Compile Include="Model\Browser\UserRepository.cs" />
     <Compile Include="Model\Conexion.cs" />
+    <Compile Include="Model\Trazabilidad\Estandard\Certificate_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Estandard\EstandardAssignment_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Estandard\Estandards_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\Certificate_Repository.cs" />

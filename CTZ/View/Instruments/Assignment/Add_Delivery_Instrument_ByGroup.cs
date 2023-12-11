@@ -21,6 +21,7 @@ namespace CTZ.Vista.Instruments
         C_Instruments instrumentsControler;
         C_Instrument_Assignments instrumentAssignmentsControler;
         C_Usuario usuarioControler;
+        private static List<string> instrumentsWithCertificate;
 
         private static Dictionary<int, string> informationId_Equino;
         DataTable engineers;
@@ -31,6 +32,7 @@ namespace CTZ.Vista.Instruments
         {
             InitializeComponent();
             informationId_Equino = new Dictionary<int, string>();
+            instrumentsWithCertificate = new List<string>();
             UserRepository userRepository = new UserRepository();
             usuarioControler = new C_Usuario(userRepository);
 
@@ -99,8 +101,20 @@ namespace CTZ.Vista.Instruments
         {
             informationId_Equino.Add(idInstrument, equinoInstrument);
             ComboBox_Instruments.Items.Add(equinoInstrument);
+            checkIfEngineerNeedCertificate();
             MessageBox.Show("Se agrego Equino " + equinoInstrument);
             TxtBox_Instrumenst.Clear();
+        }
+
+        private void checkIfEngineerNeedCertificate()
+        {
+            DialogResult resultado = MessageBox.Show("¿Quieres que se envie certificado de este instrumento?", "Pregunta", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado== DialogResult.Yes)
+            {
+                instrumentsWithCertificate.Add(equinoInstrument);
+            }                   
         }
 
         private void Btn_Regist_kit_Click(object sender, EventArgs e)
@@ -129,7 +143,8 @@ namespace CTZ.Vista.Instruments
                 instrumentAssignmentsControler.registerDeliveryInstrument(instrument_Assignments, informationId_Equino);
                 updateStatusInstruments();
 
-                RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup", emailEngineer);
+                RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup", emailEngineer,instrumentsWithCertificate);
+                
                 signature.Show();
                 this.Close();
             }
