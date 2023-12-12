@@ -44,7 +44,7 @@ namespace CTZ.View.Estandard
         private void addEstandart()
         {
             CTZ.View.Responsabilitis.Estandard estandard = new Responsabilitis.Estandard();
-            estandard.IdEstandard = TxtBox_ESTE.Text;
+            estandard.EstEstandard = TxtBox_ESTE.Text;
             estandard.EstandardDescription = TxtBox_Estandard.Text;
             estandard.Use = TxtBox_Use.Text;
             estandard.Brand = TxtBox_Brand.Text;

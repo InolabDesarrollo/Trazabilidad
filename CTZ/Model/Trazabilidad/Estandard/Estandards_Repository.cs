@@ -25,7 +25,7 @@ namespace CTZ.Model.Trazabilidad.Estandard
         {
             conexion.executeQuery("Insert Estandares(Id_Estandares,Estandar,Uso,Marca,Presentacion,NoLote,FechaDeFabricacion," +
                 "\r\n FechaDeCaducidad,Cantidad,Ubicacion,Estatus, Inventario)" +
-                "\r\n Values('"+estandard.IdEstandard+"','"+estandard.EstandardDescription+"','"+estandard.Use+"','"+estandard.Brand+"','"+estandard.Presentation+"', " +
+                "\r\n Values('"+estandard.EstEstandard+"','"+estandard.EstandardDescription+"','"+estandard.Use+"','"+estandard.Brand+"','"+estandard.Presentation+"', " +
                 "\r\n '"+estandard.Number+"','"+estandard.FabricationDate+"','"+estandard.ExpirationDate+"','"+estandard.Quantity+"','"+estandard.Ubication+"','"+estandard.Estatus+"','"+estandard.Inventory+"'); ");
         }
 
@@ -53,6 +53,14 @@ namespace CTZ.Model.Trazabilidad.Estandard
         public DataTable selectByBrand(string brand)
         {
             return conexion.getDataTable("SELECT * FROM Estandares WHERE Marca LIKE  '%"+brand+"%';");
+        }
+
+        public void updateEstandard(CTZ.View.Responsabilitis.Estandard estandard)
+        {
+            conexion.executeQuery("Update Estandares Set Estandar ='"+estandard.EstandardDescription+"', Uso ='"+estandard.Use+"', Marca ='"+estandard.Brand+"'," +
+                " Presentacion ='"+estandard.Presentation+"', NoLote= '"+estandard.Number+"'," +
+                " \r\n FechaDeFabricacion = '"+estandard.FabricationDate+"', FechaDeCaducidad='"+estandard.ExpirationDate+"', Cantidad='"+estandard.Quantity+"',\r\nUbicacion='"+estandard.Ubication+"', " +
+                " Estatus ='"+estandard.Estatus+"', Inventario ='"+estandard.Inventory+"' WHERE Id_Estandares= '"+estandard.EstEstandard+"'; ");
         }
     }
 }

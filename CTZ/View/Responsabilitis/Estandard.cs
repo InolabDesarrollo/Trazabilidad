@@ -8,7 +8,7 @@ namespace CTZ.View.Responsabilitis
 {
     public class Estandard
     {
-        public string IdEstandard;
+        public string EstEstandard;
 
         public string EstandardDescription;
 
@@ -32,6 +32,6 @@ namespace CTZ.View.Responsabilitis
 
         public string Inventory;
 
-
+        public string Signature;
     }
 }

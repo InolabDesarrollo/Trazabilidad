@@ -42,7 +42,8 @@ namespace CTZ.View.Estandard
 
         private void Btn_Update_Click(object sender, EventArgs e)
         {
-           
+            SerchEstandard serch = new SerchEstandard();
+            serch.Show();
         }
 
         private void Dgv_Estandards_FilterStringChanged(object sender, EventArgs e)
