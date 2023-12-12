@@ -23,27 +23,30 @@ namespace CTZ.View.Estandard
 
         private void Estandars_SubMenu_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares_Certificados' Puede moverla o quitarla según sea necesario.
+            this.estandares_CertificadosTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares_Certificados);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares' Puede moverla o quitarla según sea necesario.
             this.estandaresTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares);
 
         }
+
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             AddEstandard estandard = new AddEstandard();
             estandard.Show();
         }
-       
+
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
-            DeleteEstandard estandard = new DeleteEstandard();
-            estandard.Show();
+            DeleteEstandard deleteEstandard = new DeleteEstandard();
+            deleteEstandard.Show();
         }
 
         private void Btn_Update_Click(object sender, EventArgs e)
         {
-            SerchEstandard serch = new SerchEstandard();
-            serch.Show();
+            SerchEstandard estandard =  new SerchEstandard();
+            estandard.Show();
         }
 
         private void Dgv_Estandards_FilterStringChanged(object sender, EventArgs e)
@@ -77,5 +80,6 @@ namespace CTZ.View.Estandard
         {
             Dgv_Estandards.DataSource = controler.selectByBrand(TxtBox_Brand.Text);
         }
+
     }
 }
