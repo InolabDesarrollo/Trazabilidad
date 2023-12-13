@@ -433,59 +433,66 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Estandard\AddEstandard.cs">
+    <Compile Include="View\Estandard\AddCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estandard\AddEstandard.Designer.cs">
+    <Compile Include="View\Estandard\AddCertificate.Designer.cs">
+      <DependentUpon>AddCertificate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Estandard\AddEstandard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Estandard\AddEstandard.Designer.cs">
       <DependentUpon>AddEstandard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estandard\Assignment\Add_Delivery_Estandard.cs">
+    <Compile Include="View\Estandard\Assignment\Add_Delivery_Estandard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estandard\Assignment\Add_Delivery_Estandard.Designer.cs">
+    <Compile Include="View\Estandard\Assignment\Add_Delivery_Estandard.Designer.cs">
       <DependentUpon>Add_Delivery_Estandard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estandard\Assignment\Assignments_Menu.cs">
+    <Compile Include="View\Estandard\Assignment\Assignments_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estandard\Assignment\Assignments_Menu.Designer.cs">
+    <Compile Include="View\Estandard\Assignment\Assignments_Menu.Designer.cs">
       <DependentUpon>Assignments_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estandard\Assignment\RegistSignature.cs">
+    <Compile Include="View\Estandard\Assignment\RegistSignature.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estandard\Assignment\RegistSignature.Designer.cs">
+    <Compile Include="View\Estandard\Assignment\RegistSignature.Designer.cs">
       <DependentUpon>RegistSignature.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estandard\DeleteEstandard.cs">
+    <Compile Include="View\Estandard\CertificateEstandard.cs" />
+    <Compile Include="View\Estandard\DeleteEstandard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estandard\DeleteEstandard.Designer.cs">
+    <Compile Include="View\Estandard\DeleteEstandard.Designer.cs">
       <DependentUpon>DeleteEstandard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estandard\Estandards_Menu.cs">
+    <Compile Include="View\Estandard\Estandards_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estandard\Estandards_Menu.Designer.cs">
+    <Compile Include="View\Estandard\Estandards_Menu.Designer.cs">
       <DependentUpon>Estandards_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estandard\Estandard_Assignment.cs" />
-    <Compile Include="Estandard\Estandars_SubMenu.cs">
+    <Compile Include="View\Estandard\Estandard_Assignment.cs" />
+    <Compile Include="View\Estandard\Estandars_SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estandard\Estandars_SubMenu.Designer.cs">
+    <Compile Include="View\Estandard\Estandars_SubMenu.Designer.cs">
       <DependentUpon>Estandars_SubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estandard\SerchEstandard.cs">
+    <Compile Include="View\Estandard\SerchEstandard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estandard\SerchEstandard.Designer.cs">
+    <Compile Include="View\Estandard\SerchEstandard.Designer.cs">
       <DependentUpon>SerchEstandard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estandard\UpdateEstandard.cs">
+    <Compile Include="View\Estandard\UpdateEstandard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estandard\UpdateEstandard.Designer.cs">
+    <Compile Include="View\Estandard\UpdateEstandard.Designer.cs">
       <DependentUpon>UpdateEstandard.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Assignment\Assignment_SubMenu.cs">
@@ -692,26 +699,26 @@
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Certificates_\Certificate.cs" />
-    <Compile Include="View\Responsabilitis\DateForReport.cs" />
-    <Compile Include="View\Responsabilitis\Email.cs" />
-    <Compile Include="View\Responsabilitis\Estandard.cs" />
-    <Compile Include="View\Responsabilitis\Instruments.cs" />
-    <Compile Include="View\Responsabilitis\Instrument_Assignments.cs" />
-    <Compile Include="View\Responsabilitis\Notification.cs" />
-    <Compile Include="View\Responsabilitis\RelationCertificateInstrument.cs" />
+    <Compile Include="Responsabilitis\DateForReport.cs" />
+    <Compile Include="Responsabilitis\Email.cs" />
+    <Compile Include="Responsabilitis\Estandard.cs" />
+    <Compile Include="Responsabilitis\Instruments.cs" />
+    <Compile Include="Responsabilitis\Instrument_Assignments.cs" />
+    <Compile Include="Responsabilitis\Notification.cs" />
+    <Compile Include="Responsabilitis\RelationCertificateInstrument.cs" />
     <Compile Include="View\Instruments\SerchInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Instruments\SerchInstrument.Designer.cs">
       <DependentUpon>SerchInstrument.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Responsabilitis\Report.cs">
+    <Compile Include="Responsabilitis\Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Responsabilitis\Report.Designer.cs">
+    <Compile Include="Responsabilitis\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Responsabilitis\Signature.cs" />
+    <Compile Include="Responsabilitis\Signature.cs" />
     <Compile Include="View\SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -811,31 +818,34 @@
     <EmbeddedResource Include="HistorialFSR.resx">
       <DependentUpon>HistorialFSR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estandard\AddEstandard.resx">
+    <EmbeddedResource Include="View\Estandard\AddCertificate.resx">
+      <DependentUpon>AddCertificate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Estandard\AddEstandard.resx">
       <DependentUpon>AddEstandard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estandard\Assignment\Add_Delivery_Estandard.resx">
+    <EmbeddedResource Include="View\Estandard\Assignment\Add_Delivery_Estandard.resx">
       <DependentUpon>Add_Delivery_Estandard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estandard\Assignment\Assignments_Menu.resx">
+    <EmbeddedResource Include="View\Estandard\Assignment\Assignments_Menu.resx">
       <DependentUpon>Assignments_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estandard\Assignment\RegistSignature.resx">
+    <EmbeddedResource Include="View\Estandard\Assignment\RegistSignature.resx">
       <DependentUpon>RegistSignature.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estandard\DeleteEstandard.resx">
+    <EmbeddedResource Include="View\Estandard\DeleteEstandard.resx">
       <DependentUpon>DeleteEstandard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estandard\Estandards_Menu.resx">
+    <EmbeddedResource Include="View\Estandard\Estandards_Menu.resx">
       <DependentUpon>Estandards_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estandard\Estandars_SubMenu.resx">
+    <EmbeddedResource Include="View\Estandard\Estandars_SubMenu.resx">
       <DependentUpon>Estandars_SubMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estandard\SerchEstandard.resx">
+    <EmbeddedResource Include="View\Estandard\SerchEstandard.resx">
       <DependentUpon>SerchEstandard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estandard\UpdateEstandard.resx">
+    <EmbeddedResource Include="View\Estandard\UpdateEstandard.resx">
       <DependentUpon>UpdateEstandard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Assignment_SubMenu.resx">
@@ -950,7 +960,7 @@
     <EmbeddedResource Include="View\Instruments\SerchInstrument.resx">
       <DependentUpon>SerchInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Responsabilitis\Report.resx">
+    <EmbeddedResource Include="Responsabilitis\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SubMenu.resx">

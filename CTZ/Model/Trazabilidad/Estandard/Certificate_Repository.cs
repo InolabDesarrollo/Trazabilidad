@@ -1,4 +1,5 @@
 ﻿using CTZ.Modelo.Documentacion;
+using CTZ.View.Estandard;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,16 @@ namespace CTZ.Model.Trazabilidad.Estandard
                 " Id_Estandard = "+ idEstandard + ";");
         }
 
+        public void createCertificate(CertificateEstandard certificate)
+        {
+            connection.executeQuery("Insert into Certificados_Estandares(Fecha_De_Caducidad,Lote,Numero_De_Parte,Fecha_De_Registro,Link,Id_Estandard,Estatus) " +
+                "\r\nVALUES('"+certificate.ExpirationDate+"','"+certificate.Lot+"', '"+certificate.NumberOfPart+"', '"+certificate.RegisterDate+"','"+certificate.Link+"',\r\n"+certificate.idEstandard+",'"+certificate.Status+"')");
+        }
 
+        public void updateStatusCertificates(int idEstandard)
+        {
+            connection.executeQuery("Update Certificados_Estandares set Estatus ='Caduco' " +
+                " where Id_Estandard ="+ idEstandard + " AND Fecha_De_Caducidad < GETDATE();");
+        }
     }
 }

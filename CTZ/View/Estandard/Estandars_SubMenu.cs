@@ -45,7 +45,8 @@ namespace CTZ.View.Estandard
 
         private void Btn_Update_Click(object sender, EventArgs e)
         {
-            SerchEstandard estandard =  new SerchEstandard();
+            string kindOfSerch = "UpdateEstandard";
+            SerchEstandard estandard =  new SerchEstandard(kindOfSerch);
             estandard.Show();
         }
 
@@ -81,5 +82,11 @@ namespace CTZ.View.Estandard
             Dgv_Estandards.DataSource = controler.selectByBrand(TxtBox_Brand.Text);
         }
 
+        private void Btn_Add_Certificate_Click(object sender, EventArgs e)
+        {
+            string kindOfSerch = "AddCertificate";
+            SerchEstandard estandard = new SerchEstandard(kindOfSerch);
+            estandard.Show();
+        }
     }
 }

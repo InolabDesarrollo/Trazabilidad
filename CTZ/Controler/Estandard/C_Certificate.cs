@@ -1,4 +1,6 @@
 ﻿using CTZ.Modelo.Trazabilidad;
+using CTZ.View.Estandard;
+using CTZ.Vista.Responsabilitis;
 using Microsoft.ReportingServices.Diagnostics.Internal;
 using System;
 using System.Collections.Generic;
@@ -19,6 +21,21 @@ namespace CTZ.Controler.Estandard
         {
             return repository.selectCurrentCertificate(idEstandard);
         }
+
+        public void createCertificate(CertificateEstandard certificate)
+        {
+            DateForReport dates = new DateForReport();
+            certificate.ExpirationDate =  dates.convertToValidDate(certificate.ExpirationDate);
+            certificate.RegisterDate= dates.convertToValidDate(certificate.RegisterDate);
+
+            repository.createCertificate(certificate);
+        }
+
+        public void updateStatusCertificates(int idEstandard)
+        {
+            repository.updateStatusCertificates(idEstandard);
+        }
+
 
     }
 }

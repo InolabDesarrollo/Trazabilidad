@@ -45,9 +45,6 @@
             this.TxtBox_EST = new System.Windows.Forms.TextBox();
             this.Lbl_EST = new System.Windows.Forms.Label();
             this.Dgv_Estandards = new ADGV.AdvancedDataGridView();
-            this.Page_Estandard_Certificate = new System.Windows.Forms.TabPage();
-            this.Dgv_Estandard_Certificate = new ADGV.AdvancedDataGridView();
-            this.Btn_Add_Certificate = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEstandaresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estandarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,9 +60,9 @@
             this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estandaresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTestDataSet4 = new CTZ.TrazabilidadTestDataSet4();
-            this.estandaresTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.EstandaresTableAdapter();
-            this.estandaresCertificadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estandares_CertificadosTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.Estandares_CertificadosTableAdapter();
+            this.Page_Estandard_Certificate = new System.Windows.Forms.TabPage();
+            this.Btn_Add_Certificate = new System.Windows.Forms.Button();
+            this.Dgv_Estandard_Certificate = new ADGV.AdvancedDataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEstandaresDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estandarDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,13 +83,16 @@
             this.fechaDeRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatusDeCertificadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estandaresCertificadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estandaresTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.EstandaresTableAdapter();
+            this.estandares_CertificadosTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.Estandares_CertificadosTableAdapter();
             this.TabControl_Estandards.SuspendLayout();
             this.Page_Instruments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandards)).BeginInit();
-            this.Page_Estandard_Certificate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandard_Certificate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estandaresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet4)).BeginInit();
+            this.Page_Estandard_Certificate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandard_Certificate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estandaresCertificadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -296,72 +296,6 @@
             this.Dgv_Estandards.TimeFilter = false;
             this.Dgv_Estandards.FilterStringChanged += new System.EventHandler(this.Dgv_Estandards_FilterStringChanged);
             // 
-            // Page_Estandard_Certificate
-            // 
-            this.Page_Estandard_Certificate.Controls.Add(this.Btn_Add_Certificate);
-            this.Page_Estandard_Certificate.Controls.Add(this.Dgv_Estandard_Certificate);
-            this.Page_Estandard_Certificate.Location = new System.Drawing.Point(4, 22);
-            this.Page_Estandard_Certificate.Name = "Page_Estandard_Certificate";
-            this.Page_Estandard_Certificate.Padding = new System.Windows.Forms.Padding(3);
-            this.Page_Estandard_Certificate.Size = new System.Drawing.Size(1039, 400);
-            this.Page_Estandard_Certificate.TabIndex = 1;
-            this.Page_Estandard_Certificate.Text = "Estandard Certificado";
-            this.Page_Estandard_Certificate.UseVisualStyleBackColor = true;
-            // 
-            // Dgv_Estandard_Certificate
-            // 
-            this.Dgv_Estandard_Certificate.AllowUserToAddRows = false;
-            this.Dgv_Estandard_Certificate.AllowUserToDeleteRows = false;
-            this.Dgv_Estandard_Certificate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dgv_Estandard_Certificate.AutoGenerateColumns = false;
-            this.Dgv_Estandard_Certificate.AutoGenerateContextFilters = true;
-            this.Dgv_Estandard_Certificate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.Dgv_Estandard_Certificate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
-            this.Dgv_Estandard_Certificate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Dgv_Estandard_Certificate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_Estandard_Certificate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.idEstandaresDataGridViewTextBoxColumn1,
-            this.estandarDataGridViewTextBoxColumn1,
-            this.usoDataGridViewTextBoxColumn1,
-            this.marcaDataGridViewTextBoxColumn1,
-            this.presentacionDataGridViewTextBoxColumn1,
-            this.noLoteDataGridViewTextBoxColumn1,
-            this.fechaDeFabricacionDataGridViewTextBoxColumn1,
-            this.fechaDeCaducidadDataGridViewTextBoxColumn1,
-            this.cantidadDataGridViewTextBoxColumn1,
-            this.ubicacionDataGridViewTextBoxColumn1,
-            this.estatusDataGridViewTextBoxColumn1,
-            this.inventarioDataGridViewTextBoxColumn1,
-            this.idCertificadoDataGridViewTextBoxColumn,
-            this.fechaDeCaducidadDataGridViewTextBoxColumn2,
-            this.loteDataGridViewTextBoxColumn,
-            this.numeroDeParteDataGridViewTextBoxColumn,
-            this.fechaDeRegistroDataGridViewTextBoxColumn,
-            this.linkDataGridViewTextBoxColumn,
-            this.estatusDeCertificadoDataGridViewTextBoxColumn});
-            this.Dgv_Estandard_Certificate.DataSource = this.estandaresCertificadosBindingSource;
-            this.Dgv_Estandard_Certificate.DateWithTime = false;
-            this.Dgv_Estandard_Certificate.Location = new System.Drawing.Point(6, 57);
-            this.Dgv_Estandard_Certificate.Name = "Dgv_Estandard_Certificate";
-            this.Dgv_Estandard_Certificate.Size = new System.Drawing.Size(1027, 294);
-            this.Dgv_Estandard_Certificate.TabIndex = 0;
-            this.Dgv_Estandard_Certificate.TimeFilter = false;
-            // 
-            // Btn_Add_Certificate
-            // 
-            this.Btn_Add_Certificate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
-            this.Btn_Add_Certificate.FlatAppearance.BorderSize = 0;
-            this.Btn_Add_Certificate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Add_Certificate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add_Certificate.Location = new System.Drawing.Point(124, 357);
-            this.Btn_Add_Certificate.Name = "Btn_Add_Certificate";
-            this.Btn_Add_Certificate.Size = new System.Drawing.Size(149, 37);
-            this.Btn_Add_Certificate.TabIndex = 1;
-            this.Btn_Add_Certificate.Text = "Agregar Certificado";
-            this.Btn_Add_Certificate.UseVisualStyleBackColor = false;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -477,18 +411,72 @@
             this.trazabilidadTestDataSet4.DataSetName = "TrazabilidadTestDataSet4";
             this.trazabilidadTestDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // estandaresTableAdapter
+            // Page_Estandard_Certificate
             // 
-            this.estandaresTableAdapter.ClearBeforeFill = true;
+            this.Page_Estandard_Certificate.Controls.Add(this.Btn_Add_Certificate);
+            this.Page_Estandard_Certificate.Controls.Add(this.Dgv_Estandard_Certificate);
+            this.Page_Estandard_Certificate.Location = new System.Drawing.Point(4, 22);
+            this.Page_Estandard_Certificate.Name = "Page_Estandard_Certificate";
+            this.Page_Estandard_Certificate.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_Estandard_Certificate.Size = new System.Drawing.Size(1039, 400);
+            this.Page_Estandard_Certificate.TabIndex = 1;
+            this.Page_Estandard_Certificate.Text = "Estandard Certificado";
+            this.Page_Estandard_Certificate.UseVisualStyleBackColor = true;
             // 
-            // estandaresCertificadosBindingSource
+            // Btn_Add_Certificate
             // 
-            this.estandaresCertificadosBindingSource.DataMember = "Estandares_Certificados";
-            this.estandaresCertificadosBindingSource.DataSource = this.trazabilidadTestDataSet4;
+            this.Btn_Add_Certificate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
+            this.Btn_Add_Certificate.FlatAppearance.BorderSize = 0;
+            this.Btn_Add_Certificate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Add_Certificate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add_Certificate.Location = new System.Drawing.Point(124, 357);
+            this.Btn_Add_Certificate.Name = "Btn_Add_Certificate";
+            this.Btn_Add_Certificate.Size = new System.Drawing.Size(149, 37);
+            this.Btn_Add_Certificate.TabIndex = 1;
+            this.Btn_Add_Certificate.Text = "Agregar Certificado";
+            this.Btn_Add_Certificate.UseVisualStyleBackColor = false;
+            this.Btn_Add_Certificate.Click += new System.EventHandler(this.Btn_Add_Certificate_Click);
             // 
-            // estandares_CertificadosTableAdapter
+            // Dgv_Estandard_Certificate
             // 
-            this.estandares_CertificadosTableAdapter.ClearBeforeFill = true;
+            this.Dgv_Estandard_Certificate.AllowUserToAddRows = false;
+            this.Dgv_Estandard_Certificate.AllowUserToDeleteRows = false;
+            this.Dgv_Estandard_Certificate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dgv_Estandard_Certificate.AutoGenerateColumns = false;
+            this.Dgv_Estandard_Certificate.AutoGenerateContextFilters = true;
+            this.Dgv_Estandard_Certificate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.Dgv_Estandard_Certificate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
+            this.Dgv_Estandard_Certificate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Dgv_Estandard_Certificate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Estandard_Certificate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.idEstandaresDataGridViewTextBoxColumn1,
+            this.estandarDataGridViewTextBoxColumn1,
+            this.usoDataGridViewTextBoxColumn1,
+            this.marcaDataGridViewTextBoxColumn1,
+            this.presentacionDataGridViewTextBoxColumn1,
+            this.noLoteDataGridViewTextBoxColumn1,
+            this.fechaDeFabricacionDataGridViewTextBoxColumn1,
+            this.fechaDeCaducidadDataGridViewTextBoxColumn1,
+            this.cantidadDataGridViewTextBoxColumn1,
+            this.ubicacionDataGridViewTextBoxColumn1,
+            this.estatusDataGridViewTextBoxColumn1,
+            this.inventarioDataGridViewTextBoxColumn1,
+            this.idCertificadoDataGridViewTextBoxColumn,
+            this.fechaDeCaducidadDataGridViewTextBoxColumn2,
+            this.loteDataGridViewTextBoxColumn,
+            this.numeroDeParteDataGridViewTextBoxColumn,
+            this.fechaDeRegistroDataGridViewTextBoxColumn,
+            this.linkDataGridViewTextBoxColumn,
+            this.estatusDeCertificadoDataGridViewTextBoxColumn});
+            this.Dgv_Estandard_Certificate.DataSource = this.estandaresCertificadosBindingSource;
+            this.Dgv_Estandard_Certificate.DateWithTime = false;
+            this.Dgv_Estandard_Certificate.Location = new System.Drawing.Point(6, 57);
+            this.Dgv_Estandard_Certificate.Name = "Dgv_Estandard_Certificate";
+            this.Dgv_Estandard_Certificate.Size = new System.Drawing.Size(1027, 294);
+            this.Dgv_Estandard_Certificate.TabIndex = 0;
+            this.Dgv_Estandard_Certificate.TimeFilter = false;
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -669,6 +657,19 @@
             this.estatusDeCertificadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.estatusDeCertificadoDataGridViewTextBoxColumn.Width = 124;
             // 
+            // estandaresCertificadosBindingSource
+            // 
+            this.estandaresCertificadosBindingSource.DataMember = "Estandares_Certificados";
+            this.estandaresCertificadosBindingSource.DataSource = this.trazabilidadTestDataSet4;
+            // 
+            // estandaresTableAdapter
+            // 
+            this.estandaresTableAdapter.ClearBeforeFill = true;
+            // 
+            // estandares_CertificadosTableAdapter
+            // 
+            this.estandares_CertificadosTableAdapter.ClearBeforeFill = true;
+            // 
             // Estandars_SubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,10 +683,10 @@
             this.Page_Instruments.ResumeLayout(false);
             this.Page_Instruments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandards)).EndInit();
-            this.Page_Estandard_Certificate.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandard_Certificate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estandaresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet4)).EndInit();
+            this.Page_Estandard_Certificate.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandard_Certificate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estandaresCertificadosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
