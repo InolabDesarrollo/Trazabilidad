@@ -29,11 +29,13 @@ namespace CTZ.View.Estandard
             if(controler.check(TxtBox_EstEstandard.Text) && kindOfSerch.Equals("UpdateEstandard"))
             {
                 UpdateEstandard update = new UpdateEstandard(TxtBox_EstEstandard.Text);
-                update.Show();  
+                update.Show();
+                this.Close();
             }else if (controler.check(TxtBox_EstEstandard.Text) && kindOfSerch.Equals("AddCertificate"))
             {
                 AddCertificate addCertificate = new AddCertificate(TxtBox_EstEstandard.Text);
                 addCertificate.Show();
+                this.Close();   
             }
             else
             {

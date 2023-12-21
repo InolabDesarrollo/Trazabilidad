@@ -59,7 +59,7 @@ namespace CTZ.View.Estandard
 
             C_AddEstandard controlerAdd = new C_AddEstandard(estandard);
             controlerAdd.add();
-            MessageBox.Show("El Estandar " + TxtBox_ESTE + " Se agrego correctamente");
+            MessageBox.Show("El Estandar " + TxtBox_ESTE.Text + " Se agrego correctamente");
             cleanButtons();
         }
 
