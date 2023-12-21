@@ -88,5 +88,10 @@ namespace CTZ.View.Estandard
             SerchEstandard estandard = new SerchEstandard(kindOfSerch);
             estandard.Show();
         }
+
+        private void Dgv_Estandard_Certificate_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.estandaresCertificadosBindingSource.Filter =this.Dgv_Estandard_Certificate.FilterString;
+        }
     }
 }

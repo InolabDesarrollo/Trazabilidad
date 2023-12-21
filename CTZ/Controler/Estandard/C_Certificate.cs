@@ -4,6 +4,7 @@ using CTZ.Vista.Responsabilitis;
 using Microsoft.ReportingServices.Diagnostics.Internal;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,8 @@ namespace CTZ.Controler.Estandard
         public void createCertificate(CertificateEstandard certificate)
         {
             DateForReport dates = new DateForReport();
-            certificate.ExpirationDate =  dates.convertToValidDate(certificate.ExpirationDate);
-            certificate.RegisterDate= dates.convertToValidDate(certificate.RegisterDate);
+            certificate.ExpirationDate =  dates.convertToValidDateDatePicker(certificate.ExpirationDate);
+            certificate.RegisterDate= dates.convertToValidDateDatePicker(certificate.RegisterDate);
 
             repository.createCertificate(certificate);
         }
@@ -36,6 +37,10 @@ namespace CTZ.Controler.Estandard
             repository.updateStatusCertificates(idEstandard);
         }
 
+        public string getLinkCertificate(int idEstandard)
+        {
+            return repository.getLinkCertificate(idEstandard);
+        }
 
     }
 }

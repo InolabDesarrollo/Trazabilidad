@@ -2,6 +2,7 @@
 using CTZ.View.Estandard;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,5 +33,12 @@ namespace CTZ.Model.Trazabilidad.Estandard
             connection.executeQuery("Update Certificados_Estandares set Estatus ='Caduco' " +
                 " where Id_Estandard ="+ idEstandard + " AND Fecha_De_Caducidad < GETDATE();");
         }
+
+        public string getLinkCertificate(int idEstandard)
+        {
+            return connection.getText("Select Link From Certificados_Estandares WHERE Id_Estandard = "+ idEstandard + " and Estatus ='Vigente';");
+        }
+
+
     }
 }

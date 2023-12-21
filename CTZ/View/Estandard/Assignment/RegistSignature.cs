@@ -78,7 +78,8 @@ namespace CTZ.View.Estandard.Assignment
         private string bodyEmailEngineer()
         {
             string idOfEstandards = string.Join(", ", estandardInformation.Values);
-            string linkCertificate = "https://inolabespecialistasdeservicio.box.com/s/ht1qz2b9hi963wcu5zkjrtpcienuft0d";
+
+            string linkCertificate = getCertificates(estandardInformation);
             string body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n   <h2>Entrega de Estandard </h2><br />\r\n    <table border=\"0\" cellpadding=\"8\">\r\n        " +
                 "<tr>\r\n            <td colspan=\"4\" >\r\n                <p  >\r\n                    <font COLOR=\"purple\"  >Buen día  Ingeniero:   y responsable del area de  calidad se notifica que se ha entregado el Estandard con las caracteristicas</font><br />                   \r\n                    <b><font COLOR=\"blue\" >Est:</font></b>                                     <b>"+idOfEstandards+" </b> <br />\r\n                    " +
                 "<b><font COLOR=\"blue\" >Fecha de entrega:</font></b>                        <b>"+assignment.DateDelivery+" </b> <br />\r\n                    <b><font COLOR=\"blue\" >Fecha aproximada de devolucion:</font></b>            <b>"+assignment.EstimateDateReturn+" </b> <br />\r\n                    <b><font COLOR=\"blue\" >Empresa:</font></b>                                   <b>"+assignment.NameEnterprise+" </b> <br />\r\n                    <b><font COLOR=\"blue\" >Folio Empresa:</font></b>                             <b>"+assignment.NumberEnterprise+" </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Observaciones de entrega:</font></b>                  <b>"+assignment.DeliveryObservations+"</b>  <br />\r\n\r\n                    <b>" +
@@ -87,9 +88,18 @@ namespace CTZ.View.Estandard.Assignment
 
         }
 
-        private void getCertificates()
+        private string getCertificates(Dictionary<int, string> estandardInformation)
         {
+            C_Certificate controler = new C_Certificate();
+            string certificate;
+            string linksCertificates = "";
+            foreach (int idEstandard in estandardInformation.Keys)
+            {
+                certificate= controler.selectCurrentCertificate(idEstandard);
+                linksCertificates= string.Join(", ", certificate);
+            }
 
+            return linksCertificates;
         }
  
     }

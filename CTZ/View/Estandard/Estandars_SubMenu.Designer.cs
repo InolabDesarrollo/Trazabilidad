@@ -477,6 +477,7 @@
             this.Dgv_Estandard_Certificate.Size = new System.Drawing.Size(1027, 294);
             this.Dgv_Estandard_Certificate.TabIndex = 0;
             this.Dgv_Estandard_Certificate.TimeFilter = false;
+            this.Dgv_Estandard_Certificate.FilterStringChanged += new System.EventHandler(this.Dgv_Estandard_Certificate_FilterStringChanged);
             // 
             // idDataGridViewTextBoxColumn1
             // 
