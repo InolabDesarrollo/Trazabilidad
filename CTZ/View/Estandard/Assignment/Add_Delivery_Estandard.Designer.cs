@@ -310,6 +310,7 @@
             this.Btn_DeleteEstandard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_DeleteEstandard.UseAccentColor = false;
             this.Btn_DeleteEstandard.UseVisualStyleBackColor = true;
+            this.Btn_DeleteEstandard.Click += new System.EventHandler(this.Btn_DeleteEstandard_Click);
             // 
             // Btn_RegistEnginnerSignature
             // 

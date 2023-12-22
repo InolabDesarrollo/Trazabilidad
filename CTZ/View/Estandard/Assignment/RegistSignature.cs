@@ -26,13 +26,6 @@ namespace CTZ.View.Estandard.Assignment
         private readonly Dictionary<int, string> estandardInformation;
         private readonly string typeOfSignature;
 
-        public RegistSignature(Estandard_Assignment assignment,Dictionary<int,string> estandardInformation)
-        {
-            InitializeComponent();
-            this.assignment = assignment;
-            this.estandardInformation = estandardInformation;
-        }
-
         public RegistSignature(Estandard_Assignment assignment, string typeOfSignature)
         {
             InitializeComponent();
@@ -74,15 +67,6 @@ namespace CTZ.View.Estandard.Assignment
                     break;
             }
             MessageBox.Show("La firma se registro correctamente");
-
-            /*
-            C_DeliveryOfEstandard controler = new C_DeliveryOfEstandard();
-            controler.registerDeliveryEstandard(assignment, estandardInformation);
-            controler.updateEstatusLoanEstandard("PRESTADO", estandardInformation);
-
-            sendNotification();
-            MessageBox.Show("Se creo la asignacion para los estandares ");
-            this.Close(); */
             this.Close();
         }
  

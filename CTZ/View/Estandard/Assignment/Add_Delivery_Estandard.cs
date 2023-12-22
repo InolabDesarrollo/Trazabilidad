@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CTZ.View.Estandard.Assignment
 {
@@ -50,11 +51,18 @@ namespace CTZ.View.Estandard.Assignment
             controler = new C_Estandard();
             if (controler.check(TxtBox_Estandards.Text))
             {
-                addEstandard();
-                DataTable estandardInformation= controler.selectEstandardByEST(TxtBox_Estandards.Text);
-                int idEstandard = Convert.ToInt32(estandardInformation.Rows[0]["Id"].ToString());
-                informationEstandards.Add(idEstandard, TxtBox_Estandards.Text);
-                TxtBox_Estandards.Clear();
+                try
+                {
+                    addEstandard();
+                    DataTable estandardInformation = controler.selectEstandardByEST(TxtBox_Estandards.Text);
+                    int idEstandard = Convert.ToInt32(estandardInformation.Rows[0]["Id"].ToString());
+                    informationEstandards.Add(idEstandard, TxtBox_Estandards.Text);
+                    TxtBox_Estandards.Clear();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message.ToString());
+                }
             }
             else
             {
@@ -70,7 +78,7 @@ namespace CTZ.View.Estandard.Assignment
 
         private void Btn_RegistEnginnerSignature_Click(object sender, EventArgs e)
         {
-            RegistSignature signature = new RegistSignature(assignment, informationEstandards);
+            RegistSignature signature = new RegistSignature(assignment, "Enginner");
             signature.Show();
         }
 
@@ -116,6 +124,25 @@ namespace CTZ.View.Estandard.Assignment
             return body;
         }
 
+        private void Btn_DeleteEstandard_Click(object sender, EventArgs e)
+        {
+            deleteEstandardFromComboBox(ComboBox_Estandards);
+        }
 
+        public void deleteEstandardFromComboBox(MaterialComboBox comboBox)
+        {
+            try
+            {
+                string estandar = comboBox.SelectedItem.ToString();
+                int index = comboBox.FindString(estandar);
+                comboBox.Items.RemoveAt(index);
+                MessageBox.Show("Estándar " + estandar + " Eliminado");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                MessageBox.Show("No seleccionaste un Estándar");
+            }
+        }
     }
 }

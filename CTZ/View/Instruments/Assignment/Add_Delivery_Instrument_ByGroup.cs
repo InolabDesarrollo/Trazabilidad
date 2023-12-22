@@ -21,10 +21,11 @@ namespace CTZ.Vista.Instruments
         C_Instruments instrumentsControler;
         C_Instrument_Assignments instrumentAssignmentsControler;
         C_Usuario usuarioControler;
-        private static List<string> instrumentsWithCertificate;
+        public static Instrument_Assignments instrumentAssignments;
 
+        private static List<string> instrumentsWithCertificate;
         private static Dictionary<int, string> informationId_Equino;
-        DataTable engineers;
+        private DataTable engineers;
         private int idInstrument;
         private string equinoInstrument;
 
@@ -33,10 +34,12 @@ namespace CTZ.Vista.Instruments
             InitializeComponent();
             informationId_Equino = new Dictionary<int, string>();
             instrumentsWithCertificate = new List<string>();
+
             UserRepository userRepository = new UserRepository();
             usuarioControler = new C_Usuario(userRepository);
-
             engineers = usuarioControler.getEngineers();
+
+            instrumentAssignments = new Instrument_Assignments();
             fillMaterialComboBoxEngineers();
         }
 
@@ -117,6 +120,11 @@ namespace CTZ.Vista.Instruments
             }                   
         }
 
+        private void Btn_AddEnginnerSignature_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Btn_Regist_kit_Click(object sender, EventArgs e)
         {
             if (MaterialComboBox_Engineers.SelectedItem ==null)
@@ -128,23 +136,23 @@ namespace CTZ.Vista.Instruments
                 UserRepository userRepository = new UserRepository();
                 usuarioControler = new C_Usuario(userRepository);
                 string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
-                Instrument_Assignments instrument_Assignments = new Instrument_Assignments();
-                instrument_Assignments.dateDelivery = TimePicker_Date_Delivery.Text;
-                instrument_Assignments.engineer = MaterialComboBox_Engineers.Text;
-                instrument_Assignments.numberEnterprise = TxtBox_Enterprise.Text;
-                instrument_Assignments.observationDelivery = TxtBox_ObservationDelivery.Text;
-                instrument_Assignments.approximateDateOfReturn = TimePicker_Date_Estimate_Return.Text;
-                instrument_Assignments.nameEnterprise = TxtBox_NameEnterprise.Text;
-                instrument_Assignments.mailEngineer = emailEngineer;
-                instrument_Assignments.equinoInstrument = equinoInstrument;
-                instrument_Assignments.idInstrument = idInstrument;
+                
+                
+                instrumentAssignments.dateDelivery = TimePicker_Date_Delivery.Text;
+                instrumentAssignments.engineer = MaterialComboBox_Engineers.Text;
+                instrumentAssignments.numberEnterprise = TxtBox_Enterprise.Text;
+                instrumentAssignments.observationDelivery = TxtBox_ObservationDelivery.Text;
+                instrumentAssignments.approximateDateOfReturn = TimePicker_Date_Estimate_Return.Text;
+                instrumentAssignments.nameEnterprise = TxtBox_NameEnterprise.Text;
+                instrumentAssignments.mailEngineer = emailEngineer;
+                instrumentAssignments.equinoInstrument = equinoInstrument;
+                instrumentAssignments.idInstrument = idInstrument;
 
                 instrumentAssignmentsControler = new C_Instrument_Assignments();
-                instrumentAssignmentsControler.registerDeliveryInstrument(instrument_Assignments, informationId_Equino);
+                instrumentAssignmentsControler.registerDeliveryInstrument(instrumentAssignments, informationId_Equino);
                 updateStatusInstruments();
 
-                RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup", emailEngineer,instrumentsWithCertificate);
-                
+                RegistSignature signature = new RegistSignature(informationId_Equino, "EngineerByGroup", emailEngineer,instrumentsWithCertificate);               
                 signature.Show();
                 this.Close();
             }
@@ -163,5 +171,7 @@ namespace CTZ.Vista.Instruments
             CTZ.Vista.Responsabilitis.Instruments instrument = new CTZ.Vista.Responsabilitis.Instruments();
             instrument.deleteEquinoFromComboBox(ComboBox_Instruments);
         }
+
+        
     }
 }
