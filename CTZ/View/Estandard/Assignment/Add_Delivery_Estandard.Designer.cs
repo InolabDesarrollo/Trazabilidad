@@ -46,6 +46,7 @@
             this.ComboBox_Estandards = new MaterialSkin.Controls.MaterialComboBox();
             this.Btn_AddEstandard = new MaterialSkin.Controls.MaterialButton();
             this.Btn_DeleteEstandard = new MaterialSkin.Controls.MaterialButton();
+            this.Btn_RegistEnginnerSignature = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // Lbl_Estandard
@@ -223,7 +224,7 @@
             this.Btn_Add_Delivery.Depth = 0;
             this.Btn_Add_Delivery.HighEmphasis = true;
             this.Btn_Add_Delivery.Icon = null;
-            this.Btn_Add_Delivery.Location = new System.Drawing.Point(554, 525);
+            this.Btn_Add_Delivery.Location = new System.Drawing.Point(554, 586);
             this.Btn_Add_Delivery.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Delivery.Name = "Btn_Add_Delivery";
@@ -310,11 +311,31 @@
             this.Btn_DeleteEstandard.UseAccentColor = false;
             this.Btn_DeleteEstandard.UseVisualStyleBackColor = true;
             // 
+            // Btn_RegistEnginnerSignature
+            // 
+            this.Btn_RegistEnginnerSignature.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_RegistEnginnerSignature.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Btn_RegistEnginnerSignature.Depth = 0;
+            this.Btn_RegistEnginnerSignature.HighEmphasis = true;
+            this.Btn_RegistEnginnerSignature.Icon = null;
+            this.Btn_RegistEnginnerSignature.Location = new System.Drawing.Point(535, 502);
+            this.Btn_RegistEnginnerSignature.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_RegistEnginnerSignature.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_RegistEnginnerSignature.Name = "Btn_RegistEnginnerSignature";
+            this.Btn_RegistEnginnerSignature.Size = new System.Drawing.Size(248, 36);
+            this.Btn_RegistEnginnerSignature.TabIndex = 34;
+            this.Btn_RegistEnginnerSignature.Text = "Registrar firma de Ingeniero";
+            this.Btn_RegistEnginnerSignature.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Btn_RegistEnginnerSignature.UseAccentColor = false;
+            this.Btn_RegistEnginnerSignature.UseVisualStyleBackColor = true;
+            this.Btn_RegistEnginnerSignature.Click += new System.EventHandler(this.Btn_RegistEnginnerSignature_Click);
+            // 
             // Add_Delivery_Estandard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 596);
+            this.ClientSize = new System.Drawing.Size(840, 643);
+            this.Controls.Add(this.Btn_RegistEnginnerSignature);
             this.Controls.Add(this.Btn_DeleteEstandard);
             this.Controls.Add(this.Btn_AddEstandard);
             this.Controls.Add(this.ComboBox_Estandards);
@@ -361,5 +382,6 @@
         private MaterialSkin.Controls.MaterialComboBox ComboBox_Estandards;
         private MaterialSkin.Controls.MaterialButton Btn_AddEstandard;
         private MaterialSkin.Controls.MaterialButton Btn_DeleteEstandard;
+        private MaterialSkin.Controls.MaterialButton Btn_RegistEnginnerSignature;
     }
 }

@@ -1930,3 +1930,4 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Estanda
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Estandard.SerchEstandard.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Estandard.UpdateEstandard.resources
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Estandard.AddCertificate.resources
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\CTZ\obj\Debug\CTZ.View.Estandard.Assignment.Regist_Return_Estandard.resources

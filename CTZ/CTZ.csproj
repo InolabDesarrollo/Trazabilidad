@@ -116,6 +116,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -450,6 +451,12 @@
     </Compile>
     <Compile Include="View\Estandard\Assignment\Add_Delivery_Estandard.Designer.cs">
       <DependentUpon>Add_Delivery_Estandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Estandard\Assignment\Regist_Return_Estandard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Estandard\Assignment\Regist_Return_Estandard.Designer.cs">
+      <DependentUpon>Regist_Return_Estandard.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Estandard\Assignment\Assignments_Menu.cs">
       <SubType>Form</SubType>
@@ -826,6 +833,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\Assignment\Add_Delivery_Estandard.resx">
       <DependentUpon>Add_Delivery_Estandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Estandard\Assignment\Regist_Return_Estandard.resx">
+      <DependentUpon>Regist_Return_Estandard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\Assignment\Assignments_Menu.resx">
       <DependentUpon>Assignments_Menu.cs</DependentUpon>

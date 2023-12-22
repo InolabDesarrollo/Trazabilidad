@@ -31,5 +31,7 @@ namespace CTZ.View.Estandard
         public string EST;
 
         public string emailEngineer;
+
+        public string Signature;
     }
 }

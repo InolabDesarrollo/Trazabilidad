@@ -62,5 +62,10 @@ namespace CTZ.Model.Trazabilidad.Estandard
                 " \r\n FechaDeFabricacion = '"+estandard.FabricationDate+"', FechaDeCaducidad='"+estandard.ExpirationDate+"', Cantidad='"+estandard.Quantity+"',\r\nUbicacion='"+estandard.Ubication+"', " +
                 " Estatus ='"+estandard.Estatus+"', Inventario ='"+estandard.Inventory+"' WHERE Id_Estandares= '"+estandard.EstEstandard+"'; ");
         }
+
+        public void updateEstatusLoanEstandard(string estatus, int id)
+        {
+            conexion.executeQuery("UPDATE Estandares SET Estatus_Prestamo = '"+estatus+"' WHERE Id = "+id+";");
+        }
     }
 }
