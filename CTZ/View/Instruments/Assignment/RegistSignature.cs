@@ -22,20 +22,21 @@ namespace CTZ.Vista.Instruments
 {
     public partial class RegistSignature : Form
     {
-        float pointX = 0;
-        float pointY = 0;
-        float lastX = 0;
-        float lastY = 0;
+        private float pointX = 0;
+        private float pointY = 0;
+        private float lastX = 0;
+        private float lastY = 0;
 
         private readonly int idInstrument;
         private readonly string equinoInstrument;
         private readonly Dictionary<int, string> informationId_Equino;
         private readonly List<int> idInstruments;
+        private readonly Instrument_Assignments instrumentAssignments;
         private readonly string typeOfSignature;
         private  string emailEngineer;
         private readonly List<string> instrumentsWithCertificates;
         Image imageSignature;
-        Notification notification = new Notification();
+        
 
         C_Instrument_Assignments controler;
         private DataTable instrumentAssignmentsInformation;
@@ -59,6 +60,7 @@ namespace CTZ.Vista.Instruments
             this.typeOfSignature = typeOfSignature;
             this.emailEngineer = emailEngineer;
             this.instrumentsWithCertificates = instrumentsWithCertificates;
+
             controler = new C_Instrument_Assignments();
             instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(informationId_Equino.Keys.First());
         }
@@ -69,8 +71,16 @@ namespace CTZ.Vista.Instruments
             this.idInstruments = idInstruments;
             this.typeOfSignature = typeOfSignature;
             this.emailEngineer = emailEngineer;
+
             controler = new C_Instrument_Assignments();
             instrumentAssignmentsInformation = controler.selectMoreRecentInformationInstrumenAssignment(Convert.ToInt32(idInstruments[0].ToString()));
+        }
+
+        public RegistSignature(Instrument_Assignments instrumentAssignments, string typeOfSignature)
+        {
+            InitializeComponent();
+            this.instrumentAssignments = instrumentAssignments;
+            this.typeOfSignature = typeOfSignature;
         }
 
         private void Pnl_Signature_Paint(object sender, PaintEventArgs e)
@@ -98,116 +108,15 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Save_Signature_Click(object sender, EventArgs e)
         {
-            C_UpdateSignature controlerUpdateSignature = new C_UpdateSignature();
+
             Signature signature = new Signature();
             string signatureBase64= signature.createStringOfSignature(Pnl_Signature);
 
-            if(typeOfSignature.Equals("Engineer"))
-            {
-                controlerUpdateSignature.updateSignatureEngineer(idInstrument, signatureBase64);
-                sendEngineerNotification();
-            }
-            else if (typeOfSignature.Equals("Quality"))
-            {
-                controlerUpdateSignature.updateSignatureQuality(idInstrument, signatureBase64);
-                sendQualityMailNotification();
-            }
-            else if (typeOfSignature.Equals("EngineerByGroup"))
-            {
-                controlerUpdateSignature.registEngineerSignatureByGroup(signatureBase64, informationId_Equino);
-                sendEngineerNotification();
-            }
-            else if (typeOfSignature.Equals("QualityByGroup"))
-            {
-                controlerUpdateSignature.registQualitySignatureByGroup(signatureBase64, idInstruments);
-                sendQualityMailNotification();
-            }
+            instrumentAssignments.engineerSignature = signatureBase64;
             System.Windows.MessageBox.Show("Firma agregada correctamente");
             this.Close();
         }
-        private void sendEngineerNotification()
-        {
-            string emailBody = emailBodyForEngineer();
-            string emailSubject = "Notificacion entrega de Instrumento";
-            notification.sendMailNotification(emailEngineer, emailBody, emailSubject);
-        }
-
-        private string emailBodyForEngineer()
-        {
-            string body = "";
-            string nameEngineer = instrumentAssignmentsInformation.Rows[0]["Ingeniero"].ToString();
-            string enterprise = instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString();
-            string numberEnterprise = instrumentAssignmentsInformation.Rows[0]["Folio_Empresa"].ToString();
-            string deliveryDate = instrumentAssignmentsInformation.Rows[0]["Fecha_Entrega"].ToString();
-            string equinoInstrument = instrumentAssignmentsInformation.Rows[0]["Equino_Instrumento"].ToString();
-            string aproximateDateOfReturn = instrumentAssignmentsInformation.Rows[0]["Fecha_Estimada_Devolucion"].ToString();
-            string deliveryObservation = instrumentAssignmentsInformation.Rows[0]["Observaciones_Entrega"].ToString();
-            
-            C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
-            DataTable certificateInformation= controler.getAllInstrumentCertificate(equinoInstrument);
-            string certificateLink;
-
-            if (typeOfSignature.Equals("Engineer"))
-            {
-                certificateLink = certificateInformation.Rows[0]["Link"].ToString();
-                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\\\"utf-8\"\\  />\r\n</head>\r\n<body>\r\n   <h2>Entrega de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\ >\r\n        <tr>\r\n            <td colspan= \\\"4\"\\ >\r\n                <p>\r\n                    <font COLOR= " + "'purple'" + "   >Buen día estimado Ingeniero                         " + nameEngineer + " \r\n                    Se le informa que se le ha   asignado el Instrumento con las siguientes caracteristicas:    </font>  <br />\r\n                    <font COLOR= " + "'blue'" + "  > Equino:</font>                                   <b>" + equinoInstrument + "  </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "  > Fecha De Entrega:</font></b>                          <b>" + deliveryDate.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Fecha registrada de devolucion:</font></b>            <b>" + aproximateDateOfReturn.Substring(0,10) + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + " > Observaciones de Entrega:</font></b>                  <b>" + deliveryObservation + " </b>  <br /> \r\n                </p><br /><b><font COLOR=\"blue\" >Link del certificado:</font></b>                  <b>"+ certificateLink + "</b>  <br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
-            }
-            if (typeOfSignature.Equals("EngineerByGroup"))
-            {
-                certificateLink = serchCertificates(instrumentsWithCertificates);
-
-                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\\\"utf-8\"\\  />\r\n</head>\r\n<body>\r\n   <h2>Entrega de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\ >\r\n        <tr>\r\n            <td colspan= \\\"4\"\\ >\r\n                <p>\r\n                    <font COLOR= " + "'purple'" + " >Buen día estimado Ingeniero                         " + nameEngineer + "</font>  <br />\r\n                    Se le informa que se le han   asignado los Instrumentos  con las siguientes caracteristicas:  <br />\r\n <b><font COLOR= " + "'blue'" + "> Fecha De Entrega:</font></b>                          <b>" + deliveryDate.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + "> Fecha registrada de devolucion:</font></b>            <b>" + aproximateDateOfReturn.Substring(0,9) + " </b>  <br />\r\n                    <b><font COLOR= " + "'blue'" + " > Observaciones de Entrega:</font></b>                  <b>" + deliveryObservation + " </b>  <br />   <b> <font COLOR=\"blue\" >Link de certificados:</font></b>                  <b>"+certificateLink+"</b>  <br />                \r\n</p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
-            }
-            return body;
-        }
-
-        private string serchCertificates(List<string> instrumentsWithCertificates)
-        {
-            C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
-            string certificates = "";
-            foreach (string equino in instrumentsWithCertificates)
-            {
-                DataTable instrumentInformation = controler.getAllInstrumentCertificate(equino);
-                certificates = string.Join(",", instrumentInformation.Rows[0]["Link"].ToString());
-            }
-            return certificates;
-        }
-
-        private void sendQualityMailNotification()
-        {
-            string[] qualityEmail = new string[3];
-            qualityEmail[0] = emailEngineer;
-            qualityEmail[1] = "omarflores@inolab.com";
-            qualityEmail[2] = "calidad@inolab.com";
-
-            string emailSubject = "Notificacion de devolucion de Instrumento";
-            string emailBody = emailBodyForQuality();
-            notification.sendMailNotification(qualityEmail, emailBody, emailSubject);
-        }
-
-        private string emailBodyForQuality()
-        {
-            
-            string body = "";
-            string equinoInstrument = instrumentAssignmentsInformation.Rows[0]["Equino_Instrumento"].ToString();
-            string dateOfReturn = instrumentAssignmentsInformation.Rows[0]["Fecha_Devolucion"].ToString();
-            string returnObservation = instrumentAssignmentsInformation.Rows[0]["Observaciones_Devolucion"].ToString();
-            string enterprise = instrumentAssignmentsInformation.Rows[0]["Nombre_Empresa"].ToString();
-            string numberEnterprise = instrumentAssignmentsInformation.Rows[0]["Folio_Empresa"].ToString();
-            string nameEngineer = instrumentAssignmentsInformation.Rows[0]["Ingeniero"].ToString();
-
-            if (typeOfSignature.Equals("Quality"))
-            {
-                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\>\r\n        <tr>\r\n            <td colspan=\\\"4\"\\ >\r\n                <p  >\r\n                    <font COLOR=" + "'purple'" + "  >Buen día  Ingeniero " + nameEngineer + "  y responsable del area de  calidad se notifica que se ha devuelto el Instrumento con las siguientes caracteristicas</font><br /> \r\n                  \r\n                    <b><font COLOR=" + "'blue'" + " >Equino:</font></b>                                     <b>" + equinoInstrument + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Fecha De Devolucion:</font></b>                        <b>" + dateOfReturn.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Observaciones de Devolucion:</font></b>                  <b>" + returnObservation + "</b>  <br />\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
-            }
-            if (typeOfSignature.Equals("QualityByGroup"))
-            {
-                body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Instrumento </h2><br />\r\n    <table border=\\\"0\"\\ cellpadding=\\\"8\"\\>\r\n        <tr>\r\n            <td colspan=\\\"4\"\\ >\r\n                <p  >\r\n                    <font COLOR=" + "'purple'" + "  >Buen día  Ingeniero " + nameEngineer + "  y responsable del area de  calidad se notifica que se ha devuelto el Instrumento con las siguientes caracteristicas</font><br /> \r\n                  <b><font COLOR=" + "'blue'" + " >Fecha De Devolucion:</font></b>                        <b>" + dateOfReturn.Substring(0, 9) + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Empresa:</font></b>                                   <b>" + enterprise + " </b> <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Folio Empresa:</font></b>                             <b>" + numberEnterprise + " </b>  <br />\r\n                    <b><font COLOR=" + "'blue'" + " >Observaciones de Devolucion:</font></b>                  <b>" + returnObservation + "</b>  <br />\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
-            }
-            
-            return body;
-        }
-
+  
 
     }
 }
