@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Controler.Instruments.Assignments_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace CTZ.Vista.Instruments
 {
     public partial class ShowSignature : Form
     {
-        C_Instrument_Assignments controler;
+        C_ConsultInstrument_Assignment controler;
         DataTable instrumenAssignmentInformation;
         string base64StrigSignature;
         private const int engineerSignature = 7;
@@ -23,7 +24,7 @@ namespace CTZ.Vista.Instruments
         public ShowSignature(int id, int  columnToShow)
         {
             InitializeComponent();
-            controler = new C_Instrument_Assignments();
+            controler = new C_ConsultInstrument_Assignment();
             instrumenAssignmentInformation = controler.selectAllById(id);
             if (columnToShow.Equals(engineerSignature))
             {

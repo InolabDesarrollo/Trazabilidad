@@ -11,7 +11,6 @@ namespace CTZ.Vista.Responsabilitis
 {
     public class Instrument_Assignments
     {
-        C_Instrument_Assignments controler;
 
         public int idInstrument; 
 
@@ -39,50 +38,8 @@ namespace CTZ.Vista.Responsabilitis
 
         public string equinoInstrument;
 
-        public Instrument_Assignments(int idInstrument,string equinoInstrument,string dateDelivery,string engineer,
-            string numberEnterprise,string nameEnterprise,string observationDelivery,string mailEngineer,string approximateDateOfReturn) {
-            this.idInstrument = idInstrument;
-            this.equinoInstrument = equinoInstrument;
-            this.dateDelivery = dateDelivery;
-            this.engineer = engineer;
-            this.numberEnterprise = numberEnterprise;
-            this.nameEnterprise = nameEnterprise;
-            this.observationDelivery = observationDelivery;
-            this.mailEngineer = mailEngineer;
-            this.approximateDateOfReturn = approximateDateOfReturn;
-            controler = new C_Instrument_Assignments();
-            
-        }
         public Instrument_Assignments()
         {
-            controler = new C_Instrument_Assignments();
-        }
-
-        public void addDeliveryInstrument()
-        {
-            Instrument_Assignments instrumentDelivery =
-                new Instrument_Assignments(this.idInstrument, this.equinoInstrument, this.dateDelivery,
-                 this.engineer, this.numberEnterprise, this.nameEnterprise, this.observationDelivery,
-                this.mailEngineer, this.approximateDateOfReturn);
-
-            controler.registerDeliveryInstrument(instrumentDelivery);
-        }
-
-        public void updateStatus(string status)
-        {
-            controler.updateStatusInstrumentAssignment(idInstrument, status);
-        }
-
-        public void updateInstrumentAssignments()
-        {
-            Instrument_Assignments instrument_Assignments = new Instrument_Assignments();
-            instrument_Assignments.idInstrument = this.idInstrument;
-            instrument_Assignments.numberEnterprise = this.numberEnterprise;
-            instrument_Assignments.nameEnterprise = this.nameEnterprise;
-            instrument_Assignments.observationDelivery = this.observationDelivery;
-            instrument_Assignments.observationsReturn = this.observationsReturn;
-
-            controler.updateInstrumentAssignment(instrument_Assignments);
         }
 
     }

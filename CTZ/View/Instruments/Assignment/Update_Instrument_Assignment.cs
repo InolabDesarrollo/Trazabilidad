@@ -1,4 +1,5 @@
-﻿using CTZ.Vista.Responsabilitis;
+﻿using CTZ.Controler.Instruments.Assignments_;
+using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -16,12 +17,14 @@ namespace CTZ.Vista.Instruments
     {
         private int idSql;
         Instrument_Assignments instrumentAssignment;
+        C_UpdateInstrument_Assignment controller;
         public Update_Instrument_Assignment(int idSql,string equino)
         {
             InitializeComponent();
             instrumentAssignment = new Instrument_Assignments();
             this.idSql = idSql;
             Lbl_Instrument.Text = equino;
+            controller = new C_UpdateInstrument_Assignment();
         }
 
         private void Btn_Update_Click(object sender, EventArgs e)
@@ -32,7 +35,7 @@ namespace CTZ.Vista.Instruments
             instrumentAssignment.observationDelivery = TxtBox_Observation_Delivery.Text;
             instrumentAssignment.observationsReturn =TxtBox_ObservationReturn.Text;
 
-            instrumentAssignment.updateInstrumentAssignments();
+            controller.updateInstrumentAssignment(instrumentAssignment);
             clearButtons();
         }
 

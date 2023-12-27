@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Controler.Instruments.Assignments_;
 using CTZ.Modelo.Browser;
 using MaterialSkin.Controls;
 using System;
@@ -16,7 +17,7 @@ namespace CTZ.Vista.Instruments
     public partial class Serch_Instruments_Assignments : MaterialForm 
     {
         C_Instruments controler;
-        C_Instrument_Assignments controlerInstrumentAssignment;
+        C_ConsultInstrument_Assignment controlerInstrumentAssignment;
         public Serch_Instruments_Assignments()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Number_Enterprise_Click(object sender, EventArgs e)
         {
-            controlerInstrumentAssignment = new C_Instrument_Assignments();
+            controlerInstrumentAssignment = new C_ConsultInstrument_Assignment();
             if (controlerInstrumentAssignment.checkInformationWidthNumberEnterprise(TxtBox_Number_Enterprise.Text))
             {
                 DataTable informationInstrumentAssignment = controlerInstrumentAssignment.selectAllByNumberEnterprise(TxtBox_Number_Enterprise.Text);
@@ -62,10 +63,10 @@ namespace CTZ.Vista.Instruments
             C_Usuario userControler = new C_Usuario(userRepository);
             if (userControler.checkIfExistEngineer(TxtBox_Engineer.Text))
             {
-                controlerInstrumentAssignment = new C_Instrument_Assignments();
+                controlerInstrumentAssignment = new C_ConsultInstrument_Assignment();
                 if (controlerInstrumentAssignment.checkIfEngineerHasAssignment(TxtBox_Engineer.Text))
                 {
-                    controlerInstrumentAssignment = new C_Instrument_Assignments();
+                    controlerInstrumentAssignment = new C_ConsultInstrument_Assignment();
                     DataTable instrumenAssignmentInformation = controlerInstrumentAssignment.selectAllByEngineer(TxtBox_Engineer.Text);
                     See_Instrument_Assignment instrument_Assignment = new See_Instrument_Assignment(instrumenAssignmentInformation);
                     instrument_Assignment.Show();

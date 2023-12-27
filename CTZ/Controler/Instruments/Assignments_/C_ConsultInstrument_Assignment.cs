@@ -43,6 +43,25 @@ namespace CTZ.Controler.Instruments.Assignments_
             return _repository.selectAllByEngineer(engineer, dates);
         }
 
+        public bool checkIfEngineerHasAssignment(string engineer)
+        {
+            return _repository.checkIfEngineerHasAssignment(engineer);
+        }
+
+        public DataTable selectAllByEngineer(string engineer)
+        {
+            return _repository.selectAllByEngineer(engineer);
+        }
+
+        public bool checkInformationWidthNumberEnterprise(string numberEnterprise)
+        {
+            return _repository.checkInformationWidthNumberEnterprise(numberEnterprise);
+        }
+
+        public DataTable selectAllById(int id)
+        {
+            return _repository.selectAllById(id);
+        }
 
     }
 }
