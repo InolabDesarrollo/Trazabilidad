@@ -42,9 +42,6 @@ namespace TestProyect
         }
 
 
-        
-        
-
         private string bodyMailEngineer()
         {
             string nameEngineer = "Omar Sotomayor";
