@@ -1,4 +1,5 @@
 ﻿using CTZ.Controlador;
+using CTZ.Controler.Instruments.Assignments_;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
@@ -15,7 +16,7 @@ namespace CTZ.Vista.Instruments
 {
     public partial class See_Instrument_Assignment : Form
     {
-        C_Instrument_Assignments controler;
+        private C_ConsultInstrument_Assignment controler;
         private const int engineerSignature = 7;
         private const int qualitySignature = 11;
         private const int updateAssignment = 0;
@@ -52,7 +53,7 @@ namespace CTZ.Vista.Instruments
         private void initComponents()
         {
             InitializeComponent();
-            controler = new C_Instrument_Assignments();
+            controler = new C_ConsultInstrument_Assignment();
         }
 
         private void Dgv_Instrument_Assignment_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

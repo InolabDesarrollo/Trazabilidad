@@ -220,6 +220,7 @@
     <Compile Include="Controler\Estandard\C_DeliveryOfEstandard.cs" />
     <Compile Include="Controler\Estandard\C_Estandard.cs" />
     <Compile Include="Controler\Estandard\C_UpdateEstandard.cs" />
+    <Compile Include="Controler\Instruments\Assignments_\C_ConsultInstrument_Assignment.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_RegistDeliveryInstrument.cs" />
     <Compile Include="Controler\Instruments\Certificates_\C_Certificate.cs" />
     <Compile Include="Controler\Instruments\Traceability\C_ExternTraceabilityRepository.cs" />
@@ -544,12 +545,6 @@
     </Compile>
     <Compile Include="View\Instruments\Assignment\Add_Instrument_Assignment.Designer.cs">
       <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Instruments\Assignment\Add_Return_Instrument.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Instruments\Assignment\Add_Return_Instrument.Designer.cs">
-      <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Assignment\Add_Return_Instrument_ByGroup.cs">
       <SubType>Form</SubType>
@@ -876,9 +871,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Add_Instrument_Assignment.resx">
       <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Assignment\Add_Return_Instrument.resx">
-      <DependentUpon>Add_Return_Instrument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Add_Return_Instrument_ByGroup.resx">
       <DependentUpon>Add_Return_Instrument_ByGroup.cs</DependentUpon>

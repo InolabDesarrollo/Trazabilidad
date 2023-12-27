@@ -25,18 +25,6 @@ namespace CTZ.View.Instruments.Assignment
             assignments_Instruments.Show();
         }
 
-        private void Btn_Add_Assignments_Click(object sender, EventArgs e)
-        {
-            Add_Instrument_Assignment assignment = new Add_Instrument_Assignment();
-            assignment.Show();
-        }
-
-        private void Btn_Regist_Return_Instrument_Click(object sender, EventArgs e)
-        {
-            Add_Instrument_Assignment assignment = new Add_Instrument_Assignment();
-            assignment.Show();
-        }
-
         private void Btn_Add_Assignments_ByGroup_Click(object sender, EventArgs e)
         {
             Add_Delivery_Instrument_ByGroup deliveryInstrument = new Add_Delivery_Instrument_ByGroup();

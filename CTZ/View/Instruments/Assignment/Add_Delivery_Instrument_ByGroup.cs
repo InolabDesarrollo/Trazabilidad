@@ -19,11 +19,11 @@ namespace CTZ.Vista.Instruments
 {
     public partial class Add_Delivery_Instrument_ByGroup : MaterialForm
     {
-        C_Instruments instrumentsControler;
-        C_RegistDeliveryInstrument instrumentAssignmentsControler;
-        C_Usuario usuarioControler;
-        public static Instrument_Assignments instrumentAssignments;
+        private C_Instruments instrumentsControler;
+        private C_RegistDeliveryInstrument instrumentAssignmentsControler;
+        private C_Usuario usuarioControler;
 
+        public static Instrument_Assignments instrumentAssignments;
         private static List<string> instrumentsWithCertificate;
         private static Dictionary<int, string> informationId_Equino;
         private DataTable engineers;
@@ -144,7 +144,6 @@ namespace CTZ.Vista.Instruments
                 UserRepository userRepository = new UserRepository();
                 usuarioControler = new C_Usuario(userRepository);
                 string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
-
 
                 instrumentAssignments.dateDelivery = TimePicker_Date_Delivery.Text;
                 instrumentAssignments.engineer = MaterialComboBox_Engineers.Text;

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.Btn_Serch_Assignments = new System.Windows.Forms.Button();
-            this.Btn_Add_Assignments = new System.Windows.Forms.Button();
-            this.Btn_Regist_Return_Instrument = new System.Windows.Forms.Button();
             this.Btn_Add_Assignments_ByGroup = new System.Windows.Forms.Button();
             this.Btn_Regist_Return_Instrument_ByGroup = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -50,36 +48,6 @@
             this.Btn_Serch_Assignments.UseVisualStyleBackColor = false;
             this.Btn_Serch_Assignments.Click += new System.EventHandler(this.Btn_Serch_Assignments_Click);
             // 
-            // Btn_Add_Assignments
-            // 
-            this.Btn_Add_Assignments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
-            this.Btn_Add_Assignments.FlatAppearance.BorderSize = 0;
-            this.Btn_Add_Assignments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Add_Assignments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add_Assignments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_Add_Assignments.Location = new System.Drawing.Point(206, 184);
-            this.Btn_Add_Assignments.Name = "Btn_Add_Assignments";
-            this.Btn_Add_Assignments.Size = new System.Drawing.Size(195, 63);
-            this.Btn_Add_Assignments.TabIndex = 16;
-            this.Btn_Add_Assignments.Text = "Registrar Entrega de Instrumento";
-            this.Btn_Add_Assignments.UseVisualStyleBackColor = false;
-            this.Btn_Add_Assignments.Click += new System.EventHandler(this.Btn_Add_Assignments_Click);
-            // 
-            // Btn_Regist_Return_Instrument
-            // 
-            this.Btn_Regist_Return_Instrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
-            this.Btn_Regist_Return_Instrument.FlatAppearance.BorderSize = 0;
-            this.Btn_Regist_Return_Instrument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Regist_Return_Instrument.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Regist_Return_Instrument.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_Regist_Return_Instrument.Location = new System.Drawing.Point(206, 270);
-            this.Btn_Regist_Return_Instrument.Name = "Btn_Regist_Return_Instrument";
-            this.Btn_Regist_Return_Instrument.Size = new System.Drawing.Size(195, 63);
-            this.Btn_Regist_Return_Instrument.TabIndex = 17;
-            this.Btn_Regist_Return_Instrument.Text = "Registrar Devolucion de Instrumento";
-            this.Btn_Regist_Return_Instrument.UseVisualStyleBackColor = false;
-            this.Btn_Regist_Return_Instrument.Click += new System.EventHandler(this.Btn_Regist_Return_Instrument_Click);
-            // 
             // Btn_Add_Assignments_ByGroup
             // 
             this.Btn_Add_Assignments_ByGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
@@ -87,11 +55,11 @@
             this.Btn_Add_Assignments_ByGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Add_Assignments_ByGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Add_Assignments_ByGroup.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_Add_Assignments_ByGroup.Location = new System.Drawing.Point(206, 352);
+            this.Btn_Add_Assignments_ByGroup.Location = new System.Drawing.Point(206, 205);
             this.Btn_Add_Assignments_ByGroup.Name = "Btn_Add_Assignments_ByGroup";
             this.Btn_Add_Assignments_ByGroup.Size = new System.Drawing.Size(195, 63);
             this.Btn_Add_Assignments_ByGroup.TabIndex = 18;
-            this.Btn_Add_Assignments_ByGroup.Text = "Entrega de Instrumento Por Grupo";
+            this.Btn_Add_Assignments_ByGroup.Text = "Entrega de Instrumento";
             this.Btn_Add_Assignments_ByGroup.UseVisualStyleBackColor = false;
             this.Btn_Add_Assignments_ByGroup.Click += new System.EventHandler(this.Btn_Add_Assignments_ByGroup_Click);
             // 
@@ -102,11 +70,11 @@
             this.Btn_Regist_Return_Instrument_ByGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Regist_Return_Instrument_ByGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Regist_Return_Instrument_ByGroup.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_Regist_Return_Instrument_ByGroup.Location = new System.Drawing.Point(206, 431);
+            this.Btn_Regist_Return_Instrument_ByGroup.Location = new System.Drawing.Point(206, 309);
             this.Btn_Regist_Return_Instrument_ByGroup.Name = "Btn_Regist_Return_Instrument_ByGroup";
             this.Btn_Regist_Return_Instrument_ByGroup.Size = new System.Drawing.Size(195, 63);
             this.Btn_Regist_Return_Instrument_ByGroup.TabIndex = 19;
-            this.Btn_Regist_Return_Instrument_ByGroup.Text = "Devolucion de Instrumento Por Grupo";
+            this.Btn_Regist_Return_Instrument_ByGroup.Text = "Devolucion de Instrumento";
             this.Btn_Regist_Return_Instrument_ByGroup.UseVisualStyleBackColor = false;
             this.Btn_Regist_Return_Instrument_ByGroup.Click += new System.EventHandler(this.Btn_Regist_Return_Instrument_ByGroup_Click);
             // 
@@ -114,11 +82,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 523);
+            this.ClientSize = new System.Drawing.Size(608, 456);
             this.Controls.Add(this.Btn_Regist_Return_Instrument_ByGroup);
             this.Controls.Add(this.Btn_Add_Assignments_ByGroup);
-            this.Controls.Add(this.Btn_Regist_Return_Instrument);
-            this.Controls.Add(this.Btn_Add_Assignments);
             this.Controls.Add(this.Btn_Serch_Assignments);
             this.Name = "Assignment_SubMenu";
             this.Text = "Asignaciones";
@@ -129,8 +95,6 @@
         #endregion
 
         private System.Windows.Forms.Button Btn_Serch_Assignments;
-        private System.Windows.Forms.Button Btn_Add_Assignments;
-        private System.Windows.Forms.Button Btn_Regist_Return_Instrument;
         private System.Windows.Forms.Button Btn_Add_Assignments_ByGroup;
         private System.Windows.Forms.Button Btn_Regist_Return_Instrument_ByGroup;
     }
