@@ -533,12 +533,6 @@
     <Compile Include="View\Instruments\Certificates_\SerchCertificate.Designer.cs">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\Assignment\Add_Delivery_Instrument.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Instruments\Assignment\Add_Delivery_Instrument.Designer.cs">
-      <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Instruments\Assignment\Add_Delivery_Instrument_ByGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -876,9 +870,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Certificates_\SerchCertificate.resx">
       <DependentUpon>SerchCertificate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Assignment\Add_Delivery_Instrument.resx">
-      <DependentUpon>Add_Delivery_Instrument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Add_Delivery_Instrument_ByGroup.resx">
       <DependentUpon>Add_Delivery_Instrument_ByGroup.cs</DependentUpon>
@@ -1277,6 +1268,7 @@
     <Folder Include="Temps\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Html\BodyMailQuality.xml" />
     <Content Include="Imagenes\Fondo_Blanco.png" />
     <Content Include="Imagenes\LOGO_Blanco_Lineas.png" />
     <Content Include="View\EmailBodyEngineer.html" />

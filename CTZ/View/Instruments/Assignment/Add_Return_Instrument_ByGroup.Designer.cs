@@ -39,6 +39,7 @@
             this.TxtBox_ObservationReturn = new MaterialSkin.Controls.MaterialTextBox();
             this.Btn_Regist_ReturnOfInstruments = new MaterialSkin.Controls.MaterialButton();
             this.Btn_Delete_Instrument = new MaterialSkin.Controls.MaterialButton();
+            this.Btn_RegistQualitySignatur = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // Lbl_Instrument
@@ -176,7 +177,7 @@
             this.Btn_Regist_ReturnOfInstruments.Depth = 0;
             this.Btn_Regist_ReturnOfInstruments.HighEmphasis = true;
             this.Btn_Regist_ReturnOfInstruments.Icon = null;
-            this.Btn_Regist_ReturnOfInstruments.Location = new System.Drawing.Point(814, 207);
+            this.Btn_Regist_ReturnOfInstruments.Location = new System.Drawing.Point(814, 315);
             this.Btn_Regist_ReturnOfInstruments.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Regist_ReturnOfInstruments.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Regist_ReturnOfInstruments.Name = "Btn_Regist_ReturnOfInstruments";
@@ -207,11 +208,31 @@
             this.Btn_Delete_Instrument.UseVisualStyleBackColor = true;
             this.Btn_Delete_Instrument.Click += new System.EventHandler(this.Btn_Delete_Instrument_Click);
             // 
+            // Btn_RegistQualitySignatur
+            // 
+            this.Btn_RegistQualitySignatur.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_RegistQualitySignatur.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Btn_RegistQualitySignatur.Depth = 0;
+            this.Btn_RegistQualitySignatur.HighEmphasis = true;
+            this.Btn_RegistQualitySignatur.Icon = null;
+            this.Btn_RegistQualitySignatur.Location = new System.Drawing.Point(899, 238);
+            this.Btn_RegistQualitySignatur.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_RegistQualitySignatur.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_RegistQualitySignatur.Name = "Btn_RegistQualitySignatur";
+            this.Btn_RegistQualitySignatur.Size = new System.Drawing.Size(233, 36);
+            this.Btn_RegistQualitySignatur.TabIndex = 40;
+            this.Btn_RegistQualitySignatur.Text = "Registrar firma de calidad";
+            this.Btn_RegistQualitySignatur.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Btn_RegistQualitySignatur.UseAccentColor = false;
+            this.Btn_RegistQualitySignatur.UseVisualStyleBackColor = true;
+            this.Btn_RegistQualitySignatur.Click += new System.EventHandler(this.Btn_RegistQualitySignatur_Click);
+            // 
             // Add_Return_Instrument_ByGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 515);
+            this.Controls.Add(this.Btn_RegistQualitySignatur);
             this.Controls.Add(this.Btn_Delete_Instrument);
             this.Controls.Add(this.Btn_Regist_ReturnOfInstruments);
             this.Controls.Add(this.TxtBox_ObservationReturn);
@@ -243,5 +264,6 @@
         private MaterialSkin.Controls.MaterialTextBox TxtBox_ObservationReturn;
         private MaterialSkin.Controls.MaterialButton Btn_Regist_ReturnOfInstruments;
         private MaterialSkin.Controls.MaterialButton Btn_Delete_Instrument;
+        private MaterialSkin.Controls.MaterialButton Btn_RegistQualitySignatur;
     }
 }

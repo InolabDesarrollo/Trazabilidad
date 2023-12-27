@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CTZ.Vista.Responsabilitis
 {
     public class Notification
-    {
+    {  
         Email email;
         public Notification() {
             email = new Email("notificaciones@inolab.com", "Notificaciones2021*");

@@ -42,9 +42,9 @@ namespace CTZ.Modelo.Trazabilidad
 
         public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments, int idInstrument)
         {
-            return conexion.executeQuery("UPDATE AsignacionInstrumentos SET Fecha_Devolucion  = '" + instrumentAssignments.dateOfReturn + "', \r\nObservaciones_Devolucion ='" + instrumentAssignments.observationsReturn + "' \r\n" +
-                " WHERE ID_Instrumento = " + idInstrument + " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
-                " FROM AsignacionInstrumentos WHERE ID_Instrumento =" + instrumentAssignments.idInstrument + ");");
+            return conexion.executeQuery("UPDATE AsignacionInstrumentos SET Fecha_Devolucion  = '" + instrumentAssignments.dateOfReturn + "', \r\nObservaciones_Devolucion ='" + instrumentAssignments.observationsReturn + "',  \r\n" +
+                " Firma_Calidad = '"+instrumentAssignments.qualitySignature+" ' WHERE ID_Instrumento = " + idInstrument + " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
+                " FROM AsignacionInstrumentos WHERE ID_Instrumento =" + idInstrument + ");");
         }
 
         public void updateSignatureEngineer(int idInstrument, string engineerSignature)

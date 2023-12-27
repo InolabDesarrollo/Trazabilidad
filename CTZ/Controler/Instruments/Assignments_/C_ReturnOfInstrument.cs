@@ -2,6 +2,7 @@
 using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,17 @@ namespace CTZ.Controler.Instruments
                 repository.registerReturnInstrument(instrumentAssignments, element);
             }
         }
+
+        public DataTable selectMoreRecentInformationInstrumenAssignment(int idInstrument)
+        {
+            return repository.selectMoreRecentInformationInstrumenAssignment(idInstrument);
+        }
+
+        public void updateStatusInstrumentAssignment(int idInstrument, string status)
+        {
+            repository.updateStatusInstrumentAssignment(idInstrument, status);
+        }
+
     }
 
     

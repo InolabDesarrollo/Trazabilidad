@@ -129,7 +129,7 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_AddEnginnerSignature_Click(object sender, EventArgs e)
         {
-            RegistSignature signature = new RegistSignature(instrumentAssignments, "Enginner");
+            RegistSignature signature = new RegistSignature(instrumentAssignments, "Engineer");
             signature.Show();
         }
 

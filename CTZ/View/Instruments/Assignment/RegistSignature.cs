@@ -31,7 +31,7 @@ namespace CTZ.Vista.Instruments
         private readonly string equinoInstrument;
         private readonly Dictionary<int, string> informationId_Equino;
         private readonly List<int> idInstruments;
-        private readonly Instrument_Assignments instrumentAssignments;
+        public  Instrument_Assignments instrumentAssignments;
         private readonly string typeOfSignature;
         private  string emailEngineer;
         private readonly List<string> instrumentsWithCertificates;
@@ -108,11 +108,18 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Save_Signature_Click(object sender, EventArgs e)
         {
-
             Signature signature = new Signature();
             string signatureBase64= signature.createStringOfSignature(Pnl_Signature);
-
-            instrumentAssignments.engineerSignature = signatureBase64;
+            switch (typeOfSignature)
+            {
+                case "Engineer":
+                    instrumentAssignments.engineerSignature = signatureBase64;
+                    break;
+                case "Quality":
+                    instrumentAssignments.qualitySignature = signatureBase64;
+                    break;
+            }
+                
             System.Windows.MessageBox.Show("Firma agregada correctamente");
             this.Close();
         }

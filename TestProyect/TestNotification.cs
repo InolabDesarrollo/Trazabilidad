@@ -41,14 +41,9 @@ namespace TestProyect
             Assert.AreEqual(subject, "Test Notificacion entrega de Instrumentos con link de certificados");
         }
 
-        private string bodyMailEstandard()
-        {
-            return "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n   <h2>Entrega de Estandard </h2><br />\r\n    <table border=\"0\" cellpadding=\"8\">\r\n        <tr>\r\n            <td colspan=\"4\" >\r\n                <p  >\r\n                    " +
-                " <font COLOR=\"purple\"  >Buen día  Ingeniero:   y responsable del area de  calidad se notifica que se ha entregado el Estandard con las caracteristicas" +
-                " </font><br />                   \r\n                    <b><font COLOR=\"blue\" >Est:</font></b>                                     <b>estEstandard </b> <br />\r\n                    <b><font COLOR=\"blue\" >Fecha de entrega:</font></b>                        <b>dateOfDelivery </b> <br />\r\n                    " +
-                " <b><font COLOR=\"blue\" >Fecha aproximada de devolucion:</font></b>            <b>aproximateDateOfReturn </b> <br />\r\n                    <b><font COLOR=\"blue\" >Empresa:</font></b>                                   <b>enterprise </b> <br />\r\n                    <b><font COLOR=\"blue\" >Folio Empresa:</font></b>                             <b>numberEnterprise </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Observaciones de entrega:</font></b>                  <b>deliveryObservation</b>  <br />\r\n\r\n                   " +
-                " <b><font COLOR=\"blue\" >Link del certificado:</font></b>                  <b>link</b>  <br />\r\n\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
-        }
+
+        
+        
 
         private string bodyMailEngineer()
         {

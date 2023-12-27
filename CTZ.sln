@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTZ", "CTZ\CTZ.csproj", "{A
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup3", "Setup3\Setup3.vdproj", "{98793A26-AF79-4BCB-8D92-0125FA395140}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProyect", "TestProyect\TestProyect.csproj", "{685AFB2A-2187-4132-BD91-A78BB46DF5D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProyect", "TestProyect\TestProyect.csproj", "{685AFB2A-2187-4132-BD91-A78BB46DF5D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
