@@ -38,6 +38,7 @@
             this.Lbl_Observation_Return = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_ObservationReturn = new MaterialSkin.Controls.MaterialTextBox();
             this.Btn_Add_Return = new MaterialSkin.Controls.MaterialButton();
+            this.Btn_Add_QualitySignature = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // Lbl_Estandard
@@ -50,7 +51,7 @@
             this.Lbl_Estandard.Name = "Lbl_Estandard";
             this.Lbl_Estandard.Size = new System.Drawing.Size(80, 19);
             this.Lbl_Estandard.TabIndex = 2;
-            this.Lbl_Estandard.Text = "Estandares";
+            this.Lbl_Estandard.Text = "Estándares";
             // 
             // TxtBox_Estandards
             // 
@@ -107,6 +108,7 @@
             this.Btn_AddEstandard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_AddEstandard.UseAccentColor = false;
             this.Btn_AddEstandard.UseVisualStyleBackColor = true;
+            this.Btn_AddEstandard.Click += new System.EventHandler(this.Btn_AddEstandard_Click);
             // 
             // Btn_DeleteEstandard
             // 
@@ -125,6 +127,7 @@
             this.Btn_DeleteEstandard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_DeleteEstandard.UseAccentColor = false;
             this.Btn_DeleteEstandard.UseVisualStyleBackColor = true;
+            this.Btn_DeleteEstandard.Click += new System.EventHandler(this.Btn_DeleteEstandard_Click);
             // 
             // Lbl_Date_Return
             // 
@@ -134,9 +137,9 @@
             this.Lbl_Date_Return.Location = new System.Drawing.Point(23, 321);
             this.Lbl_Date_Return.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Date_Return.Name = "Lbl_Date_Return";
-            this.Lbl_Date_Return.Size = new System.Drawing.Size(199, 19);
+            this.Lbl_Date_Return.Size = new System.Drawing.Size(203, 19);
             this.Lbl_Date_Return.TabIndex = 35;
-            this.Lbl_Date_Return.Text = "Fecha Entrega de Estandard";
+            this.Lbl_Date_Return.Text = "Fecha Devolucion Estándard";
             // 
             // TimePicker_Date_Return
             // 
@@ -184,18 +187,39 @@
             this.Btn_Add_Return.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Return.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Return.Name = "Btn_Add_Return";
-            this.Btn_Add_Return.Size = new System.Drawing.Size(229, 36);
+            this.Btn_Add_Return.Size = new System.Drawing.Size(254, 36);
             this.Btn_Add_Return.TabIndex = 39;
-            this.Btn_Add_Return.Text = "Agregar Datos de Entrega";
+            this.Btn_Add_Return.Text = "Agregar Datos de Devolucion";
             this.Btn_Add_Return.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Btn_Add_Return.UseAccentColor = false;
             this.Btn_Add_Return.UseVisualStyleBackColor = true;
+            this.Btn_Add_Return.Click += new System.EventHandler(this.Btn_Add_Return_Click);
+            // 
+            // Btn_Add_QualitySignature
+            // 
+            this.Btn_Add_QualitySignature.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_Add_QualitySignature.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Btn_Add_QualitySignature.Depth = 0;
+            this.Btn_Add_QualitySignature.HighEmphasis = true;
+            this.Btn_Add_QualitySignature.Icon = null;
+            this.Btn_Add_QualitySignature.Location = new System.Drawing.Point(543, 311);
+            this.Btn_Add_QualitySignature.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_Add_QualitySignature.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_Add_QualitySignature.Name = "Btn_Add_QualitySignature";
+            this.Btn_Add_QualitySignature.Size = new System.Drawing.Size(303, 36);
+            this.Btn_Add_QualitySignature.TabIndex = 40;
+            this.Btn_Add_QualitySignature.Text = "Agregar firma de agente de calidad";
+            this.Btn_Add_QualitySignature.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Btn_Add_QualitySignature.UseAccentColor = false;
+            this.Btn_Add_QualitySignature.UseVisualStyleBackColor = true;
+            this.Btn_Add_QualitySignature.Click += new System.EventHandler(this.Btn_Add_QualitySignature_Click);
             // 
             // Regist_Return_Estandard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 467);
+            this.ClientSize = new System.Drawing.Size(860, 467);
+            this.Controls.Add(this.Btn_Add_QualitySignature);
             this.Controls.Add(this.Btn_Add_Return);
             this.Controls.Add(this.TxtBox_ObservationReturn);
             this.Controls.Add(this.Lbl_Observation_Return);
@@ -208,7 +232,6 @@
             this.Controls.Add(this.Lbl_Estandard);
             this.Name = "Regist_Return_Estandard";
             this.Text = "Registrar devolucion de estándar";
-            this.Load += new System.EventHandler(this.Regist_Return_Estandard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +249,6 @@
         private MaterialSkin.Controls.MaterialLabel Lbl_Observation_Return;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_ObservationReturn;
         private MaterialSkin.Controls.MaterialButton Btn_Add_Return;
+        private MaterialSkin.Controls.MaterialButton Btn_Add_QualitySignature;
     }
 }

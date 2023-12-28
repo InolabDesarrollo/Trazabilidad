@@ -2,6 +2,7 @@
 using CTZ.Controler.Estandard;
 using CTZ.Modelo.Browser;
 using CTZ.View.Responsabilitis;
+using CTZ.Vista.Instruments;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
@@ -22,6 +23,7 @@ namespace CTZ.View.Estandard.Assignment
     {
         private C_Estandard controler;
         private static Dictionary<int, string> informationEstandards;
+        List<string> estandardList;
         private C_Usuario usuarioControler;
         private DataTable engineers;
         public static Estandard_Assignment assignment;
@@ -32,7 +34,7 @@ namespace CTZ.View.Estandard.Assignment
             UserRepository userRepository = new UserRepository();
             usuarioControler = new C_Usuario(userRepository);
             assignment = new Estandard_Assignment();
-
+            estandardList = new List<string>();
             engineers = usuarioControler.getEngineers();
             fillMaterialComboBoxEngineers();
         }
@@ -57,6 +59,7 @@ namespace CTZ.View.Estandard.Assignment
                     DataTable estandardInformation = controler.selectEstandardByEST(TxtBox_Estandards.Text);
                     int idEstandard = Convert.ToInt32(estandardInformation.Rows[0]["Id"].ToString());
                     informationEstandards.Add(idEstandard, TxtBox_Estandards.Text);
+                    estandardList.Add(TxtBox_Estandards.Text);
                     TxtBox_Estandards.Clear();
                 }
                 catch(Exception ex)
@@ -78,7 +81,7 @@ namespace CTZ.View.Estandard.Assignment
 
         private void Btn_RegistEnginnerSignature_Click(object sender, EventArgs e)
         {
-            RegistSignature signature = new RegistSignature(assignment, "Enginner");
+            RegistSignature signature = new RegistSignature(assignment, "EnginnerEstandard");
             signature.Show();
         }
 
@@ -93,7 +96,7 @@ namespace CTZ.View.Estandard.Assignment
 
             C_DeliveryOfEstandard controler = new C_DeliveryOfEstandard();
             controler.registerDeliveryEstandard(assignment, informationEstandards);
-            controler.updateEstatusLoanEstandard("PRESTADO", informationEstandards);
+            controler.updateEstatusLoanEstandard("PRESTADO", estandardList);
 
             sendNotification();
             MessageBox.Show("Se creo la asignacion para los estandares ");

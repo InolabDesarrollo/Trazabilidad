@@ -63,9 +63,9 @@ namespace CTZ.Model.Trazabilidad.Estandard
                 " Estatus ='"+estandard.Estatus+"', Inventario ='"+estandard.Inventory+"' WHERE Id_Estandares= '"+estandard.EstEstandard+"'; ");
         }
 
-        public void updateEstatusLoanEstandard(string estatus, int id)
+        public void updateEstatusLoanEstandard(string estatus, string Id_Estandares)
         {
-            conexion.executeQuery("UPDATE Estandares SET Estatus_Prestamo = '"+estatus+"' WHERE Id = "+id+";");
+            conexion.executeQuery("UPDATE Estandares SET Estatus_Prestamo = '"+estatus+ "' WHERE Id_Estandares = '" +Id_Estandares +"';");
         }
     }
 }

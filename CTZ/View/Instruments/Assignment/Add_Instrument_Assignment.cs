@@ -49,9 +49,9 @@ namespace CTZ.Vista.Instruments
             }
             else if (statusAssignments.Equals("OCUPADO"))
             {
-                Add_Return_Instrument returnInstrument = new Add_Return_Instrument(idInstrument, TxtBox_Instrument.Text);
+               /* Add_Return_Instrument returnInstrument = new Add_Return_Instrument(idInstrument, TxtBox_Instrument.Text);
                 returnInstrument.Show();
-                this.Close();
+                this.Close();*/
             }
         }
     }

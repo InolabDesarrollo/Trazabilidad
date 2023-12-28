@@ -1,5 +1,6 @@
 ﻿using CTZ.Controlador;
 using CTZ.Controler;
+using CTZ.View.Estandard;
 using CTZ.View.Responsabilitis;
 using CTZ.Vista.Responsabilitis;
 using System;
@@ -28,12 +29,20 @@ namespace CTZ.Vista.Instruments
         private float lastY = 0;
 
         public  Instrument_Assignments instrumentAssignments;
+        private readonly Estandard_Assignment estandardAssignments;
         private readonly string typeOfSignature;
         
         public RegistSignature(Instrument_Assignments instrumentAssignments, string typeOfSignature)
         {
             InitializeComponent();
             this.instrumentAssignments = instrumentAssignments;
+            this.typeOfSignature = typeOfSignature;
+        }
+
+        public RegistSignature(Estandard_Assignment estandardAssignments, string typeOfSignature)
+        {
+            InitializeComponent();
+            this.estandardAssignments = estandardAssignments;
             this.typeOfSignature = typeOfSignature;
         }
 
@@ -71,6 +80,12 @@ namespace CTZ.Vista.Instruments
                     break;
                 case "Quality":
                     instrumentAssignments.qualitySignature = signatureBase64;
+                    break;
+                case "EnginnerEstandard":
+                    estandardAssignments.EngineerSignature = signatureBase64;   
+                    break;
+                case "QualityEstandard":
+                    estandardAssignments.QualitySignature = signatureBase64;
                     break;
             }
                 

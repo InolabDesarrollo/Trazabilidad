@@ -31,13 +31,14 @@ namespace CTZ.View.Estandard
 
         private void Btn_Add_Assignments_Click(object sender, EventArgs e)
         {
-            Add_Delivery_Estandard estandard = new Add_Delivery_Estandard();
-            estandard.Show();
+            Add_Delivery_Estandard add_Delivery_Estandard= new Add_Delivery_Estandard();
+            add_Delivery_Estandard.Show();
         }
 
         private void Btn_Regist_Return_Instrument_Click(object sender, EventArgs e)
         {
-
+            Regist_Return_Estandard regist_Return_Estandard = new Regist_Return_Estandard();
+            regist_Return_Estandard.Show();
         }
     }
 }

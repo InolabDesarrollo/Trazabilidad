@@ -32,6 +32,6 @@ namespace CTZ.View.Estandard
 
         public string emailEngineer;
 
-        public string Signature;
+        public string DateOfReturn;
     }
 }
