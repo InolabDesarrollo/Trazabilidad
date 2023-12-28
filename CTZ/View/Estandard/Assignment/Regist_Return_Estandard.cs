@@ -37,8 +37,7 @@ namespace CTZ.View.Estandard.Assignment
                 {
                     try
                     {
-                        addEstandard();
-                        int idEstandard = Convert.ToInt32(estandardInformation.Rows[0]["Id"].ToString());                        
+                        addEstandard();                      
                         TxtBox_Estandards.Clear();
                     }
                     catch (Exception ex)
@@ -50,7 +49,6 @@ namespace CTZ.View.Estandard.Assignment
                 {
                     MessageBox.Show("El estándar " + TxtBox_Estandards.Text + " no ha se ha prestado, no se puede devolver ");
                 }
-                
             }
             else
             {
@@ -59,8 +57,7 @@ namespace CTZ.View.Estandard.Assignment
         }
 
         private void addEstandard()
-        {
-            
+        {         
             if (estEstandards.Contains(TxtBox_Estandards.Text))
             {
                 MessageBox.Show("El estándar " + TxtBox_Estandards.Text + " ya fue agregado, no puedes repetirlo");
@@ -113,6 +110,7 @@ namespace CTZ.View.Estandard.Assignment
                 controller.updateEstatusLoanEstandard("DISPONIBLE", estEstandards);
 
                 MessageBox.Show("Registro de devolucion de estandard terminado");
+                this.Close();
             }
             
         }

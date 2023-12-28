@@ -12,7 +12,7 @@ namespace CTZ.Controler.Estandard
     public class C_AddEstandard
     {
         private readonly View.Responsabilitis.Estandard estandard;
-        Estandards_Repository repository;
+        private readonly Estandards_Repository repository;
 
         public C_AddEstandard(CTZ.View.Responsabilitis.Estandard estandard) { 
             repository = new Estandards_Repository();

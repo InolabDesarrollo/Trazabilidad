@@ -11,7 +11,7 @@ namespace CTZ.Model.Trazabilidad.Estandard
 {
     public class EstandardAssignment_Repository
     {
-        ConexionTrazability conexion;
+        private readonly ConexionTrazability conexion;
         public EstandardAssignment_Repository() {
             conexion = new ConexionTrazability();
         }

@@ -34,6 +34,8 @@ namespace CTZ.View.Estandard.Assignment
             UserRepository userRepository = new UserRepository();
             usuarioControler = new C_Usuario(userRepository);
             assignment = new Estandard_Assignment();
+            assignment.EngineerSignature = "";
+
             estandardList = new List<string>();
             engineers = usuarioControler.getEngineers();
             fillMaterialComboBoxEngineers();
@@ -53,19 +55,24 @@ namespace CTZ.View.Estandard.Assignment
             controler = new C_Estandard();
             if (controler.check(TxtBox_Estandards.Text))
             {
-                try
+                DataTable estandardInformation = controler.selectEstandardByEST(TxtBox_Estandards.Text);
+                if (estandardInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("PRESTADO"))
                 {
-                    addEstandard();
-                    DataTable estandardInformation = controler.selectEstandardByEST(TxtBox_Estandards.Text);
-                    int idEstandard = Convert.ToInt32(estandardInformation.Rows[0]["Id"].ToString());
-                    informationEstandards.Add(idEstandard, TxtBox_Estandards.Text);
-                    estandardList.Add(TxtBox_Estandards.Text);
-                    TxtBox_Estandards.Clear();
+                    MessageBox.Show("El estandard "+ TxtBox_Estandards.Text + " se encuentra prestado");
                 }
-                catch(Exception ex)
+                else
                 {
-                    MessageBox.Show("Error " + ex.Message.ToString());
-                }
+                    try
+                    {
+                        int idEstandard = Convert.ToInt32(estandardInformation.Rows[0]["Id"].ToString());
+                        addEstandard(idEstandard, TxtBox_Estandards.Text);
+                        TxtBox_Estandards.Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message.ToString());
+                    }
+                }  
             }
             else
             {
@@ -73,10 +80,21 @@ namespace CTZ.View.Estandard.Assignment
             }
         }
 
-        private void addEstandard()
+        private void addEstandard(int idEstandard, string estEstandard)
         {
-            ComboBox_Estandards.Items.Add(TxtBox_Estandards.Text);
-            MessageBox.Show("Se agrego el Estandard " + TxtBox_Estandards.Text);
+            if (estandardList.Contains(estEstandard))
+            {
+                MessageBox.Show("El estandard "+estEstandard+" ya fue agregado, no puedes repetirlo");
+                
+            }
+            else
+            {
+                informationEstandards.Add(idEstandard, estEstandard);
+                estandardList.Add(estEstandard);
+                ComboBox_Estandards.Items.Add(estEstandard);
+                MessageBox.Show("Se agrego el Estandard " + estEstandard);
+            }
+            
         }
 
         private void Btn_RegistEnginnerSignature_Click(object sender, EventArgs e)
@@ -86,21 +104,28 @@ namespace CTZ.View.Estandard.Assignment
         }
 
         private void Btn_Add_Delivery_Click(object sender, EventArgs e)
-        {         
-            assignment.DateDelivery = TimePicker_Date_Delivery.Text;
-            assignment.Engineer= MaterialComboBox_Engineers.Text;
-            assignment.NumberEnterprise = TxtBox_Enterprise.Text;
-            assignment.NameEnterprise = TxtBox_NameEnterprise.Text;
-            assignment.DeliveryObservations = TxtBox_ObservationDelivery.Text;
-            assignment.EstimateDateReturn = TimePicker_Date_Estimate_Return.Text;
+        {
+            if (assignment.EngineerSignature.Equals(""))
+            {
+                MessageBox.Show("No puedes prestar un estándar sin registrar la firma del Ingeniero");
+            }
+            else
+            {
+                assignment.DateDelivery = TimePicker_Date_Delivery.Text;
+                assignment.Engineer = MaterialComboBox_Engineers.Text;
+                assignment.NumberEnterprise = TxtBox_Enterprise.Text;
+                assignment.NameEnterprise = TxtBox_NameEnterprise.Text;
+                assignment.DeliveryObservations = TxtBox_ObservationDelivery.Text;
+                assignment.EstimateDateReturn = TimePicker_Date_Estimate_Return.Text;
 
-            C_DeliveryOfEstandard controler = new C_DeliveryOfEstandard();
-            controler.registerDeliveryEstandard(assignment, informationEstandards);
-            controler.updateEstatusLoanEstandard("PRESTADO", estandardList);
+                C_DeliveryOfEstandard controler = new C_DeliveryOfEstandard();
+                controler.registerDeliveryEstandard(assignment, informationEstandards);
+                controler.updateEstatusLoanEstandard("PRESTADO", estandardList);
 
-            sendNotification();
-            MessageBox.Show("Se creo la asignacion para los estandares ");
-            this.Close();
+                sendNotification();
+                MessageBox.Show("Se creo la asignacion para los estandares ");
+                this.Close();
+            }  
         }
         private void sendNotification()
         {
