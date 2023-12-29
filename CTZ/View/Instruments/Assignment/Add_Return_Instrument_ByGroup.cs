@@ -140,7 +140,5 @@ namespace CTZ.Vista.Instruments
                 MessageBox.Show("No seleccionaste un Equino");
             }
         }
-
-       
     }
 }

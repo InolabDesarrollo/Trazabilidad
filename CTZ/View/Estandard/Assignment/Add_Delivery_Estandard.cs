@@ -84,8 +84,7 @@ namespace CTZ.View.Estandard.Assignment
         {
             if (estandardList.Contains(estEstandard))
             {
-                MessageBox.Show("El estandard "+estEstandard+" ya fue agregado, no puedes repetirlo");
-                
+                MessageBox.Show("El estandard "+estEstandard+" ya fue agregado, no puedes repetirlo");   
             }
             else
             {
@@ -94,7 +93,6 @@ namespace CTZ.View.Estandard.Assignment
                 ComboBox_Estandards.Items.Add(estEstandard);
                 MessageBox.Show("Se agrego el Estandard " + estEstandard);
             }
-            
         }
 
         private void Btn_RegistEnginnerSignature_Click(object sender, EventArgs e)
@@ -118,6 +116,11 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.DeliveryObservations = TxtBox_ObservationDelivery.Text;
                 assignment.EstimateDateReturn = TimePicker_Date_Estimate_Return.Text;
 
+                UserRepository userRepository = new UserRepository();
+                usuarioControler = new C_Usuario(userRepository);
+                string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
+                assignment.EngineerEmail = emailEngineer;
+
                 C_DeliveryOfEstandard controler = new C_DeliveryOfEstandard();
                 controler.registerDeliveryEstandard(assignment, informationEstandards);
                 controler.updateEstatusLoanEstandard("PRESTADO", estandardList);
@@ -129,13 +132,10 @@ namespace CTZ.View.Estandard.Assignment
         }
         private void sendNotification()
         {
-            UserRepository userRepository = new UserRepository();
-            usuarioControler = new C_Usuario(userRepository);
-            string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
-            
+            string emailEngineer = assignment.EngineerEmail;            
             string bodyMail = bodyEmailEngineer();
             Notification notification = new Notification();
-            notification.sendMailNotification(emailEngineer, bodyMail, "Test Estandares");
+            notification.sendMailNotification(emailEngineer, bodyMail, "Prestamo de estándar");
         }
 
         private string bodyEmailEngineer()

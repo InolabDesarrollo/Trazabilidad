@@ -28,9 +28,7 @@ namespace CTZ.View.Estandard
 
         public string QualitySignature;
 
-        public string EST;
-
-        public string emailEngineer;
+        public string EngineerEmail;
 
         public string DateOfReturn;
     }

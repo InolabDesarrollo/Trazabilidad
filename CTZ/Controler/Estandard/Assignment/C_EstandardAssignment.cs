@@ -1,6 +1,8 @@
 ﻿using CTZ.Model.Trazabilidad.Estandard;
+using CTZ.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,11 @@ namespace CTZ.Controler.Estandard.Assignment
             {
                 estandardsRepository.updateEstatusLoanEstandard(estatus, estandard);
             }
+        }
+
+        public DataTable selectInformationOfMoreRecentLoan(string estEstandard)
+        {
+            return assignmentRepository.selectInformationOfMoreRecentLoan(estEstandard);
         }
     }
 }
