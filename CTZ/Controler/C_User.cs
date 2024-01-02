@@ -12,10 +12,10 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controlador
 {
-    public class C_Usuario
+    public class C_User
     {
         private IUserRepository userRepository;
-        public C_Usuario(IUserRepository userRepository)
+        public C_User(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
         }

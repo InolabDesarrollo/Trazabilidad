@@ -33,5 +33,7 @@ namespace CTZ.View.Responsabilitis
         public string Inventory;
 
         public string Signature;
+
+        public string EstatusAssignments;
     }
 }

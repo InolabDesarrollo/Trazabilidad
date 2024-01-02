@@ -24,7 +24,7 @@ namespace CTZ.View.Estandard.Assignment
         private C_Estandard controler;
         private static Dictionary<int, string> informationEstandards;
         List<string> estandardList;
-        private C_Usuario usuarioControler;
+        private C_User usuarioControler;
         private DataTable engineers;
         public static Estandard_Assignment assignment;
         public Add_Delivery_Estandard()
@@ -32,7 +32,7 @@ namespace CTZ.View.Estandard.Assignment
             InitializeComponent();
             informationEstandards = new Dictionary<int, string>();
             UserRepository userRepository = new UserRepository();
-            usuarioControler = new C_Usuario(userRepository);
+            usuarioControler = new C_User(userRepository);
             assignment = new Estandard_Assignment();
             assignment.EngineerSignature = "";
 
@@ -117,7 +117,7 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.EstimateDateReturn = TimePicker_Date_Estimate_Return.Text;
 
                 UserRepository userRepository = new UserRepository();
-                usuarioControler = new C_Usuario(userRepository);
+                usuarioControler = new C_User(userRepository);
                 string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
                 assignment.EngineerEmail = emailEngineer;
 

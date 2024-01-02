@@ -64,5 +64,6 @@ namespace CTZ.View.Estandard
             MessageBox.Show("Se actualizo el instrumento " + estEstandard);
             this.Close();
         }
+
     }
 }

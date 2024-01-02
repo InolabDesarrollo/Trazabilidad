@@ -53,6 +53,8 @@
             this.Lbl_Inventory = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_Inventory = new MaterialSkin.Controls.MaterialTextBox();
             this.Btn_Add = new MaterialSkin.Controls.MaterialButton();
+            this.Lbl_Assignment = new MaterialSkin.Controls.MaterialLabel();
+            this.ComboBox_Engineers = new MaterialSkin.Controls.MaterialComboBox();
             this.SuspendLayout();
             // 
             // Lbl_Est
@@ -99,7 +101,7 @@
             // 
             this.TxtBox_Estandard.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Estandard.Depth = 0;
-            this.TxtBox_Estandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Estandard.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Estandard.LeadingIcon = null;
             this.TxtBox_Estandard.Location = new System.Drawing.Point(51, 229);
             this.TxtBox_Estandard.MaxLength = 50;
@@ -127,7 +129,7 @@
             // 
             this.TxtBox_Use.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Use.Depth = 0;
-            this.TxtBox_Use.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Use.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Use.LeadingIcon = null;
             this.TxtBox_Use.Location = new System.Drawing.Point(51, 325);
             this.TxtBox_Use.MaxLength = 50;
@@ -155,7 +157,7 @@
             // 
             this.TxtBox_Brand.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Brand.Depth = 0;
-            this.TxtBox_Brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Brand.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Brand.LeadingIcon = null;
             this.TxtBox_Brand.Location = new System.Drawing.Point(51, 428);
             this.TxtBox_Brand.MaxLength = 50;
@@ -183,7 +185,7 @@
             // 
             this.TxtBox_Presentation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Presentation.Depth = 0;
-            this.TxtBox_Presentation.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Presentation.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Presentation.LeadingIcon = null;
             this.TxtBox_Presentation.Location = new System.Drawing.Point(51, 527);
             this.TxtBox_Presentation.MaxLength = 50;
@@ -211,7 +213,7 @@
             // 
             this.TxtBox_Number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Number.Depth = 0;
-            this.TxtBox_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Number.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Number.LeadingIcon = null;
             this.TxtBox_Number.Location = new System.Drawing.Point(422, 115);
             this.TxtBox_Number.MaxLength = 50;
@@ -277,7 +279,7 @@
             // 
             this.TxtBox_Quantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Quantity.Depth = 0;
-            this.TxtBox_Quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Quantity.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Quantity.LeadingIcon = null;
             this.TxtBox_Quantity.Location = new System.Drawing.Point(422, 428);
             this.TxtBox_Quantity.MaxLength = 50;
@@ -305,7 +307,7 @@
             // 
             this.TxtBox_Ubication.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Ubication.Depth = 0;
-            this.TxtBox_Ubication.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Ubication.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Ubication.LeadingIcon = null;
             this.TxtBox_Ubication.Location = new System.Drawing.Point(422, 527);
             this.TxtBox_Ubication.MaxLength = 50;
@@ -333,7 +335,7 @@
             // 
             this.TxtBox_Estatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Estatus.Depth = 0;
-            this.TxtBox_Estatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Estatus.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Estatus.LeadingIcon = null;
             this.TxtBox_Estatus.Location = new System.Drawing.Point(739, 125);
             this.TxtBox_Estatus.MaxLength = 50;
@@ -361,7 +363,7 @@
             // 
             this.TxtBox_Inventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Inventory.Depth = 0;
-            this.TxtBox_Inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Inventory.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Inventory.LeadingIcon = null;
             this.TxtBox_Inventory.Location = new System.Drawing.Point(739, 239);
             this.TxtBox_Inventory.MaxLength = 50;
@@ -380,7 +382,7 @@
             this.Btn_Add.Depth = 0;
             this.Btn_Add.HighEmphasis = true;
             this.Btn_Add.Icon = null;
-            this.Btn_Add.Location = new System.Drawing.Point(936, 339);
+            this.Btn_Add.Location = new System.Drawing.Point(936, 453);
             this.Btn_Add.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add.Name = "Btn_Add";
@@ -392,11 +394,47 @@
             this.Btn_Add.UseVisualStyleBackColor = true;
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
+            // Lbl_Assignment
+            // 
+            this.Lbl_Assignment.AutoSize = true;
+            this.Lbl_Assignment.Depth = 0;
+            this.Lbl_Assignment.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Assignment.Location = new System.Drawing.Point(736, 315);
+            this.Lbl_Assignment.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Lbl_Assignment.Name = "Lbl_Assignment";
+            this.Lbl_Assignment.Size = new System.Drawing.Size(137, 19);
+            this.Lbl_Assignment.TabIndex = 25;
+            this.Lbl_Assignment.Text = "Asignar a Ingeniero";
+            // 
+            // ComboBox_Engineers
+            // 
+            this.ComboBox_Engineers.AutoResize = false;
+            this.ComboBox_Engineers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ComboBox_Engineers.Depth = 0;
+            this.ComboBox_Engineers.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBox_Engineers.DropDownHeight = 174;
+            this.ComboBox_Engineers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_Engineers.DropDownWidth = 121;
+            this.ComboBox_Engineers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.ComboBox_Engineers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ComboBox_Engineers.FormattingEnabled = true;
+            this.ComboBox_Engineers.IntegralHeight = false;
+            this.ComboBox_Engineers.ItemHeight = 43;
+            this.ComboBox_Engineers.Location = new System.Drawing.Point(739, 345);
+            this.ComboBox_Engineers.MaxDropDownItems = 4;
+            this.ComboBox_Engineers.MouseState = MaterialSkin.MouseState.OUT;
+            this.ComboBox_Engineers.Name = "ComboBox_Engineers";
+            this.ComboBox_Engineers.Size = new System.Drawing.Size(285, 49);
+            this.ComboBox_Engineers.StartIndex = 0;
+            this.ComboBox_Engineers.TabIndex = 26;
+            // 
             // AddEstandard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 631);
+            this.Controls.Add(this.ComboBox_Engineers);
+            this.Controls.Add(this.Lbl_Assignment);
             this.Controls.Add(this.Btn_Add);
             this.Controls.Add(this.TxtBox_Inventory);
             this.Controls.Add(this.Lbl_Inventory);
@@ -456,5 +494,7 @@
         private MaterialSkin.Controls.MaterialLabel Lbl_Inventory;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Inventory;
         private MaterialSkin.Controls.MaterialButton Btn_Add;
+        private MaterialSkin.Controls.MaterialLabel Lbl_Assignment;
+        private MaterialSkin.Controls.MaterialComboBox ComboBox_Engineers;
     }
 }

@@ -21,7 +21,7 @@ namespace CTZ.Vista.Instruments
     {
         private C_Instruments instrumentsControler;
         private C_RegistDeliveryInstrument instrumentAssignmentsControler;
-        private C_Usuario usuarioControler;
+        private C_User usuarioControler;
 
         public static Instrument_Assignments instrumentAssignments;
         private static List<string> instrumentsWithCertificate;
@@ -37,7 +37,7 @@ namespace CTZ.Vista.Instruments
             instrumentsWithCertificate = new List<string>();
 
             UserRepository userRepository = new UserRepository();
-            usuarioControler = new C_Usuario(userRepository);
+            usuarioControler = new C_User(userRepository);
             engineers = usuarioControler.getEngineers();
 
             instrumentAssignments = new Instrument_Assignments();
@@ -142,7 +142,7 @@ namespace CTZ.Vista.Instruments
             else
             {
                 UserRepository userRepository = new UserRepository();
-                usuarioControler = new C_Usuario(userRepository);
+                usuarioControler = new C_User(userRepository);
                 string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
 
                 instrumentAssignments.dateDelivery = TimePicker_Date_Delivery.Text;

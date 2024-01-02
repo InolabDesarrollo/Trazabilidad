@@ -60,7 +60,7 @@ namespace CTZ.Vista.Instruments
         private void Btn_Engineer_Click(object sender, EventArgs e)
         {
             UserRepository userRepository = new UserRepository();
-            C_Usuario userControler = new C_Usuario(userRepository);
+            C_User userControler = new C_User(userRepository);
             if (userControler.checkIfExistEngineer(TxtBox_Engineer.Text))
             {
                 controlerInstrumentAssignment = new C_ConsultInstrument_Assignment();

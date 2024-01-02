@@ -18,7 +18,7 @@ namespace TestProyect.Controladores
         {
             //Arrange
             TestRepository repository = new TestRepository();
-            C_Usuario userControler = new C_Usuario(repository);
+            C_User userControler = new C_User(repository);
             string emailEngineer;
             string valueExpected = "ivanbarrientos@inolab.com";
             //Action

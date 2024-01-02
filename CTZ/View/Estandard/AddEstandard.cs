@@ -1,4 +1,6 @@
-﻿using CTZ.Controler.Estandard;
+﻿using CTZ.Controlador;
+using CTZ.Controler.Estandard;
+using CTZ.Modelo.Browser;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -15,9 +17,27 @@ namespace CTZ.View.Estandard
 {
     public partial class AddEstandard : MaterialForm
     {
+        private C_User userController;
+        private UserRepository userRepository;
+        private DataTable engineers;
         public AddEstandard()
         {
+            userRepository = new UserRepository();
+            userController = new C_User(userRepository);
+            engineers = userController.getEngineers();
+           
             InitializeComponent();
+            fillMaterialComboBoxEngineers();
+        }
+
+        private void fillMaterialComboBoxEngineers()
+        {
+            ComboBox_Engineers.Items.Add("Sin Asignar");
+            for (int i = 0; i < engineers.Rows.Count; i++)
+            {
+                string completeNameEngineer = engineers.Rows[i]["Nombre"].ToString() + " " + engineers.Rows[i]["Apellidos"].ToString();
+                ComboBox_Engineers.Items.Add(completeNameEngineer);
+            }
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -44,6 +64,7 @@ namespace CTZ.View.Estandard
         private void addEstandart()
         {
             CTZ.View.Responsabilitis.Estandard estandard = new Responsabilitis.Estandard();
+            estandard.EstatusAssignments = "Sin Asignar";
             estandard.EstEstandard = TxtBox_ESTE.Text;
             estandard.EstandardDescription = TxtBox_Estandard.Text;
             estandard.Use = TxtBox_Use.Text;
@@ -56,9 +77,10 @@ namespace CTZ.View.Estandard
             estandard.Ubication = TxtBox_Ubication.Text;
             estandard.Estatus = TxtBox_Estatus.Text;
             estandard.Inventory = TxtBox_Inventory.Text;
+            estandard.EstatusAssignments = ComboBox_Engineers.SelectedItem.ToString(); 
 
-            C_AddEstandard controlerAdd = new C_AddEstandard(estandard);
-            controlerAdd.add();
+            C_AddEstandard controlerAdd = new C_AddEstandard();
+            controlerAdd.add(estandard);
             MessageBox.Show("El Estandar " + TxtBox_ESTE.Text + " Se agrego correctamente");
             cleanButtons();
         }
@@ -78,5 +100,6 @@ namespace CTZ.View.Estandard
             TxtBox_Estatus.Clear(); 
             TxtBox_Inventory.Clear();
         }
+
     }
 }

@@ -232,7 +232,7 @@
     <Compile Include="Controler\Instruments\Certificates_\C_RelationCertificateInstrument.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_UpdateSignature.cs" />
     <Compile Include="Controler\Instruments\Traceability\C_TraceabilityRepository.cs" />
-    <Compile Include="Controler\C_Usuario.cs" />
+    <Compile Include="Controler\C_User.cs" />
     <Compile Include="Controler\Instruments\Certificates_\C_View_Instrument_Certificate.cs" />
     <Compile Include="Controler\Instruments\Calibration\C_Laboratories.cs" />
     <Compile Include="Controler\Instruments\Calibration\C_CalibrationRequest.cs" />

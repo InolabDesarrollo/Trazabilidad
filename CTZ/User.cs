@@ -8,7 +8,7 @@ namespace CTZ
     public static class User
     {
         static UserRepository repository = new UserRepository();   
-        static C_Usuario controlador = new C_Usuario(repository);
+        static C_User controlador = new C_User(repository);
         public static int IdUsuario { get; set; }
         public static int IdArea { get; set; }
         public static int IdRol { get; set; }

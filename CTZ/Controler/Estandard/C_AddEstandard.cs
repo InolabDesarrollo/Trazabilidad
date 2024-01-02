@@ -14,18 +14,28 @@ namespace CTZ.Controler.Estandard
         private readonly View.Responsabilitis.Estandard estandard;
         private readonly Estandards_Repository repository;
 
-        public C_AddEstandard(CTZ.View.Responsabilitis.Estandard estandard) { 
+        public C_AddEstandard() { 
             repository = new Estandards_Repository();
-            this.estandard = estandard;
         }
 
-        public void add()
+        public void add(CTZ.View.Responsabilitis.Estandard estandard)
         {
             DateForReport date = new DateForReport();
             estandard.FabricationDate = date.convertToValidDateDatePicker(estandard.FabricationDate);
             estandard.ExpirationDate =date.convertToValidDateDatePicker(estandard.ExpirationDate);
-
             repository.add(estandard);
+
+            string estatusAssignment = "";
+            if (estandard.EstatusAssignments.Equals("Sin Asignar"))
+            {
+                estatusAssignment = "DISPONIBLE";
+            }
+            else
+            {
+                estatusAssignment = "ASIGNADO";
+            }
+
+            repository.updateEstatusLoanEstandard(estatusAssignment, estandard.EstEstandard);
         }
 
     }

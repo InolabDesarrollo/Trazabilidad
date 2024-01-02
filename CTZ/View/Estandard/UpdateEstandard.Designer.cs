@@ -367,7 +367,7 @@
             // 
             this.Lbl_Est.AutoSize = true;
             this.Lbl_Est.Depth = 0;
-            this.Lbl_Est.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Est.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Lbl_Est.Location = new System.Drawing.Point(18, 75);
             this.Lbl_Est.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Est.Name = "Lbl_Est";
@@ -379,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 513);
+            this.ClientSize = new System.Drawing.Size(992, 544);
             this.Controls.Add(this.Lbl_Est);
             this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.TxtBox_Inventory);
