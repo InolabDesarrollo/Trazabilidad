@@ -26,16 +26,15 @@ namespace CTZ.Model.Trazabilidad.Estandard
 
         public void registerReturnOfEstandard(Estandard_Assignment assignment, string estEstandard)
         {
-            conexion.executeQuery(" UPDATE AsignacionEstandares SET Observaciones_Devolucion = '"+assignment.ReturnObservations+"', Firma_Calidad = '"+assignment.QualitySignature+"', Fecha_Devolucion = '"+assignment.DateOfReturn+"' " +
+            conexion.executeQuery(" UPDATE AsignacionEstandares SET Observaciones_Devolucion = '"+assignment.ReturnObservations+"', Firma_Calidad = '"+assignment.QualitySignature+"', Firma_Ingeniero_Devolucion = '"+assignment.EngineerSignatureReturn+"',  Fecha_Devolucion = '"+assignment.DateOfReturn+"' " +
                 "\r\n WHERE EST_Estandard = '" + estEstandard + "';");
         }
 
         public DataTable selectInformationOfMoreRecentLoan(string estEstandard)
         {
-            return conexion.getDataTable("SELECT * from AsignacionEstandares  \r\n                 " +
+            return conexion.getDataTable("SELECT * from AsignacionEstandares  \r\n                 " + 
                 " WHERE EST_Estandard  = '"+ estEstandard + "' AND Fecha_Entrega =(Select MAX(Fecha_Entrega) \r\n " +
                 " FROM AsignacionEstandares WHERE EST_Estandard = '"+ estEstandard + "');");
-
         }
 
 

@@ -31,6 +31,7 @@
             this.Btn_Serch_Assignments = new System.Windows.Forms.Button();
             this.Btn_Add_Assignments = new System.Windows.Forms.Button();
             this.Btn_Regist_Return = new System.Windows.Forms.Button();
+            this.Btn_Query_Assignment = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Serch_Assignments
@@ -78,11 +79,26 @@
             this.Btn_Regist_Return.UseVisualStyleBackColor = false;
             this.Btn_Regist_Return.Click += new System.EventHandler(this.Btn_Regist_Return_Instrument_Click);
             // 
+            // Btn_Query_Assignment
+            // 
+            this.Btn_Query_Assignment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
+            this.Btn_Query_Assignment.FlatAppearance.BorderSize = 0;
+            this.Btn_Query_Assignment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Query_Assignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Query_Assignment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_Query_Assignment.Location = new System.Drawing.Point(198, 375);
+            this.Btn_Query_Assignment.Name = "Btn_Query_Assignment";
+            this.Btn_Query_Assignment.Size = new System.Drawing.Size(195, 63);
+            this.Btn_Query_Assignment.TabIndex = 19;
+            this.Btn_Query_Assignment.Text = "Consultar Asignacion";
+            this.Btn_Query_Assignment.UseVisualStyleBackColor = false;
+            // 
             // Assignments_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 450);
+            this.ClientSize = new System.Drawing.Size(708, 486);
+            this.Controls.Add(this.Btn_Query_Assignment);
             this.Controls.Add(this.Btn_Regist_Return);
             this.Controls.Add(this.Btn_Add_Assignments);
             this.Controls.Add(this.Btn_Serch_Assignments);
@@ -97,5 +113,6 @@
         private System.Windows.Forms.Button Btn_Serch_Assignments;
         private System.Windows.Forms.Button Btn_Add_Assignments;
         private System.Windows.Forms.Button Btn_Regist_Return;
+        private System.Windows.Forms.Button Btn_Query_Assignment;
     }
 }

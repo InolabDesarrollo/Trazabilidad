@@ -45,24 +45,12 @@
             this.TxtBox_EST = new System.Windows.Forms.TextBox();
             this.Lbl_EST = new System.Windows.Forms.Label();
             this.Dgv_Estandards = new ADGV.AdvancedDataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEstandaresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estandarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noLoteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDeFabricacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDeCaducidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estandaresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trazabilidadTestDataSet4 = new CTZ.TrazabilidadTestDataSet4();
             this.Page_Estandard_Certificate = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.Btn_Add_Certificate = new System.Windows.Forms.Button();
             this.Dgv_Estandard_Certificate = new ADGV.AdvancedDataGridView();
+            this.estandaresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trazabilidadTestDataSet4 = new CTZ.TrazabilidadTestDataSet4();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEstandaresDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estandarDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,14 +74,27 @@
             this.estandaresCertificadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estandaresTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.EstandaresTableAdapter();
             this.estandares_CertificadosTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.Estandares_CertificadosTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEstandaresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estandarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noLoteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDeFabricacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDeCaducidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estatus_Prestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabControl_Estandards.SuspendLayout();
             this.Page_Instruments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandards)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estandaresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet4)).BeginInit();
             this.Page_Estandard_Certificate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandard_Certificate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estandaresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estandaresCertificadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -287,130 +288,16 @@
             this.cantidadDataGridViewTextBoxColumn,
             this.ubicacionDataGridViewTextBoxColumn,
             this.estatusDataGridViewTextBoxColumn,
-            this.inventarioDataGridViewTextBoxColumn});
+            this.inventarioDataGridViewTextBoxColumn,
+            this.Estatus_Prestamo});
             this.Dgv_Estandards.DataSource = this.estandaresBindingSource;
             this.Dgv_Estandards.DateWithTime = false;
-            this.Dgv_Estandards.Location = new System.Drawing.Point(6, 61);
+            this.Dgv_Estandards.Location = new System.Drawing.Point(3, 71);
             this.Dgv_Estandards.Name = "Dgv_Estandards";
-            this.Dgv_Estandards.Size = new System.Drawing.Size(1030, 273);
+            this.Dgv_Estandards.Size = new System.Drawing.Size(1030, 281);
             this.Dgv_Estandards.TabIndex = 0;
             this.Dgv_Estandards.TimeFilter = false;
             this.Dgv_Estandards.FilterStringChanged += new System.EventHandler(this.Dgv_Estandards_FilterStringChanged);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // idEstandaresDataGridViewTextBoxColumn
-            // 
-            this.idEstandaresDataGridViewTextBoxColumn.DataPropertyName = "Id_Estandares";
-            this.idEstandaresDataGridViewTextBoxColumn.HeaderText = "Id_Estandares";
-            this.idEstandaresDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idEstandaresDataGridViewTextBoxColumn.Name = "idEstandaresDataGridViewTextBoxColumn";
-            this.idEstandaresDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // estandarDataGridViewTextBoxColumn
-            // 
-            this.estandarDataGridViewTextBoxColumn.DataPropertyName = "Estandar";
-            this.estandarDataGridViewTextBoxColumn.HeaderText = "Estandar";
-            this.estandarDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estandarDataGridViewTextBoxColumn.Name = "estandarDataGridViewTextBoxColumn";
-            this.estandarDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // usoDataGridViewTextBoxColumn
-            // 
-            this.usoDataGridViewTextBoxColumn.DataPropertyName = "Uso";
-            this.usoDataGridViewTextBoxColumn.HeaderText = "Uso";
-            this.usoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.usoDataGridViewTextBoxColumn.Name = "usoDataGridViewTextBoxColumn";
-            this.usoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            this.marcaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // presentacionDataGridViewTextBoxColumn
-            // 
-            this.presentacionDataGridViewTextBoxColumn.DataPropertyName = "Presentacion";
-            this.presentacionDataGridViewTextBoxColumn.HeaderText = "Presentacion";
-            this.presentacionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.presentacionDataGridViewTextBoxColumn.Name = "presentacionDataGridViewTextBoxColumn";
-            this.presentacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // noLoteDataGridViewTextBoxColumn
-            // 
-            this.noLoteDataGridViewTextBoxColumn.DataPropertyName = "NoLote";
-            this.noLoteDataGridViewTextBoxColumn.HeaderText = "NoLote";
-            this.noLoteDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.noLoteDataGridViewTextBoxColumn.Name = "noLoteDataGridViewTextBoxColumn";
-            this.noLoteDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaDeFabricacionDataGridViewTextBoxColumn
-            // 
-            this.fechaDeFabricacionDataGridViewTextBoxColumn.DataPropertyName = "FechaDeFabricacion";
-            this.fechaDeFabricacionDataGridViewTextBoxColumn.HeaderText = "FechaDeFabricacion";
-            this.fechaDeFabricacionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.fechaDeFabricacionDataGridViewTextBoxColumn.Name = "fechaDeFabricacionDataGridViewTextBoxColumn";
-            this.fechaDeFabricacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaDeCaducidadDataGridViewTextBoxColumn
-            // 
-            this.fechaDeCaducidadDataGridViewTextBoxColumn.DataPropertyName = "FechaDeCaducidad";
-            this.fechaDeCaducidadDataGridViewTextBoxColumn.HeaderText = "FechaDeCaducidad";
-            this.fechaDeCaducidadDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.fechaDeCaducidadDataGridViewTextBoxColumn.Name = "fechaDeCaducidadDataGridViewTextBoxColumn";
-            this.fechaDeCaducidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ubicacionDataGridViewTextBoxColumn
-            // 
-            this.ubicacionDataGridViewTextBoxColumn.DataPropertyName = "Ubicacion";
-            this.ubicacionDataGridViewTextBoxColumn.HeaderText = "Ubicacion";
-            this.ubicacionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.ubicacionDataGridViewTextBoxColumn.Name = "ubicacionDataGridViewTextBoxColumn";
-            this.ubicacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // estatusDataGridViewTextBoxColumn
-            // 
-            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
-            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
-            this.estatusDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
-            this.estatusDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // inventarioDataGridViewTextBoxColumn
-            // 
-            this.inventarioDataGridViewTextBoxColumn.DataPropertyName = "Inventario";
-            this.inventarioDataGridViewTextBoxColumn.HeaderText = "Inventario";
-            this.inventarioDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.inventarioDataGridViewTextBoxColumn.Name = "inventarioDataGridViewTextBoxColumn";
-            this.inventarioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // estandaresBindingSource
-            // 
-            this.estandaresBindingSource.DataMember = "Estandares";
-            this.estandaresBindingSource.DataSource = this.trazabilidadTestDataSet4;
-            // 
-            // trazabilidadTestDataSet4
-            // 
-            this.trazabilidadTestDataSet4.DataSetName = "TrazabilidadTestDataSet4";
-            this.trazabilidadTestDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Page_Estandard_Certificate
             // 
@@ -424,6 +311,19 @@
             this.Page_Estandard_Certificate.TabIndex = 1;
             this.Page_Estandard_Certificate.Text = "Estandard Certificado";
             this.Page_Estandard_Certificate.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(309, 357);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 37);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Asignar Estándar";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Btn_Add_Certificate
             // 
@@ -443,6 +343,7 @@
             // 
             this.Dgv_Estandard_Certificate.AllowUserToAddRows = false;
             this.Dgv_Estandard_Certificate.AllowUserToDeleteRows = false;
+            this.Dgv_Estandard_Certificate.AllowUserToOrderColumns = true;
             this.Dgv_Estandard_Certificate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_Estandard_Certificate.AutoGenerateColumns = false;
@@ -472,6 +373,7 @@
             this.fechaDeRegistroDataGridViewTextBoxColumn,
             this.linkDataGridViewTextBoxColumn,
             this.estatusDeCertificadoDataGridViewTextBoxColumn});
+            this.Dgv_Estandard_Certificate.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Dgv_Estandard_Certificate.DataSource = this.estandaresCertificadosBindingSource;
             this.Dgv_Estandard_Certificate.DateWithTime = false;
             this.Dgv_Estandard_Certificate.Location = new System.Drawing.Point(6, 57);
@@ -480,6 +382,16 @@
             this.Dgv_Estandard_Certificate.TabIndex = 0;
             this.Dgv_Estandard_Certificate.TimeFilter = false;
             this.Dgv_Estandard_Certificate.FilterStringChanged += new System.EventHandler(this.Dgv_Estandard_Certificate_FilterStringChanged);
+            // 
+            // estandaresBindingSource
+            // 
+            this.estandaresBindingSource.DataMember = "Estandares";
+            this.estandaresBindingSource.DataSource = this.trazabilidadTestDataSet4;
+            // 
+            // trazabilidadTestDataSet4
+            // 
+            this.trazabilidadTestDataSet4.DataSetName = "TrazabilidadTestDataSet4";
+            this.trazabilidadTestDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -673,18 +585,118 @@
             // 
             this.estandares_CertificadosTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
+            // idDataGridViewTextBoxColumn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(309, 357);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 37);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Asignar Estándar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // idEstandaresDataGridViewTextBoxColumn
+            // 
+            this.idEstandaresDataGridViewTextBoxColumn.DataPropertyName = "Id_Estandares";
+            this.idEstandaresDataGridViewTextBoxColumn.HeaderText = "Id_Estandares";
+            this.idEstandaresDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idEstandaresDataGridViewTextBoxColumn.Name = "idEstandaresDataGridViewTextBoxColumn";
+            this.idEstandaresDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // estandarDataGridViewTextBoxColumn
+            // 
+            this.estandarDataGridViewTextBoxColumn.DataPropertyName = "Estandar";
+            this.estandarDataGridViewTextBoxColumn.HeaderText = "Estandar";
+            this.estandarDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estandarDataGridViewTextBoxColumn.Name = "estandarDataGridViewTextBoxColumn";
+            this.estandarDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // usoDataGridViewTextBoxColumn
+            // 
+            this.usoDataGridViewTextBoxColumn.DataPropertyName = "Uso";
+            this.usoDataGridViewTextBoxColumn.HeaderText = "Uso";
+            this.usoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.usoDataGridViewTextBoxColumn.Name = "usoDataGridViewTextBoxColumn";
+            this.usoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // presentacionDataGridViewTextBoxColumn
+            // 
+            this.presentacionDataGridViewTextBoxColumn.DataPropertyName = "Presentacion";
+            this.presentacionDataGridViewTextBoxColumn.HeaderText = "Presentacion";
+            this.presentacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.presentacionDataGridViewTextBoxColumn.Name = "presentacionDataGridViewTextBoxColumn";
+            this.presentacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // noLoteDataGridViewTextBoxColumn
+            // 
+            this.noLoteDataGridViewTextBoxColumn.DataPropertyName = "NoLote";
+            this.noLoteDataGridViewTextBoxColumn.HeaderText = "NoLote";
+            this.noLoteDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.noLoteDataGridViewTextBoxColumn.Name = "noLoteDataGridViewTextBoxColumn";
+            this.noLoteDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaDeFabricacionDataGridViewTextBoxColumn
+            // 
+            this.fechaDeFabricacionDataGridViewTextBoxColumn.DataPropertyName = "FechaDeFabricacion";
+            this.fechaDeFabricacionDataGridViewTextBoxColumn.HeaderText = "FechaDeFabricacion";
+            this.fechaDeFabricacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fechaDeFabricacionDataGridViewTextBoxColumn.Name = "fechaDeFabricacionDataGridViewTextBoxColumn";
+            this.fechaDeFabricacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaDeCaducidadDataGridViewTextBoxColumn
+            // 
+            this.fechaDeCaducidadDataGridViewTextBoxColumn.DataPropertyName = "FechaDeCaducidad";
+            this.fechaDeCaducidadDataGridViewTextBoxColumn.HeaderText = "FechaDeCaducidad";
+            this.fechaDeCaducidadDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fechaDeCaducidadDataGridViewTextBoxColumn.Name = "fechaDeCaducidadDataGridViewTextBoxColumn";
+            this.fechaDeCaducidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ubicacionDataGridViewTextBoxColumn
+            // 
+            this.ubicacionDataGridViewTextBoxColumn.DataPropertyName = "Ubicacion";
+            this.ubicacionDataGridViewTextBoxColumn.HeaderText = "Ubicacion";
+            this.ubicacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.ubicacionDataGridViewTextBoxColumn.Name = "ubicacionDataGridViewTextBoxColumn";
+            this.ubicacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // inventarioDataGridViewTextBoxColumn
+            // 
+            this.inventarioDataGridViewTextBoxColumn.DataPropertyName = "Inventario";
+            this.inventarioDataGridViewTextBoxColumn.HeaderText = "Inventario";
+            this.inventarioDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.inventarioDataGridViewTextBoxColumn.Name = "inventarioDataGridViewTextBoxColumn";
+            this.inventarioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Estatus_Prestamo
+            // 
+            this.Estatus_Prestamo.DataPropertyName = "Estatus_Prestamo";
+            this.Estatus_Prestamo.HeaderText = "Estatus_Prestamo";
+            this.Estatus_Prestamo.MinimumWidth = 22;
+            this.Estatus_Prestamo.Name = "Estatus_Prestamo";
+            this.Estatus_Prestamo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // Estandars_SubMenu
             // 
@@ -699,10 +711,10 @@
             this.Page_Instruments.ResumeLayout(false);
             this.Page_Instruments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandards)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estandaresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet4)).EndInit();
             this.Page_Estandard_Certificate.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Estandard_Certificate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estandaresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estandaresCertificadosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -716,19 +728,6 @@
         private TrazabilidadTestDataSet4 trazabilidadTestDataSet4;
         private System.Windows.Forms.BindingSource estandaresBindingSource;
         private TrazabilidadTestDataSet4TableAdapters.EstandaresTableAdapter estandaresTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEstandaresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estandarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn presentacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noLoteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDeFabricacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDeCaducidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inventarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label Lbl_EST;
         private System.Windows.Forms.TextBox TxtBox_EST;
         private System.Windows.Forms.Button Btn_SerchEST;
@@ -768,5 +767,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn linkDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusDeCertificadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEstandaresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estandarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn presentacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noLoteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDeFabricacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDeCaducidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inventarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus_Prestamo;
     }
 }

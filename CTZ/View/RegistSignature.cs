@@ -87,6 +87,9 @@ namespace CTZ.Vista.Instruments
                 case "QualityEstandard":
                     estandardAssignments.QualitySignature = signatureBase64;
                     break;
+                case "EnginnerReturnEstandard":
+                    estandardAssignments.EngineerSignatureReturn = signatureBase64;
+                    break;
             }
                 
             System.Windows.MessageBox.Show("Firma agregada correctamente");

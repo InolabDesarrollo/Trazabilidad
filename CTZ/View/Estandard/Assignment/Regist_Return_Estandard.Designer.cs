@@ -39,6 +39,7 @@
             this.TxtBox_ObservationReturn = new MaterialSkin.Controls.MaterialTextBox();
             this.Btn_Add_Return = new MaterialSkin.Controls.MaterialButton();
             this.Btn_Add_QualitySignature = new MaterialSkin.Controls.MaterialButton();
+            this.Btn_Add_EnginnerSignature = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // Lbl_Estandard
@@ -202,7 +203,7 @@
             this.Btn_Add_QualitySignature.Depth = 0;
             this.Btn_Add_QualitySignature.HighEmphasis = true;
             this.Btn_Add_QualitySignature.Icon = null;
-            this.Btn_Add_QualitySignature.Location = new System.Drawing.Point(543, 311);
+            this.Btn_Add_QualitySignature.Location = new System.Drawing.Point(543, 235);
             this.Btn_Add_QualitySignature.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_QualitySignature.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_QualitySignature.Name = "Btn_Add_QualitySignature";
@@ -214,11 +215,31 @@
             this.Btn_Add_QualitySignature.UseVisualStyleBackColor = true;
             this.Btn_Add_QualitySignature.Click += new System.EventHandler(this.Btn_Add_QualitySignature_Click);
             // 
+            // Btn_Add_EnginnerSignature
+            // 
+            this.Btn_Add_EnginnerSignature.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_Add_EnginnerSignature.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Btn_Add_EnginnerSignature.Depth = 0;
+            this.Btn_Add_EnginnerSignature.HighEmphasis = true;
+            this.Btn_Add_EnginnerSignature.Icon = null;
+            this.Btn_Add_EnginnerSignature.Location = new System.Drawing.Point(609, 304);
+            this.Btn_Add_EnginnerSignature.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_Add_EnginnerSignature.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_Add_EnginnerSignature.Name = "Btn_Add_EnginnerSignature";
+            this.Btn_Add_EnginnerSignature.Size = new System.Drawing.Size(237, 36);
+            this.Btn_Add_EnginnerSignature.TabIndex = 41;
+            this.Btn_Add_EnginnerSignature.Text = "Agregar firma de ingeniero";
+            this.Btn_Add_EnginnerSignature.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Btn_Add_EnginnerSignature.UseAccentColor = false;
+            this.Btn_Add_EnginnerSignature.UseVisualStyleBackColor = true;
+            this.Btn_Add_EnginnerSignature.Click += new System.EventHandler(this.Btn_Add_EnginnerSignature_Click);
+            // 
             // Regist_Return_Estandard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 467);
+            this.Controls.Add(this.Btn_Add_EnginnerSignature);
             this.Controls.Add(this.Btn_Add_QualitySignature);
             this.Controls.Add(this.Btn_Add_Return);
             this.Controls.Add(this.TxtBox_ObservationReturn);
@@ -250,5 +271,6 @@
         private MaterialSkin.Controls.MaterialTextBox TxtBox_ObservationReturn;
         private MaterialSkin.Controls.MaterialButton Btn_Add_Return;
         private MaterialSkin.Controls.MaterialButton Btn_Add_QualitySignature;
+        private MaterialSkin.Controls.MaterialButton Btn_Add_EnginnerSignature;
     }
 }

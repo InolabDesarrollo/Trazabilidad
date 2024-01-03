@@ -28,10 +28,19 @@ namespace CTZ.View.Estandard
             CTZ.Controler.Estandard.C_Certificate controller = new Controler.Estandard.C_Certificate();
             string linksCertificates = "";
             List<string> certificates = new List<string>();
-
-            foreach (int idEstandard in estandardInformation.Keys)
+            string link;
+            for (int i=0; i<estandardInformation.Count; i++)
             {
-                certificates.Add(controller.getLinkCertificate(idEstandard));
+                link = controller.getLinkCertificate(estandardInformation.Keys.ElementAt(i));
+                if(link != "")
+                {
+                    certificates.Add(link);
+                }
+                else
+                {
+                    certificates.Add("Estandard "+estandardInformation.Values.ElementAt(i)+" Sin link");
+                }
+                
             }
             linksCertificates = String.Join(", ", certificates);
             return linksCertificates;

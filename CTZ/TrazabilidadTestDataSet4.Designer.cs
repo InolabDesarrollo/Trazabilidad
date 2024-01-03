@@ -774,6 +774,8 @@ namespace CTZ {
             
             private global::System.Data.DataColumn columnInventario;
             
+            private global::System.Data.DataColumn columnEstatus_Prestamo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public EstandaresDataTable() {
@@ -913,6 +915,14 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Estatus_PrestamoColumn {
+                get {
+                    return this.columnEstatus_Prestamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -948,7 +958,7 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EstandaresRow AddEstandaresRow(string Id_Estandares, string Estandar, string Uso, string Marca, string Presentacion, string NoLote, string FechaDeFabricacion, string FechaDeCaducidad, string Cantidad, string Ubicacion, string Estatus, string Inventario) {
+            public EstandaresRow AddEstandaresRow(string Id_Estandares, string Estandar, string Uso, string Marca, string Presentacion, string NoLote, string FechaDeFabricacion, string FechaDeCaducidad, string Cantidad, string Ubicacion, string Estatus, string Inventario, string Estatus_Prestamo) {
                 EstandaresRow rowEstandaresRow = ((EstandaresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -963,7 +973,8 @@ namespace CTZ {
                         Cantidad,
                         Ubicacion,
                         Estatus,
-                        Inventario};
+                        Inventario,
+                        Estatus_Prestamo};
                 rowEstandaresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEstandaresRow);
                 return rowEstandaresRow;
@@ -1006,6 +1017,7 @@ namespace CTZ {
                 this.columnUbicacion = base.Columns["Ubicacion"];
                 this.columnEstatus = base.Columns["Estatus"];
                 this.columnInventario = base.Columns["Inventario"];
+                this.columnEstatus_Prestamo = base.Columns["Estatus_Prestamo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1037,6 +1049,8 @@ namespace CTZ {
                 base.Columns.Add(this.columnEstatus);
                 this.columnInventario = new global::System.Data.DataColumn("Inventario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInventario);
+                this.columnEstatus_Prestamo = new global::System.Data.DataColumn("Estatus_Prestamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstatus_Prestamo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1058,6 +1072,7 @@ namespace CTZ {
                 this.columnUbicacion.MaxLength = 1000;
                 this.columnEstatus.MaxLength = 1000;
                 this.columnInventario.MaxLength = 1000;
+                this.columnEstatus_Prestamo.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2242,6 +2257,22 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Estatus_Prestamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableEstandares.Estatus_PrestamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estatus_Prestamo\' de la tabla \'Estandares\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEstandares.Estatus_PrestamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsEstandarNull() {
                 return this.IsNull(this.tableEstandares.EstandarColumn);
             }
@@ -2370,6 +2401,18 @@ namespace CTZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetInventarioNull() {
                 this[this.tableEstandares.InventarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEstatus_PrestamoNull() {
+                return this.IsNull(this.tableEstandares.Estatus_PrestamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEstatus_PrestamoNull() {
+                this[this.tableEstandares.Estatus_PrestamoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3791,10 +3834,11 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             tableMapping.ColumnMappings.Add("Ubicacion", "Ubicacion");
             tableMapping.ColumnMappings.Add("Estatus", "Estatus");
             tableMapping.ColumnMappings.Add("Inventario", "Inventario");
+            tableMapping.ColumnMappings.Add("Estatus_Prestamo", "Estatus_Prestamo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Estandares] WHERE (([Id] = @Original_Id) AND ([Id_Estandares] = @Original_Id_Estandares) AND ((@IsNull_Estandar = 1 AND [Estandar] IS NULL) OR ([Estandar] = @Original_Estandar)) AND ((@IsNull_Uso = 1 AND [Uso] IS NULL) OR ([Uso] = @Original_Uso)) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_Presentacion = 1 AND [Presentacion] IS NULL) OR ([Presentacion] = @Original_Presentacion)) AND ((@IsNull_NoLote = 1 AND [NoLote] IS NULL) OR ([NoLote] = @Original_NoLote)) AND ((@IsNull_FechaDeFabricacion = 1 AND [FechaDeFabricacion] IS NULL) OR ([FechaDeFabricacion] = @Original_FechaDeFabricacion)) AND ((@IsNull_FechaDeCaducidad = 1 AND [FechaDeCaducidad] IS NULL) OR ([FechaDeCaducidad] = @Original_FechaDeCaducidad)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Ubicacion = 1 AND [Ubicacion] IS NULL) OR ([Ubicacion] = @Original_Ubicacion)) AND ((@IsNull_Estatus = 1 AND [Estatus] IS NULL) OR ([Estatus] = @Original_Estatus)) AND ((@IsNull_Inventario = 1 AND [Inventario] IS NULL) OR ([Inventario] = @Original_Inventario)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Estandares] WHERE (([Id] = @Original_Id) AND ([Id_Estandares] = @Original_Id_Estandares) AND ((@IsNull_Estandar = 1 AND [Estandar] IS NULL) OR ([Estandar] = @Original_Estandar)) AND ((@IsNull_Uso = 1 AND [Uso] IS NULL) OR ([Uso] = @Original_Uso)) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_Presentacion = 1 AND [Presentacion] IS NULL) OR ([Presentacion] = @Original_Presentacion)) AND ((@IsNull_NoLote = 1 AND [NoLote] IS NULL) OR ([NoLote] = @Original_NoLote)) AND ((@IsNull_FechaDeFabricacion = 1 AND [FechaDeFabricacion] IS NULL) OR ([FechaDeFabricacion] = @Original_FechaDeFabricacion)) AND ((@IsNull_FechaDeCaducidad = 1 AND [FechaDeCaducidad] IS NULL) OR ([FechaDeCaducidad] = @Original_FechaDeCaducidad)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Ubicacion = 1 AND [Ubicacion] IS NULL) OR ([Ubicacion] = @Original_Ubicacion)) AND ((@IsNull_Estatus = 1 AND [Estatus] IS NULL) OR ([Estatus] = @Original_Estatus)) AND ((@IsNull_Inventario = 1 AND [Inventario] IS NULL) OR ([Inventario] = @Original_Inventario)) AND ((@IsNull_Estatus_Prestamo = 1 AND [Estatus_Prestamo] IS NULL) OR ([Estatus_Prestamo] = @Original_Estatus_Prestamo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Estandares", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Estandares", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3820,10 +3864,12 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Inventario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inventario", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inventario", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inventario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Estatus_Prestamo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus_Prestamo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estatus_Prestamo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus_Prestamo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Estandares] ([Id_Estandares], [Estandar], [Uso], [Marca], [Presentacion], [NoLote], [FechaDeFabricacion], [FechaDeCaducidad], [Cantidad], [Ubicacion], [Estatus], [Inventario]) VALUES (@Id_Estandares, @Estandar, @Uso, @Marca, @Presentacion, @NoLote, @FechaDeFabricacion, @FechaDeCaducidad, @Cantidad, @Ubicacion, @Estatus, @Inventario);
-SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFabricacion, FechaDeCaducidad, Cantidad, Ubicacion, Estatus, Inventario FROM Estandares WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Estandares] ([Id_Estandares], [Estandar], [Uso], [Marca], [Presentacion], [NoLote], [FechaDeFabricacion], [FechaDeCaducidad], [Cantidad], [Ubicacion], [Estatus], [Inventario], [Estatus_Prestamo]) VALUES (@Id_Estandares, @Estandar, @Uso, @Marca, @Presentacion, @NoLote, @FechaDeFabricacion, @FechaDeCaducidad, @Cantidad, @Ubicacion, @Estatus, @Inventario, @Estatus_Prestamo);
+SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFabricacion, FechaDeCaducidad, Cantidad, Ubicacion, Estatus, Inventario, Estatus_Prestamo FROM Estandares WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Estandares", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Estandares", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estandar", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estandar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3837,29 +3883,32 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ubicacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ubicacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inventario", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estatus_Prestamo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus_Prestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [Estandares] SET [Id_Estandares] = @Id_Estandares, [Estandar] = @Estandar," +
                 " [Uso] = @Uso, [Marca] = @Marca, [Presentacion] = @Presentacion, [NoLote] = @NoL" +
                 "ote, [FechaDeFabricacion] = @FechaDeFabricacion, [FechaDeCaducidad] = @FechaDeCa" +
                 "ducidad, [Cantidad] = @Cantidad, [Ubicacion] = @Ubicacion, [Estatus] = @Estatus," +
-                " [Inventario] = @Inventario WHERE (([Id] = @Original_Id) AND ([Id_Estandares] = " +
-                "@Original_Id_Estandares) AND ((@IsNull_Estandar = 1 AND [Estandar] IS NULL) OR (" +
-                "[Estandar] = @Original_Estandar)) AND ((@IsNull_Uso = 1 AND [Uso] IS NULL) OR ([" +
-                "Uso] = @Original_Uso)) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] " +
-                "= @Original_Marca)) AND ((@IsNull_Presentacion = 1 AND [Presentacion] IS NULL) O" +
-                "R ([Presentacion] = @Original_Presentacion)) AND ((@IsNull_NoLote = 1 AND [NoLot" +
-                "e] IS NULL) OR ([NoLote] = @Original_NoLote)) AND ((@IsNull_FechaDeFabricacion =" +
-                " 1 AND [FechaDeFabricacion] IS NULL) OR ([FechaDeFabricacion] = @Original_FechaD" +
-                "eFabricacion)) AND ((@IsNull_FechaDeCaducidad = 1 AND [FechaDeCaducidad] IS NULL" +
-                ") OR ([FechaDeCaducidad] = @Original_FechaDeCaducidad)) AND ((@IsNull_Cantidad =" +
-                " 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_U" +
-                "bicacion = 1 AND [Ubicacion] IS NULL) OR ([Ubicacion] = @Original_Ubicacion)) AN" +
-                "D ((@IsNull_Estatus = 1 AND [Estatus] IS NULL) OR ([Estatus] = @Original_Estatus" +
-                ")) AND ((@IsNull_Inventario = 1 AND [Inventario] IS NULL) OR ([Inventario] = @Or" +
-                "iginal_Inventario)));\r\nSELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentac" +
-                "ion, NoLote, FechaDeFabricacion, FechaDeCaducidad, Cantidad, Ubicacion, Estatus," +
-                " Inventario FROM Estandares WHERE (Id = @Id)";
+                " [Inventario] = @Inventario, [Estatus_Prestamo] = @Estatus_Prestamo WHERE (([Id]" +
+                " = @Original_Id) AND ([Id_Estandares] = @Original_Id_Estandares) AND ((@IsNull_E" +
+                "standar = 1 AND [Estandar] IS NULL) OR ([Estandar] = @Original_Estandar)) AND ((" +
+                "@IsNull_Uso = 1 AND [Uso] IS NULL) OR ([Uso] = @Original_Uso)) AND ((@IsNull_Mar" +
+                "ca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_Presen" +
+                "tacion = 1 AND [Presentacion] IS NULL) OR ([Presentacion] = @Original_Presentaci" +
+                "on)) AND ((@IsNull_NoLote = 1 AND [NoLote] IS NULL) OR ([NoLote] = @Original_NoL" +
+                "ote)) AND ((@IsNull_FechaDeFabricacion = 1 AND [FechaDeFabricacion] IS NULL) OR " +
+                "([FechaDeFabricacion] = @Original_FechaDeFabricacion)) AND ((@IsNull_FechaDeCadu" +
+                "cidad = 1 AND [FechaDeCaducidad] IS NULL) OR ([FechaDeCaducidad] = @Original_Fec" +
+                "haDeCaducidad)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad" +
+                "] = @Original_Cantidad)) AND ((@IsNull_Ubicacion = 1 AND [Ubicacion] IS NULL) OR" +
+                " ([Ubicacion] = @Original_Ubicacion)) AND ((@IsNull_Estatus = 1 AND [Estatus] IS" +
+                " NULL) OR ([Estatus] = @Original_Estatus)) AND ((@IsNull_Inventario = 1 AND [Inv" +
+                "entario] IS NULL) OR ([Inventario] = @Original_Inventario)) AND ((@IsNull_Estatu" +
+                "s_Prestamo = 1 AND [Estatus_Prestamo] IS NULL) OR ([Estatus_Prestamo] = @Origina" +
+                "l_Estatus_Prestamo)));\r\nSELECT Id, Id_Estandares, Estandar, Uso, Marca, Presenta" +
+                "cion, NoLote, FechaDeFabricacion, FechaDeCaducidad, Cantidad, Ubicacion, Estatus" +
+                ", Inventario, Estatus_Prestamo FROM Estandares WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Estandares", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Estandares", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estandar", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estandar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3873,6 +3922,7 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ubicacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ubicacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inventario", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estatus_Prestamo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus_Prestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Estandares", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Estandares", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Estandar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estandar", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3897,6 +3947,8 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Inventario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inventario", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inventario", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inventario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Estatus_Prestamo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus_Prestamo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estatus_Prestamo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estatus_Prestamo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3974,7 +4026,7 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Id_Estandares, string Original_Estandar, string Original_Uso, string Original_Marca, string Original_Presentacion, string Original_NoLote, string Original_FechaDeFabricacion, string Original_FechaDeCaducidad, string Original_Cantidad, string Original_Ubicacion, string Original_Estatus, string Original_Inventario) {
+        public virtual int Delete(int Original_Id, string Original_Id_Estandares, string Original_Estandar, string Original_Uso, string Original_Marca, string Original_Presentacion, string Original_NoLote, string Original_FechaDeFabricacion, string Original_FechaDeCaducidad, string Original_Cantidad, string Original_Ubicacion, string Original_Estatus, string Original_Inventario, string Original_Estatus_Prestamo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Id_Estandares == null)) {
                 throw new global::System.ArgumentNullException("Original_Id_Estandares");
@@ -4070,6 +4122,14 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
                 this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((string)(Original_Inventario));
             }
+            if ((Original_Estatus_Prestamo == null)) {
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((string)(Original_Estatus_Prestamo));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4090,7 +4150,7 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Id_Estandares, string Estandar, string Uso, string Marca, string Presentacion, string NoLote, string FechaDeFabricacion, string FechaDeCaducidad, string Cantidad, string Ubicacion, string Estatus, string Inventario) {
+        public virtual int Insert(string Id_Estandares, string Estandar, string Uso, string Marca, string Presentacion, string NoLote, string FechaDeFabricacion, string FechaDeCaducidad, string Cantidad, string Ubicacion, string Estatus, string Inventario, string Estatus_Prestamo) {
             if ((Id_Estandares == null)) {
                 throw new global::System.ArgumentNullException("Id_Estandares");
             }
@@ -4163,6 +4223,12 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Inventario));
             }
+            if ((Estatus_Prestamo == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Estatus_Prestamo));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4196,6 +4262,7 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
                     string Ubicacion, 
                     string Estatus, 
                     string Inventario, 
+                    string Estatus_Prestamo, 
                     int Original_Id, 
                     string Original_Id_Estandares, 
                     string Original_Estandar, 
@@ -4209,6 +4276,7 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
                     string Original_Ubicacion, 
                     string Original_Estatus, 
                     string Original_Inventario, 
+                    string Original_Estatus_Prestamo, 
                     int Id) {
             if ((Id_Estandares == null)) {
                 throw new global::System.ArgumentNullException("Id_Estandares");
@@ -4282,102 +4350,116 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Inventario));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Id));
+            if ((Estatus_Prestamo == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Estatus_Prestamo));
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Id));
             if ((Original_Id_Estandares == null)) {
                 throw new global::System.ArgumentNullException("Original_Id_Estandares");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Id_Estandares));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Id_Estandares));
             }
             if ((Original_Estandar == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Estandar));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Estandar));
             }
             if ((Original_Uso == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Uso));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Uso));
             }
             if ((Original_Marca == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Marca));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Marca));
             }
             if ((Original_Presentacion == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Presentacion));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Presentacion));
             }
             if ((Original_NoLote == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_NoLote));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_NoLote));
             }
             if ((Original_FechaDeFabricacion == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_FechaDeFabricacion));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_FechaDeFabricacion));
             }
             if ((Original_FechaDeCaducidad == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_FechaDeCaducidad));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_FechaDeCaducidad));
             }
             if ((Original_Cantidad == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Cantidad));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Cantidad));
             }
             if ((Original_Ubicacion == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Ubicacion));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Ubicacion));
             }
             if ((Original_Estatus == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Estatus));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Estatus));
             }
             if ((Original_Inventario == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_Inventario));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_Inventario));
             }
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Id));
+            if ((Original_Estatus_Prestamo == null)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_Estatus_Prestamo));
+            }
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4411,6 +4493,7 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
                     string Ubicacion, 
                     string Estatus, 
                     string Inventario, 
+                    string Estatus_Prestamo, 
                     int Original_Id, 
                     string Original_Id_Estandares, 
                     string Original_Estandar, 
@@ -4423,8 +4506,9 @@ SELECT Id, Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFab
                     string Original_Cantidad, 
                     string Original_Ubicacion, 
                     string Original_Estatus, 
-                    string Original_Inventario) {
-            return this.Update(Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFabricacion, FechaDeCaducidad, Cantidad, Ubicacion, Estatus, Inventario, Original_Id, Original_Id_Estandares, Original_Estandar, Original_Uso, Original_Marca, Original_Presentacion, Original_NoLote, Original_FechaDeFabricacion, Original_FechaDeCaducidad, Original_Cantidad, Original_Ubicacion, Original_Estatus, Original_Inventario, Original_Id);
+                    string Original_Inventario, 
+                    string Original_Estatus_Prestamo) {
+            return this.Update(Id_Estandares, Estandar, Uso, Marca, Presentacion, NoLote, FechaDeFabricacion, FechaDeCaducidad, Cantidad, Ubicacion, Estatus, Inventario, Estatus_Prestamo, Original_Id, Original_Id_Estandares, Original_Estandar, Original_Uso, Original_Marca, Original_Presentacion, Original_NoLote, Original_FechaDeFabricacion, Original_FechaDeCaducidad, Original_Cantidad, Original_Ubicacion, Original_Estatus, Original_Inventario, Original_Estatus_Prestamo, Original_Id);
         }
     }
     

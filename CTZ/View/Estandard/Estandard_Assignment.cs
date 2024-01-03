@@ -31,5 +31,7 @@ namespace CTZ.View.Estandard
         public string EngineerEmail;
 
         public string DateOfReturn;
+
+        public string EngineerSignatureReturn;
     }
 }

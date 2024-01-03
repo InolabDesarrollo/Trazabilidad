@@ -31,6 +31,7 @@ namespace CTZ.View.Estandard.Assignment
             estEstandards = new List<string>();
             returnOfEstandard = new Estandard_Assignment();
             returnOfEstandard.QualitySignature = "";
+            returnOfEstandard.EngineerSignatureReturn = "";
         }
         private void Btn_AddEstandard_Click(object sender, EventArgs e)
         {
@@ -102,9 +103,15 @@ namespace CTZ.View.Estandard.Assignment
             signature.Show();
         }
 
+        private void Btn_Add_EnginnerSignature_Click(object sender, EventArgs e)
+        {
+            RegistSignature signature = new RegistSignature(returnOfEstandard, "EnginnerReturnEstandard");
+            signature.Show();
+        }
+
         private void Btn_Add_Return_Click(object sender, EventArgs e)
         {
-            if (returnOfEstandard.QualitySignature.Equals(""))
+            if (returnOfEstandard.QualitySignature.Equals("") || returnOfEstandard.EngineerSignatureReturn.Equals(""))
             {
                 MessageBox.Show("No puedes registrar la devolucion de estándar sin la firma del personal de " +
                     " calidad ");
@@ -152,6 +159,6 @@ namespace CTZ.View.Estandard.Assignment
             return body;
         }
 
-
+       
     }
 }
