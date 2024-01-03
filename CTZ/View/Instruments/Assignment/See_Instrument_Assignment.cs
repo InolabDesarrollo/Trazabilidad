@@ -1,5 +1,6 @@
 ﻿using CTZ.Controlador;
 using CTZ.Controler.Instruments.Assignments_;
+using CTZ.View;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
@@ -58,7 +59,7 @@ namespace CTZ.Vista.Instruments
 
         private void Dgv_Instrument_Assignment_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == engineerSignature)
+            if (e.ColumnIndex == engineerSignature || e.ColumnIndex == qualitySignature || e.ColumnIndex==updateAssignment)
             {
                 showSignature(e);
             }
@@ -74,9 +75,9 @@ namespace CTZ.Vista.Instruments
 
         private void showSignature(DataGridViewCellEventArgs e)
         {
-            int id = Convert.ToInt32(Dgv_Instrument_Assignment[0, e.RowIndex].Value.ToString());
-            ShowSignature signature = new ShowSignature(id,e.ColumnIndex);
-            signature.Show();
+            string signature = Dgv_Instrument_Assignment[e.ColumnIndex, e.RowIndex].Value.ToString();
+            Show_Signature show = new Show_Signature(signature) ;
+            show.Show();
         }
 
         private void updateInstrumentAssignment(DataGridViewCellEventArgs e)
