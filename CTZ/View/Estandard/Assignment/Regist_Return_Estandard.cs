@@ -114,7 +114,7 @@ namespace CTZ.View.Estandard.Assignment
             if (returnOfEstandard.QualitySignature.Equals("") || returnOfEstandard.EngineerSignatureReturn.Equals(""))
             {
                 MessageBox.Show("No puedes registrar la devolucion de estándar sin la firma del personal de " +
-                    " calidad ");
+                    " calidad o sin la firma del Ingeniero ");
             }
             else
             {

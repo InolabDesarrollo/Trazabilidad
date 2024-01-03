@@ -35,7 +35,7 @@ namespace CTZ.Vista.Instruments
                 base64StrigSignature = instrumenAssignmentInformation.Rows[0]["Firma_Calidad"].ToString();
             }
             
-            PictureBoxSignature.Image =converStringToImage(base64StrigSignature);
+            PictureBoxSignature.Image = converStringToImage(base64StrigSignature);
         }
 
         public Image converStringToImage(string signatureBase64)

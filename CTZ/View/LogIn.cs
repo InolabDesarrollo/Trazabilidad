@@ -14,7 +14,6 @@ namespace TestSpire
 {
     public partial class LogIn : MaterialForm
     {
-        private CTZ.Functions function = new CTZ.Functions();
         const int IntervalFiveMinutes = (1 * 1000 * 60 * 5);
         const int Calidad = 4;
         const int Gerencia = 5;
@@ -37,7 +36,6 @@ namespace TestSpire
                 timer.Interval = IntervalFiveMinutes;
                 timer.Tick += new EventHandler(Timer1_Tick);
                 timer.Start();
-                function.Material(this);
 
                 version.Text = Assembly.GetEntryAssembly().GetName().Version.ToString();
             }

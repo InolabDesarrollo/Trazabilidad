@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Markup;
 
 namespace CTZ.Model.Trazabilidad.Estandard
@@ -37,7 +38,20 @@ namespace CTZ.Model.Trazabilidad.Estandard
                 " FROM AsignacionEstandares WHERE EST_Estandard = '"+ estEstandard + "');");
         }
 
+        public DataTable selectAllByEnginner(string engineerName)
+        {
+            return conexion.getDataTable("Select * from AsignacionEstandares WHERE Ingeniero like '%"+ engineerName + "%';");
+        }
 
+        public DataTable selectAllByEstandard(string estEstandard)
+        {
+            return conexion.getDataTable("Select * from AsignacionEstandares WHERE EST_Estandard = '"+ estEstandard + "';");
+        }
+
+        public DataTable selectAllByBrand(string nameEnterprise)
+        {
+            return conexion.getDataTable("Select * from AsignacionEstandares WHERE Nombre_Empresa like '%"+nameEnterprise+"%';");
+        }
 
     }
 }

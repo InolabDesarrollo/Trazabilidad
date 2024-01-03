@@ -19,16 +19,6 @@ namespace CTZ.View.Estandard
             InitializeComponent();
         }
 
-        private void Btn_Assignment_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Serch_Assignments_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_Add_Assignments_Click(object sender, EventArgs e)
         {
             Add_Delivery_Estandard add_Delivery_Estandard= new Add_Delivery_Estandard();
@@ -39,6 +29,12 @@ namespace CTZ.View.Estandard
         {
             Regist_Return_Estandard regist_Return_Estandard = new Regist_Return_Estandard();
             regist_Return_Estandard.Show();
+        }
+
+        private void Btn_Query_Assignment_Click(object sender, EventArgs e)
+        {
+            See_Estandard_Assignment assignment = new See_Estandard_Assignment();
+            assignment.Show();
         }
     }
 }

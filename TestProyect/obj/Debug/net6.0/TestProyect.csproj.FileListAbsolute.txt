@@ -93,7 +93,6 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\z
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\CTZ.exe
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\MaterialSkin.dll
-C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\DataGridViewAutoFilter.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\AdvancedDataGridView.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\AutoUpdater.NET.dll
@@ -161,3 +160,7 @@ C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\S
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\Accessibility.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\System.Deployment.dll
 C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\HtmlRenderer.WinForms.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\HtmlRenderer.dll
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\HtmlRenderer.WinForms.pdb
+C:\Users\Omar Sotomayor\source\repos\Trazabilidad\TestProyect\bin\Debug\net6.0\HtmlRenderer.pdb

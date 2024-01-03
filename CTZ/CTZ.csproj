@@ -130,91 +130,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCarta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddCarta.Designer.cs">
-      <DependentUpon>AddCarta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddCert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddCert.Designer.cs">
-      <DependentUpon>AddCert.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddDetalleCert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddDetalleCert.Designer.cs">
-      <DependentUpon>AddDetalleCert.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddEquipo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddEquipo.Designer.cs">
-      <DependentUpon>AddEquipo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddEquipoP1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddEquipoP1.Designer.cs">
-      <DependentUpon>AddEquipoP1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddInstrumento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddInstrumento.Designer.cs">
-      <DependentUpon>AddInstrumento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddModelo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddModelo.Designer.cs">
-      <DependentUpon>AddModelo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddPuntos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddPuntos.Designer.cs">
-      <DependentUpon>AddPuntos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddUso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddUso.Designer.cs">
-      <DependentUpon>AddUso.cs</DependentUpon>
-    </Compile>
     <Compile Include="AsignacionDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AsignarP1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AsignarP1.Designer.cs">
-      <DependentUpon>AsignarP1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AsignarP2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AsignarP2.Designer.cs">
-      <DependentUpon>AsignarP2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AsignatedEQ2.cs">
-      <DependentUpon>AsignatedEQ2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AsignatedEQ2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AsignatedEQ2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ClientesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClientesDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Controler\Estandard\Assignment\C_EstandardAssignment.cs" />
+    <Compile Include="Controler\Estandard\Assignment\C_QueryEstandardAssignment.cs" />
     <Compile Include="Controler\Estandard\C_AddEstandard.cs" />
     <Compile Include="Controler\Estandard\C_Certificate.cs" />
     <Compile Include="Controler\Estandard\C_DeleteEstandard.cs" />
@@ -240,34 +162,10 @@
     <Compile Include="Controler\Instruments\Certificates_\C_SerchInstrument_Certificate.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_ReturnOfInstrument.cs" />
     <Compile Include="Controler\Instruments\C_SerchInstrument.cs" />
-    <Compile Include="ctzWF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ctzWF.Designer.cs">
-      <DependentUpon>ctzWF.cs</DependentUpon>
-    </Compile>
     <Compile Include="DatasetHistory.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatasetHistory.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Desasignar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Desasignar.Designer.cs">
-      <DependentUpon>Desasignar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetalleCert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetalleCert.Designer.cs">
-      <DependentUpon>DetalleCert.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetalleLabs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetalleLabs.Designer.cs">
-      <DependentUpon>DetalleLabs.cs</DependentUpon>
     </Compile>
     <Compile Include="DocumentacionDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -299,86 +197,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSctz.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Functions.cs" />
-    <Compile Include="GetAvailableDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GetAvailableDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GetCertGRL.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GetCertGRL.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GetClienteDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GetClienteDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GetCTZ.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GetCTZ.Designer.cs">
-      <DependentUpon>GetCTZ.cs</DependentUpon>
-    </Compile>
-    <Compile Include="getequipos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>getequipos.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="getequiposgrl.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>getequiposgrl.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GetIngesUnas.cs">
-      <DependentUpon>GetIngesUnas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GetIngesUnas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GetIngesUnas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GetUsosCertDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GetUsosCertDB.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GRL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GRL.Designer.cs">
-      <DependentUpon>GRL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="grl2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>grl2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Historial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Historial.Designer.cs">
-      <DependentUpon>Historial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HistorialCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HistorialCliente.Designer.cs">
-      <DependentUpon>HistorialCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HistorialFSR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HistorialFSR.Designer.cs">
-      <DependentUpon>HistorialFSR.cs</DependentUpon>
     </Compile>
     <Compile Include="IngesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -468,6 +286,12 @@
     </Compile>
     <Compile Include="View\Estandard\Assignment\Assignments_Menu.Designer.cs">
       <DependentUpon>Assignments_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Estandard\Assignment\See_Estandard_Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Estandard\Assignment\See_Estandard_Assignment.Designer.cs">
+      <DependentUpon>See_Estandard_Assignment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Estandard\CertificateEstandard.cs" />
     <Compile Include="View\Estandard\DeleteEstandard.cs">
@@ -615,39 +439,9 @@
     <Compile Include="View\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="modEQ.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="modEQ.Designer.cs">
-      <DependentUpon>modEQ.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModUsosCert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModUsosCert.Designer.cs">
-      <DependentUpon>ModUsosCert.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Preview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Preview.Designer.cs">
-      <DependentUpon>Preview.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepFunctions.cs" />
-    <Compile Include="Reporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reporte.Designer.cs">
-      <DependentUpon>Reporte.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ShowUsosCert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShowUsosCert.Designer.cs">
-      <DependentUpon>ShowUsosCert.cs</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="User.cs" />
     <Compile Include="View\MenuAccesorios.cs">
@@ -713,6 +507,12 @@
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Responsabilitis\Signature.cs" />
+    <Compile Include="View\Show_Signature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Show_Signature.Designer.cs">
+      <DependentUpon>Show_Signature.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -752,66 +552,6 @@
       <DependentUpon>SerchTraceabilityLetter.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Traceability_\TraceabilityLetter.cs" />
-    <EmbeddedResource Include="AddCarta.resx">
-      <DependentUpon>AddCarta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddCert.resx">
-      <DependentUpon>AddCert.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddDetalleCert.resx">
-      <DependentUpon>AddDetalleCert.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddEquipo.resx">
-      <DependentUpon>AddEquipo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddEquipoP1.resx">
-      <DependentUpon>AddEquipoP1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddInstrumento.resx">
-      <DependentUpon>AddInstrumento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddModelo.resx">
-      <DependentUpon>AddModelo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddPuntos.resx">
-      <DependentUpon>AddPuntos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddUso.resx">
-      <DependentUpon>AddUso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AsignarP1.resx">
-      <DependentUpon>AsignarP1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AsignarP2.resx">
-      <DependentUpon>AsignarP2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ctzWF.resx">
-      <DependentUpon>ctzWF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Desasignar.resx">
-      <DependentUpon>Desasignar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetalleCert.resx">
-      <DependentUpon>DetalleCert.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetalleLabs.resx">
-      <DependentUpon>DetalleLabs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GRL.resx">
-      <DependentUpon>GRL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Historial.resx">
-      <DependentUpon>Historial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HistorialCliente.resx">
-      <DependentUpon>HistorialCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HistorialFSR.resx">
-      <DependentUpon>HistorialFSR.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\AddCertificate.resx">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </EmbeddedResource>
@@ -826,6 +566,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\Assignment\Assignments_Menu.resx">
       <DependentUpon>Assignments_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Estandard\Assignment\See_Estandard_Assignment.resx">
+      <DependentUpon>See_Estandard_Assignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\DeleteEstandard.resx">
       <DependentUpon>DeleteEstandard.cs</DependentUpon>
@@ -902,15 +645,6 @@
     <EmbeddedResource Include="View\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modEQ.resx">
-      <DependentUpon>modEQ.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModUsosCert.resx">
-      <DependentUpon>ModUsosCert.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Preview.resx">
-      <DependentUpon>Preview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -921,12 +655,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reporte.resx">
-      <DependentUpon>Reporte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ShowUsosCert.resx">
-      <DependentUpon>ShowUsosCert.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\MenuAccesorios.resx">
       <DependentUpon>MenuAccesorios.cs</DependentUpon>
     </EmbeddedResource>
@@ -950,6 +678,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Responsabilitis\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Show_Signature.resx">
+      <DependentUpon>Show_Signature.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SubMenu.resx">
       <DependentUpon>SubMenu.cs</DependentUpon>
@@ -979,28 +710,6 @@
     </None>
     <None Include="AsignacionDataSet.xss">
       <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AsignatedEQ2.xsc">
-      <DependentUpon>AsignatedEQ2.xsd</DependentUpon>
-    </None>
-    <None Include="AsignatedEQ2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AsignatedEQ2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AsignatedEQ2.xss">
-      <DependentUpon>AsignatedEQ2.xsd</DependentUpon>
-    </None>
-    <None Include="ClientesDataSet.xsc">
-      <DependentUpon>ClientesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ClientesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ClientesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ClientesDataSet.xss">
-      <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </None>
     <None Include="DatasetHistory.xsc">
       <DependentUpon>DatasetHistory.xsd</DependentUpon>
@@ -1067,94 +776,6 @@
     </None>
     <None Include="DSctz.xss">
       <DependentUpon>DSctz.xsd</DependentUpon>
-    </None>
-    <None Include="GetAvailableDataSet.xsc">
-      <DependentUpon>GetAvailableDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GetAvailableDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GetAvailableDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GetAvailableDataSet.xss">
-      <DependentUpon>GetAvailableDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GetCertGRL.xsc">
-      <DependentUpon>GetCertGRL.xsd</DependentUpon>
-    </None>
-    <None Include="GetCertGRL.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GetCertGRL.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GetCertGRL.xss">
-      <DependentUpon>GetCertGRL.xsd</DependentUpon>
-    </None>
-    <None Include="GetClienteDataSet.xsc">
-      <DependentUpon>GetClienteDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GetClienteDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GetClienteDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GetClienteDataSet.xss">
-      <DependentUpon>GetClienteDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="getequipos.xsc">
-      <DependentUpon>getequipos.xsd</DependentUpon>
-    </None>
-    <None Include="getequipos.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>getequipos.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="getequipos.xss">
-      <DependentUpon>getequipos.xsd</DependentUpon>
-    </None>
-    <None Include="getequiposgrl.xsc">
-      <DependentUpon>getequiposgrl.xsd</DependentUpon>
-    </None>
-    <None Include="getequiposgrl.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>getequiposgrl.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="getequiposgrl.xss">
-      <DependentUpon>getequiposgrl.xsd</DependentUpon>
-    </None>
-    <None Include="GetIngesUnas.xsc">
-      <DependentUpon>GetIngesUnas.xsd</DependentUpon>
-    </None>
-    <None Include="GetIngesUnas.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GetIngesUnas.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GetIngesUnas.xss">
-      <DependentUpon>GetIngesUnas.xsd</DependentUpon>
-    </None>
-    <None Include="GetUsosCertDB.xsc">
-      <DependentUpon>GetUsosCertDB.xsd</DependentUpon>
-    </None>
-    <None Include="GetUsosCertDB.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GetUsosCertDB.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GetUsosCertDB.xss">
-      <DependentUpon>GetUsosCertDB.xsd</DependentUpon>
-    </None>
-    <None Include="grl2.xsc">
-      <DependentUpon>grl2.xsd</DependentUpon>
-    </None>
-    <None Include="grl2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>grl2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="grl2.xss">
-      <DependentUpon>grl2.xsd</DependentUpon>
     </None>
     <None Include="IngesDataSet.xsc">
       <DependentUpon>IngesDataSet.xsd</DependentUpon>
