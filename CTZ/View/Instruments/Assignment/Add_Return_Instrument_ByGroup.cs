@@ -115,10 +115,12 @@ namespace CTZ.Vista.Instruments
 
         private void sendQualityMailNotification(string emailEngineer)
         {
-            string[] qualityEmail = new string[3];
+            string[] qualityEmail = new string[5];
             qualityEmail[0] = emailEngineer;
             qualityEmail[1] = "omarflores@inolab.com";
             qualityEmail[2] = "calidad@inolab.com";
+            qualityEmail[3] = "carlosflores@inolab.com";
+            qualityEmail[4] = "azaliarosas@inolab.com";
 
             string emailSubject = "Notificacion de devolucion de Instrumento";
             string emailBody = emailBodyForQuality();

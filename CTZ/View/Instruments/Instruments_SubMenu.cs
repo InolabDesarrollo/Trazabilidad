@@ -248,6 +248,5 @@ namespace CTZ.View.Instruments
             TxtBox_InstrumentsCertificatesEquino.Clear();
         }
 
-        
     }
 }

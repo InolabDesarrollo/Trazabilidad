@@ -41,6 +41,7 @@
             this.TxtBox_InstrumentName = new System.Windows.Forms.TextBox();
             this.Lbl_Instrument = new System.Windows.Forms.Label();
             this.Btn_ClearFilterInstruments = new System.Windows.Forms.Button();
+            this.Btn_SerchInstrument = new System.Windows.Forms.Button();
             this.TxtBox_Equino = new System.Windows.Forms.TextBox();
             this.Dgv_Instruments = new ADGV.AdvancedDataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,7 +101,6 @@
             this.instrumentosCertificadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentos_CertificadoTableAdapter = new CTZ.TrazabilidadTestDataSet3TableAdapters.Instrumentos_CertificadoTableAdapter();
             this.instrumentosCertificadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Btn_SerchInstrument = new System.Windows.Forms.Button();
             this.TabControl_Instruments.SuspendLayout();
             this.Page_Instruments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instruments)).BeginInit();
@@ -203,11 +203,11 @@
             // Lbl_Instrument
             // 
             this.Lbl_Instrument.AutoSize = true;
-            this.Lbl_Instrument.Location = new System.Drawing.Point(343, 19);
+            this.Lbl_Instrument.Location = new System.Drawing.Point(330, 19);
             this.Lbl_Instrument.Name = "Lbl_Instrument";
-            this.Lbl_Instrument.Size = new System.Drawing.Size(62, 13);
+            this.Lbl_Instrument.Size = new System.Drawing.Size(63, 13);
             this.Lbl_Instrument.TabIndex = 15;
-            this.Lbl_Instrument.Text = "Instrumento";
+            this.Lbl_Instrument.Text = "Descripción";
             // 
             // Btn_ClearFilterInstruments
             // 
@@ -219,9 +219,19 @@
             this.Btn_ClearFilterInstruments.UseVisualStyleBackColor = true;
             this.Btn_ClearFilterInstruments.Click += new System.EventHandler(this.Btn_ClearFilterInstruments_Click);
             // 
+            // Btn_SerchInstrument
+            // 
+            this.Btn_SerchInstrument.Location = new System.Drawing.Point(239, 15);
+            this.Btn_SerchInstrument.Name = "Btn_SerchInstrument";
+            this.Btn_SerchInstrument.Size = new System.Drawing.Size(74, 23);
+            this.Btn_SerchInstrument.TabIndex = 12;
+            this.Btn_SerchInstrument.Text = "Buscar";
+            this.Btn_SerchInstrument.UseVisualStyleBackColor = true;
+            this.Btn_SerchInstrument.Click += new System.EventHandler(this.Btn_SerchInstrument_Click);
+            // 
             // TxtBox_Equino
             // 
-            this.TxtBox_Equino.Location = new System.Drawing.Point(113, 16);
+            this.TxtBox_Equino.Location = new System.Drawing.Point(100, 16);
             this.TxtBox_Equino.Name = "TxtBox_Equino";
             this.TxtBox_Equino.Size = new System.Drawing.Size(133, 20);
             this.TxtBox_Equino.TabIndex = 13;
@@ -376,11 +386,11 @@
             // Lbl_Equino
             // 
             this.Lbl_Equino.AutoSize = true;
-            this.Lbl_Equino.Location = new System.Drawing.Point(67, 19);
+            this.Lbl_Equino.Location = new System.Drawing.Point(20, 19);
             this.Lbl_Equino.Name = "Lbl_Equino";
-            this.Lbl_Equino.Size = new System.Drawing.Size(40, 13);
+            this.Lbl_Equino.Size = new System.Drawing.Size(74, 13);
             this.Lbl_Equino.TabIndex = 1;
-            this.Lbl_Equino.Text = "Equino";
+            this.Lbl_Equino.Text = "Id Instrumento";
             // 
             // Page_Instruments_Certificates
             // 
@@ -805,16 +815,6 @@
             // 
             this.instrumentosCertificadoBindingSource1.DataMember = "Instrumentos_Certificado";
             this.instrumentosCertificadoBindingSource1.DataSource = this.trazabilidadTestDataSet3;
-            // 
-            // Btn_SerchInstrument
-            // 
-            this.Btn_SerchInstrument.Location = new System.Drawing.Point(252, 16);
-            this.Btn_SerchInstrument.Name = "Btn_SerchInstrument";
-            this.Btn_SerchInstrument.Size = new System.Drawing.Size(74, 23);
-            this.Btn_SerchInstrument.TabIndex = 12;
-            this.Btn_SerchInstrument.Text = "Buscar";
-            this.Btn_SerchInstrument.UseVisualStyleBackColor = true;
-            this.Btn_SerchInstrument.Click += new System.EventHandler(this.Btn_SerchInstrument_Click);
             // 
             // Instruments_SubMenu
             // 

@@ -133,10 +133,12 @@ namespace CTZ.View.Estandard.Assignment
 
         private void sendNotification()
         {
-            string[] qualityEmail = new string[3];
+            string[] qualityEmail = new string[5];
             qualityEmail[0] = returnOfEstandard.EngineerEmail;
             qualityEmail[1] = "omarflores@inolab.com";
             qualityEmail[2] = "calidad@inolab.com";
+            qualityEmail[3] = "carlosflores@inolab.com";
+            qualityEmail[4] = "azaliarosas@inolab.com";
 
             string emailSubject = "Notificacion de devolucion de Estándar";
             string emailBody = emailBodyForQuality();
