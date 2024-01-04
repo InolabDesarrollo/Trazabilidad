@@ -32,11 +32,6 @@ namespace CTZ.Modelo.Trazabilidad
                 " FROM AsignacionInstrumentos WHERE ID_Instrumento =" + idInstrument + ");");
         }
 
-        public void updateStatusInstrumentAssignment(int idInstrument, string status)
-        {
-            conexion.executeQuery("UPDATE Instrumentos SET ESTATUS_ASIGNACION = '"+status+"' WHERE ID = "+idInstrument+";");
-        }
-
         public DataTable selectAllByEquino(string EquinoInstrument)
         {
             return conexion.getDataTable("SELECT * FROM AsignacionInstrumentos " +

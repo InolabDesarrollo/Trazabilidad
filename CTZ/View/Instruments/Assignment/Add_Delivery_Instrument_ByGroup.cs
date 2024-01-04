@@ -159,7 +159,6 @@ namespace CTZ.Vista.Instruments
                 instrumentAssignmentsControler.registerDeliveryInstrument(instrumentAssignments, informationId_Equino);
                 updateStatusInstruments();
                 sendEngineerNotification(emailEngineer);
-
                 this.Close(); 
             }
         }
@@ -168,7 +167,7 @@ namespace CTZ.Vista.Instruments
         {
             foreach (KeyValuePair<int, string> id_Equino in informationId_Equino)
             {
-                instrumentAssignmentsControler.updateStatusInstrumentAssignment(id_Equino.Key, "OCUPADO");
+                instrumentAssignmentsControler.updateStatusInstrumentAssignment(id_Equino.Value, "OCUPADO");
             }
         }
 

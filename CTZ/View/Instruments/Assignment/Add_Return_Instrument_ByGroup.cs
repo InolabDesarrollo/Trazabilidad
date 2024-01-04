@@ -27,15 +27,18 @@ namespace CTZ.Vista.Instruments
         private C_ReturnOfInstrument controllerReturnOfInstrument;
 
         public static List<int> idInstruments;
-        private static List<string> equinos;
+        private static List<string> equinosInstruments;
         public DataTable instrumentInformation;
+        private List<string> enginners;
 
         public Add_Return_Instrument_ByGroup()
         {
             InitializeComponent();
             idInstruments = new List<int>();
-            equinos = new List<string>();
+            equinosInstruments = new List<string>();
             instrumentAssignments = new Instrument_Assignments();
+            enginners = new List<string>();
+
             instrumentAssignments.qualitySignature = "";    
             instrumenAssignmentInformation = new DataTable();          
         }
@@ -57,11 +60,18 @@ namespace CTZ.Vista.Instruments
                     controllerReturnOfInstrument = new C_ReturnOfInstrument();
                     DataTable instrumentAssignmentInformation = controllerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(TxtBox_Instrumenst.Text);
                     MessageBox.Show("Este Instrumento se le presto al Ingeniero " + instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString());
-
-                    string equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
-                    idInstruments.Add(Convert.ToInt32(instrumentInformation.Rows[0]["ID"].ToString()));
-                    equinos.Add(equinoInstrument);
-                    addInstrument(equinoInstrument);
+                    
+                    if (checkIfInstrumentBelongsToTheEnginner(instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString()))
+                    {
+                        string equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
+                        int idInstrument = Convert.ToInt32(instrumentInformation.Rows[0]["ID"].ToString());
+                        enginners.Add(instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString());
+                        addInstrumentInformation(equinoInstrument, idInstrument);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ese Instrumento fue prestado a un Ingeniero diferente");
+                    }
                 }
             }
             else
@@ -69,9 +79,29 @@ namespace CTZ.Vista.Instruments
                 MessageBox.Show("Instrumento No Existe");
             }
         }
-
-        private void addInstrument(string equinoInstrument)
+        
+        private bool checkIfInstrumentBelongsToTheEnginner(string nameEnginner)
         {
+            bool belongToEnginner = true;
+            if (enginners.Count >= 1)
+            {
+                if (enginners.Contains(nameEnginner))
+                {
+                    belongToEnginner = true;
+                }
+                else
+                {
+                    belongToEnginner = false;
+                }
+            }         
+            return belongToEnginner;
+        }
+
+
+        private void addInstrumentInformation(string equinoInstrument, int idInstrument)
+        {
+            idInstruments.Add(idInstrument);
+            equinosInstruments.Add(equinoInstrument);
             ComboBox_Instruments.Items.Add(equinoInstrument);
             MessageBox.Show("Se agrego Equino " + equinoInstrument);
             TxtBox_Instrumenst.Clear();
@@ -116,9 +146,9 @@ namespace CTZ.Vista.Instruments
 
         private void updateStatusInstruments()
         {
-            foreach (int id in idInstruments)
+            foreach (string equino in equinosInstruments)
             {
-                controllerReturnOfInstrument.updateStatusInstrumentAssignment(id,"DISPONIBLE");
+                controllerReturnOfInstrument.updateStatusInstrumentAssignment(equino, "DISPONIBLE");
             }
         }
 
@@ -141,7 +171,7 @@ namespace CTZ.Vista.Instruments
         {
             DateForReport dates = new DateForReport();
             string body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <title>Notificacion devolucion de Instrumento</title>\r\n    <style>\r\n        a {\r\n            color: black;\r\n        }\r\n    \r\n        body {\r\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n            background: rgb(255,255,250);\r\n            margin: 10px;\r\n            background-repeat: no-repeat;\r\n            background-attachment: fixed;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Instrumento </h2><br />\r\n    <table border=\"0\" cellpadding=\"8\">\r\n        <tr>\r\n            <td colspan=\"4\" >\r\n                <p  >\r\n                    <font COLOR=\"black\"  >Buen día  Ingeniero: <a class=\"a\">{engineer}</a>  y responsable del area de  calidad se notifica que se ha devuelto el Instrumento con las siguientes caracteristicas</font><br />                   \r\n                    <b><font COLOR=\"blue\" >Equino:</font></b>                                     <b><a class=\"a\">{equino}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Fecha De Devolucion:</font></b>                        <b><a class=\"a\">{dateOfReturn}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Empresa:</font></b>                                   <b><a class=\"a\">{enterprise}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Folio Empresa:</font></b>                             <b><a class=\"a\">{numberEnterprise}</a> </b>   <br />\r\n                    <b><font COLOR=\"blue\" >Observaciones de Devolucion:</font></b>                  <b><a class=\"a\">{observations}</a></b>  <br />\r\n\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
-            string equinosOfInstruments = String.Join(", ", equinos);
+            string equinosOfInstruments = String.Join(", ", equinosInstruments);
             
             body = body.Replace("{equino}", equinosOfInstruments);
             body = body.Replace("{dateOfReturn}", dates.convertToValidDate(DatePicker_DateOfReturn.Text));
@@ -167,8 +197,6 @@ namespace CTZ.Vista.Instruments
                 Console.WriteLine(ex.Message.ToString());
                 MessageBox.Show("No seleccionaste un Equino");
             }
-        }
-
-        
+        }       
     }
 }

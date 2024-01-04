@@ -17,16 +17,18 @@ namespace CTZ.Controlador
     public abstract class  C_Instrument_Assignments
     {
         public Instrument_Assignment_Repository repository;
+        public Instrument_Repository repositoryInstrument;
         public DateForReport dateForReport;
 
         public C_Instrument_Assignments() {
             repository = new Instrument_Assignment_Repository();
+            repositoryInstrument = new Instrument_Repository();
             dateForReport = new DateForReport();
         }
 
-        public void updateStatusInstrumentAssignment(int idInstrument, string status)
+        public void updateStatusInstrumentAssignment(string equinoInstrument, string status)
         {
-            repository.updateStatusInstrumentAssignment(idInstrument, status);
+            repositoryInstrument.updateStatusInstrumentAssignment(equinoInstrument, status);
         }
 
     }
