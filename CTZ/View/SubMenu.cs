@@ -21,21 +21,6 @@ namespace CTZ.Vista
             InitializeComponent();
         }
 
-        private void Btn_Accesorios_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Herramientas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_DataLogger_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_Estandares_Click(object sender, EventArgs e)
         {
             Estandards_Menu menu = new Estandards_Menu();
