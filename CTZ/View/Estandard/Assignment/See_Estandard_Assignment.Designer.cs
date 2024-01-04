@@ -57,11 +57,6 @@
             this.Lbl_Brand = new TheArtOfDev.HtmlRenderer.WinForms.HtmlLabel();
             this.TxtBox_Brand = new System.Windows.Forms.TextBox();
             this.Btn_Serch_Brand = new System.Windows.Forms.Button();
-            this.Lbl_Date_Delivery = new System.Windows.Forms.Label();
-            this.TimePicker_DateBegan = new System.Windows.Forms.DateTimePicker();
-            this.Lbl_Date_Return = new System.Windows.Forms.Label();
-            this.TimePicker_DateFinal = new System.Windows.Forms.DateTimePicker();
-            this.Btn_Filter = new System.Windows.Forms.Button();
             this.Btn_Clean = new System.Windows.Forms.Button();
             this.asignacionEstandaresTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.AsignacionEstandaresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Assignment)).BeginInit();
@@ -324,64 +319,13 @@
             this.Btn_Serch_Brand.UseVisualStyleBackColor = true;
             this.Btn_Serch_Brand.Click += new System.EventHandler(this.Btn_Serch_Brand_Click);
             // 
-            // Lbl_Date_Delivery
-            // 
-            this.Lbl_Date_Delivery.AutoSize = true;
-            this.Lbl_Date_Delivery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
-            this.Lbl_Date_Delivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Date_Delivery.ForeColor = System.Drawing.SystemColors.Window;
-            this.Lbl_Date_Delivery.Location = new System.Drawing.Point(34, 148);
-            this.Lbl_Date_Delivery.Name = "Lbl_Date_Delivery";
-            this.Lbl_Date_Delivery.Size = new System.Drawing.Size(117, 20);
-            this.Lbl_Date_Delivery.TabIndex = 11;
-            this.Lbl_Date_Delivery.Text = "Fecha de Inicio";
-            // 
-            // TimePicker_DateBegan
-            // 
-            this.TimePicker_DateBegan.Location = new System.Drawing.Point(184, 148);
-            this.TimePicker_DateBegan.Name = "TimePicker_DateBegan";
-            this.TimePicker_DateBegan.Size = new System.Drawing.Size(175, 20);
-            this.TimePicker_DateBegan.TabIndex = 12;
-            // 
-            // Lbl_Date_Return
-            // 
-            this.Lbl_Date_Return.AutoSize = true;
-            this.Lbl_Date_Return.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
-            this.Lbl_Date_Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Date_Return.ForeColor = System.Drawing.SystemColors.Window;
-            this.Lbl_Date_Return.Location = new System.Drawing.Point(34, 182);
-            this.Lbl_Date_Return.Name = "Lbl_Date_Return";
-            this.Lbl_Date_Return.Size = new System.Drawing.Size(80, 20);
-            this.Lbl_Date_Return.TabIndex = 13;
-            this.Lbl_Date_Return.Text = "Fecha Fin";
-            // 
-            // TimePicker_DateFinal
-            // 
-            this.TimePicker_DateFinal.Location = new System.Drawing.Point(184, 181);
-            this.TimePicker_DateFinal.Name = "TimePicker_DateFinal";
-            this.TimePicker_DateFinal.Size = new System.Drawing.Size(175, 20);
-            this.TimePicker_DateFinal.TabIndex = 14;
-            // 
-            // Btn_Filter
-            // 
-            this.Btn_Filter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
-            this.Btn_Filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Filter.ForeColor = System.Drawing.SystemColors.Control;
-            this.Btn_Filter.Location = new System.Drawing.Point(377, 152);
-            this.Btn_Filter.Name = "Btn_Filter";
-            this.Btn_Filter.Size = new System.Drawing.Size(83, 50);
-            this.Btn_Filter.TabIndex = 15;
-            this.Btn_Filter.Text = "Filtar Fechas";
-            this.Btn_Filter.UseVisualStyleBackColor = false;
-            // 
             // Btn_Clean
             // 
             this.Btn_Clean.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
             this.Btn_Clean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Clean.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Clean.ForeColor = System.Drawing.SystemColors.Control;
-            this.Btn_Clean.Location = new System.Drawing.Point(487, 153);
+            this.Btn_Clean.Location = new System.Drawing.Point(38, 142);
             this.Btn_Clean.Name = "Btn_Clean";
             this.Btn_Clean.Size = new System.Drawing.Size(87, 49);
             this.Btn_Clean.TabIndex = 16;
@@ -400,11 +344,6 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1214, 622);
             this.Controls.Add(this.Btn_Clean);
-            this.Controls.Add(this.Btn_Filter);
-            this.Controls.Add(this.TimePicker_DateFinal);
-            this.Controls.Add(this.Lbl_Date_Return);
-            this.Controls.Add(this.TimePicker_DateBegan);
-            this.Controls.Add(this.Lbl_Date_Delivery);
             this.Controls.Add(this.Btn_Serch_Brand);
             this.Controls.Add(this.TxtBox_Brand);
             this.Controls.Add(this.Lbl_Brand);
@@ -438,11 +377,6 @@
         private TheArtOfDev.HtmlRenderer.WinForms.HtmlLabel Lbl_Brand;
         private System.Windows.Forms.TextBox TxtBox_Brand;
         private System.Windows.Forms.Button Btn_Serch_Brand;
-        private System.Windows.Forms.Label Lbl_Date_Delivery;
-        private System.Windows.Forms.DateTimePicker TimePicker_DateBegan;
-        private System.Windows.Forms.Label Lbl_Date_Return;
-        private System.Windows.Forms.DateTimePicker TimePicker_DateFinal;
-        private System.Windows.Forms.Button Btn_Filter;
         private System.Windows.Forms.Button Btn_Clean;
         private System.Windows.Forms.BindingSource trazabilidadTestDataSet4BindingSource;
         private TrazabilidadTestDataSet4 trazabilidadTestDataSet4;

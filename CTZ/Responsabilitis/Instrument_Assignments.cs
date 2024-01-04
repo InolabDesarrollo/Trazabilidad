@@ -38,6 +38,7 @@ namespace CTZ.Vista.Responsabilitis
 
         public string equinoInstrument;
 
+        public string engineerSignatureReturn;
         public Instrument_Assignments()
         {
         }

@@ -97,7 +97,7 @@ namespace CTZ.View.Estandard.Assignment
 
         private void Btn_RegistEnginnerSignature_Click(object sender, EventArgs e)
         {
-            RegistSignature signature = new RegistSignature(assignment, "EnginnerEstandard");
+            RegistSignature signature = new RegistSignature(assignment, "EngineerEstandard");
             signature.Show();
         }
 

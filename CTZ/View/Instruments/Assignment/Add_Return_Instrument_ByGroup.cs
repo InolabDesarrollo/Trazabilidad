@@ -35,6 +35,7 @@ namespace CTZ.Vista.Instruments
             idInstruments = new List<int>();
             equinos = new List<string>();
             instrumentAssignments = new Instrument_Assignments();
+            instrumentAssignments.qualitySignature = "";    
             instrumenAssignmentInformation = new DataTable();
         }
 
@@ -73,6 +74,12 @@ namespace CTZ.Vista.Instruments
             signatureQualityAgent.Show();
         }
 
+        private void Btn_RegistEnginnerSignature_Click(object sender, EventArgs e)
+        {
+            RegistSignature signature = new RegistSignature(instrumentAssignments, "EngineerReturnInstrument");
+            signature.Show();
+        }
+
         private void Btn_Regist_ReturnOfInstruments_Click(object sender, EventArgs e)
         {
             controlerReturnOfInstrument = new C_ReturnOfInstrument();
@@ -81,11 +88,21 @@ namespace CTZ.Vista.Instruments
             string engineerMail = instrumenAssignmentInformation.Rows[0]["Correo_Ingeniero"].ToString();
             instrumentAssignments.dateOfReturn = DatePicker_DateOfReturn.Text;
             instrumentAssignments.observationsReturn = TxtBox_ObservationReturn.Text;
-            controlerReturnOfInstrument.registerReturnInstrument(instrumentAssignments, idInstruments);
-
-            updateStatusInstruments();
-            sendQualityMailNotification(engineerMail);
-            this.Hide();
+            
+            if (instrumentAssignments.qualitySignature.Equals("") || 
+                instrumentAssignments.engineerSignatureReturn.Equals("") )
+            {
+                MessageBox.Show("No se puede registrar la devolucion de Instrumento sin la firma" +
+                    " del agente de calidad o sin la firma del Ingeniero");
+            }
+            else
+            {
+                controlerReturnOfInstrument.registerReturnInstrument(instrumentAssignments, idInstruments);
+                updateStatusInstruments();
+                sendQualityMailNotification(engineerMail);
+                MessageBox.Show("Devolucion de Instrumento registrada correctamente");
+                this.Hide();
+            }
         }
 
         private void updateStatusInstruments()
@@ -140,5 +157,7 @@ namespace CTZ.Vista.Instruments
                 MessageBox.Show("No seleccionaste un Equino");
             }
         }
+
+        
     }
 }

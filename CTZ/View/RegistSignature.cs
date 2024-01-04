@@ -81,14 +81,17 @@ namespace CTZ.Vista.Instruments
                 case "Quality":
                     instrumentAssignments.qualitySignature = signatureBase64;
                     break;
-                case "EnginnerEstandard":
+                case "EngineerEstandard":
                     estandardAssignments.EngineerSignature = signatureBase64;   
                     break;
                 case "QualityEstandard":
                     estandardAssignments.QualitySignature = signatureBase64;
                     break;
-                case "EnginnerReturnEstandard":
+                case "EngineerReturnEstandard":
                     estandardAssignments.EngineerSignatureReturn = signatureBase64;
+                    break;
+                case "EngineerReturnInstrument":
+                    instrumentAssignments.engineerSignatureReturn = signatureBase64;
                     break;
             }
                 

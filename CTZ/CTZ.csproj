@@ -415,12 +415,6 @@
     <Compile Include="View\Instruments\Assignment\Serch_Instruments_Assignments.Designer.cs">
       <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Instruments\ShowSignature.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Instruments\ShowSignature.Designer.cs">
-      <DependentUpon>ShowSignature.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Instruments\Trazability\Trazability_SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -632,9 +626,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Serch_Instruments_Assignments.resx">
       <DependentUpon>Serch_Instruments_Assignments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\ShowSignature.resx">
-      <DependentUpon>ShowSignature.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Trazability\Trazability_SubMenu.resx">
       <DependentUpon>Trazability_SubMenu.cs</DependentUpon>
