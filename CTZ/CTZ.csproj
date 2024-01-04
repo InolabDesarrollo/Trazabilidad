@@ -435,33 +435,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepFunctions.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="View\MenuAccesorios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MenuAccesorios.Designer.cs">
-      <DependentUpon>MenuAccesorios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MenuDataLogger.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MenuDataLogger.Designer.cs">
-      <DependentUpon>MenuDataLogger.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MenuEstandares.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MenuEstandares.Designer.cs">
-      <DependentUpon>MenuEstandares.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MenuHerramientas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MenuHerramientas.Designer.cs">
-      <DependentUpon>MenuHerramientas.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Instruments\MenuInstrumentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -646,18 +621,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\MenuAccesorios.resx">
-      <DependentUpon>MenuAccesorios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MenuDataLogger.resx">
-      <DependentUpon>MenuDataLogger.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MenuEstandares.resx">
-      <DependentUpon>MenuEstandares.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MenuHerramientas.resx">
-      <DependentUpon>MenuHerramientas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\MenuInstrumentos.resx">
       <DependentUpon>MenuInstrumentos.cs</DependentUpon>
     </EmbeddedResource>

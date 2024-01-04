@@ -23,20 +23,17 @@ namespace CTZ.Vista
 
         private void Btn_Accesorios_Click(object sender, EventArgs e)
         {
-            MenuAccesorios accesorios = new MenuAccesorios();
-            accesorios.Show();
+
         }
 
         private void Btn_Herramientas_Click(object sender, EventArgs e)
         {
-            MenuHerramientas herramientas = new MenuHerramientas();
-            herramientas.Show();
+
         }
 
         private void Btn_DataLogger_Click(object sender, EventArgs e)
         {
-            MenuDataLogger dataLogger = new MenuDataLogger();
-            dataLogger.Show();
+
         }
 
         private void Btn_Estandares_Click(object sender, EventArgs e)
