@@ -1,5 +1,6 @@
 ﻿using CTZ.Controlador;
 using CTZ.Controler;
+using CTZ.Controler.Estandard;
 using CTZ.Controler.Instruments;
 using CTZ.Vista.Responsabilitis;
 using Grpc.Core;
@@ -23,7 +24,7 @@ namespace CTZ.Vista.Instruments
         private C_Instruments instrumentsControler;
         public Instrument_Assignments instrumentAssignments;
         private DataTable instrumenAssignmentInformation;
-        private C_ReturnOfInstrument controlerReturnOfInstrument;
+        private C_ReturnOfInstrument controllerReturnOfInstrument;
 
         public static List<int> idInstruments;
         private static List<string> equinos;
@@ -36,7 +37,7 @@ namespace CTZ.Vista.Instruments
             equinos = new List<string>();
             instrumentAssignments = new Instrument_Assignments();
             instrumentAssignments.qualitySignature = "";    
-            instrumenAssignmentInformation = new DataTable();
+            instrumenAssignmentInformation = new DataTable();          
         }
 
         private void Btn_Add_Equino_Click(object sender, EventArgs e)
@@ -53,19 +54,27 @@ namespace CTZ.Vista.Instruments
                 }
                 else
                 {
+                    controllerReturnOfInstrument = new C_ReturnOfInstrument();
+                    DataTable instrumentAssignmentInformation = controllerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(TxtBox_Instrumenst.Text);
+                    MessageBox.Show("Este Instrumento se le presto al Ingeniero " + instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString());
+
                     string equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
                     idInstruments.Add(Convert.ToInt32(instrumentInformation.Rows[0]["ID"].ToString()));
                     equinos.Add(equinoInstrument);
-
-                    ComboBox_Instruments.Items.Add(equinoInstrument);
-                    MessageBox.Show("Se agrego Equino " + equinoInstrument);
-                    TxtBox_Instrumenst.Clear();
+                    addInstrument(equinoInstrument);
                 }
             }
             else
             {
                 MessageBox.Show("Instrumento No Existe");
             }
+        }
+
+        private void addInstrument(string equinoInstrument)
+        {
+            ComboBox_Instruments.Items.Add(equinoInstrument);
+            MessageBox.Show("Se agrego Equino " + equinoInstrument);
+            TxtBox_Instrumenst.Clear();
         }
 
         private void Btn_RegistQualitySignatur_Click(object sender, EventArgs e)
@@ -82,8 +91,8 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Regist_ReturnOfInstruments_Click(object sender, EventArgs e)
         {
-            controlerReturnOfInstrument = new C_ReturnOfInstrument();
-            instrumenAssignmentInformation = controlerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(idInstruments[0]);
+            controllerReturnOfInstrument = new C_ReturnOfInstrument();
+            instrumenAssignmentInformation = controllerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(idInstruments[0]);
 
             string engineerMail = instrumenAssignmentInformation.Rows[0]["Correo_Ingeniero"].ToString();
             instrumentAssignments.dateOfReturn = DatePicker_DateOfReturn.Text;
@@ -97,7 +106,7 @@ namespace CTZ.Vista.Instruments
             }
             else
             {
-                controlerReturnOfInstrument.registerReturnInstrument(instrumentAssignments, idInstruments);
+                controllerReturnOfInstrument.registerReturnInstrument(instrumentAssignments, idInstruments);
                 updateStatusInstruments();
                 sendQualityMailNotification(engineerMail);
                 MessageBox.Show("Devolucion de Instrumento registrada correctamente");
@@ -109,7 +118,7 @@ namespace CTZ.Vista.Instruments
         {
             foreach (int id in idInstruments)
             {
-                controlerReturnOfInstrument.updateStatusInstrumentAssignment(id,"DISPONIBLE");
+                controllerReturnOfInstrument.updateStatusInstrumentAssignment(id,"DISPONIBLE");
             }
         }
 

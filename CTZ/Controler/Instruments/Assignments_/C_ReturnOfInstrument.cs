@@ -24,7 +24,12 @@ namespace CTZ.Controler.Instruments
         public DataTable selectMoreRecentInformationInstrumenAssignment(int idInstrument)
         {
             return repository.selectMoreRecentInformationInstrumenAssignment(idInstrument);
-        }    
+        }
+
+        public DataTable selectMoreRecentInformationInstrumenAssignment(string equinoInstrument)
+        {
+            return repository.selectMoreRecentInformationInstrumenAssignment(equinoInstrument);
+        }
 
     }
 

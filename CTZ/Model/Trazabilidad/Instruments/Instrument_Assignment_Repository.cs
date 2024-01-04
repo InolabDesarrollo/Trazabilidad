@@ -17,27 +17,12 @@ namespace CTZ.Modelo.Trazabilidad
             conexion = new ConexionTrazability();
         }
 
-        public bool registerDeliveryInstrument(Instrument_Assignments instrumentAssignments)
-        {
-            return conexion.executeQuery("INSERT INTO AsignacionInstrumentos(ID_Instrumento,Fecha_Entrega,Fecha_Estimada_Devolucion,Ingeniero,Folio_Empresa,Nombre_Empresa,Observaciones_Entrega," +
-                "\r\n Equino_Instrumento,Correo_Ingeniero)\r\n" +
-                "VALUES("+instrumentAssignments.idInstrument+",'"+instrumentAssignments.dateDelivery+"','"+instrumentAssignments.approximateDateOfReturn+"','" +instrumentAssignments.engineer+"','"+instrumentAssignments.numberEnterprise+"','"+instrumentAssignments.nameEnterprise
-                +"','"+instrumentAssignments.observationDelivery+"','"+instrumentAssignments.equinoInstrument+"','"+instrumentAssignments.mailEngineer+"')");
-        }
-
         public void registerDeliveryInstrument(Instrument_Assignments instrumentAssignments,int idInstrument, string equino )
         {
             conexion.executeQuery("INSERT INTO AsignacionInstrumentos(ID_Instrumento,Fecha_Entrega,Fecha_Estimada_Devolucion,Ingeniero,Folio_Empresa,Nombre_Empresa,Observaciones_Entrega," +
                 "\r\n Equino_Instrumento,Correo_Ingeniero,Firma_Ingeniero)\r\n" +
                 "VALUES(" + idInstrument + ",'" + instrumentAssignments.dateDelivery + "','" + instrumentAssignments.approximateDateOfReturn + "','" + instrumentAssignments.engineer + "','" + instrumentAssignments.numberEnterprise + "','" + instrumentAssignments.nameEnterprise
                 + "','" + instrumentAssignments.observationDelivery + "','" + equino + "','" + instrumentAssignments.mailEngineer + "','"+instrumentAssignments.engineerSignature+"')");
-        }
-
-        public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments)
-        {
-            return conexion.executeQuery("UPDATE AsignacionInstrumentos SET Fecha_Devolucion  = '"+instrumentAssignments.dateOfReturn+"', \r\nObservaciones_Devolucion ='"+instrumentAssignments.observationsReturn+"' \r\n" +
-                " WHERE ID_Instrumento = "+instrumentAssignments.idInstrument+" AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
-                " FROM AsignacionInstrumentos WHERE ID_Instrumento ="+instrumentAssignments.idInstrument+");");
         }
 
         public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments, int idInstrument)
@@ -47,18 +32,6 @@ namespace CTZ.Modelo.Trazabilidad
                 " FROM AsignacionInstrumentos WHERE ID_Instrumento =" + idInstrument + ");");
         }
 
-        public void updateSignatureEngineer(int idInstrument, string engineerSignature)
-        {
-            conexion.executeQuery("UPDATE AsignacionInstrumentos SET Firma_Ingeniero  = '"+ engineerSignature + "' WHERE ID_Instrumento = "+ idInstrument + " \r\n" +
-                " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) FROM AsignacionInstrumentos WHERE ID_Instrumento = "+ idInstrument + ");");
-        }
-
-        public void updateSignatureQuality(int idInstrument, string signature)
-        {
-            conexion.executeQuery("UPDATE AsignacionInstrumentos SET Firma_Calidad  = '"+ signature + "' WHERE ID_Instrumento = "+idInstrument+ " " +
-                " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) FROM AsignacionInstrumentos WHERE ID_Instrumento ="+ idInstrument + ");");
-        }
-        
         public void updateStatusInstrumentAssignment(int idInstrument, string status)
         {
             conexion.executeQuery("UPDATE Instrumentos SET ESTATUS_ASIGNACION = '"+status+"' WHERE ID = "+idInstrument+";");
@@ -122,6 +95,14 @@ namespace CTZ.Modelo.Trazabilidad
                 " WHERE ID_Instrumento = "+ idInstrument + " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
                 " FROM AsignacionInstrumentos WHERE ID_Instrumento ="+ idInstrument + ");");
         }
+
+        public DataTable selectMoreRecentInformationInstrumenAssignment(string equinoInstrument)
+        {
+            return conexion.getDataTable("SELECT * from AsignacionInstrumentos \r\n" +
+                " WHERE Equino_Instrumento = '"+equinoInstrument+"' AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
+                " FROM AsignacionInstrumentos WHERE Equino_Instrumento = '" +equinoInstrument+"');");
+        }
+
 
         public void updateInstrumentAssignment(Instrument_Assignments instrument_Assignments)
         {
