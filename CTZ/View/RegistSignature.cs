@@ -76,10 +76,10 @@ namespace CTZ.Vista.Instruments
             switch (typeOfSignature)
             {
                 case "Engineer":
-                    instrumentAssignments.engineerSignature = signatureBase64;
+                    instrumentAssignments.EngineerSignature = signatureBase64;
                     break;
                 case "Quality":
-                    instrumentAssignments.qualitySignature = signatureBase64;
+                    instrumentAssignments.QualitySignature = signatureBase64;
                     break;
                 case "EngineerEstandard":
                     estandardAssignments.EngineerSignature = signatureBase64;   
@@ -91,7 +91,7 @@ namespace CTZ.Vista.Instruments
                     estandardAssignments.EngineerSignatureReturn = signatureBase64;
                     break;
                 case "EngineerReturnInstrument":
-                    instrumentAssignments.engineerSignatureReturn = signatureBase64;
+                    instrumentAssignments.EngineerSignatureReturn = signatureBase64;
                     break;
             }
                 

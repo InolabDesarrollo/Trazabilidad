@@ -14,8 +14,8 @@ namespace CTZ.Controler.Instruments.Assignments_
 
         public void registerDeliveryInstrument(Instrument_Assignments instrumentAssignments, Dictionary<int, string> informationId_Equino)
         {
-            instrumentAssignments.dateDelivery = dateForReport.convertToValidDate(instrumentAssignments.dateDelivery);
-            instrumentAssignments.approximateDateOfReturn = dateForReport.convertToValidDate(instrumentAssignments.approximateDateOfReturn);
+            instrumentAssignments.DateDelivery = dateForReport.convertToValidDate(instrumentAssignments.DateDelivery);
+            instrumentAssignments.EstimateDateReturn = dateForReport.convertToValidDate(instrumentAssignments.EstimateDateReturn);
 
             foreach (KeyValuePair<int, string> id_Equino in informationId_Equino)
             {

@@ -29,7 +29,7 @@ namespace CTZ.Vista.Instruments
         public static List<int> idInstruments;
         private static List<string> equinosInstruments;
         public DataTable instrumentInformation;
-        private List<string> enginners;
+        private List<string> engineers;
 
         public Add_Return_Instrument_ByGroup()
         {
@@ -37,9 +37,9 @@ namespace CTZ.Vista.Instruments
             idInstruments = new List<int>();
             equinosInstruments = new List<string>();
             instrumentAssignments = new Instrument_Assignments();
-            enginners = new List<string>();
+            engineers = new List<string>();
 
-            instrumentAssignments.qualitySignature = "";    
+            instrumentAssignments.QualitySignature = "";    
             instrumenAssignmentInformation = new DataTable();          
         }
 
@@ -61,16 +61,16 @@ namespace CTZ.Vista.Instruments
                     DataTable instrumentAssignmentInformation = controllerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(TxtBox_Instrumenst.Text);
                     MessageBox.Show("Este Instrumento se le presto al Ingeniero " + instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString());
                     
-                    if (checkIfInstrumentBelongsToTheEnginner(instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString()))
+                    if (checkIfEstandardBelongsToTheEngineer(instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString()))
                     {
                         string equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
                         int idInstrument = Convert.ToInt32(instrumentInformation.Rows[0]["ID"].ToString());
-                        enginners.Add(instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString());
+                        engineers.Add(instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString());
                         addInstrumentInformation(equinoInstrument, idInstrument);
                     }
                     else
                     {
-                        MessageBox.Show("Ese Instrumento fue prestado a un Ingeniero diferente");
+                        MessageBox.Show("Ese Instrumento fue prestado a un Ingeniero diferente no lo puedes agregar");
                     }
                 }
             }
@@ -80,12 +80,12 @@ namespace CTZ.Vista.Instruments
             }
         }
         
-        private bool checkIfInstrumentBelongsToTheEnginner(string nameEnginner)
+        private bool checkIfEstandardBelongsToTheEngineer(string nameEnginner)
         {
             bool belongToEnginner = true;
-            if (enginners.Count >= 1)
+            if (engineers.Count >= 1)
             {
-                if (enginners.Contains(nameEnginner))
+                if (engineers.Contains(nameEnginner))
                 {
                     belongToEnginner = true;
                 }
@@ -100,11 +100,18 @@ namespace CTZ.Vista.Instruments
 
         private void addInstrumentInformation(string equinoInstrument, int idInstrument)
         {
-            idInstruments.Add(idInstrument);
-            equinosInstruments.Add(equinoInstrument);
-            ComboBox_Instruments.Items.Add(equinoInstrument);
-            MessageBox.Show("Se agrego Equino " + equinoInstrument);
-            TxtBox_Instrumenst.Clear();
+            if (equinosInstruments.Contains(equinoInstrument))
+            {
+                MessageBox.Show("El Instrumento " + equinoInstrument + "Ya fue agregado, no lo puedes repetir");
+            }
+            else
+            {
+                idInstruments.Add(idInstrument);
+                equinosInstruments.Add(equinoInstrument);
+                ComboBox_Instruments.Items.Add(equinoInstrument);
+                MessageBox.Show("Se agrego Equino " + equinoInstrument);
+                TxtBox_Instrumenst.Clear();
+            }       
         }
 
         private void Btn_RegistQualitySignatur_Click(object sender, EventArgs e)
@@ -125,11 +132,11 @@ namespace CTZ.Vista.Instruments
             instrumenAssignmentInformation = controllerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(idInstruments[0]);
 
             string engineerMail = instrumenAssignmentInformation.Rows[0]["Correo_Ingeniero"].ToString();
-            instrumentAssignments.dateOfReturn = DatePicker_DateOfReturn.Text;
-            instrumentAssignments.observationsReturn = TxtBox_ObservationReturn.Text;
+            instrumentAssignments.DateOfReturn = DatePicker_DateOfReturn.Text;
+            instrumentAssignments.ReturnObservations = TxtBox_ObservationReturn.Text;
             
-            if (instrumentAssignments.qualitySignature.Equals("") || 
-                instrumentAssignments.engineerSignatureReturn.Equals("") )
+            if (instrumentAssignments.QualitySignature.Equals("") || 
+                instrumentAssignments.EngineerSignatureReturn.Equals("") )
             {
                 MessageBox.Show("No se puede registrar la devolucion de Instrumento sin la firma" +
                     " del agente de calidad o sin la firma del Ingeniero");
@@ -170,11 +177,11 @@ namespace CTZ.Vista.Instruments
         private string emailBodyForQuality()
         {
             DateForReport dates = new DateForReport();
-            string body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <title>Notificacion devolucion de Instrumento</title>\r\n    <style>\r\n        a {\r\n            color: black;\r\n        }\r\n    \r\n        body {\r\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n            background: rgb(255,255,250);\r\n            margin: 10px;\r\n            background-repeat: no-repeat;\r\n            background-attachment: fixed;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Instrumento </h2><br />\r\n    <table border=\"0\" cellpadding=\"8\">\r\n        <tr>\r\n            <td colspan=\"4\" >\r\n                <p  >\r\n                    <font COLOR=\"black\"  >Buen día  Ingeniero: <a class=\"a\">{engineer}</a>  y responsable del area de  calidad se notifica que se ha devuelto el Instrumento con las siguientes caracteristicas</font><br />                   \r\n                    <b><font COLOR=\"blue\" >Equino:</font></b>                                     <b><a class=\"a\">{equino}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Fecha De Devolucion:</font></b>                        <b><a class=\"a\">{dateOfReturn}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Empresa:</font></b>                                   <b><a class=\"a\">{enterprise}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Folio Empresa:</font></b>                             <b><a class=\"a\">{numberEnterprise}</a> </b>   <br />\r\n                    <b><font COLOR=\"blue\" >Observaciones de Devolucion:</font></b>                  <b><a class=\"a\">{observations}</a></b>  <br />\r\n\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
+            string body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <title>Notificacion devolucion de Instrumento</title>\r\n    <style>\r\n        a {\r\n            color: black;\r\n        }\r\n    \r\n        body {\r\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n            background: rgb(255,255,250);\r\n            margin: 10px;\r\n            background-repeat: no-repeat;\r\n            background-attachment: fixed;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Instrumento </h2><br />\r\n    <table border=\"0\" cellpadding=\"8\">\r\n        <tr>\r\n            <td colspan=\"4\" >\r\n                <p  >\r\n                    <font COLOR=\"black\"  >Buen día  Ingeniero: <a class=\"a\">{engineer}</a>  y responsable del area de  calidad se notifica que se ha devuelto el Instrumento con las siguientes caracteristicas</font><br />                   \r\n                    <b><font COLOR=\"blue\" >Equino:</font></b>                                     <b><a class=\"a\">{equino}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Fecha De Devolucion:</font></b>                        <b><a class=\"a\">{DateOfReturn}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Empresa:</font></b>                                   <b><a class=\"a\">{enterprise}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Folio Empresa:</font></b>                             <b><a class=\"a\">{numberEnterprise}</a> </b>   <br />\r\n                    <b><font COLOR=\"blue\" >Observaciones de Devolucion:</font></b>                  <b><a class=\"a\">{observations}</a></b>  <br />\r\n\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
             string equinosOfInstruments = String.Join(", ", equinosInstruments);
             
             body = body.Replace("{equino}", equinosOfInstruments);
-            body = body.Replace("{dateOfReturn}", dates.convertToValidDate(DatePicker_DateOfReturn.Text));
+            body = body.Replace("{DateOfReturn}", dates.convertToValidDate(DatePicker_DateOfReturn.Text));
             body = body.Replace("{enterprise}", instrumenAssignmentInformation.Rows[0]["Nombre_Empresa"].ToString());
             body = body.Replace("{numberEnterprise}", instrumenAssignmentInformation.Rows[0]["Folio_Empresa"].ToString());
             body = body.Replace("{observations}", TxtBox_ObservationReturn.Text);

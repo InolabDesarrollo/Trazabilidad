@@ -14,7 +14,7 @@ namespace CTZ.Controler.Instruments
     {
         public void registerReturnInstrument(Instrument_Assignments instrumentAssignments, List<int> idInstruments)
         {
-            instrumentAssignments.dateOfReturn = dateForReport.convertToValidDate(instrumentAssignments.dateOfReturn);
+            instrumentAssignments.DateOfReturn = dateForReport.convertToValidDate(instrumentAssignments.DateOfReturn);
             foreach (int element in idInstruments)
             {
                 repository.registerReturnInstrument(instrumentAssignments, element);

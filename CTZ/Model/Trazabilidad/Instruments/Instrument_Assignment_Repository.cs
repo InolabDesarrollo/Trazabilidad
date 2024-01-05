@@ -21,14 +21,14 @@ namespace CTZ.Modelo.Trazabilidad
         {
             conexion.executeQuery("INSERT INTO AsignacionInstrumentos(ID_Instrumento,Fecha_Entrega,Fecha_Estimada_Devolucion,Ingeniero,Folio_Empresa,Nombre_Empresa,Observaciones_Entrega," +
                 "\r\n Equino_Instrumento,Correo_Ingeniero,Firma_Ingeniero)\r\n" +
-                "VALUES(" + idInstrument + ",'" + instrumentAssignments.dateDelivery + "','" + instrumentAssignments.approximateDateOfReturn + "','" + instrumentAssignments.engineer + "','" + instrumentAssignments.numberEnterprise + "','" + instrumentAssignments.nameEnterprise
-                + "','" + instrumentAssignments.observationDelivery + "','" + equino + "','" + instrumentAssignments.mailEngineer + "','"+instrumentAssignments.engineerSignature+"')");
+                "VALUES(" + idInstrument + ",'" + instrumentAssignments.DateDelivery + "','" + instrumentAssignments.EstimateDateReturn + "','" + instrumentAssignments.Engineer + "','" + instrumentAssignments.NumberEnterprise + "','" + instrumentAssignments.NameEnterprise
+                + "','" + instrumentAssignments.DeliveryObservations + "','" + equino + "','" + instrumentAssignments.EngineerEmail + "','"+instrumentAssignments.EngineerSignature+"')");
         }
 
         public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments, int idInstrument)
         {
-            return conexion.executeQuery("UPDATE AsignacionInstrumentos SET Fecha_Devolucion  = '" + instrumentAssignments.dateOfReturn + "', \r\nObservaciones_Devolucion ='" + instrumentAssignments.observationsReturn + "',  \r\n" +
-                " Firma_Ingeniero_Devolucion = '"+instrumentAssignments.engineerSignatureReturn+"',  Firma_Calidad = '"+instrumentAssignments.qualitySignature+"' WHERE ID_Instrumento = " + idInstrument + " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
+            return conexion.executeQuery("UPDATE AsignacionInstrumentos SET Fecha_Devolucion  = '" + instrumentAssignments.DateOfReturn + "', \r\nObservaciones_Devolucion ='" + instrumentAssignments.ReturnObservations + "',  \r\n" +
+                " Firma_Ingeniero_Devolucion = '"+instrumentAssignments.EngineerSignatureReturn+"',  Firma_Calidad = '"+instrumentAssignments.QualitySignature+"' WHERE ID_Instrumento = " + idInstrument + " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
                 " FROM AsignacionInstrumentos WHERE ID_Instrumento =" + idInstrument + ");");
         }
 
@@ -101,8 +101,8 @@ namespace CTZ.Modelo.Trazabilidad
 
         public void updateInstrumentAssignment(Instrument_Assignments instrument_Assignments)
         {
-            conexion.executeQuery(" UPDATE AsignacionInstrumentos SET Folio_Empresa = '"+ instrument_Assignments.numberEnterprise+ "', Nombre_Empresa = '"+ instrument_Assignments.nameEnterprise + "', Observaciones_Entrega = '"+ instrument_Assignments .observationDelivery+ "', " +
-                " Observaciones_Devolucion = '"+ instrument_Assignments.observationsReturn + "'" +
+            conexion.executeQuery(" UPDATE AsignacionInstrumentos SET Folio_Empresa = '"+ instrument_Assignments.NumberEnterprise+ "', Nombre_Empresa = '"+ instrument_Assignments.NameEnterprise + "', Observaciones_Entrega = '"+ instrument_Assignments .DeliveryObservations+ "', " +
+                " Observaciones_Devolucion = '"+ instrument_Assignments.ReturnObservations + "'" +
                 "\r\n WHERE ID = "+ instrument_Assignments.idInstrument + ";");
         }
     }

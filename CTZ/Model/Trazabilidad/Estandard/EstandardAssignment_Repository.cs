@@ -18,11 +18,12 @@ namespace CTZ.Model.Trazabilidad.Estandard
             conexion = new ConexionTrazability();
         }
    
-        public void registerDeliveryEstandard(Estandard_Assignment assignment,int idEstandard, string EST)
+        public void registerDeliveryEstandard(Estandard_Assignment assignment, string EST)
         {
-            conexion.executeQuery("INSERT INTO AsignacionEstandares(Id_Estandar,Fecha_Entrega,Ingeniero,Folio_Empresa,Nombre_Empresa, \r\n " +
+            string query = "INSERT INTO AsignacionEstandares(Fecha_Entrega,Ingeniero,Folio_Empresa,Nombre_Empresa, \r\n " +
                 " Observaciones_Entrega,Firma_Ingeniero,Fecha_Estimada_Devolucion,EST_Estandard,Correo_Ingeniero) " +
-                " values("+idEstandard+",'"+assignment.DateDelivery+"','"+assignment.Engineer+"','"+assignment.NumberEnterprise+"','"+assignment.NameEnterprise+"','"+assignment.DeliveryObservations+"',\r\n'"+assignment.EngineerSignature+"','"+assignment.EstimateDateReturn+"','"+EST+"','"+assignment.EngineerEmail+"');");
+                " values('"+assignment.DateDelivery + "','" + assignment.Engineer + "','" + assignment.NumberEnterprise + "','" + assignment.NameEnterprise + "','" + assignment.DeliveryObservations + "',\r\n'" + assignment.EngineerSignature + "','" + assignment.EstimateDateReturn + "','" + EST + "','" + assignment.EngineerEmail + "');";
+            conexion.executeQuery(query);
         }
 
         public void registerReturnOfEstandard(Estandard_Assignment assignment, string estEstandard)

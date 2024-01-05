@@ -30,10 +30,10 @@ namespace CTZ.Vista.Instruments
         private void Btn_Update_Click(object sender, EventArgs e)
         {
             instrumentAssignment.idInstrument = idSql;
-            instrumentAssignment.numberEnterprise = TxtBox_NumberEnterprise.Text;
-            instrumentAssignment.nameEnterprise = TxtBox_NameEnterprise.Text;
-            instrumentAssignment.observationDelivery = TxtBox_Observation_Delivery.Text;
-            instrumentAssignment.observationsReturn =TxtBox_ObservationReturn.Text;
+            instrumentAssignment.NumberEnterprise = TxtBox_NumberEnterprise.Text;
+            instrumentAssignment.NameEnterprise = TxtBox_NameEnterprise.Text;
+            instrumentAssignment.DeliveryObservations = TxtBox_Observation_Delivery.Text;
+            instrumentAssignment.ReturnObservations =TxtBox_ObservationReturn.Text;
 
             controller.updateInstrumentAssignment(instrumentAssignment);
             clearButtons();

@@ -122,7 +122,7 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.EngineerEmail = emailEngineer;
 
                 C_DeliveryOfEstandard controler = new C_DeliveryOfEstandard();
-                controler.registerDeliveryEstandard(assignment, informationEstandards);
+                controler.registerDeliveryEstandard(assignment, estandardList);
                 controler.updateEstatusLoanEstandard("PRESTADO", estandardList);
 
                 sendNotification();
@@ -140,7 +140,7 @@ namespace CTZ.View.Estandard.Assignment
 
         private string bodyEmailEngineer()
         {
-            string idOfEstandards = string.Join(", ", informationEstandards.Values);
+            string idOfEstandards = string.Join(", ", estandardList);
             CertificateEstandard certificate = new CertificateEstandard();
             string linkCertificate = certificate.getCertificates(informationEstandards);
 

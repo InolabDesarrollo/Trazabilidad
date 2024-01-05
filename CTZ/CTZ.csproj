@@ -256,6 +256,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadTest_Instrumentos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Assignment_Inventory.cs" />
     <Compile Include="View\Estandard\AddCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +274,12 @@
     </Compile>
     <Compile Include="View\Estandard\Assignment\Add_Delivery_Estandard.Designer.cs">
       <DependentUpon>Add_Delivery_Estandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Estandard\Assignment\Permanent_Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Estandard\Assignment\Permanent_Assignment.Designer.cs">
+      <DependentUpon>Permanent_Assignment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Estandard\Assignment\Regist_Return_Estandard.cs">
       <SubType>Form</SubType>
@@ -459,7 +466,7 @@
     <Compile Include="Responsabilitis\Email.cs" />
     <Compile Include="Responsabilitis\Estandard.cs" />
     <Compile Include="Responsabilitis\Instruments.cs" />
-    <Compile Include="Responsabilitis\Instrument_Assignments.cs" />
+    <Compile Include="View\Instruments\Instrument_Assignments.cs" />
     <Compile Include="Responsabilitis\Notification.cs" />
     <Compile Include="Responsabilitis\RelationCertificateInstrument.cs" />
     <Compile Include="View\Instruments\SerchInstrument.cs">
@@ -528,6 +535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\Assignment\Add_Delivery_Estandard.resx">
       <DependentUpon>Add_Delivery_Estandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Estandard\Assignment\Permanent_Assignment.resx">
+      <DependentUpon>Permanent_Assignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\Assignment\Regist_Return_Estandard.resx">
       <DependentUpon>Regist_Return_Estandard.cs</DependentUpon>

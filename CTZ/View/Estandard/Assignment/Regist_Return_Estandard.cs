@@ -24,11 +24,13 @@ namespace CTZ.View.Estandard.Assignment
         private C_ReturnOfEstandard controller;
 
         private List<string> estEstandards;
+        private List<string> engineers;    
         public static Estandard_Assignment returnOfEstandard;
         public Regist_Return_Estandard()
         {
             InitializeComponent();
             estEstandards = new List<string>();
+            engineers = new List<string>();
             returnOfEstandard = new Estandard_Assignment();
             returnOfEstandard.QualitySignature = "";
             returnOfEstandard.EngineerSignatureReturn = "";
@@ -44,16 +46,8 @@ namespace CTZ.View.Estandard.Assignment
                     controller = new C_ReturnOfEstandard();
                     DataTable informationLoan = controller.selectInformationOfMoreRecentLoan(TxtBox_Estandards.Text);
                     MessageBox.Show("Este estándar se le presto al Ingeniero " + informationLoan.Rows[0]["Ingeniero"].ToString());
-                    try
-                    {
-                        returnOfEstandard.EngineerEmail = informationLoan.Rows[0]["Correo_Ingeniero"].ToString();
-                        addEstandard(TxtBox_Estandards.Text);                      
-                        TxtBox_Estandards.Clear();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error " + ex.Message.ToString());
-                    }
+                    addEstandardToReturnList(informationLoan, TxtBox_Estandards.Text);
+                         
                 }
                 else
                 {
@@ -66,17 +60,58 @@ namespace CTZ.View.Estandard.Assignment
             }
         }
 
+        private void addEstandardToReturnList(DataTable informationLoan, string estEstandard)
+        {
+            bool estandarBelongsToEngineer = checkIfEstandardBelongsToEngineer(informationLoan.Rows[0]["Ingeniero"].ToString());
+            if (estandarBelongsToEngineer)
+            {
+                try
+                {
+                    engineers.Add(informationLoan.Rows[0]["Ingeniero"].ToString());
+                    returnOfEstandard.EngineerEmail = informationLoan.Rows[0]["Correo_Ingeniero"].ToString();
+                    addEstandard(estEstandard);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Este estandard pertenece a otro Ingeniero");
+            }
+        }
+
+        private bool checkIfEstandardBelongsToEngineer(string nameEngineer)
+        {
+            bool belongToEnginner = true;
+            if (engineers.Count >= 1)
+            {
+                if (engineers.Contains(nameEngineer))
+                {
+                    belongToEnginner = true;
+                }
+                else
+                {
+                    belongToEnginner = false;
+                }
+            }
+            return belongToEnginner;
+        }
+
         private void addEstandard(string estEstandard)
         {         
             if (estEstandards.Contains(estEstandard))
             {
                 MessageBox.Show("El estándar " + estEstandard + " ya fue agregado, no puedes repetirlo");
+                TxtBox_Estandards.Clear();
             }
             else
             {
                 ComboBox_Estandards.Items.Add(estEstandard);
                 estEstandards.Add(estEstandard);
                 MessageBox.Show("Se agrego el Estandard " + estEstandard);
+                TxtBox_Estandards.Clear();
             }
         }
 
@@ -150,11 +185,11 @@ namespace CTZ.View.Estandard.Assignment
         {
             DateForReport dates = new DateForReport();
             string body;
-            body = "<!DOCTYPE html>\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <title>Notificacion devolucion de Estándar</title>\r\n    <style>\r\n        a {\r\n            color: black;\r\n        }\r\n    \r\n        body {\r\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n            background: rgb(255,255,250);\r\n            margin: 10px;\r\n            background-repeat: no-repeat;\r\n            background-attachment: fixed;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Estándar </h2><br />\r\n    <table border=\"0\" cellpadding=\"8\">\r\n        <tr>\r\n            <td colspan=\"4\" >\r\n                <p  >\r\n                    <font COLOR=\"black\"  >Buen día  Ingeniero <a class=\"a\">{engineer}</a>  y responsable del area de  calidad se notifica que se ha devuelto el estándar con las siguientes caracteristicas: </font><br />                   \r\n                    <b><font COLOR=\"blue\" >Estándar:</font></b>                                     <b><a class=\"a\">{estandard}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Fecha De Devolucion:</font></b>                        <b><a class=\"a\">{dateOfReturn}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Observaciones de Devolucion:</font></b>                  <b><a class=\"a\">{observations}</a></b>  <br />\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
+            body = "<!DOCTYPE html>\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <title>Notificacion devolucion de Estándar</title>\r\n    <style>\r\n        a {\r\n            color: black;\r\n        }\r\n    \r\n        body {\r\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n            background: rgb(255,255,250);\r\n            margin: 10px;\r\n            background-repeat: no-repeat;\r\n            background-attachment: fixed;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Estándar </h2><br />\r\n    <table border=\"0\" cellpadding=\"8\">\r\n        <tr>\r\n            <td colspan=\"4\" >\r\n                <p  >\r\n                    <font COLOR=\"black\"  >Buen día  Ingeniero <a class=\"a\">{engineer}</a>  y responsable del area de  calidad se notifica que se ha devuelto el estándar con las siguientes caracteristicas: </font><br />                   \r\n                    <b><font COLOR=\"blue\" >Estándar:</font></b>                                     <b><a class=\"a\">{estandard}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Fecha De Devolucion:</font></b>                        <b><a class=\"a\">{DateOfReturn}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Observaciones de Devolucion:</font></b>                  <b><a class=\"a\">{observations}</a></b>  <br />\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
 
             string estandards = String.Join(", ", estEstandards);
             body = body.Replace("{estandard}", estandards);
-            body = body.Replace("{dateOfReturn}", dates.convertToValidDateDatePicker(TimePicker_Date_Return.Text));
+            body = body.Replace("{DateOfReturn}", dates.convertToValidDateDatePicker(TimePicker_Date_Return.Text));
             body = body.Replace("{observations}", TxtBox_ObservationReturn.Text);
             body = body.Replace("{engineer}", "Omar Sotomayor");
 

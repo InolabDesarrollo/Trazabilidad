@@ -14,19 +14,22 @@ namespace CTZ.Controler.Estandard
     public class C_DeliveryOfEstandard : C_EstandardAssignment
     {
  
-        public void registerDeliveryEstandard(Estandard_Assignment assignment,Dictionary<int,string> estandardInformation)
+        public void registerDeliveryEstandard(Estandard_Assignment assignment,List<string> estEstandards)
         {
             DateForReport dates = new DateForReport();
             assignment.DateDelivery = dates.convertToValidDateDatePicker(assignment.DateDelivery);
             assignment.EstimateDateReturn = dates.convertToValidDateDatePicker(assignment.EstimateDateReturn);
 
-            foreach (KeyValuePair<int, string> element in estandardInformation)
+            foreach (string estandar in estEstandards)
             {
-                assignmentRepository.registerDeliveryEstandard(assignment, element.Key, element.Value);
+                assignmentRepository.registerDeliveryEstandard(assignment, estandar);
             }
         }
 
-        
+        public void registerPermanentlyDeliveryEstandard(Estandard_Assignment assignment)
+        {
+            DateForReport dates = new DateForReport();
 
+        }
     }
 }
