@@ -37,7 +37,7 @@ namespace CTZ.View.Estandard
                 C_Estandard controler = new C_Estandard();
                 if (!controler.check(TxtBox_ESTE.Text))
                 {
-                    addEstandart();
+                    manageEstandard();
                 }
                 else
                 {
@@ -46,7 +46,7 @@ namespace CTZ.View.Estandard
             }            
         }
 
-        private void addEstandart()
+        private void manageEstandard()
         {
             CTZ.View.Responsabilitis.Estandard estandard = new Responsabilitis.Estandard();
             estandard.EstatusAssignments = "Sin Asignar";
@@ -77,29 +77,13 @@ namespace CTZ.View.Estandard
             C_AddEstandard controlerAdd = new C_AddEstandard();
             controlerAdd.add(estandard);
             MessageBox.Show("El Estandar " + TxtBox_ESTE.Text + " Se agrego correctamente");
-            cleanButtons();
-        }
-
-        private void cleanButtons()
-        {
-            TxtBox_ESTE.Clear();
-            TxtBox_Estandard.Clear();
-            TxtBox_Use.Clear();
-            TxtBox_Brand.Clear();
-            TxtBox_Presentation.Clear();
-            TxtBox_Number.Clear();
-            TxtBox_Presentation.Clear();
-            TxtBox_Number.Clear();
-            TxtBox_Quantity.Clear();
-            TxtBox_Ubication.Clear();
-            TxtBox_Estatus.Clear(); 
-            TxtBox_Inventory.Clear();
         }
 
         private void assignEstandardPermanently(string estEstandard)
         {
             Permanent_Assignment assignment = new Permanent_Assignment(estEstandard);
             assignment.Show();
+            this.Close();
         }
 
     }

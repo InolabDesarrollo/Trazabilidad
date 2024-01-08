@@ -135,7 +135,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Controler\Estandard\Assignment\C_EstandardAssignment.cs" />
+    <Compile Include="Controler\Estandard\Assignment\C_Estandard_Assignment.cs" />
+    <Compile Include="Controler\Estandard\Assignment\C_Permanent_Assignment.cs" />
     <Compile Include="Controler\Estandard\Assignment\C_QueryEstandardAssignment.cs" />
     <Compile Include="Controler\Estandard\C_AddEstandard.cs" />
     <Compile Include="Controler\Estandard\C_Certificate.cs" />

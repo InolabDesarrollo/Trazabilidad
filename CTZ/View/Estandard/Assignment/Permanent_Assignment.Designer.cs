@@ -59,9 +59,9 @@
             this.Lbl_Date_Delivery.Location = new System.Drawing.Point(30, 141);
             this.Lbl_Date_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Date_Delivery.Name = "Lbl_Date_Delivery";
-            this.Lbl_Date_Delivery.Size = new System.Drawing.Size(199, 19);
+            this.Lbl_Date_Delivery.Size = new System.Drawing.Size(220, 19);
             this.Lbl_Date_Delivery.TabIndex = 3;
-            this.Lbl_Date_Delivery.Text = "Fecha Entrega de Estandard";
+            this.Lbl_Date_Delivery.Text = "Fecha de Entrega de Estandard";
             // 
             // Lbl_Enginner
             // 
@@ -120,7 +120,7 @@
             // 
             this.TxtBox_ObservationDelivery.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_ObservationDelivery.Depth = 0;
-            this.TxtBox_ObservationDelivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_ObservationDelivery.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_ObservationDelivery.LeadingIcon = null;
             this.TxtBox_ObservationDelivery.Location = new System.Drawing.Point(443, 167);
             this.TxtBox_ObservationDelivery.MaxLength = 50;
@@ -139,7 +139,7 @@
             this.Btn_RegistEnginnerSignature.Depth = 0;
             this.Btn_RegistEnginnerSignature.HighEmphasis = true;
             this.Btn_RegistEnginnerSignature.Icon = null;
-            this.Btn_RegistEnginnerSignature.Location = new System.Drawing.Point(569, 320);
+            this.Btn_RegistEnginnerSignature.Location = new System.Drawing.Point(569, 307);
             this.Btn_RegistEnginnerSignature.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_RegistEnginnerSignature.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_RegistEnginnerSignature.Name = "Btn_RegistEnginnerSignature";

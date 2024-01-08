@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controler.Estandard.Assignment
 {
-    public class C_QueryEstandardAssignment : C_EstandardAssignment
+    public class C_QueryEstandardAssignment : C_Estandard_Assignment
     {
         public DataTable selectAllByEnginner(string engineerName)
         {

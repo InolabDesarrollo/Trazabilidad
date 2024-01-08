@@ -56,7 +56,7 @@ namespace CTZ.View.Estandard.Assignment
 
         private void Dgv_Assignment_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7 || e.ColumnIndex == 10 || e.ColumnIndex == 14)
+            if (e.ColumnIndex == 7 || e.ColumnIndex == 10 || e.ColumnIndex == 13)
             {
                 showSignature(e);
             }

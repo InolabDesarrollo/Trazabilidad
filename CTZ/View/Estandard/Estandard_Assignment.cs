@@ -9,5 +9,7 @@ namespace CTZ.View.Estandard
     public class Estandard_Assignment : Assignment_Inventory
     {
         public int IdEstandard;
+
+        public string type;
     }
 }

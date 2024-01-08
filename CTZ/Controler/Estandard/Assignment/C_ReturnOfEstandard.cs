@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controler.Estandard
 {
-    public class C_ReturnOfEstandard: C_EstandardAssignment
+    public class C_ReturnOfEstandard: C_Estandard_Assignment
     {
         public void registerReturnOfEstandard(Estandard_Assignment assignment, List<string> estandards)
         {

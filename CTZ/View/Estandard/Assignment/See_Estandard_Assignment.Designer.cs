@@ -30,21 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Dgv_Assignment = new ADGV.AdvancedDataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEstandarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaEntregaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ingenieroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.folioEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacionesEntregaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firmaIngenieroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacionesDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firmaCalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eSTEstandardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correoIngenieroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asignacionEstandaresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTestDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTestDataSet4 = new CTZ.TrazabilidadTestDataSet4();
@@ -59,6 +44,20 @@
             this.Btn_Serch_Brand = new System.Windows.Forms.Button();
             this.Btn_Clean = new System.Windows.Forms.Button();
             this.asignacionEstandaresTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.AsignacionEstandaresTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eSTEstandardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaEntregaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ingenieroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.folioEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionesEntregaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firmaIngenieroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionesDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firmaCalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correoIngenieroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Assignment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionEstandaresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet4BindingSource)).BeginInit();
@@ -78,7 +77,7 @@
             this.Dgv_Assignment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_Assignment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
-            this.idEstandarDataGridViewTextBoxColumn,
+            this.eSTEstandardDataGridViewTextBoxColumn,
             this.fechaEntregaDataGridViewTextBoxColumn,
             this.ingenieroDataGridViewTextBoxColumn,
             this.folioEmpresaDataGridViewTextBoxColumn,
@@ -88,7 +87,6 @@
             this.fechaEstimadaDevolucionDataGridViewTextBoxColumn,
             this.observacionesDevolucionDataGridViewTextBoxColumn,
             this.firmaCalidadDataGridViewTextBoxColumn,
-            this.eSTEstandardDataGridViewTextBoxColumn,
             this.correoIngenieroDataGridViewTextBoxColumn,
             this.fechaDevolucionDataGridViewTextBoxColumn,
             this.firmaIngenieroDevolucionDataGridViewTextBoxColumn});
@@ -101,127 +99,6 @@
             this.Dgv_Assignment.TimeFilter = false;
             this.Dgv_Assignment.FilterStringChanged += new System.EventHandler(this.Dgv_Assignment_FilterStringChanged);
             this.Dgv_Assignment.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Assignment_CellContentDoubleClick);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // idEstandarDataGridViewTextBoxColumn
-            // 
-            this.idEstandarDataGridViewTextBoxColumn.DataPropertyName = "Id_Estandar";
-            this.idEstandarDataGridViewTextBoxColumn.HeaderText = "Id_Estandar";
-            this.idEstandarDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idEstandarDataGridViewTextBoxColumn.Name = "idEstandarDataGridViewTextBoxColumn";
-            this.idEstandarDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaEntregaDataGridViewTextBoxColumn
-            // 
-            this.fechaEntregaDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Entrega";
-            this.fechaEntregaDataGridViewTextBoxColumn.HeaderText = "Fecha_Entrega";
-            this.fechaEntregaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.fechaEntregaDataGridViewTextBoxColumn.Name = "fechaEntregaDataGridViewTextBoxColumn";
-            this.fechaEntregaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ingenieroDataGridViewTextBoxColumn
-            // 
-            this.ingenieroDataGridViewTextBoxColumn.DataPropertyName = "Ingeniero";
-            this.ingenieroDataGridViewTextBoxColumn.HeaderText = "Ingeniero";
-            this.ingenieroDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.ingenieroDataGridViewTextBoxColumn.Name = "ingenieroDataGridViewTextBoxColumn";
-            this.ingenieroDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // folioEmpresaDataGridViewTextBoxColumn
-            // 
-            this.folioEmpresaDataGridViewTextBoxColumn.DataPropertyName = "Folio_Empresa";
-            this.folioEmpresaDataGridViewTextBoxColumn.HeaderText = "Folio_Empresa";
-            this.folioEmpresaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.folioEmpresaDataGridViewTextBoxColumn.Name = "folioEmpresaDataGridViewTextBoxColumn";
-            this.folioEmpresaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // nombreEmpresaDataGridViewTextBoxColumn
-            // 
-            this.nombreEmpresaDataGridViewTextBoxColumn.DataPropertyName = "Nombre_Empresa";
-            this.nombreEmpresaDataGridViewTextBoxColumn.HeaderText = "Nombre_Empresa";
-            this.nombreEmpresaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreEmpresaDataGridViewTextBoxColumn.Name = "nombreEmpresaDataGridViewTextBoxColumn";
-            this.nombreEmpresaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // observacionesEntregaDataGridViewTextBoxColumn
-            // 
-            this.observacionesEntregaDataGridViewTextBoxColumn.DataPropertyName = "Observaciones_Entrega";
-            this.observacionesEntregaDataGridViewTextBoxColumn.HeaderText = "Observaciones_Entrega";
-            this.observacionesEntregaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.observacionesEntregaDataGridViewTextBoxColumn.Name = "observacionesEntregaDataGridViewTextBoxColumn";
-            this.observacionesEntregaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // firmaIngenieroDataGridViewTextBoxColumn
-            // 
-            this.firmaIngenieroDataGridViewTextBoxColumn.DataPropertyName = "Firma_Ingeniero";
-            this.firmaIngenieroDataGridViewTextBoxColumn.HeaderText = "Firma_Ingeniero";
-            this.firmaIngenieroDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.firmaIngenieroDataGridViewTextBoxColumn.Name = "firmaIngenieroDataGridViewTextBoxColumn";
-            this.firmaIngenieroDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaEstimadaDevolucionDataGridViewTextBoxColumn
-            // 
-            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Estimada_Devolucion";
-            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.HeaderText = "Fecha_Estimada_Devolucion";
-            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.Name = "fechaEstimadaDevolucionDataGridViewTextBoxColumn";
-            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // observacionesDevolucionDataGridViewTextBoxColumn
-            // 
-            this.observacionesDevolucionDataGridViewTextBoxColumn.DataPropertyName = "Observaciones_Devolucion";
-            this.observacionesDevolucionDataGridViewTextBoxColumn.HeaderText = "Observaciones_Devolucion";
-            this.observacionesDevolucionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.observacionesDevolucionDataGridViewTextBoxColumn.Name = "observacionesDevolucionDataGridViewTextBoxColumn";
-            this.observacionesDevolucionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // firmaCalidadDataGridViewTextBoxColumn
-            // 
-            this.firmaCalidadDataGridViewTextBoxColumn.DataPropertyName = "Firma_Calidad";
-            this.firmaCalidadDataGridViewTextBoxColumn.HeaderText = "Firma_Calidad";
-            this.firmaCalidadDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.firmaCalidadDataGridViewTextBoxColumn.Name = "firmaCalidadDataGridViewTextBoxColumn";
-            this.firmaCalidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // eSTEstandardDataGridViewTextBoxColumn
-            // 
-            this.eSTEstandardDataGridViewTextBoxColumn.DataPropertyName = "EST_Estandard";
-            this.eSTEstandardDataGridViewTextBoxColumn.HeaderText = "EST_Estandard";
-            this.eSTEstandardDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.eSTEstandardDataGridViewTextBoxColumn.Name = "eSTEstandardDataGridViewTextBoxColumn";
-            this.eSTEstandardDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // correoIngenieroDataGridViewTextBoxColumn
-            // 
-            this.correoIngenieroDataGridViewTextBoxColumn.DataPropertyName = "Correo_Ingeniero";
-            this.correoIngenieroDataGridViewTextBoxColumn.HeaderText = "Correo_Ingeniero";
-            this.correoIngenieroDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.correoIngenieroDataGridViewTextBoxColumn.Name = "correoIngenieroDataGridViewTextBoxColumn";
-            this.correoIngenieroDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaDevolucionDataGridViewTextBoxColumn
-            // 
-            this.fechaDevolucionDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Devolucion";
-            this.fechaDevolucionDataGridViewTextBoxColumn.HeaderText = "Fecha_Devolucion";
-            this.fechaDevolucionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.fechaDevolucionDataGridViewTextBoxColumn.Name = "fechaDevolucionDataGridViewTextBoxColumn";
-            this.fechaDevolucionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // firmaIngenieroDevolucionDataGridViewTextBoxColumn
-            // 
-            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.DataPropertyName = "Firma_Ingeniero_Devolucion";
-            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.HeaderText = "Firma_Ingeniero_Devolucion";
-            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.Name = "firmaIngenieroDevolucionDataGridViewTextBoxColumn";
-            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // asignacionEstandaresBindingSource
             // 
@@ -337,6 +214,119 @@
             // 
             this.asignacionEstandaresTableAdapter.ClearBeforeFill = true;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // eSTEstandardDataGridViewTextBoxColumn
+            // 
+            this.eSTEstandardDataGridViewTextBoxColumn.DataPropertyName = "EST_Estandard";
+            this.eSTEstandardDataGridViewTextBoxColumn.HeaderText = "EST_Estandard";
+            this.eSTEstandardDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.eSTEstandardDataGridViewTextBoxColumn.Name = "eSTEstandardDataGridViewTextBoxColumn";
+            this.eSTEstandardDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaEntregaDataGridViewTextBoxColumn
+            // 
+            this.fechaEntregaDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Entrega";
+            this.fechaEntregaDataGridViewTextBoxColumn.HeaderText = "Fecha_Entrega";
+            this.fechaEntregaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fechaEntregaDataGridViewTextBoxColumn.Name = "fechaEntregaDataGridViewTextBoxColumn";
+            this.fechaEntregaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ingenieroDataGridViewTextBoxColumn
+            // 
+            this.ingenieroDataGridViewTextBoxColumn.DataPropertyName = "Ingeniero";
+            this.ingenieroDataGridViewTextBoxColumn.HeaderText = "Ingeniero";
+            this.ingenieroDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.ingenieroDataGridViewTextBoxColumn.Name = "ingenieroDataGridViewTextBoxColumn";
+            this.ingenieroDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // folioEmpresaDataGridViewTextBoxColumn
+            // 
+            this.folioEmpresaDataGridViewTextBoxColumn.DataPropertyName = "Folio_Empresa";
+            this.folioEmpresaDataGridViewTextBoxColumn.HeaderText = "Folio_Empresa";
+            this.folioEmpresaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.folioEmpresaDataGridViewTextBoxColumn.Name = "folioEmpresaDataGridViewTextBoxColumn";
+            this.folioEmpresaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // nombreEmpresaDataGridViewTextBoxColumn
+            // 
+            this.nombreEmpresaDataGridViewTextBoxColumn.DataPropertyName = "Nombre_Empresa";
+            this.nombreEmpresaDataGridViewTextBoxColumn.HeaderText = "Nombre_Empresa";
+            this.nombreEmpresaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreEmpresaDataGridViewTextBoxColumn.Name = "nombreEmpresaDataGridViewTextBoxColumn";
+            this.nombreEmpresaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // observacionesEntregaDataGridViewTextBoxColumn
+            // 
+            this.observacionesEntregaDataGridViewTextBoxColumn.DataPropertyName = "Observaciones_Entrega";
+            this.observacionesEntregaDataGridViewTextBoxColumn.HeaderText = "Observaciones_Entrega";
+            this.observacionesEntregaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.observacionesEntregaDataGridViewTextBoxColumn.Name = "observacionesEntregaDataGridViewTextBoxColumn";
+            this.observacionesEntregaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // firmaIngenieroDataGridViewTextBoxColumn
+            // 
+            this.firmaIngenieroDataGridViewTextBoxColumn.DataPropertyName = "Firma_Ingeniero";
+            this.firmaIngenieroDataGridViewTextBoxColumn.HeaderText = "Firma_Ingeniero";
+            this.firmaIngenieroDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.firmaIngenieroDataGridViewTextBoxColumn.Name = "firmaIngenieroDataGridViewTextBoxColumn";
+            this.firmaIngenieroDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaEstimadaDevolucionDataGridViewTextBoxColumn
+            // 
+            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Estimada_Devolucion";
+            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.HeaderText = "Fecha_Estimada_Devolucion";
+            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.Name = "fechaEstimadaDevolucionDataGridViewTextBoxColumn";
+            this.fechaEstimadaDevolucionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // observacionesDevolucionDataGridViewTextBoxColumn
+            // 
+            this.observacionesDevolucionDataGridViewTextBoxColumn.DataPropertyName = "Observaciones_Devolucion";
+            this.observacionesDevolucionDataGridViewTextBoxColumn.HeaderText = "Observaciones_Devolucion";
+            this.observacionesDevolucionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.observacionesDevolucionDataGridViewTextBoxColumn.Name = "observacionesDevolucionDataGridViewTextBoxColumn";
+            this.observacionesDevolucionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // firmaCalidadDataGridViewTextBoxColumn
+            // 
+            this.firmaCalidadDataGridViewTextBoxColumn.DataPropertyName = "Firma_Calidad";
+            this.firmaCalidadDataGridViewTextBoxColumn.HeaderText = "Firma_Calidad";
+            this.firmaCalidadDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.firmaCalidadDataGridViewTextBoxColumn.Name = "firmaCalidadDataGridViewTextBoxColumn";
+            this.firmaCalidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // correoIngenieroDataGridViewTextBoxColumn
+            // 
+            this.correoIngenieroDataGridViewTextBoxColumn.DataPropertyName = "Correo_Ingeniero";
+            this.correoIngenieroDataGridViewTextBoxColumn.HeaderText = "Correo_Ingeniero";
+            this.correoIngenieroDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.correoIngenieroDataGridViewTextBoxColumn.Name = "correoIngenieroDataGridViewTextBoxColumn";
+            this.correoIngenieroDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaDevolucionDataGridViewTextBoxColumn
+            // 
+            this.fechaDevolucionDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Devolucion";
+            this.fechaDevolucionDataGridViewTextBoxColumn.HeaderText = "Fecha_Devolucion";
+            this.fechaDevolucionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fechaDevolucionDataGridViewTextBoxColumn.Name = "fechaDevolucionDataGridViewTextBoxColumn";
+            this.fechaDevolucionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // firmaIngenieroDevolucionDataGridViewTextBoxColumn
+            // 
+            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.DataPropertyName = "Firma_Ingeniero_Devolucion";
+            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.HeaderText = "Firma_Ingeniero_Devolucion";
+            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.Name = "firmaIngenieroDevolucionDataGridViewTextBoxColumn";
+            this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
             // See_Estandard_Assignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,7 +373,7 @@
         private System.Windows.Forms.BindingSource asignacionEstandaresBindingSource;
         private TrazabilidadTestDataSet4TableAdapters.AsignacionEstandaresTableAdapter asignacionEstandaresTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEstandarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eSTEstandardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaEntregaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ingenieroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn folioEmpresaDataGridViewTextBoxColumn;
@@ -393,7 +383,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaEstimadaDevolucionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacionesDevolucionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firmaCalidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eSTEstandardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn correoIngenieroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevolucionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firmaIngenieroDevolucionDataGridViewTextBoxColumn;

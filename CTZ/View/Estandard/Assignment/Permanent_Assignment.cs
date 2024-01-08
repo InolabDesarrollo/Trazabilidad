@@ -1,5 +1,6 @@
 ﻿using CTZ.Controlador;
 using CTZ.Controler.Estandard;
+using CTZ.Controler.Estandard.Assignment;
 using CTZ.Modelo.Browser;
 using CTZ.Vista.Instruments;
 using CTZ.Vista.Responsabilitis;
@@ -32,7 +33,7 @@ namespace CTZ.View.Estandard.Assignment
             engineers = userController.getEngineers();
             fillMaterialComboBoxEngineers();
             assignment = new Estandard_Assignment();
-
+            assignment.EngineerSignature = "";
             this.estEstandard = estEstandard;
             Lbl_Estandard.Text = estEstandard;
         }
@@ -55,12 +56,30 @@ namespace CTZ.View.Estandard.Assignment
 
         private void Btn_Add_DeliveryPermanently_Click(object sender, EventArgs e)
         {
-            assignment.DateDelivery = TimePicker_Date_Delivery.Text;
-            assignment.Engineer = ComboBox_Engineers.Text;
-            assignment.ReturnObservations = TxtBox_ObservationDelivery.Text;
+            if (assignment.EngineerSignature.Equals(""))
+            {
+                MessageBox.Show("No se puede registrar la entrega de Estándar si la firma de Ingeniero");
+            }
+            else
+            {
+                assignment.DateDelivery = TimePicker_Date_Delivery.Text;
+                assignment.Engineer = ComboBox_Engineers.Text;
+                assignment.DeliveryObservations = TxtBox_ObservationDelivery.Text;
+                assignment.EngineerEmail = getMailEngineer(ComboBox_Engineers.Text);
+                assignment.type = "Asignacion";
 
-            C_DeliveryOfEstandard controller = new C_DeliveryOfEstandard();
-            
+                C_Permanent_Assignment controller = new C_Permanent_Assignment();
+                controller.registerPermanentlyDeliveryEstandard(assignment, estEstandard);
+                MessageBox.Show("Se asigno correctamente el estándar al ingeniero " + assignment.Engineer);
+                this.Close();
+            }          
+        }
+
+        private string getMailEngineer(string nameEngineer)
+        {
+            userRepository = new UserRepository();
+            userController = new C_User(userRepository);
+            return userController.findEmailByName(engineers, nameEngineer);
         }
 
     }

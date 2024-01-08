@@ -26,6 +26,12 @@ namespace CTZ.Model.Trazabilidad.Estandard
             conexion.executeQuery(query);
         }
 
+        public void registerPermanentlyDeliveryEstandard(Estandard_Assignment assignment, string estandard)
+        {
+            conexion.executeQuery("INSERT INTO AsignacionEstandares(Tipo,Fecha_Entrega, Ingeniero,Observaciones_Entrega, Firma_Ingeniero,EST_Estandard,Correo_Ingeniero) " +
+                " \r\nVALUES('"+assignment.type+"','"+assignment.DateDelivery+"', '"+assignment.Engineer+"', '"+assignment.DeliveryObservations+"', '"+assignment.EngineerSignature+"', '"+estandard+"', '"+assignment.EngineerEmail+"')");
+        }
+
         public void registerReturnOfEstandard(Estandard_Assignment assignment, string estEstandard)
         {
             conexion.executeQuery(" UPDATE AsignacionEstandares SET Observaciones_Devolucion = '"+assignment.ReturnObservations+"', Firma_Calidad = '"+assignment.QualitySignature+"', Firma_Ingeniero_Devolucion = '"+assignment.EngineerSignatureReturn+"',  Fecha_Devolucion = '"+assignment.DateOfReturn+"' " +

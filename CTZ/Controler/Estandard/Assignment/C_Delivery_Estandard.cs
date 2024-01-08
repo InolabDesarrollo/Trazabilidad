@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controler.Estandard
 {
-    public class C_DeliveryOfEstandard : C_EstandardAssignment
+    public class C_DeliveryOfEstandard : C_Estandard_Assignment
     {
- 
+
         public void registerDeliveryEstandard(Estandard_Assignment assignment,List<string> estEstandards)
         {
             DateForReport dates = new DateForReport();
@@ -26,10 +26,5 @@ namespace CTZ.Controler.Estandard
             }
         }
 
-        public void registerPermanentlyDeliveryEstandard(Estandard_Assignment assignment)
-        {
-            DateForReport dates = new DateForReport();
-
-        }
     }
 }

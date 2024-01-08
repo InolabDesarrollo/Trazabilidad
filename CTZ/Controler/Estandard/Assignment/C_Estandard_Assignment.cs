@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controler.Estandard.Assignment
 {
-    public abstract class C_EstandardAssignment
+    public abstract class C_Estandard_Assignment
     {
         public EstandardAssignment_Repository assignmentRepository;
         public Estandards_Repository estandardsRepository;
-        public C_EstandardAssignment() {
+        public C_Estandard_Assignment() {
             assignmentRepository = new EstandardAssignment_Repository();
             estandardsRepository = new Estandards_Repository();
         }
