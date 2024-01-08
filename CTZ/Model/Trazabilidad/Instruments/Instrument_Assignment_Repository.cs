@@ -25,11 +25,11 @@ namespace CTZ.Modelo.Trazabilidad
                 + "','" + instrumentAssignments.DeliveryObservations + "','" + equino + "','" + instrumentAssignments.EngineerEmail + "','"+instrumentAssignments.EngineerSignature+"')");
         }
 
-        public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments, int idInstrument)
+        public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments, string equinoInstrument)
         {
             return conexion.executeQuery("UPDATE AsignacionInstrumentos SET Fecha_Devolucion  = '" + instrumentAssignments.DateOfReturn + "', \r\nObservaciones_Devolucion ='" + instrumentAssignments.ReturnObservations + "',  \r\n" +
-                " Firma_Ingeniero_Devolucion = '"+instrumentAssignments.EngineerSignatureReturn+"',  Firma_Calidad = '"+instrumentAssignments.QualitySignature+"' WHERE ID_Instrumento = " + idInstrument + " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
-                " FROM AsignacionInstrumentos WHERE ID_Instrumento =" + idInstrument + ");");
+                " Firma_Ingeniero_Devolucion = '"+instrumentAssignments.EngineerSignatureReturn+"',  Firma_Calidad = '"+instrumentAssignments.QualitySignature+ "' WHERE Equino_Instrumento = '"+equinoInstrument+"' AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
+                " FROM AsignacionInstrumentos WHERE Equino_Instrumento = '"+ equinoInstrument + "');");
         }
 
         public DataTable selectAllByEquino(string EquinoInstrument)

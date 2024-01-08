@@ -24,7 +24,7 @@ namespace CTZ.Vista.Instruments
         private C_Instruments instrumentsControler;
         public Instrument_Assignments instrumentAssignments;
         private DataTable instrumenAssignmentInformation;
-        private C_ReturnOfInstrument controllerReturnOfInstrument;
+        private C_Return_Of_Instrument controllerReturnOfInstrument;
 
         public static List<int> idInstruments;
         private static List<string> equinosInstruments;
@@ -57,7 +57,7 @@ namespace CTZ.Vista.Instruments
                 }
                 else
                 {
-                    controllerReturnOfInstrument = new C_ReturnOfInstrument();
+                    controllerReturnOfInstrument = new C_Return_Of_Instrument();
                     DataTable instrumentAssignmentInformation = controllerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(TxtBox_Instrumenst.Text);
                     MessageBox.Show("Este Instrumento se le presto al Ingeniero " + instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString());
                     
@@ -128,7 +128,7 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Regist_ReturnOfInstruments_Click(object sender, EventArgs e)
         {
-            controllerReturnOfInstrument = new C_ReturnOfInstrument();
+            controllerReturnOfInstrument = new C_Return_Of_Instrument();
             instrumenAssignmentInformation = controllerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(idInstruments[0]);
 
             string engineerMail = instrumenAssignmentInformation.Rows[0]["Correo_Ingeniero"].ToString();
@@ -143,52 +143,11 @@ namespace CTZ.Vista.Instruments
             }
             else
             {
-                controllerReturnOfInstrument.registerReturnInstrument(instrumentAssignments, idInstruments);
-                updateStatusInstruments();
-                sendQualityMailNotification(engineerMail);
+                controllerReturnOfInstrument.registerReturnInstrument(instrumentAssignments, equinosInstruments);
                 MessageBox.Show("Devolucion de Instrumento registrada correctamente");
                 this.Hide();
             }
         }
-
-        private void updateStatusInstruments()
-        {
-            foreach (string equino in equinosInstruments)
-            {
-                controllerReturnOfInstrument.updateStatusInstrumentAssignment(equino, "DISPONIBLE");
-            }
-        }
-
-        private void sendQualityMailNotification(string emailEngineer)
-        {
-            string[] qualityEmail = new string[5];
-            qualityEmail[0] = emailEngineer;
-            qualityEmail[1] = "omarflores@inolab.com";
-            qualityEmail[2] = "calidad@inolab.com";
-            qualityEmail[3] = "carlosflores@inolab.com";
-            qualityEmail[4] = "azaliarosas@inolab.com";
-
-            string emailSubject = "Notificacion de devolucion de Instrumento";
-            string emailBody = emailBodyForQuality();
-            Responsabilitis.Notification notification = new Responsabilitis.Notification();
-            notification.sendMailNotification(qualityEmail, emailBody, emailSubject);
-        }
-
-        private string emailBodyForQuality()
-        {
-            DateForReport dates = new DateForReport();
-            string body = "<!DOCTYPE html>\r\n\r\n<html >\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <title>Notificacion devolucion de Instrumento</title>\r\n    <style>\r\n        a {\r\n            color: black;\r\n        }\r\n    \r\n        body {\r\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n            background: rgb(255,255,250);\r\n            margin: 10px;\r\n            background-repeat: no-repeat;\r\n            background-attachment: fixed;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n   <h2>Devolucion de Instrumento </h2><br />\r\n    <table border=\"0\" cellpadding=\"8\">\r\n        <tr>\r\n            <td colspan=\"4\" >\r\n                <p  >\r\n                    <font COLOR=\"black\"  >Buen día  Ingeniero: <a class=\"a\">{engineer}</a>  y responsable del area de  calidad se notifica que se ha devuelto el Instrumento con las siguientes caracteristicas</font><br />                   \r\n                    <b><font COLOR=\"blue\" >Equino:</font></b>                                     <b><a class=\"a\">{equino}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Fecha De Devolucion:</font></b>                        <b><a class=\"a\">{DateOfReturn}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Empresa:</font></b>                                   <b><a class=\"a\">{enterprise}</a> </b>  <br />\r\n                    <b><font COLOR=\"blue\" >Folio Empresa:</font></b>                             <b><a class=\"a\">{numberEnterprise}</a> </b>   <br />\r\n                    <b><font COLOR=\"blue\" >Observaciones de Devolucion:</font></b>                  <b><a class=\"a\">{observations}</a></b>  <br />\r\n\r\n                </p><br />\r\n                <p>\r\n                    Este correo se envia automaticamente, favor de NO responder.<br />\r\n                    Saludos\r\n                </p>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n</body>\r\n</html>";
-            string equinosOfInstruments = String.Join(", ", equinosInstruments);
-            
-            body = body.Replace("{equino}", equinosOfInstruments);
-            body = body.Replace("{DateOfReturn}", dates.convertToValidDate(DatePicker_DateOfReturn.Text));
-            body = body.Replace("{enterprise}", instrumenAssignmentInformation.Rows[0]["Nombre_Empresa"].ToString());
-            body = body.Replace("{numberEnterprise}", instrumenAssignmentInformation.Rows[0]["Folio_Empresa"].ToString());
-            body = body.Replace("{observations}", TxtBox_ObservationReturn.Text);
-            body = body.Replace("{engineer}", instrumenAssignmentInformation.Rows[0]["Ingeniero"].ToString());
-
-            return body;
-        }   
 
         private void Btn_Delete_Instrument_Click(object sender, EventArgs e)
         {
