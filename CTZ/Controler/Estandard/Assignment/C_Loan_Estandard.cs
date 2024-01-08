@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controler.Estandard
 {
-    public class C_DeliveryOfEstandard : C_Estandard_Assignment
+    public class C_Loan_Estandard : C_Estandard_Assignment
     {
 
         public void registerDeliveryEstandard(Estandard_Assignment assignment,List<string> estEstandards)

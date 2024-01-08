@@ -19,7 +19,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CTZ.View.Estandard.Assignment
 {
-    public partial class Add_Delivery_Estandard : MaterialForm
+    public partial class Add_Loan_Estandard : MaterialForm
     {
         private C_Estandard controler;
         private static Dictionary<int, string> informationEstandards;
@@ -27,7 +27,7 @@ namespace CTZ.View.Estandard.Assignment
         private C_User usuarioControler;
         private DataTable engineers;
         public static Estandard_Assignment assignment;
-        public Add_Delivery_Estandard()
+        public Add_Loan_Estandard()
         {
             InitializeComponent();
             informationEstandards = new Dictionary<int, string>();
@@ -121,7 +121,7 @@ namespace CTZ.View.Estandard.Assignment
                 string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
                 assignment.EngineerEmail = emailEngineer;
 
-                C_DeliveryOfEstandard controler = new C_DeliveryOfEstandard();
+                C_Loan_Estandard controler = new C_Loan_Estandard();
                 controler.registerDeliveryEstandard(assignment, estandardList);
                 controler.updateEstatusLoanEstandard("PRESTADO", estandardList);
 

@@ -15,11 +15,11 @@ namespace CTZ.View.Estandard.Assignment
 {
     public partial class See_Estandard_Assignment : MaterialForm
     {
-        private C_QueryEstandardAssignment controller;
+        private C_Query_Estandard_Assignment controller;
         public See_Estandard_Assignment()
         {
             InitializeComponent();
-            controller = new C_QueryEstandardAssignment();
+            controller = new C_Query_Estandard_Assignment();
         }
 
         private void See_Estandard_Assignment_Load(object sender, EventArgs e)

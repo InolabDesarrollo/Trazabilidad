@@ -21,7 +21,7 @@ namespace CTZ.View.Estandard
 
         private void Btn_Add_Assignments_Click(object sender, EventArgs e)
         {
-            Add_Delivery_Estandard add_Delivery_Estandard= new Add_Delivery_Estandard();
+            Add_Loan_Estandard add_Delivery_Estandard= new Add_Loan_Estandard();
             add_Delivery_Estandard.Show();
         }
 

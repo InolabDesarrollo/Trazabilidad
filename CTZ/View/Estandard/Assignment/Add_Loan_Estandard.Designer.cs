@@ -1,6 +1,6 @@
 ﻿namespace CTZ.View.Estandard.Assignment
 {
-    partial class Add_Delivery_Estandard
+    partial class Add_Loan_Estandard
     {
         /// <summary>
         /// Required designer variable.
