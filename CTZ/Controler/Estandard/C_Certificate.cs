@@ -37,9 +37,9 @@ namespace CTZ.Controler.Estandard
             repository.updateStatusCertificates(Estandard);
         }
 
-        public string getLinkCertificate(int idEstandard)
+        public string getLinkCertificate(string Estandard)
         {
-            return repository.getLinkCertificate(idEstandard);
+            return repository.getLinkCertificate(Estandard);
         }
 
     }

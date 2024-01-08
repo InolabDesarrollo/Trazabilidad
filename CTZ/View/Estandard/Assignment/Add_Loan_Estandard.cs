@@ -22,15 +22,13 @@ namespace CTZ.View.Estandard.Assignment
     public partial class Add_Loan_Estandard : MaterialForm
     {
         private C_Estandard controler;
-        private static Dictionary<int, string> informationEstandards;
-        List<string> estandardList;
+        public List<string> estandardList;
         private C_User usuarioControler;
         private DataTable engineers;
         public static Estandard_Assignment assignment;
         public Add_Loan_Estandard()
         {
             InitializeComponent();
-            informationEstandards = new Dictionary<int, string>();
             UserRepository userRepository = new UserRepository();
             usuarioControler = new C_User(userRepository);
             assignment = new Estandard_Assignment();
@@ -88,7 +86,6 @@ namespace CTZ.View.Estandard.Assignment
             }
             else
             {
-                informationEstandards.Add(idEstandard, estEstandard);
                 estandardList.Add(estEstandard);
                 ComboBox_Estandards.Items.Add(estEstandard);
                 MessageBox.Show("Se agrego el Estandard " + estEstandard);
@@ -122,7 +119,7 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.EngineerEmail = emailEngineer;
 
                 C_Loan_Estandard controler = new C_Loan_Estandard();
-                controler.registerDeliveryEstandard(assignment, estandardList, informationEstandards);
+                controler.registerDeliveryEstandard(assignment, estandardList);
 
                 MessageBox.Show("Se creo la asignacion para los estandares ");
                 this.Close();

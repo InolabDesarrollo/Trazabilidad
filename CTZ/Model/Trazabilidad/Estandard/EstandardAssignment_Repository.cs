@@ -20,9 +20,10 @@ namespace CTZ.Model.Trazabilidad.Estandard
    
         public void registerDeliveryEstandard(Estandard_Assignment assignment, string EST)
         {
-            string query = "INSERT INTO AsignacionEstandares(Fecha_Entrega,Ingeniero,Folio_Empresa,Nombre_Empresa, \r\n " +
+            string query = "INSERT INTO AsignacionEstandares(Tipo,Fecha_Entrega,Ingeniero,Folio_Empresa,Nombre_Empresa, \r\n " +
                 " Observaciones_Entrega,Firma_Ingeniero,Fecha_Estimada_Devolucion,EST_Estandard,Correo_Ingeniero) " +
-                " values('"+assignment.DateDelivery + "','" + assignment.Engineer + "','" + assignment.NumberEnterprise + "','" + assignment.NameEnterprise + "','" + assignment.DeliveryObservations + "',\r\n'" + assignment.EngineerSignature + "','" + assignment.EstimateDateReturn + "','" + EST + "','" + assignment.EngineerEmail + "');";
+                " values('"+assignment.type+"', '"+assignment.DateDelivery + "','" + assignment.Engineer + "','" + assignment.NumberEnterprise + "','" + assignment.NameEnterprise + "','" + assignment.DeliveryObservations + "',\r\n'" + assignment.EngineerSignature + "','" + assignment.EstimateDateReturn + "','" + EST + "','" + assignment.EngineerEmail + "');";
+            
             conexion.executeQuery(query);
         }
 

@@ -25,26 +25,26 @@ namespace CTZ.View.Estandard
 
         public string Estandard;
 
-        public string getCertificates(Dictionary<int, string> estandardInformation)
+        public string getCertificates(List<string> estandarList)
         {
             CTZ.Controler.Estandard.C_Certificate controller = new Controler.Estandard.C_Certificate();
-            string linksCertificates = "";
+            string certificateLinks= "";
             List<string> certificates = new List<string>();
             string link;
-            for (int i=0; i<estandardInformation.Count; i++)
+            foreach(string estandar in estandarList)
             {
-                link = controller.getLinkCertificate(estandardInformation.Keys.ElementAt(i));
+                link = controller.getLinkCertificate(estandar);
                 if(link != "")
                 {
                     certificates.Add(link);
                 }
                 else
                 {
-                    certificates.Add("Estandard "+estandardInformation.Values.ElementAt(i)+" Sin link");
+                    certificates.Add("Estandard "+estandar+" Sin link");
                 }
             }
-            linksCertificates = String.Join(", ", certificates);
-            return linksCertificates;
+            certificateLinks = String.Join(", ", certificates);
+            return certificateLinks;
         }
     }
 }

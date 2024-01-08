@@ -13,5 +13,7 @@ namespace CTZ.View.Estandard
         public string type;
 
         public string linkOfCertificates;
+
+        public string Type;
     }
 }

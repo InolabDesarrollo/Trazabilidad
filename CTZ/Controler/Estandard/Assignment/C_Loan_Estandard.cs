@@ -14,28 +14,29 @@ namespace CTZ.Controler.Estandard
     public class C_Loan_Estandard : C_Estandard_Assignment
     {
 
-        public void registerDeliveryEstandard(Estandard_Assignment assignment,List<string> estEstandards, Dictionary<int, string> informationEstandards)
+        public void registerDeliveryEstandard(Estandard_Assignment assignment,List<string> estEstandards)
         {
             DateForReport dates = new DateForReport();
             assignment.DateDelivery = dates.convertToValidDateDatePicker(assignment.DateDelivery);
             assignment.EstimateDateReturn = dates.convertToValidDateDatePicker(assignment.EstimateDateReturn);
+            assignment.type = "Prestamo";
 
             foreach (string estandar in estEstandards)
             {
                 assignmentRepository.registerDeliveryEstandard(assignment, estandar);
             }
             this.updateEstatusLoanEstandard("PRESTADO", estEstandards);
-            assignment.linkOfCertificates = getLinkOfCertificates(informationEstandards);
+            assignment.linkOfCertificates = getLinkOfCertificates(estEstandards);
 
             string emailBody = bodyEmail(assignment, estEstandards);
             Notification notification = new Notification();
             notification.sendMailNotification(assignment.EngineerEmail, emailBody, "Prestamo de estándar");
         }
 
-        private string getLinkOfCertificates(Dictionary<int, string> informationEstandards)
+        private string getLinkOfCertificates(List<string> standards)
         {
             CertificateEstandard certificate = new CertificateEstandard();
-            string linkCertificate = certificate.getCertificates(informationEstandards);
+            string linkCertificate = certificate.getCertificates(standards);
             return linkCertificate;
         }
 

@@ -35,9 +35,9 @@ namespace CTZ.Model.Trazabilidad.Estandard
                 " where Estandar = '"+Estandard+"' AND Fecha_De_Caducidad < GETDATE();");
         }
 
-        public string getLinkCertificate(int idEstandard)
+        public string getLinkCertificate(string Estandard)
         {
-            return connection.getText("Select Link From Certificados_Estandares WHERE Id_Estandard = "+ idEstandard + " and Estatus ='Vigente';");
+            return connection.getText("Select Link From Certificados_Estandares WHERE Estandar = '"+Estandard+"'  and Estatus = 'Vigente';");
         }
 
 

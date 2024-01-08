@@ -182,7 +182,6 @@ namespace CTZ.Vista.Instruments
 
         private string emailBodyForEngineer()
         {
-            
             string nameEngineer = instrumentAssignments.Engineer;
             string enterprise = instrumentAssignments.NameEnterprise;
             string numberEnterprise = instrumentAssignments.NumberEnterprise;

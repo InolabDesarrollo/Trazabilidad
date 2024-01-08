@@ -41,7 +41,7 @@ namespace CTZ.View.Estandard.Assignment
             if (controllerEstandard.check(TxtBox_Estandards.Text))
             {
                 DataTable estandardInformation = controllerEstandard.selectEstandardByEST(TxtBox_Estandards.Text);
-                if (estandardInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("PRESTADO") )
+                if (estandardInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("PRESTADO") || estandardInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("ASIGNADO"))
                 {
                     controller = new C_Return_Of_Estandard();
                     DataTable informationLoan = controller.selectInformationOfMoreRecentLoan(TxtBox_Estandards.Text);
@@ -158,7 +158,6 @@ namespace CTZ.View.Estandard.Assignment
 
                 controller = new C_Return_Of_Estandard();
                 controller.registerReturnOfEstandard(returnOfEstandard, estEstandards);
-
                 MessageBox.Show("Registro de devolucion de estandard terminado");
                 this.Close();
             }
