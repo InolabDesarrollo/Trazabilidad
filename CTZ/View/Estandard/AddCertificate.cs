@@ -27,27 +27,21 @@ namespace CTZ.View.Estandard
             Lbl_Estandard.Text = estEstandard;
         }
 
-        public AddCertificate(string estEstandard, int idEstandard)
-        {
-            this.idEstandard = idEstandard;
-            Lbl_Estandard.Text = estEstandard;
-        }
 
         private void Btn_AddCertificate_Click(object sender, EventArgs e)
         {
             CertificateEstandard certificate = new CertificateEstandard();
             certificate.ExpirationDate = DatePicker_ExpirationDate.Text;
-            certificate.Lot= TxtBox_Lot.Text;
-            certificate.NumberOfPart= TxtBox_NumberOfPart.Text;
-            certificate.RegisterDate= DateTime.Today.ToString();
-            certificate.Link=TxtBox_Link.Text;
-            certificate.idEstandard= idEstandard;
+            certificate.Lot = TxtBox_Lot.Text;
+            certificate.NumberOfPart = TxtBox_NumberOfPart.Text;
+            certificate.RegisterDate = DateTime.Today.ToString();
+            certificate.Link = TxtBox_Link.Text;
             certificate.Status = "Vigente";
-            
+            certificate.Estandard = estEstandard;
+
 
             C_Certificate controler = new C_Certificate();
-            controler.updateStatusCertificates(idEstandard);
-
+            controler.updateStatusCertificates(estEstandard);
             controler.createCertificate(certificate);
             MessageBox.Show("Se creo Certificado");
             this.Close();

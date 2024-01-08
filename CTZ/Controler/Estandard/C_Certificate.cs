@@ -32,9 +32,9 @@ namespace CTZ.Controler.Estandard
             repository.createCertificate(certificate);
         }
 
-        public void updateStatusCertificates(int idEstandard)
+        public void updateStatusCertificates(string Estandard)
         {
-            repository.updateStatusCertificates(idEstandard);
+            repository.updateStatusCertificates(Estandard);
         }
 
         public string getLinkCertificate(int idEstandard)

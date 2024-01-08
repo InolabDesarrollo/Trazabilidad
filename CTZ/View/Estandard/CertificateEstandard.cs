@@ -23,6 +23,8 @@ namespace CTZ.View.Estandard
 
         public int idEstandard;
 
+        public string Estandard;
+
         public string getCertificates(Dictionary<int, string> estandardInformation)
         {
             CTZ.Controler.Estandard.C_Certificate controller = new Controler.Estandard.C_Certificate();
@@ -40,7 +42,6 @@ namespace CTZ.View.Estandard
                 {
                     certificates.Add("Estandard "+estandardInformation.Values.ElementAt(i)+" Sin link");
                 }
-                
             }
             linksCertificates = String.Join(", ", certificates);
             return linksCertificates;

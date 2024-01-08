@@ -11,5 +11,7 @@ namespace CTZ.View.Estandard
         public int IdEstandard;
 
         public string type;
+
+        public string linkOfCertificates;
     }
 }

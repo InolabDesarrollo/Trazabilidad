@@ -24,14 +24,15 @@ namespace CTZ.Model.Trazabilidad.Estandard
 
         public void createCertificate(CertificateEstandard certificate)
         {
-            connection.executeQuery("Insert into Certificados_Estandares(Fecha_De_Caducidad,Lote,Numero_De_Parte,Fecha_De_Registro,Link,Id_Estandard,Estatus) " +
-                "\r\nVALUES('"+certificate.ExpirationDate+"','"+certificate.Lot+"', '"+certificate.NumberOfPart+"', '"+certificate.RegisterDate+"','"+certificate.Link+"',\r\n"+certificate.idEstandard+",'"+certificate.Status+"')");
+            connection.executeQuery("Insert into Certificados_Estandares(Fecha_De_Caducidad,Lote,Numero_De_Parte,Fecha_De_Registro,Link,Estandar,Estatus) " +
+                "\r\nVALUES('"+certificate.ExpirationDate+"','"+certificate.Lot+"', '"+certificate.NumberOfPart+"', '"+certificate.RegisterDate+"','"+certificate.Link+"'," +
+                " \r\n '"+certificate.Estandard+"','"+certificate.Status+"')");
         }
 
-        public void updateStatusCertificates(int idEstandard)
+        public void updateStatusCertificates(string Estandard)
         {
-            connection.executeQuery("Update Certificados_Estandares set Estatus ='Caduco' " +
-                " where Id_Estandard ="+ idEstandard + " AND Fecha_De_Caducidad < GETDATE();");
+            connection.executeQuery("Update Certificados_Estandares set Estatus = 'Caduco' " +
+                " where Estandar = '"+Estandard+"' AND Fecha_De_Caducidad < GETDATE();");
         }
 
         public string getLinkCertificate(int idEstandard)
