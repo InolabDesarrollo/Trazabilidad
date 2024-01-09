@@ -4,6 +4,7 @@ using CTZ.Modelo.Browser;
 using CTZ.Vista.Instruments;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,10 +39,10 @@ namespace CTZ.View.Estandard.Assignment
         private void Btn_AddEstandard_Click(object sender, EventArgs e)
         {
             controllerEstandard = new C_Estandard();
-            if (controllerEstandard.check(TxtBox_Estandards.Text))
+            if (controllerEstandard.checkIfEstandarExist(TxtBox_Estandards.Text))
             {
-                DataTable estandardInformation = controllerEstandard.selectEstandardByEST(TxtBox_Estandards.Text);
-                if (estandardInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("PRESTADO") || estandardInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("ASIGNADO"))
+                bool standarWasBorrowed = controllerEstandard.checkIfStandarWasBorrowed(TxtBox_Estandards.Text);
+                if (standarWasBorrowed)
                 {
                     controller = new C_Return_Of_Estandard();
                     DataTable informationLoan = controller.selectInformationOfMoreRecentLoan(TxtBox_Estandards.Text);
@@ -62,12 +63,13 @@ namespace CTZ.View.Estandard.Assignment
 
         private void addEstandardToReturnList(DataTable informationLoan, string estEstandard)
         {
-            bool estandarBelongsToEngineer = checkIfEstandardBelongsToEngineer(informationLoan.Rows[0]["Ingeniero"].ToString());
+            string engineerName = informationLoan.Rows[0]["Ingeniero"].ToString();
+            bool estandarBelongsToEngineer = controller.checkIfEstandardBelongsToEngineer(engineerName, engineers);
             if (estandarBelongsToEngineer)
             {
                 try
                 {
-                    engineers.Add(informationLoan.Rows[0]["Ingeniero"].ToString());
+                    engineers.Add(engineerName);
                     returnOfEstandard.EngineerEmail = informationLoan.Rows[0]["Correo_Ingeniero"].ToString();
                     addEstandard(estEstandard);
                 }
@@ -82,35 +84,18 @@ namespace CTZ.View.Estandard.Assignment
             }
         }
 
-        private bool checkIfEstandardBelongsToEngineer(string nameEngineer)
-        {
-            bool belongToEnginner = true;
-            if (engineers.Count >= 1)
-            {
-                if (engineers.Contains(nameEngineer))
-                {
-                    belongToEnginner = true;
-                }
-                else
-                {
-                    belongToEnginner = false;
-                }
-            }
-            return belongToEnginner;
-        }
-
-        private void addEstandard(string estEstandard)
+        private void addEstandard(string Estandard)
         {         
-            if (estEstandards.Contains(estEstandard))
+            if (estEstandards.Contains(Estandard))
             {
-                MessageBox.Show("El estándar " + estEstandard + " ya fue agregado, no puedes repetirlo");
+                MessageBox.Show("El estándar " + Estandard + " ya fue agregado, no puedes repetirlo");
                 TxtBox_Estandards.Clear();
             }
             else
             {
-                ComboBox_Estandards.Items.Add(estEstandard);
-                estEstandards.Add(estEstandard);
-                MessageBox.Show("Se agrego el Estandard " + estEstandard);
+                ComboBox_Estandards.Items.Add(Estandard);
+                estEstandards.Add(Estandard);
+                MessageBox.Show("Se agrego el Estandard " + Estandard);
                 TxtBox_Estandards.Clear();
             }
         }

@@ -57,7 +57,7 @@ namespace CTZ.View.Estandard
 
         private void Btn_SerchEST_Click(object sender, EventArgs e)
         {
-            if (controler.check(TxtBox_EST.Text))
+            if (controler.checkIfEstandarExist(TxtBox_EST.Text))
             {
                 Dgv_Estandards.DataSource = controler.selectEstandardByEST(TxtBox_EST.Text);
             }

@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.Dgv_Assignment = new ADGV.AdvancedDataGridView();
             this.asignacionEstandaresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trazabilidadTestDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trazabilidadTestDataSet4 = new CTZ.TrazabilidadTestDataSet4();
             this.TxtBox_Enginner = new System.Windows.Forms.TextBox();
             this.Lbl_Engineer = new TheArtOfDev.HtmlRenderer.WinForms.HtmlLabel();
             this.Btn_Serch_Enginner = new System.Windows.Forms.Button();
@@ -43,7 +41,6 @@
             this.TxtBox_Brand = new System.Windows.Forms.TextBox();
             this.Btn_Serch_Brand = new System.Windows.Forms.Button();
             this.Btn_Clean = new System.Windows.Forms.Button();
-            this.asignacionEstandaresTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.AsignacionEstandaresTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eSTEstandardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaEntregaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +55,9 @@
             this.correoIngenieroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firmaIngenieroDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trazabilidadTestDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trazabilidadTestDataSet4 = new CTZ.TrazabilidadTestDataSet4();
+            this.asignacionEstandaresTableAdapter = new CTZ.TrazabilidadTestDataSet4TableAdapters.AsignacionEstandaresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Assignment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asignacionEstandaresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet4BindingSource)).BeginInit();
@@ -74,6 +74,7 @@
             this.Dgv_Assignment.AutoGenerateColumns = false;
             this.Dgv_Assignment.AutoGenerateContextFilters = true;
             this.Dgv_Assignment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
+            this.Dgv_Assignment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.Dgv_Assignment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_Assignment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -104,16 +105,6 @@
             // 
             this.asignacionEstandaresBindingSource.DataMember = "AsignacionEstandares";
             this.asignacionEstandaresBindingSource.DataSource = this.trazabilidadTestDataSet4BindingSource;
-            // 
-            // trazabilidadTestDataSet4BindingSource
-            // 
-            this.trazabilidadTestDataSet4BindingSource.DataSource = this.trazabilidadTestDataSet4;
-            this.trazabilidadTestDataSet4BindingSource.Position = 0;
-            // 
-            // trazabilidadTestDataSet4
-            // 
-            this.trazabilidadTestDataSet4.DataSetName = "TrazabilidadTestDataSet4";
-            this.trazabilidadTestDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // TxtBox_Enginner
             // 
@@ -209,10 +200,6 @@
             this.Btn_Clean.Text = "Limpiar Busqueda";
             this.Btn_Clean.UseVisualStyleBackColor = false;
             this.Btn_Clean.Click += new System.EventHandler(this.Btn_Clean_Click);
-            // 
-            // asignacionEstandaresTableAdapter
-            // 
-            this.asignacionEstandaresTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -326,6 +313,20 @@
             this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.Name = "firmaIngenieroDevolucionDataGridViewTextBoxColumn";
             this.firmaIngenieroDevolucionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // trazabilidadTestDataSet4BindingSource
+            // 
+            this.trazabilidadTestDataSet4BindingSource.DataSource = this.trazabilidadTestDataSet4;
+            this.trazabilidadTestDataSet4BindingSource.Position = 0;
+            // 
+            // trazabilidadTestDataSet4
+            // 
+            this.trazabilidadTestDataSet4.DataSetName = "TrazabilidadTestDataSet4";
+            this.trazabilidadTestDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // asignacionEstandaresTableAdapter
+            // 
+            this.asignacionEstandaresTableAdapter.ClearBeforeFill = true;
             // 
             // See_Estandard_Assignment
             // 

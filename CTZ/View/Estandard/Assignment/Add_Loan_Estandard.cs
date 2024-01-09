@@ -51,7 +51,7 @@ namespace CTZ.View.Estandard.Assignment
         private void Btn_AddEstandard_Click(object sender, EventArgs e)
         {
             controler = new C_Estandard();
-            if (controler.check(TxtBox_Estandards.Text))
+            if (controler.checkIfEstandarExist(TxtBox_Estandards.Text))
             {
                 DataTable estandardInformation = controler.selectEstandardByEST(TxtBox_Estandards.Text);
                 if (estandardInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("PRESTADO"))
@@ -62,8 +62,7 @@ namespace CTZ.View.Estandard.Assignment
                 {
                     try
                     {
-                        int idEstandard = Convert.ToInt32(estandardInformation.Rows[0]["Id"].ToString());
-                        addEstandard(idEstandard, TxtBox_Estandards.Text);
+                        addEstandard(TxtBox_Estandards.Text);
                         TxtBox_Estandards.Clear();
                     }
                     catch (Exception ex)
@@ -78,7 +77,7 @@ namespace CTZ.View.Estandard.Assignment
             }
         }
 
-        private void addEstandard(int idEstandard, string estEstandard)
+        private void addEstandard(string estEstandard)
         {
             if (estandardList.Contains(estEstandard))
             {

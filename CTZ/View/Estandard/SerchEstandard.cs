@@ -26,12 +26,12 @@ namespace CTZ.View.Estandard
         private void Btn_Serch_Click(object sender, EventArgs e)
         {
             C_Estandard  controler = new C_Estandard();
-            if(controler.check(TxtBox_EstEstandard.Text) && kindOfSerch.Equals("UpdateEstandard"))
+            if(controler.checkIfEstandarExist(TxtBox_EstEstandard.Text) && kindOfSerch.Equals("UpdateEstandard"))
             {
                 UpdateEstandard update = new UpdateEstandard(TxtBox_EstEstandard.Text);
                 update.Show();
                 this.Close();
-            }else if (controler.check(TxtBox_EstEstandard.Text) && kindOfSerch.Equals("AddCertificate"))
+            }else if (controler.checkIfEstandarExist(TxtBox_EstEstandard.Text) && kindOfSerch.Equals("AddCertificate"))
             {
                 AddCertificate addCertificate = new AddCertificate(TxtBox_EstEstandard.Text);
                 addCertificate.Show();

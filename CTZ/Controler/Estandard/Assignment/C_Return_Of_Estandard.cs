@@ -16,6 +16,24 @@ namespace CTZ.Controler.Estandard
 {
     public class C_Return_Of_Estandard: C_Estandard_Assignment
     {
+
+        public bool checkIfEstandardBelongsToEngineer(string nameEngineer, List<string> engineers)
+        {
+            bool belongToEnginner = true;
+            if (engineers.Count >= 1)
+            {
+                if (engineers.Contains(nameEngineer))
+                {
+                    belongToEnginner = true;
+                }
+                else
+                {
+                    belongToEnginner = false;
+                }
+            }
+            return belongToEnginner;
+        }
+
         public void registerReturnOfEstandard(Estandard_Assignment assignment, List<string> estandards)
         {
             DateForReport date = new DateForReport();

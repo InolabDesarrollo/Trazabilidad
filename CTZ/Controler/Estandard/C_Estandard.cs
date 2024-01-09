@@ -16,7 +16,7 @@ namespace CTZ.Controler.Estandard
             repository = new Estandards_Repository();   
         }
 
-        public bool check(string idEstandartEst)
+        public bool checkIfEstandarExist(string idEstandartEst)
         {
             return repository.checkEstandard(idEstandartEst);
         }
@@ -35,5 +35,19 @@ namespace CTZ.Controler.Estandard
         {
             return repository.selectByBrand(brand);
         }
+
+        public bool checkIfStandarWasBorrowed(string standard)
+        {
+            DataTable standarInformation = repository.selectByEST(standard);
+            if (standarInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("PRESTADO") || standarInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("ASIGNADO"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

@@ -35,7 +35,7 @@ namespace CTZ.View.Estandard
             else
             {
                 C_Estandard controler = new C_Estandard();
-                if (!controler.check(TxtBox_ESTE.Text))
+                if (!controler.checkIfEstandarExist(TxtBox_ESTE.Text))
                 {
                     manageEstandard();
                 }

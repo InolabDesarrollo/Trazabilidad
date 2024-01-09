@@ -22,7 +22,7 @@ namespace CTZ.View.Estandard
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
             C_Estandard controlEstandard = new C_Estandard();
-            if (controlEstandard.check(TxtBox_EST.Text))
+            if (controlEstandard.checkIfEstandarExist(TxtBox_EST.Text))
             {
                 C_DeleteEstandard controler = new C_DeleteEstandard(TxtBox_EST.Text);
                 controler.Delete();
