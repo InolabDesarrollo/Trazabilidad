@@ -11,22 +11,26 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace CTZ.View.Estandard.Assignment
 {
     public partial class Add_Loan_Estandard : MaterialForm
     {
         private C_Estandard controler;
-        public List<string> estandardList;
+        public List<string> standardList;
         private C_User usuarioControler;
         private DataTable engineers;
         public static Estandard_Assignment assignment;
-        public Add_Loan_Estandard()
+        private readonly string typeOfLoad;
+
+        public Add_Loan_Estandard(string typeOfLoad)
         {
             InitializeComponent();
             UserRepository userRepository = new UserRepository();
@@ -34,9 +38,10 @@ namespace CTZ.View.Estandard.Assignment
             assignment = new Estandard_Assignment();
             assignment.EngineerSignature = "";
 
-            estandardList = new List<string>();
+            standardList = new List<string>();
             engineers = usuarioControler.getEngineers();
             fillMaterialComboBoxEngineers();
+            this.typeOfLoad = typeOfLoad;
         }
 
         private void fillMaterialComboBoxEngineers()
@@ -50,26 +55,27 @@ namespace CTZ.View.Estandard.Assignment
 
         private void Btn_AddEstandard_Click(object sender, EventArgs e)
         {
+            string standar = TxtBox_Estandards.Text;
             controler = new C_Estandard();
-            if (controler.checkIfEstandarExist(TxtBox_Estandards.Text))
+            if (controler.checkIfEstandarExist(standar))
             {
-                DataTable estandardInformation = controler.selectEstandardByEST(TxtBox_Estandards.Text);
-                if (estandardInformation.Rows[0]["Estatus_Prestamo"].ToString().Equals("PRESTADO"))
+                switch (typeOfLoad)
                 {
-                    MessageBox.Show("El estandard "+ TxtBox_Estandards.Text + " se encuentra prestado");
+                    case "ByParts":
+                        addEstandardToList(standar); 
+                        break;
+                    case "Unique":
+                        bool standarWasBorrowed = controler.checkIfStandarWasBorrowed(standar);
+                        if (standarWasBorrowed)
+                        {
+                            MessageBox.Show("El estándar " + standar + " se encuentra prestado o asignado");
+                        }
+                        else
+                        {
+                            addEstandardToList(standar);
+                        }
+                    break;
                 }
-                else
-                {
-                    try
-                    {
-                        addEstandard(TxtBox_Estandards.Text);
-                        TxtBox_Estandards.Clear();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error " + ex.Message.ToString());
-                    }
-                }  
             }
             else
             {
@@ -77,19 +83,28 @@ namespace CTZ.View.Estandard.Assignment
             }
         }
 
-        private void addEstandard(string estEstandard)
+        private void addEstandardToList(string standard)
         {
-            if (estandardList.Contains(estEstandard))
+            try
             {
-                MessageBox.Show("El estandard "+estEstandard+" ya fue agregado, no puedes repetirlo");   
+                if (standardList.Contains(standard))
+                {
+                    MessageBox.Show("El estandard " + standard + " ya fue agregado, no puedes repetirlo");
+                }
+                else
+                {
+                    standardList.Add(standard);
+                    ComboBox_Estandards.Items.Add(standard);
+                    MessageBox.Show("Se agrego el Estandard " + standard);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                estandardList.Add(estEstandard);
-                ComboBox_Estandards.Items.Add(estEstandard);
-                MessageBox.Show("Se agrego el Estandard " + estEstandard);
-            }
+                MessageBox.Show("Error " + ex.Message.ToString());
+            }  
+            TxtBox_Estandards.Clear();
         }
+
 
         private void Btn_RegistEnginnerSignature_Click(object sender, EventArgs e)
         {
@@ -118,7 +133,7 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.EngineerEmail = emailEngineer;
 
                 C_Loan_Estandard controler = new C_Loan_Estandard();
-                controler.registerDeliveryEstandard(assignment, estandardList);
+                controler.registerDeliveryEstandard(assignment, standardList);
 
                 MessageBox.Show("Se creo la asignacion para los estandares ");
                 this.Close();
@@ -127,16 +142,11 @@ namespace CTZ.View.Estandard.Assignment
 
         private void Btn_DeleteEstandard_Click(object sender, EventArgs e)
         {
-            deleteEstandardFromComboBox(ComboBox_Estandards);
-        }
-
-        public void deleteEstandardFromComboBox(MaterialComboBox comboBox)
-        {
             try
             {
-                string estandar = comboBox.SelectedItem.ToString();
-                int index = comboBox.FindString(estandar);
-                comboBox.Items.RemoveAt(index);
+                string estandar = ComboBox_Estandards.SelectedItem.ToString();
+                int index = ComboBox_Estandards.FindString(estandar);
+                ComboBox_Estandards.Items.RemoveAt(index);
                 MessageBox.Show("Estándar " + estandar + " Eliminado");
             }
             catch (Exception ex)
@@ -145,5 +155,6 @@ namespace CTZ.View.Estandard.Assignment
                 MessageBox.Show("No seleccionaste un Estándar");
             }
         }
+
     }
 }

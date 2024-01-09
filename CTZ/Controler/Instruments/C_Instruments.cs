@@ -60,5 +60,20 @@ namespace CTZ.Controlador
             return repository.selectAllRegistAndCertificates();
         }
 
+        public bool checkIfInstrumentIsAvailable(string idInstrument)
+        {
+            DataTable instrumentInformation = repository.serchAllFromInstrument(idInstrument);
+            string statusAssignments = instrumentInformation.Rows[0]["ESTATUS_ASIGNACION"].ToString();
+
+            if (statusAssignments.Equals("DISPONIBLE"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

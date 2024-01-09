@@ -59,12 +59,12 @@ namespace CTZ.Vista.Instruments
             if (instrumentsControler.serchInstrumen(TxtBox_Instrumenst.Text))
             {
                 DataTable instrumentInformation = instrumentsControler.selectAllFromInstrument(TxtBox_Instrumenst.Text);
-                string statusAssignments = instrumentInformation.Rows[0]["ESTATUS_ASIGNACION"].ToString();
+                bool instrumentIsAvailable = instrumentsControler.checkIfInstrumentIsAvailable(TxtBox_Instrumenst.Text);
 
                 equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
                 idInstrument = Convert.ToInt32(instrumentInformation.Rows[0]["ID"].ToString());
 
-                if (statusAssignments.Equals("DISPONIBLE"))
+                if (instrumentIsAvailable)
                 {
                     addEquinoToKit();
                 }
@@ -207,7 +207,7 @@ namespace CTZ.Vista.Instruments
 
         private string serchEquinosForEmail()
         {
-            List<string> equinosList= informationId_Equino.Values.ToList();
+            List<string> equinosList = informationId_Equino.Values.ToList();
             string equinos = String.Join(", ", equinosList);
             return equinos;
         }

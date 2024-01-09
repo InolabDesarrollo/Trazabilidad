@@ -93,5 +93,6 @@ namespace CTZ.View.Estandard
         {
             this.estandaresCertificadosBindingSource.Filter =this.Dgv_Estandard_Certificate.FilterString;
         }
+
     }
 }

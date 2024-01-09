@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.parametrosTableAdapter1 = new CTZ.DocumentacionDataSetTableAdapters.ParametrosTableAdapter();
             this.parametrosTableAdapter2 = new CTZ.DocumentacionDataSetTableAdapters.ParametrosTableAdapter();
             this.TabControl_Instruments = new System.Windows.Forms.TabControl();
@@ -386,11 +386,11 @@
             // Lbl_Equino
             // 
             this.Lbl_Equino.AutoSize = true;
-            this.Lbl_Equino.Location = new System.Drawing.Point(20, 19);
+            this.Lbl_Equino.Location = new System.Drawing.Point(62, 18);
             this.Lbl_Equino.Name = "Lbl_Equino";
-            this.Lbl_Equino.Size = new System.Drawing.Size(74, 13);
+            this.Lbl_Equino.Size = new System.Drawing.Size(16, 13);
             this.Lbl_Equino.TabIndex = 1;
-            this.Lbl_Equino.Text = "Id Instrumento";
+            this.Lbl_Equino.Text = "Id";
             // 
             // Page_Instruments_Certificates
             // 
@@ -497,9 +497,9 @@
             this.lbl_EquinoCertificates.AutoSize = true;
             this.lbl_EquinoCertificates.Location = new System.Drawing.Point(78, 22);
             this.lbl_EquinoCertificates.Name = "lbl_EquinoCertificates";
-            this.lbl_EquinoCertificates.Size = new System.Drawing.Size(40, 13);
+            this.lbl_EquinoCertificates.Size = new System.Drawing.Size(16, 13);
             this.lbl_EquinoCertificates.TabIndex = 10;
-            this.lbl_EquinoCertificates.Text = "Equino";
+            this.lbl_EquinoCertificates.Text = "Id";
             // 
             // Dgv_Instruments_Certificates
             // 
@@ -514,14 +514,14 @@
             this.Dgv_Instruments_Certificates.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
             this.Dgv_Instruments_Certificates.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Instruments_Certificates.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Instruments_Certificates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Instruments_Certificates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_Instruments_Certificates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_Instruments_Certificates.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,

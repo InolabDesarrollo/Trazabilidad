@@ -499,7 +499,7 @@
             this.Dgv_Estandard_Certificate.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Dgv_Estandard_Certificate.DataSource = this.estandaresCertificadosBindingSource;
             this.Dgv_Estandard_Certificate.DateWithTime = false;
-            this.Dgv_Estandard_Certificate.Location = new System.Drawing.Point(6, 57);
+            this.Dgv_Estandard_Certificate.Location = new System.Drawing.Point(-4, 49);
             this.Dgv_Estandard_Certificate.Name = "Dgv_Estandard_Certificate";
             this.Dgv_Estandard_Certificate.Size = new System.Drawing.Size(1120, 294);
             this.Dgv_Estandard_Certificate.TabIndex = 0;

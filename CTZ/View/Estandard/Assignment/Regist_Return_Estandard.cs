@@ -24,14 +24,14 @@ namespace CTZ.View.Estandard.Assignment
         private C_Estandard controllerEstandard;
         private C_Return_Of_Estandard controller;
 
-        private List<string> estEstandards;
-        private List<string> engineers;    
+        private List<string> standarList;
+        private List<string> engineersNameList;    
         public static Estandard_Assignment returnOfEstandard;
         public Regist_Return_Estandard()
         {
             InitializeComponent();
-            estEstandards = new List<string>();
-            engineers = new List<string>();
+            standarList = new List<string>();
+            engineersNameList = new List<string>();
             returnOfEstandard = new Estandard_Assignment();
             returnOfEstandard.QualitySignature = "";
             returnOfEstandard.EngineerSignatureReturn = "";
@@ -64,12 +64,12 @@ namespace CTZ.View.Estandard.Assignment
         private void addEstandardToReturnList(DataTable informationLoan, string estEstandard)
         {
             string engineerName = informationLoan.Rows[0]["Ingeniero"].ToString();
-            bool estandarBelongsToEngineer = controller.checkIfEstandardBelongsToEngineer(engineerName, engineers);
+            bool estandarBelongsToEngineer = controller.checkIfEstandardBelongsToEngineer(engineerName, engineersNameList);
             if (estandarBelongsToEngineer)
             {
                 try
                 {
-                    engineers.Add(engineerName);
+                    engineersNameList.Add(engineerName);
                     returnOfEstandard.EngineerEmail = informationLoan.Rows[0]["Correo_Ingeniero"].ToString();
                     addEstandard(estEstandard);
                 }
@@ -86,7 +86,7 @@ namespace CTZ.View.Estandard.Assignment
 
         private void addEstandard(string Estandard)
         {         
-            if (estEstandards.Contains(Estandard))
+            if (standarList.Contains(Estandard))
             {
                 MessageBox.Show("El estándar " + Estandard + " ya fue agregado, no puedes repetirlo");
                 TxtBox_Estandards.Clear();
@@ -94,7 +94,7 @@ namespace CTZ.View.Estandard.Assignment
             else
             {
                 ComboBox_Estandards.Items.Add(Estandard);
-                estEstandards.Add(Estandard);
+                standarList.Add(Estandard);
                 MessageBox.Show("Se agrego el Estandard " + Estandard);
                 TxtBox_Estandards.Clear();
             }
@@ -104,11 +104,11 @@ namespace CTZ.View.Estandard.Assignment
         {
             try
             {
-                string estandar = ComboBox_Estandards.SelectedItem.ToString();
-                int index = ComboBox_Estandards.FindString(estandar);
+                string standar = ComboBox_Estandards.SelectedItem.ToString();
+                int index = ComboBox_Estandards.FindString(standar);
                 ComboBox_Estandards.Items.RemoveAt(index);
-                estEstandards.Remove(estandar);
-                MessageBox.Show("Estándar " + estandar + " Eliminado");
+                standarList.Remove(standar);
+                MessageBox.Show("Estándar " + standar + " Eliminado");
             }
             catch (Exception ex)
             {
@@ -142,7 +142,7 @@ namespace CTZ.View.Estandard.Assignment
                 returnOfEstandard.DateOfReturn = TimePicker_Date_Return.Text;
 
                 controller = new C_Return_Of_Estandard();
-                controller.registerReturnOfEstandard(returnOfEstandard, estEstandards);
+                controller.registerReturnOfEstandard(returnOfEstandard, standarList);
                 MessageBox.Show("Registro de devolucion de estandard terminado");
                 this.Close();
             }

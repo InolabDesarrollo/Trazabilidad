@@ -19,11 +19,7 @@ namespace CTZ.View.Estandard
             InitializeComponent();
         }
 
-        private void Btn_Add_Assignments_Click(object sender, EventArgs e)
-        {
-            Add_Loan_Estandard add_Delivery_Estandard= new Add_Loan_Estandard();
-            add_Delivery_Estandard.Show();
-        }
+
 
         private void Btn_Regist_Return_Instrument_Click(object sender, EventArgs e)
         {
@@ -35,6 +31,20 @@ namespace CTZ.View.Estandard
         {
             See_Estandard_Assignment assignment = new See_Estandard_Assignment();
             assignment.Show();
+        }
+
+        private void Btn_Add_Load_Click(object sender, EventArgs e)
+        {
+            string typeOfLoad = "Unique";
+            Add_Loan_Estandard add_Delivery_Estandard = new Add_Loan_Estandard(typeOfLoad);
+            add_Delivery_Estandard.Show();
+        }
+
+        private void Btn_Load_Estandar_By_Parts_Click(object sender, EventArgs e)
+        {
+            string typeOfLoad = "ByParts";
+            Add_Loan_Estandard add_Delivery_Estandard = new Add_Loan_Estandard(typeOfLoad);
+            add_Delivery_Estandard.Show();
         }
     }
 }
