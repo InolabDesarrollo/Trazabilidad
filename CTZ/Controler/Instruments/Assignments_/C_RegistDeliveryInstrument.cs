@@ -12,7 +12,6 @@ namespace CTZ.Controler.Instruments.Assignments_
 {
     public class C_RegistDeliveryInstrument: C_Instrument_Assignments
     {
-
         public void registerDeliveryInstrument(Instrument_Assignments instrumentAssignments, Dictionary<int, string> informationId_Equino)
         {
             instrumentAssignments.DateDelivery = dateForReport.convertToValidDate(instrumentAssignments.DateDelivery);
@@ -24,6 +23,5 @@ namespace CTZ.Controler.Instruments.Assignments_
             }
         }
 
-        
     }
 }

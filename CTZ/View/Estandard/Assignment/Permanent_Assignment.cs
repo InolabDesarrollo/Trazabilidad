@@ -68,7 +68,7 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.EngineerEmail = getMailEngineer(ComboBox_Engineers.Text);
                 assignment.type = "Asignacion";
 
-                C_Permanent_Assignment controller = new C_Permanent_Assignment();
+                C_Permanent_Assignment_Standar controller = new C_Permanent_Assignment_Standar();
                 controller.registerPermanentlyDeliveryEstandard(assignment, estEstandard);
                 MessageBox.Show("Se asigno correctamente el estándar al ingeniero " + assignment.Engineer);
                 this.Close();

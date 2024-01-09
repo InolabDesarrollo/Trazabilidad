@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controler.Estandard.Assignment
 {
-    public class C_Permanent_Assignment: C_Estandard_Assignment
+    public class C_Permanent_Assignment_Standar: C_Estandard_Assignment
     {
         public void registerPermanentlyDeliveryEstandard(Estandard_Assignment assignment, string estandard)
         {
@@ -35,5 +35,6 @@ namespace CTZ.Controler.Estandard.Assignment
 
             return body;
         }
+
     }
 }

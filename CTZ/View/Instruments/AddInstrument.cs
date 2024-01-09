@@ -1,4 +1,5 @@
 ﻿using CTZ.Controler.Instruments;
+using CTZ.View.Instruments.Assignment;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,12 @@ namespace CTZ.Vista.Responsabilitis
                 TxtBox_Magnitud.Text,TxtBox_Range.Text,TxtBox_Accessories.Text);
             instrument.addNewInstrument();
             clearMenu();
+
+            if (Switch_Assignment.Checked && !TxtBox_Id.Text.Equals(""))
+            {
+                Permanently_Assignment_Instrument assignment = new Permanently_Assignment_Instrument(TxtBox_Id.Text);
+                assignment.Show();
+            }
             MessageBox.Show("Instrumento agregado correctamente");
         }
 

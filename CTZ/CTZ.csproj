@@ -136,7 +136,7 @@
       <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controler\Estandard\Assignment\C_Estandard_Assignment.cs" />
-    <Compile Include="Controler\Estandard\Assignment\C_Permanent_Assignment.cs" />
+    <Compile Include="Controler\Estandard\Assignment\C_Permanent_Assignment_Standar.cs" />
     <Compile Include="Controler\Estandard\Assignment\C_Query_Estandard_Assignment.cs" />
     <Compile Include="Controler\Estandard\C_AddEstandard.cs" />
     <Compile Include="Controler\Estandard\C_Certificate.cs" />
@@ -146,6 +146,7 @@
     <Compile Include="Controler\Estandard\Assignment\C_Return_Of_Estandard.cs" />
     <Compile Include="Controler\Estandard\C_UpdateEstandard.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_ConsultInstrument_Assignment.cs" />
+    <Compile Include="Controler\Instruments\Assignments_\C_Permanent_Assignment_Instrument.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_RegistDeliveryInstrument.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_UpdateInstrument_Assignment.cs" />
     <Compile Include="Controler\Instruments\Certificates_\C_Certificate.cs" />
@@ -337,6 +338,12 @@
     </Compile>
     <Compile Include="View\Instruments\Assignment\Assignment_SubMenu.Designer.cs">
       <DependentUpon>Assignment_SubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Instruments\Assignment\Permanently_Assignment_Instrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Instruments\Assignment\Permanently_Assignment_Instrument.Designer.cs">
+      <DependentUpon>Permanently_Assignment_Instrument.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Calibration\AddCalibration_Request.cs">
       <SubType>Form</SubType>
@@ -566,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Assignment_SubMenu.resx">
       <DependentUpon>Assignment_SubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Instruments\Assignment\Permanently_Assignment_Instrument.resx">
+      <DependentUpon>Permanently_Assignment_Instrument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Calibration\AddCalibration_Request.resx">
       <DependentUpon>AddCalibration_Request.cs</DependentUpon>

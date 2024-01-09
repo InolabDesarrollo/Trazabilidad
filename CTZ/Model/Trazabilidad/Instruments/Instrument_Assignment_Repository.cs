@@ -25,6 +25,12 @@ namespace CTZ.Modelo.Trazabilidad
                 + "','" + instrumentAssignments.DeliveryObservations + "','" + equino + "','" + instrumentAssignments.EngineerEmail + "','"+instrumentAssignments.EngineerSignature+"')");
         }
 
+        public void registerPermantlyAssingmentInstrument(Instrument_Assignments assignments)
+        {
+            conexion.executeQuery("INSERT INTO AsignacionInstrumentos(Fecha_Entrega,Ingeniero,Observaciones_Entrega,\r\n Equino_Instrumento,Correo_Ingeniero,Firma_Ingeniero)" +
+                "\r\n VALUES('"+assignments.DateDelivery+"', '"+assignments.Engineer+"', '"+assignments.DeliveryObservations+"','"+assignments.equinoInstrument+"','"+assignments.EngineerEmail+"','"+assignments.EngineerSignature+"')");
+        }
+
         public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments, string equinoInstrument)
         {
             return conexion.executeQuery("UPDATE AsignacionInstrumentos SET Fecha_Devolucion  = '" + instrumentAssignments.DateOfReturn + "', \r\nObservaciones_Devolucion ='" + instrumentAssignments.ReturnObservations + "',  \r\n" +
@@ -37,6 +43,7 @@ namespace CTZ.Modelo.Trazabilidad
             return conexion.getDataTable("SELECT * FROM AsignacionInstrumentos " +
                 " WHERE Equino_Instrumento = '"+ EquinoInstrument + "';");
         }
+
         public DataTable selectAllByEquinoAndDates(string EquinoInstrument, DateForReport dates)
         {
             return conexion.getDataTable("SELECT * FROM AsignacionInstrumentos  WHERE Fecha_Entrega BETWEEN '"+dates.dateBegan+"' AND '"+dates.dateFinal+"' " +
@@ -97,7 +104,6 @@ namespace CTZ.Modelo.Trazabilidad
                 " WHERE Equino_Instrumento = '"+equinoInstrument+"' AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
                 " FROM AsignacionInstrumentos WHERE Equino_Instrumento = '" +equinoInstrument+"');");
         }
-
 
         public void updateInstrumentAssignment(Instrument_Assignments instrument_Assignments)
         {

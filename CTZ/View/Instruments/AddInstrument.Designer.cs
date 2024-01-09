@@ -41,6 +41,7 @@
             this.TxtBox_Magnitud = new MaterialSkin.Controls.MaterialTextBox();
             this.TxtBox_Accessories = new MaterialSkin.Controls.MaterialTextBox();
             this.TxtBox_Range = new MaterialSkin.Controls.MaterialTextBox();
+            this.Switch_Assignment = new MaterialSkin.Controls.MaterialSwitch();
             this.SuspendLayout();
             // 
             // Btn_Add_Instrument
@@ -50,7 +51,7 @@
             this.Btn_Add_Instrument.Depth = 0;
             this.Btn_Add_Instrument.HighEmphasis = true;
             this.Btn_Add_Instrument.Icon = null;
-            this.Btn_Add_Instrument.Location = new System.Drawing.Point(716, 429);
+            this.Btn_Add_Instrument.Location = new System.Drawing.Point(716, 508);
             this.Btn_Add_Instrument.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Instrument.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Instrument.Name = "Btn_Add_Instrument";
@@ -278,11 +279,27 @@
             this.TxtBox_Range.Text = "";
             this.TxtBox_Range.TrailingIcon = null;
             // 
+            // Switch_Assignment
+            // 
+            this.Switch_Assignment.AutoSize = true;
+            this.Switch_Assignment.Depth = 0;
+            this.Switch_Assignment.Location = new System.Drawing.Point(610, 428);
+            this.Switch_Assignment.Margin = new System.Windows.Forms.Padding(0);
+            this.Switch_Assignment.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.Switch_Assignment.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Switch_Assignment.Name = "Switch_Assignment";
+            this.Switch_Assignment.Ripple = true;
+            this.Switch_Assignment.Size = new System.Drawing.Size(194, 37);
+            this.Switch_Assignment.TabIndex = 54;
+            this.Switch_Assignment.Text = "Asignar a Ingeniero";
+            this.Switch_Assignment.UseVisualStyleBackColor = true;
+            // 
             // AddInstrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 537);
+            this.ClientSize = new System.Drawing.Size(948, 579);
+            this.Controls.Add(this.Switch_Assignment);
             this.Controls.Add(this.TxtBox_Range);
             this.Controls.Add(this.TxtBox_Accessories);
             this.Controls.Add(this.TxtBox_Magnitud);
@@ -317,5 +334,6 @@
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Magnitud;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Accessories;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Range;
+        private MaterialSkin.Controls.MaterialSwitch Switch_Assignment;
     }
 }
