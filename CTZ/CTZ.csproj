@@ -130,11 +130,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsignacionDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Controler\Estandard\Assignment\C_Estandard_Assignment.cs" />
     <Compile Include="Controler\Estandard\Assignment\C_Permanent_Assignment_Standar.cs" />
     <Compile Include="Controler\Estandard\Assignment\C_Query_Estandard_Assignment.cs" />
@@ -446,12 +441,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="View\Instruments\MenuInstrumentos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Instruments\MenuInstrumentos.Designer.cs">
-      <DependentUpon>MenuInstrumentos.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Instruments\Certificates_\AddCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -636,9 +625,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\Instruments\MenuInstrumentos.resx">
-      <DependentUpon>MenuInstrumentos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\AddInstrument.resx">
       <DependentUpon>AddInstrument.cs</DependentUpon>
     </EmbeddedResource>
@@ -669,17 +655,6 @@
     <EmbeddedResource Include="View\Instruments\Traceability_\SerchTraceabilityLetter.resx">
       <DependentUpon>SerchTraceabilityLetter.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="AsignacionDataSet.xsc">
-      <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AsignacionDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AsignacionDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AsignacionDataSet.xss">
-      <DependentUpon>AsignacionDataSet.xsd</DependentUpon>
-    </None>
     <None Include="DatasetHistory.xsc">
       <DependentUpon>DatasetHistory.xsd</DependentUpon>
     </None>
