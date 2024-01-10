@@ -1,4 +1,6 @@
-﻿using CTZ.Modelo;
+﻿using CTZ.Controlador;
+using CTZ.Controler.Instruments.Certificates_;
+using CTZ.Modelo;
 using CTZ.Modelo.Documentacion;
 using MaterialSkin.Controls;
 using System;
@@ -15,18 +17,17 @@ namespace CTZ.Vista.Responsabilitis
 {
     public partial class AddCertificate : MaterialForm
     {
-        private  string idSqlInstrument;
+        private readonly string instrument;
         Certificate certificate;
-        RelationCertificateInstrument relation;
         DateForReport dateForReport;
         public AddCertificate()
         {
             InitializeComponent(); 
         }
-        public AddCertificate(string idSqlInstrument)
+        public AddCertificate(string instrument)
         {
             InitializeComponent();
-            this.idSqlInstrument = idSqlInstrument;
+            this.instrument = instrument;
             dateForReport = new DateForReport();
         }
 
@@ -40,30 +41,30 @@ namespace CTZ.Vista.Responsabilitis
             {
                 string dateCalibration = dateForReport.convertToValidDate(DatePicker_Calibration.Text);
                 string dateNextCalibration = dateForReport.convertToValidDate(DatePicker_NextCalibration.Text);
+                certificate = new Certificate();
 
-                certificate = new Certificate(dateCalibration, dateNextCalibration,
-                    TxtBox_Link.Text, TxtBox_Number.Text, ComboBox_Use.SelectedItem.ToString(), TxtBox_Laboratory.Text,
-                    DateTime.Now.ToString("yyyy-MM-dd HH:mm"));
-                if (certificate.checkIfNumberExist())
+                certificate.instrument = this.instrument;
+                certificate.dateCalibration = dateCalibration;
+                certificate.nextCalibration = dateNextCalibration;
+                certificate.link = TxtBox_Link.Text;
+                certificate.number = TxtBox_Number.Text;
+                certificate.use = ComboBox_Use.SelectedItem.ToString();
+                certificate.laboratory = TxtBox_Laboratory.Text;
+                certificate.status = "Activo";
+                
+                C_Add_Certificate controller = new C_Add_Certificate();
+
+                if (controller.checkIfNumberExist(certificate.number))
                 {
                     MessageBox.Show("El numero de Certificado ya existe");
                 }
                 else
                 {
-                    certificate.add();
-                    createAsosiation();
+                    controller.add(certificate);
                     MessageBox.Show("Nuevo certificado creado y agregado a Instrumento");
                     Close();
                 }
             }        
         }
-
-        private void createAsosiation()
-        {
-            int idSqlCertificate = certificate.getLastCertificateRegistered();
-            relation = new RelationCertificateInstrument(Convert.ToInt32(idSqlInstrument), idSqlCertificate);
-            relation.create();
-        }
-
     }
 }

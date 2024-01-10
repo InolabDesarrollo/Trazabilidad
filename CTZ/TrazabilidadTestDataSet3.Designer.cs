@@ -279,15 +279,11 @@ namespace CTZ {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Instrumentos_CertificadoDataTable : global::System.Data.TypedTableBase<Instrumentos_CertificadoRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn columnID_Instrumentos;
             
             private global::System.Data.DataColumn columnINSTRUMENTO;
             
             private global::System.Data.DataColumn columnMARCA;
-            
-            private global::System.Data.DataColumn columnMODELO;
             
             private global::System.Data.DataColumn _columnN_S_;
             
@@ -297,31 +293,27 @@ namespace CTZ {
             
             private global::System.Data.DataColumn columnESTATUS;
             
-            private global::System.Data.DataColumn columnESTATUS_ASIGNACION;
-            
-            private global::System.Data.DataColumn columnFecha_De_Calibracion;
-            
-            private global::System.Data.DataColumn columnProxima_Calibracion;
-            
-            private global::System.Data.DataColumn columnNumero;
-            
-            private global::System.Data.DataColumn columnLaboratorio;
-            
-            private global::System.Data.DataColumn columnFecha_Registro;
-            
             private global::System.Data.DataColumn columnMAGNITUD;
             
             private global::System.Data.DataColumn columnRANGO;
             
             private global::System.Data.DataColumn columnACCESORIOS;
             
-            private global::System.Data.DataColumn columnTEMPERATURA;
+            private global::System.Data.DataColumn columnFecha_De_Calibracion;
             
-            private global::System.Data.DataColumn columnHUMEDAD;
+            private global::System.Data.DataColumn columnProxima_Calibracion;
             
-            private global::System.Data.DataColumn columnACCESORIOS_TEMPERATURA;
+            private global::System.Data.DataColumn columnLink;
             
-            private global::System.Data.DataColumn columnACCESORIOS_HUMEDAD;
+            private global::System.Data.DataColumn columnNumero;
+            
+            private global::System.Data.DataColumn columnUso;
+            
+            private global::System.Data.DataColumn columnLaboratorio;
+            
+            private global::System.Data.DataColumn columnFecha_De_Registro;
+            
+            private global::System.Data.DataColumn columnEstatus_Certificado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -358,14 +350,6 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn ID_InstrumentosColumn {
                 get {
                     return this.columnID_Instrumentos;
@@ -385,14 +369,6 @@ namespace CTZ {
             public global::System.Data.DataColumn MARCAColumn {
                 get {
                     return this.columnMARCA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MODELOColumn {
-                get {
-                    return this.columnMODELO;
                 }
             }
             
@@ -430,54 +406,6 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ESTATUS_ASIGNACIONColumn {
-                get {
-                    return this.columnESTATUS_ASIGNACION;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Fecha_De_CalibracionColumn {
-                get {
-                    return this.columnFecha_De_Calibracion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Proxima_CalibracionColumn {
-                get {
-                    return this.columnProxima_Calibracion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NumeroColumn {
-                get {
-                    return this.columnNumero;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn LaboratorioColumn {
-                get {
-                    return this.columnLaboratorio;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Fecha_RegistroColumn {
-                get {
-                    return this.columnFecha_Registro;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn MAGNITUDColumn {
                 get {
                     return this.columnMAGNITUD;
@@ -502,33 +430,65 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TEMPERATURAColumn {
+            public global::System.Data.DataColumn Fecha_De_CalibracionColumn {
                 get {
-                    return this.columnTEMPERATURA;
+                    return this.columnFecha_De_Calibracion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn HUMEDADColumn {
+            public global::System.Data.DataColumn Proxima_CalibracionColumn {
                 get {
-                    return this.columnHUMEDAD;
+                    return this.columnProxima_Calibracion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ACCESORIOS_TEMPERATURAColumn {
+            public global::System.Data.DataColumn LinkColumn {
                 get {
-                    return this.columnACCESORIOS_TEMPERATURA;
+                    return this.columnLink;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ACCESORIOS_HUMEDADColumn {
+            public global::System.Data.DataColumn NumeroColumn {
                 get {
-                    return this.columnACCESORIOS_HUMEDAD;
+                    return this.columnNumero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn UsoColumn {
+                get {
+                    return this.columnUso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn LaboratorioColumn {
+                get {
+                    return this.columnLaboratorio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Fecha_De_RegistroColumn {
+                get {
+                    return this.columnFecha_De_Registro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Estatus_CertificadoColumn {
+                get {
+                    return this.columnEstatus_Certificado;
                 }
             }
             
@@ -570,62 +530,47 @@ namespace CTZ {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Instrumentos_CertificadoRow AddInstrumentos_CertificadoRow(
-                        int ID, 
                         string ID_Instrumentos, 
                         string INSTRUMENTO, 
                         string MARCA, 
-                        string MODELO, 
                         string _N_S_, 
                         string UBICACIÓN, 
                         string OBSERVACIÓN, 
                         string ESTATUS, 
-                        string ESTATUS_ASIGNACION, 
-                        System.DateTime Fecha_De_Calibracion, 
-                        System.DateTime Proxima_Calibracion, 
-                        string Numero, 
-                        string Laboratorio, 
-                        System.DateTime Fecha_Registro, 
                         string MAGNITUD, 
                         string RANGO, 
                         string ACCESORIOS, 
-                        string TEMPERATURA, 
-                        string HUMEDAD, 
-                        string ACCESORIOS_TEMPERATURA, 
-                        string ACCESORIOS_HUMEDAD) {
+                        System.DateTime Fecha_De_Calibracion, 
+                        System.DateTime Proxima_Calibracion, 
+                        string Link, 
+                        string Numero, 
+                        string Uso, 
+                        string Laboratorio, 
+                        System.DateTime Fecha_De_Registro, 
+                        string Estatus_Certificado) {
                 Instrumentos_CertificadoRow rowInstrumentos_CertificadoRow = ((Instrumentos_CertificadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
                         ID_Instrumentos,
                         INSTRUMENTO,
                         MARCA,
-                        MODELO,
                         _N_S_,
                         UBICACIÓN,
                         OBSERVACIÓN,
                         ESTATUS,
-                        ESTATUS_ASIGNACION,
-                        Fecha_De_Calibracion,
-                        Proxima_Calibracion,
-                        Numero,
-                        Laboratorio,
-                        Fecha_Registro,
                         MAGNITUD,
                         RANGO,
                         ACCESORIOS,
-                        TEMPERATURA,
-                        HUMEDAD,
-                        ACCESORIOS_TEMPERATURA,
-                        ACCESORIOS_HUMEDAD};
+                        Fecha_De_Calibracion,
+                        Proxima_Calibracion,
+                        Link,
+                        Numero,
+                        Uso,
+                        Laboratorio,
+                        Fecha_De_Registro,
+                        Estatus_Certificado};
                 rowInstrumentos_CertificadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInstrumentos_CertificadoRow);
                 return rowInstrumentos_CertificadoRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Instrumentos_CertificadoRow FindByID(int ID) {
-                return ((Instrumentos_CertificadoRow)(this.Rows.Find(new object[] {
-                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -645,43 +590,35 @@ namespace CTZ {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this.columnID_Instrumentos = base.Columns["ID_Instrumentos"];
                 this.columnINSTRUMENTO = base.Columns["INSTRUMENTO"];
                 this.columnMARCA = base.Columns["MARCA"];
-                this.columnMODELO = base.Columns["MODELO"];
                 this._columnN_S_ = base.Columns["N#S#"];
                 this.columnUBICACIÓN = base.Columns["UBICACIÓN"];
                 this.columnOBSERVACIÓN = base.Columns["OBSERVACIÓN"];
                 this.columnESTATUS = base.Columns["ESTATUS"];
-                this.columnESTATUS_ASIGNACION = base.Columns["ESTATUS_ASIGNACION"];
-                this.columnFecha_De_Calibracion = base.Columns["Fecha_De_Calibracion"];
-                this.columnProxima_Calibracion = base.Columns["Proxima_Calibracion"];
-                this.columnNumero = base.Columns["Numero"];
-                this.columnLaboratorio = base.Columns["Laboratorio"];
-                this.columnFecha_Registro = base.Columns["Fecha_Registro"];
                 this.columnMAGNITUD = base.Columns["MAGNITUD"];
                 this.columnRANGO = base.Columns["RANGO"];
                 this.columnACCESORIOS = base.Columns["ACCESORIOS"];
-                this.columnTEMPERATURA = base.Columns["TEMPERATURA"];
-                this.columnHUMEDAD = base.Columns["HUMEDAD"];
-                this.columnACCESORIOS_TEMPERATURA = base.Columns["ACCESORIOS_TEMPERATURA"];
-                this.columnACCESORIOS_HUMEDAD = base.Columns["ACCESORIOS_HUMEDAD"];
+                this.columnFecha_De_Calibracion = base.Columns["Fecha_De_Calibracion"];
+                this.columnProxima_Calibracion = base.Columns["Proxima_Calibracion"];
+                this.columnLink = base.Columns["Link"];
+                this.columnNumero = base.Columns["Numero"];
+                this.columnUso = base.Columns["Uso"];
+                this.columnLaboratorio = base.Columns["Laboratorio"];
+                this.columnFecha_De_Registro = base.Columns["Fecha_De_Registro"];
+                this.columnEstatus_Certificado = base.Columns["Estatus Certificado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this.columnID_Instrumentos = new global::System.Data.DataColumn("ID_Instrumentos", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Instrumentos);
                 this.columnINSTRUMENTO = new global::System.Data.DataColumn("INSTRUMENTO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINSTRUMENTO);
                 this.columnMARCA = new global::System.Data.DataColumn("MARCA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMARCA);
-                this.columnMODELO = new global::System.Data.DataColumn("MODELO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMODELO);
                 this._columnN_S_ = new global::System.Data.DataColumn("N#S#", typeof(string), null, global::System.Data.MappingType.Element);
                 this._columnN_S_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnN_S_");
                 this._columnN_S_.ExtendedProperties.Add("Generator_UserColumnName", "N#S#");
@@ -692,54 +629,43 @@ namespace CTZ {
                 base.Columns.Add(this.columnOBSERVACIÓN);
                 this.columnESTATUS = new global::System.Data.DataColumn("ESTATUS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnESTATUS);
-                this.columnESTATUS_ASIGNACION = new global::System.Data.DataColumn("ESTATUS_ASIGNACION", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnESTATUS_ASIGNACION);
-                this.columnFecha_De_Calibracion = new global::System.Data.DataColumn("Fecha_De_Calibracion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_De_Calibracion);
-                this.columnProxima_Calibracion = new global::System.Data.DataColumn("Proxima_Calibracion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProxima_Calibracion);
-                this.columnNumero = new global::System.Data.DataColumn("Numero", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumero);
-                this.columnLaboratorio = new global::System.Data.DataColumn("Laboratorio", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLaboratorio);
-                this.columnFecha_Registro = new global::System.Data.DataColumn("Fecha_Registro", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_Registro);
                 this.columnMAGNITUD = new global::System.Data.DataColumn("MAGNITUD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMAGNITUD);
                 this.columnRANGO = new global::System.Data.DataColumn("RANGO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRANGO);
                 this.columnACCESORIOS = new global::System.Data.DataColumn("ACCESORIOS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnACCESORIOS);
-                this.columnTEMPERATURA = new global::System.Data.DataColumn("TEMPERATURA", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTEMPERATURA);
-                this.columnHUMEDAD = new global::System.Data.DataColumn("HUMEDAD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHUMEDAD);
-                this.columnACCESORIOS_TEMPERATURA = new global::System.Data.DataColumn("ACCESORIOS_TEMPERATURA", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnACCESORIOS_TEMPERATURA);
-                this.columnACCESORIOS_HUMEDAD = new global::System.Data.DataColumn("ACCESORIOS_HUMEDAD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnACCESORIOS_HUMEDAD);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
+                this.columnFecha_De_Calibracion = new global::System.Data.DataColumn("Fecha_De_Calibracion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha_De_Calibracion);
+                this.columnProxima_Calibracion = new global::System.Data.DataColumn("Proxima_Calibracion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProxima_Calibracion);
+                this.columnLink = new global::System.Data.DataColumn("Link", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLink);
+                this.columnNumero = new global::System.Data.DataColumn("Numero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumero);
+                this.columnUso = new global::System.Data.DataColumn("Uso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUso);
+                this.columnLaboratorio = new global::System.Data.DataColumn("Laboratorio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLaboratorio);
+                this.columnFecha_De_Registro = new global::System.Data.DataColumn("Fecha_De_Registro", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha_De_Registro);
+                this.columnEstatus_Certificado = new global::System.Data.DataColumn("Estatus Certificado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstatus_Certificado);
                 this.columnID_Instrumentos.MaxLength = 255;
                 this.columnINSTRUMENTO.MaxLength = 255;
                 this.columnMARCA.MaxLength = 255;
-                this.columnMODELO.MaxLength = 255;
                 this._columnN_S_.MaxLength = 255;
                 this.columnUBICACIÓN.MaxLength = 255;
                 this.columnOBSERVACIÓN.MaxLength = 255;
                 this.columnESTATUS.MaxLength = 255;
-                this.columnESTATUS_ASIGNACION.MaxLength = 50;
-                this.columnNumero.MaxLength = 500;
-                this.columnLaboratorio.MaxLength = 500;
                 this.columnMAGNITUD.MaxLength = 1000;
                 this.columnRANGO.MaxLength = 1000;
-                this.columnACCESORIOS.MaxLength = 500;
-                this.columnTEMPERATURA.MaxLength = 1000;
-                this.columnHUMEDAD.MaxLength = 1000;
-                this.columnACCESORIOS_TEMPERATURA.MaxLength = 500;
-                this.columnACCESORIOS_HUMEDAD.MaxLength = 500;
+                this.columnACCESORIOS.MaxLength = 1000;
+                this.columnLink.MaxLength = 3000;
+                this.columnNumero.MaxLength = 500;
+                this.columnUso.MaxLength = 500;
+                this.columnLaboratorio.MaxLength = 500;
+                this.columnEstatus_Certificado.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -882,17 +808,6 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableInstrumentos_Certificado.IDColumn]));
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string ID_Instrumentos {
                 get {
                     try {
@@ -938,23 +853,6 @@ namespace CTZ {
                 }
                 set {
                     this[this.tableInstrumentos_Certificado.MARCAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string MODELO {
-                get {
-                    try {
-                        return ((string)(this[this.tableInstrumentos_Certificado.MODELOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MODELO\' de la tabla \'Instrumentos_Certificado\' es DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.MODELOColumn] = value;
                 }
             }
             
@@ -1027,108 +925,6 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ESTATUS_ASIGNACION {
-                get {
-                    try {
-                        return ((string)(this[this.tableInstrumentos_Certificado.ESTATUS_ASIGNACIONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ESTATUS_ASIGNACION\' de la tabla \'Instrumentos_Certificado" +
-                                "\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.ESTATUS_ASIGNACIONColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Fecha_De_Calibracion {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_De_Calibracion\' de la tabla \'Instrumentos_Certifica" +
-                                "do\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Proxima_Calibracion {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableInstrumentos_Certificado.Proxima_CalibracionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Proxima_Calibracion\' de la tabla \'Instrumentos_Certificad" +
-                                "o\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.Proxima_CalibracionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Numero {
-                get {
-                    try {
-                        return ((string)(this[this.tableInstrumentos_Certificado.NumeroColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Numero\' de la tabla \'Instrumentos_Certificado\' es DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.NumeroColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Laboratorio {
-                get {
-                    try {
-                        return ((string)(this[this.tableInstrumentos_Certificado.LaboratorioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Laboratorio\' de la tabla \'Instrumentos_Certificado\' es DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.LaboratorioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Fecha_Registro {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableInstrumentos_Certificado.Fecha_RegistroColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_Registro\' de la tabla \'Instrumentos_Certificado\' es" +
-                                " DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.Fecha_RegistroColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string MAGNITUD {
                 get {
                     try {
@@ -1179,69 +975,135 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TEMPERATURA {
+            public System.DateTime Fecha_De_Calibracion {
                 get {
                     try {
-                        return ((string)(this[this.tableInstrumentos_Certificado.TEMPERATURAColumn]));
+                        return ((global::System.DateTime)(this[this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TEMPERATURA\' de la tabla \'Instrumentos_Certificado\' es DB" +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_De_Calibracion\' de la tabla \'Instrumentos_Certifica" +
+                                "do\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Proxima_Calibracion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableInstrumentos_Certificado.Proxima_CalibracionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Proxima_Calibracion\' de la tabla \'Instrumentos_Certificad" +
+                                "o\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.Proxima_CalibracionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Link {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.LinkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Link\' de la tabla \'Instrumentos_Certificado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.LinkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Numero {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.NumeroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Numero\' de la tabla \'Instrumentos_Certificado\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.NumeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Uso {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.UsoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Uso\' de la tabla \'Instrumentos_Certificado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.UsoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Laboratorio {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.LaboratorioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Laboratorio\' de la tabla \'Instrumentos_Certificado\' es DB" +
                                 "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableInstrumentos_Certificado.TEMPERATURAColumn] = value;
+                    this[this.tableInstrumentos_Certificado.LaboratorioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string HUMEDAD {
+            public System.DateTime Fecha_De_Registro {
                 get {
                     try {
-                        return ((string)(this[this.tableInstrumentos_Certificado.HUMEDADColumn]));
+                        return ((global::System.DateTime)(this[this.tableInstrumentos_Certificado.Fecha_De_RegistroColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'HUMEDAD\' de la tabla \'Instrumentos_Certificado\' es DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_De_Registro\' de la tabla \'Instrumentos_Certificado\'" +
+                                " es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableInstrumentos_Certificado.HUMEDADColumn] = value;
+                    this[this.tableInstrumentos_Certificado.Fecha_De_RegistroColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ACCESORIOS_TEMPERATURA {
+            public string Estatus_Certificado {
                 get {
                     try {
-                        return ((string)(this[this.tableInstrumentos_Certificado.ACCESORIOS_TEMPERATURAColumn]));
+                        return ((string)(this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ACCESORIOS_TEMPERATURA\' de la tabla \'Instrumentos_Certifi" +
-                                "cado\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estatus Certificado\' de la tabla \'Instrumentos_Certificad" +
+                                "o\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableInstrumentos_Certificado.ACCESORIOS_TEMPERATURAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ACCESORIOS_HUMEDAD {
-                get {
-                    try {
-                        return ((string)(this[this.tableInstrumentos_Certificado.ACCESORIOS_HUMEDADColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ACCESORIOS_HUMEDAD\' de la tabla \'Instrumentos_Certificado" +
-                                "\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.ACCESORIOS_HUMEDADColumn] = value;
+                    this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn] = value;
                 }
             }
             
@@ -1279,18 +1141,6 @@ namespace CTZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetMARCANull() {
                 this[this.tableInstrumentos_Certificado.MARCAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMODELONull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.MODELOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMODELONull() {
-                this[this.tableInstrumentos_Certificado.MODELOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1343,78 +1193,6 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsESTATUS_ASIGNACIONNull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.ESTATUS_ASIGNACIONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetESTATUS_ASIGNACIONNull() {
-                this[this.tableInstrumentos_Certificado.ESTATUS_ASIGNACIONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFecha_De_CalibracionNull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFecha_De_CalibracionNull() {
-                this[this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsProxima_CalibracionNull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.Proxima_CalibracionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetProxima_CalibracionNull() {
-                this[this.tableInstrumentos_Certificado.Proxima_CalibracionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNumeroNull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.NumeroColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNumeroNull() {
-                this[this.tableInstrumentos_Certificado.NumeroColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsLaboratorioNull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.LaboratorioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetLaboratorioNull() {
-                this[this.tableInstrumentos_Certificado.LaboratorioColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFecha_RegistroNull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.Fecha_RegistroColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFecha_RegistroNull() {
-                this[this.tableInstrumentos_Certificado.Fecha_RegistroColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsMAGNITUDNull() {
                 return this.IsNull(this.tableInstrumentos_Certificado.MAGNITUDColumn);
             }
@@ -1451,50 +1229,98 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTEMPERATURANull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.TEMPERATURAColumn);
+            public bool IsFecha_De_CalibracionNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTEMPERATURANull() {
-                this[this.tableInstrumentos_Certificado.TEMPERATURAColumn] = global::System.Convert.DBNull;
+            public void SetFecha_De_CalibracionNull() {
+                this[this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsHUMEDADNull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.HUMEDADColumn);
+            public bool IsProxima_CalibracionNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Proxima_CalibracionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetHUMEDADNull() {
-                this[this.tableInstrumentos_Certificado.HUMEDADColumn] = global::System.Convert.DBNull;
+            public void SetProxima_CalibracionNull() {
+                this[this.tableInstrumentos_Certificado.Proxima_CalibracionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsACCESORIOS_TEMPERATURANull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.ACCESORIOS_TEMPERATURAColumn);
+            public bool IsLinkNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.LinkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetACCESORIOS_TEMPERATURANull() {
-                this[this.tableInstrumentos_Certificado.ACCESORIOS_TEMPERATURAColumn] = global::System.Convert.DBNull;
+            public void SetLinkNull() {
+                this[this.tableInstrumentos_Certificado.LinkColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsACCESORIOS_HUMEDADNull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.ACCESORIOS_HUMEDADColumn);
+            public bool IsNumeroNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.NumeroColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetACCESORIOS_HUMEDADNull() {
-                this[this.tableInstrumentos_Certificado.ACCESORIOS_HUMEDADColumn] = global::System.Convert.DBNull;
+            public void SetNumeroNull() {
+                this[this.tableInstrumentos_Certificado.NumeroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsUsoNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.UsoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetUsoNull() {
+                this[this.tableInstrumentos_Certificado.UsoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsLaboratorioNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.LaboratorioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetLaboratorioNull() {
+                this[this.tableInstrumentos_Certificado.LaboratorioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFecha_De_RegistroNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Fecha_De_RegistroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFecha_De_RegistroNull() {
+                this[this.tableInstrumentos_Certificado.Fecha_De_RegistroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEstatus_CertificadoNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Estatus_CertificadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEstatus_CertificadoNull() {
+                this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1657,28 +1483,24 @@ namespace CTZ.TrazabilidadTestDataSet3TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Instrumentos_Certificado";
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("ID_Instrumentos", "ID_Instrumentos");
             tableMapping.ColumnMappings.Add("INSTRUMENTO", "INSTRUMENTO");
             tableMapping.ColumnMappings.Add("MARCA", "MARCA");
-            tableMapping.ColumnMappings.Add("MODELO", "MODELO");
             tableMapping.ColumnMappings.Add("N#S#", "N#S#");
             tableMapping.ColumnMappings.Add("UBICACIÓN", "UBICACIÓN");
             tableMapping.ColumnMappings.Add("OBSERVACIÓN", "OBSERVACIÓN");
             tableMapping.ColumnMappings.Add("ESTATUS", "ESTATUS");
-            tableMapping.ColumnMappings.Add("ESTATUS_ASIGNACION", "ESTATUS_ASIGNACION");
-            tableMapping.ColumnMappings.Add("Fecha_De_Calibracion", "Fecha_De_Calibracion");
-            tableMapping.ColumnMappings.Add("Proxima_Calibracion", "Proxima_Calibracion");
-            tableMapping.ColumnMappings.Add("Numero", "Numero");
-            tableMapping.ColumnMappings.Add("Laboratorio", "Laboratorio");
-            tableMapping.ColumnMappings.Add("Fecha_Registro", "Fecha_Registro");
             tableMapping.ColumnMappings.Add("MAGNITUD", "MAGNITUD");
             tableMapping.ColumnMappings.Add("RANGO", "RANGO");
             tableMapping.ColumnMappings.Add("ACCESORIOS", "ACCESORIOS");
-            tableMapping.ColumnMappings.Add("TEMPERATURA", "TEMPERATURA");
-            tableMapping.ColumnMappings.Add("HUMEDAD", "HUMEDAD");
-            tableMapping.ColumnMappings.Add("ACCESORIOS_TEMPERATURA", "ACCESORIOS_TEMPERATURA");
-            tableMapping.ColumnMappings.Add("ACCESORIOS_HUMEDAD", "ACCESORIOS_HUMEDAD");
+            tableMapping.ColumnMappings.Add("Fecha_De_Calibracion", "Fecha_De_Calibracion");
+            tableMapping.ColumnMappings.Add("Proxima_Calibracion", "Proxima_Calibracion");
+            tableMapping.ColumnMappings.Add("Link", "Link");
+            tableMapping.ColumnMappings.Add("Numero", "Numero");
+            tableMapping.ColumnMappings.Add("Uso", "Uso");
+            tableMapping.ColumnMappings.Add("Laboratorio", "Laboratorio");
+            tableMapping.ColumnMappings.Add("Fecha_De_Registro", "Fecha_De_Registro");
+            tableMapping.ColumnMappings.Add("Estatus Certificado", "Estatus Certificado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1695,7 +1517,7 @@ namespace CTZ.TrazabilidadTestDataSet3TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "Select * from Instrumentos_Certificado;\r\n\r\n";
+            this._commandCollection[0].CommandText = "Select  *  from Instrumentos_Certificado;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

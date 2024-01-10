@@ -21,9 +21,9 @@ namespace CTZ.View.Instruments
     {
         private C_SerchInstrument controler;
         private static DataTable instrumentTable;
-        private const int columnNextCalibration = 13;
+        private const int columnNextCalibration = 11;
         private const int columnStatusForDvgInstruments= 11; 
-        private const int columnStatusForDgvInstrumentsCertificates= 11;
+        private const int columnStatusForDgvInstrumentsCertificates= 9;
         public Instruments_SubMenu()
         {
             InitializeComponent();
@@ -32,6 +32,8 @@ namespace CTZ.View.Instruments
 
         private void Instruments_SubMenu_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet31.Instrumentos_Certificado' Puede moverla o quitarla según sea necesario.
+            this.instrumentos_CertificadoTableAdapter.Fill(this.trazabilidadTestDataSet31.Instrumentos_Certificado);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTest_Instrumentos.Instrumentos' Puede moverla o quitarla según sea necesario.
             this.instrumentosTableAdapter.Fill(this.trazabilidadTest_Instrumentos.Instrumentos);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet3.Instrumentos_Certificado' Puede moverla o quitarla según sea necesario.

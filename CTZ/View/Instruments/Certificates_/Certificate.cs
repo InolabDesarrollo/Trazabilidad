@@ -20,6 +20,8 @@ namespace CTZ.Vista.Responsabilitis
         public  string use;
         public  string laboratory;
         public  string dateOfRegist;
+        public string instrument;
+        public string status;
         C_Certificate controler = new C_Certificate();
 
         public Certificate(string dateCalibration,string nextCalibration,string link,

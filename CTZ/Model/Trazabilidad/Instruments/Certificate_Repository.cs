@@ -18,9 +18,10 @@ namespace CTZ.Modelo.Trazabilidad
         
         public void add(Certificate certificate)
         {
-            conexion.executeQuery("INSERT INTO Certificados(Fecha_De_Calibracion,Proxima_Calibracion,Link,Numero,Uso,Laboratorio,Fecha_De_Registro)" +
-                "\r\nVALUES('"+certificate.dateCalibration+"','"+certificate.nextCalibration+"', '"+certificate.link+"'," +
-                " '"+certificate.number+"','"+certificate.use+"','"+certificate.laboratory+"', '"+certificate.dateOfRegist+"' )");
+            string query = "INSERT INTO Certificados(Instrumento, Fecha_De_Calibracion,Proxima_Calibracion,Link,Numero,Uso,Laboratorio,Estatus)" +
+                "\r\nVALUES('" + certificate.instrument + "', '" + certificate.dateCalibration + "','" + certificate.nextCalibration + "', '" + certificate.link + "'," +
+                " '" + certificate.number + "','" + certificate.use + "','" + certificate.laboratory + "', '" + certificate.status + "')";
+            conexion.executeQuery(query);
         }
 
         public string getColumn(string column,string number)

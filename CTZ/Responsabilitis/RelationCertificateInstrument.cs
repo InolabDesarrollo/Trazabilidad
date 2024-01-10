@@ -18,7 +18,6 @@ namespace CTZ.Vista.Responsabilitis
         public RelationCertificateInstrument(int idInstrument, int idCertificate) {
 
             controler = new C_RelationCertificateInstrument();
-
             this.idInstrument = idInstrument;
             this.idCertificate = idCertificate;
         }
@@ -64,12 +63,10 @@ namespace CTZ.Vista.Responsabilitis
             int dayDiference = (finalDate-beganDate).Days;
             return dayDiference;
         }
-
         public string getDateForNextCalibration(string equino)
         {
             C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
             return controler.getDateForNextCalibration(equino);
         }
-
     }
 }

@@ -17,12 +17,12 @@ namespace CTZ.Modelo.Trazabilidad
             conexion = new ConexionTrazability();
         }
 
-        public void registerDeliveryInstrument(Instrument_Assignments instrumentAssignments,int idInstrument, string equino )
+        public void registerDeliveryInstrument(Instrument_Assignments instrumentAssignments,string equino )
         {
-            conexion.executeQuery("INSERT INTO AsignacionInstrumentos(ID_Instrumento,Fecha_Entrega,Fecha_Estimada_Devolucion,Ingeniero,Folio_Empresa,Nombre_Empresa,Observaciones_Entrega," +
-                "\r\n Equino_Instrumento,Correo_Ingeniero,Firma_Ingeniero)\r\n" +
-                "VALUES(" + idInstrument + ",'" + instrumentAssignments.DateDelivery + "','" + instrumentAssignments.EstimateDateReturn + "','" + instrumentAssignments.Engineer + "','" + instrumentAssignments.NumberEnterprise + "','" + instrumentAssignments.NameEnterprise
-                + "','" + instrumentAssignments.DeliveryObservations + "','" + equino + "','" + instrumentAssignments.EngineerEmail + "','"+instrumentAssignments.EngineerSignature+"')");
+            conexion.executeQuery("INSERT INTO AsignacionInstrumentos(Fecha_Entrega,Fecha_Estimada_Devolucion,Ingeniero,Folio_Empresa,Nombre_Empresa,Observaciones_Entrega," +
+                "\r\n Equino_Instrumento,Correo_Ingeniero,Firma_Ingeniero, Tipo)\r\n" +
+                "VALUES('"+ instrumentAssignments.DateDelivery + "','" + instrumentAssignments.EstimateDateReturn + "','" + instrumentAssignments.Engineer + "','" + instrumentAssignments.NumberEnterprise + "','" + instrumentAssignments.NameEnterprise
+                + "','" + instrumentAssignments.DeliveryObservations + "','" + equino + "','" + instrumentAssignments.EngineerEmail + "','"+instrumentAssignments.EngineerSignature+"', '"+instrumentAssignments.type+"')");
         }
 
         public void registerPermantlyAssingmentInstrument(Instrument_Assignments assignments)

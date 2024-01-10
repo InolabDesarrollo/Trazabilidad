@@ -115,7 +115,7 @@ namespace CTZ.Vista
 
         private void BtnNew_Certificate_Click(object sender, EventArgs e)
         {
-            AddCertificate certificate = new AddCertificate(idSql);
+            AddCertificate certificate = new AddCertificate(id);
             certificate.Show();
         }
 
@@ -131,7 +131,7 @@ namespace CTZ.Vista
             string numberCerCertificate="";
             for (int i=0; i< certificates.Rows.Count; i++)
             {
-                int idCertificate =Convert.ToInt32(certificates.Rows[i]["Id_Certificado"].ToString());
+                int idCertificate = Convert.ToInt32(certificates.Rows[i]["Id_Certificado"].ToString());
                 numberCerCertificate= certificate.getCelValue(idCertificate, "Numero");
                 if (numberCerCertificate == ComboBox_Certificate.SelectedItem.ToString())
                 {
