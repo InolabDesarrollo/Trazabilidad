@@ -158,42 +158,6 @@
     <Compile Include="Controler\Instruments\Certificates_\C_SerchInstrument_Certificate.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_Return_Of_Instrument.cs" />
     <Compile Include="Controler\Instruments\C_SerchInstrument.cs" />
-    <Compile Include="DatasetHistory.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatasetHistory.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DocumentacionDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DocumentacionDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DocumentacionDataSet1CTZ.cs">
-      <DependentUpon>DocumentacionDataSet1CTZ.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DocumentacionDataSet1CTZ.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DocumentacionDataSet1CTZ.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DocumentacionDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DocumentacionDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DSctz.cs">
-      <DependentUpon>DSctz.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DSctz.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSctz.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="IngesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IngesDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Model\Browser\ConexionBrowser.cs" />
     <Compile Include="Model\Browser\Interfaces\IUserRepository.cs" />
     <Compile Include="Model\Browser\UserRepository.cs" />
@@ -655,72 +619,6 @@
     <EmbeddedResource Include="View\Instruments\Traceability_\SerchTraceabilityLetter.resx">
       <DependentUpon>SerchTraceabilityLetter.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DatasetHistory.xsc">
-      <DependentUpon>DatasetHistory.xsd</DependentUpon>
-    </None>
-    <None Include="DatasetHistory.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatasetHistory.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatasetHistory.xss">
-      <DependentUpon>DatasetHistory.xsd</DependentUpon>
-    </None>
-    <None Include="DocumentacionDataSet1.xsc">
-      <DependentUpon>DocumentacionDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DocumentacionDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DocumentacionDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DocumentacionDataSet1.xss">
-      <DependentUpon>DocumentacionDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DocumentacionDataSet1CTZ.xsc">
-      <DependentUpon>DocumentacionDataSet1CTZ.xsd</DependentUpon>
-    </None>
-    <None Include="DocumentacionDataSet1CTZ.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DocumentacionDataSet1CTZ.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DocumentacionDataSet1CTZ.xss">
-      <DependentUpon>DocumentacionDataSet1CTZ.xsd</DependentUpon>
-    </None>
-    <None Include="DocumentacionDataSet2.xsc">
-      <DependentUpon>DocumentacionDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="DocumentacionDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DocumentacionDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DocumentacionDataSet2.xss">
-      <DependentUpon>DocumentacionDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="DSctz.xsc">
-      <DependentUpon>DSctz.xsd</DependentUpon>
-    </None>
-    <None Include="DSctz.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSctz.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DSctz.xss">
-      <DependentUpon>DSctz.xsd</DependentUpon>
-    </None>
-    <None Include="IngesDataSet.xsc">
-      <DependentUpon>IngesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="IngesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>IngesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="IngesDataSet.xss">
-      <DependentUpon>IngesDataSet.xsd</DependentUpon>
-    </None>
     <None Include="MailConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
