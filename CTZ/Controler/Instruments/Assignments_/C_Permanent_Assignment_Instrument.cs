@@ -24,7 +24,7 @@ namespace CTZ.Controler.Instruments.Assignments_
 
             string body = emailBody(assignments);
             Notification notification = new Notification();
-            notification.sendMailNotification(assignments.Engineer, body, "Asignación permanente de Instrumento ");
+            notification.sendMailNotification(assignments.EngineerEmail, body, "Asignación permanente de Instrumento ");
         }
 
         private string emailBody(Instrument_Assignments assignment)
@@ -35,7 +35,7 @@ namespace CTZ.Controler.Instruments.Assignments_
             body = body.Replace("{instrument}", assignment.equinoInstrument);
             body = body.Replace("{dateOfDelivery}", assignment.DateDelivery);
             body = body.Replace("{deliveryObservation}", assignment.DeliveryObservations);
-
+            
             return body;
         }
 

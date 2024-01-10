@@ -16,5 +16,7 @@ namespace CTZ.Vista.Responsabilitis
 
         public string equinoInstrument;
 
+        public string type;
+
     }
 }

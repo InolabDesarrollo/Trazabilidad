@@ -27,8 +27,8 @@ namespace CTZ.Modelo.Trazabilidad
 
         public void registerPermantlyAssingmentInstrument(Instrument_Assignments assignments)
         {
-            conexion.executeQuery("INSERT INTO AsignacionInstrumentos(Fecha_Entrega,Ingeniero,Observaciones_Entrega,\r\n Equino_Instrumento,Correo_Ingeniero,Firma_Ingeniero)" +
-                "\r\n VALUES('"+assignments.DateDelivery+"', '"+assignments.Engineer+"', '"+assignments.DeliveryObservations+"','"+assignments.equinoInstrument+"','"+assignments.EngineerEmail+"','"+assignments.EngineerSignature+"')");
+            conexion.executeQuery("INSERT INTO AsignacionInstrumentos(Fecha_Entrega,Ingeniero,Observaciones_Entrega,\r\n Equino_Instrumento,Correo_Ingeniero, Firma_Ingeniero, Tipo)" +
+                "\r\n VALUES('"+assignments.DateDelivery+"', '"+assignments.Engineer+"', '"+assignments.DeliveryObservations+"','"+assignments.equinoInstrument+"','"+assignments.EngineerEmail+"','"+assignments.EngineerSignature+"','"+assignments.type+"' )");
         }
 
         public bool registerReturnInstrument(Instrument_Assignments instrumentAssignments, string equinoInstrument)

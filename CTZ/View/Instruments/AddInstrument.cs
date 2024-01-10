@@ -26,27 +26,15 @@ namespace CTZ.Vista.Responsabilitis
                 ,TxtBox_NumSerie.Text,ComboBox_Ubication.SelectedItem.ToString(),TxtBox_Observation.Text, ComboBox_Status.SelectedItem.ToString(),
                 TxtBox_Magnitud.Text,TxtBox_Range.Text,TxtBox_Accessories.Text);
             instrument.addNewInstrument();
-            clearMenu();
-
+            
             if (Switch_Assignment.Checked && !TxtBox_Id.Text.Equals(""))
             {
                 Permanently_Assignment_Instrument assignment = new Permanently_Assignment_Instrument(TxtBox_Id.Text);
                 assignment.Show();
             }
             MessageBox.Show("Instrumento agregado correctamente");
+            this.Close();
         }
 
-        private void clearMenu()
-        {
-            TxtBox_Id.Clear();
-            TxtBox_Instrument.Clear();
-            TxBox_Brand.Clear();
-            TxtBox_Model.Clear();
-            TxtBox_NumSerie.Clear();
-            TxtBox_Observation.Clear();
-            TxtBox_Magnitud.Clear();
-            TxtBox_Range.Clear();
-            TxtBox_Accessories.Clear();
-        }
     }
 }

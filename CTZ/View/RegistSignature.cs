@@ -72,7 +72,7 @@ namespace CTZ.Vista.Instruments
         private void Btn_Save_Signature_Click(object sender, EventArgs e)
         {
             Signature signature = new Signature();
-            string signatureBase64= signature.createStringOfSignature(Pnl_Signature);
+            string signatureBase64 = signature.createStringOfSignature(Pnl_Signature);
             switch (typeOfSignature)
             {
                 case "Engineer":

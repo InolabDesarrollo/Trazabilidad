@@ -23,7 +23,7 @@ namespace CTZ.View.Instruments.Assignment
         private readonly string instrument;
         private C_User userControler;
         private DataTable engineers;
-        public Instrument_Assignments assignment;
+        public static Instrument_Assignments assignment;
         private C_Permanent_Assignment_Instrument controller;
         private UserRepository userRepository;
         public Permanently_Assignment_Instrument(string instrument)
@@ -31,12 +31,13 @@ namespace CTZ.View.Instruments.Assignment
             InitializeComponent();
             this.instrument = instrument;
             Lbl_Instrument.Text = this.instrument;
-            controller = new C_Permanent_Assignment_Instrument();
-
+           
             userRepository = new UserRepository();
             userControler = new C_User(userRepository);
             engineers = userControler.getEngineers();
             assignment = new Instrument_Assignments();
+            assignment.EngineerSignature = "";
+
             fillMaterialComboBoxEngineers();
         }
 
@@ -57,13 +58,24 @@ namespace CTZ.View.Instruments.Assignment
 
         private void Btn_Add_Assignment_Click(object sender, EventArgs e)
         {
-            assignment.DateDelivery = TimePicker_Date_Delivery.Text;
-            assignment.Engineer = MaterialComboBox_Engineers.Text;
-            assignment.DeliveryObservations = TxtBox_ObservationDelivery.Text;
-            assignment.equinoInstrument = instrument;
-            assignment.EngineerEmail = getMailEngineer(MaterialComboBox_Engineers.Text);
+            if (assignment.EngineerSignature.Equals(""))
+            {
+                MessageBox.Show("No puedes asignar el Instrumento sin registrar la firma del Ingeniero");
+            }
+            else
+            {
+                assignment.DateDelivery = TimePicker_Date_Delivery.Text;
+                assignment.Engineer = MaterialComboBox_Engineers.Text;
+                assignment.DeliveryObservations = TxtBox_ObservationDelivery.Text;
+                assignment.equinoInstrument = instrument;
+                assignment.EngineerEmail = getMailEngineer(MaterialComboBox_Engineers.Text);
+                assignment.type = "Asignacion";
 
-            controller.registerPermantlyAssingmentInstrument(assignment);
+                controller = new C_Permanent_Assignment_Instrument();
+                controller.registerPermantlyAssingmentInstrument(assignment);
+                MessageBox.Show("El Instrumento se asigno correctamente");
+                this.Close();
+            }
         }
 
         private string getMailEngineer(string nameEngineer)
