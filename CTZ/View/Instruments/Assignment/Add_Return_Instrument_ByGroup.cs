@@ -39,7 +39,8 @@ namespace CTZ.Vista.Instruments
             instrumentAssignments = new Instrument_Assignments();
             engineers = new List<string>();
 
-            instrumentAssignments.QualitySignature = "";    
+            instrumentAssignments.QualitySignature = "";
+            instrumentAssignments.EngineerSignatureReturn = "";
             instrumenAssignmentInformation = new DataTable();          
         }
 
@@ -129,12 +130,13 @@ namespace CTZ.Vista.Instruments
         private void Btn_Regist_ReturnOfInstruments_Click(object sender, EventArgs e)
         {
             controllerReturnOfInstrument = new C_Return_Of_Instrument();
-            instrumenAssignmentInformation = controllerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(idInstruments[0]);
+            instrumenAssignmentInformation = controllerReturnOfInstrument.selectMoreRecentInformationInstrumenAssignment(equinosInstruments.First());
 
             string engineerMail = instrumenAssignmentInformation.Rows[0]["Correo_Ingeniero"].ToString();
             instrumentAssignments.DateOfReturn = DatePicker_DateOfReturn.Text;
             instrumentAssignments.ReturnObservations = TxtBox_ObservationReturn.Text;
-            
+            instrumentAssignments.EngineerEmail = engineerMail;
+
             if (instrumentAssignments.QualitySignature.Equals("") || 
                 instrumentAssignments.EngineerSignatureReturn.Equals("") )
             {

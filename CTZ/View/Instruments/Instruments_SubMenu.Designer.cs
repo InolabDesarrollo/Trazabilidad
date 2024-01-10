@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.parametrosTableAdapter1 = new CTZ.DocumentacionDataSetTableAdapters.ParametrosTableAdapter();
-            this.parametrosTableAdapter2 = new CTZ.DocumentacionDataSetTableAdapters.ParametrosTableAdapter();
             this.TabControl_Instruments = new System.Windows.Forms.TabControl();
             this.Page_Instruments = new System.Windows.Forms.TabPage();
             this.Btn_SerchByBrand = new System.Windows.Forms.Button();
@@ -118,11 +116,11 @@
             // 
             // parametrosTableAdapter1
             // 
-            this.parametrosTableAdapter1.ClearBeforeFill = true;
+
             // 
             // parametrosTableAdapter2
             // 
-            this.parametrosTableAdapter2.ClearBeforeFill = true;
+
             // 
             // TabControl_Instruments
             // 
@@ -849,8 +847,7 @@
 
         #endregion
 
-        private DocumentacionDataSetTableAdapters.ParametrosTableAdapter parametrosTableAdapter1;
-        private DocumentacionDataSetTableAdapters.ParametrosTableAdapter parametrosTableAdapter2;
+
         private System.Windows.Forms.TabControl TabControl_Instruments;
         private System.Windows.Forms.TabPage Page_Instruments;
         private System.Windows.Forms.TabPage Page_Instruments_Certificates;

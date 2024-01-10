@@ -168,11 +168,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatasetHistory.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DocumentacionDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DocumentacionDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DocumentacionDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -695,17 +690,6 @@
     </None>
     <None Include="DatasetHistory.xss">
       <DependentUpon>DatasetHistory.xsd</DependentUpon>
-    </None>
-    <None Include="DocumentacionDataSet.xsc">
-      <DependentUpon>DocumentacionDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DocumentacionDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DocumentacionDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DocumentacionDataSet.xss">
-      <DependentUpon>DocumentacionDataSet.xsd</DependentUpon>
     </None>
     <None Include="DocumentacionDataSet1.xsc">
       <DependentUpon>DocumentacionDataSet1.xsd</DependentUpon>
