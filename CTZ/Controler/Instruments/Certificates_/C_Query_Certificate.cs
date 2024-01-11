@@ -14,5 +14,10 @@ namespace CTZ.Controler.Instruments.Certificates_
         {
             return this.repository.getAllActivesCertificate(instrument);
         }
+
+        public void updateStatusCertificate(string numberCertificate, string instrument)
+        {
+            this.repository.updateStatusCertificate(numberCertificate, instrument);
+        }
     }
 }

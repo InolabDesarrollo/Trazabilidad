@@ -84,7 +84,7 @@
             // 
             this.TxtBox_NameEnterprise.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_NameEnterprise.Depth = 0;
-            this.TxtBox_NameEnterprise.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_NameEnterprise.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_NameEnterprise.LeadingIcon = null;
             this.TxtBox_NameEnterprise.Location = new System.Drawing.Point(41, 288);
             this.TxtBox_NameEnterprise.MaxLength = 50;
@@ -112,7 +112,7 @@
             // 
             this.TxtBox_Observation_Delivery.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Observation_Delivery.Depth = 0;
-            this.TxtBox_Observation_Delivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Observation_Delivery.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Observation_Delivery.LeadingIcon = null;
             this.TxtBox_Observation_Delivery.Location = new System.Drawing.Point(41, 396);
             this.TxtBox_Observation_Delivery.MaxLength = 50;
@@ -152,7 +152,7 @@
             // 
             this.TxtBox_ObservationReturn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_ObservationReturn.Depth = 0;
-            this.TxtBox_ObservationReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_ObservationReturn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_ObservationReturn.LeadingIcon = null;
             this.TxtBox_ObservationReturn.Location = new System.Drawing.Point(402, 177);
             this.TxtBox_ObservationReturn.MaxLength = 50;
@@ -175,7 +175,7 @@
             this.Btn_Update.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Update.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Update.Name = "Btn_Update";
-            this.Btn_Update.Size = new System.Drawing.Size(88, 36);
+            this.Btn_Update.Size = new System.Drawing.Size(109, 36);
             this.Btn_Update.TabIndex = 18;
             this.Btn_Update.Text = "Actualizar";
             this.Btn_Update.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 521);
+            this.ClientSize = new System.Drawing.Size(800, 538);
             this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.TxtBox_ObservationReturn);
             this.Controls.Add(this.Lbl_Observations);
