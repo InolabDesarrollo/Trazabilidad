@@ -1,4 +1,5 @@
-﻿using CTZ.Vista.Responsabilitis;
+﻿using CTZ.Controler.Instruments.Certificates_;
+using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,6 @@ namespace CTZ.Vista
     public partial class UpdateInstrument : MaterialForm
     {
         private  string id;
-        private  string idSql;
         Responsabilitis.Instruments instrument;
         DataTable certificates;
         public UpdateInstrument(string id)
@@ -25,15 +25,6 @@ namespace CTZ.Vista
             this.id = id;
             instrument = new Responsabilitis.Instruments();
             getInformationFromInstrument(id);
-        }
-
-        public UpdateInstrument(string idInstrument, string idSql)
-        {
-            InitializeComponent();
-            this.id = idInstrument;
-            this.idSql = idSql;
-            instrument = new Responsabilitis.Instruments();
-            getInformationFromInstrument(idInstrument);
         }
 
         private void getInformationFromInstrument(string id)
@@ -47,7 +38,7 @@ namespace CTZ.Vista
             TxtBox_Observation.Text = informationIntrument.Rows[0]["OBSERVACIÓN"].ToString() ;
 
             checkStatus(informationIntrument.Rows[0]["ESTATUS"].ToString());
-            getCertificatesFromInstrument(Convert.ToInt32(idSql));
+            getCertificatesFromInstrument(id);
             Lbl_Id_Instrument.Text = informationIntrument.Rows[0]["ID_Instrumentos"].ToString();
         }
 
@@ -71,16 +62,14 @@ namespace CTZ.Vista
             }
         }
 
-        private void getCertificatesFromInstrument(int idSqlInstrument)
+        private void getCertificatesFromInstrument(string instrument)
         {
-            RelationCertificateInstrument relation = new RelationCertificateInstrument(idSqlInstrument);
-            certificates =  relation.getAllCertificatesForInstrument();
-            Certificate certificate = new Certificate();
-
-            for (int i =0; i< certificates.Rows.Count; i++)
+            C_Query_Certificate controller = new C_Query_Certificate();
+            DataTable numberOfCertificates = controller.getAllActivesCertificate(instrument);
+            for (int i=0; i< numberOfCertificates.Rows.Count; i++)
             {
-                int idCertificate = Convert.ToInt32(certificates.Rows[i]["Id_Certificado"].ToString());
-                ComboBox_Certificate.Items.Add(certificate.getCelValue(idCertificate, "Numero"));
+                ComboBox_Certificate.Items.
+                    Add(numberOfCertificates.Rows[i]["Numero"].ToString());
             }
         }
 
@@ -126,20 +115,8 @@ namespace CTZ.Vista
         }
 
         private void BtnUnassign_Certificate_Click(object sender, EventArgs e)
-        {          
-            Certificate certificate = new Certificate();
-            string numberCerCertificate="";
-            for (int i=0; i< certificates.Rows.Count; i++)
-            {
-                int idCertificate = Convert.ToInt32(certificates.Rows[i]["Id_Certificado"].ToString());
-                numberCerCertificate= certificate.getCelValue(idCertificate, "Numero");
-                if (numberCerCertificate == ComboBox_Certificate.SelectedItem.ToString())
-                {
-                    RelationCertificateInstrument relation = new RelationCertificateInstrument(Convert.ToInt32(idSql), idCertificate);
-                    relation.deleteRelation();
-                }
-            }
-            MessageBox.Show("Certificado con Numero " + numberCerCertificate);
+        {
+            
         }
     }
 }

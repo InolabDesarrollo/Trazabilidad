@@ -24,6 +24,11 @@ namespace CTZ.Modelo.Trazabilidad
             conexion.executeQuery(query);
         }
 
+        public DataTable getAllActivesCertificate(string instrument)
+        {
+            return conexion.getDataTable("Select Numero from Certificados WHERE Instrumento = '"+ instrument + "' and Estatus = 'Activo';");
+        }
+
         public string getColumn(string column,string number)
         {
             return conexion.getText("Select "+column+ " FROM Certificados WHERE Numero ='" + number + "' )");
