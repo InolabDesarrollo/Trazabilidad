@@ -1,4 +1,5 @@
-﻿using CTZ.Controler.Estandard.Assignment;
+﻿using CTZ.Controler.Estandard;
+using CTZ.Controler.Estandard.Assignment;
 using CTZ.Vista.Instruments;
 using MaterialSkin.Controls;
 using System;
@@ -15,6 +16,11 @@ namespace CTZ.View.Estandard.Assignment
 {
     public partial class See_Estandard_Assignment : MaterialForm
     {
+        private const int EnginnerSignatureDelivey = 7;
+        private const int QualitySignature = 10;
+        private const int EnginnerSignatureReturn = 13;
+        private const int standarColumn = 1;
+
         private C_Query_Estandard_Assignment controller;
         public See_Estandard_Assignment()
         {
@@ -56,17 +62,30 @@ namespace CTZ.View.Estandard.Assignment
 
         private void Dgv_Assignment_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7 || e.ColumnIndex == 10 || e.ColumnIndex == 13)
+            if (e.ColumnIndex == EnginnerSignatureDelivey || e.ColumnIndex == QualitySignature || e.ColumnIndex == EnginnerSignatureReturn)
             {
                 showSignature(e);
+            }
+            if (e.ColumnIndex == standarColumn)
+            {
+                string standar = Dgv_Assignment[e.ColumnIndex, e.RowIndex].Value.ToString();
+                fillDgvStandarInformation(standar);
             }
         }
 
         private void showSignature(DataGridViewCellEventArgs e)
         {
-            string signature  = Dgv_Assignment[e.ColumnIndex, e.RowIndex].Value.ToString();
+            string signature = Dgv_Assignment[e.ColumnIndex, e.RowIndex].Value.ToString();
             Show_Signature showSignature = new Show_Signature(signature);
             showSignature.Show();
         }
+
+        public void fillDgvStandarInformation(string standar)
+        {
+            C_Estandard controller = new C_Estandard();
+            DataTable information = controller.selectLotsAndParts(standar);
+            Dgv_Standar_Information.DataSource = information;
+        }
+
     }
 }

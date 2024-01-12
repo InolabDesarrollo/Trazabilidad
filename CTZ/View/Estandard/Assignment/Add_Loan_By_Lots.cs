@@ -1,9 +1,7 @@
 ﻿using CTZ.Controlador;
 using CTZ.Controler.Estandard;
 using CTZ.Modelo.Browser;
-using CTZ.View.Responsabilitis;
 using CTZ.Vista.Instruments;
-using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -11,17 +9,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace CTZ.View.Estandard.Assignment
 {
-    public partial class Add_Loan_Estandard : MaterialForm
+    public partial class Add_Loan_By_Lots : MaterialForm
     {
         private C_Estandard controler;
         public List<string> standardList;
@@ -30,9 +24,10 @@ namespace CTZ.View.Estandard.Assignment
         public static Estandard_Assignment assignment;
         private readonly string typeOfLoad;
 
-        public Add_Loan_Estandard()
+        public Add_Loan_By_Lots()
         {
             InitializeComponent();
+
             UserRepository userRepository = new UserRepository();
             usuarioControler = new C_User(userRepository);
             assignment = new Estandard_Assignment();
@@ -42,7 +37,6 @@ namespace CTZ.View.Estandard.Assignment
             engineers = usuarioControler.getEngineers();
             fillMaterialComboBoxEngineers();
         }
-
         private void fillMaterialComboBoxEngineers()
         {
             for (int i = 0; i < engineers.Rows.Count; i++)
@@ -58,15 +52,7 @@ namespace CTZ.View.Estandard.Assignment
             controler = new C_Estandard();
             if (controler.checkIfEstandarExist(standar))
             {
-                bool standarWasBorrowed = controler.checkIfStandarWasBorrowed(standar);
-                if (standarWasBorrowed)
-                {
-                    MessageBox.Show("El estándar " + standar + " se encuentra prestado o asignado");
-                }
-                else
-                {
-                    addEstandardToList(standar);
-                }
+                addEstandardToList(standar);
             }
             else
             {
@@ -78,24 +64,27 @@ namespace CTZ.View.Estandard.Assignment
         {
             try
             {
-                if (standardList.Contains(standar))
-                {
-                    MessageBox.Show("El estandard " + standar + " ya fue agregado, no puedes repetirlo");
-                }
-                else
-                {
-                    standardList.Add(standar);
-                    ComboBox_Estandards.Items.Add(standar);
-                    MessageBox.Show("Se agrego el Estandard " + standar);
-                }
+                standardList.Add(standar);
+                ComboBox_Estandards.Items.Add(standar);
+                MessageBox.Show("Se agrego el Estandard " + standar);
+                fillNumberOfLotsAvailable(standar);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message.ToString());
-            }  
+            }
             TxtBox_Estandards.Clear();
         }
 
+        private void fillNumberOfLotsAvailable(string standar)
+        {
+            controler = new C_Estandard();
+            int numberOfLotsAvailable = controler.getNumberOfLotsAvailable(standar);
+            for (int i = 0; i < numberOfLotsAvailable; i++)
+            {
+                ComBox_Number_Lots.Items.Add(i);
+            }
+        }
 
         private void Btn_RegistEnginnerSignature_Click(object sender, EventArgs e)
         {
@@ -117,6 +106,7 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.NameEnterprise = TxtBox_NameEnterprise.Text;
                 assignment.DeliveryObservations = TxtBox_ObservationDelivery.Text;
                 assignment.EstimateDateReturn = TimePicker_Date_Estimate_Return.Text;
+                assignment.NumberOfLots = Convert.ToInt32(ComBox_Number_Lots.SelectedItem.ToString());
 
                 UserRepository userRepository = new UserRepository();
                 usuarioControler = new C_User(userRepository);
@@ -128,24 +118,7 @@ namespace CTZ.View.Estandard.Assignment
 
                 MessageBox.Show("Se creo la asignacion para los estandares ");
                 this.Close();
-            }  
-        }
-
-        private void Btn_DeleteEstandard_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string estandar = ComboBox_Estandards.SelectedItem.ToString();
-                int index = ComboBox_Estandards.FindString(estandar);
-                ComboBox_Estandards.Items.RemoveAt(index);
-                MessageBox.Show("Estándar " + estandar + " Eliminado");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message.ToString());
-                MessageBox.Show("No seleccionaste un Estándar");
             }
         }
-
     }
 }

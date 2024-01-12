@@ -15,5 +15,7 @@ namespace CTZ.View.Estandard
         public string linkOfCertificates;
 
         public string Type;
+
+        public int NumberOfLots;
     }
 }

@@ -24,9 +24,9 @@ namespace CTZ.Model.Trazabilidad.Estandard
         public void add(CTZ.View.Responsabilitis.Estandard estandard)
         {
             conexion.executeQuery("Insert Estandares(Id_Estandares,Estandar,Uso,Marca,Presentacion,NoLote,FechaDeFabricacion," +
-                "\r\n FechaDeCaducidad,Cantidad,Ubicacion,Estatus, Inventario)" +
+                "\r\n FechaDeCaducidad,Cantidad,Ubicacion,Estatus, Inventario, NoLotes_Disponibles)" +
                 "\r\n Values('"+estandard.EstEstandard+"','"+estandard.EstandardDescription+"','"+estandard.Use+"','"+estandard.Brand+"','"+estandard.Presentation+"', " +
-                "\r\n '"+estandard.Number+"','"+estandard.FabricationDate+"','"+estandard.ExpirationDate+"','"+estandard.Quantity+"','"+estandard.Ubication+"','"+estandard.Estatus+"','"+estandard.Inventory+"'); ");
+                "\r\n '"+estandard.Number+"','"+estandard.FabricationDate+"','"+estandard.ExpirationDate+"','"+estandard.Quantity+"','"+estandard.Ubication+"','"+estandard.Estatus+"','"+estandard.Inventory+"', "+estandard.NumberOfAvailableLots+");");
         }
 
         public bool checkEstandard(string idEstandardEst)
@@ -66,6 +66,11 @@ namespace CTZ.Model.Trazabilidad.Estandard
         public void updateEstatusLoanEstandard(string estatus, string Id_Estandares)
         {
             conexion.executeQuery("UPDATE Estandares SET Estatus_Prestamo = '"+estatus+ "' WHERE Id_Estandares = '" +Id_Estandares +"';");
+        }
+
+        public DataTable selectLotsAndParts(string idEstandard)
+        {
+            return conexion.getDataTable("Select NoLote, Cantidad from Estandares WHERE Id_Estandares = '"+ idEstandard + "' ;");
         }
     }
 }

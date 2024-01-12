@@ -36,14 +36,10 @@
             this.TxtBox_Brand = new MaterialSkin.Controls.MaterialTextBox();
             this.Lbl_Presentation = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_Presentation = new MaterialSkin.Controls.MaterialTextBox();
-            this.Lbl_Number = new MaterialSkin.Controls.MaterialLabel();
-            this.TxtBox_Number = new MaterialSkin.Controls.MaterialTextBox();
             this.TimePicker_FabricationDate = new System.Windows.Forms.DateTimePicker();
             this.Lbl_FabricationDate = new MaterialSkin.Controls.MaterialLabel();
             this.Lbl_ExpirationDate = new MaterialSkin.Controls.MaterialLabel();
             this.TimePicker_ExpirationDate = new System.Windows.Forms.DateTimePicker();
-            this.Lbl_Quantity = new MaterialSkin.Controls.MaterialLabel();
-            this.TxtBox_Quantity = new MaterialSkin.Controls.MaterialTextBox();
             this.Lbl_Ubication = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_Ubication = new MaterialSkin.Controls.MaterialTextBox();
             this.Lbl_Estatus = new MaterialSkin.Controls.MaterialLabel();
@@ -166,34 +162,6 @@
             this.TxtBox_Presentation.Text = "";
             this.TxtBox_Presentation.TrailingIcon = null;
             // 
-            // Lbl_Number
-            // 
-            this.Lbl_Number.AutoSize = true;
-            this.Lbl_Number.Depth = 0;
-            this.Lbl_Number.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Number.Location = new System.Drawing.Point(345, 105);
-            this.Lbl_Number.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Lbl_Number.Name = "Lbl_Number";
-            this.Lbl_Number.Size = new System.Drawing.Size(113, 19);
-            this.Lbl_Number.TabIndex = 12;
-            this.Lbl_Number.Text = "Numero de Lote";
-            // 
-            // TxtBox_Number
-            // 
-            this.TxtBox_Number.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtBox_Number.Depth = 0;
-            this.TxtBox_Number.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_Number.LeadingIcon = null;
-            this.TxtBox_Number.Location = new System.Drawing.Point(348, 140);
-            this.TxtBox_Number.MaxLength = 50;
-            this.TxtBox_Number.MouseState = MaterialSkin.MouseState.OUT;
-            this.TxtBox_Number.Multiline = false;
-            this.TxtBox_Number.Name = "TxtBox_Number";
-            this.TxtBox_Number.Size = new System.Drawing.Size(298, 50);
-            this.TxtBox_Number.TabIndex = 13;
-            this.TxtBox_Number.Text = "";
-            this.TxtBox_Number.TrailingIcon = null;
-            // 
             // TimePicker_FabricationDate
             // 
             this.TimePicker_FabricationDate.Location = new System.Drawing.Point(348, 245);
@@ -231,34 +199,6 @@
             this.TimePicker_ExpirationDate.Name = "TimePicker_ExpirationDate";
             this.TimePicker_ExpirationDate.Size = new System.Drawing.Size(285, 20);
             this.TimePicker_ExpirationDate.TabIndex = 17;
-            // 
-            // Lbl_Quantity
-            // 
-            this.Lbl_Quantity.AutoSize = true;
-            this.Lbl_Quantity.Depth = 0;
-            this.Lbl_Quantity.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Quantity.Location = new System.Drawing.Point(340, 394);
-            this.Lbl_Quantity.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Lbl_Quantity.Name = "Lbl_Quantity";
-            this.Lbl_Quantity.Size = new System.Drawing.Size(65, 19);
-            this.Lbl_Quantity.TabIndex = 18;
-            this.Lbl_Quantity.Text = "Cantidad";
-            // 
-            // TxtBox_Quantity
-            // 
-            this.TxtBox_Quantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtBox_Quantity.Depth = 0;
-            this.TxtBox_Quantity.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_Quantity.LeadingIcon = null;
-            this.TxtBox_Quantity.Location = new System.Drawing.Point(343, 427);
-            this.TxtBox_Quantity.MaxLength = 50;
-            this.TxtBox_Quantity.MouseState = MaterialSkin.MouseState.OUT;
-            this.TxtBox_Quantity.Multiline = false;
-            this.TxtBox_Quantity.Name = "TxtBox_Quantity";
-            this.TxtBox_Quantity.Size = new System.Drawing.Size(285, 50);
-            this.TxtBox_Quantity.TabIndex = 19;
-            this.TxtBox_Quantity.Text = "";
-            this.TxtBox_Quantity.TrailingIcon = null;
             // 
             // Lbl_Ubication
             // 
@@ -388,14 +328,10 @@
             this.Controls.Add(this.Lbl_Estatus);
             this.Controls.Add(this.TxtBox_Ubication);
             this.Controls.Add(this.Lbl_Ubication);
-            this.Controls.Add(this.TxtBox_Quantity);
-            this.Controls.Add(this.Lbl_Quantity);
             this.Controls.Add(this.TimePicker_ExpirationDate);
             this.Controls.Add(this.Lbl_ExpirationDate);
             this.Controls.Add(this.Lbl_FabricationDate);
             this.Controls.Add(this.TimePicker_FabricationDate);
-            this.Controls.Add(this.TxtBox_Number);
-            this.Controls.Add(this.Lbl_Number);
             this.Controls.Add(this.TxtBox_Presentation);
             this.Controls.Add(this.Lbl_Presentation);
             this.Controls.Add(this.TxtBox_Brand);
@@ -421,14 +357,10 @@
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Brand;
         private MaterialSkin.Controls.MaterialLabel Lbl_Presentation;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Presentation;
-        private MaterialSkin.Controls.MaterialLabel Lbl_Number;
-        private MaterialSkin.Controls.MaterialTextBox TxtBox_Number;
         private System.Windows.Forms.DateTimePicker TimePicker_FabricationDate;
         private MaterialSkin.Controls.MaterialLabel Lbl_FabricationDate;
         private MaterialSkin.Controls.MaterialLabel Lbl_ExpirationDate;
         private System.Windows.Forms.DateTimePicker TimePicker_ExpirationDate;
-        private MaterialSkin.Controls.MaterialLabel Lbl_Quantity;
-        private MaterialSkin.Controls.MaterialTextBox TxtBox_Quantity;
         private MaterialSkin.Controls.MaterialLabel Lbl_Ubication;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Ubication;
         private MaterialSkin.Controls.MaterialLabel Lbl_Estatus;

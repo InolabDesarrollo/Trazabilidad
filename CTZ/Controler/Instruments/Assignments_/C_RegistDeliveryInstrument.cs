@@ -26,7 +26,6 @@ namespace CTZ.Controler.Instruments.Assignments_
             string body = emailBodyForEngineer(instrumentAssignments, instrumentList, instrumentsThatNeedCertificate);
             Notification notification = new Notification();
             notification.sendMailNotification(instrumentAssignments.EngineerEmail, body, "Notificacion entrega de Instrumento");
-
         }
 
         private string emailBodyForEngineer(Instrument_Assignments assignment, List<string> instrumentList, List<string> instrumentsThatNeedCertificate)

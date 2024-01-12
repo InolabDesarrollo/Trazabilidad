@@ -90,7 +90,7 @@
             this.Btn_Load_Estandar_By_Parts.Name = "Btn_Load_Estandar_By_Parts";
             this.Btn_Load_Estandar_By_Parts.Size = new System.Drawing.Size(195, 63);
             this.Btn_Load_Estandar_By_Parts.TabIndex = 20;
-            this.Btn_Load_Estandar_By_Parts.Text = "Registrar prestamo de estándar por partes";
+            this.Btn_Load_Estandar_By_Parts.Text = "Registrar prestamo de estándar por lotes";
             this.Btn_Load_Estandar_By_Parts.UseVisualStyleBackColor = false;
             this.Btn_Load_Estandar_By_Parts.Click += new System.EventHandler(this.Btn_Load_Estandar_By_Parts_Click);
             // 

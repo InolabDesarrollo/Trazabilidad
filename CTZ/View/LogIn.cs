@@ -74,8 +74,6 @@ namespace TestSpire
                     if (User.IdArea == Gerencia || User.IdArea == Calidad)
                     {
                         this.Hide();
-                        //MenuPrincipal Inicio = new MenuPrincipal(User.IdUsuario, User.IdRol, User.IdArea);
-                        //Inicio.Show();
                         SubMenu subMenu = new SubMenu();
                         subMenu.Show();
                     }

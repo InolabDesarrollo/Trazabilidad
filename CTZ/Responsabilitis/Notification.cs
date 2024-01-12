@@ -21,7 +21,7 @@ namespace CTZ.Vista.Responsabilitis
             MailMessage message = new MailMessage(emailSender, mailRecipient);
 
             message.To.Add(mailRecipient);
-            message.Bcc.Add("omarflores@inolab.com, carlosflores@inolab.com, azaliarosas@inolab.com");
+            message.Bcc.Add("omarflores@inolab.com, azaliarosas@inolab.com");
 
             message.Subject = emailSubject;
             message.IsBodyHtml = true;

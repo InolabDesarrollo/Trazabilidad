@@ -26,6 +26,11 @@ namespace CTZ.Controler.Estandard
             return repository.selectByEST(idEstandard);
         }
 
+        public DataTable selectLotsAndParts(string standar)
+        {
+            return repository.selectLotsAndParts(standar);
+        }
+
         public DataTable selectByEstandard(string estandard)
         {
             return repository.selectByEstandard(estandard);
@@ -47,6 +52,13 @@ namespace CTZ.Controler.Estandard
             {
                 return false;
             }
+        }
+
+        public int getNumberOfLotsAvailable(string standar)
+        {
+            DataTable informationStandar = repository.selectByEST(standar);
+            int numberOfLotsAvailable = Convert.ToInt32(informationStandar.Rows[0]["NoLotesDisponibles"].ToString());
+            return numberOfLotsAvailable;
         }
 
     }

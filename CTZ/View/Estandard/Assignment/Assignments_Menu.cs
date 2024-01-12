@@ -35,15 +35,13 @@ namespace CTZ.View.Estandard
 
         private void Btn_Add_Load_Click(object sender, EventArgs e)
         {
-            string typeOfLoad = "Unique";
-            Add_Loan_Estandard add_Delivery_Estandard = new Add_Loan_Estandard(typeOfLoad);
+            Add_Loan_Estandard add_Delivery_Estandard = new Add_Loan_Estandard();
             add_Delivery_Estandard.Show();
         }
 
         private void Btn_Load_Estandar_By_Parts_Click(object sender, EventArgs e)
         {
-            string typeOfLoad = "ByParts";
-            Add_Loan_Estandard add_Delivery_Estandard = new Add_Loan_Estandard(typeOfLoad);
+            Add_Loan_By_Lots add_Delivery_Estandard = new Add_Loan_By_Lots();
             add_Delivery_Estandard.Show();
         }
     }

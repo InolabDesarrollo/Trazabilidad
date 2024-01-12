@@ -23,6 +23,8 @@ namespace CTZ.View.Estandard
 
         private void Estandars_SubMenu_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares_cerca_de_caducar' Puede moverla o quitarla según sea necesario.
+            this.estandares_cerca_de_caducarTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares_cerca_de_caducar);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares_Certificados' Puede moverla o quitarla según sea necesario.
             this.estandares_CertificadosTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares_Certificados);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares' Puede moverla o quitarla según sea necesario.

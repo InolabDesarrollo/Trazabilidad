@@ -22,7 +22,8 @@ namespace CTZ.Controler.Estandard
         {
             DateForReport date = new DateForReport();
             estandard.FabricationDate = date.convertToValidDateDatePicker(estandard.FabricationDate);
-            estandard.ExpirationDate =date.convertToValidDateDatePicker(estandard.ExpirationDate);
+            estandard.ExpirationDate =  date.convertToValidDateDatePicker(estandard.ExpirationDate);
+
             repository.add(estandard);
 
             string estatusAssignment = "";

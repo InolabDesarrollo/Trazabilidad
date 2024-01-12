@@ -38,13 +38,12 @@
             this.TxtBox_Brand = new MaterialSkin.Controls.MaterialTextBox();
             this.Lbl_Presentation = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_Presentation = new MaterialSkin.Controls.MaterialTextBox();
-            this.Lbl_Number = new MaterialSkin.Controls.MaterialLabel();
-            this.TxtBox_Number = new MaterialSkin.Controls.MaterialTextBox();
+            this.Lbl_Number_Lots = new MaterialSkin.Controls.MaterialLabel();
             this.Lbl_FabricationDate = new MaterialSkin.Controls.MaterialLabel();
             this.TimePicker_FabricationDate = new System.Windows.Forms.DateTimePicker();
             this.Lbl_ExpirationDate = new MaterialSkin.Controls.MaterialLabel();
             this.TimePicker_ExpirationDate = new System.Windows.Forms.DateTimePicker();
-            this.Lbl_Quantity = new MaterialSkin.Controls.MaterialLabel();
+            this.Lbl_Quantity_By_Lot = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_Quantity = new MaterialSkin.Controls.MaterialTextBox();
             this.Lbl_Ubication = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_Ubication = new MaterialSkin.Controls.MaterialTextBox();
@@ -54,6 +53,7 @@
             this.TxtBox_Inventory = new MaterialSkin.Controls.MaterialTextBox();
             this.Btn_Add = new MaterialSkin.Controls.MaterialButton();
             this.Switch_Assignment = new MaterialSkin.Controls.MaterialSwitch();
+            this.ComBox_Number_Lots = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Lbl_Est
@@ -145,7 +145,7 @@
             this.Lbl_Brand.AutoSize = true;
             this.Lbl_Brand.Depth = 0;
             this.Lbl_Brand.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Brand.Location = new System.Drawing.Point(48, 392);
+            this.Lbl_Brand.Location = new System.Drawing.Point(48, 423);
             this.Lbl_Brand.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Brand.Name = "Lbl_Brand";
             this.Lbl_Brand.Size = new System.Drawing.Size(46, 19);
@@ -158,7 +158,7 @@
             this.TxtBox_Brand.Depth = 0;
             this.TxtBox_Brand.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Brand.LeadingIcon = null;
-            this.TxtBox_Brand.Location = new System.Drawing.Point(51, 428);
+            this.TxtBox_Brand.Location = new System.Drawing.Point(51, 470);
             this.TxtBox_Brand.MaxLength = 50;
             this.TxtBox_Brand.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Brand.Multiline = false;
@@ -173,7 +173,7 @@
             this.Lbl_Presentation.AutoSize = true;
             this.Lbl_Presentation.Depth = 0;
             this.Lbl_Presentation.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Presentation.Location = new System.Drawing.Point(48, 496);
+            this.Lbl_Presentation.Location = new System.Drawing.Point(48, 547);
             this.Lbl_Presentation.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Presentation.Name = "Lbl_Presentation";
             this.Lbl_Presentation.Size = new System.Drawing.Size(93, 19);
@@ -186,7 +186,7 @@
             this.TxtBox_Presentation.Depth = 0;
             this.TxtBox_Presentation.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Presentation.LeadingIcon = null;
-            this.TxtBox_Presentation.Location = new System.Drawing.Point(51, 527);
+            this.TxtBox_Presentation.Location = new System.Drawing.Point(51, 593);
             this.TxtBox_Presentation.MaxLength = 50;
             this.TxtBox_Presentation.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Presentation.Multiline = false;
@@ -196,40 +196,24 @@
             this.TxtBox_Presentation.Text = "";
             this.TxtBox_Presentation.TrailingIcon = null;
             // 
-            // Lbl_Number
+            // Lbl_Number_Lots
             // 
-            this.Lbl_Number.AutoSize = true;
-            this.Lbl_Number.Depth = 0;
-            this.Lbl_Number.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Number.Location = new System.Drawing.Point(419, 79);
-            this.Lbl_Number.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Lbl_Number.Name = "Lbl_Number";
-            this.Lbl_Number.Size = new System.Drawing.Size(113, 19);
-            this.Lbl_Number.TabIndex = 10;
-            this.Lbl_Number.Text = "Numero de Lote";
-            // 
-            // TxtBox_Number
-            // 
-            this.TxtBox_Number.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtBox_Number.Depth = 0;
-            this.TxtBox_Number.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_Number.LeadingIcon = null;
-            this.TxtBox_Number.Location = new System.Drawing.Point(422, 115);
-            this.TxtBox_Number.MaxLength = 50;
-            this.TxtBox_Number.MouseState = MaterialSkin.MouseState.OUT;
-            this.TxtBox_Number.Multiline = false;
-            this.TxtBox_Number.Name = "TxtBox_Number";
-            this.TxtBox_Number.Size = new System.Drawing.Size(285, 50);
-            this.TxtBox_Number.TabIndex = 11;
-            this.TxtBox_Number.Text = "";
-            this.TxtBox_Number.TrailingIcon = null;
+            this.Lbl_Number_Lots.AutoSize = true;
+            this.Lbl_Number_Lots.Depth = 0;
+            this.Lbl_Number_Lots.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Number_Lots.Location = new System.Drawing.Point(424, 79);
+            this.Lbl_Number_Lots.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Lbl_Number_Lots.Name = "Lbl_Number_Lots";
+            this.Lbl_Number_Lots.Size = new System.Drawing.Size(121, 19);
+            this.Lbl_Number_Lots.TabIndex = 10;
+            this.Lbl_Number_Lots.Text = "Numero de Lotes";
             // 
             // Lbl_FabricationDate
             // 
             this.Lbl_FabricationDate.AutoSize = true;
             this.Lbl_FabricationDate.Depth = 0;
             this.Lbl_FabricationDate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_FabricationDate.Location = new System.Drawing.Point(424, 206);
+            this.Lbl_FabricationDate.Location = new System.Drawing.Point(424, 298);
             this.Lbl_FabricationDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_FabricationDate.Name = "Lbl_FabricationDate";
             this.Lbl_FabricationDate.Size = new System.Drawing.Size(152, 19);
@@ -238,7 +222,7 @@
             // 
             // TimePicker_FabricationDate
             // 
-            this.TimePicker_FabricationDate.Location = new System.Drawing.Point(422, 259);
+            this.TimePicker_FabricationDate.Location = new System.Drawing.Point(422, 355);
             this.TimePicker_FabricationDate.Name = "TimePicker_FabricationDate";
             this.TimePicker_FabricationDate.Size = new System.Drawing.Size(285, 20);
             this.TimePicker_FabricationDate.TabIndex = 13;
@@ -248,7 +232,7 @@
             this.Lbl_ExpirationDate.AutoSize = true;
             this.Lbl_ExpirationDate.Depth = 0;
             this.Lbl_ExpirationDate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_ExpirationDate.Location = new System.Drawing.Point(424, 315);
+            this.Lbl_ExpirationDate.Location = new System.Drawing.Point(424, 423);
             this.Lbl_ExpirationDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_ExpirationDate.Name = "Lbl_ExpirationDate";
             this.Lbl_ExpirationDate.Size = new System.Drawing.Size(157, 19);
@@ -257,22 +241,22 @@
             // 
             // TimePicker_ExpirationDate
             // 
-            this.TimePicker_ExpirationDate.Location = new System.Drawing.Point(422, 355);
+            this.TimePicker_ExpirationDate.Location = new System.Drawing.Point(422, 500);
             this.TimePicker_ExpirationDate.Name = "TimePicker_ExpirationDate";
             this.TimePicker_ExpirationDate.Size = new System.Drawing.Size(285, 20);
             this.TimePicker_ExpirationDate.TabIndex = 15;
             // 
-            // Lbl_Quantity
+            // Lbl_Quantity_By_Lot
             // 
-            this.Lbl_Quantity.AutoSize = true;
-            this.Lbl_Quantity.Depth = 0;
-            this.Lbl_Quantity.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Quantity.Location = new System.Drawing.Point(424, 392);
-            this.Lbl_Quantity.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Lbl_Quantity.Name = "Lbl_Quantity";
-            this.Lbl_Quantity.Size = new System.Drawing.Size(65, 19);
-            this.Lbl_Quantity.TabIndex = 16;
-            this.Lbl_Quantity.Text = "Cantidad";
+            this.Lbl_Quantity_By_Lot.AutoSize = true;
+            this.Lbl_Quantity_By_Lot.Depth = 0;
+            this.Lbl_Quantity_By_Lot.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Quantity_By_Lot.Location = new System.Drawing.Point(424, 192);
+            this.Lbl_Quantity_By_Lot.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Lbl_Quantity_By_Lot.Name = "Lbl_Quantity_By_Lot";
+            this.Lbl_Quantity_By_Lot.Size = new System.Drawing.Size(128, 19);
+            this.Lbl_Quantity_By_Lot.TabIndex = 16;
+            this.Lbl_Quantity_By_Lot.Text = "Cantidad Por Lote";
             // 
             // TxtBox_Quantity
             // 
@@ -280,7 +264,7 @@
             this.TxtBox_Quantity.Depth = 0;
             this.TxtBox_Quantity.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Quantity.LeadingIcon = null;
-            this.TxtBox_Quantity.Location = new System.Drawing.Point(422, 428);
+            this.TxtBox_Quantity.Location = new System.Drawing.Point(422, 229);
             this.TxtBox_Quantity.MaxLength = 50;
             this.TxtBox_Quantity.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Quantity.Multiline = false;
@@ -295,7 +279,7 @@
             this.Lbl_Ubication.AutoSize = true;
             this.Lbl_Ubication.Depth = 0;
             this.Lbl_Ubication.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Ubication.Location = new System.Drawing.Point(424, 496);
+            this.Lbl_Ubication.Location = new System.Drawing.Point(424, 547);
             this.Lbl_Ubication.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Ubication.Name = "Lbl_Ubication";
             this.Lbl_Ubication.Size = new System.Drawing.Size(71, 19);
@@ -308,7 +292,7 @@
             this.TxtBox_Ubication.Depth = 0;
             this.TxtBox_Ubication.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Ubication.LeadingIcon = null;
-            this.TxtBox_Ubication.Location = new System.Drawing.Point(422, 527);
+            this.TxtBox_Ubication.Location = new System.Drawing.Point(422, 593);
             this.TxtBox_Ubication.MaxLength = 50;
             this.TxtBox_Ubication.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Ubication.Multiline = false;
@@ -323,7 +307,7 @@
             this.Lbl_Estatus.AutoSize = true;
             this.Lbl_Estatus.Depth = 0;
             this.Lbl_Estatus.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Estatus.Location = new System.Drawing.Point(736, 79);
+            this.Lbl_Estatus.Location = new System.Drawing.Point(827, 79);
             this.Lbl_Estatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Estatus.Name = "Lbl_Estatus";
             this.Lbl_Estatus.Size = new System.Drawing.Size(54, 19);
@@ -336,7 +320,7 @@
             this.TxtBox_Estatus.Depth = 0;
             this.TxtBox_Estatus.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Estatus.LeadingIcon = null;
-            this.TxtBox_Estatus.Location = new System.Drawing.Point(739, 125);
+            this.TxtBox_Estatus.Location = new System.Drawing.Point(830, 115);
             this.TxtBox_Estatus.MaxLength = 50;
             this.TxtBox_Estatus.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Estatus.Multiline = false;
@@ -351,7 +335,7 @@
             this.Lbl_Inventory.AutoSize = true;
             this.Lbl_Inventory.Depth = 0;
             this.Lbl_Inventory.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Inventory.Location = new System.Drawing.Point(736, 192);
+            this.Lbl_Inventory.Location = new System.Drawing.Point(827, 181);
             this.Lbl_Inventory.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Inventory.Name = "Lbl_Inventory";
             this.Lbl_Inventory.Size = new System.Drawing.Size(71, 19);
@@ -364,7 +348,7 @@
             this.TxtBox_Inventory.Depth = 0;
             this.TxtBox_Inventory.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Inventory.LeadingIcon = null;
-            this.TxtBox_Inventory.Location = new System.Drawing.Point(739, 239);
+            this.TxtBox_Inventory.Location = new System.Drawing.Point(830, 229);
             this.TxtBox_Inventory.MaxLength = 50;
             this.TxtBox_Inventory.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Inventory.Multiline = false;
@@ -381,7 +365,7 @@
             this.Btn_Add.Depth = 0;
             this.Btn_Add.HighEmphasis = true;
             this.Btn_Add.Icon = null;
-            this.Btn_Add.Location = new System.Drawing.Point(936, 428);
+            this.Btn_Add.Location = new System.Drawing.Point(936, 607);
             this.Btn_Add.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add.Name = "Btn_Add";
@@ -397,7 +381,7 @@
             // 
             this.Switch_Assignment.AutoSize = true;
             this.Switch_Assignment.Depth = 0;
-            this.Switch_Assignment.Location = new System.Drawing.Point(830, 325);
+            this.Switch_Assignment.Location = new System.Drawing.Point(830, 529);
             this.Switch_Assignment.Margin = new System.Windows.Forms.Padding(0);
             this.Switch_Assignment.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Switch_Assignment.MouseState = MaterialSkin.MouseState.HOVER;
@@ -408,11 +392,20 @@
             this.Switch_Assignment.Text = "Asignar a Ingeniero";
             this.Switch_Assignment.UseVisualStyleBackColor = true;
             // 
+            // ComBox_Number_Lots
+            // 
+            this.ComBox_Number_Lots.FormattingEnabled = true;
+            this.ComBox_Number_Lots.Location = new System.Drawing.Point(422, 115);
+            this.ComBox_Number_Lots.Name = "ComBox_Number_Lots";
+            this.ComBox_Number_Lots.Size = new System.Drawing.Size(285, 21);
+            this.ComBox_Number_Lots.TabIndex = 28;
+            // 
             // AddEstandard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 631);
+            this.ClientSize = new System.Drawing.Size(1167, 704);
+            this.Controls.Add(this.ComBox_Number_Lots);
             this.Controls.Add(this.Switch_Assignment);
             this.Controls.Add(this.Btn_Add);
             this.Controls.Add(this.TxtBox_Inventory);
@@ -422,13 +415,12 @@
             this.Controls.Add(this.TxtBox_Ubication);
             this.Controls.Add(this.Lbl_Ubication);
             this.Controls.Add(this.TxtBox_Quantity);
-            this.Controls.Add(this.Lbl_Quantity);
+            this.Controls.Add(this.Lbl_Quantity_By_Lot);
             this.Controls.Add(this.TimePicker_ExpirationDate);
             this.Controls.Add(this.Lbl_ExpirationDate);
             this.Controls.Add(this.TimePicker_FabricationDate);
             this.Controls.Add(this.Lbl_FabricationDate);
-            this.Controls.Add(this.TxtBox_Number);
-            this.Controls.Add(this.Lbl_Number);
+            this.Controls.Add(this.Lbl_Number_Lots);
             this.Controls.Add(this.TxtBox_Presentation);
             this.Controls.Add(this.Lbl_Presentation);
             this.Controls.Add(this.TxtBox_Brand);
@@ -458,13 +450,12 @@
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Brand;
         private MaterialSkin.Controls.MaterialLabel Lbl_Presentation;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Presentation;
-        private MaterialSkin.Controls.MaterialLabel Lbl_Number;
-        private MaterialSkin.Controls.MaterialTextBox TxtBox_Number;
+        private MaterialSkin.Controls.MaterialLabel Lbl_Number_Lots;
         private MaterialSkin.Controls.MaterialLabel Lbl_FabricationDate;
         private System.Windows.Forms.DateTimePicker TimePicker_FabricationDate;
         private MaterialSkin.Controls.MaterialLabel Lbl_ExpirationDate;
         private System.Windows.Forms.DateTimePicker TimePicker_ExpirationDate;
-        private MaterialSkin.Controls.MaterialLabel Lbl_Quantity;
+        private MaterialSkin.Controls.MaterialLabel Lbl_Quantity_By_Lot;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Quantity;
         private MaterialSkin.Controls.MaterialLabel Lbl_Ubication;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Ubication;
@@ -474,5 +465,6 @@
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Inventory;
         private MaterialSkin.Controls.MaterialButton Btn_Add;
         private MaterialSkin.Controls.MaterialSwitch Switch_Assignment;
+        private System.Windows.Forms.ComboBox ComBox_Number_Lots;
     }
 }

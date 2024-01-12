@@ -18,9 +18,7 @@ namespace TestProyect
             //Arrange 
             Notification notification = new Notification();
             string[] emails = new string[3];
-            emails[0] = "calidad@inolab.com";
-            emails[1] = "omarsotomayordevelop@gmail.com";
-            emails[2] = "omarflores@inolab.com";
+            emails[0] = "omarflores@inolab.com";
             string subject = "Test Notificacion entrega de Instrumentos con link de certificados";
             string bodyMail = bodyMailEngineer();
 

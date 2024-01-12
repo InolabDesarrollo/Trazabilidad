@@ -18,13 +18,15 @@ namespace CTZ.View.Responsabilitis
 
         public string Presentation;
 
-        public string Number;
+        public int Number;
+
+        public int NumberOfAvailableLots;
 
         public string FabricationDate;
 
         public string ExpirationDate;
 
-        public string Quantity;
+        public int Quantity;
 
         public string Ubication;
 

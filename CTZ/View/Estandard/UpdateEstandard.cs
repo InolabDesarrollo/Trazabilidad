@@ -34,8 +34,6 @@ namespace CTZ.View.Estandard
             TxtBox_Use.Text = estandardInformation.Rows[0]["Uso"].ToString();
             TxtBox_Brand.Text = estandardInformation.Rows[0]["Marca"].ToString();
             TxtBox_Presentation.Text = estandardInformation.Rows[0]["Presentacion"].ToString();
-            TxtBox_Number.Text = estandardInformation.Rows[0]["NoLote"].ToString();
-            TxtBox_Quantity.Text = estandardInformation.Rows[0]["Cantidad"].ToString();
             TxtBox_Ubication.Text = estandardInformation.Rows[0]["Ubicacion"].ToString();
             TxtBox_Estatus.Text = estandardInformation.Rows[0]["Estatus"].ToString();
             TxtBox_Inventory.Text = estandardInformation.Rows[0]["Inventario"].ToString();
@@ -48,8 +46,6 @@ namespace CTZ.View.Estandard
             estandard.Use = TxtBox_Use.Text;
             estandard.Brand = TxtBox_Brand.Text;
             estandard.Presentation = TxtBox_Presentation.Text;
-            estandard.Number = TxtBox_Number.Text;
-            estandard.Quantity = TxtBox_Quantity.Text;
             estandard.Ubication = TxtBox_Ubication.Text;
             estandard.Estatus= TxtBox_Estatus.Text;
             estandard.Inventory = TxtBox_Inventory.Text;
