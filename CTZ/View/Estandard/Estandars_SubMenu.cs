@@ -32,7 +32,6 @@ namespace CTZ.View.Estandard
 
         }
 
-
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             AddEstandard estandard = new AddEstandard();
@@ -93,8 +92,12 @@ namespace CTZ.View.Estandard
 
         private void Dgv_Estandard_Certificate_FilterStringChanged(object sender, EventArgs e)
         {
-            this.estandaresCertificadosBindingSource.Filter =this.Dgv_Estandard_Certificate.FilterString;
+            this.estandaresCertificadosBindingSource.Filter = this.Dgv_Estandard_Certificate.FilterString;
         }
 
+        private void Dgv_Standars_Near_Expiration_Date_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.estandarescercadecaducarBindingSource.Filter = this.Dgv_Standars_Near_Expiration_Date.FilterString;
+        }
     }
 }

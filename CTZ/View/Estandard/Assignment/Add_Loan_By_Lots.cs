@@ -77,21 +77,21 @@ namespace CTZ.View.Estandard.Assignment
             fillAvailableLots(standar);
         }
 
-        private void fillAvailableLots(string standar)
-        {
-            controler = new C_Estandard();
-            int numberOfLotsAvailable = controler.getNumberOfLotsAvailable(standar);
-            for(int i = 1; i <= numberOfLotsAvailable; i++)
-            {
-                ComBox_Number_Lots.Items.Add(i);
-            }
-        }
-
         private void fillNumberOfLotsAvailable(string standar)
         {
             controler = new C_Estandard();
             int numberOfLotsAvailable = controler.getNumberOfLotsAvailable(standar);
             for (int i = 0; i < numberOfLotsAvailable; i++)
+            {
+                ComBox_Number_Lots.Items.Add(i);
+            }
+        }
+
+        private void fillAvailableLots(string standar)
+        {
+            controler = new C_Estandard();
+            int numberOfLotsAvailable = controler.getNumberOfLotsAvailable(standar);
+            for(int i = 1; i <= numberOfLotsAvailable; i++)
             {
                 ComBox_Number_Lots.Items.Add(i);
             }

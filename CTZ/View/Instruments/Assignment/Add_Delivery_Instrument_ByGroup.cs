@@ -20,7 +20,7 @@ namespace CTZ.Vista.Instruments
     public partial class Add_Delivery_Instrument_ByGroup : MaterialForm
     {
         private C_Instruments instrumentsControler;
-        private C_RegistDeliveryInstrument instrumentAssignmentsControler;
+        private C_RegistDeliveryInstrument assignmentController;
         private C_User usuarioControler;
 
         public static Instrument_Assignments instrumentAssignments;
@@ -40,6 +40,7 @@ namespace CTZ.Vista.Instruments
             engineers = usuarioControler.getEngineers();
 
             instrumentAssignments = new Instrument_Assignments();
+            instrumentAssignments.EngineerSignature = "";
             fillMaterialComboBoxEngineers();
         }
 
@@ -61,10 +62,9 @@ namespace CTZ.Vista.Instruments
                 bool instrumentIsAvailable = instrumentsControler.checkIfInstrumentIsAvailable(TxtBox_Instrumenst.Text);
 
                 equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
-
                 if (instrumentIsAvailable)
                 {
-                    addEquinoToKit();
+                    checkExpirationOfCertificate(equinoInstrument);
                 }
                 else
                 {
@@ -83,38 +83,31 @@ namespace CTZ.Vista.Instruments
             instrument.deleteEquinoFromComboBox(ComboBox_Instruments);
         }
 
-        private void addEquinoToKit()
+        private void checkExpirationOfCertificate(string equinoInstrument)
         {
-            RelationCertificateInstrument relation = new RelationCertificateInstrument();
-            string dateOfCalibrationForInstrument = relation.getDateForNextCalibration(equinoInstrument);
-            if (dateOfCalibrationForInstrument.Equals("Sin fecha"))
+            assignmentController = new C_RegistDeliveryInstrument();
+            bool InstrumentCertificateIsCloseToExpirin = assignmentController.checkIfInstrumentCertificateIsCloseToExpiring(equinoInstrument);
+            if (InstrumentCertificateIsCloseToExpirin)
             {
-                addEquino();
+                MessageBox.Show("Faltan menos de 10 dias para la calibracion de este instrumento " + equinoInstrument + " \n" +
+                        "NO puede ser asignado");
             }
             else
             {
-                if (relation.calculateDaysForNextCalibration(equinoInstrument) < 10)
-                {
-                    MessageBox.Show("Faltan menos de 10 dias para la calibracion de este instrumento " + equinoInstrument + " \n" +
-                        "NO puede ser asignado");
-                }
-                else
-                {
-                    addEquino();
-                }
+                addEquino(equinoInstrument);
             }
         }
 
-        private void addEquino()
+        private void addEquino(string equinoInstrument)
         {
             instrumentList.Add(equinoInstrument);
             ComboBox_Instruments.Items.Add(equinoInstrument);
-            checkIfEngineerNeedCertificate();
+            checkIfEngineerNeedCertificate(equinoInstrument);
             MessageBox.Show("Se agrego Equino " + equinoInstrument);
             TxtBox_Instrumenst.Clear();
         }
 
-        private void checkIfEngineerNeedCertificate()
+        private void checkIfEngineerNeedCertificate(string equinoInstrument)
         {
             DialogResult resultado = MessageBox.Show("¿Quieres que se envie certificado de este instrumento?", "Pregunta",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -139,23 +132,32 @@ namespace CTZ.Vista.Instruments
             }
             else
             {
-                UserRepository userRepository = new UserRepository();
-                usuarioControler = new C_User(userRepository);
-                string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
+                if (instrumentAssignments.EngineerSignature.Equals(""))
+                {
+                    MessageBox.Show("No puedes registrar el prestamo de instrumento sin la firma del ingeniero");
+                }
+                else
+                {
+                    UserRepository userRepository = new UserRepository();
+                    usuarioControler = new C_User(userRepository);
+                    string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
 
-                instrumentAssignments.DateDelivery = TimePicker_Date_Delivery.Text;
-                instrumentAssignments.Engineer = MaterialComboBox_Engineers.Text;
-                instrumentAssignments.NumberEnterprise = TxtBox_Enterprise.Text;
-                instrumentAssignments.DeliveryObservations = TxtBox_ObservationDelivery.Text;
-                instrumentAssignments.EstimateDateReturn = TimePicker_Date_Estimate_Return.Text;
-                instrumentAssignments.NameEnterprise = TxtBox_NameEnterprise.Text;
-                instrumentAssignments.EngineerEmail = emailEngineer;
-                instrumentAssignments.equinoInstrument = equinoInstrument;
-                instrumentAssignments.type = "Prestamo";
+                    instrumentAssignments.DateDelivery = TimePicker_Date_Delivery.Text;
+                    instrumentAssignments.Engineer = MaterialComboBox_Engineers.Text;
+                    instrumentAssignments.NumberEnterprise = TxtBox_Enterprise.Text;
+                    instrumentAssignments.DeliveryObservations = TxtBox_ObservationDelivery.Text;
+                    instrumentAssignments.EstimateDateReturn = TimePicker_Date_Estimate_Return.Text;
+                    instrumentAssignments.NameEnterprise = TxtBox_NameEnterprise.Text;
+                    instrumentAssignments.EngineerEmail = emailEngineer;
+                    instrumentAssignments.equinoInstrument = equinoInstrument;
+                    instrumentAssignments.type = "Prestamo";
 
-                instrumentAssignmentsControler = new C_RegistDeliveryInstrument();
-                instrumentAssignmentsControler.registerDeliveryInstrument(instrumentAssignments, instrumentList, instrumentsThatNeedCertificate);
-                this.Close(); 
+                    assignmentController = new C_RegistDeliveryInstrument();
+                    assignmentController.registerDeliveryInstrument(instrumentAssignments, instrumentList, instrumentsThatNeedCertificate);
+                    MessageBox.Show("Registro de prestamos de Instrumento realizado correctamente");
+                    this.Close();
+                }
+                 
             }
         }
 

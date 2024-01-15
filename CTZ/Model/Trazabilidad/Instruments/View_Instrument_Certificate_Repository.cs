@@ -1,4 +1,5 @@
 ﻿using CTZ.Modelo.Documentacion;
+using CTZ.Vista.Responsabilitis;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,6 +21,11 @@ namespace CTZ.Modelo.Trazabilidad
             return conexion.getDataTable("SELECT * FROM Instrumentos_Certificado WHERE ID_Instrumentos = '"+ equino + "';");
         }
 
+        public DataTable getAllInstrumentCertificateActives(string equino)
+        {
+            return conexion.getDataTable("SELECT * FROM Instrumentos_Certificado WHERE ID_Instrumentos = '" + equino + "' AND [Estatus Certificado] = 'Activo'; ;");
+        }
+
         public DataTable getAllInstrumentCertificateByInstrument(string instrument)
         {
             return conexion.getDataTable("SELECT * from Instrumentos_Certificado WHERE INSTRUMENTO like '%"+ instrument + "%';");
@@ -30,6 +36,10 @@ namespace CTZ.Modelo.Trazabilidad
             return conexion.getDataTable("SELECT * from Instrumentos_Certificado WHERE MARCA like '%"+brand+ "%';;");
         }
 
+        public bool checkIfThereIsDateForNextCalibrationInCertificate(string instrument)
+        {
+            return conexion.isThereSomeInformation("Select[Estatus Certificado] from Instrumentos_Certificado where ID_Instrumentos = '"+ instrument + "';");
+        }
 
     }
 }

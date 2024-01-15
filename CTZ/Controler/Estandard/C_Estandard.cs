@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CTZ.Controler.Estandard
 {
@@ -56,10 +57,17 @@ namespace CTZ.Controler.Estandard
 
         public int getNumberOfLotsAvailable(string standar)
         {
-            DataTable informationStandar = repository.selectByEST(standar);
-            int numberOfLotsAvailable = Convert.ToInt32(informationStandar.Rows[0]["NoLotes_Disponibles"].ToString());
-            return numberOfLotsAvailable;
+            try
+            {
+                DataTable informationStandar = repository.selectByEST(standar);
+                int numberOfLotsAvailable = Convert.ToInt32(informationStandar.Rows[0]["NoLotes_Disponibles"].ToString());
+                return numberOfLotsAvailable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sin lotes disponibles "+ex.Message);
+                return 0;
+            }   
         }
-
     }
 }

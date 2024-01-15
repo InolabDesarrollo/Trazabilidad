@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CTZ.Controlador
 {
@@ -24,14 +25,19 @@ namespace CTZ.Controlador
 
         public string getDateForNextCalibration(string equino)
         {
-            DataTable informationInstrumentCertificate = repository.getAllInstrumentCertificate(equino);
-            string dateOfNextCalibration = informationInstrumentCertificate.Rows[0]["Proxima_Calibracion"].ToString();
-            if (dateOfNextCalibration.Equals(""))
+            string dateOfNextCalibration = "";
+            try
             {
-                dateOfNextCalibration = "Sin fecha";
-                return dateOfNextCalibration;
+                DataTable informationInstrumentCertificate = repository.getAllInstrumentCertificate(equino);
+                dateOfNextCalibration = informationInstrumentCertificate.Rows[0]["Proxima_Calibracion"].ToString();
+                return dateOfNextCalibration.Substring(0, 11);
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Sin fecha de calibración registrada " + ex.Message);
+                return "Sin Fecha";
             }
-            return dateOfNextCalibration.Substring(0,11);
+            
         }
 
         public DataTable getAllInstrumentCertificateByInstrument(string instrument)

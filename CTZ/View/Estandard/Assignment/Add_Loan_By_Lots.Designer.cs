@@ -49,6 +49,7 @@
             this.Btn_AddEstandard = new MaterialSkin.Controls.MaterialButton();
             this.Btn_DeleteEstandard = new MaterialSkin.Controls.MaterialButton();
             this.TimePicker_Date_Estimate_Return = new System.Windows.Forms.DateTimePicker();
+            this.Lbl_Warning = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // Lbl_Estandard
@@ -56,7 +57,7 @@
             this.Lbl_Estandard.AutoSize = true;
             this.Lbl_Estandard.Depth = 0;
             this.Lbl_Estandard.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Estandard.Location = new System.Drawing.Point(45, 90);
+            this.Lbl_Estandard.Location = new System.Drawing.Point(45, 109);
             this.Lbl_Estandard.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Estandard.Name = "Lbl_Estandard";
             this.Lbl_Estandard.Size = new System.Drawing.Size(80, 19);
@@ -69,7 +70,7 @@
             this.TxtBox_Estandards.Depth = 0;
             this.TxtBox_Estandards.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Estandards.LeadingIcon = null;
-            this.TxtBox_Estandards.Location = new System.Drawing.Point(48, 133);
+            this.TxtBox_Estandards.Location = new System.Drawing.Point(48, 154);
             this.TxtBox_Estandards.MaxLength = 50;
             this.TxtBox_Estandards.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Estandards.Multiline = false;
@@ -255,7 +256,7 @@
             this.Btn_RegistEnginnerSignature.Depth = 0;
             this.Btn_RegistEnginnerSignature.HighEmphasis = true;
             this.Btn_RegistEnginnerSignature.Icon = null;
-            this.Btn_RegistEnginnerSignature.Location = new System.Drawing.Point(593, 549);
+            this.Btn_RegistEnginnerSignature.Location = new System.Drawing.Point(593, 566);
             this.Btn_RegistEnginnerSignature.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_RegistEnginnerSignature.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_RegistEnginnerSignature.Name = "Btn_RegistEnginnerSignature";
@@ -274,7 +275,7 @@
             this.Btn_Add_Delivery.Depth = 0;
             this.Btn_Add_Delivery.HighEmphasis = true;
             this.Btn_Add_Delivery.Icon = null;
-            this.Btn_Add_Delivery.Location = new System.Drawing.Point(612, 629);
+            this.Btn_Add_Delivery.Location = new System.Drawing.Point(612, 628);
             this.Btn_Add_Delivery.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Delivery.Name = "Btn_Add_Delivery";
@@ -300,7 +301,7 @@
             this.ComboBox_Estandards.FormattingEnabled = true;
             this.ComboBox_Estandards.IntegralHeight = false;
             this.ComboBox_Estandards.ItemHeight = 43;
-            this.ComboBox_Estandards.Location = new System.Drawing.Point(48, 206);
+            this.ComboBox_Estandards.Location = new System.Drawing.Point(48, 223);
             this.ComboBox_Estandards.MaxDropDownItems = 4;
             this.ComboBox_Estandards.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Estandards.Name = "ComboBox_Estandards";
@@ -315,7 +316,7 @@
             this.Btn_AddEstandard.Depth = 0;
             this.Btn_AddEstandard.HighEmphasis = true;
             this.Btn_AddEstandard.Icon = null;
-            this.Btn_AddEstandard.Location = new System.Drawing.Point(48, 265);
+            this.Btn_AddEstandard.Location = new System.Drawing.Point(48, 281);
             this.Btn_AddEstandard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_AddEstandard.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_AddEstandard.Name = "Btn_AddEstandard";
@@ -334,7 +335,7 @@
             this.Btn_DeleteEstandard.Depth = 0;
             this.Btn_DeleteEstandard.HighEmphasis = true;
             this.Btn_DeleteEstandard.Icon = null;
-            this.Btn_DeleteEstandard.Location = new System.Drawing.Point(232, 265);
+            this.Btn_DeleteEstandard.Location = new System.Drawing.Point(232, 281);
             this.Btn_DeleteEstandard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_DeleteEstandard.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_DeleteEstandard.Name = "Btn_DeleteEstandard";
@@ -347,16 +348,30 @@
             // 
             // TimePicker_Date_Estimate_Return
             // 
-            this.TimePicker_Date_Estimate_Return.Location = new System.Drawing.Point(451, 476);
+            this.TimePicker_Date_Estimate_Return.Location = new System.Drawing.Point(461, 476);
             this.TimePicker_Date_Estimate_Return.Name = "TimePicker_Date_Estimate_Return";
-            this.TimePicker_Date_Estimate_Return.Size = new System.Drawing.Size(390, 20);
+            this.TimePicker_Date_Estimate_Return.Size = new System.Drawing.Size(380, 20);
             this.TimePicker_Date_Estimate_Return.TabIndex = 57;
+            // 
+            // Lbl_Warning
+            // 
+            this.Lbl_Warning.AutoSize = true;
+            this.Lbl_Warning.Depth = 0;
+            this.Lbl_Warning.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Warning.ForeColor = System.Drawing.Color.Red;
+            this.Lbl_Warning.Location = new System.Drawing.Point(45, 79);
+            this.Lbl_Warning.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Lbl_Warning.Name = "Lbl_Warning";
+            this.Lbl_Warning.Size = new System.Drawing.Size(173, 19);
+            this.Lbl_Warning.TabIndex = 58;
+            this.Lbl_Warning.Text = "Agrega solo un estándar";
             // 
             // Add_Loan_By_Lots
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 687);
+            this.Controls.Add(this.Lbl_Warning);
             this.Controls.Add(this.TimePicker_Date_Estimate_Return);
             this.Controls.Add(this.Btn_DeleteEstandard);
             this.Controls.Add(this.Btn_AddEstandard);
@@ -408,5 +423,6 @@
         private MaterialSkin.Controls.MaterialButton Btn_AddEstandard;
         private MaterialSkin.Controls.MaterialButton Btn_DeleteEstandard;
         private System.Windows.Forms.DateTimePicker TimePicker_Date_Estimate_Return;
+        private MaterialSkin.Controls.MaterialLabel Lbl_Warning;
     }
 }
