@@ -22,7 +22,6 @@ namespace CTZ.View.Estandard.Assignment
         private C_User usuarioControler;
         private DataTable engineers;
         public static Estandard_Assignment assignment;
-        private readonly string typeOfLoad;
 
         public Add_Loan_By_Lots()
         {
@@ -37,6 +36,7 @@ namespace CTZ.View.Estandard.Assignment
             engineers = usuarioControler.getEngineers();
             fillMaterialComboBoxEngineers();
         }
+
         private void fillMaterialComboBoxEngineers()
         {
             for (int i = 0; i < engineers.Rows.Count; i++)
@@ -74,6 +74,17 @@ namespace CTZ.View.Estandard.Assignment
                 MessageBox.Show("Error " + ex.Message.ToString());
             }
             TxtBox_Estandards.Clear();
+            fillAvailableLots(standar);
+        }
+
+        private void fillAvailableLots(string standar)
+        {
+            controler = new C_Estandard();
+            int numberOfLotsAvailable = controler.getNumberOfLotsAvailable(standar);
+            for(int i = 1; i <= numberOfLotsAvailable; i++)
+            {
+                ComBox_Number_Lots.Items.Add(i);
+            }
         }
 
         private void fillNumberOfLotsAvailable(string standar)
@@ -114,7 +125,7 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.EngineerEmail = emailEngineer;
 
                 C_Loan_Estandard controler = new C_Loan_Estandard();
-                controler.registerDeliveryEstandard(assignment, standardList);
+                controler.registerDeliveryEstandardByLots(assignment, standardList);
 
                 MessageBox.Show("Se creo la asignacion para los estandares ");
                 this.Close();

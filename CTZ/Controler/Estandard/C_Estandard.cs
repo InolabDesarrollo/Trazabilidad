@@ -57,7 +57,7 @@ namespace CTZ.Controler.Estandard
         public int getNumberOfLotsAvailable(string standar)
         {
             DataTable informationStandar = repository.selectByEST(standar);
-            int numberOfLotsAvailable = Convert.ToInt32(informationStandar.Rows[0]["NoLotesDisponibles"].ToString());
+            int numberOfLotsAvailable = Convert.ToInt32(informationStandar.Rows[0]["NoLotes_Disponibles"].ToString());
             return numberOfLotsAvailable;
         }
 

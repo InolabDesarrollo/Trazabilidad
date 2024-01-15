@@ -24,10 +24,12 @@ namespace CTZ.Vista.Responsabilitis
         {
             InitializeComponent(); 
         }
+
         public AddCertificate(string instrument)
         {
             InitializeComponent();
             this.instrument = instrument;
+            Lbl_Instrument.Text = instrument;
             dateForReport = new DateForReport();
         }
 

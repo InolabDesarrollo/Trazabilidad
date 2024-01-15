@@ -72,5 +72,11 @@ namespace CTZ.Model.Trazabilidad.Estandard
         {
             return conexion.getDataTable("Select NoLote, Cantidad from Estandares WHERE Id_Estandares = '"+ idEstandard + "' ;");
         }
+
+        public void updateAvailableLots(string standar, int numberOfLotsAvailable)
+        {
+            conexion.executeQuery("UPDATE Estandares SET NoLotes_Disponibles  = "+ numberOfLotsAvailable + " " +
+                " WHERE Id_Estandares = '"+standar+"';");
+        }
     }
 }

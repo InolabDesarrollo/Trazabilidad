@@ -117,8 +117,16 @@ namespace CTZ.Vista
         private void BtnUnassign_Certificate_Click(object sender, EventArgs e)
         {
             C_Query_Certificate controller = new C_Query_Certificate();
-            controller.updateStatusCertificate(ComboBox_Certificate.SelectedItem.ToString(), id);
-            MessageBox.Show("El certificado " + ComboBox_Certificate.SelectedItem.ToString() + "Se quito del instrumento " + id);
+            try
+            {
+                controller.updateStatusCertificate(ComboBox_Certificate.SelectedItem.ToString(), id);
+                MessageBox.Show("El certificado " + ComboBox_Certificate.SelectedItem.ToString() + "Se quito del instrumento " + id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Seleccione un numero de certificado "+ex.Message);
+            }
         }
     }
 }
+    

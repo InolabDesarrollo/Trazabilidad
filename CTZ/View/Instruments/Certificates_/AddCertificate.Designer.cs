@@ -38,6 +38,7 @@
             this.BtnAdd = new MaterialSkin.Controls.MaterialButton();
             this.TxtBox_Laboratory = new MaterialSkin.Controls.MaterialTextBox();
             this.ComboBox_Use = new MaterialSkin.Controls.MaterialComboBox();
+            this.Lbl_Instrument = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // TxtBox_Interval
@@ -47,7 +48,7 @@
             this.TxtBox_Interval.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Interval.Hint = "Intervalo de medida";
             this.TxtBox_Interval.LeadingIcon = null;
-            this.TxtBox_Interval.Location = new System.Drawing.Point(27, 87);
+            this.TxtBox_Interval.Location = new System.Drawing.Point(27, 124);
             this.TxtBox_Interval.MaxLength = 250;
             this.TxtBox_Interval.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Interval.Multiline = false;
@@ -62,7 +63,7 @@
             this.Lbl_DateCalibration.AutoSize = true;
             this.Lbl_DateCalibration.Depth = 0;
             this.Lbl_DateCalibration.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_DateCalibration.Location = new System.Drawing.Point(24, 154);
+            this.Lbl_DateCalibration.Location = new System.Drawing.Point(24, 193);
             this.Lbl_DateCalibration.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_DateCalibration.Name = "Lbl_DateCalibration";
             this.Lbl_DateCalibration.Size = new System.Drawing.Size(147, 19);
@@ -71,7 +72,7 @@
             // 
             // DatePicker_Calibration
             // 
-            this.DatePicker_Calibration.Location = new System.Drawing.Point(220, 154);
+            this.DatePicker_Calibration.Location = new System.Drawing.Point(220, 193);
             this.DatePicker_Calibration.Name = "DatePicker_Calibration";
             this.DatePicker_Calibration.Size = new System.Drawing.Size(216, 20);
             this.DatePicker_Calibration.TabIndex = 16;
@@ -81,7 +82,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(24, 198);
+            this.materialLabel2.Location = new System.Drawing.Point(24, 249);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(142, 19);
@@ -90,7 +91,7 @@
             // 
             // DatePicker_NextCalibration
             // 
-            this.DatePicker_NextCalibration.Location = new System.Drawing.Point(220, 198);
+            this.DatePicker_NextCalibration.Location = new System.Drawing.Point(220, 248);
             this.DatePicker_NextCalibration.Name = "DatePicker_NextCalibration";
             this.DatePicker_NextCalibration.Size = new System.Drawing.Size(216, 20);
             this.DatePicker_NextCalibration.TabIndex = 18;
@@ -102,7 +103,7 @@
             this.TxtBox_Link.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Link.Hint = "Link al certifiado";
             this.TxtBox_Link.LeadingIcon = null;
-            this.TxtBox_Link.Location = new System.Drawing.Point(27, 257);
+            this.TxtBox_Link.Location = new System.Drawing.Point(27, 304);
             this.TxtBox_Link.MaxLength = 280;
             this.TxtBox_Link.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Link.Multiline = false;
@@ -119,7 +120,7 @@
             this.TxtBox_Number.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Number.Hint = "No. de certificado";
             this.TxtBox_Number.LeadingIcon = null;
-            this.TxtBox_Number.Location = new System.Drawing.Point(27, 335);
+            this.TxtBox_Number.Location = new System.Drawing.Point(27, 379);
             this.TxtBox_Number.MaxLength = 50;
             this.TxtBox_Number.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Number.Multiline = false;
@@ -136,7 +137,7 @@
             this.BtnAdd.Depth = 0;
             this.BtnAdd.HighEmphasis = true;
             this.BtnAdd.Icon = null;
-            this.BtnAdd.Location = new System.Drawing.Point(322, 567);
+            this.BtnAdd.Location = new System.Drawing.Point(348, 588);
             this.BtnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnAdd.Name = "BtnAdd";
@@ -155,7 +156,7 @@
             this.TxtBox_Laboratory.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Laboratory.Hint = "Laboratorio";
             this.TxtBox_Laboratory.LeadingIcon = null;
-            this.TxtBox_Laboratory.Location = new System.Drawing.Point(27, 483);
+            this.TxtBox_Laboratory.Location = new System.Drawing.Point(27, 511);
             this.TxtBox_Laboratory.MaxLength = 250;
             this.TxtBox_Laboratory.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Laboratory.Multiline = false;
@@ -183,7 +184,7 @@
             "CONEXION",
             "TEMPERATURA",
             "TEMPERATURA Y HUMEDAD"});
-            this.ComboBox_Use.Location = new System.Drawing.Point(27, 411);
+            this.ComboBox_Use.Location = new System.Drawing.Point(27, 444);
             this.ComboBox_Use.MaxDropDownItems = 4;
             this.ComboBox_Use.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Use.Name = "ComboBox_Use";
@@ -191,11 +192,24 @@
             this.ComboBox_Use.StartIndex = 0;
             this.ComboBox_Use.TabIndex = 55;
             // 
+            // Lbl_Instrument
+            // 
+            this.Lbl_Instrument.AutoSize = true;
+            this.Lbl_Instrument.Depth = 0;
+            this.Lbl_Instrument.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Instrument.Location = new System.Drawing.Point(24, 77);
+            this.Lbl_Instrument.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Lbl_Instrument.Name = "Lbl_Instrument";
+            this.Lbl_Instrument.Size = new System.Drawing.Size(77, 19);
+            this.Lbl_Instrument.TabIndex = 56;
+            this.Lbl_Instrument.Text = "Instrument";
+            // 
             // AddCertificate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 647);
+            this.Controls.Add(this.Lbl_Instrument);
             this.Controls.Add(this.ComboBox_Use);
             this.Controls.Add(this.TxtBox_Laboratory);
             this.Controls.Add(this.BtnAdd);
@@ -225,5 +239,6 @@
         private MaterialSkin.Controls.MaterialButton BtnAdd;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Laboratory;
         private MaterialSkin.Controls.MaterialComboBox ComboBox_Use;
+        private MaterialSkin.Controls.MaterialLabel Lbl_Instrument;
     }
 }

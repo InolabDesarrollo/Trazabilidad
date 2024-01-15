@@ -90,7 +90,6 @@
             this.Lbl_Number_Of_Lots.Size = new System.Drawing.Size(211, 19);
             this.Lbl_Number_Of_Lots.TabIndex = 37;
             this.Lbl_Number_Of_Lots.Text = "Selecciona el número de lotes";
-            this.Lbl_Number_Of_Lots.Visible = false;
             // 
             // ComBox_Number_Lots
             // 
@@ -380,7 +379,7 @@
             this.Controls.Add(this.TxtBox_Estandards);
             this.Controls.Add(this.Lbl_Estandard);
             this.Name = "Add_Loan_By_Lots";
-            this.Text = "Registrar prestamo estándar por lote";
+            this.Text = "Registrar prestamo estándar por lotes";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,7 +15,6 @@ namespace CTZ.Controler.Estandard
     {
         public void registerDeliveryEstandard(Estandard_Assignment assignment,List<string> estEstandards)
         {
-            DateForReport dates = new DateForReport();
             assignment.DateDelivery = dates.convertToValidDateDatePicker(assignment.DateDelivery);
             assignment.EstimateDateReturn = dates.convertToValidDateDatePicker(assignment.EstimateDateReturn);
 
@@ -31,6 +30,33 @@ namespace CTZ.Controler.Estandard
             notification.sendMailNotification(assignment.EngineerEmail, emailBody, "Prestamo de estándar");
         }
 
+        public void registerDeliveryEstandardByLots(Estandard_Assignment assignment, List<string> estEstandards)
+        {
+            assignment.DateDelivery = dates.convertToValidDateDatePicker(assignment.DateDelivery);
+            assignment.EstimateDateReturn = dates.convertToValidDateDatePicker(assignment.EstimateDateReturn);
+
+            foreach (string standar in estEstandards)
+            {
+                assignmentRepository.registerDeliveryEstandard(assignment, standar);
+                updateAvailableLots(standar, assignment.NumberOfLots);
+            }
+            this.updateEstatusLoanEstandard("PRESTADO_POR_LOTES", estEstandards);
+            
+            assignment.linkOfCertificates = getLinkOfCertificates(estEstandards);
+            string emailBody = bodyEmail(assignment, estEstandards);
+
+            Notification notification = new Notification();
+            notification.sendMailNotification(assignment.EngineerEmail, emailBody, "Prestamo de estándar");
+        }
+
+        private void updateAvailableLots(string standar, int numberOfLotsToLoan)
+        {
+            C_Estandard controller = new C_Estandard();
+            int numberOfLotsAvailable = controller.getNumberOfLotsAvailable(standar);
+            numberOfLotsAvailable = numberOfLotsAvailable - numberOfLotsToLoan;
+
+            estandardsRepository.updateAvailableLots(standar, numberOfLotsAvailable);
+        }
 
         private string getLinkOfCertificates(List<string> standards)
         {
