@@ -38,6 +38,9 @@
     <StartupObject>CTZ.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>logo_Inolab.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ADGV.0.1.0.10\lib\net40\AdvancedDataGridView.dll</HintPath>
@@ -723,6 +726,7 @@
     <Content Include="Html\BodyMailQuality.xml" />
     <Content Include="Imagenes\Fondo_Blanco.png" />
     <Content Include="Imagenes\LOGO_Blanco_Lineas.png" />
+    <Content Include="logo_Inolab.ico" />
     <Content Include="View\EmailBodyEngineer.html" />
     <None Include="Resources\Fondo_Blanco.png" />
     <Content Include="SqlServerTypes\readme.htm" />

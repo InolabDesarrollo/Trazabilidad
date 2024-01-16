@@ -154,7 +154,8 @@
             // 
             // Btn_SerchByBrand
             // 
-            this.Btn_SerchByBrand.Location = new System.Drawing.Point(879, 18);
+            this.Btn_SerchByBrand.Location = new System.Drawing.Point(879, 16);
+            this.Btn_SerchByBrand.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_SerchByBrand.Name = "Btn_SerchByBrand";
             this.Btn_SerchByBrand.Size = new System.Drawing.Size(74, 23);
             this.Btn_SerchByBrand.TabIndex = 20;
@@ -163,7 +164,7 @@
             // 
             // TxtBox_Brand
             // 
-            this.TxtBox_Brand.Location = new System.Drawing.Point(707, 18);
+            this.TxtBox_Brand.Location = new System.Drawing.Point(696, 17);
             this.TxtBox_Brand.Name = "TxtBox_Brand";
             this.TxtBox_Brand.Size = new System.Drawing.Size(166, 20);
             this.TxtBox_Brand.TabIndex = 19;
@@ -171,15 +172,16 @@
             // Lbl_Brand
             // 
             this.Lbl_Brand.AutoSize = true;
-            this.Lbl_Brand.Location = new System.Drawing.Point(664, 21);
+            this.Lbl_Brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Brand.Location = new System.Drawing.Point(640, 16);
             this.Lbl_Brand.Name = "Lbl_Brand";
-            this.Lbl_Brand.Size = new System.Drawing.Size(37, 13);
+            this.Lbl_Brand.Size = new System.Drawing.Size(50, 18);
             this.Lbl_Brand.TabIndex = 18;
             this.Lbl_Brand.Text = "Marca";
             // 
             // Btn_SerchByInstrumentName
             // 
-            this.Btn_SerchByInstrumentName.Location = new System.Drawing.Point(574, 15);
+            this.Btn_SerchByInstrumentName.Location = new System.Drawing.Point(560, 16);
             this.Btn_SerchByInstrumentName.Name = "Btn_SerchByInstrumentName";
             this.Btn_SerchByInstrumentName.Size = new System.Drawing.Size(74, 23);
             this.Btn_SerchByInstrumentName.TabIndex = 17;
@@ -189,7 +191,7 @@
             // 
             // TxtBox_InstrumentName
             // 
-            this.TxtBox_InstrumentName.Location = new System.Drawing.Point(402, 15);
+            this.TxtBox_InstrumentName.Location = new System.Drawing.Point(388, 18);
             this.TxtBox_InstrumentName.Name = "TxtBox_InstrumentName";
             this.TxtBox_InstrumentName.Size = new System.Drawing.Size(166, 20);
             this.TxtBox_InstrumentName.TabIndex = 16;
@@ -197,15 +199,18 @@
             // Lbl_Instrument
             // 
             this.Lbl_Instrument.AutoSize = true;
-            this.Lbl_Instrument.Location = new System.Drawing.Point(330, 19);
+            this.Lbl_Instrument.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Instrument.Location = new System.Drawing.Point(295, 17);
             this.Lbl_Instrument.Name = "Lbl_Instrument";
-            this.Lbl_Instrument.Size = new System.Drawing.Size(63, 13);
+            this.Lbl_Instrument.Size = new System.Drawing.Size(87, 18);
             this.Lbl_Instrument.TabIndex = 15;
             this.Lbl_Instrument.Text = "Descripción";
             // 
             // Btn_ClearFilterInstruments
             // 
-            this.Btn_ClearFilterInstruments.Location = new System.Drawing.Point(1031, 19);
+            this.Btn_ClearFilterInstruments.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ClearFilterInstruments.Location = new System.Drawing.Point(1011, 16);
+            this.Btn_ClearFilterInstruments.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ClearFilterInstruments.Name = "Btn_ClearFilterInstruments";
             this.Btn_ClearFilterInstruments.Size = new System.Drawing.Size(122, 23);
             this.Btn_ClearFilterInstruments.TabIndex = 14;
@@ -215,7 +220,7 @@
             // 
             // Btn_SerchInstrument
             // 
-            this.Btn_SerchInstrument.Location = new System.Drawing.Point(239, 15);
+            this.Btn_SerchInstrument.Location = new System.Drawing.Point(215, 16);
             this.Btn_SerchInstrument.Name = "Btn_SerchInstrument";
             this.Btn_SerchInstrument.Size = new System.Drawing.Size(74, 23);
             this.Btn_SerchInstrument.TabIndex = 12;
@@ -225,7 +230,7 @@
             // 
             // TxtBox_Equino
             // 
-            this.TxtBox_Equino.Location = new System.Drawing.Point(100, 16);
+            this.TxtBox_Equino.Location = new System.Drawing.Point(76, 18);
             this.TxtBox_Equino.Name = "TxtBox_Equino";
             this.TxtBox_Equino.Size = new System.Drawing.Size(133, 20);
             this.TxtBox_Equino.TabIndex = 13;
@@ -380,9 +385,10 @@
             // Lbl_Equino
             // 
             this.Lbl_Equino.AutoSize = true;
-            this.Lbl_Equino.Location = new System.Drawing.Point(62, 18);
+            this.Lbl_Equino.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Equino.Location = new System.Drawing.Point(51, 17);
             this.Lbl_Equino.Name = "Lbl_Equino";
-            this.Lbl_Equino.Size = new System.Drawing.Size(16, 13);
+            this.Lbl_Equino.Size = new System.Drawing.Size(19, 18);
             this.Lbl_Equino.TabIndex = 1;
             this.Lbl_Equino.Text = "Id";
             // 

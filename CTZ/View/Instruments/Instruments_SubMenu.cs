@@ -218,11 +218,6 @@ namespace CTZ.View.Instruments
             }
         }
 
-        private void Dgv_Instruments_Certificates_FilterStringChanged(object sender, EventArgs e)
-        {
-            this.instrumentosCertificadoBindingSource2.Filter =this.Dgv_Instruments_Certificates.FilterString;
-            colorCellsStatus(columnStatusForDgvInstrumentsCertificates, Dgv_Instruments_Certificates);
-        }
 
         private void Btn_Instruments_Certificates_Click(object sender, EventArgs e)
         {
@@ -250,5 +245,10 @@ namespace CTZ.View.Instruments
             TxtBox_InstrumentsCertificatesEquino.Clear();
         }
 
+        private void Dgv_Instruments_Certificates_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.instrumentosCertificadoBindingSource4.Filter = Dgv_Instruments_Certificates.FilterString;
+            colorCellsStatus(columnStatusForDgvInstrumentsCertificates, Dgv_Instruments_Certificates);
+        }
     }
 }
