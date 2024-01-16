@@ -19,8 +19,6 @@ namespace CTZ.View.Estandard
             InitializeComponent();
         }
 
-
-
         private void Btn_Regist_Return_Instrument_Click(object sender, EventArgs e)
         {
             Regist_Return_Estandard regist_Return_Estandard = new Regist_Return_Estandard();

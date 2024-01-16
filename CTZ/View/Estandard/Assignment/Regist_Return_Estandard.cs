@@ -47,7 +47,7 @@ namespace CTZ.View.Estandard.Assignment
                     controller = new C_Return_Of_Estandard();
                     DataTable informationLoan = controller.selectInformationOfMoreRecentLoan(TxtBox_Estandards.Text);
                     MessageBox.Show("Este estándar se le presto al Ingeniero " + informationLoan.Rows[0]["Ingeniero"].ToString());
-                    addEstandardToReturnList(informationLoan, TxtBox_Estandards.Text);
+                    addStandardToReturnList(informationLoan, TxtBox_Estandards.Text);
                          
                 }
                 else
@@ -60,12 +60,11 @@ namespace CTZ.View.Estandard.Assignment
                 MessageBox.Show("Estandard No existe");
             }
         }
-
-        private void addEstandardToReturnList(DataTable informationLoan, string estEstandard)
+        private void addStandardToReturnList(DataTable informationLoan, string estEstandard)
         {
             string engineerName = informationLoan.Rows[0]["Ingeniero"].ToString();
-            bool estandarBelongsToEngineer = controller.checkIfEstandardBelongsToEngineer(engineerName, engineersNameList);
-            if (estandarBelongsToEngineer)
+            bool standarBelongsToEngineer = controller.checkIfStandarBelongsToEngineer(engineerName, engineersNameList);
+            if (standarBelongsToEngineer)
             {
                 try
                 {
