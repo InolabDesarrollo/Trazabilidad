@@ -1,6 +1,6 @@
 ﻿namespace CTZ.View.Estandard
 {
-    partial class SerchEstandard
+    partial class SerchStandar
     {
         /// <summary>
         /// Required designer variable.
@@ -88,7 +88,7 @@
             this.Controls.Add(this.Lbl_EstEstandard);
             this.Controls.Add(this.Btn_Serch);
             this.Controls.Add(this.TxtBox_EstEstandard);
-            this.Name = "SerchEstandard";
+            this.Name = "SerchStandar";
             this.Text = "Buscar Estandard";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,38 +29,37 @@ namespace CTZ.View.Estandard
             this.estandares_CertificadosTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares_Certificados);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares' Puede moverla o quitarla según sea necesario.
             this.estandaresTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares);
-
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            AddEstandard estandard = new AddEstandard();
+            AddStandar estandard = new AddStandar();
             estandard.Show();
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
-            DeleteEstandard deleteEstandard = new DeleteEstandard();
+            DeleteStandard deleteEstandard = new DeleteStandard();
             deleteEstandard.Show();
         }
 
         private void Btn_Update_Click(object sender, EventArgs e)
         {
             string kindOfSerch = "UpdateEstandard";
-            SerchEstandard estandard =  new SerchEstandard(kindOfSerch);
+            SerchStandar estandard =  new SerchStandar(kindOfSerch);
             estandard.Show();
         }
 
         private void Dgv_Estandards_FilterStringChanged(object sender, EventArgs e)
         {
-            this.estandaresBindingSource.Filter = this.Dgv_Estandards.FilterString;
+            this.estandaresBindingSource.Filter = this.Dgv_Standards.FilterString;
         }
 
         private void Btn_SerchEST_Click(object sender, EventArgs e)
         {
             if (controler.checkIfEstandarExist(TxtBox_EST.Text))
             {
-                Dgv_Estandards.DataSource = controler.selectEstandardByEST(TxtBox_EST.Text);
+                Dgv_Standards.DataSource = controler.selectEstandardByEST(TxtBox_EST.Text);
             }
             else
             {
@@ -70,34 +69,70 @@ namespace CTZ.View.Estandard
 
         private void Btn_CleanSerch_Click(object sender, EventArgs e)
         {
-            Dgv_Estandards.DataSource = estandaresBindingSource;
+            Dgv_Standards.DataSource = estandaresBindingSource;
         }
 
         private void Btn_SerchByEstandardName_Click(object sender, EventArgs e)
         {
-            Dgv_Estandards.DataSource = controler.selectByEstandard(TxtBox_EstandardName.Text);
+            Dgv_Standards.DataSource = controler.selectByEstandard(TxtBox_EstandardName.Text);
         }
 
         private void Btn_Brand_Click(object sender, EventArgs e)
         {
-            Dgv_Estandards.DataSource = controler.selectByBrand(TxtBox_Brand.Text);
+            Dgv_Standards.DataSource = controler.selectByBrand(TxtBox_Brand.Text);
         }
 
         private void Btn_Add_Certificate_Click(object sender, EventArgs e)
         {
             string kindOfSerch = "AddCertificate";
-            SerchEstandard estandard = new SerchEstandard(kindOfSerch);
+            SerchStandar estandard = new SerchStandar(kindOfSerch);
             estandard.Show();
         }
 
         private void Dgv_Estandard_Certificate_FilterStringChanged(object sender, EventArgs e)
         {
-            this.estandaresCertificadosBindingSource.Filter = this.Dgv_Estandard_Certificate.FilterString;
+            this.estandaresCertificadosBindingSource.Filter = this.Dgv_Standard_Certificate.FilterString;
         }
 
         private void Dgv_Standars_Near_Expiration_Date_FilterStringChanged(object sender, EventArgs e)
         {
             this.estandarescercadecaducarBindingSource.Filter = this.Dgv_Standars_Near_Expiration_Date.FilterString;
+        }
+
+        private void Btn_Serch_Certificate_Click(object sender, EventArgs e)
+        {
+            if (controler.checkIfEstandarExist(TxtBox_Certificate_Standar.Text))
+            {
+                Dgv_Standard_Certificate.DataSource = controler.getStandarCertificate(TxtBox_Certificate_Standar.Text);
+            }
+            else
+            {
+                MessageBox.Show("El estandard no existe ");
+            }
+        }
+
+        private void Btn_Clean_Standar_Certificate_Click(object sender, EventArgs e)
+        {
+            Dgv_Standard_Certificate.DataSource = estandaresCertificadosBindingSource;
+            TxtBox_Certificate_Standar.Clear();
+        }
+
+        private void Btn_Serch_Available_Standar_Click(object sender, EventArgs e)
+        {
+            if (controler.checkIfEstandarExist(TxtBox_Available_Standar.Text))
+            {
+                Dgv_Standars_Near_Expiration_Date.DataSource = controler.getStandarNearToExpire(TxtBox_Available_Standar.Text);
+            }
+            else
+            {
+                MessageBox.Show("El estandard no existe ");
+            }
+        }
+
+        private void Btn_Clean_Available_Standar_Click(object sender, EventArgs e)
+        {
+            Dgv_Standars_Near_Expiration_Date.DataSource = estandarescercadecaducarBindingSource;
+            TxtBox_Available_Standar.Clear();
         }
     }
 }

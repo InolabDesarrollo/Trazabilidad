@@ -1,6 +1,6 @@
 ﻿namespace CTZ.View.Estandard
 {
-    partial class AddEstandard
+    partial class AddStandar
     {
         /// <summary>
         /// Required designer variable.
@@ -431,7 +431,7 @@
             this.Controls.Add(this.Lbl_Estandard);
             this.Controls.Add(this.TxtBox_ESTE);
             this.Controls.Add(this.Lbl_Est);
-            this.Name = "AddEstandard";
+            this.Name = "AddStandar";
             this.Text = "Agregar Estandar ";
             this.ResumeLayout(false);
             this.PerformLayout();

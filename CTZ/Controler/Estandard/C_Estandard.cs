@@ -1,4 +1,6 @@
-﻿using CTZ.Model.Trazabilidad.Estandard;
+﻿using CTZ.Model.Trazabilidad;
+using CTZ.Model.Trazabilidad.Estandard;
+using CTZ.Model.Trazabilidad.Instruments;
 using CTZ.Modelo;
 using System;
 using System.Collections.Generic;
@@ -13,8 +15,12 @@ namespace CTZ.Controler.Estandard
     public class C_Estandard
     {
         Estandards_Repository repository;
+        View_Standar_Certificate repositoryCertificate;
+        View_Standar_Near_To_Expire repositoryStandarNearToExpire;
         public C_Estandard() {
-            repository = new Estandards_Repository();   
+            repository = new Estandards_Repository();
+            repositoryCertificate = new View_Standar_Certificate();
+            repositoryStandarNearToExpire = new View_Standar_Near_To_Expire();
         }
 
         public bool checkIfEstandarExist(string idEstandartEst)
@@ -68,6 +74,16 @@ namespace CTZ.Controler.Estandard
                 MessageBox.Show("Sin lotes disponibles "+ex.Message);
                 return 0;
             }   
+        }
+
+        public DataTable getStandarCertificate(string standar)
+        {
+            return repositoryCertificate.selectAllByStandar(standar);
+        } 
+
+        public DataTable getStandarNearToExpire(string standar)
+        {
+            return repositoryStandarNearToExpire.selectAllByStandar(standar);
         }
     }
 }

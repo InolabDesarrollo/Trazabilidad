@@ -179,6 +179,8 @@
     <Compile Include="Model\Trazabilidad\Instruments\RelationCertificateInstrument_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\TraceabilityLetter_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\View_Instrument_Certificate_Repository.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\View_Standar_Certificate.cs" />
+    <Compile Include="Model\Trazabilidad\Instruments\View_Standar_Near_To_Expire.cs" />
     <Compile Include="TrazabilidadTestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,11 +224,11 @@
     <Compile Include="View\Estandard\AddCertificate.Designer.cs">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Estandard\AddEstandard.cs">
+    <Compile Include="View\Estandard\AddStandar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Estandard\AddEstandard.Designer.cs">
-      <DependentUpon>AddEstandard.cs</DependentUpon>
+    <Compile Include="View\Estandard\AddStandar.Designer.cs">
+      <DependentUpon>AddStandar.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Estandard\Assignment\Add_Loan_By_Lots.cs">
       <SubType>Form</SubType>
@@ -265,11 +267,11 @@
       <DependentUpon>See_Estandard_Assignment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Estandard\CertificateEstandard.cs" />
-    <Compile Include="View\Estandard\DeleteEstandard.cs">
+    <Compile Include="View\Estandard\DeleteStandard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Estandard\DeleteEstandard.Designer.cs">
-      <DependentUpon>DeleteEstandard.cs</DependentUpon>
+    <Compile Include="View\Estandard\DeleteStandard.Designer.cs">
+      <DependentUpon>DeleteStandard.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Estandard\Estandards_Menu.cs">
       <SubType>Form</SubType>
@@ -284,11 +286,11 @@
     <Compile Include="View\Estandard\Estandars_SubMenu.Designer.cs">
       <DependentUpon>Estandars_SubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Estandard\SerchEstandard.cs">
+    <Compile Include="View\Estandard\SerchStandar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Estandard\SerchEstandard.Designer.cs">
-      <DependentUpon>SerchEstandard.cs</DependentUpon>
+    <Compile Include="View\Estandard\SerchStandar.Designer.cs">
+      <DependentUpon>SerchStandar.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Estandard\UpdateEstandard.cs">
       <SubType>Form</SubType>
@@ -495,8 +497,8 @@
     <EmbeddedResource Include="View\Estandard\AddCertificate.resx">
       <DependentUpon>AddCertificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Estandard\AddEstandard.resx">
-      <DependentUpon>AddEstandard.cs</DependentUpon>
+    <EmbeddedResource Include="View\Estandard\AddStandar.resx">
+      <DependentUpon>AddStandar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\Assignment\Add_Loan_By_Lots.resx">
       <DependentUpon>Add_Loan_By_Lots.cs</DependentUpon>
@@ -516,8 +518,8 @@
     <EmbeddedResource Include="View\Estandard\Assignment\See_Estandard_Assignment.resx">
       <DependentUpon>See_Estandard_Assignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Estandard\DeleteEstandard.resx">
-      <DependentUpon>DeleteEstandard.cs</DependentUpon>
+    <EmbeddedResource Include="View\Estandard\DeleteStandard.resx">
+      <DependentUpon>DeleteStandard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\Estandards_Menu.resx">
       <DependentUpon>Estandards_Menu.cs</DependentUpon>
@@ -525,8 +527,8 @@
     <EmbeddedResource Include="View\Estandard\Estandars_SubMenu.resx">
       <DependentUpon>Estandars_SubMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Estandard\SerchEstandard.resx">
-      <DependentUpon>SerchEstandard.cs</DependentUpon>
+    <EmbeddedResource Include="View\Estandard\SerchStandar.resx">
+      <DependentUpon>SerchStandar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\UpdateEstandard.resx">
       <DependentUpon>UpdateEstandard.cs</DependentUpon>

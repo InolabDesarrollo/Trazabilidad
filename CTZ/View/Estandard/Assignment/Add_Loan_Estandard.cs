@@ -117,7 +117,7 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.NameEnterprise = TxtBox_NameEnterprise.Text;
                 assignment.DeliveryObservations = TxtBox_ObservationDelivery.Text;
                 assignment.EstimateDateReturn = TimePicker_Date_Estimate_Return.Text;
-
+                assignment.Type = "Prestamo";
                 UserRepository userRepository = new UserRepository();
                 usuarioControler = new C_User(userRepository);
                 string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());

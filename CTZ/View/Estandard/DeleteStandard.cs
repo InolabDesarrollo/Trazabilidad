@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace CTZ.View.Estandard
 {
-    public partial class DeleteEstandard : MaterialForm
+    public partial class DeleteStandard : MaterialForm
     {
-        public DeleteEstandard()
+        public DeleteStandard()
         {
             InitializeComponent();
         }

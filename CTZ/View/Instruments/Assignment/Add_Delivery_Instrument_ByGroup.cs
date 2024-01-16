@@ -60,8 +60,8 @@ namespace CTZ.Vista.Instruments
             {
                 DataTable instrumentInformation = instrumentsControler.selectAllFromInstrument(TxtBox_Instrumenst.Text);
                 bool instrumentIsAvailable = instrumentsControler.checkIfInstrumentIsAvailable(TxtBox_Instrumenst.Text);
-
                 equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
+
                 if (instrumentIsAvailable)
                 {
                     checkExpirationOfCertificate(equinoInstrument);
@@ -154,7 +154,8 @@ namespace CTZ.Vista.Instruments
 
                     assignmentController = new C_RegistDeliveryInstrument();
                     assignmentController.registerDeliveryInstrument(instrumentAssignments, instrumentList, instrumentsThatNeedCertificate);
-                    MessageBox.Show("Registro de prestamos de Instrumento realizado correctamente");
+                    MessageBox.Show("Prestamos de Instrumento realizado correctamente");
+
                     this.Close();
                 }
                  

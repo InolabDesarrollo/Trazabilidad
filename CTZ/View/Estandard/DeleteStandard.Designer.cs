@@ -1,6 +1,6 @@
 ﻿namespace CTZ.View.Estandard
 {
-    partial class DeleteEstandard
+    partial class DeleteStandard
     {
         /// <summary>
         /// Required designer variable.
@@ -88,7 +88,7 @@
             this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.TxtBox_EST);
             this.Controls.Add(this.Lbl_Estandard);
-            this.Name = "DeleteEstandard";
+            this.Name = "DeleteStandard";
             this.Text = "Borrar Estandar";
             this.ResumeLayout(false);
             this.PerformLayout();

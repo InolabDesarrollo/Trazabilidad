@@ -1,6 +1,7 @@
 ﻿using CTZ.Controler.Estandard.Assignment;
 using CTZ.Model.Trazabilidad.Estandard;
 using CTZ.Modelo;
+using CTZ.TrazabilidadTestDataSetTableAdapters;
 using CTZ.View.Estandard;
 using CTZ.Vista.Responsabilitis;
 using System;
@@ -17,7 +18,6 @@ namespace CTZ.Controler.Estandard
         {
             assignment.DateDelivery = dates.convertToValidDateDatePicker(assignment.DateDelivery);
             assignment.EstimateDateReturn = dates.convertToValidDateDatePicker(assignment.EstimateDateReturn);
-
             foreach (string estandar in estEstandards)
             {
                 assignmentRepository.registerDeliveryEstandard(assignment, estandar);
@@ -34,7 +34,7 @@ namespace CTZ.Controler.Estandard
         {
             assignment.DateDelivery = dates.convertToValidDateDatePicker(assignment.DateDelivery);
             assignment.EstimateDateReturn = dates.convertToValidDateDatePicker(assignment.EstimateDateReturn);
-
+            
             foreach (string standar in estEstandards)
             {
                 assignmentRepository.registerDeliveryEstandard(assignment, standar);

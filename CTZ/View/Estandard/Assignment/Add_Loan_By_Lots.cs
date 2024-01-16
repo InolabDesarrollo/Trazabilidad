@@ -118,6 +118,7 @@ namespace CTZ.View.Estandard.Assignment
                 assignment.DeliveryObservations = TxtBox_ObservationDelivery.Text;
                 assignment.EstimateDateReturn = TimePicker_Date_Estimate_Return.Text;
                 assignment.NumberOfLots = Convert.ToInt32(ComBox_Number_Lots.SelectedItem.ToString());
+                assignment.type = "Prestamo_Por_Lotes";
 
                 UserRepository userRepository = new UserRepository();
                 usuarioControler = new C_User(userRepository);

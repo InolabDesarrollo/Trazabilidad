@@ -37,10 +37,12 @@ namespace CTZ.Modelo.Trazabilidad
         }
         public void addNewInstrument(Instruments instrument)
         {
-            conexion.executeQuery("INSERT Instrumentos(ID_Instrumentos,INSTRUMENTO,MARCA,MODELO,N#S#,UBICACIÓN,OBSERVACIÓN,ESTATUS,MAGNITUD,RANGO,ACCESORIOS) \r\n" +
-                "values('"+instrument.id+"','"+instrument.instrument+"','"+instrument.brand+"','"+instrument.model+"','"
-                +instrument.numberOfSerie+"','"+instrument.ubication+"','"+instrument.observation+"','"+instrument.status+"','"
-                +instrument.magnitude+"','"+instrument.range+"', '"+instrument.accessories+"');");
+            string query = "INSERT Instrumentos(ID_Instrumentos,INSTRUMENTO,MARCA,MODELO,N#S#,UBICACIÓN,OBSERVACIÓN,ESTATUS,MAGNITUD,RANGO,ACCESORIOS) \r\n" +
+                "values('" + instrument.id + "','" + instrument.instrument + "','" + instrument.brand + "','" + instrument.model + "','"
+                + instrument.numberOfSerie + "','" + instrument.ubication + "','" + instrument.observation + "','" + instrument.status + "','"
+                + instrument.magnitude + "','" + instrument.range + "', '" + instrument.accessories + "');";
+            
+                conexion.executeQuery(query);
         }
 
         public void deleteInstrument(string id )

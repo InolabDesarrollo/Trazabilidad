@@ -17,9 +17,9 @@ using System.Windows.Forms;
 
 namespace CTZ.View.Estandard
 {
-    public partial class AddEstandard : MaterialForm
+    public partial class AddStandar : MaterialForm
     {
-        public AddEstandard()
+        public AddStandar()
         {
             InitializeComponent();
             fillComboBoxNumberOfLots();

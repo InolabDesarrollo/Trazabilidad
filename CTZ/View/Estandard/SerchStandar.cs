@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace CTZ.View.Estandard
 {
-    public partial class SerchEstandard : MaterialForm
+    public partial class SerchStandar : MaterialForm
     {
         private readonly string kindOfSerch;
 
-        public SerchEstandard(string kindOfSerch)
+        public SerchStandar(string kindOfSerch)
         {
             InitializeComponent();
             this.kindOfSerch = kindOfSerch;
