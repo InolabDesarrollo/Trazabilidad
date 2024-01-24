@@ -38,30 +38,7 @@ namespace CTZ.View.Instruments
             this.instrumentosTableAdapter.Fill(this.trazabilidadTest_Instrumentos.Instrumentos);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet3.Instrumentos_Certificado' Puede moverla o quitarla según sea necesario.
             this.instrumentos_CertificadoTableAdapter.Fill(this.trazabilidadTestDataSet3.Instrumentos_Certificado);
-            instrumentTable = getDataOfDataGridView(Dgv_Instruments);
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
-        }
-
-        private DataTable getDataOfDataGridView(AdvancedDataGridView dataGridView)
-        {
-            DataTable dataTable = new DataTable();
-            foreach (DataGridViewColumn colum in dataGridView.Columns)
-            {
-                dataTable.Columns.Add(colum.Name);
-            }
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                DataRow dataRow = dataTable.NewRow();
-
-                foreach (DataGridViewCell celda in row.Cells)
-                {
-                    dataRow[celda.ColumnIndex] = celda.Value;
-                }
-
-                // Agregar la fila al DataTable
-                dataTable.Rows.Add(dataRow);
-            }
-            return dataTable;
         }
 
         private void colorCellsStatus(int columnThatNeedColor, DataGridView dataGridView)
@@ -197,7 +174,6 @@ namespace CTZ.View.Instruments
         {
             Dgv_Instruments.DataSource = instrumentosBindingSource1;
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
-
             TxtBox_Brand.Clear();
             TxtBox_Equino.Clear();
             TxtBox_InstrumentName.Clear();
@@ -217,7 +193,6 @@ namespace CTZ.View.Instruments
                 MessageBox.Show("El instrumento no existe, o dejaste el campo vacio");
             }
         }
-
 
         private void Btn_Instruments_Certificates_Click(object sender, EventArgs e)
         {

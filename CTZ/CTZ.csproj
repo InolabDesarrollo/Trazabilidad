@@ -134,12 +134,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controler\Estandard\Assignment\C_Estandard_Assignment.cs" />
+    <Compile Include="Controler\Estandard\Assignment\C_Loan.cs" />
+    <Compile Include="Controler\Estandard\Assignment\C_Loan_Standar_By_Lots.cs" />
+    <Compile Include="Controler\Estandard\Assignment\C_Loan_Standar_Complete.cs" />
     <Compile Include="Controler\Estandard\Assignment\C_Permanent_Assignment_Standar.cs" />
     <Compile Include="Controler\Estandard\Assignment\C_Query_Estandard_Assignment.cs" />
     <Compile Include="Controler\Estandard\C_AddEstandard.cs" />
     <Compile Include="Controler\Estandard\C_Certificate.cs" />
     <Compile Include="Controler\Estandard\C_DeleteEstandard.cs" />
-    <Compile Include="Controler\Estandard\Assignment\C_Loan_Estandard.cs" />
     <Compile Include="Controler\Estandard\C_Estandard.cs" />
     <Compile Include="Controler\Estandard\Assignment\C_Return_Of_Estandard.cs" />
     <Compile Include="Controler\Estandard\C_UpdateEstandard.cs" />
@@ -154,7 +156,6 @@
     <Compile Include="Controler\Instruments\Traceability\C_ExternTraceabilityRepository.cs" />
     <Compile Include="Controler\Instruments\C_Instruments.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_Instrument_Assignments.cs" />
-    <Compile Include="Controler\Instruments\Certificates_\C_RelationCertificateInstrument.cs" />
     <Compile Include="Controler\Instruments\Traceability\C_TraceabilityRepository.cs" />
     <Compile Include="Controler\C_User.cs" />
     <Compile Include="Controler\Instruments\Certificates_\C_View_Instrument_Certificate.cs" />
@@ -179,7 +180,6 @@
     <Compile Include="Model\Trazabilidad\Instruments\Instrument_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\Interfaces\IRelationCertificateInstrument_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\Laboratory_Repository.cs" />
-    <Compile Include="Model\Trazabilidad\Instruments\RelationCertificateInstrument_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\TraceabilityLetter_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\View_Instrument_Certificate_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\View_Standar_Certificate.cs" />
@@ -438,7 +438,6 @@
     <Compile Include="Responsabilitis\Instruments.cs" />
     <Compile Include="View\Instruments\Instrument_Assignments.cs" />
     <Compile Include="Responsabilitis\Notification.cs" />
-    <Compile Include="Responsabilitis\RelationCertificateInstrument.cs" />
     <Compile Include="View\Instruments\SerchInstrument.cs">
       <SubType>Form</SubType>
     </Compile>

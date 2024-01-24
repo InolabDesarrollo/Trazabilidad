@@ -1,5 +1,6 @@
 ﻿using CTZ.Controlador;
 using CTZ.Controler.Estandard;
+using CTZ.Controler.Estandard.Assignment;
 using CTZ.Modelo.Browser;
 using CTZ.View.Responsabilitis;
 using CTZ.Vista.Instruments;
@@ -96,7 +97,6 @@ namespace CTZ.View.Estandard.Assignment
             TxtBox_Estandards.Clear();
         }
 
-
         private void Btn_RegistEnginnerSignature_Click(object sender, EventArgs e)
         {
             RegistSignature signature = new RegistSignature(assignment, "EngineerEstandard");
@@ -123,8 +123,8 @@ namespace CTZ.View.Estandard.Assignment
                 string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
                 assignment.EngineerEmail = emailEngineer;
 
-                C_Loan_Estandard controler = new C_Loan_Estandard();
-                controler.registerDeliveryEstandard(assignment, standardList);
+                C_Loan_Standar_Complete controler = new C_Loan_Standar_Complete();
+                controler.registerDeliveryStandar(assignment, standardList);
 
                 MessageBox.Show("Se creo la asignacion para los estandares ");
                 this.Close();

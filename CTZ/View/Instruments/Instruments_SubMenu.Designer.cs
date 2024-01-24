@@ -88,12 +88,12 @@
             this.Estatus_Certificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instrumentosCertificadoBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTestDataSet31 = new CTZ.TrazabilidadTestDataSet3();
-            this.instrumentosCertificadoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Btn_Add = new System.Windows.Forms.Button();
             this.BtnDelete_Instruments = new System.Windows.Forms.Button();
             this.BtnUpdate_Instrument = new System.Windows.Forms.Button();
             this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
+            this.instrumentosCertificadoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentosTableAdapter = new CTZ.TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter();
             this.instrumentosCertificadoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTestDataSet3 = new CTZ.TrazabilidadTestDataSet3();
@@ -110,8 +110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instruments_Certificates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource)).BeginInit();
@@ -425,21 +425,21 @@
             // 
             // TxtBox_InstrumentsCertificatesBrand
             // 
-            this.TxtBox_InstrumentsCertificatesBrand.Location = new System.Drawing.Point(778, 18);
+            this.TxtBox_InstrumentsCertificatesBrand.Location = new System.Drawing.Point(778, 17);
             this.TxtBox_InstrumentsCertificatesBrand.Name = "TxtBox_InstrumentsCertificatesBrand";
             this.TxtBox_InstrumentsCertificatesBrand.Size = new System.Drawing.Size(174, 20);
             this.TxtBox_InstrumentsCertificatesBrand.TabIndex = 18;
             // 
             // TxtBox_InstrumentNameCertificates
             // 
-            this.TxtBox_InstrumentNameCertificates.Location = new System.Drawing.Point(449, 19);
+            this.TxtBox_InstrumentNameCertificates.Location = new System.Drawing.Point(449, 18);
             this.TxtBox_InstrumentNameCertificates.Name = "TxtBox_InstrumentNameCertificates";
             this.TxtBox_InstrumentNameCertificates.Size = new System.Drawing.Size(175, 20);
             this.TxtBox_InstrumentNameCertificates.TabIndex = 17;
             // 
             // TxtBox_InstrumentsCertificatesEquino
             // 
-            this.TxtBox_InstrumentsCertificatesEquino.Location = new System.Drawing.Point(124, 20);
+            this.TxtBox_InstrumentsCertificatesEquino.Location = new System.Drawing.Point(106, 22);
             this.TxtBox_InstrumentsCertificatesEquino.Name = "TxtBox_InstrumentsCertificatesEquino";
             this.TxtBox_InstrumentsCertificatesEquino.Size = new System.Drawing.Size(156, 20);
             this.TxtBox_InstrumentsCertificatesEquino.TabIndex = 16;
@@ -457,9 +457,10 @@
             // Lbl_Instruments_Ceritificates_Brand
             // 
             this.Lbl_Instruments_Ceritificates_Brand.AutoSize = true;
-            this.Lbl_Instruments_Ceritificates_Brand.Location = new System.Drawing.Point(735, 23);
+            this.Lbl_Instruments_Ceritificates_Brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Instruments_Ceritificates_Brand.Location = new System.Drawing.Point(722, 18);
             this.Lbl_Instruments_Ceritificates_Brand.Name = "Lbl_Instruments_Ceritificates_Brand";
-            this.Lbl_Instruments_Ceritificates_Brand.Size = new System.Drawing.Size(37, 13);
+            this.Lbl_Instruments_Ceritificates_Brand.Size = new System.Drawing.Size(50, 18);
             this.Lbl_Instruments_Ceritificates_Brand.TabIndex = 14;
             this.Lbl_Instruments_Ceritificates_Brand.Text = "Marca";
             // 
@@ -476,15 +477,16 @@
             // Lbl_Instrument_Certificate
             // 
             this.Lbl_Instrument_Certificate.AutoSize = true;
-            this.Lbl_Instrument_Certificate.Location = new System.Drawing.Point(376, 20);
+            this.Lbl_Instrument_Certificate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Instrument_Certificate.Location = new System.Drawing.Point(349, 19);
             this.Lbl_Instrument_Certificate.Name = "Lbl_Instrument_Certificate";
-            this.Lbl_Instrument_Certificate.Size = new System.Drawing.Size(67, 13);
+            this.Lbl_Instrument_Certificate.Size = new System.Drawing.Size(94, 18);
             this.Lbl_Instrument_Certificate.TabIndex = 12;
             this.Lbl_Instrument_Certificate.Text = "Instrumentos";
             // 
             // Btn_Equino_InstrumentsCertificates
             // 
-            this.Btn_Equino_InstrumentsCertificates.Location = new System.Drawing.Point(286, 17);
+            this.Btn_Equino_InstrumentsCertificates.Location = new System.Drawing.Point(268, 20);
             this.Btn_Equino_InstrumentsCertificates.Name = "Btn_Equino_InstrumentsCertificates";
             this.Btn_Equino_InstrumentsCertificates.Size = new System.Drawing.Size(75, 23);
             this.Btn_Equino_InstrumentsCertificates.TabIndex = 11;
@@ -495,9 +497,10 @@
             // lbl_EquinoCertificates
             // 
             this.lbl_EquinoCertificates.AutoSize = true;
-            this.lbl_EquinoCertificates.Location = new System.Drawing.Point(78, 22);
+            this.lbl_EquinoCertificates.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EquinoCertificates.Location = new System.Drawing.Point(81, 23);
             this.lbl_EquinoCertificates.Name = "lbl_EquinoCertificates";
-            this.lbl_EquinoCertificates.Size = new System.Drawing.Size(16, 13);
+            this.lbl_EquinoCertificates.Size = new System.Drawing.Size(19, 18);
             this.lbl_EquinoCertificates.TabIndex = 10;
             this.lbl_EquinoCertificates.Text = "Id";
             // 
@@ -704,11 +707,6 @@
             this.trazabilidadTestDataSet31.DataSetName = "TrazabilidadTestDataSet3";
             this.trazabilidadTestDataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // instrumentosCertificadoBindingSource3
-            // 
-            this.instrumentosCertificadoBindingSource3.DataMember = "Instrumentos_Certificado";
-            this.instrumentosCertificadoBindingSource3.DataSource = this.trazabilidadTestDataSet31;
-            // 
             // instrumentosBindingSource
             // 
             this.instrumentosBindingSource.DataMember = "Instrumentos";
@@ -765,6 +763,11 @@
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
             this.materialContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // instrumentosCertificadoBindingSource3
+            // 
+            this.instrumentosCertificadoBindingSource3.DataMember = "Instrumentos_Certificado";
+            this.instrumentosCertificadoBindingSource3.DataSource = this.trazabilidadTestDataSet31;
+            // 
             // instrumentosTableAdapter
             // 
             this.instrumentosTableAdapter.ClearBeforeFill = true;
@@ -817,8 +820,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instruments_Certificates)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource)).EndInit();

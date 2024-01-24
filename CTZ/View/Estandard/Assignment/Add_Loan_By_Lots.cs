@@ -1,5 +1,6 @@
 ﻿using CTZ.Controlador;
 using CTZ.Controler.Estandard;
+using CTZ.Controler.Estandard.Assignment;
 using CTZ.Modelo.Browser;
 using CTZ.Vista.Instruments;
 using MaterialSkin.Controls;
@@ -22,7 +23,7 @@ namespace CTZ.View.Estandard.Assignment
         private C_User usuarioControler;
         private DataTable engineers;
         public static Estandard_Assignment assignment;
-
+        private int count = 0;
         public Add_Loan_By_Lots()
         {
             InitializeComponent();
@@ -64,17 +65,25 @@ namespace CTZ.View.Estandard.Assignment
         {
             try
             {
-                standardList.Add(standar);
-                ComboBox_Estandards.Items.Add(standar);
-                MessageBox.Show("Se agrego el Estandard " + standar);
-                fillNumberOfLotsAvailable(standar);
+                if (count >= 1)
+                {
+                    MessageBox.Show("Solo puedes agregar un estandar");
+                }
+                else
+                {
+                    standardList.Add(standar);
+                    ComboBox_Estandards.Items.Add(standar);
+                    MessageBox.Show("Se agrego el Estandard " + standar);
+                    fillNumberOfLotsAvailable(standar);
+                    fillAvailableLots(standar);
+                    count++;
+                }             
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message.ToString());
             }
             TxtBox_Estandards.Clear();
-            fillAvailableLots(standar);
         }
 
         private void fillNumberOfLotsAvailable(string standar)
@@ -125,8 +134,8 @@ namespace CTZ.View.Estandard.Assignment
                 string emailEngineer = usuarioControler.serchEmailEngineer(MaterialComboBox_Engineers.SelectedItem.ToString());
                 assignment.EngineerEmail = emailEngineer;
 
-                C_Loan_Estandard controler = new C_Loan_Estandard();
-                controler.registerDeliveryEstandardByLots(assignment, standardList);
+                C_Loan_Standar_By_Lots controler = new C_Loan_Standar_By_Lots();
+                controler.registerDeliveryStandar(assignment, standardList);
 
                 MessageBox.Show("Se creo la asignacion para los estandares ");
                 this.Close();
