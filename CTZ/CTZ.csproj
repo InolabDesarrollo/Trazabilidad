@@ -435,7 +435,7 @@
     <Compile Include="Responsabilitis\DateForReport.cs" />
     <Compile Include="Responsabilitis\Email.cs" />
     <Compile Include="Responsabilitis\Estandard.cs" />
-    <Compile Include="Responsabilitis\Instruments.cs" />
+    <Compile Include="Responsabilitis\Instrument.cs" />
     <Compile Include="View\Instruments\Instrument_Assignments.cs" />
     <Compile Include="Responsabilitis\Notification.cs" />
     <Compile Include="View\Instruments\SerchInstrument.cs">

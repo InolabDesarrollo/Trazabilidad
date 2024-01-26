@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Markup;
 
 namespace CTZ.Controlador
@@ -32,16 +33,26 @@ namespace CTZ.Controlador
             return repository.selectInstrumentsAndCertificates();
         }
 
-        public void addNewInstrument(Instruments instrument)
+        public void addNewInstrument(Instrument instrument)
         {
             repository.addNewInstrument(instrument);
         }
 
-        public void deleteInstrument(string id)
+        public string deleteInstrument(string id)
         {
-            repository.deleteInstrument(id);
+            bool instrumentExist = repository.serchInstrument(id);
+            if (instrumentExist)
+            {
+                repository.deleteInstrument(id);
+                return "El instrumento se elimino";
+            }
+            else
+            {
+                return "El instrumento no existe";
+            } 
         }
-        public void updateInstrument(Instruments instrument)
+
+        public void updateInstrument(Instrument instrument)
         {
             repository.updateInstrument(instrument);
         }

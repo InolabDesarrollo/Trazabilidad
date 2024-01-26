@@ -42,8 +42,8 @@
             this.Lbl_Certificate = new MaterialSkin.Controls.MaterialLabel();
             this.Lbl_Id_Instrument = new MaterialSkin.Controls.MaterialLabel();
             this.TxtBox_Magnitude = new MaterialSkin.Controls.MaterialTextBox();
-            this.TxtBox_Range = new MaterialSkin.Controls.MaterialTextBox();
-            this.TxtBox_Accessories = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Use = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Mean_Interval = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // TxtBox_Instrument
@@ -296,39 +296,39 @@
             this.TxtBox_Magnitude.Text = "";
             this.TxtBox_Magnitude.TrailingIcon = null;
             // 
-            // TxtBox_Range
+            // TxtBox_Use
             // 
-            this.TxtBox_Range.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtBox_Range.Depth = 0;
-            this.TxtBox_Range.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_Range.Hint = "RANGO";
-            this.TxtBox_Range.LeadingIcon = null;
-            this.TxtBox_Range.Location = new System.Drawing.Point(350, 213);
-            this.TxtBox_Range.MaxLength = 50;
-            this.TxtBox_Range.MouseState = MaterialSkin.MouseState.OUT;
-            this.TxtBox_Range.Multiline = false;
-            this.TxtBox_Range.Name = "TxtBox_Range";
-            this.TxtBox_Range.Size = new System.Drawing.Size(268, 50);
-            this.TxtBox_Range.TabIndex = 65;
-            this.TxtBox_Range.Text = "";
-            this.TxtBox_Range.TrailingIcon = null;
+            this.TxtBox_Use.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Use.Depth = 0;
+            this.TxtBox_Use.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Use.Hint = "USO";
+            this.TxtBox_Use.LeadingIcon = null;
+            this.TxtBox_Use.Location = new System.Drawing.Point(350, 213);
+            this.TxtBox_Use.MaxLength = 50;
+            this.TxtBox_Use.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Use.Multiline = false;
+            this.TxtBox_Use.Name = "TxtBox_Use";
+            this.TxtBox_Use.Size = new System.Drawing.Size(268, 50);
+            this.TxtBox_Use.TabIndex = 65;
+            this.TxtBox_Use.Text = "";
+            this.TxtBox_Use.TrailingIcon = null;
             // 
-            // TxtBox_Accessories
+            // TxtBox_Mean_Interval
             // 
-            this.TxtBox_Accessories.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtBox_Accessories.Depth = 0;
-            this.TxtBox_Accessories.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBox_Accessories.Hint = "ACCESORIOS";
-            this.TxtBox_Accessories.LeadingIcon = null;
-            this.TxtBox_Accessories.Location = new System.Drawing.Point(350, 291);
-            this.TxtBox_Accessories.MaxLength = 50;
-            this.TxtBox_Accessories.MouseState = MaterialSkin.MouseState.OUT;
-            this.TxtBox_Accessories.Multiline = false;
-            this.TxtBox_Accessories.Name = "TxtBox_Accessories";
-            this.TxtBox_Accessories.Size = new System.Drawing.Size(268, 50);
-            this.TxtBox_Accessories.TabIndex = 66;
-            this.TxtBox_Accessories.Text = "";
-            this.TxtBox_Accessories.TrailingIcon = null;
+            this.TxtBox_Mean_Interval.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Mean_Interval.Depth = 0;
+            this.TxtBox_Mean_Interval.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Mean_Interval.Hint = "INTERVALO DE MEDIA";
+            this.TxtBox_Mean_Interval.LeadingIcon = null;
+            this.TxtBox_Mean_Interval.Location = new System.Drawing.Point(350, 291);
+            this.TxtBox_Mean_Interval.MaxLength = 50;
+            this.TxtBox_Mean_Interval.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Mean_Interval.Multiline = false;
+            this.TxtBox_Mean_Interval.Name = "TxtBox_Mean_Interval";
+            this.TxtBox_Mean_Interval.Size = new System.Drawing.Size(268, 50);
+            this.TxtBox_Mean_Interval.TabIndex = 66;
+            this.TxtBox_Mean_Interval.Text = "";
+            this.TxtBox_Mean_Interval.TrailingIcon = null;
             // 
             // UpdateInstrument
             // 
@@ -336,8 +336,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(949, 697);
-            this.Controls.Add(this.TxtBox_Accessories);
-            this.Controls.Add(this.TxtBox_Range);
+            this.Controls.Add(this.TxtBox_Mean_Interval);
+            this.Controls.Add(this.TxtBox_Use);
             this.Controls.Add(this.TxtBox_Magnitude);
             this.Controls.Add(this.Lbl_Id_Instrument);
             this.Controls.Add(this.Lbl_Certificate);
@@ -375,7 +375,7 @@
         private MaterialSkin.Controls.MaterialLabel Lbl_Certificate;
         private MaterialSkin.Controls.MaterialLabel Lbl_Id_Instrument;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Magnitude;
-        private MaterialSkin.Controls.MaterialTextBox TxtBox_Range;
-        private MaterialSkin.Controls.MaterialTextBox TxtBox_Accessories;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Use;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Mean_Interval;
     }
 }

@@ -53,7 +53,15 @@ namespace CTZ.Vista.Responsabilitis
                 certificate.use = ComboBox_Use.SelectedItem.ToString();
                 certificate.laboratory = TxtBox_Laboratory.Text;
                 certificate.status = "Activo";
-                
+
+                certificate.uncertanty = TxtBox_Uncertainty.Text;
+                certificate.numberTemperatureCertificate = TxtBox_Number_Temperature_Certificate.Text;
+                certificate.numberCertificateHr = TxtBox_Number_Certificate_HR.Text;
+                certificate.maximumErrorHr = TxtBox_Maximun_Error_HR.Text;
+                certificate.hrInterval = TxtBox_HR_Interval.Text;
+                certificate.maximumErrorHr = TxtBox_Maximun_Error_HR.Text;
+                certificate.mediumInterval = TxtBox_Interval.Text;
+
                 C_Add_Certificate controller = new C_Add_Certificate();
 
                 if (controller.checkIfNumberExist(certificate.number))

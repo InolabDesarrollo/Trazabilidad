@@ -259,15 +259,15 @@
             // Lbl_Estandard
             // 
             this.Lbl_Estandard.AutoSize = true;
-            this.Lbl_Estandard.Location = new System.Drawing.Point(316, 17);
+            this.Lbl_Estandard.Location = new System.Drawing.Point(306, 17);
             this.Lbl_Estandard.Name = "Lbl_Estandard";
-            this.Lbl_Estandard.Size = new System.Drawing.Size(55, 13);
+            this.Lbl_Estandard.Size = new System.Drawing.Size(63, 13);
             this.Lbl_Estandard.TabIndex = 16;
-            this.Lbl_Estandard.Text = "Estandard";
+            this.Lbl_Estandard.Text = "Descripcion";
             // 
             // Btn_SerchEST
             // 
-            this.Btn_SerchEST.Location = new System.Drawing.Point(236, 14);
+            this.Btn_SerchEST.Location = new System.Drawing.Point(207, 13);
             this.Btn_SerchEST.Name = "Btn_SerchEST";
             this.Btn_SerchEST.Size = new System.Drawing.Size(74, 23);
             this.Btn_SerchEST.TabIndex = 15;
@@ -277,7 +277,7 @@
             // 
             // TxtBox_EST
             // 
-            this.TxtBox_EST.Location = new System.Drawing.Point(97, 17);
+            this.TxtBox_EST.Location = new System.Drawing.Point(66, 16);
             this.TxtBox_EST.Name = "TxtBox_EST";
             this.TxtBox_EST.Size = new System.Drawing.Size(133, 20);
             this.TxtBox_EST.TabIndex = 14;
@@ -285,7 +285,7 @@
             // Lbl_EST
             // 
             this.Lbl_EST.AutoSize = true;
-            this.Lbl_EST.Location = new System.Drawing.Point(63, 20);
+            this.Lbl_EST.Location = new System.Drawing.Point(37, 19);
             this.Lbl_EST.Name = "Lbl_EST";
             this.Lbl_EST.Size = new System.Drawing.Size(28, 13);
             this.Lbl_EST.TabIndex = 2;

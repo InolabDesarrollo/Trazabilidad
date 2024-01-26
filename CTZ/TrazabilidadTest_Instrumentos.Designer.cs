@@ -313,6 +313,10 @@ namespace CTZ {
             
             private global::System.Data.DataColumn columnACCESORIOS;
             
+            private global::System.Data.DataColumn columnUSO;
+            
+            private global::System.Data.DataColumn columnINTERVALO_DE_MEDIA;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public InstrumentosDataTable() {
@@ -484,6 +488,22 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn USOColumn {
+                get {
+                    return this.columnUSO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn INTERVALO_DE_MEDIAColumn {
+                get {
+                    return this.columnINTERVALO_DE_MEDIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -535,7 +555,9 @@ namespace CTZ {
                         string ACCESORIOS_HUMEDAD, 
                         string MAGNITUD, 
                         string RANGO, 
-                        string ACCESORIOS) {
+                        string ACCESORIOS, 
+                        string USO, 
+                        string INTERVALO_DE_MEDIA) {
                 InstrumentosRow rowInstrumentosRow = ((InstrumentosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -554,7 +576,9 @@ namespace CTZ {
                         ACCESORIOS_HUMEDAD,
                         MAGNITUD,
                         RANGO,
-                        ACCESORIOS};
+                        ACCESORIOS,
+                        USO,
+                        INTERVALO_DE_MEDIA};
                 rowInstrumentosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInstrumentosRow);
                 return rowInstrumentosRow;
@@ -601,6 +625,8 @@ namespace CTZ {
                 this.columnMAGNITUD = base.Columns["MAGNITUD"];
                 this.columnRANGO = base.Columns["RANGO"];
                 this.columnACCESORIOS = base.Columns["ACCESORIOS"];
+                this.columnUSO = base.Columns["USO"];
+                this.columnINTERVALO_DE_MEDIA = base.Columns["INTERVALO_DE_MEDIA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -642,6 +668,10 @@ namespace CTZ {
                 base.Columns.Add(this.columnRANGO);
                 this.columnACCESORIOS = new global::System.Data.DataColumn("ACCESORIOS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnACCESORIOS);
+                this.columnUSO = new global::System.Data.DataColumn("USO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUSO);
+                this.columnINTERVALO_DE_MEDIA = new global::System.Data.DataColumn("INTERVALO_DE_MEDIA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINTERVALO_DE_MEDIA);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -666,6 +696,8 @@ namespace CTZ {
                 this.columnMAGNITUD.MaxLength = 1000;
                 this.columnRANGO.MaxLength = 1000;
                 this.columnACCESORIOS.MaxLength = 1000;
+                this.columnUSO.MaxLength = 1000;
+                this.columnINTERVALO_DE_MEDIA.MaxLength = 1000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1078,6 +1110,39 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string USO {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos.USOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'USO\' de la tabla \'Instrumentos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos.USOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string INTERVALO_DE_MEDIA {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos.INTERVALO_DE_MEDIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'INTERVALO_DE_MEDIA\' de la tabla \'Instrumentos\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos.INTERVALO_DE_MEDIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsID_InstrumentosNull() {
                 return this.IsNull(this.tableInstrumentos.ID_InstrumentosColumn);
             }
@@ -1267,6 +1332,30 @@ namespace CTZ {
             public void SetACCESORIOSNull() {
                 this[this.tableInstrumentos.ACCESORIOSColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsUSONull() {
+                return this.IsNull(this.tableInstrumentos.USOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetUSONull() {
+                this[this.tableInstrumentos.USOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsINTERVALO_DE_MEDIANull() {
+                return this.IsNull(this.tableInstrumentos.INTERVALO_DE_MEDIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetINTERVALO_DE_MEDIANull() {
+                this[this.tableInstrumentos.INTERVALO_DE_MEDIAColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1445,10 +1534,12 @@ namespace CTZ.TrazabilidadTest_InstrumentosTableAdapters {
             tableMapping.ColumnMappings.Add("MAGNITUD", "MAGNITUD");
             tableMapping.ColumnMappings.Add("RANGO", "RANGO");
             tableMapping.ColumnMappings.Add("ACCESORIOS", "ACCESORIOS");
+            tableMapping.ColumnMappings.Add("USO", "USO");
+            tableMapping.ColumnMappings.Add("INTERVALO_DE_MEDIA", "INTERVALO_DE_MEDIA");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Instrumentos] WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Instrumentos = 1 AND [ID_Instrumentos] IS NULL) OR ([ID_Instrumentos] = @Original_ID_Instrumentos)) AND ((@IsNull_INSTRUMENTO = 1 AND [INSTRUMENTO] IS NULL) OR ([INSTRUMENTO] = @Original_INSTRUMENTO)) AND ((@IsNull_MARCA = 1 AND [MARCA] IS NULL) OR ([MARCA] = @Original_MARCA)) AND ((@IsNull_MODELO = 1 AND [MODELO] IS NULL) OR ([MODELO] = @Original_MODELO)) AND ((@IsNull_N#S# = 1 AND [N#S#] IS NULL) OR ([N#S#] = @Original_N#S#)) AND ((@IsNull_UBICACIÓN = 1 AND [UBICACIÓN] IS NULL) OR ([UBICACIÓN] = @Original_UBICACIÓN)) AND ((@IsNull_OBSERVACIÓN = 1 AND [OBSERVACIÓN] IS NULL) OR ([OBSERVACIÓN] = @Original_OBSERVACIÓN)) AND ((@IsNull_ESTATUS = 1 AND [ESTATUS] IS NULL) OR ([ESTATUS] = @Original_ESTATUS)) AND ((@IsNull_ESTATUS_ASIGNACION = 1 AND [ESTATUS_ASIGNACION] IS NULL) OR ([ESTATUS_ASIGNACION] = @Original_ESTATUS_ASIGNACION)) AND ((@IsNull_MAGNITUD = 1 AND [MAGNITUD] IS NULL) OR ([MAGNITUD] = @Original_MAGNITUD)) AND ((@IsNull_RANGO = 1 AND [RANGO] IS NULL) OR ([RANGO] = @Original_RANGO)) AND ((@IsNull_ACCESORIOS = 1 AND [ACCESORIOS] IS NULL) OR ([ACCESORIOS] = @Original_ACCESORIOS)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Instrumentos] WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Instrumentos = 1 AND [ID_Instrumentos] IS NULL) OR ([ID_Instrumentos] = @Original_ID_Instrumentos)) AND ((@IsNull_INSTRUMENTO = 1 AND [INSTRUMENTO] IS NULL) OR ([INSTRUMENTO] = @Original_INSTRUMENTO)) AND ((@IsNull_MARCA = 1 AND [MARCA] IS NULL) OR ([MARCA] = @Original_MARCA)) AND ((@IsNull_MODELO = 1 AND [MODELO] IS NULL) OR ([MODELO] = @Original_MODELO)) AND ((@IsNull_N#S# = 1 AND [N#S#] IS NULL) OR ([N#S#] = @Original_N#S#)) AND ((@IsNull_UBICACIÓN = 1 AND [UBICACIÓN] IS NULL) OR ([UBICACIÓN] = @Original_UBICACIÓN)) AND ((@IsNull_OBSERVACIÓN = 1 AND [OBSERVACIÓN] IS NULL) OR ([OBSERVACIÓN] = @Original_OBSERVACIÓN)) AND ((@IsNull_ESTATUS = 1 AND [ESTATUS] IS NULL) OR ([ESTATUS] = @Original_ESTATUS)) AND ((@IsNull_ESTATUS_ASIGNACION = 1 AND [ESTATUS_ASIGNACION] IS NULL) OR ([ESTATUS_ASIGNACION] = @Original_ESTATUS_ASIGNACION)) AND ((@IsNull_MAGNITUD = 1 AND [MAGNITUD] IS NULL) OR ([MAGNITUD] = @Original_MAGNITUD)) AND ((@IsNull_RANGO = 1 AND [RANGO] IS NULL) OR ([RANGO] = @Original_RANGO)) AND ((@IsNull_ACCESORIOS = 1 AND [ACCESORIOS] IS NULL) OR ([ACCESORIOS] = @Original_ACCESORIOS)) AND ((@IsNull_USO = 1 AND [USO] IS NULL) OR ([USO] = @Original_USO)) AND ((@IsNull_INTERVALO_DE_MEDIA = 1 AND [INTERVALO_DE_MEDIA] IS NULL) OR ([INTERVALO_DE_MEDIA] = @Original_INTERVALO_DE_MEDIA)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Instrumentos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1475,10 +1566,14 @@ namespace CTZ.TrazabilidadTest_InstrumentosTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RANGO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ACCESORIOS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCESORIOS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_USO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_USO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_INTERVALO_DE_MEDIA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INTERVALO_DE_MEDIA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INTERVALO_DE_MEDIA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INTERVALO_DE_MEDIA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Instrumentos] ([ID_Instrumentos], [INSTRUMENTO], [MARCA], [MODELO], [N#S#], [UBICACIÓN], [OBSERVACIÓN], [ESTATUS], [ESTATUS_ASIGNACION], [MAGNITUD], [RANGO], [ACCESORIOS]) VALUES (@ID_Instrumentos, @INSTRUMENTO, @MARCA, @MODELO, @N#S#, @UBICACIÓN, @OBSERVACIÓN, @ESTATUS, @ESTATUS_ASIGNACION, @MAGNITUD, @RANGO, @ACCESORIOS);
-SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNACION, MAGNITUD, RANGO, ACCESORIOS FROM Instrumentos WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Instrumentos] ([ID_Instrumentos], [INSTRUMENTO], [MARCA], [MODELO], [N#S#], [UBICACIÓN], [OBSERVACIÓN], [ESTATUS], [ESTATUS_ASIGNACION], [MAGNITUD], [RANGO], [ACCESORIOS], [USO], [INTERVALO_DE_MEDIA]) VALUES (@ID_Instrumentos, @INSTRUMENTO, @MARCA, @MODELO, @N#S#, @UBICACIÓN, @OBSERVACIÓN, @ESTATUS, @ESTATUS_ASIGNACION, @MAGNITUD, @RANGO, @ACCESORIOS, @USO, @INTERVALO_DE_MEDIA);
+SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNACION, MAGNITUD, RANGO, ACCESORIOS, USO, INTERVALO_DE_MEDIA FROM Instrumentos WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Instrumentos", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INSTRUMENTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INSTRUMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1492,29 +1587,35 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAGNITUD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAGNITUD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RANGO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCESORIOS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INTERVALO_DE_MEDIA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INTERVALO_DE_MEDIA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [Instrumentos] SET [ID_Instrumentos] = @ID_Instrumentos, [INSTRUMENTO] = @" +
                 "INSTRUMENTO, [MARCA] = @MARCA, [MODELO] = @MODELO, [N#S#] = @N#S#, [UBICACIÓN] =" +
                 " @UBICACIÓN, [OBSERVACIÓN] = @OBSERVACIÓN, [ESTATUS] = @ESTATUS, [ESTATUS_ASIGNA" +
                 "CION] = @ESTATUS_ASIGNACION, [MAGNITUD] = @MAGNITUD, [RANGO] = @RANGO, [ACCESORI" +
-                "OS] = @ACCESORIOS WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Instrumentos = 1" +
-                " AND [ID_Instrumentos] IS NULL) OR ([ID_Instrumentos] = @Original_ID_Instrumento" +
-                "s)) AND ((@IsNull_INSTRUMENTO = 1 AND [INSTRUMENTO] IS NULL) OR ([INSTRUMENTO] =" +
-                " @Original_INSTRUMENTO)) AND ((@IsNull_MARCA = 1 AND [MARCA] IS NULL) OR ([MARCA" +
-                "] = @Original_MARCA)) AND ((@IsNull_MODELO = 1 AND [MODELO] IS NULL) OR ([MODELO" +
-                "] = @Original_MODELO)) AND ((@IsNull_N#S# = 1 AND [N#S#] IS NULL) OR ([N#S#] = @" +
-                "Original_N#S#)) AND ((@IsNull_UBICACIÓN = 1 AND [UBICACIÓN] IS NULL) OR ([UBICAC" +
-                "IÓN] = @Original_UBICACIÓN)) AND ((@IsNull_OBSERVACIÓN = 1 AND [OBSERVACIÓN] IS " +
-                "NULL) OR ([OBSERVACIÓN] = @Original_OBSERVACIÓN)) AND ((@IsNull_ESTATUS = 1 AND " +
-                "[ESTATUS] IS NULL) OR ([ESTATUS] = @Original_ESTATUS)) AND ((@IsNull_ESTATUS_ASI" +
-                "GNACION = 1 AND [ESTATUS_ASIGNACION] IS NULL) OR ([ESTATUS_ASIGNACION] = @Origin" +
-                "al_ESTATUS_ASIGNACION)) AND ((@IsNull_MAGNITUD = 1 AND [MAGNITUD] IS NULL) OR ([" +
-                "MAGNITUD] = @Original_MAGNITUD)) AND ((@IsNull_RANGO = 1 AND [RANGO] IS NULL) OR" +
-                " ([RANGO] = @Original_RANGO)) AND ((@IsNull_ACCESORIOS = 1 AND [ACCESORIOS] IS N" +
-                "ULL) OR ([ACCESORIOS] = @Original_ACCESORIOS)));\r\nSELECT ID, ID_Instrumentos, IN" +
-                "STRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNAC" +
-                "ION, MAGNITUD, RANGO, ACCESORIOS FROM Instrumentos WHERE (ID = @ID)";
+                "OS] = @ACCESORIOS, [USO] = @USO, [INTERVALO_DE_MEDIA] = @INTERVALO_DE_MEDIA WHER" +
+                "E (([ID] = @Original_ID) AND ((@IsNull_ID_Instrumentos = 1 AND [ID_Instrumentos]" +
+                " IS NULL) OR ([ID_Instrumentos] = @Original_ID_Instrumentos)) AND ((@IsNull_INST" +
+                "RUMENTO = 1 AND [INSTRUMENTO] IS NULL) OR ([INSTRUMENTO] = @Original_INSTRUMENTO" +
+                ")) AND ((@IsNull_MARCA = 1 AND [MARCA] IS NULL) OR ([MARCA] = @Original_MARCA)) " +
+                "AND ((@IsNull_MODELO = 1 AND [MODELO] IS NULL) OR ([MODELO] = @Original_MODELO))" +
+                " AND ((@IsNull_N#S# = 1 AND [N#S#] IS NULL) OR ([N#S#] = @Original_N#S#)) AND ((" +
+                "@IsNull_UBICACIÓN = 1 AND [UBICACIÓN] IS NULL) OR ([UBICACIÓN] = @Original_UBICA" +
+                "CIÓN)) AND ((@IsNull_OBSERVACIÓN = 1 AND [OBSERVACIÓN] IS NULL) OR ([OBSERVACIÓN" +
+                "] = @Original_OBSERVACIÓN)) AND ((@IsNull_ESTATUS = 1 AND [ESTATUS] IS NULL) OR " +
+                "([ESTATUS] = @Original_ESTATUS)) AND ((@IsNull_ESTATUS_ASIGNACION = 1 AND [ESTAT" +
+                "US_ASIGNACION] IS NULL) OR ([ESTATUS_ASIGNACION] = @Original_ESTATUS_ASIGNACION)" +
+                ") AND ((@IsNull_MAGNITUD = 1 AND [MAGNITUD] IS NULL) OR ([MAGNITUD] = @Original_" +
+                "MAGNITUD)) AND ((@IsNull_RANGO = 1 AND [RANGO] IS NULL) OR ([RANGO] = @Original_" +
+                "RANGO)) AND ((@IsNull_ACCESORIOS = 1 AND [ACCESORIOS] IS NULL) OR ([ACCESORIOS] " +
+                "= @Original_ACCESORIOS)) AND ((@IsNull_USO = 1 AND [USO] IS NULL) OR ([USO] = @O" +
+                "riginal_USO)) AND ((@IsNull_INTERVALO_DE_MEDIA = 1 AND [INTERVALO_DE_MEDIA] IS N" +
+                "ULL) OR ([INTERVALO_DE_MEDIA] = @Original_INTERVALO_DE_MEDIA)));\r\nSELECT ID, ID_" +
+                "Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERVACIÓN, ESTATUS," +
+                " ESTATUS_ASIGNACION, MAGNITUD, RANGO, ACCESORIOS, USO, INTERVALO_DE_MEDIA FROM I" +
+                "nstrumentos WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Instrumentos", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INSTRUMENTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INSTRUMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1528,6 +1629,8 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAGNITUD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAGNITUD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RANGO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCESORIOS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INTERVALO_DE_MEDIA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INTERVALO_DE_MEDIA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Instrumentos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Instrumentos", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Instrumentos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1553,6 +1656,10 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RANGO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ACCESORIOS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCESORIOS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCESORIOS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_USO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_USO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_INTERVALO_DE_MEDIA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INTERVALO_DE_MEDIA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INTERVALO_DE_MEDIA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INTERVALO_DE_MEDIA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1630,7 +1737,7 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_ID_Instrumentos, string Original_INSTRUMENTO, string Original_MARCA, string Original_MODELO, string _Original_N_S_, string Original_UBICACIÓN, string Original_OBSERVACIÓN, string Original_ESTATUS, string Original_ESTATUS_ASIGNACION, string Original_MAGNITUD, string Original_RANGO, string Original_ACCESORIOS) {
+        public virtual int Delete(int Original_ID, string Original_ID_Instrumentos, string Original_INSTRUMENTO, string Original_MARCA, string Original_MODELO, string _Original_N_S_, string Original_UBICACIÓN, string Original_OBSERVACIÓN, string Original_ESTATUS, string Original_ESTATUS_ASIGNACION, string Original_MAGNITUD, string Original_RANGO, string Original_ACCESORIOS, string Original_USO, string Original_INTERVALO_DE_MEDIA) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_ID_Instrumentos == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1728,6 +1835,22 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_ACCESORIOS));
             }
+            if ((Original_USO == null)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_USO));
+            }
+            if ((Original_INTERVALO_DE_MEDIA == null)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_INTERVALO_DE_MEDIA));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1748,7 +1871,7 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ID_Instrumentos, string INSTRUMENTO, string MARCA, string MODELO, string _N_S_, string UBICACIÓN, string OBSERVACIÓN, string ESTATUS, string ESTATUS_ASIGNACION, string MAGNITUD, string RANGO, string ACCESORIOS) {
+        public virtual int Insert(string ID_Instrumentos, string INSTRUMENTO, string MARCA, string MODELO, string _N_S_, string UBICACIÓN, string OBSERVACIÓN, string ESTATUS, string ESTATUS_ASIGNACION, string MAGNITUD, string RANGO, string ACCESORIOS, string USO, string INTERVALO_DE_MEDIA) {
             if ((ID_Instrumentos == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1821,6 +1944,18 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = ((string)(ACCESORIOS));
             }
+            if ((USO == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(USO));
+            }
+            if ((INTERVALO_DE_MEDIA == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(INTERVALO_DE_MEDIA));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1854,6 +1989,8 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                     string MAGNITUD, 
                     string RANGO, 
                     string ACCESORIOS, 
+                    string USO, 
+                    string INTERVALO_DE_MEDIA, 
                     int Original_ID, 
                     string Original_ID_Instrumentos, 
                     string Original_INSTRUMENTO, 
@@ -1867,6 +2004,8 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                     string Original_MAGNITUD, 
                     string Original_RANGO, 
                     string Original_ACCESORIOS, 
+                    string Original_USO, 
+                    string Original_INTERVALO_DE_MEDIA, 
                     int ID) {
             if ((ID_Instrumentos == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -1940,104 +2079,132 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(ACCESORIOS));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ID));
-            if ((Original_ID_Instrumentos == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            if ((USO == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ID_Instrumentos));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(USO));
             }
-            if ((Original_INSTRUMENTO == null)) {
+            if ((INTERVALO_DE_MEDIA == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(INTERVALO_DE_MEDIA));
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ID));
+            if ((Original_ID_Instrumentos == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_INSTRUMENTO));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_ID_Instrumentos));
             }
-            if ((Original_MARCA == null)) {
+            if ((Original_INSTRUMENTO == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_MARCA));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_INSTRUMENTO));
             }
-            if ((Original_MODELO == null)) {
+            if ((Original_MARCA == null)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_MODELO));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_MARCA));
             }
-            if ((_Original_N_S_ == null)) {
+            if ((Original_MODELO == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(_Original_N_S_));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_MODELO));
             }
-            if ((Original_UBICACIÓN == null)) {
+            if ((_Original_N_S_ == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_UBICACIÓN));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(_Original_N_S_));
             }
-            if ((Original_OBSERVACIÓN == null)) {
+            if ((Original_UBICACIÓN == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_OBSERVACIÓN));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_UBICACIÓN));
             }
-            if ((Original_ESTATUS == null)) {
+            if ((Original_OBSERVACIÓN == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_ESTATUS));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_OBSERVACIÓN));
             }
-            if ((Original_ESTATUS_ASIGNACION == null)) {
+            if ((Original_ESTATUS == null)) {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_ESTATUS_ASIGNACION));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_ESTATUS));
             }
-            if ((Original_MAGNITUD == null)) {
+            if ((Original_ESTATUS_ASIGNACION == null)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_MAGNITUD));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_ESTATUS_ASIGNACION));
             }
-            if ((Original_RANGO == null)) {
+            if ((Original_MAGNITUD == null)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_RANGO));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_MAGNITUD));
             }
-            if ((Original_ACCESORIOS == null)) {
+            if ((Original_RANGO == null)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_ACCESORIOS));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_RANGO));
             }
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(ID));
+            if ((Original_ACCESORIOS == null)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_ACCESORIOS));
+            }
+            if ((Original_USO == null)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_USO));
+            }
+            if ((Original_INTERVALO_DE_MEDIA == null)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_INTERVALO_DE_MEDIA));
+            }
+            this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2071,6 +2238,8 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                     string MAGNITUD, 
                     string RANGO, 
                     string ACCESORIOS, 
+                    string USO, 
+                    string INTERVALO_DE_MEDIA, 
                     int Original_ID, 
                     string Original_ID_Instrumentos, 
                     string Original_INSTRUMENTO, 
@@ -2083,8 +2252,10 @@ SELECT ID, ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, N#S#, UBICACIÓN, OBSERV
                     string Original_ESTATUS_ASIGNACION, 
                     string Original_MAGNITUD, 
                     string Original_RANGO, 
-                    string Original_ACCESORIOS) {
-            return this.Update(ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, _N_S_, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNACION, MAGNITUD, RANGO, ACCESORIOS, Original_ID, Original_ID_Instrumentos, Original_INSTRUMENTO, Original_MARCA, Original_MODELO, _Original_N_S_, Original_UBICACIÓN, Original_OBSERVACIÓN, Original_ESTATUS, Original_ESTATUS_ASIGNACION, Original_MAGNITUD, Original_RANGO, Original_ACCESORIOS, Original_ID);
+                    string Original_ACCESORIOS, 
+                    string Original_USO, 
+                    string Original_INTERVALO_DE_MEDIA) {
+            return this.Update(ID_Instrumentos, INSTRUMENTO, MARCA, MODELO, _N_S_, UBICACIÓN, OBSERVACIÓN, ESTATUS, ESTATUS_ASIGNACION, MAGNITUD, RANGO, ACCESORIOS, USO, INTERVALO_DE_MEDIA, Original_ID, Original_ID_Instrumentos, Original_INSTRUMENTO, Original_MARCA, Original_MODELO, _Original_N_S_, Original_UBICACIÓN, Original_OBSERVACIÓN, Original_ESTATUS, Original_ESTATUS_ASIGNACION, Original_MAGNITUD, Original_RANGO, Original_ACCESORIOS, Original_USO, Original_INTERVALO_DE_MEDIA, Original_ID);
         }
     }
     

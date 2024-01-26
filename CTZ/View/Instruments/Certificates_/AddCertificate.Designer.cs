@@ -39,6 +39,12 @@
             this.TxtBox_Laboratory = new MaterialSkin.Controls.MaterialTextBox();
             this.ComboBox_Use = new MaterialSkin.Controls.MaterialComboBox();
             this.Lbl_Instrument = new MaterialSkin.Controls.MaterialLabel();
+            this.TxtBox_Uncertainty = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Number_Temperature_Certificate = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Number_Certificate_HR = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Maximum_Error = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_HR_Interval = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBox_Maximun_Error_HR = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // TxtBox_Interval
@@ -137,7 +143,7 @@
             this.BtnAdd.Depth = 0;
             this.BtnAdd.HighEmphasis = true;
             this.BtnAdd.Icon = null;
-            this.BtnAdd.Location = new System.Drawing.Point(348, 588);
+            this.BtnAdd.Location = new System.Drawing.Point(714, 575);
             this.BtnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnAdd.Name = "BtnAdd";
@@ -204,11 +210,119 @@
             this.Lbl_Instrument.TabIndex = 56;
             this.Lbl_Instrument.Text = "Instrument";
             // 
+            // TxtBox_Uncertainty
+            // 
+            this.TxtBox_Uncertainty.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Uncertainty.Depth = 0;
+            this.TxtBox_Uncertainty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Uncertainty.Hint = "Incertidumbre";
+            this.TxtBox_Uncertainty.LeadingIcon = null;
+            this.TxtBox_Uncertainty.Location = new System.Drawing.Point(478, 123);
+            this.TxtBox_Uncertainty.MaxLength = 250;
+            this.TxtBox_Uncertainty.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Uncertainty.Multiline = false;
+            this.TxtBox_Uncertainty.Name = "TxtBox_Uncertainty";
+            this.TxtBox_Uncertainty.Size = new System.Drawing.Size(324, 50);
+            this.TxtBox_Uncertainty.TabIndex = 57;
+            this.TxtBox_Uncertainty.Text = "";
+            this.TxtBox_Uncertainty.TrailingIcon = null;
+            // 
+            // TxtBox_Number_Temperature_Certificate
+            // 
+            this.TxtBox_Number_Temperature_Certificate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Number_Temperature_Certificate.Depth = 0;
+            this.TxtBox_Number_Temperature_Certificate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Number_Temperature_Certificate.Hint = "No Certificado de temperatura";
+            this.TxtBox_Number_Temperature_Certificate.LeadingIcon = null;
+            this.TxtBox_Number_Temperature_Certificate.Location = new System.Drawing.Point(478, 190);
+            this.TxtBox_Number_Temperature_Certificate.MaxLength = 250;
+            this.TxtBox_Number_Temperature_Certificate.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Number_Temperature_Certificate.Multiline = false;
+            this.TxtBox_Number_Temperature_Certificate.Name = "TxtBox_Number_Temperature_Certificate";
+            this.TxtBox_Number_Temperature_Certificate.Size = new System.Drawing.Size(324, 50);
+            this.TxtBox_Number_Temperature_Certificate.TabIndex = 58;
+            this.TxtBox_Number_Temperature_Certificate.Text = "";
+            this.TxtBox_Number_Temperature_Certificate.TrailingIcon = null;
+            // 
+            // TxtBox_Number_Certificate_HR
+            // 
+            this.TxtBox_Number_Certificate_HR.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Number_Certificate_HR.Depth = 0;
+            this.TxtBox_Number_Certificate_HR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Number_Certificate_HR.Hint = "No Certificado de HR";
+            this.TxtBox_Number_Certificate_HR.LeadingIcon = null;
+            this.TxtBox_Number_Certificate_HR.Location = new System.Drawing.Point(478, 260);
+            this.TxtBox_Number_Certificate_HR.MaxLength = 250;
+            this.TxtBox_Number_Certificate_HR.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Number_Certificate_HR.Multiline = false;
+            this.TxtBox_Number_Certificate_HR.Name = "TxtBox_Number_Certificate_HR";
+            this.TxtBox_Number_Certificate_HR.Size = new System.Drawing.Size(324, 50);
+            this.TxtBox_Number_Certificate_HR.TabIndex = 59;
+            this.TxtBox_Number_Certificate_HR.Text = "";
+            this.TxtBox_Number_Certificate_HR.TrailingIcon = null;
+            // 
+            // TxtBox_Maximum_Error
+            // 
+            this.TxtBox_Maximum_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Maximum_Error.Depth = 0;
+            this.TxtBox_Maximum_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Maximum_Error.Hint = "Error Maximo T";
+            this.TxtBox_Maximum_Error.LeadingIcon = null;
+            this.TxtBox_Maximum_Error.Location = new System.Drawing.Point(478, 343);
+            this.TxtBox_Maximum_Error.MaxLength = 250;
+            this.TxtBox_Maximum_Error.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Maximum_Error.Multiline = false;
+            this.TxtBox_Maximum_Error.Name = "TxtBox_Maximum_Error";
+            this.TxtBox_Maximum_Error.Size = new System.Drawing.Size(324, 50);
+            this.TxtBox_Maximum_Error.TabIndex = 61;
+            this.TxtBox_Maximum_Error.Text = "";
+            this.TxtBox_Maximum_Error.TrailingIcon = null;
+            // 
+            // TxtBox_HR_Interval
+            // 
+            this.TxtBox_HR_Interval.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_HR_Interval.Depth = 0;
+            this.TxtBox_HR_Interval.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_HR_Interval.Hint = "Intervalo de HR";
+            this.TxtBox_HR_Interval.LeadingIcon = null;
+            this.TxtBox_HR_Interval.Location = new System.Drawing.Point(478, 421);
+            this.TxtBox_HR_Interval.MaxLength = 250;
+            this.TxtBox_HR_Interval.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_HR_Interval.Multiline = false;
+            this.TxtBox_HR_Interval.Name = "TxtBox_HR_Interval";
+            this.TxtBox_HR_Interval.Size = new System.Drawing.Size(324, 50);
+            this.TxtBox_HR_Interval.TabIndex = 62;
+            this.TxtBox_HR_Interval.Text = "";
+            this.TxtBox_HR_Interval.TrailingIcon = null;
+            // 
+            // TxtBox_Maximun_Error_HR
+            // 
+            this.TxtBox_Maximun_Error_HR.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBox_Maximun_Error_HR.Depth = 0;
+            this.TxtBox_Maximun_Error_HR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Maximun_Error_HR.Hint = "Error Maximo HR";
+            this.TxtBox_Maximun_Error_HR.LeadingIcon = null;
+            this.TxtBox_Maximun_Error_HR.Location = new System.Drawing.Point(478, 501);
+            this.TxtBox_Maximun_Error_HR.MaxLength = 250;
+            this.TxtBox_Maximun_Error_HR.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBox_Maximun_Error_HR.Multiline = false;
+            this.TxtBox_Maximun_Error_HR.Name = "TxtBox_Maximun_Error_HR";
+            this.TxtBox_Maximun_Error_HR.Size = new System.Drawing.Size(324, 50);
+            this.TxtBox_Maximun_Error_HR.TabIndex = 63;
+            this.TxtBox_Maximun_Error_HR.Text = "";
+            this.TxtBox_Maximun_Error_HR.TrailingIcon = null;
+            // 
             // AddCertificate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 647);
+            this.ClientSize = new System.Drawing.Size(864, 643);
+            this.Controls.Add(this.TxtBox_Maximun_Error_HR);
+            this.Controls.Add(this.TxtBox_HR_Interval);
+            this.Controls.Add(this.TxtBox_Maximum_Error);
+            this.Controls.Add(this.TxtBox_Number_Certificate_HR);
+            this.Controls.Add(this.TxtBox_Number_Temperature_Certificate);
+            this.Controls.Add(this.TxtBox_Uncertainty);
             this.Controls.Add(this.Lbl_Instrument);
             this.Controls.Add(this.ComboBox_Use);
             this.Controls.Add(this.TxtBox_Laboratory);
@@ -240,5 +354,11 @@
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Laboratory;
         private MaterialSkin.Controls.MaterialComboBox ComboBox_Use;
         private MaterialSkin.Controls.MaterialLabel Lbl_Instrument;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Uncertainty;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Number_Temperature_Certificate;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Number_Certificate_HR;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Maximum_Error;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_HR_Interval;
+        private MaterialSkin.Controls.MaterialTextBox TxtBox_Maximun_Error_HR;
     }
 }

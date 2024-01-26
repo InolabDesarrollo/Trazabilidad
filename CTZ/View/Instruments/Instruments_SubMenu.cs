@@ -225,5 +225,7 @@ namespace CTZ.View.Instruments
             this.instrumentosCertificadoBindingSource4.Filter = Dgv_Instruments_Certificates.FilterString;
             colorCellsStatus(columnStatusForDgvInstrumentsCertificates, Dgv_Instruments_Certificates);
         }
+
+
     }
 }

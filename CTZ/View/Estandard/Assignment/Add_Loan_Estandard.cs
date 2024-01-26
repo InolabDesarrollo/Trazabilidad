@@ -29,7 +29,6 @@ namespace CTZ.View.Estandard.Assignment
         private C_User usuarioControler;
         private DataTable engineers;
         public static Estandard_Assignment assignment;
-        private readonly string typeOfLoad;
 
         public Add_Loan_Estandard()
         {

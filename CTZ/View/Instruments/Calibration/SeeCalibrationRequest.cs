@@ -19,7 +19,7 @@ namespace CTZ.View.Calibration
 
     public partial class SeeCalibrationRequest : MaterialForm
     {
-        CTZ.Vista.Responsabilitis.Instruments instrument;
+        CTZ.Vista.Responsabilitis.Instrument instrument;
         C_CalibrationRequest controller;
         C_Laboratories controllerlaboratories;
         private DataTable laboratories;
@@ -60,7 +60,7 @@ namespace CTZ.View.Calibration
 
         private void Btn_Serch_Instrument_Click(object sender, EventArgs e)
         {
-            instrument = new CTZ.Vista.Responsabilitis.Instruments();
+            instrument = new CTZ.Vista.Responsabilitis.Instrument();
             if (instrument.serchInstrument(TxtBox_Instrument.Text))
             {
                 Dgv_CalibrationRequestByInstrument.DataSource = controller.getAllByEquinoInstrument(TxtBox_Instrument.Text);

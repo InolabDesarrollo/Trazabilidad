@@ -35,12 +35,12 @@ namespace CTZ.Modelo.Trazabilidad
                 " Cer\r\nOn  " +
                 " Asi.Id_Certificado = Cer.ID; \r\n");
         }
-        public void addNewInstrument(Instruments instrument)
+        public void addNewInstrument(Instrument instrument)
         {
-            string query = "INSERT Instrumentos(ID_Instrumentos,INSTRUMENTO,MARCA,MODELO,N#S#,UBICACIÓN,OBSERVACIÓN,ESTATUS,MAGNITUD,RANGO,ACCESORIOS) \r\n" +
+            string query = "INSERT Instrumentos(ID_Instrumentos,INSTRUMENTO,MARCA,MODELO,N#S#,UBICACIÓN,OBSERVACIÓN,ESTATUS,MAGNITUD,USO,INTERVALO_DE_MEDIA) \r\n" +
                 "values('" + instrument.id + "','" + instrument.instrument + "','" + instrument.brand + "','" + instrument.model + "','"
                 + instrument.numberOfSerie + "','" + instrument.ubication + "','" + instrument.observation + "','" + instrument.status + "','"
-                + instrument.magnitude + "','" + instrument.range + "', '" + instrument.accessories + "');";
+                + instrument.magnitude + "','" + instrument.use + "', '" + instrument.meanInterval + "');";
             
                 conexion.executeQuery(query);
         }
@@ -50,11 +50,11 @@ namespace CTZ.Modelo.Trazabilidad
             conexion.executeQuery("DELETE Instrumentos WHERE ID_Instrumentos = '"+id+"';");
         }
 
-        public bool updateInstrument(Instruments instrument)
+        public bool updateInstrument(Instrument instrument)
         {
             return conexion.executeQuery("UPDATE Instrumentos SET ID_Instrumentos = '"+instrument.id+"', " +
                 " INSTRUMENTO = '"+instrument.instrument +"', MARCA = '"+instrument.brand+"', MODELO='"+instrument.model+"',N#S# = '"+instrument.numberOfSerie+"', \r\n" +
-                " UBICACIÓN='"+instrument.ubication+"',OBSERVACIÓN='"+instrument.observation+"', ESTATUS='"+instrument.status+ "', MAGNITUD ='"+instrument.magnitude+"', RANGO= '"+instrument.range+ "', ACCESORIOS = '"+instrument.accessories+"' " +
+                " UBICACIÓN='"+instrument.ubication+"',OBSERVACIÓN='"+instrument.observation+"', ESTATUS='"+instrument.status+ "', MAGNITUD ='"+instrument.magnitude+"', USO = '"+instrument.use+ "', INTERVALO_DE_MEDIA = '"+instrument.meanInterval+"' " +
                 " WHERE ID_Instrumentos = '" + instrument.id+"';");
         }
 

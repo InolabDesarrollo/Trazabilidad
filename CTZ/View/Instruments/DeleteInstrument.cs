@@ -1,4 +1,5 @@
-﻿using CTZ.Vista.Responsabilitis;
+﻿using CTZ.Controlador;
+using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -14,18 +15,18 @@ namespace CTZ.Vista
 {
     public partial class DeleteInstrument : MaterialForm
     {
-        Responsabilitis.Instruments instrument;
+        C_Instruments controller;
         public DeleteInstrument()
         {
             InitializeComponent();
-            instrument = new Responsabilitis.Instruments();
+            controller = new C_Instruments();
         }
 
         private void BtnDelete_Instrument_Click(object sender, EventArgs e)
         {
-            instrument.deleteInstrument(TxtBox_Id.Text);
+            string message = controller.deleteInstrument(TxtBox_Id.Text);
+            MessageBox.Show(message);
             TxtBox_Id.Clear();
-            MessageBox.Show("Instrumento con eliminado");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CTZ.Controler.Instruments;
+﻿using CTZ.Controlador;
+using CTZ.Controler.Instruments;
 using CTZ.View.Instruments.Assignment;
 using MaterialSkin.Controls;
 using System;
@@ -22,11 +23,22 @@ namespace CTZ.Vista.Responsabilitis
 
         private void Btn_Add_Instrument_Click(object sender, EventArgs e)
         {
-            Instruments instrument = new Instruments(TxtBox_Id.Text,TxtBox_Instrument.Text,TxBox_Brand.Text,TxtBox_Model.Text
-                ,TxtBox_NumSerie.Text,ComboBox_Ubication.SelectedItem.ToString(),TxtBox_Observation.Text, ComboBox_Status.SelectedItem.ToString(),
-                TxtBox_Magnitud.Text,TxtBox_Range.Text,TxtBox_Accessories.Text);
-            instrument.addNewInstrument();
-            
+            Instrument instrument = new Instrument();
+            instrument.id = TxtBox_Id.Text;
+            instrument.instrument = TxtBox_Instrument.Text;
+            instrument.brand = TxBox_Brand.Text;
+            instrument.model = TxtBox_Model.Text;
+            instrument.numberOfSerie = TxtBox_NumSerie.Text;
+            instrument.ubication = ComboBox_Ubication.SelectedItem.ToString();
+            instrument.observation = TxtBox_Observation.Text;
+            instrument.status = ComboBox_Status.SelectedItem.ToString();
+            instrument.magnitude = TxtBox_Magnitud.Text;
+            instrument.use = TxtBox_USE.Text;
+            instrument.meanInterval = TxtBox_Magnitud.Text;
+
+            C_Instruments controler = new C_Instruments();
+            controler.addNewInstrument(instrument);
+
             if (Switch_Assignment.Checked && !TxtBox_Id.Text.Equals(""))
             {
                 Permanently_Assignment_Instrument assignment = new Permanently_Assignment_Instrument(TxtBox_Id.Text);

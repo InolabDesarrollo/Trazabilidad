@@ -79,7 +79,7 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Delete_Instrument_Click(object sender, EventArgs e)
         {
-            CTZ.Vista.Responsabilitis.Instruments instrument = new CTZ.Vista.Responsabilitis.Instruments();
+            CTZ.Vista.Responsabilitis.Instrument instrument = new CTZ.Vista.Responsabilitis.Instrument();
             instrument.deleteEquinoFromComboBox(ComboBox_Instruments);
         }
 

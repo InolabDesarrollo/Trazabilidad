@@ -1,4 +1,5 @@
-﻿using CTZ.Controler.Instruments.Certificates_;
+﻿using CTZ.Controlador;
+using CTZ.Controler.Instruments.Certificates_;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
 using System;
@@ -17,13 +18,13 @@ namespace CTZ.Vista
     public partial class UpdateInstrument : MaterialForm
     {
         private  string id;
-        Responsabilitis.Instruments instrument;
+        Responsabilitis.Instrument instrument;
         DataTable certificates;
         public UpdateInstrument(string id)
         {
             InitializeComponent();
             this.id = id;
-            instrument = new Responsabilitis.Instruments();
+            instrument = new Responsabilitis.Instrument();
             getInformationFromInstrument(id);
         }
 
@@ -35,7 +36,9 @@ namespace CTZ.Vista
             TxtBox_Model.Text= informationIntrument.Rows[0]["MODELO"].ToString();
             TxtBox_NumSerie.Text = informationIntrument.Rows[0]["N#S#"].ToString();
             TxtBox_Ubication.Text = informationIntrument.Rows[0]["UBICACIÓN"].ToString();
-            TxtBox_Observation.Text = informationIntrument.Rows[0]["OBSERVACIÓN"].ToString() ;
+            TxtBox_Observation.Text = informationIntrument.Rows[0]["OBSERVACIÓN"].ToString();
+            TxtBox_Mean_Interval.Text = informationIntrument.Rows[0]["INTERVALO_DE_MEDIA"].ToString();
+            TxtBox_Use.Text = informationIntrument.Rows[0]["USO"].ToString();
 
             checkStatus(informationIntrument.Rows[0]["ESTATUS"].ToString());
             getCertificatesFromInstrument(id);
@@ -75,7 +78,6 @@ namespace CTZ.Vista
 
         private void Btn_Update_Instrument_Click(object sender, EventArgs e)
         {
-            Responsabilitis.Instruments instruments = new Responsabilitis.Instruments();
             instrument.id = id;
             instrument.instrument = TxtBox_Instrument.Text;
             instrument.brand = TxtBox_Brand.Text;
@@ -85,10 +87,11 @@ namespace CTZ.Vista
             instrument.observation = TxtBox_Observation.Text;
             instrument.status = ComboBox_Status.SelectedItem.ToString();
             instrument.magnitude =TxtBox_Magnitude.Text;
-            instrument.range = TxtBox_Range.Text;
-            instrument.accessories = TxtBox_Accessories.Text;
+            instrument.use = TxtBox_Use.Text;
+            instrument.meanInterval = TxtBox_Mean_Interval.Text;
+            C_Instruments controler = new C_Instruments();
+            controler.updateInstrument(instrument);
 
-            instrument.updateInstrument();
             clearMenu();
             MessageBox.Show("Instrumento Actualizado");
         }

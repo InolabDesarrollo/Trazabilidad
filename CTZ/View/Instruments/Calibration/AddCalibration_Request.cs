@@ -18,7 +18,7 @@ namespace CTZ.View.Calibration
 {
     public partial class AddCalibration_Request : MaterialForm
     {
-        CTZ.Vista.Responsabilitis.Instruments  instrument;
+        CTZ.Vista.Responsabilitis.Instrument  instrument;
         C_Laboratories controller;
         private string equinoInstrument;
         private string idInstrument;
@@ -28,7 +28,7 @@ namespace CTZ.View.Calibration
         public AddCalibration_Request()
         {
             InitializeComponent();
-            instrument = new CTZ.Vista.Responsabilitis.Instruments();
+            instrument = new CTZ.Vista.Responsabilitis.Instrument();
             idInstruments = new List<string>();
             fillMaterialComboBoxLaboratories();
         }
@@ -46,7 +46,7 @@ namespace CTZ.View.Calibration
 
         private void Btn_Add_Equino_Click(object sender, EventArgs e)
         {
-            instrument = new CTZ.Vista.Responsabilitis.Instruments();
+            instrument = new CTZ.Vista.Responsabilitis.Instrument();
             if (instrument.serchInstrument(TxtBox_Instrumenst.Text))
             {
                 DataTable instrumentInformation = instrument.selectAllFromInstrument(TxtBox_Instrumenst.Text);
