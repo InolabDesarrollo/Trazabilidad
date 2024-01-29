@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kFyWdboCam+ox3JCUOSS9rgeg+of4kBXemvJHsV/HDkb7v5sD8vjbVknWDqZqWpHF927j9jbbZmx0OhgHFqo9Q==",
+  "dgSpecHash": "DF4jXXeGMi9WOwtO2+ay3otifR+GIxflY/0tbGrTXu2xxQrbYS6DLjANsTBQu5ELDheSSfZff/aQ66bxkKqo/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Omar Sotomayor\\source\\repos\\Trazabilidad\\TestProyect\\TestProyect.csproj",
+  "projectFilePath": "C:\\Users\\Omar Sotomayor\\source\\repos\\CTZ\\TestProyect\\TestProyect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Omar Sotomayor\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\Omar Sotomayor\\.nuget\\packages\\materialskin\\0.2.1\\materialskin.0.2.1.nupkg.sha512",
