@@ -70,22 +70,6 @@
             this.Btn_Equino_InstrumentsCertificates = new System.Windows.Forms.Button();
             this.lbl_EquinoCertificates = new System.Windows.Forms.Label();
             this.Dgv_Instruments_Certificates = new ADGV.AdvancedDataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FECHA_DE_CALIBRACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proxima_Calibracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Uso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Laboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estatus_Certificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instrumentosCertificadoBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTestDataSet31 = new CTZ.TrazabilidadTestDataSet3();
             this.instrumentosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -94,13 +78,32 @@
             this.BtnDelete_Instruments = new System.Windows.Forms.Button();
             this.BtnUpdate_Instrument = new System.Windows.Forms.Button();
             this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
+            this.instrumentosTableAdapter = new CTZ.TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter();
             this.instrumentosCertificadoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentosCertificadoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTestDataSet3 = new CTZ.TrazabilidadTestDataSet3();
             this.instrumentosCertificadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentos_CertificadoTableAdapter = new CTZ.TrazabilidadTestDataSet3TableAdapters.Instrumentos_CertificadoTableAdapter();
             this.instrumentosCertificadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.instrumentosTableAdapter = new CTZ.TrazabilidadTest_InstrumentosTableAdapters.InstrumentosTableAdapter();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHA_DE_CALIBRACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proxima_Calibracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero_Certificado_Temperatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero_Certificado_HR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Intervalo_De_Media_Temperatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Error_Maximo_T = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Intervalo_HR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Error_Maximo_HR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Laboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estatus_Certificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabControl_Instruments.SuspendLayout();
             this.Page_Instruments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instruments)).BeginInit();
@@ -514,7 +517,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_Instruments_Certificates.AutoGenerateColumns = false;
             this.Dgv_Instruments_Certificates.AutoGenerateContextFilters = true;
-            this.Dgv_Instruments_Certificates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv_Instruments_Certificates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.Dgv_Instruments_Certificates.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
             this.Dgv_Instruments_Certificates.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Instruments_Certificates.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -526,7 +529,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Dgv_Instruments_Certificates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.Dgv_Instruments_Certificates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Instruments_Certificates.ColumnHeadersHeight = 26;
             this.Dgv_Instruments_Certificates.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
@@ -535,13 +538,16 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn13,
             this.FECHA_DE_CALIBRACION,
             this.Proxima_Calibracion,
             this.Numero,
-            this.Uso,
+            this.Numero_Certificado_Temperatura,
+            this.Numero_Certificado_HR,
+            this.Intervalo_De_Media_Temperatura,
+            this.Error_Maximo_T,
+            this.Intervalo_HR,
+            this.Error_Maximo_HR,
             this.Laboratorio,
             this.Estatus_Certificado});
             this.Dgv_Instruments_Certificates.DataSource = this.instrumentosCertificadoBindingSource4;
@@ -553,150 +559,6 @@
             this.Dgv_Instruments_Certificates.TabIndex = 9;
             this.Dgv_Instruments_Certificates.TimeFilter = false;
             this.Dgv_Instruments_Certificates.FilterStringChanged += new System.EventHandler(this.Dgv_Instruments_Certificates_FilterStringChanged);
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID_Instrumentos";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "INSTRUMENTO";
-            this.dataGridViewTextBoxColumn6.HeaderText = "INSTRUMENTO";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "MARCA";
-            this.dataGridViewTextBoxColumn7.HeaderText = "MARCA";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "N#S#";
-            this.dataGridViewTextBoxColumn9.HeaderText = "N#S#";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "UBICACIÓN";
-            this.dataGridViewTextBoxColumn10.HeaderText = "UBICACIÓN";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "OBSERVACIÓN";
-            this.dataGridViewTextBoxColumn11.HeaderText = "OBSERVACIÓN";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "MAGNITUD";
-            this.dataGridViewTextBoxColumn2.HeaderText = "MAGNITUD";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "RANGO";
-            this.dataGridViewTextBoxColumn3.HeaderText = "RANGO";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ACCESORIOS";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ACCESORIOS";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "ESTATUS";
-            this.dataGridViewTextBoxColumn13.HeaderText = "ESTATUS";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // FECHA_DE_CALIBRACION
-            // 
-            this.FECHA_DE_CALIBRACION.DataPropertyName = "Fecha_De_Calibracion";
-            this.FECHA_DE_CALIBRACION.HeaderText = "Fecha de Calibración";
-            this.FECHA_DE_CALIBRACION.MinimumWidth = 22;
-            this.FECHA_DE_CALIBRACION.Name = "FECHA_DE_CALIBRACION";
-            this.FECHA_DE_CALIBRACION.ReadOnly = true;
-            this.FECHA_DE_CALIBRACION.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Proxima_Calibracion
-            // 
-            this.Proxima_Calibracion.DataPropertyName = "Proxima_Calibracion";
-            this.Proxima_Calibracion.HeaderText = "Proxima Calibración";
-            this.Proxima_Calibracion.MinimumWidth = 22;
-            this.Proxima_Calibracion.Name = "Proxima_Calibracion";
-            this.Proxima_Calibracion.ReadOnly = true;
-            this.Proxima_Calibracion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Numero
-            // 
-            this.Numero.DataPropertyName = "Numero";
-            this.Numero.HeaderText = "Numero";
-            this.Numero.MinimumWidth = 22;
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Uso
-            // 
-            this.Uso.DataPropertyName = "Uso";
-            this.Uso.HeaderText = "Uso";
-            this.Uso.MinimumWidth = 22;
-            this.Uso.Name = "Uso";
-            this.Uso.ReadOnly = true;
-            this.Uso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Laboratorio
-            // 
-            this.Laboratorio.DataPropertyName = "Laboratorio";
-            this.Laboratorio.HeaderText = "Laboratorio";
-            this.Laboratorio.MinimumWidth = 22;
-            this.Laboratorio.Name = "Laboratorio";
-            this.Laboratorio.ReadOnly = true;
-            this.Laboratorio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Estatus_Certificado
-            // 
-            this.Estatus_Certificado.DataPropertyName = "Estatus Certificado";
-            this.Estatus_Certificado.HeaderText = "Estatus Certificado";
-            this.Estatus_Certificado.MinimumWidth = 22;
-            this.Estatus_Certificado.Name = "Estatus_Certificado";
-            this.Estatus_Certificado.ReadOnly = true;
-            this.Estatus_Certificado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // instrumentosCertificadoBindingSource4
             // 
@@ -769,6 +631,10 @@
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
             this.materialContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // instrumentosTableAdapter
+            // 
+            this.instrumentosTableAdapter.ClearBeforeFill = true;
+            // 
             // instrumentosCertificadoBindingSource3
             // 
             this.instrumentosCertificadoBindingSource3.DataMember = "Instrumentos_Certificado";
@@ -798,9 +664,195 @@
             this.instrumentosCertificadoBindingSource1.DataMember = "Instrumentos_Certificado";
             this.instrumentosCertificadoBindingSource1.DataSource = this.trazabilidadTestDataSet3;
             // 
-            // instrumentosTableAdapter
+            // dataGridViewTextBoxColumn5
             // 
-            this.instrumentosTableAdapter.ClearBeforeFill = true;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID_Instrumentos";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn5.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "INSTRUMENTO";
+            this.dataGridViewTextBoxColumn6.HeaderText = "INSTRUMENTO";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn6.Width = 134;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "MARCA";
+            this.dataGridViewTextBoxColumn7.HeaderText = "MARCA";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn7.Width = 81;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "N#S#";
+            this.dataGridViewTextBoxColumn9.HeaderText = "N#S#";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn9.Width = 68;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "UBICACIÓN";
+            this.dataGridViewTextBoxColumn10.HeaderText = "UBICACIÓN";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn10.Width = 106;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "OBSERVACIÓN";
+            this.dataGridViewTextBoxColumn11.HeaderText = "OBSERVACIÓN";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn11.Width = 132;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MAGNITUD";
+            this.dataGridViewTextBoxColumn2.HeaderText = "MAGNITUD";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn2.Width = 106;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "ESTATUS";
+            this.dataGridViewTextBoxColumn13.HeaderText = "ESTATUS";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn13.Width = 97;
+            // 
+            // FECHA_DE_CALIBRACION
+            // 
+            this.FECHA_DE_CALIBRACION.DataPropertyName = "Fecha_De_Calibracion";
+            this.FECHA_DE_CALIBRACION.HeaderText = "Fecha de Calibración";
+            this.FECHA_DE_CALIBRACION.MinimumWidth = 22;
+            this.FECHA_DE_CALIBRACION.Name = "FECHA_DE_CALIBRACION";
+            this.FECHA_DE_CALIBRACION.ReadOnly = true;
+            this.FECHA_DE_CALIBRACION.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.FECHA_DE_CALIBRACION.Width = 166;
+            // 
+            // Proxima_Calibracion
+            // 
+            this.Proxima_Calibracion.DataPropertyName = "Proxima_Calibracion";
+            this.Proxima_Calibracion.HeaderText = "Proxima Calibración";
+            this.Proxima_Calibracion.MinimumWidth = 22;
+            this.Proxima_Calibracion.Name = "Proxima_Calibracion";
+            this.Proxima_Calibracion.ReadOnly = true;
+            this.Proxima_Calibracion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Proxima_Calibracion.Width = 157;
+            // 
+            // Numero
+            // 
+            this.Numero.DataPropertyName = "Numero";
+            this.Numero.HeaderText = "Numero";
+            this.Numero.MinimumWidth = 22;
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Numero.Width = 83;
+            // 
+            // Numero_Certificado_Temperatura
+            // 
+            this.Numero_Certificado_Temperatura.DataPropertyName = "Numero_Certificado_Temperatura";
+            this.Numero_Certificado_Temperatura.HeaderText = "Numero_Certificado_Temperatura";
+            this.Numero_Certificado_Temperatura.MinimumWidth = 22;
+            this.Numero_Certificado_Temperatura.Name = "Numero_Certificado_Temperatura";
+            this.Numero_Certificado_Temperatura.ReadOnly = true;
+            this.Numero_Certificado_Temperatura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Numero_Certificado_Temperatura.Width = 248;
+            // 
+            // Numero_Certificado_HR
+            // 
+            this.Numero_Certificado_HR.DataPropertyName = "Numero_Certificado_HR";
+            this.Numero_Certificado_HR.HeaderText = "Numero_Certificado_HR";
+            this.Numero_Certificado_HR.MinimumWidth = 22;
+            this.Numero_Certificado_HR.Name = "Numero_Certificado_HR";
+            this.Numero_Certificado_HR.ReadOnly = true;
+            this.Numero_Certificado_HR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Numero_Certificado_HR.Width = 186;
+            // 
+            // Intervalo_De_Media_Temperatura
+            // 
+            this.Intervalo_De_Media_Temperatura.DataPropertyName = "Intervalo_De_Media_Temperatura";
+            this.Intervalo_De_Media_Temperatura.HeaderText = "Intervalo_De_Media_Temperatura";
+            this.Intervalo_De_Media_Temperatura.MinimumWidth = 22;
+            this.Intervalo_De_Media_Temperatura.Name = "Intervalo_De_Media_Temperatura";
+            this.Intervalo_De_Media_Temperatura.ReadOnly = true;
+            this.Intervalo_De_Media_Temperatura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Intervalo_De_Media_Temperatura.Width = 249;
+            // 
+            // Error_Maximo_T
+            // 
+            this.Error_Maximo_T.DataPropertyName = "Error_Maximo_T";
+            this.Error_Maximo_T.HeaderText = "Error_Maximo_T";
+            this.Error_Maximo_T.MinimumWidth = 22;
+            this.Error_Maximo_T.Name = "Error_Maximo_T";
+            this.Error_Maximo_T.ReadOnly = true;
+            this.Error_Maximo_T.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Error_Maximo_T.Width = 137;
+            // 
+            // Intervalo_HR
+            // 
+            this.Intervalo_HR.DataPropertyName = "Intervalo_HR";
+            this.Intervalo_HR.HeaderText = "Intervalo_HR";
+            this.Intervalo_HR.MinimumWidth = 22;
+            this.Intervalo_HR.Name = "Intervalo_HR";
+            this.Intervalo_HR.ReadOnly = true;
+            this.Intervalo_HR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Intervalo_HR.Width = 115;
+            // 
+            // Error_Maximo_HR
+            // 
+            this.Error_Maximo_HR.DataPropertyName = "Error_Maximo_HR";
+            this.Error_Maximo_HR.HeaderText = "Error_Maximo_HR";
+            this.Error_Maximo_HR.MinimumWidth = 22;
+            this.Error_Maximo_HR.Name = "Error_Maximo_HR";
+            this.Error_Maximo_HR.ReadOnly = true;
+            this.Error_Maximo_HR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Error_Maximo_HR.Width = 148;
+            // 
+            // Laboratorio
+            // 
+            this.Laboratorio.DataPropertyName = "Laboratorio";
+            this.Laboratorio.HeaderText = "Laboratorio";
+            this.Laboratorio.MinimumWidth = 22;
+            this.Laboratorio.Name = "Laboratorio";
+            this.Laboratorio.ReadOnly = true;
+            this.Laboratorio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Laboratorio.Width = 106;
+            // 
+            // Estatus_Certificado
+            // 
+            this.Estatus_Certificado.DataPropertyName = "Estatus Certificado";
+            this.Estatus_Certificado.HeaderText = "Estatus Certificado";
+            this.Estatus_Certificado.MinimumWidth = 22;
+            this.Estatus_Certificado.Name = "Estatus_Certificado";
+            this.Estatus_Certificado.ReadOnly = true;
+            this.Estatus_Certificado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Estatus_Certificado.Width = 151;
             // 
             // Instruments_SubMenu
             // 
@@ -884,22 +936,6 @@
         private TrazabilidadTestDataSet3 trazabilidadTestDataSet31;
         private System.Windows.Forms.BindingSource instrumentosCertificadoBindingSource3;
         private System.Windows.Forms.BindingSource instrumentosCertificadoBindingSource4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_DE_CALIBRACION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Proxima_Calibracion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Uso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Laboratorio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus_Certificado;
         private System.Windows.Forms.BindingSource instrumentosBindingSource2;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDInstrumentosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNSTRUMENTODataGridViewTextBoxColumn;
@@ -913,5 +949,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn eSTATUSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTATUS_ASIGNACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_DE_CALIBRACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proxima_Calibracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Certificado_Temperatura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Certificado_HR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Intervalo_De_Media_Temperatura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Error_Maximo_T;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Intervalo_HR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Error_Maximo_HR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Laboratorio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus_Certificado;
     }
 }

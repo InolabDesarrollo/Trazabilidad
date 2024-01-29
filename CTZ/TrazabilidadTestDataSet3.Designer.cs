@@ -315,6 +315,18 @@ namespace CTZ {
             
             private global::System.Data.DataColumn columnEstatus_Certificado;
             
+            private global::System.Data.DataColumn columnNumero_Certificado_Temperatura;
+            
+            private global::System.Data.DataColumn columnNumero_Certificado_HR;
+            
+            private global::System.Data.DataColumn columnIntervalo_De_Media_Temperatura;
+            
+            private global::System.Data.DataColumn columnError_Maximo_T;
+            
+            private global::System.Data.DataColumn columnIntervalo_HR;
+            
+            private global::System.Data.DataColumn columnError_Maximo_HR;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Instrumentos_CertificadoDataTable() {
@@ -494,6 +506,54 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Numero_Certificado_TemperaturaColumn {
+                get {
+                    return this.columnNumero_Certificado_Temperatura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Numero_Certificado_HRColumn {
+                get {
+                    return this.columnNumero_Certificado_HR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Intervalo_De_Media_TemperaturaColumn {
+                get {
+                    return this.columnIntervalo_De_Media_Temperatura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Error_Maximo_TColumn {
+                get {
+                    return this.columnError_Maximo_T;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Intervalo_HRColumn {
+                get {
+                    return this.columnIntervalo_HR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Error_Maximo_HRColumn {
+                get {
+                    return this.columnError_Maximo_HR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -547,7 +607,13 @@ namespace CTZ {
                         string Uso, 
                         string Laboratorio, 
                         System.DateTime Fecha_De_Registro, 
-                        string Estatus_Certificado) {
+                        string Estatus_Certificado, 
+                        string Numero_Certificado_Temperatura, 
+                        string Numero_Certificado_HR, 
+                        string Intervalo_De_Media_Temperatura, 
+                        string Error_Maximo_T, 
+                        string Intervalo_HR, 
+                        string Error_Maximo_HR) {
                 Instrumentos_CertificadoRow rowInstrumentos_CertificadoRow = ((Instrumentos_CertificadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_Instrumentos,
@@ -567,7 +633,13 @@ namespace CTZ {
                         Uso,
                         Laboratorio,
                         Fecha_De_Registro,
-                        Estatus_Certificado};
+                        Estatus_Certificado,
+                        Numero_Certificado_Temperatura,
+                        Numero_Certificado_HR,
+                        Intervalo_De_Media_Temperatura,
+                        Error_Maximo_T,
+                        Intervalo_HR,
+                        Error_Maximo_HR};
                 rowInstrumentos_CertificadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInstrumentos_CertificadoRow);
                 return rowInstrumentos_CertificadoRow;
@@ -608,6 +680,12 @@ namespace CTZ {
                 this.columnLaboratorio = base.Columns["Laboratorio"];
                 this.columnFecha_De_Registro = base.Columns["Fecha_De_Registro"];
                 this.columnEstatus_Certificado = base.Columns["Estatus Certificado"];
+                this.columnNumero_Certificado_Temperatura = base.Columns["Numero_Certificado_Temperatura"];
+                this.columnNumero_Certificado_HR = base.Columns["Numero_Certificado_HR"];
+                this.columnIntervalo_De_Media_Temperatura = base.Columns["Intervalo_De_Media_Temperatura"];
+                this.columnError_Maximo_T = base.Columns["Error_Maximo_T"];
+                this.columnIntervalo_HR = base.Columns["Intervalo_HR"];
+                this.columnError_Maximo_HR = base.Columns["Error_Maximo_HR"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -651,6 +729,18 @@ namespace CTZ {
                 base.Columns.Add(this.columnFecha_De_Registro);
                 this.columnEstatus_Certificado = new global::System.Data.DataColumn("Estatus Certificado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstatus_Certificado);
+                this.columnNumero_Certificado_Temperatura = new global::System.Data.DataColumn("Numero_Certificado_Temperatura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumero_Certificado_Temperatura);
+                this.columnNumero_Certificado_HR = new global::System.Data.DataColumn("Numero_Certificado_HR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumero_Certificado_HR);
+                this.columnIntervalo_De_Media_Temperatura = new global::System.Data.DataColumn("Intervalo_De_Media_Temperatura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIntervalo_De_Media_Temperatura);
+                this.columnError_Maximo_T = new global::System.Data.DataColumn("Error_Maximo_T", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnError_Maximo_T);
+                this.columnIntervalo_HR = new global::System.Data.DataColumn("Intervalo_HR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIntervalo_HR);
+                this.columnError_Maximo_HR = new global::System.Data.DataColumn("Error_Maximo_HR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnError_Maximo_HR);
                 this.columnID_Instrumentos.MaxLength = 255;
                 this.columnINSTRUMENTO.MaxLength = 255;
                 this.columnMARCA.MaxLength = 255;
@@ -666,6 +756,12 @@ namespace CTZ {
                 this.columnUso.MaxLength = 500;
                 this.columnLaboratorio.MaxLength = 500;
                 this.columnEstatus_Certificado.MaxLength = 500;
+                this.columnNumero_Certificado_Temperatura.MaxLength = 500;
+                this.columnNumero_Certificado_HR.MaxLength = 500;
+                this.columnIntervalo_De_Media_Temperatura.MaxLength = 500;
+                this.columnError_Maximo_T.MaxLength = 500;
+                this.columnIntervalo_HR.MaxLength = 500;
+                this.columnError_Maximo_HR.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1109,6 +1205,108 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Numero_Certificado_Temperatura {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.Numero_Certificado_TemperaturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Numero_Certificado_Temperatura\' de la tabla \'Instrumentos" +
+                                "_Certificado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.Numero_Certificado_TemperaturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Numero_Certificado_HR {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.Numero_Certificado_HRColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Numero_Certificado_HR\' de la tabla \'Instrumentos_Certific" +
+                                "ado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.Numero_Certificado_HRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Intervalo_De_Media_Temperatura {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.Intervalo_De_Media_TemperaturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Intervalo_De_Media_Temperatura\' de la tabla \'Instrumentos" +
+                                "_Certificado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.Intervalo_De_Media_TemperaturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Error_Maximo_T {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.Error_Maximo_TColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Error_Maximo_T\' de la tabla \'Instrumentos_Certificado\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.Error_Maximo_TColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Intervalo_HR {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.Intervalo_HRColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Intervalo_HR\' de la tabla \'Instrumentos_Certificado\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.Intervalo_HRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Error_Maximo_HR {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.Error_Maximo_HRColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Error_Maximo_HR\' de la tabla \'Instrumentos_Certificado\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.Error_Maximo_HRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsID_InstrumentosNull() {
                 return this.IsNull(this.tableInstrumentos_Certificado.ID_InstrumentosColumn);
             }
@@ -1322,6 +1520,78 @@ namespace CTZ {
             public void SetEstatus_CertificadoNull() {
                 this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNumero_Certificado_TemperaturaNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Numero_Certificado_TemperaturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNumero_Certificado_TemperaturaNull() {
+                this[this.tableInstrumentos_Certificado.Numero_Certificado_TemperaturaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNumero_Certificado_HRNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Numero_Certificado_HRColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNumero_Certificado_HRNull() {
+                this[this.tableInstrumentos_Certificado.Numero_Certificado_HRColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIntervalo_De_Media_TemperaturaNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Intervalo_De_Media_TemperaturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIntervalo_De_Media_TemperaturaNull() {
+                this[this.tableInstrumentos_Certificado.Intervalo_De_Media_TemperaturaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsError_Maximo_TNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Error_Maximo_TColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetError_Maximo_TNull() {
+                this[this.tableInstrumentos_Certificado.Error_Maximo_TColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIntervalo_HRNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Intervalo_HRColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIntervalo_HRNull() {
+                this[this.tableInstrumentos_Certificado.Intervalo_HRColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsError_Maximo_HRNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Error_Maximo_HRColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetError_Maximo_HRNull() {
+                this[this.tableInstrumentos_Certificado.Error_Maximo_HRColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1501,6 +1771,12 @@ namespace CTZ.TrazabilidadTestDataSet3TableAdapters {
             tableMapping.ColumnMappings.Add("Laboratorio", "Laboratorio");
             tableMapping.ColumnMappings.Add("Fecha_De_Registro", "Fecha_De_Registro");
             tableMapping.ColumnMappings.Add("Estatus Certificado", "Estatus Certificado");
+            tableMapping.ColumnMappings.Add("Numero_Certificado_Temperatura", "Numero_Certificado_Temperatura");
+            tableMapping.ColumnMappings.Add("Numero_Certificado_HR", "Numero_Certificado_HR");
+            tableMapping.ColumnMappings.Add("Intervalo_De_Media_Temperatura", "Intervalo_De_Media_Temperatura");
+            tableMapping.ColumnMappings.Add("Error_Maximo_T", "Error_Maximo_T");
+            tableMapping.ColumnMappings.Add("Intervalo_HR", "Intervalo_HR");
+            tableMapping.ColumnMappings.Add("Error_Maximo_HR", "Error_Maximo_HR");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

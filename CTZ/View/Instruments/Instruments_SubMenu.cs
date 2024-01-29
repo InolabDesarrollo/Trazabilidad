@@ -21,9 +21,9 @@ namespace CTZ.View.Instruments
     {
         private C_SerchInstrument controler;
         private static DataTable instrumentTable;
-        private const int columnNextCalibration = 11;
-        private const int columnStatusForDvgInstruments= 11; 
-        private const int columnStatusForDgvInstrumentsCertificates= 9;
+        private const int columnNextCalibration = 9;
+        private const int columnStatusForDvgInstruments = 10; 
+        private const int columnStatusForDgvInstrumentsCertificates= 7;
         public Instruments_SubMenu()
         {
             InitializeComponent();
@@ -222,10 +222,8 @@ namespace CTZ.View.Instruments
 
         private void Dgv_Instruments_Certificates_FilterStringChanged(object sender, EventArgs e)
         {
-            this.instrumentosCertificadoBindingSource4.Filter = Dgv_Instruments_Certificates.FilterString;
-            colorCellsStatus(columnStatusForDgvInstrumentsCertificates, Dgv_Instruments_Certificates);
+            this.instrumentosCertificadoBindingSource4.Filter = this.Dgv_Instruments_Certificates.FilterString;
+
         }
-
-
     }
 }
