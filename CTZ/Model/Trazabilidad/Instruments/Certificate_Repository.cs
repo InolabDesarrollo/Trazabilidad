@@ -19,9 +19,9 @@ namespace CTZ.Modelo.Trazabilidad
         public void add(Certificate certificate)
         {
             string query = "INSERT INTO Certificados(Instrumento, Fecha_De_Calibracion,Proxima_Calibracion,Link,Numero,Uso,Laboratorio,Estatus,Incertidumbre," +
-                " Numero_Certificado_Temperatura, Numero_Certificado_HR, Intervalo_HR, Error_Maximo_HR, Intervalo_De_Media_Temperatura)" +
+                " Numero_Certificado_Temperatura, Numero_Certificado_HR, Intervalo_HR, Error_Maximo_HR, Intervalo_De_Media_Temperatura, Error_Maximo_T)" +
                 "\r\nVALUES('" + certificate.instrument + "', '" + certificate.dateCalibration + "','" + certificate.nextCalibration + "', '" + certificate.link + "'," +
-                " '" + certificate.number + "','" + certificate.use + "','" + certificate.laboratory + "', '" + certificate.status + "','"+certificate.uncertanty+"', '"+certificate.numberTemperatureCertificate+"', '"+certificate.numberCertificateHr+"', '"+certificate.hrInterval+"', '"+certificate.maximumErrorHr+"', '"+certificate.mediumInterval+"' )";
+                " '" + certificate.number + "','" + certificate.use + "','" + certificate.laboratory + "', '" + certificate.status + "','"+certificate.uncertanty+"', '"+certificate.numberTemperatureCertificate+"', '"+certificate.numberCertificateHr+"', '"+certificate.hrInterval+"', '"+certificate.maximumErrorHr+"', '"+certificate.mediumInterval+"', '"+certificate.maximumErrorT+"' )";
 
             conexion.executeQuery(query);
         }

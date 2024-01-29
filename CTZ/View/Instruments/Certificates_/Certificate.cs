@@ -44,6 +44,8 @@ namespace CTZ.Vista.Responsabilitis
 
         public string maximumErrorHr;
 
+        public string maximumErrorT;
+
         public string mediumInterval;
 
         C_Certificate controler = new C_Certificate();

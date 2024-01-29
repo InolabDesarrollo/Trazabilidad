@@ -57,7 +57,7 @@ namespace CTZ.Vista.Responsabilitis
                 certificate.uncertanty = TxtBox_Uncertainty.Text;
                 certificate.numberTemperatureCertificate = TxtBox_Number_Temperature_Certificate.Text;
                 certificate.numberCertificateHr = TxtBox_Number_Certificate_HR.Text;
-                certificate.maximumErrorHr = TxtBox_Maximun_Error_HR.Text;
+                certificate.maximumErrorT = TxtBox_Maximum_Error_T.Text;
                 certificate.hrInterval = TxtBox_HR_Interval.Text;
                 certificate.maximumErrorHr = TxtBox_Maximun_Error_HR.Text;
                 certificate.mediumInterval = TxtBox_Interval.Text;
