@@ -33,6 +33,7 @@
             this.version = new MaterialSkin.Controls.MaterialLabel();
             this.user = new MaterialSkin.Controls.MaterialTextBox();
             this.pass = new MaterialSkin.Controls.MaterialTextBox();
+            this.Lbl_Title = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // materialButton1
@@ -59,12 +60,12 @@
             this.version.AutoSize = true;
             this.version.Depth = 0;
             this.version.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.version.Location = new System.Drawing.Point(428, 254);
+            this.version.Location = new System.Drawing.Point(359, 254);
             this.version.MouseState = MaterialSkin.MouseState.HOVER;
             this.version.Name = "version";
-            this.version.Size = new System.Drawing.Size(49, 19);
+            this.version.Size = new System.Drawing.Size(118, 19);
             this.version.TabIndex = 14;
-            this.version.Text = "0.0.0.1";
+            this.version.Text = "VERSION 0.0.0.0";
             // 
             // user
             // 
@@ -73,7 +74,7 @@
             this.user.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.user.Hint = "Usuario";
             this.user.LeadingIcon = null;
-            this.user.Location = new System.Drawing.Point(113, 99);
+            this.user.Location = new System.Drawing.Point(113, 108);
             this.user.MaxLength = 50;
             this.user.MouseState = MaterialSkin.MouseState.OUT;
             this.user.Multiline = false;
@@ -104,11 +105,24 @@
             this.pass.UseAccent = false;
             this.pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_KeyPress);
             // 
+            // Lbl_Title
+            // 
+            this.Lbl_Title.AutoSize = true;
+            this.Lbl_Title.Depth = 0;
+            this.Lbl_Title.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Lbl_Title.Location = new System.Drawing.Point(153, 74);
+            this.Lbl_Title.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Lbl_Title.Name = "Lbl_Title";
+            this.Lbl_Title.Size = new System.Drawing.Size(129, 19);
+            this.Lbl_Title.TabIndex = 17;
+            this.Lbl_Title.Text = "Inventario Calidad";
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 276);
+            this.Controls.Add(this.Lbl_Title);
             this.Controls.Add(this.pass);
             this.Controls.Add(this.user);
             this.Controls.Add(this.version);
@@ -131,5 +145,6 @@
         private MaterialSkin.Controls.MaterialLabel version;
         private MaterialSkin.Controls.MaterialTextBox user;
         private MaterialSkin.Controls.MaterialTextBox pass;
+        private MaterialSkin.Controls.MaterialLabel Lbl_Title;
     }
 }
