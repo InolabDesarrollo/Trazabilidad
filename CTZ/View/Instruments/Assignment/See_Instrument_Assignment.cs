@@ -18,8 +18,9 @@ namespace CTZ.Vista.Instruments
     public partial class See_Instrument_Assignment : Form
     {
         private C_ConsultInstrument_Assignment controler;
-        private const int engineerSignature = 7;
-        private const int qualitySignature = 11;
+        private const int engineerSignature = 6;
+        private const int qualitySignature = 10;
+        private const int returnEngineerSignature = 13;
         private const int updateAssignment = 0;
         private string kindOfSerch;
         DataTable instrumentAssignment;
@@ -59,11 +60,15 @@ namespace CTZ.Vista.Instruments
 
         private void Dgv_Instrument_Assignment_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == engineerSignature || e.ColumnIndex == qualitySignature || e.ColumnIndex==updateAssignment)
+            if (e.ColumnIndex == engineerSignature  || e.ColumnIndex==updateAssignment)
             {
                 showSignature(e);
             }
             if (e.ColumnIndex == qualitySignature)
+            {
+                showSignature(e);
+            }
+            if (e.ColumnIndex == returnEngineerSignature)
             {
                 showSignature(e);
             }

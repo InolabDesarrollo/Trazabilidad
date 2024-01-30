@@ -76,7 +76,7 @@ namespace CTZ.Controlador
             DataTable instrumentInformation = repository.serchAllFromInstrument(idInstrument);
             string statusAssignments = instrumentInformation.Rows[0]["ESTATUS_ASIGNACION"].ToString();
 
-            if (statusAssignments.Equals("DISPONIBLE"))
+            if (statusAssignments.Equals("DISPONIBLE") || statusAssignments.Equals(""))
             {
                 return true;
             }
