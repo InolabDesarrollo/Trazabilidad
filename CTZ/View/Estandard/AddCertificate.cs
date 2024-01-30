@@ -27,7 +27,6 @@ namespace CTZ.View.Estandard
             Lbl_Estandard.Text = estEstandard;
         }
 
-
         private void Btn_AddCertificate_Click(object sender, EventArgs e)
         {
             CertificateEstandard certificate = new CertificateEstandard();

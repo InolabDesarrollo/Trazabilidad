@@ -34,7 +34,5 @@ namespace CTZ.Controler.Instruments
         {
             return repository.selectAllByBrand(brandName);
         }
-
-
     }
 }

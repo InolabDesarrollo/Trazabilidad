@@ -8,8 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,7 +25,7 @@ namespace CTZ.View.Instruments
         private static DataTable instrumentTable;
         private const int columnNextCalibration = 9;
         private const int columnStatusForDvgInstruments = 10; 
-        private const int columnStatusForDgvInstrumentsCertificates= 7;
+        private const int columnStatusForDgvInstrumentsCertificates = 7;
         public Instruments_SubMenu()
         {
             InitializeComponent();
@@ -31,45 +33,53 @@ namespace CTZ.View.Instruments
         }
 
         private void Instruments_SubMenu_Load(object sender, EventArgs e)
-        {
+        {            
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet31.Instrumentos_Certificado' Puede moverla o quitarla según sea necesario.
             this.instrumentos_CertificadoTableAdapter.Fill(this.trazabilidadTestDataSet31.Instrumentos_Certificado);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTest_Instrumentos.Instrumentos' Puede moverla o quitarla según sea necesario.
             this.instrumentosTableAdapter.Fill(this.trazabilidadTest_Instrumentos.Instrumentos);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet3.Instrumentos_Certificado' Puede moverla o quitarla según sea necesario.
             this.instrumentos_CertificadoTableAdapter.Fill(this.trazabilidadTestDataSet3.Instrumentos_Certificado);
-            colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
+            colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments); 
         }
 
         private void colorCellsStatus(int columnThatNeedColor, DataGridView dataGridView)
         {
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            try
             {
-                string valor = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
-                if (valor.Equals("FUERA DE USO"))
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
-                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
+                    string valor = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
+                    if (valor.Equals("FUERA DE USO"))
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
+                    }
+                    if (valor.Equals("ACTIVO"))
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
+                    }
+                    if (valor.Equals("CALIBRANDO"))
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
+                    }
+                    if (valor.Equals("PENDIENTE"))
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Blue;
+                    }
+                    if (valor.Equals("DISPONIBLE"))
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
+                    }
+                    if (valor.Equals("OCUPADO"))
+                    {
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
+                    }
                 }
-                if (valor.Equals("ACTIVO"))
-                {
-                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
-                }
-                if (valor.Equals("CALIBRANDO"))
-                {
-                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
-                }
-                if (valor.Equals("PENDIENTE"))
-                {
-                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Blue;
-                }
-                if (valor.Equals("DISPONIBLE"))
-                {
-                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
-                }
-                if (valor.Equals("OCUPADO"))
-                {
-                    dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
-                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error ", ex.Message);
             }
         }
 
@@ -148,35 +158,23 @@ namespace CTZ.View.Instruments
             {
                 MessageBox.Show("El instrumento no existe, o dejaste el campo vacio");
             }
-
         }
 
         private void Btn_SerchByInstrumentName_Click(object sender, EventArgs e)
-        {
-            
+        {            
             Dgv_Instruments.DataSource = controler.selectAllByInstrumentName(TxtBox_InstrumentName.Text);
-            colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
-        }
-
-        private void Btn_SerchByBrand_Click(object sender, EventArgs e)
-        {
-            Dgv_Instruments.DataSource = controler.selectAllByBrand(TxtBox_Brand.Text);
-            colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
-        }
-
-        private void Dgv_Instruments_FilterStringChanged(object sender, EventArgs e)
-        {
-            this.instrumentosBindingSource1.Filter =this.Dgv_Instruments.FilterString;
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
         }
 
         private void Btn_ClearFilterInstruments_Click(object sender, EventArgs e)
         {
-            Dgv_Instruments.DataSource = instrumentosBindingSource1;
+            Dgv_Instruments.DataSource = instrumentosBindingSource2;
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
             TxtBox_Brand.Clear();
             TxtBox_Equino.Clear();
             TxtBox_InstrumentName.Clear();
+           
+            colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
         }
 
         private void Btn_Equino_InstrumentsCertificates_Click(object sender, EventArgs e)
@@ -197,7 +195,7 @@ namespace CTZ.View.Instruments
         private void Btn_Instruments_Certificates_Click(object sender, EventArgs e)
         {
             C_View_Instrument_Certificate controler = new C_View_Instrument_Certificate();
-            Dgv_Instruments_Certificates.DataSource=controler.getAllInstrumentCertificateByInstrument(TxtBox_InstrumentNameCertificates.Text);
+            Dgv_Instruments_Certificates.DataSource = controler.getAllInstrumentCertificateByInstrument(TxtBox_InstrumentNameCertificates.Text);
             colorCellsStatus(columnStatusForDgvInstrumentsCertificates, Dgv_Instruments_Certificates);
             colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
         }
@@ -213,6 +211,7 @@ namespace CTZ.View.Instruments
         private void Btn_ClearFilterInstrumentCertificate_Click(object sender, EventArgs e)
         {
             Dgv_Instruments_Certificates.DataSource = instrumentosCertificadoBindingSource2;
+            
             colorCellsStatus(columnStatusForDgvInstrumentsCertificates, Dgv_Instruments_Certificates);
             colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
             TxtBox_InstrumentNameCertificates.Clear();
@@ -222,8 +221,21 @@ namespace CTZ.View.Instruments
 
         private void Dgv_Instruments_Certificates_FilterStringChanged(object sender, EventArgs e)
         {
-            this.instrumentosCertificadoBindingSource4.Filter = this.Dgv_Instruments_Certificates.FilterString;
+            this.instrumentosCertificadoBindingSource2.Filter = this.Dgv_Instruments_Certificates.FilterString;
+            this.colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
+            this.colorCellsStatus(columnStatusForDgvInstrumentsCertificates, Dgv_Instruments_Certificates);
+        }
 
+        private void Dgv_Instruments_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.instrumentosBindingSource2.Filter = this.Dgv_Instruments.FilterString;
+            colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
+        }
+
+        private void Btn_SerchByBrand_Click(object sender, EventArgs e)
+        {
+            Dgv_Instruments.DataSource = controler.selectAllByBrand(TxtBox_Brand.Text);
+            colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
         }
     }
 }

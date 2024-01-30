@@ -313,8 +313,6 @@ namespace CTZ {
             
             private global::System.Data.DataColumn columnFecha_De_Registro;
             
-            private global::System.Data.DataColumn columnEstatus_Certificado;
-            
             private global::System.Data.DataColumn columnNumero_Certificado_Temperatura;
             
             private global::System.Data.DataColumn columnNumero_Certificado_HR;
@@ -326,6 +324,8 @@ namespace CTZ {
             private global::System.Data.DataColumn columnIntervalo_HR;
             
             private global::System.Data.DataColumn columnError_Maximo_HR;
+            
+            private global::System.Data.DataColumn columnEstatus_Certificado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -498,14 +498,6 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Estatus_CertificadoColumn {
-                get {
-                    return this.columnEstatus_Certificado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn Numero_Certificado_TemperaturaColumn {
                 get {
                     return this.columnNumero_Certificado_Temperatura;
@@ -549,6 +541,14 @@ namespace CTZ {
             public global::System.Data.DataColumn Error_Maximo_HRColumn {
                 get {
                     return this.columnError_Maximo_HR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Estatus_CertificadoColumn {
+                get {
+                    return this.columnEstatus_Certificado;
                 }
             }
             
@@ -600,20 +600,20 @@ namespace CTZ {
                         string MAGNITUD, 
                         string RANGO, 
                         string ACCESORIOS, 
-                        System.DateTime Fecha_De_Calibracion, 
-                        System.DateTime Proxima_Calibracion, 
+                        string Fecha_De_Calibracion, 
+                        string Proxima_Calibracion, 
                         string Link, 
                         string Numero, 
                         string Uso, 
                         string Laboratorio, 
-                        System.DateTime Fecha_De_Registro, 
-                        string Estatus_Certificado, 
+                        string Fecha_De_Registro, 
                         string Numero_Certificado_Temperatura, 
                         string Numero_Certificado_HR, 
                         string Intervalo_De_Media_Temperatura, 
                         string Error_Maximo_T, 
                         string Intervalo_HR, 
-                        string Error_Maximo_HR) {
+                        string Error_Maximo_HR, 
+                        string Estatus_Certificado) {
                 Instrumentos_CertificadoRow rowInstrumentos_CertificadoRow = ((Instrumentos_CertificadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_Instrumentos,
@@ -633,13 +633,13 @@ namespace CTZ {
                         Uso,
                         Laboratorio,
                         Fecha_De_Registro,
-                        Estatus_Certificado,
                         Numero_Certificado_Temperatura,
                         Numero_Certificado_HR,
                         Intervalo_De_Media_Temperatura,
                         Error_Maximo_T,
                         Intervalo_HR,
-                        Error_Maximo_HR};
+                        Error_Maximo_HR,
+                        Estatus_Certificado};
                 rowInstrumentos_CertificadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInstrumentos_CertificadoRow);
                 return rowInstrumentos_CertificadoRow;
@@ -679,13 +679,13 @@ namespace CTZ {
                 this.columnUso = base.Columns["Uso"];
                 this.columnLaboratorio = base.Columns["Laboratorio"];
                 this.columnFecha_De_Registro = base.Columns["Fecha_De_Registro"];
-                this.columnEstatus_Certificado = base.Columns["Estatus Certificado"];
                 this.columnNumero_Certificado_Temperatura = base.Columns["Numero_Certificado_Temperatura"];
                 this.columnNumero_Certificado_HR = base.Columns["Numero_Certificado_HR"];
                 this.columnIntervalo_De_Media_Temperatura = base.Columns["Intervalo_De_Media_Temperatura"];
                 this.columnError_Maximo_T = base.Columns["Error_Maximo_T"];
                 this.columnIntervalo_HR = base.Columns["Intervalo_HR"];
                 this.columnError_Maximo_HR = base.Columns["Error_Maximo_HR"];
+                this.columnEstatus_Certificado = base.Columns["Estatus Certificado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -713,9 +713,9 @@ namespace CTZ {
                 base.Columns.Add(this.columnRANGO);
                 this.columnACCESORIOS = new global::System.Data.DataColumn("ACCESORIOS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnACCESORIOS);
-                this.columnFecha_De_Calibracion = new global::System.Data.DataColumn("Fecha_De_Calibracion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnFecha_De_Calibracion = new global::System.Data.DataColumn("Fecha_De_Calibracion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha_De_Calibracion);
-                this.columnProxima_Calibracion = new global::System.Data.DataColumn("Proxima_Calibracion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnProxima_Calibracion = new global::System.Data.DataColumn("Proxima_Calibracion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProxima_Calibracion);
                 this.columnLink = new global::System.Data.DataColumn("Link", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLink);
@@ -725,10 +725,8 @@ namespace CTZ {
                 base.Columns.Add(this.columnUso);
                 this.columnLaboratorio = new global::System.Data.DataColumn("Laboratorio", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLaboratorio);
-                this.columnFecha_De_Registro = new global::System.Data.DataColumn("Fecha_De_Registro", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnFecha_De_Registro = new global::System.Data.DataColumn("Fecha_De_Registro", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha_De_Registro);
-                this.columnEstatus_Certificado = new global::System.Data.DataColumn("Estatus Certificado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEstatus_Certificado);
                 this.columnNumero_Certificado_Temperatura = new global::System.Data.DataColumn("Numero_Certificado_Temperatura", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumero_Certificado_Temperatura);
                 this.columnNumero_Certificado_HR = new global::System.Data.DataColumn("Numero_Certificado_HR", typeof(string), null, global::System.Data.MappingType.Element);
@@ -741,6 +739,8 @@ namespace CTZ {
                 base.Columns.Add(this.columnIntervalo_HR);
                 this.columnError_Maximo_HR = new global::System.Data.DataColumn("Error_Maximo_HR", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnError_Maximo_HR);
+                this.columnEstatus_Certificado = new global::System.Data.DataColumn("Estatus Certificado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstatus_Certificado);
                 this.columnID_Instrumentos.MaxLength = 255;
                 this.columnINSTRUMENTO.MaxLength = 255;
                 this.columnMARCA.MaxLength = 255;
@@ -751,17 +751,20 @@ namespace CTZ {
                 this.columnMAGNITUD.MaxLength = 1000;
                 this.columnRANGO.MaxLength = 1000;
                 this.columnACCESORIOS.MaxLength = 1000;
+                this.columnFecha_De_Calibracion.MaxLength = 500;
+                this.columnProxima_Calibracion.MaxLength = 500;
                 this.columnLink.MaxLength = 3000;
                 this.columnNumero.MaxLength = 500;
                 this.columnUso.MaxLength = 500;
                 this.columnLaboratorio.MaxLength = 500;
-                this.columnEstatus_Certificado.MaxLength = 500;
+                this.columnFecha_De_Registro.MaxLength = 500;
                 this.columnNumero_Certificado_Temperatura.MaxLength = 500;
                 this.columnNumero_Certificado_HR.MaxLength = 500;
                 this.columnIntervalo_De_Media_Temperatura.MaxLength = 500;
                 this.columnError_Maximo_T.MaxLength = 500;
                 this.columnIntervalo_HR.MaxLength = 500;
                 this.columnError_Maximo_HR.MaxLength = 500;
+                this.columnEstatus_Certificado.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1071,10 +1074,10 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Fecha_De_Calibracion {
+            public string Fecha_De_Calibracion {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn]));
+                        return ((string)(this[this.tableInstrumentos_Certificado.Fecha_De_CalibracionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_De_Calibracion\' de la tabla \'Instrumentos_Certifica" +
@@ -1088,10 +1091,10 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Proxima_Calibracion {
+            public string Proxima_Calibracion {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableInstrumentos_Certificado.Proxima_CalibracionColumn]));
+                        return ((string)(this[this.tableInstrumentos_Certificado.Proxima_CalibracionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Proxima_Calibracion\' de la tabla \'Instrumentos_Certificad" +
@@ -1171,10 +1174,10 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Fecha_De_Registro {
+            public string Fecha_De_Registro {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableInstrumentos_Certificado.Fecha_De_RegistroColumn]));
+                        return ((string)(this[this.tableInstrumentos_Certificado.Fecha_De_RegistroColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_De_Registro\' de la tabla \'Instrumentos_Certificado\'" +
@@ -1183,23 +1186,6 @@ namespace CTZ {
                 }
                 set {
                     this[this.tableInstrumentos_Certificado.Fecha_De_RegistroColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Estatus_Certificado {
-                get {
-                    try {
-                        return ((string)(this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estatus Certificado\' de la tabla \'Instrumentos_Certificad" +
-                                "o\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn] = value;
                 }
             }
             
@@ -1302,6 +1288,23 @@ namespace CTZ {
                 }
                 set {
                     this[this.tableInstrumentos_Certificado.Error_Maximo_HRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Estatus_Certificado {
+                get {
+                    try {
+                        return ((string)(this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estatus Certificado\' de la tabla \'Instrumentos_Certificad" +
+                                "o\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn] = value;
                 }
             }
             
@@ -1511,18 +1514,6 @@ namespace CTZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEstatus_CertificadoNull() {
-                return this.IsNull(this.tableInstrumentos_Certificado.Estatus_CertificadoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEstatus_CertificadoNull() {
-                this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNumero_Certificado_TemperaturaNull() {
                 return this.IsNull(this.tableInstrumentos_Certificado.Numero_Certificado_TemperaturaColumn);
             }
@@ -1591,6 +1582,18 @@ namespace CTZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetError_Maximo_HRNull() {
                 this[this.tableInstrumentos_Certificado.Error_Maximo_HRColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEstatus_CertificadoNull() {
+                return this.IsNull(this.tableInstrumentos_Certificado.Estatus_CertificadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEstatus_CertificadoNull() {
+                this[this.tableInstrumentos_Certificado.Estatus_CertificadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1770,13 +1773,13 @@ namespace CTZ.TrazabilidadTestDataSet3TableAdapters {
             tableMapping.ColumnMappings.Add("Uso", "Uso");
             tableMapping.ColumnMappings.Add("Laboratorio", "Laboratorio");
             tableMapping.ColumnMappings.Add("Fecha_De_Registro", "Fecha_De_Registro");
-            tableMapping.ColumnMappings.Add("Estatus Certificado", "Estatus Certificado");
             tableMapping.ColumnMappings.Add("Numero_Certificado_Temperatura", "Numero_Certificado_Temperatura");
             tableMapping.ColumnMappings.Add("Numero_Certificado_HR", "Numero_Certificado_HR");
             tableMapping.ColumnMappings.Add("Intervalo_De_Media_Temperatura", "Intervalo_De_Media_Temperatura");
             tableMapping.ColumnMappings.Add("Error_Maximo_T", "Error_Maximo_T");
             tableMapping.ColumnMappings.Add("Intervalo_HR", "Intervalo_HR");
             tableMapping.ColumnMappings.Add("Error_Maximo_HR", "Error_Maximo_HR");
+            tableMapping.ColumnMappings.Add("Estatus Certificado", "Estatus Certificado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1793,7 +1796,7 @@ namespace CTZ.TrazabilidadTestDataSet3TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "Select  *  from Instrumentos_Certificado;";
+            this._commandCollection[0].CommandText = "Select * from Instrumentos_Certificado;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
