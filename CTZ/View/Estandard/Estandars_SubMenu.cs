@@ -23,12 +23,13 @@ namespace CTZ.View.Estandard
 
         private void Estandars_SubMenu_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares_cerca_de_caducar' Puede moverla o quitarla según sea necesario.
-            this.estandares_cerca_de_caducarTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares_cerca_de_caducar);
+            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet3.Estandares' Puede moverla o quitarla según sea necesario.
+            this.estandaresTableAdapter1.Fill(this.trazabilidadTestDataSet3.Estandares);
+
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares_Certificados' Puede moverla o quitarla según sea necesario.
             this.estandares_CertificadosTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares_Certificados);
             // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares' Puede moverla o quitarla según sea necesario.
-            this.estandaresTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares);
+           // this.estandaresTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares);
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace CTZ.View.Estandard
 
         private void Dgv_Estandards_FilterStringChanged(object sender, EventArgs e)
         {
-            this.estandaresBindingSource.Filter = this.Dgv_Standards.FilterString;
+            this.estandaresBindingSource1.Filter = this.Dgv_Standards.FilterString;
         }
 
         private void Btn_SerchEST_Click(object sender, EventArgs e)
@@ -69,7 +70,7 @@ namespace CTZ.View.Estandard
 
         private void Btn_CleanSerch_Click(object sender, EventArgs e)
         {
-            Dgv_Standards.DataSource = estandaresBindingSource;
+            Dgv_Standards.DataSource = estandaresBindingSource1;
         }
 
         private void Btn_SerchByEstandardName_Click(object sender, EventArgs e)
@@ -94,11 +95,6 @@ namespace CTZ.View.Estandard
             this.estandaresCertificadosBindingSource.Filter = this.Dgv_Standard_Certificate.FilterString;
         }
 
-        private void Dgv_Standars_Near_Expiration_Date_FilterStringChanged(object sender, EventArgs e)
-        {
-            this.estandarescercadecaducarBindingSource.Filter = this.Dgv_Standars_Near_Expiration_Date.FilterString;
-        }
-
         private void Btn_Serch_Certificate_Click(object sender, EventArgs e)
         {
             if (controler.checkIfEstandarExist(TxtBox_Certificate_Standar.Text))
@@ -117,22 +113,5 @@ namespace CTZ.View.Estandard
             TxtBox_Certificate_Standar.Clear();
         }
 
-        private void Btn_Serch_Available_Standar_Click(object sender, EventArgs e)
-        {
-            if (controler.checkIfEstandarExist(TxtBox_Available_Standar.Text))
-            {
-                Dgv_Standars_Near_Expiration_Date.DataSource = controler.getStandarNearToExpire(TxtBox_Available_Standar.Text);
-            }
-            else
-            {
-                MessageBox.Show("El estandard no existe ");
-            }
-        }
-
-        private void Btn_Clean_Available_Standar_Click(object sender, EventArgs e)
-        {
-            Dgv_Standars_Near_Expiration_Date.DataSource = estandarescercadecaducarBindingSource;
-            TxtBox_Available_Standar.Clear();
-        }
     }
 }
