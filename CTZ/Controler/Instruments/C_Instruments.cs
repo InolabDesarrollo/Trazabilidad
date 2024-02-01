@@ -16,11 +16,11 @@ namespace CTZ.Controlador
     public class C_Instruments
     {
         Instrument_Repository repository;
-        C_EFC repository_EFC;
+        Instrument_Repository_EFC repository_EFC;
          
         public C_Instruments() { 
             repository = new Instrument_Repository();
-            repository_EFC = new C_EFC();
+            repository_EFC = new Instrument_Repository_EFC();
         }
 
         public DataTable consultarRegistrosActivos()
