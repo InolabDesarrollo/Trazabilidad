@@ -65,6 +65,7 @@ namespace CTZ.Controlador
         {
             return repository.serchInstrument(id);
         }
+
         public DataTable selectAllFromInstrument(string id)
         {
             return repository.serchAllFromInstrument(id);

@@ -113,5 +113,13 @@ namespace CTZ.View.Estandard
             TxtBox_Certificate_Standar.Clear();
         }
 
+        private void Btn_Reload_Data_Click(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet3.Estandares' Puede moverla o quitarla según sea necesario.
+            this.estandaresTableAdapter1.Fill(this.trazabilidadTestDataSet3.Estandares);
+
+            // TODO: esta línea de código carga datos en la tabla 'trazabilidadTestDataSet4.Estandares_Certificados' Puede moverla o quitarla según sea necesario.
+            this.estandares_CertificadosTableAdapter.Fill(this.trazabilidadTestDataSet4.Estandares_Certificados);
+        }
     }
 }
