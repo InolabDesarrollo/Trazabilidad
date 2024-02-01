@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl_Instruments = new System.Windows.Forms.TabControl();
             this.Page_Instruments = new System.Windows.Forms.TabPage();
             this.Btn_SerchByBrand = new System.Windows.Forms.Button();
@@ -104,6 +104,7 @@
             this.instrumentosCertificadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentos_CertificadoTableAdapter = new CTZ.TrazabilidadTestDataSet3TableAdapters.Instrumentos_CertificadoTableAdapter();
             this.instrumentosCertificadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Btn_Reload_Data = new System.Windows.Forms.Button();
             this.TabControl_Instruments.SuspendLayout();
             this.Page_Instruments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instruments)).BeginInit();
@@ -522,14 +523,14 @@
             this.Dgv_Instruments_Certificates.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
             this.Dgv_Instruments_Certificates.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgv_Instruments_Certificates.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Instruments_Certificates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Instruments_Certificates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_Instruments_Certificates.ColumnHeadersHeight = 26;
             this.Dgv_Instruments_Certificates.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -836,11 +837,26 @@
             this.instrumentosCertificadoBindingSource1.DataMember = "Instrumentos_Certificado";
             this.instrumentosCertificadoBindingSource1.DataSource = this.trazabilidadTestDataSet3;
             // 
+            // Btn_Reload_Data
+            // 
+            this.Btn_Reload_Data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
+            this.Btn_Reload_Data.FlatAppearance.BorderSize = 0;
+            this.Btn_Reload_Data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Reload_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Reload_Data.Location = new System.Drawing.Point(493, 468);
+            this.Btn_Reload_Data.Name = "Btn_Reload_Data";
+            this.Btn_Reload_Data.Size = new System.Drawing.Size(149, 47);
+            this.Btn_Reload_Data.TabIndex = 12;
+            this.Btn_Reload_Data.Text = "Recargar Datos";
+            this.Btn_Reload_Data.UseVisualStyleBackColor = false;
+            this.Btn_Reload_Data.Click += new System.EventHandler(this.Btn_Reload_Data_Click);
+            // 
             // Instruments_SubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1233, 528);
+            this.Controls.Add(this.Btn_Reload_Data);
             this.Controls.Add(this.BtnUpdate_Instrument);
             this.Controls.Add(this.BtnDelete_Instruments);
             this.Controls.Add(this.Btn_Add);
@@ -950,5 +966,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Error_Maximo_HR;
         private System.Windows.Forms.DataGridViewTextBoxColumn Laboratorio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estatus_Certificado;
+        private System.Windows.Forms.Button Btn_Reload_Data;
     }
 }

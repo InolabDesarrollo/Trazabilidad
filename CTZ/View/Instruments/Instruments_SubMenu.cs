@@ -237,5 +237,13 @@ namespace CTZ.View.Instruments
             Dgv_Instruments.DataSource = controler.selectAllByBrand(TxtBox_Brand.Text);
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
         }
+
+        private void Btn_Reload_Data_Click(object sender, EventArgs e)
+        {
+            this.instrumentosTableAdapter.Fill(this.trazabilidadTest_Instrumentos.Instrumentos);
+            this.instrumentos_CertificadoTableAdapter.Fill(this.trazabilidadTestDataSet3.Instrumentos_Certificado);
+            colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
+            colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
+        }
     }
 }
