@@ -15,9 +15,11 @@ namespace CTZ.Controlador
 {
     public class C_Instruments
     {
-        Instrument_Repository repository;  
+        Instrument_Repository repository;
+        Instrument_Repository_EntityFrameworkCore repository_EFC;
         public C_Instruments() { 
             repository = new Instrument_Repository();
+            repository_EFC = new Instrument_Repository_EntityFrameworkCore();
         }
 
         public DataTable consultarRegistrosActivos()
@@ -35,26 +37,9 @@ namespace CTZ.Controlador
             return repository.selectInstrumentsAndCertificates();
         }
 
-        public void addNewInstrument(Instrument instrument)
-        {
-            //repository.addNewInstrument(instrument);
-            
-            Instrumentos instrument_efc = new Instrumentos();
-            
-            instrument_efc.ID_Instrumentos = instrument.id;
-            instrument_efc.INSTRUMENTO = instrument.instrument;
-            instrument_efc.MARCA = instrument.brand;
-            instrument_efc.MODELO = instrument.model;
-            instrument_efc.N_S_ = instrument.numberOfSerie;
-            instrument_efc.UBICACIÓN = instrument.ubication;
-            instrument_efc.OBSERVACIÓN = instrument.observation;
-            instrument_efc.ESTATUS = instrument.status;
-            instrument_efc.MAGNITUD = instrument.magnitude;
-            instrument_efc.USO = instrument.use;
-            instrument_efc.INTERVALO_DE_MEDIA = instrument.meanInterval;
-
-            Instrument_Repository_EFC repository_EFC = new Instrument_Repository_EFC();
-            repository_EFC.create(instrument_efc);
+        public void addNewInstrument(Instrumentos instrument)
+        {                   
+            repository_EFC.create(instrument);
         }
 
         public string deleteInstrument(string id)
@@ -62,7 +47,7 @@ namespace CTZ.Controlador
             bool instrumentExist = repository.serchInstrument(id);
             if (instrumentExist)
             {
-                repository.deleteInstrument(id);
+                repository_EFC.delete(id);
                 return "El instrumento se elimino";
             }
             else
@@ -71,9 +56,9 @@ namespace CTZ.Controlador
             } 
         }
 
-        public void updateInstrument(Instrument instrument)
+        public void updateInstrument(Instrumentos instrument)
         {
-            repository.updateInstrument(instrument);
+            repository_EFC.update(instrument);
         }
 
         public bool serchInstrumen(string id)

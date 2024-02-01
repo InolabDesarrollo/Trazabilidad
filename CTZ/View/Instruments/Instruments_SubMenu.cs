@@ -86,6 +86,7 @@ namespace CTZ.View.Instruments
         {
             AddInstrument instrument = new AddInstrument();
             instrument.Show();
+            Refresh();
         }
 
         private void BtnDelete_Instruments_Click(object sender, EventArgs e)

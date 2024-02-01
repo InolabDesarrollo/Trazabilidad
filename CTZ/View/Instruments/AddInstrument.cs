@@ -2,6 +2,7 @@
 using CTZ.Controler.Instruments;
 using CTZ.View.Instruments.Assignment;
 using MaterialSkin.Controls;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,18 +24,19 @@ namespace CTZ.Vista.Responsabilitis
 
         private void Btn_Add_Instrument_Click(object sender, EventArgs e)
         {
-            Instrument instrument = new Instrument();
-            instrument.id = TxtBox_Id.Text;
-            instrument.instrument = TxtBox_Instrument.Text;
-            instrument.brand = TxBox_Brand.Text;
-            instrument.model = TxtBox_Model.Text;
-            instrument.numberOfSerie = TxtBox_NumSerie.Text;
-            instrument.ubication = ComboBox_Ubication.SelectedItem.ToString();
-            instrument.observation = TxtBox_Observation.Text;
-            instrument.status = ComboBox_Status.SelectedItem.ToString();
-            instrument.magnitude = TxtBox_Magnitud.Text;
-            instrument.use = TxtBox_USE.Text;
-            instrument.meanInterval = TxtBox_Magnitud.Text;
+
+            Instrumentos instrument = new Instrumentos();
+            instrument.ID_Instrumentos = TxtBox_Id.Text;
+            instrument.INSTRUMENTO = TxtBox_Instrument.Text;
+            instrument.MARCA = TxBox_Brand.Text;
+            instrument.MODELO = TxtBox_Model.Text;
+            instrument.N_S_ = TxtBox_NumSerie.Text;
+            instrument.UBICACIÓN = ComboBox_Ubication.SelectedItem.ToString();
+            instrument.OBSERVACIÓN = TxtBox_Observation.Text;
+            instrument.ESTATUS = ComboBox_Status.SelectedItem.ToString();
+            instrument.MAGNITUD = TxtBox_Magnitud.Text;
+            instrument.USO = TxtBox_USE.Text;
+            instrument.INTERVALO_DE_MEDIA = TxtBox_Mean_Interval.Text;
 
             C_Instruments controler = new C_Instruments();
             controler.addNewInstrument(instrument);

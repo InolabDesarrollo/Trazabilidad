@@ -3,14 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Model.Trazabilidad.Instruments
 {
-    public class Instrument_Repository_EFC
+    public class Instrument_Repository_EntityFrameworkCore
     {
         Entities database;
         public List<Instrumentos> select()
@@ -73,6 +75,7 @@ namespace Model.Trazabilidad.Instruments
             }catch(Exception ex)
             {
                 Trace.WriteLine(ex.Message);
+
             }
         }
     }

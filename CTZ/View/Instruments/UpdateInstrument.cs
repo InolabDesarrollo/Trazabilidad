@@ -2,6 +2,7 @@
 using CTZ.Controler.Instruments.Certificates_;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,13 +18,14 @@ namespace CTZ.Vista
 {
     public partial class UpdateInstrument : MaterialForm
     {
-        private  string id;
+        private  string equino;
+        private int id;
         Responsabilitis.Instrument instrument;
         DataTable certificates;
         public UpdateInstrument(string id)
         {
             InitializeComponent();
-            this.id = id;
+            this.equino = id;
             instrument = new Responsabilitis.Instrument();
             getInformationFromInstrument(id);
         }
@@ -31,6 +33,8 @@ namespace CTZ.Vista
         private void getInformationFromInstrument(string id)
         {
             DataTable informationIntrument = instrument.selectAllFromInstrument(id);
+            this.id = Convert.ToInt32(informationIntrument.Rows[0]["ID"].ToString());
+
             TxtBox_Instrument.Text= informationIntrument.Rows[0]["INSTRUMENTO"].ToString();
             TxtBox_Brand.Text = informationIntrument.Rows[0]["MARCA"].ToString();
             TxtBox_Model.Text= informationIntrument.Rows[0]["MODELO"].ToString();
@@ -39,7 +43,7 @@ namespace CTZ.Vista
             TxtBox_Observation.Text = informationIntrument.Rows[0]["OBSERVACIÓN"].ToString();
             TxtBox_Mean_Interval.Text = informationIntrument.Rows[0]["INTERVALO_DE_MEDIA"].ToString();
             TxtBox_Use.Text = informationIntrument.Rows[0]["USO"].ToString();
-
+            TxtBox_Magnitude.Text = informationIntrument.Rows[0]["MAGNITUD"].ToString();
             checkStatus(informationIntrument.Rows[0]["ESTATUS"].ToString());
             getCertificatesFromInstrument(id);
             Lbl_Id_Instrument.Text = informationIntrument.Rows[0]["ID_Instrumentos"].ToString();
@@ -78,20 +82,23 @@ namespace CTZ.Vista
 
         private void Btn_Update_Instrument_Click(object sender, EventArgs e)
         {
-            instrument.id = id;
-            instrument.instrument = TxtBox_Instrument.Text;
-            instrument.brand = TxtBox_Brand.Text;
-            instrument.model = TxtBox_Model.Text;
-            instrument.numberOfSerie = TxtBox_NumSerie.Text;
-            instrument.ubication = TxtBox_Ubication.Text;
-            instrument.observation = TxtBox_Observation.Text;
-            instrument.status = ComboBox_Status.SelectedItem.ToString();
-            instrument.magnitude =TxtBox_Magnitude.Text;
-            instrument.use = TxtBox_Use.Text;
-            instrument.meanInterval = TxtBox_Mean_Interval.Text;
+
+            Instrumentos instrument = new Instrumentos();
+            instrument.ID = id;
+            instrument.ID_Instrumentos = equino;        
+            instrument.INSTRUMENTO = TxtBox_Instrument.Text;
+            instrument.MARCA = TxtBox_Brand.Text;
+            instrument.MODELO = TxtBox_Model.Text;
+            instrument.N_S_ = TxtBox_NumSerie.Text;
+            instrument.UBICACIÓN = TxtBox_Ubication.Text;
+            instrument.OBSERVACIÓN = TxtBox_Observation.Text;
+            instrument.ESTATUS = ComboBox_Status.SelectedItem.ToString();
+            instrument.MAGNITUD = TxtBox_Magnitude.Text;
+            instrument.USO = TxtBox_Use.Text;
+            instrument.INTERVALO_DE_MEDIA = TxtBox_Mean_Interval.Text;
+
             C_Instruments controler = new C_Instruments();
             controler.updateInstrument(instrument);
-
             clearMenu();
             MessageBox.Show("Instrumento Actualizado");
         }
@@ -107,7 +114,7 @@ namespace CTZ.Vista
 
         private void BtnNew_Certificate_Click(object sender, EventArgs e)
         {
-            AddCertificate certificate = new AddCertificate(id);
+            AddCertificate certificate = new AddCertificate(equino);
             certificate.Show();
         }
 
@@ -122,8 +129,8 @@ namespace CTZ.Vista
             C_Query_Certificate controller = new C_Query_Certificate();
             try
             {
-                controller.updateStatusCertificate(ComboBox_Certificate.SelectedItem.ToString(), id);
-                MessageBox.Show("El certificado " + ComboBox_Certificate.SelectedItem.ToString() + "Se quito del instrumento " + id);
+                controller.updateStatusCertificate(ComboBox_Certificate.SelectedItem.ToString(), equino);
+                MessageBox.Show("El certificado " + ComboBox_Certificate.SelectedItem.ToString() + "Se quito del instrumento " + equino);
             }
             catch (Exception ex)
             {
