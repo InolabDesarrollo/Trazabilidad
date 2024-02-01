@@ -1,0 +1,12 @@
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\bin\Release\Model.dll.config
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\bin\Release\Model.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\bin\Release\Model.pdb
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\bin\Release\EntityFramework.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\bin\Release\EntityFramework.xml
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\obj\Release\Model.csproj.AssemblyReference.cache
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\obj\Release\Model.csproj.CopyComplete
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\obj\Release\Model.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\Model\obj\Release\Model.pdb

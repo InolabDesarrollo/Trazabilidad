@@ -10,7 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProyect", "TestProyect\
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{15664D9E-C06B-4DDC-ABE7-EE45659A7E2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{939D3200-C8EF-46B0-9EF7-F67715A0A9E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model_EFC", "Model\Model_EFC.csproj", "{939D3200-C8EF-46B0-9EF7-F67715A0A9E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

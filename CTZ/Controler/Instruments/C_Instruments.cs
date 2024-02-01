@@ -1,6 +1,5 @@
 ﻿using CTZ.Modelo.Trazabilidad;
 using CTZ.Vista.Responsabilitis;
-using Model;
 using Model.Trazabilidad.Instruments;
 using System;
 using System.Collections.Generic;
@@ -10,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
+using Model;
 
 namespace CTZ.Controlador
 {
@@ -17,6 +17,7 @@ namespace CTZ.Controlador
     {
         Instrument_Repository repository;
         Instrument_Repository_EntityFrameworkCore repository_EFC;
+        
         public C_Instruments() { 
             repository = new Instrument_Repository();
             repository_EFC = new Instrument_Repository_EntityFrameworkCore();

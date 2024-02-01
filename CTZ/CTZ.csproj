@@ -752,9 +752,9 @@
     <Content Include="StampAlone.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\Model\Model_EFC.csproj">
       <Project>{939d3200-c8ef-46b0-9ef7-f67715a0a9e2}</Project>
-      <Name>Model</Name>
+      <Name>Model_EFC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
