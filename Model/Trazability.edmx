@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TrazabilidadTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Instrumentos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Instrumentos" Type="nvarchar" MaxLength="255" />
+          <Property Name="INSTRUMENTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="MARCA" Type="nvarchar" MaxLength="255" />
+          <Property Name="MODELO" Type="nvarchar" MaxLength="255" />
+          <Property Name="N#S#" Type="nvarchar" MaxLength="255" />
+          <Property Name="UBICACIÓN" Type="nvarchar" MaxLength="255" />
+          <Property Name="OBSERVACIÓN" Type="nvarchar" MaxLength="255" />
+          <Property Name="ESTATUS" Type="nvarchar" MaxLength="255" />
+          <Property Name="ESTATUS_ASIGNACION" Type="nvarchar" MaxLength="50" />
+          <Property Name="MAGNITUD" Type="nvarchar" MaxLength="1000" />
+          <Property Name="RANGO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ACCESORIOS" Type="nvarchar" MaxLength="1000" />
+          <Property Name="USO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="INTERVALO_DE_MEDIA" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityContainer Name="TrazabilidadTestModelStoreContainer">
+          <EntitySet Name="Instrumentos" EntityType="Self.Instrumentos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TrazabilidadTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Instrumentos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Instrumentos" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="INSTRUMENTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MARCA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MODELO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="N_S_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UBICACIÓN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OBSERVACIÓN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ESTATUS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ESTATUS_ASIGNACION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAGNITUD" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="RANGO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ACCESORIOS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="USO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="INTERVALO_DE_MEDIA" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Instrumentos" EntityType="Self.Instrumentos" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TrazabilidadTestModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Instrumentos">
+            <EntityTypeMapping TypeName="TrazabilidadTestModel.Instrumentos">
+              <MappingFragment StoreEntitySet="Instrumentos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Instrumentos" ColumnName="ID_Instrumentos" />
+                <ScalarProperty Name="INSTRUMENTO" ColumnName="INSTRUMENTO" />
+                <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+                <ScalarProperty Name="MODELO" ColumnName="MODELO" />
+                <ScalarProperty Name="N_S_" ColumnName="N#S#" />
+                <ScalarProperty Name="UBICACIÓN" ColumnName="UBICACIÓN" />
+                <ScalarProperty Name="OBSERVACIÓN" ColumnName="OBSERVACIÓN" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+                <ScalarProperty Name="ESTATUS_ASIGNACION" ColumnName="ESTATUS_ASIGNACION" />
+                <ScalarProperty Name="MAGNITUD" ColumnName="MAGNITUD" />
+                <ScalarProperty Name="RANGO" ColumnName="RANGO" />
+                <ScalarProperty Name="ACCESORIOS" ColumnName="ACCESORIOS" />
+                <ScalarProperty Name="USO" ColumnName="USO" />
+                <ScalarProperty Name="INTERVALO_DE_MEDIA" ColumnName="INTERVALO_DE_MEDIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

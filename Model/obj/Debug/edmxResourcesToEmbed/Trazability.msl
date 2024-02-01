@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrazabilidadTestModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Instrumentos">
+      <EntityTypeMapping TypeName="TrazabilidadTestModel.Instrumentos">
+        <MappingFragment StoreEntitySet="Instrumentos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_Instrumentos" ColumnName="ID_Instrumentos" />
+          <ScalarProperty Name="INSTRUMENTO" ColumnName="INSTRUMENTO" />
+          <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+          <ScalarProperty Name="MODELO" ColumnName="MODELO" />
+          <ScalarProperty Name="N_S_" ColumnName="N#S#" />
+          <ScalarProperty Name="UBICACIÓN" ColumnName="UBICACIÓN" />
+          <ScalarProperty Name="OBSERVACIÓN" ColumnName="OBSERVACIÓN" />
+          <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+          <ScalarProperty Name="ESTATUS_ASIGNACION" ColumnName="ESTATUS_ASIGNACION" />
+          <ScalarProperty Name="MAGNITUD" ColumnName="MAGNITUD" />
+          <ScalarProperty Name="RANGO" ColumnName="RANGO" />
+          <ScalarProperty Name="ACCESORIOS" ColumnName="ACCESORIOS" />
+          <ScalarProperty Name="USO" ColumnName="USO" />
+          <ScalarProperty Name="INTERVALO_DE_MEDIA" ColumnName="INTERVALO_DE_MEDIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

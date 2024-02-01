@@ -330,3 +330,8 @@ C:\Users\Omar Sotomayor\source\repos\CTZ\TestProyect\obj\Debug\net6.0\refint\Tes
 C:\Users\Omar Sotomayor\source\repos\CTZ\TestProyect\obj\Debug\net6.0\TestProyect.pdb
 C:\Users\Omar Sotomayor\source\repos\CTZ\TestProyect\obj\Debug\net6.0\TestProyect.genruntimeconfig.cache
 C:\Users\Omar Sotomayor\source\repos\CTZ\TestProyect\obj\Debug\net6.0\ref\TestProyect.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\TestProyect\bin\Debug\net6.0\Model.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\TestProyect\bin\Debug\net6.0\EntityFramework.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\TestProyect\bin\Debug\net6.0\Model.pdb
+C:\Users\Omar Sotomayor\source\repos\CTZ\TestProyect\bin\Debug\net6.0\Model.dll.config
+C:\Users\Omar Sotomayor\source\repos\CTZ\TestProyect\bin\Debug\net6.0\EntityFramework.xml

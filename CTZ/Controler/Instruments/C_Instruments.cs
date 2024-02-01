@@ -1,5 +1,7 @@
 ﻿using CTZ.Modelo.Trazabilidad;
 using CTZ.Vista.Responsabilitis;
+using Model;
+using Model.Trazabilidad.Instruments;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -35,7 +37,24 @@ namespace CTZ.Controlador
 
         public void addNewInstrument(Instrument instrument)
         {
-            repository.addNewInstrument(instrument);
+            //repository.addNewInstrument(instrument);
+            
+            Instrumentos instrument_efc = new Instrumentos();
+            
+            instrument_efc.ID_Instrumentos = instrument.id;
+            instrument_efc.INSTRUMENTO = instrument.instrument;
+            instrument_efc.MARCA = instrument.brand;
+            instrument_efc.MODELO = instrument.model;
+            instrument_efc.N_S_ = instrument.numberOfSerie;
+            instrument_efc.UBICACIÓN = instrument.ubication;
+            instrument_efc.OBSERVACIÓN = instrument.observation;
+            instrument_efc.ESTATUS = instrument.status;
+            instrument_efc.MAGNITUD = instrument.magnitude;
+            instrument_efc.USO = instrument.use;
+            instrument_efc.INTERVALO_DE_MEDIA = instrument.meanInterval;
+
+            Instrument_Repository_EFC repository_EFC = new Instrument_Repository_EFC();
+            repository_EFC.create(instrument_efc);
         }
 
         public string deleteInstrument(string id)

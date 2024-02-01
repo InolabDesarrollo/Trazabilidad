@@ -2051,3 +2051,10 @@ C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\obj\Debug\CTZ.csproj.CoreCompileInp
 C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\obj\Debug\CTZ.csproj.CopyComplete
 C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\obj\Debug\CTZ.exe
 C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\obj\Debug\CTZ.pdb
+C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\Model.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\EntityFramework.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\Model.pdb
+C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\Model.dll.config
+C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\EntityFramework.xml
+C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\EntityFramework.SqlServer.xml

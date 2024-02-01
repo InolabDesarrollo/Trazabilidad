@@ -11,6 +11,25 @@
         "projectPath": "C:\\Users\\Omar Sotomayor\\source\\repos\\CTZ\\CTZ\\CTZ.csproj",
         "frameworks": {
           "net461": {
+            "projectReferences": {
+              "C:\\Users\\Omar Sotomayor\\source\\repos\\CTZ\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Omar Sotomayor\\source\\repos\\CTZ\\Model\\Model.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "C:\\Users\\Omar Sotomayor\\source\\repos\\CTZ\\Model\\Model.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Omar Sotomayor\\source\\repos\\CTZ\\Model\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "C:\\Users\\Omar Sotomayor\\source\\repos\\CTZ\\Model\\Model.csproj",
+        "frameworks": {
+          "net461": {
             "projectReferences": {}
           }
         }

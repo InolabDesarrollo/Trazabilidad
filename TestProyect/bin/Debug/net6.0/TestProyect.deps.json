@@ -386,6 +386,9 @@
         }
       },
       "CTZ/1.0.0": {
+        "dependencies": {
+          "Model": "1.0.0"
+        },
         "runtime": {
           "CTZ.exe": {}
         },
@@ -488,6 +491,11 @@
           }
         }
       },
+      "Model/1.0.0": {
+        "runtime": {
+          "Model.dll": {}
+        }
+      },
       "System.Windows.Forms/4.0.0.0": {
         "runtime": {
           "System.Windows.Forms.dll": {
@@ -565,6 +573,14 @@
           "AutoUpdater.NET.dll": {
             "assemblyVersion": "1.7.0.0",
             "fileVersion": "1.7.0.0"
+          }
+        }
+      },
+      "EntityFramework/6.0.0.0": {
+        "runtime": {
+          "EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.61023.0"
           }
         }
       },
@@ -856,6 +872,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.Windows.Forms/4.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -877,6 +898,11 @@
       "sha512": ""
     },
     "AutoUpdater.NET/1.7.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework/6.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

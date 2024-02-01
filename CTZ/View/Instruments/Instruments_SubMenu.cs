@@ -22,7 +22,6 @@ namespace CTZ.View.Instruments
     public partial class Instruments_SubMenu : MaterialForm
     {
         private C_SerchInstrument controler;
-        private static DataTable instrumentTable;
         private const int columnNextCalibration = 9;
         private const int columnStatusForDvgInstruments = 10; 
         private const int columnStatusForDgvInstrumentsCertificates = 7;

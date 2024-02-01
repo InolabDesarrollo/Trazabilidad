@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrazabilidadTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Instrumentos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Instrumentos" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="INSTRUMENTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MARCA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MODELO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="N_S_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="UBICACIÓN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OBSERVACIÓN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ESTATUS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ESTATUS_ASIGNACION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAGNITUD" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="RANGO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ACCESORIOS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="USO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="INTERVALO_DE_MEDIA" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Instrumentos" EntityType="Self.Instrumentos" />
+  </EntityContainer>
+</Schema>

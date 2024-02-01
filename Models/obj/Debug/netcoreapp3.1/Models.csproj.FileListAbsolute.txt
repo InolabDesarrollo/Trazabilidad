@@ -1,0 +1,4 @@
+C:\Users\Omar Sotomayor\source\repos\CTZ\Models\obj\Debug\netcoreapp3.1\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Omar Sotomayor\source\repos\CTZ\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfoInputs.cache
+C:\Users\Omar Sotomayor\source\repos\CTZ\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfo.cs
+C:\Users\Omar Sotomayor\source\repos\CTZ\Models\obj\Debug\netcoreapp3.1\Models.csproj.CoreCompileInputs.cache
