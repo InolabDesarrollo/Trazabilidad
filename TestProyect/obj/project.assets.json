@@ -483,7 +483,7 @@
       "CTZ/1.0.0": {
         "type": "project",
         "dependencies": {
-          "Model": "1.0.0"
+          "Model_EFC": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CTZ.dll": {}
@@ -492,13 +492,13 @@
           "bin/placeholder/CTZ.dll": {}
         }
       },
-      "Model/1.0.0": {
+      "Model_EFC/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/Model.dll": {}
+          "bin/placeholder/Model_EFC.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Model.dll": {}
+          "bin/placeholder/Model_EFC.dll": {}
         }
       }
     }
@@ -1229,10 +1229,10 @@
       "path": "../CTZ/CTZ.csproj",
       "msbuildProject": "../CTZ/CTZ.csproj"
     },
-    "Model/1.0.0": {
+    "Model_EFC/1.0.0": {
       "type": "project",
-      "path": "../Model/Model.csproj",
-      "msbuildProject": "../Model/Model.csproj"
+      "path": "../Model/Model_EFC.csproj",
+      "msbuildProject": "../Model/Model_EFC.csproj"
     }
   },
   "projectFileDependencyGroups": {
