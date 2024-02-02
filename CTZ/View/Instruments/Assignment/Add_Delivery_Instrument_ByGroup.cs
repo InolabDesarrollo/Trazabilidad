@@ -56,7 +56,7 @@ namespace CTZ.Vista.Instruments
         private void Btn_Add_Equino_Click(object sender, EventArgs e)
         {
             instrumentsControler = new C_Instruments();
-            if (instrumentsControler.serchInstrumen(TxtBox_Instrumenst.Text))
+            if (instrumentsControler.serchInstrument(TxtBox_Instrumenst.Text))
             {
                 DataTable instrumentInformation = instrumentsControler.selectAllFromInstrument(TxtBox_Instrumenst.Text);
                 bool instrumentIsAvailable = instrumentsControler.checkIfInstrumentIsAvailable(TxtBox_Instrumenst.Text);

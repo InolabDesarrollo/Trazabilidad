@@ -1,5 +1,6 @@
 ﻿using CTZ.Controlador;
 using CTZ.Controler.Instruments;
+using CTZ.View.Instruments;
 using CTZ.View.Instruments.Assignment;
 using MaterialSkin.Controls;
 using Model;
@@ -19,8 +20,10 @@ namespace CTZ.Vista.Responsabilitis
     public partial class AddInstrument : MaterialForm
     {
         private static int numberOfAccessories;
+        C_Instruments controller;
         public AddInstrument()
         {
+            controller = new C_Instruments();
             InitializeComponent();
         }
 
@@ -43,9 +46,8 @@ namespace CTZ.Vista.Responsabilitis
         }
 
         private void checkIfCanCreateNewInstrument(Instrumentos instrument)
-        {
-            C_Instruments controler = new C_Instruments();
-            bool instrumentWasCreate = controler.addNewInstrument(instrument);
+        {           
+            bool instrumentWasCreate = controller.addNewInstrument(instrument);
             if (instrumentWasCreate)
             {
                 MessageBox.Show("Se creo instrumento con exito");
@@ -64,22 +66,34 @@ namespace CTZ.Vista.Responsabilitis
         }
 
         private void Btn_Add_Accessory_Click(object sender, EventArgs e)
-        {
-            numberOfAccessories++;
-            
+        {           
+            bool instrumentIsValid = this.checkIfTheEquinoIsValid(TxtBox_Id.Text);
+            if (instrumentIsValid)
+            {
+                numberOfAccessories++;
+                Add_Accessory accessory = new Add_Accessory(TxtBox_Id.Text);
+                accessory.Show();
+            }           
         }
 
-        private bool checkIfThereIsAnEquino()
+        private bool checkIfTheEquinoIsValid(string equino)
         {
-            if (TxtBox_Id.Text.Equals(""))
+            if (equino.Equals(""))
             {
-                return false;
+                return false;             
             }
             else
             {
-                return true;
-            }
-            
+                bool instrumentExist = controller.serchInstrument(equino);
+                if (instrumentExist)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }        
         }
     }
 }

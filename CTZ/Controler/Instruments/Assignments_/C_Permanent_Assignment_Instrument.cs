@@ -20,7 +20,7 @@ namespace CTZ.Controler.Instruments.Assignments_
             assignments.DateDelivery = dates.convertToValidDateDatePicker(assignments.DateDelivery);
 
             this.repository.registerPermantlyAssingmentInstrument(assignments);
-            this.updateStatusInstrumentAssignment(assignments.equinoInstrument, "ASIGNADO");
+            this.updateStatusInstrumentAssignment(assignments.equinoInstrument, "OCUPADO");
 
             string body = emailBody(assignments);
             Notification notification = new Notification();

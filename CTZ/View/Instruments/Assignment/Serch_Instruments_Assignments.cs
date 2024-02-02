@@ -26,7 +26,7 @@ namespace CTZ.Vista.Instruments
         private void Btn_Serch_By_Instrument_Click(object sender, EventArgs e)
         {
             controler = new C_Instruments();
-            if (controler.serchInstrumen(TxtBox_Instrument.Text)){
+            if (controler.serchInstrument(TxtBox_Instrument.Text)){
                 string equinoInstrument = TxtBox_Instrument.Text;
                 See_Instrument_Assignment instrument_Assignment = new See_Instrument_Assignment(equinoInstrument);
                 instrument_Assignment.Show();

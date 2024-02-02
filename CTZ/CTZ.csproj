@@ -153,6 +153,7 @@
     <Compile Include="Controler\Estandard\C_Estandard.cs" />
     <Compile Include="Controler\Estandard\Assignment\C_Return_Of_Estandard.cs" />
     <Compile Include="Controler\Estandard\C_UpdateEstandard.cs" />
+    <Compile Include="Controler\Instruments\Accessory\C_Add_Accessory.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_ConsultInstrument_Assignment.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_Permanent_Assignment_Instrument.cs" />
     <Compile Include="Controler\Instruments\Assignments_\C_RegistDeliveryInstrument.cs" />
@@ -308,6 +309,12 @@
     </Compile>
     <Compile Include="View\Estandard\UpdateEstandard.Designer.cs">
       <DependentUpon>UpdateEstandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Instruments\Add_Accessory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Instruments\Add_Accessory.Designer.cs">
+      <DependentUpon>Add_Accessory.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Assignment\Assignment_SubMenu.cs">
       <SubType>Form</SubType>
@@ -542,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Estandard\UpdateEstandard.resx">
       <DependentUpon>UpdateEstandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Instruments\Add_Accessory.resx">
+      <DependentUpon>Add_Accessory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Assignment_SubMenu.resx">
       <DependentUpon>Assignment_SubMenu.cs</DependentUpon>

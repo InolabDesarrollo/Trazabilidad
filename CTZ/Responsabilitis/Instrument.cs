@@ -34,7 +34,7 @@ namespace CTZ.Vista.Responsabilitis
 
         public bool serchInstrument(string id)
         {
-            return controler.serchInstrumen(id);
+            return controler.serchInstrument(id);
         }
         public DataTable selectAllFromInstrument(string equino)
         {

@@ -193,8 +193,8 @@
             this.ComboBox_Status.Items.AddRange(new object[] {
             "ACTIVO",
             "FUERA DE USO",
-            "CALIBRANDO",
-            "PENDIENTE"});
+            "ASIGNADO",
+            "ASIGNADO GUADALAJARA"});
             this.ComboBox_Status.Location = new System.Drawing.Point(419, 215);
             this.ComboBox_Status.MaxDropDownItems = 4;
             this.ComboBox_Status.MouseState = MaterialSkin.MouseState.OUT;

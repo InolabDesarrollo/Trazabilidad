@@ -2058,3 +2058,4 @@ C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\Model.dll.config
 C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\EntityFramework.xml
 C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Omar Sotomayor\source\repos\CTZ\CTZ\obj\Debug\CTZ.View.Instruments.Add_Accessory.resources

@@ -24,7 +24,7 @@ namespace CTZ.Controlador
 
         public bool addNewInstrument(Instrumentos instrument)
         {
-            bool instrumentExist = repository.serchInstrument(instrument.ID_Instrumentos);
+            bool instrumentExist = repository_EFC.checkIfInstrumentExist(instrument.ID_Instrumentos);
             if (instrumentExist)
             {
                 return false;
@@ -55,9 +55,9 @@ namespace CTZ.Controlador
             repository_EFC.update(instrument);
         }
 
-        public bool serchInstrumen(string id)
+        public bool serchInstrument(string id)
         {
-            return repository.serchInstrument(id);
+            return repository_EFC.checkIfInstrumentExist(id);
         }
 
         public DataTable selectAllFromInstrument(string id)

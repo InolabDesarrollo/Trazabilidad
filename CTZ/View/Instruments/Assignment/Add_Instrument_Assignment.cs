@@ -24,7 +24,7 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Serch_Instrument_Click(object sender, EventArgs e)
         {
-            if (instrumentControler.serchInstrumen(TxtBox_Instrument.Text))
+            if (instrumentControler.serchInstrument(TxtBox_Instrument.Text))
             {
                 DataTable instrumentInformation = instrumentControler.selectAllFromInstrument(TxtBox_Instrument.Text);
                 string statusAssignments = instrumentInformation.Rows[0]["ESTATUS_ASIGNACION"].ToString();

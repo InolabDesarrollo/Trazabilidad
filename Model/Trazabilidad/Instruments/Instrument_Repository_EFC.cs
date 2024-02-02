@@ -60,5 +60,21 @@ namespace Model
                 Trace.WriteLine(ex.Message);
             }
         }
+
+        public bool checkIfInstrumentExist(string id)
+        {
+            try
+            {
+                using (database = new Entities())
+                {
+                    return database.Instrumentos.Any(ins => ins.ID_Instrumentos == id);
+                }
+            }
+            catch(Exception ex) 
+            {
+                Trace.WriteLine(ex.Message);
+                return false;
+            }
+        }
     }
 }
