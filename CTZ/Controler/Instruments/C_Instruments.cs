@@ -22,16 +22,6 @@ namespace CTZ.Controlador
             repository_EFC = new Instrument_Repository_EFC();
         }
 
-        public DataTable consultarRegistrosActivos()
-        {
-            return repository.consultarRegistrosActivos();
-        }
-
-        public DataTable consultarTodosLosRegistros()
-        {
-            return repository.consultarTodosLosRegistros();
-        }
-
         public void addNewInstrument(Instrumentos instrument)
         {                   
             repository_EFC.create(instrument);
@@ -64,11 +54,6 @@ namespace CTZ.Controlador
         public DataTable selectAllFromInstrument(string id)
         {
             return repository.serchAllFromInstrument(id);
-        }
-
-        public DataTable selectAllRegistAndCertificates()
-        {
-            return repository.selectAllRegistAndCertificates();
         }
 
         public bool checkIfInstrumentIsAvailable(string idInstrument)

@@ -32,17 +32,6 @@ namespace CTZ.Vista.Responsabilitis
 
         public Instrument() { }
 
-
-        public DataTable getActiveRegist()
-        {
-            return controler.consultarRegistrosActivos();
-        }
-
-        public DataTable getAllRegister()
-        {
-            return controler.consultarTodosLosRegistros();
-        }
-
         public bool serchInstrument(string id)
         {
             return controler.serchInstrumen(id);
@@ -52,10 +41,6 @@ namespace CTZ.Vista.Responsabilitis
             return controler.selectAllFromInstrument(equino);
         }
 
-        public DataTable selectAllRegistAndCertificates()
-        {
-            return controler.selectAllRegistAndCertificates();
-        }
 
         public void deleteEquinoFromComboBox(MaterialComboBox comboBox)
         {

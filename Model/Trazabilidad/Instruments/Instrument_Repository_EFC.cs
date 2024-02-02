@@ -11,22 +11,6 @@ namespace Model
     public class Instrument_Repository_EFC
     {
         Entities database;
-        public List<Instrumentos> select()
-        {
-            try
-            {
-                using (database = new Entities())
-                {
-                    return database.Instrumentos.ToList();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(ex.Message);
-                return null;
-            }
-        }
 
         public void create(Instrumentos instrument)
         {
