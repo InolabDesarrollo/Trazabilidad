@@ -56,7 +56,6 @@
       <DependentUpon>Trazability.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trazabilidad\Instruments\Instrument_Repository_EntityFrameworkCore.cs" />
     <Compile Include="Trazability.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

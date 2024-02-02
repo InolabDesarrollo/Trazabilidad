@@ -53,7 +53,6 @@ namespace Model
                     database.Entry(instrument).State = EntityState.Modified;
                     database.SaveChanges();
                 }
-
             }
             catch (Exception ex)
             {

@@ -38,7 +38,23 @@ namespace CTZ.Modelo.Trazabilidad
 
         public bool checkIfThereIsDateForNextCalibrationInCertificate(string instrument)
         {
-            return conexion.isThereSomeInformation("Select[Estatus Certificado] from Instrumentos_Certificado where ID_Instrumentos = '"+ instrument + "';");
+            bool thereIsInformation = conexion.isThereSomeInformation("Select Proxima_Calibracion from Instrumentos_Certificado where ID_Instrumentos = '" + instrument + "';");
+            if (thereIsInformation)
+            {
+                string cellValue = conexion.getText("Select Proxima_Calibracion from Instrumentos_Certificado where ID_Instrumentos = 'EQ-INO-004';");
+                if (cellValue != "")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }         
         }
 
     }

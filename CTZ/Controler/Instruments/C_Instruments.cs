@@ -1,6 +1,5 @@
 ﻿using CTZ.Modelo.Trazabilidad;
 using CTZ.Vista.Responsabilitis;
-using Model.Trazabilidad.Instruments;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -31,11 +30,6 @@ namespace CTZ.Controlador
         public DataTable consultarTodosLosRegistros()
         {
             return repository.consultarTodosLosRegistros();
-        }
-
-        public DataTable selectInstrumentsAndCertificates()
-        {
-            return repository.selectInstrumentsAndCertificates();
         }
 
         public void addNewInstrument(Instrumentos instrument)
