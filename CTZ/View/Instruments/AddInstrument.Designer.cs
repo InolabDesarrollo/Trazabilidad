@@ -42,6 +42,7 @@
             this.Switch_Assignment = new MaterialSkin.Controls.MaterialSwitch();
             this.TxtBox_USE = new MaterialSkin.Controls.MaterialTextBox();
             this.TxtBox_Mean_Interval = new MaterialSkin.Controls.MaterialTextBox();
+            this.Btn_Add_Accessory = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // Btn_Add_Instrument
@@ -51,7 +52,7 @@
             this.Btn_Add_Instrument.Depth = 0;
             this.Btn_Add_Instrument.HighEmphasis = true;
             this.Btn_Add_Instrument.Icon = null;
-            this.Btn_Add_Instrument.Location = new System.Drawing.Point(705, 480);
+            this.Btn_Add_Instrument.Location = new System.Drawing.Point(705, 530);
             this.Btn_Add_Instrument.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Instrument.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Instrument.Name = "Btn_Add_Instrument";
@@ -67,6 +68,7 @@
             // 
             this.materialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialContextMenuStrip1.Depth = 0;
+            this.materialContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
             this.materialContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
@@ -193,7 +195,7 @@
             "FUERA DE USO",
             "CALIBRANDO",
             "PENDIENTE"});
-            this.ComboBox_Status.Location = new System.Drawing.Point(419, 212);
+            this.ComboBox_Status.Location = new System.Drawing.Point(419, 215);
             this.ComboBox_Status.MaxDropDownItems = 4;
             this.ComboBox_Status.MouseState = MaterialSkin.MouseState.OUT;
             this.ComboBox_Status.Name = "ComboBox_Status";
@@ -249,7 +251,7 @@
             // 
             this.Switch_Assignment.AutoSize = true;
             this.Switch_Assignment.Depth = 0;
-            this.Switch_Assignment.Location = new System.Drawing.Point(599, 415);
+            this.Switch_Assignment.Location = new System.Drawing.Point(599, 487);
             this.Switch_Assignment.Margin = new System.Windows.Forms.Padding(0);
             this.Switch_Assignment.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Switch_Assignment.MouseState = MaterialSkin.MouseState.HOVER;
@@ -264,7 +266,7 @@
             // 
             this.TxtBox_USE.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_USE.Depth = 0;
-            this.TxtBox_USE.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_USE.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_USE.Hint = "USO";
             this.TxtBox_USE.LeadingIcon = null;
             this.TxtBox_USE.Location = new System.Drawing.Point(419, 283);
@@ -281,10 +283,10 @@
             // 
             this.TxtBox_Mean_Interval.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtBox_Mean_Interval.Depth = 0;
-            this.TxtBox_Mean_Interval.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBox_Mean_Interval.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_Mean_Interval.Hint = "INTERVALO DE MEDIA";
             this.TxtBox_Mean_Interval.LeadingIcon = null;
-            this.TxtBox_Mean_Interval.Location = new System.Drawing.Point(419, 348);
+            this.TxtBox_Mean_Interval.Location = new System.Drawing.Point(419, 349);
             this.TxtBox_Mean_Interval.MaxLength = 50;
             this.TxtBox_Mean_Interval.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_Mean_Interval.Multiline = false;
@@ -294,11 +296,31 @@
             this.TxtBox_Mean_Interval.Text = "";
             this.TxtBox_Mean_Interval.TrailingIcon = null;
             // 
+            // Btn_Add_Accessory
+            // 
+            this.Btn_Add_Accessory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_Add_Accessory.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Btn_Add_Accessory.Depth = 0;
+            this.Btn_Add_Accessory.HighEmphasis = true;
+            this.Btn_Add_Accessory.Icon = null;
+            this.Btn_Add_Accessory.Location = new System.Drawing.Point(622, 415);
+            this.Btn_Add_Accessory.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_Add_Accessory.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_Add_Accessory.Name = "Btn_Add_Accessory";
+            this.Btn_Add_Accessory.Size = new System.Drawing.Size(171, 36);
+            this.Btn_Add_Accessory.TabIndex = 57;
+            this.Btn_Add_Accessory.Text = "Agregar Accesorio";
+            this.Btn_Add_Accessory.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Btn_Add_Accessory.UseAccentColor = false;
+            this.Btn_Add_Accessory.UseVisualStyleBackColor = true;
+            this.Btn_Add_Accessory.Click += new System.EventHandler(this.Btn_Add_Accessory_Click);
+            // 
             // AddInstrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 579);
+            this.ClientSize = new System.Drawing.Size(840, 593);
+            this.Controls.Add(this.Btn_Add_Accessory);
             this.Controls.Add(this.TxtBox_Mean_Interval);
             this.Controls.Add(this.TxtBox_USE);
             this.Controls.Add(this.Switch_Assignment);
@@ -335,5 +357,6 @@
         private MaterialSkin.Controls.MaterialSwitch Switch_Assignment;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_USE;
         private MaterialSkin.Controls.MaterialTextBox TxtBox_Mean_Interval;
+        private MaterialSkin.Controls.MaterialButton Btn_Add_Accessory;
     }
 }

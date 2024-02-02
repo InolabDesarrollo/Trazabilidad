@@ -22,9 +22,18 @@ namespace CTZ.Controlador
             repository_EFC = new Instrument_Repository_EFC();
         }
 
-        public void addNewInstrument(Instrumentos instrument)
-        {                   
-            repository_EFC.create(instrument);
+        public bool addNewInstrument(Instrumentos instrument)
+        {
+            bool instrumentExist = repository.serchInstrument(instrument.ID_Instrumentos);
+            if (instrumentExist)
+            {
+                return false;
+            }
+            else
+            {
+                repository_EFC.create(instrument);
+                return true;
+            }        
         }
 
         public string deleteInstrument(string id)
