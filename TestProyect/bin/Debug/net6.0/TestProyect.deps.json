@@ -387,7 +387,7 @@
       },
       "CTZ/1.0.0": {
         "dependencies": {
-          "Model": "1.0.0"
+          "Model_EFC": "1.0.0"
         },
         "runtime": {
           "CTZ.exe": {}
@@ -491,7 +491,7 @@
           }
         }
       },
-      "Model/1.0.0": {
+      "Model_EFC/1.0.0": {
         "runtime": {
           "Model.dll": {}
         }
@@ -872,7 +872,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Model/1.0.0": {
+    "Model_EFC/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

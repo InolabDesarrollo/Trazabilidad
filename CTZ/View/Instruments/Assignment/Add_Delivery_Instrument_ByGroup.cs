@@ -60,11 +60,12 @@ namespace CTZ.Vista.Instruments
             {
                 DataTable instrumentInformation = instrumentsControler.selectAllFromInstrument(TxtBox_Instrumenst.Text);
                 bool instrumentIsAvailable = instrumentsControler.checkIfInstrumentIsAvailable(TxtBox_Instrumenst.Text);
+
                 equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
 
                 if (instrumentIsAvailable)
                 {
-                    checkExpirationOfCertificate(equinoInstrument);
+                    this.checkExpirationOfCertificate(equinoInstrument);
                 }
                 else
                 {

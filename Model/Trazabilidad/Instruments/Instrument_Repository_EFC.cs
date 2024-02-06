@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -125,6 +126,27 @@ namespace Model
             {
                 Trace.WriteLine(ex.Message);
                 return null;
+            }
+        }
+
+        public void updateStatusInstrumentAssignment(string idInstrument, string status)
+        {
+            try
+            {
+                using (database = new Entities())
+                {
+                    var instrument = database.Instrumentos.FirstOrDefault(ins=> ins.ID_Instrumentos == idInstrument);
+
+                    if (idInstrument != null)
+                    {
+                        instrument.ESTATUS_ASIGNACION = status;
+                        database.SaveChanges();
+                    }
+                }
+                
+            }catch(Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
             }
         }
 

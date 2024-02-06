@@ -1,6 +1,7 @@
 ﻿using CTZ.Modelo;
 using CTZ.Modelo.Trazabilidad;
 using CTZ.Vista.Responsabilitis;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,18 +18,19 @@ namespace CTZ.Controlador
     public abstract class  C_Instrument_Assignments
     {
         public Instrument_Assignment_Repository repository;
-        public Instrument_Repository repositoryInstrument;
         public DateForReport dateForReport;
+        public Instrument_Repository_EFC repository_EFC;
 
         public C_Instrument_Assignments() {
             repository = new Instrument_Assignment_Repository();
-            repositoryInstrument = new Instrument_Repository();
+            repository_EFC = new Instrument_Repository_EFC();
+
             dateForReport = new DateForReport();
         }
 
         public void updateStatusInstrumentAssignment(string equinoInstrument, string status)
         {
-            repositoryInstrument.updateStatusInstrumentAssignment(equinoInstrument, status);
+            repository_EFC.updateStatusInstrumentAssignment(equinoInstrument, status);
         }
 
     }

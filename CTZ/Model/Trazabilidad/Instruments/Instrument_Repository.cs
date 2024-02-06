@@ -21,9 +21,5 @@ namespace CTZ.Modelo.Trazabilidad
             return conexion.getDataTable("SELECT * FROM Instrumentos WHERE ID_Instrumentos = '" + id + "';");
         }
 
-        public void updateStatusInstrumentAssignment(string idInstrument, string status)
-        {
-            conexion.executeQuery("UPDATE Instrumentos SET ESTATUS_ASIGNACION = '" + status + "' WHERE ID_Instrumentos = '"+idInstrument+"';");
-        }
     }
 }
