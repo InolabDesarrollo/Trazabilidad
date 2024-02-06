@@ -16,11 +16,6 @@ namespace CTZ.Model.Trazabilidad.Estandard
             conexion = new ConexionTrazability();
         }
 
-        public DataTable selectAllEstandards()
-        {
-            return conexion.getDataTable("Select * from Estandares;");
-        }
-
         public void add(CTZ.View.Responsabilitis.Estandard estandard)
         {
             conexion.executeQuery("Insert Estandares(Id_Estandares,Estandar,Uso,Marca,Presentacion,NoLote,FechaDeFabricacion," +

@@ -22,8 +22,8 @@ namespace CTZ.Controler.Instruments.Assignments_
                 repository.registerDeliveryInstrument(instrumentAssignments, instrument);
                 this.updateStatusInstrumentAssignment(instrument, "OCUPADO");
             }
-
             string body = emailBodyForEngineer(instrumentAssignments, instrumentList, instrumentsThatNeedCertificate);
+            
             Notification notification = new Notification();
             notification.sendMailNotification(instrumentAssignments.EngineerEmail, body, "Notificacion entrega de Instrumento");
         }
@@ -60,12 +60,10 @@ namespace CTZ.Controler.Instruments.Assignments_
                 }catch 
                 {
                     certificates = string.Join(",", "Instrumento "+instrument + " Sin certificado");
-                }
-                
+                }              
             }
             return certificates;
         }
-
 
         public bool checkIfInstrumentCertificateIsCloseToExpiring(string equino)
         {

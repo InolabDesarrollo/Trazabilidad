@@ -36,7 +36,7 @@
             this.TxtBox_Brand = new System.Windows.Forms.TextBox();
             this.Lbl_Brand = new System.Windows.Forms.Label();
             this.Btn_SerchByInstrumentName = new System.Windows.Forms.Button();
-            this.TxtBox_InstrumentName = new System.Windows.Forms.TextBox();
+            this.TxtBox_InstrumentDescription = new System.Windows.Forms.TextBox();
             this.Lbl_Instrument = new System.Windows.Forms.Label();
             this.Btn_ClearFilterInstruments = new System.Windows.Forms.Button();
             this.Btn_SerchInstrument = new System.Windows.Forms.Button();
@@ -143,7 +143,7 @@
             this.Page_Instruments.Controls.Add(this.TxtBox_Brand);
             this.Page_Instruments.Controls.Add(this.Lbl_Brand);
             this.Page_Instruments.Controls.Add(this.Btn_SerchByInstrumentName);
-            this.Page_Instruments.Controls.Add(this.TxtBox_InstrumentName);
+            this.Page_Instruments.Controls.Add(this.TxtBox_InstrumentDescription);
             this.Page_Instruments.Controls.Add(this.Lbl_Instrument);
             this.Page_Instruments.Controls.Add(this.Btn_ClearFilterInstruments);
             this.Page_Instruments.Controls.Add(this.Btn_SerchInstrument);
@@ -198,10 +198,10 @@
             // 
             // TxtBox_InstrumentName
             // 
-            this.TxtBox_InstrumentName.Location = new System.Drawing.Point(388, 18);
-            this.TxtBox_InstrumentName.Name = "TxtBox_InstrumentName";
-            this.TxtBox_InstrumentName.Size = new System.Drawing.Size(166, 20);
-            this.TxtBox_InstrumentName.TabIndex = 16;
+            this.TxtBox_InstrumentDescription.Location = new System.Drawing.Point(388, 18);
+            this.TxtBox_InstrumentDescription.Name = "TxtBox_InstrumentDescription";
+            this.TxtBox_InstrumentDescription.Size = new System.Drawing.Size(166, 20);
+            this.TxtBox_InstrumentDescription.TabIndex = 16;
             // 
             // Lbl_Instrument
             // 
@@ -914,7 +914,7 @@
         private System.Windows.Forms.Button Btn_ClearFilterInstruments;
         private System.Windows.Forms.Label Lbl_Brand;
         private System.Windows.Forms.Button Btn_SerchByInstrumentName;
-        private System.Windows.Forms.TextBox TxtBox_InstrumentName;
+        private System.Windows.Forms.TextBox TxtBox_InstrumentDescription;
         private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
         private System.Windows.Forms.Button Btn_SerchByBrand;
         private System.Windows.Forms.TextBox TxtBox_Brand;

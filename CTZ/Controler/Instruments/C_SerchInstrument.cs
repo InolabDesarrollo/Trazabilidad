@@ -1,8 +1,11 @@
 ﻿using CTZ.Modelo;
 using CTZ.Modelo.Trazabilidad;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,28 +14,29 @@ namespace CTZ.Controler.Instruments
 {
     public class C_SerchInstrument
     {
-        Instrument_Repository repository;  
+        Instrument_Repository_EFC repository_EFC;
         public C_SerchInstrument() {
-            repository = new Instrument_Repository();
+            repository_EFC = new Instrument_Repository_EFC();
         }
-        public bool serchInstrumenByEquino(string id)
+        public bool checkIfInstrumentExist(string id)
         {
-            return repository.serchInstrument(id);
+            return repository_EFC.checkIfInstrumentExist(id);         
         }
 
-        public DataTable selectAllFromInstrumentByEquino(string id)
+        public List<Instrumentos> serchAllFromInstrument(string id)
         {
-            return repository.serchAllFromInstrument(id);
+            return repository_EFC.serchAllFromInstrument(id);
         }
 
-        public DataTable selectAllByInstrumentName(string nameInstrument)
+        public List<Instrumentos> serchAllByDescription(string instrumentDescription)
         {
-            return repository.selectAllByInstrumentName(nameInstrument);         
+            return repository_EFC.serchAllByDescription(instrumentDescription);
         }
 
-        public DataTable selectAllByBrand(string brandName)
+        public List<Instrumentos> serchAllByBrand(string brand)
         {
-            return repository.selectAllByBrand(brandName);
+            return repository_EFC.serchAllByBrand(brand);
         }
+
     }
 }

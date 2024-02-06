@@ -49,6 +49,7 @@ namespace CTZ.View.Instruments
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
                     string valor = dataGridView.Rows[i].Cells[columnThatNeedColor].Value.ToString();
+
                     if (valor.Equals("FUERA DE USO"))
                     {
                         dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Red;
@@ -57,21 +58,13 @@ namespace CTZ.View.Instruments
                     {
                         dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
                     }
-                    if (valor.Equals("CALIBRANDO"))
+                    if (valor.Equals("ASIGNADO"))
                     {
                         dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
                     }
-                    if (valor.Equals("PENDIENTE"))
+                    if (valor.Equals("ASIGNADO GUADALAJARA"))
                     {
-                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Blue;
-                    }
-                    if (valor.Equals("DISPONIBLE"))
-                    {
-                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightGreen;
-                    }
-                    if (valor.Equals("OCUPADO"))
-                    {
-                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.Orange;
+                        dataGridView.Rows[i].Cells[columnThatNeedColor].Style.BackColor = Color.LightYellow;
                     }
                 }
 
@@ -149,9 +142,9 @@ namespace CTZ.View.Instruments
 
         private void Btn_SerchInstrument_Click(object sender, EventArgs e)
         {
-            if (controler.serchInstrumenByEquino(TxtBox_Equino.Text))
+            if (controler.checkIfInstrumentExist(TxtBox_Equino.Text))
             {
-                Dgv_Instruments.DataSource = controler.selectAllFromInstrumentByEquino(TxtBox_Equino.Text);
+                Dgv_Instruments.DataSource = controler.serchAllFromInstrument(TxtBox_Equino.Text);
                 colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
             }
             else
@@ -162,7 +155,7 @@ namespace CTZ.View.Instruments
 
         private void Btn_SerchByInstrumentName_Click(object sender, EventArgs e)
         {            
-            Dgv_Instruments.DataSource = controler.selectAllByInstrumentName(TxtBox_InstrumentName.Text);
+            Dgv_Instruments.DataSource = controler.serchAllByDescription(TxtBox_InstrumentDescription.Text);
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
         }
 
@@ -172,14 +165,14 @@ namespace CTZ.View.Instruments
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
             TxtBox_Brand.Clear();
             TxtBox_Equino.Clear();
-            TxtBox_InstrumentName.Clear();
+            TxtBox_InstrumentDescription.Clear();
            
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
         }
 
         private void Btn_Equino_InstrumentsCertificates_Click(object sender, EventArgs e)
         {
-            if (controler.serchInstrumenByEquino(TxtBox_InstrumentsCertificatesEquino.Text))
+            if (controler.checkIfInstrumentExist(TxtBox_InstrumentsCertificatesEquino.Text))
             {
                 C_View_Instrument_Certificate cotrolerInstrumentCertificate = new C_View_Instrument_Certificate();
                 Dgv_Instruments_Certificates.DataSource = cotrolerInstrumentCertificate.getAllInstrumentCertificate(TxtBox_InstrumentsCertificatesEquino.Text);
@@ -214,6 +207,7 @@ namespace CTZ.View.Instruments
             
             colorCellsStatus(columnStatusForDgvInstrumentsCertificates, Dgv_Instruments_Certificates);
             colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
+
             TxtBox_InstrumentNameCertificates.Clear();
             TxtBox_InstrumentsCertificatesBrand.Clear();
             TxtBox_InstrumentsCertificatesEquino.Clear();
@@ -234,7 +228,7 @@ namespace CTZ.View.Instruments
 
         private void Btn_SerchByBrand_Click(object sender, EventArgs e)
         {
-            Dgv_Instruments.DataSource = controler.selectAllByBrand(TxtBox_Brand.Text);
+            Dgv_Instruments.DataSource = controler.serchAllByBrand(TxtBox_Brand.Text);
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
         }
 
@@ -242,6 +236,7 @@ namespace CTZ.View.Instruments
         {
             this.instrumentosTableAdapter.Fill(this.trazabilidadTest_Instrumentos.Instrumentos);
             this.instrumentos_CertificadoTableAdapter.Fill(this.trazabilidadTestDataSet3.Instrumentos_Certificado);
+            
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
             colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
         }

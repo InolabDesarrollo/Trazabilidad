@@ -38,7 +38,7 @@ namespace CTZ.Controlador
 
         public string deleteInstrument(string id)
         {
-            bool instrumentExist = repository.serchInstrument(id);
+            bool instrumentExist = repository_EFC.checkIfInstrumentExist(id);
             if (instrumentExist)
             {
                 repository_EFC.delete(id);
