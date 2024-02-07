@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Trazabilidad\Instruments\Instrument_Repository_EFC.cs" />
+    <Compile Include="Trazabilidad\Instruments\Instrument_Repository.cs" />
     <Compile Include="Instrumentos.cs">
       <DependentUpon>Trazability.tt</DependentUpon>
     </Compile>

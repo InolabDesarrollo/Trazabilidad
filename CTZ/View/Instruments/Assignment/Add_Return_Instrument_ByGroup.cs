@@ -50,7 +50,7 @@ namespace CTZ.Vista.Instruments
             if (instrumentsControler.serchInstrument(TxtBox_Instrumenst.Text))
             {
                 instrumentInformation = instrumentsControler.selectAllFromInstrument(TxtBox_Instrumenst.Text);
-                string statusAssignments = instrumentInformation.Rows[0]["ESTATUS_ASIGNACION"].ToString();
+                string statusAssignments = instrumentsControler.serchStatusAssignment(TxtBox_Instrumenst.Text);
 
                 if (statusAssignments.Equals("DISPONIBLE"))
                 {
@@ -67,7 +67,7 @@ namespace CTZ.Vista.Instruments
                         string equinoInstrument = instrumentInformation.Rows[0]["ID_Instrumentos"].ToString();
                         int idInstrument = Convert.ToInt32(instrumentInformation.Rows[0]["ID"].ToString());
                         engineers.Add(instrumentAssignmentInformation.Rows[0]["Ingeniero"].ToString());
-                        addInstrumentInformation(equinoInstrument, idInstrument);
+                        this.addInstrumentInformation(equinoInstrument, idInstrument);
                     }
                     else
                     {

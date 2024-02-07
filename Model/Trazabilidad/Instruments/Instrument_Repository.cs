@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Instrument_Repository_EFC
+    public class Instrument_Repository
     {
         Entities database;
 
@@ -129,6 +129,27 @@ namespace Model
             }
         }
 
+        public string serchStatusAssignment(string idInstrument)
+        {
+            try
+            {
+                string statusAssignment = "";
+                using (database = new Entities())
+                {
+                    statusAssignment = database.Instrumentos.
+                        Where(ins => ins.ID_Instrumentos == idInstrument).
+                        Select(ins => ins.ESTATUS_ASIGNACION).FirstOrDefault() ?? "";
+
+                    return statusAssignment;
+                }     
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+                return "";
+            }
+        }
+
         public void updateStatusInstrumentAssignment(string idInstrument, string status)
         {
             try
@@ -148,6 +169,54 @@ namespace Model
             {
                 Trace.WriteLine(ex.Message);
             }
+        }
+
+        public DataTable selectAllInformationOfInstrument(string id)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (database = new Entities())
+                {
+                    var instrument = database.Instrumentos.
+                        Where(ins => ins.ID_Instrumentos == id).FirstOrDefault();
+
+                    table = this.createTableInstrument();
+
+                    table.Rows.Add(instrument.ID, instrument.ID_Instrumentos, instrument.INSTRUMENTO,
+                        instrument.MARCA, instrument.MODELO, instrument.N_S_,
+                        instrument.UBICACIÓN, instrument.OBSERVACIÓN, instrument.INTERVALO_DE_MEDIA,
+                        instrument.USO, instrument.MAGNITUD, instrument.ESTATUS);
+                }
+
+                return table;
+
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+                return null;
+            } 
+        }
+
+        private DataTable createTableInstrument()
+        {
+            DataTable instruments = new DataTable();
+            instruments.Columns.Add("ID", typeof(int));
+            instruments.Columns.Add("ID_Instrumentos", typeof(string));
+            instruments.Columns.Add("INSTRUMENTO", typeof(string));
+            instruments.Columns.Add("MARCA", typeof(string));
+            instruments.Columns.Add("MODELO", typeof(string));
+            instruments.Columns.Add("N#S#", typeof(string));
+            instruments.Columns.Add("UBICACIÓN", typeof(string));
+            instruments.Columns.Add("OBSERVACIÓN", typeof(string));
+            instruments.Columns.Add("INTERVALO_DE_MEDIA", typeof(string));
+            instruments.Columns.Add("USO", typeof(string));
+            instruments.Columns.Add("MAGNITUD", typeof(string));
+            instruments.Columns.Add("ESTATUS", typeof(string));
+            
+            return instruments;
         }
 
     }

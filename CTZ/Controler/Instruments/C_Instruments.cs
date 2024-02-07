@@ -9,39 +9,38 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
 using Model;
+using System.Data.Entity;
+using System.Diagnostics;
 
 namespace CTZ.Controlador
 {
     public class C_Instruments
     {
-        Instrument_Repository repository;
-        Instrument_Repository_EFC repository_EFC;
-         
+        Instrument_Repository instrument_repository;        
         public C_Instruments() { 
-            repository = new Instrument_Repository();
-            repository_EFC = new Instrument_Repository_EFC();
+            instrument_repository = new Instrument_Repository();
         }
 
         public bool addNewInstrument(Instrumentos instrument)
         {
-            bool instrumentExist = repository_EFC.checkIfInstrumentExist(instrument.ID_Instrumentos);
+            bool instrumentExist = instrument_repository.checkIfInstrumentExist(instrument.ID_Instrumentos);
             if (instrumentExist)
             {
                 return false;
             }
             else
             {
-                repository_EFC.create(instrument);
+                instrument_repository.create(instrument);
                 return true;
             }        
         }
 
         public string deleteInstrument(string id)
         {
-            bool instrumentExist = repository_EFC.checkIfInstrumentExist(id);
+            bool instrumentExist = instrument_repository.checkIfInstrumentExist(id);
             if (instrumentExist)
             {
-                repository_EFC.delete(id);
+                instrument_repository.delete(id);
                 return "El instrumento se elimino";
             }
             else
@@ -52,24 +51,27 @@ namespace CTZ.Controlador
 
         public void updateInstrument(Instrumentos instrument)
         {
-            repository_EFC.update(instrument);
+            instrument_repository.update(instrument);
         }
 
         public bool serchInstrument(string id)
         {
-            return repository_EFC.checkIfInstrumentExist(id);
+            return instrument_repository.checkIfInstrumentExist(id);
         }
 
         public DataTable selectAllFromInstrument(string id)
         {
-            return repository.serchAllFromInstrument(id);
+            return instrument_repository.selectAllInformationOfInstrument(id);
+        }
+
+        public string serchStatusAssignment(string idInstrument)
+        {
+            return instrument_repository.serchStatusAssignment(idInstrument);
         }
 
         public bool checkIfInstrumentIsAvailable(string idInstrument)
         {
-            DataTable instrumentInformation = repository.serchAllFromInstrument(idInstrument);
-            string statusAssignments = instrumentInformation.Rows[0]["ESTATUS_ASIGNACION"].ToString();
-
+            string statusAssignments = instrument_repository.serchStatusAssignment(idInstrument);
             if (statusAssignments.Equals("DISPONIBLE") || statusAssignments.Equals(""))
             {
                 return true;

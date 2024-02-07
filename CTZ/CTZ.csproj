@@ -186,7 +186,6 @@
     <Compile Include="Model\Trazabilidad\Instruments\ExternalTraceability_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\CalibrationRequest_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\Instrument_Assignment_Repository.cs" />
-    <Compile Include="Model\Trazabilidad\Instruments\Instrument_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\Interfaces\IRelationCertificateInstrument_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\Laboratory_Repository.cs" />
     <Compile Include="Model\Trazabilidad\Instruments\TraceabilityLetter_Repository.cs" />
@@ -357,12 +356,6 @@
     </Compile>
     <Compile Include="View\Instruments\Assignment\Add_Delivery_Instrument_ByGroup.Designer.cs">
       <DependentUpon>Add_Delivery_Instrument_ByGroup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Instruments\Assignment\Add_Instrument_Assignment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Instruments\Assignment\Add_Instrument_Assignment.Designer.cs">
-      <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Instruments\Assignment\Add_Return_Instrument_ByGroup.cs">
       <SubType>Form</SubType>
@@ -576,9 +569,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Add_Delivery_Instrument_ByGroup.resx">
       <DependentUpon>Add_Delivery_Instrument_ByGroup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Instruments\Assignment\Add_Instrument_Assignment.resx">
-      <DependentUpon>Add_Instrument_Assignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Instruments\Assignment\Add_Return_Instrument_ByGroup.resx">
       <DependentUpon>Add_Return_Instrument_ByGroup.cs</DependentUpon>

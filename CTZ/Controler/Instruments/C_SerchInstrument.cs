@@ -14,9 +14,9 @@ namespace CTZ.Controler.Instruments
 {
     public class C_SerchInstrument
     {
-        Instrument_Repository_EFC repository_EFC;
+        Instrument_Repository repository_EFC;
         public C_SerchInstrument() {
-            repository_EFC = new Instrument_Repository_EFC();
+            repository_EFC = new Instrument_Repository();
         }
         public bool checkIfInstrumentExist(string id)
         {

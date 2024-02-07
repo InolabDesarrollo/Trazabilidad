@@ -19,11 +19,11 @@ namespace CTZ.Controlador
     {
         public Instrument_Assignment_Repository repository;
         public DateForReport dateForReport;
-        public Instrument_Repository_EFC repository_EFC;
+        public Instrument_Repository repository_EFC;
 
         public C_Instrument_Assignments() {
             repository = new Instrument_Assignment_Repository();
-            repository_EFC = new Instrument_Repository_EFC();
+            repository_EFC = new Instrument_Repository();
 
             dateForReport = new DateForReport();
         }
