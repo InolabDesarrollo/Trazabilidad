@@ -91,12 +91,6 @@ namespace CTZ.Modelo.Trazabilidad
                 " WHERE Folio_Empresa = '" + numberEnterprise + "';");
         }
 
-        public DataTable selectMoreRecentInformationInstrumenAssignment(int idInstrument)
-        {
-            return conexion.getDataTable("SELECT * from AsignacionInstrumentos \r\n" +
-                " WHERE ID_Instrumento = "+ idInstrument + " AND Fecha_Entrega =(Select MAX(Fecha_Entrega) " +
-                " FROM AsignacionInstrumentos WHERE ID_Instrumento ="+ idInstrument + ");");
-        }
 
         public DataTable selectMoreRecentInformationInstrumenAssignment(string equinoInstrument)
         {

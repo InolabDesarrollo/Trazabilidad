@@ -22,5 +22,27 @@
   </EntityType>
   <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Instrumentos" EntityType="Self.Instrumentos" />
+    <EntitySet Name="Estandares" EntityType="TrazabilidadTestModel.Estandares" />
   </EntityContainer>
+  <EntityType Name="Estandares">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Estandares" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Estandar" Type="String" MaxLength="1200" FixedLength="false" Unicode="true" />
+    <Property Name="Uso" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Marca" Type="String" MaxLength="700" FixedLength="false" Unicode="true" />
+    <Property Name="Presentacion" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="FechaDeFabricacion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FechaDeCaducidad" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Ubicacion" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Estatus" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Inventario" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Estatus_Prestamo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NoLote" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Cantidad" Type="Int32" />
+    <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NoLotes_Disponibles" Type="Int32" />
+  </EntityType>
 </Schema>

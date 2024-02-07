@@ -4,7 +4,28 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TrazabilidadTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TrazabilidadTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Estandares">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Estandares" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estandar" Type="nvarchar" MaxLength="1200" />
+          <Property Name="Uso" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="700" />
+          <Property Name="Presentacion" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FechaDeFabricacion" Type="nvarchar" MaxLength="500" />
+          <Property Name="FechaDeCaducidad" Type="nvarchar" MaxLength="500" />
+          <Property Name="Ubicacion" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Estatus" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Inventario" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Estatus_Prestamo" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoLote" Type="nvarchar" MaxLength="500" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoLotes_Disponibles" Type="int" />
+        </EntityType>
         <EntityType Name="Instrumentos">
           <Key>
             <PropertyRef Name="ID" />
@@ -26,10 +47,10 @@
           <Property Name="INTERVALO_DE_MEDIA" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityContainer Name="TrazabilidadTestModelStoreContainer">
+          <EntitySet Name="Estandares" EntityType="Self.Estandares" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Instrumentos" EntityType="Self.Instrumentos" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TrazabilidadTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -55,7 +76,29 @@
         </EntityType>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Instrumentos" EntityType="Self.Instrumentos" />
+          <EntitySet Name="Estandares" EntityType="TrazabilidadTestModel.Estandares" />
         </EntityContainer>
+        <EntityType Name="Estandares">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Estandares" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Estandar" Type="String" MaxLength="1200" FixedLength="false" Unicode="true" />
+          <Property Name="Uso" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="700" FixedLength="false" Unicode="true" />
+          <Property Name="Presentacion" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FechaDeFabricacion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FechaDeCaducidad" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Ubicacion" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Estatus" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Inventario" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Estatus_Prestamo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NoLote" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NoLotes_Disponibles" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -80,6 +123,28 @@
                 <ScalarProperty Name="ACCESORIOS" ColumnName="ACCESORIOS" />
                 <ScalarProperty Name="USO" ColumnName="USO" />
                 <ScalarProperty Name="INTERVALO_DE_MEDIA" ColumnName="INTERVALO_DE_MEDIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estandares">
+            <EntityTypeMapping TypeName="TrazabilidadTestModel.Estandares">
+              <MappingFragment StoreEntitySet="Estandares">
+                <ScalarProperty Name="NoLotes_Disponibles" ColumnName="NoLotes_Disponibles" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="NoLote" ColumnName="NoLote" />
+                <ScalarProperty Name="Estatus_Prestamo" ColumnName="Estatus_Prestamo" />
+                <ScalarProperty Name="Inventario" ColumnName="Inventario" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="FechaDeCaducidad" ColumnName="FechaDeCaducidad" />
+                <ScalarProperty Name="FechaDeFabricacion" ColumnName="FechaDeFabricacion" />
+                <ScalarProperty Name="Presentacion" ColumnName="Presentacion" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Uso" ColumnName="Uso" />
+                <ScalarProperty Name="Estandar" ColumnName="Estandar" />
+                <ScalarProperty Name="Id_Estandares" ColumnName="Id_Estandares" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

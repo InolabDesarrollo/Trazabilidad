@@ -16,14 +16,6 @@ namespace CTZ.Model.Trazabilidad.Estandard
             conexion = new ConexionTrazability();
         }
 
-        public void add(CTZ.View.Responsabilitis.Estandard estandard)
-        {
-            conexion.executeQuery("Insert Estandares(Id_Estandares,Estandar,Uso,Marca,Presentacion,NoLote,FechaDeFabricacion," +
-                "\r\n FechaDeCaducidad,Cantidad,Ubicacion,Estatus, Inventario, NoLotes_Disponibles)" +
-                "\r\n Values('"+estandard.EstEstandard+"','"+estandard.EstandardDescription+"','"+estandard.Use+"','"+estandard.Brand+"','"+estandard.Presentation+"', " +
-                "\r\n '"+estandard.Number+"','"+estandard.FabricationDate+"','"+estandard.ExpirationDate+"','"+estandard.Quantity+"','"+estandard.Ubication+"','"+estandard.Estatus+"','"+estandard.Inventory+"', "+estandard.NumberOfAvailableLots+");");
-        }
-
         public bool checkEstandard(string idEstandardEst)
         {
             return conexion.isThereSomeInformation("Select * from Estandares where Id_Estandares = '"+ idEstandardEst + "';");

@@ -26,5 +26,6 @@ namespace Model
         }
     
         public virtual DbSet<Instrumentos> Instrumentos { get; set; }
+        public virtual DbSet<Estandares> Estandares { get; set; }
     }
 }

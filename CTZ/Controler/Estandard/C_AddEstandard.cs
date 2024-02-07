@@ -6,28 +6,31 @@ using System.Text;
 using System.Threading.Tasks;
 using CTZ.View.Responsabilitis;
 using CTZ.Vista.Responsabilitis;
+using Model;
+using Model.Trazabilidad.Standar;
 
 namespace CTZ.Controler.Estandard
 {
     public class C_AddEstandard
     {
-        private readonly View.Responsabilitis.Estandard estandard;
-        private readonly Estandards_Repository repository;
 
+        private readonly Estandards_Repository repository;
+        private Standar_Repository_EFC repository_EFC;
         public C_AddEstandard() { 
             repository = new Estandards_Repository();
+            repository_EFC = new Standar_Repository_EFC();
         }
 
-        public void add(CTZ.View.Responsabilitis.Estandard estandard)
+        public void add(Estandares standar)
         {
             DateForReport date = new DateForReport();
-            estandard.FabricationDate = date.convertToValidDateDatePicker(estandard.FabricationDate);
-            estandard.ExpirationDate =  date.convertToValidDateDatePicker(estandard.ExpirationDate);
+            standar.FechaDeFabricacion = date.convertToValidDateDatePicker(standar.FechaDeFabricacion);
+            standar.FechaDeCaducidad = date.convertToValidDateDatePicker(standar.FechaDeCaducidad);
 
-            repository.add(estandard);
-
+            repository_EFC.create(standar);
             string estatusAssignment = "";
-            if (estandard.EstatusAssignments.Equals("Sin Asignar"))
+
+            if (standar.Estatus_Prestamo.Equals("Sin Asignar"))
             {
                 estatusAssignment = "DISPONIBLE";
             }
@@ -36,7 +39,7 @@ namespace CTZ.Controler.Estandard
                 estatusAssignment = "ASIGNADO";
             }
 
-            repository.updateEstatusLoanEstandard(estatusAssignment, estandard.EstEstandard);
+            repository.updateEstatusLoanEstandard(estatusAssignment, standar.Id_Estandares);
         }
 
     }

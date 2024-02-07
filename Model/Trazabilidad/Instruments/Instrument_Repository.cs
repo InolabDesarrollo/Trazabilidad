@@ -13,7 +13,7 @@ namespace Model
 {
     public class Instrument_Repository
     {
-        Entities database;
+        private Entities database;
 
         public void create(Instrumentos instrument)
         {

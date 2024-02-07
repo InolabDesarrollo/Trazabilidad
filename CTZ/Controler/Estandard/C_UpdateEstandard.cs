@@ -1,5 +1,7 @@
 ﻿using CTZ.Model.Trazabilidad.Estandard;
 using CTZ.Vista.Responsabilitis;
+using Model;
+using Model.Trazabilidad.Standar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +12,18 @@ namespace CTZ.Controler.Estandard
 {
     public class C_UpdateEstandard
     {
-        Estandards_Repository _repository;
+        Standar_Repository_EFC repository_EFC;
         public C_UpdateEstandard() {
-            _repository = new Estandards_Repository();
+            repository_EFC = new Standar_Repository_EFC();
         }
 
-
-        public void update(CTZ.View.Responsabilitis.Estandard estandard)
+        public void update(Estandares standar)
         {
             DateForReport date = new DateForReport();
-            estandard.FabricationDate = date.convertToValidDate(estandard.FabricationDate);
-            estandard.ExpirationDate = date.convertToValidDate(estandard.ExpirationDate);
-            
-            _repository.updateEstandard(estandard);
+            standar.FechaDeFabricacion = date.convertToValidDate(standar.FechaDeFabricacion);
+            standar.FechaDeCaducidad = date.convertToValidDate(standar.FechaDeCaducidad);
+
+            repository_EFC.update(standar);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CTZ.Controler.Estandard;
 using MaterialSkin.Controls;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace CTZ.View.Estandard
         private readonly string estEstandard;
         C_Estandard controler;
         private DataTable estandardInformation;
-
+        private int idStandar;
         public UpdateEstandard(string estEstandard)
         {
             InitializeComponent();
@@ -37,26 +38,28 @@ namespace CTZ.View.Estandard
             TxtBox_Ubication.Text = estandardInformation.Rows[0]["Ubicacion"].ToString();
             TxtBox_Estatus.Text = estandardInformation.Rows[0]["Estatus"].ToString();
             TxtBox_Inventory.Text = estandardInformation.Rows[0]["Inventario"].ToString();
+
+            idStandar = Convert.ToInt32(estandardInformation.Rows[0]["ID"].ToString());
         }
 
         private void Btn_Update_Click(object sender, EventArgs e)
         {   
-            Responsabilitis.Estandard estandard = new Responsabilitis.Estandard();
-            estandard.EstandardDescription = TxtBox_Estandard_Description.Text;
-            estandard.Use = TxtBox_Use.Text;
-            estandard.Brand = TxtBox_Brand.Text;
-            estandard.Presentation = TxtBox_Presentation.Text;
-            estandard.Ubication = TxtBox_Ubication.Text;
-            estandard.Estatus= TxtBox_Estatus.Text;
-            estandard.Inventory = TxtBox_Inventory.Text;
+            Estandares standar = new Estandares();
 
-            estandard.FabricationDate = TimePicker_FabricationDate.Text;
-            estandard.ExpirationDate = TimePicker_ExpirationDate.Text;
-            estandard.EstEstandard = estEstandard;
+            standar.Id = this.idStandar;
+            standar.Id_Estandares = estEstandard;
+            standar.Estandar = TxtBox_Estandard_Description.Text;
+            standar.Uso = TxtBox_Use.Text;
+            standar.Marca = TxtBox_Brand.Text;
+            standar.Presentacion = TxtBox_Presentation.Text;
+            standar.Ubicacion = TxtBox_Ubication.Text;
+            standar.Estatus = TxtBox_Estatus.Text;
+            standar.Inventario = TxtBox_Inventory.Text;
+            standar.FechaDeFabricacion = TimePicker_FabricationDate.Text;
+            standar.FechaDeCaducidad = TimePicker_ExpirationDate.Text;
             
-
             C_UpdateEstandard controler = new C_UpdateEstandard();
-            controler.update(estandard);
+            controler.update(standar);
             MessageBox.Show("Se actualizo el instrumento " + estEstandard);
             this.Close();
         }
