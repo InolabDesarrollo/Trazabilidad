@@ -5,6 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="TrazabilidadTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accesorios_Instrumento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Instrumento" Type="varchar" MaxLength="50" />
+          <Property Name="Instrumento" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Modelo" Type="nvarchar" MaxLength="1000" />
+          <Property Name="NS" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ubicacion" Type="nvarchar" MaxLength="100" />
+          <Property Name="Magnitud" Type="nvarchar" MaxLength="500" />
+          <Property Name="Uso" Type="nvarchar" MaxLength="500" />
+          <Property Name="Observacion" Type="nvarchar" MaxLength="500" />
+          <Property Name="Id_Accesorio" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Estandares">
           <Key>
             <PropertyRef Name="Id" />
@@ -47,6 +63,7 @@
           <Property Name="INTERVALO_DE_MEDIA" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityContainer Name="TrazabilidadTestModelStoreContainer">
+          <EntitySet Name="Accesorios_Instrumento" EntityType="Self.Accesorios_Instrumento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estandares" EntityType="Self.Estandares" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Instrumentos" EntityType="Self.Instrumentos" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -77,6 +94,7 @@
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Instrumentos" EntityType="Self.Instrumentos" />
           <EntitySet Name="Estandares" EntityType="TrazabilidadTestModel.Estandares" />
+          <EntitySet Name="Accesorios_Instrumento" EntityType="TrazabilidadTestModel.Accesorios_Instrumento" />
         </EntityContainer>
         <EntityType Name="Estandares">
           <Key>
@@ -98,6 +116,22 @@
           <Property Name="Cantidad" Type="Int32" />
           <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="NoLotes_Disponibles" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Accesorios_Instrumento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Instrumento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Instrumento" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Modelo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="NS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ubicacion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Magnitud" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Uso" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Accesorio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -145,6 +179,23 @@
                 <ScalarProperty Name="Estandar" ColumnName="Estandar" />
                 <ScalarProperty Name="Id_Estandares" ColumnName="Id_Estandares" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accesorios_Instrumento">
+            <EntityTypeMapping TypeName="TrazabilidadTestModel.Accesorios_Instrumento">
+              <MappingFragment StoreEntitySet="Accesorios_Instrumento">
+                <ScalarProperty Name="Id_Accesorio" ColumnName="Id_Accesorio" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="Uso" ColumnName="Uso" />
+                <ScalarProperty Name="Magnitud" ColumnName="Magnitud" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="NS" ColumnName="NS" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Instrumento" ColumnName="Instrumento" />
+                <ScalarProperty Name="Id_Instrumento" ColumnName="Id_Instrumento" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

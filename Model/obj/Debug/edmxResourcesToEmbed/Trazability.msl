@@ -44,5 +44,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Accesorios_Instrumento">
+      <EntityTypeMapping TypeName="TrazabilidadTestModel.Accesorios_Instrumento">
+        <MappingFragment StoreEntitySet="Accesorios_Instrumento">
+          <ScalarProperty Name="Id_Accesorio" ColumnName="Id_Accesorio" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Uso" ColumnName="Uso" />
+          <ScalarProperty Name="Magnitud" ColumnName="Magnitud" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="NS" ColumnName="NS" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Instrumento" ColumnName="Instrumento" />
+          <ScalarProperty Name="Id_Instrumento" ColumnName="Id_Instrumento" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

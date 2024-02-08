@@ -87,11 +87,11 @@ namespace CTZ.Vista.Responsabilitis
                 bool instrumentExist = controller.serchInstrument(equino);
                 if (instrumentExist)
                 {
-                    return false;
+                    return true;
                 }
                 else
                 {
-                    return true;
+                    return false;
                 }
             }        
         }

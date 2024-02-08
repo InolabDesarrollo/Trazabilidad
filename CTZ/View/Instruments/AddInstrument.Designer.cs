@@ -303,7 +303,7 @@
             this.Btn_Add_Accessory.Depth = 0;
             this.Btn_Add_Accessory.HighEmphasis = true;
             this.Btn_Add_Accessory.Icon = null;
-            this.Btn_Add_Accessory.Location = new System.Drawing.Point(622, 415);
+            this.Btn_Add_Accessory.Location = new System.Drawing.Point(622, 429);
             this.Btn_Add_Accessory.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Add_Accessory.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Add_Accessory.Name = "Btn_Add_Accessory";

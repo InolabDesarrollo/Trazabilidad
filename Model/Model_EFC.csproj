@@ -51,9 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accesorios_Instrumento.cs">
+      <DependentUpon>Trazability.tt</DependentUpon>
+    </Compile>
     <Compile Include="Estandares.cs">
       <DependentUpon>Trazability.tt</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\Instruments\Instrument_Accessories_Repository.cs" />
     <Compile Include="Trazabilidad\Instruments\Instrument_Repository.cs" />
     <Compile Include="Instrumentos.cs">
       <DependentUpon>Trazability.tt</DependentUpon>
