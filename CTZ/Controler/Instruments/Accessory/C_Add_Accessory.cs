@@ -2,6 +2,7 @@
 using Model.Trazabilidad.Instruments;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
@@ -22,6 +23,5 @@ namespace CTZ.Controler.Instruments
         {
             repository.create(accessories); 
         }
-
     }
 }

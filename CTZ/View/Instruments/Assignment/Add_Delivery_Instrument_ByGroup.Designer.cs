@@ -47,6 +47,9 @@
             this.Btn_Regist_kit = new MaterialSkin.Controls.MaterialButton();
             this.Btn_Delete_Instrument = new MaterialSkin.Controls.MaterialButton();
             this.Btn_AddEnginnerSignature = new MaterialSkin.Controls.MaterialButton();
+            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            this.CheckedList_Accessories = new System.Windows.Forms.CheckedListBox();
+            this.Btn_Add_Accessories = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Lbl_Instrument
@@ -66,7 +69,7 @@
             this.Lbl_Date_Delivery.AutoSize = true;
             this.Lbl_Date_Delivery.Depth = 0;
             this.Lbl_Date_Delivery.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Date_Delivery.Location = new System.Drawing.Point(15, 304);
+            this.Lbl_Date_Delivery.Location = new System.Drawing.Point(15, 370);
             this.Lbl_Date_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Date_Delivery.Name = "Lbl_Date_Delivery";
             this.Lbl_Date_Delivery.Size = new System.Drawing.Size(235, 19);
@@ -75,7 +78,7 @@
             // 
             // TimePicker_Date_Delivery
             // 
-            this.TimePicker_Date_Delivery.Location = new System.Drawing.Point(18, 373);
+            this.TimePicker_Date_Delivery.Location = new System.Drawing.Point(18, 418);
             this.TimePicker_Date_Delivery.Name = "TimePicker_Date_Delivery";
             this.TimePicker_Date_Delivery.Size = new System.Drawing.Size(403, 20);
             this.TimePicker_Date_Delivery.TabIndex = 3;
@@ -85,7 +88,7 @@
             this.Lbl_Enginner.AutoSize = true;
             this.Lbl_Enginner.Depth = 0;
             this.Lbl_Enginner.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Enginner.Location = new System.Drawing.Point(15, 426);
+            this.Lbl_Enginner.Location = new System.Drawing.Point(15, 453);
             this.Lbl_Enginner.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Enginner.Name = "Lbl_Enginner";
             this.Lbl_Enginner.Size = new System.Drawing.Size(66, 19);
@@ -147,7 +150,7 @@
             this.Lbl_Name_Enterprise.AutoSize = true;
             this.Lbl_Name_Enterprise.Depth = 0;
             this.Lbl_Name_Enterprise.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Name_Enterprise.Location = new System.Drawing.Point(467, 426);
+            this.Lbl_Name_Enterprise.Location = new System.Drawing.Point(467, 261);
             this.Lbl_Name_Enterprise.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Name_Enterprise.Name = "Lbl_Name_Enterprise";
             this.Lbl_Name_Enterprise.Size = new System.Drawing.Size(127, 19);
@@ -160,7 +163,7 @@
             this.TxtBox_NameEnterprise.Depth = 0;
             this.TxtBox_NameEnterprise.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_NameEnterprise.LeadingIcon = null;
-            this.TxtBox_NameEnterprise.Location = new System.Drawing.Point(470, 490);
+            this.TxtBox_NameEnterprise.Location = new System.Drawing.Point(470, 302);
             this.TxtBox_NameEnterprise.MaxLength = 50;
             this.TxtBox_NameEnterprise.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_NameEnterprise.Multiline = false;
@@ -175,7 +178,7 @@
             this.Lbl_Observation_Delivery.AutoSize = true;
             this.Lbl_Observation_Delivery.Depth = 0;
             this.Lbl_Observation_Delivery.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Observation_Delivery.Location = new System.Drawing.Point(467, 174);
+            this.Lbl_Observation_Delivery.Location = new System.Drawing.Point(467, 74);
             this.Lbl_Observation_Delivery.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Observation_Delivery.Name = "Lbl_Observation_Delivery";
             this.Lbl_Observation_Delivery.Size = new System.Drawing.Size(163, 19);
@@ -188,7 +191,7 @@
             this.TxtBox_ObservationDelivery.Depth = 0;
             this.TxtBox_ObservationDelivery.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtBox_ObservationDelivery.LeadingIcon = null;
-            this.TxtBox_ObservationDelivery.Location = new System.Drawing.Point(470, 230);
+            this.TxtBox_ObservationDelivery.Location = new System.Drawing.Point(470, 108);
             this.TxtBox_ObservationDelivery.MaxLength = 50;
             this.TxtBox_ObservationDelivery.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtBox_ObservationDelivery.Multiline = false;
@@ -203,7 +206,7 @@
             this.Lbl_Estimate_Date_Return.AutoSize = true;
             this.Lbl_Estimate_Date_Return.Depth = 0;
             this.Lbl_Estimate_Date_Return.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Lbl_Estimate_Date_Return.Location = new System.Drawing.Point(467, 304);
+            this.Lbl_Estimate_Date_Return.Location = new System.Drawing.Point(467, 174);
             this.Lbl_Estimate_Date_Return.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Estimate_Date_Return.Name = "Lbl_Estimate_Date_Return";
             this.Lbl_Estimate_Date_Return.Size = new System.Drawing.Size(219, 19);
@@ -212,7 +215,7 @@
             // 
             // TimePicker_Date_Estimate_Return
             // 
-            this.TimePicker_Date_Estimate_Return.Location = new System.Drawing.Point(470, 373);
+            this.TimePicker_Date_Estimate_Return.Location = new System.Drawing.Point(470, 213);
             this.TimePicker_Date_Estimate_Return.Name = "TimePicker_Date_Estimate_Return";
             this.TimePicker_Date_Estimate_Return.Size = new System.Drawing.Size(316, 20);
             this.TimePicker_Date_Estimate_Return.TabIndex = 27;
@@ -281,7 +284,7 @@
             this.Btn_Regist_kit.Depth = 0;
             this.Btn_Regist_kit.HighEmphasis = true;
             this.Btn_Regist_kit.Icon = null;
-            this.Btn_Regist_kit.Location = new System.Drawing.Point(549, 621);
+            this.Btn_Regist_kit.Location = new System.Drawing.Point(549, 443);
             this.Btn_Regist_kit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Regist_kit.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Regist_kit.Name = "Btn_Regist_kit";
@@ -319,11 +322,11 @@
             this.Btn_AddEnginnerSignature.Depth = 0;
             this.Btn_AddEnginnerSignature.HighEmphasis = true;
             this.Btn_AddEnginnerSignature.Icon = null;
-            this.Btn_AddEnginnerSignature.Location = new System.Drawing.Point(549, 549);
+            this.Btn_AddEnginnerSignature.Location = new System.Drawing.Point(562, 384);
             this.Btn_AddEnginnerSignature.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_AddEnginnerSignature.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_AddEnginnerSignature.Name = "Btn_AddEnginnerSignature";
-            this.Btn_AddEnginnerSignature.Size = new System.Drawing.Size(250, 36);
+            this.Btn_AddEnginnerSignature.Size = new System.Drawing.Size(237, 36);
             this.Btn_AddEnginnerSignature.TabIndex = 33;
             this.Btn_AddEnginnerSignature.Text = "Agregar Firma de Ingeniero";
             this.Btn_AddEnginnerSignature.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -331,11 +334,60 @@
             this.Btn_AddEnginnerSignature.UseVisualStyleBackColor = true;
             this.Btn_AddEnginnerSignature.Click += new System.EventHandler(this.Btn_AddEnginnerSignature_Click);
             // 
+            // materialComboBox1
+            // 
+            this.materialComboBox1.AutoResize = false;
+            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBox1.Depth = 0;
+            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBox1.DropDownHeight = 174;
+            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBox1.DropDownWidth = 121;
+            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBox1.FormattingEnabled = true;
+            this.materialComboBox1.IntegralHeight = false;
+            this.materialComboBox1.ItemHeight = 43;
+            this.materialComboBox1.Location = new System.Drawing.Point(227, 607);
+            this.materialComboBox1.MaxDropDownItems = 4;
+            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialComboBox1.Name = "materialComboBox1";
+            this.materialComboBox1.Size = new System.Drawing.Size(121, 49);
+            this.materialComboBox1.StartIndex = 0;
+            this.materialComboBox1.TabIndex = 34;
+            // 
+            // CheckedList_Accessories
+            // 
+            this.CheckedList_Accessories.FormattingEnabled = true;
+            this.CheckedList_Accessories.Location = new System.Drawing.Point(18, 318);
+            this.CheckedList_Accessories.Name = "CheckedList_Accessories";
+            this.CheckedList_Accessories.Size = new System.Drawing.Size(265, 34);
+            this.CheckedList_Accessories.TabIndex = 35;
+            this.CheckedList_Accessories.Visible = false;
+            // 
+            // Btn_Add_Accessories
+            // 
+            this.Btn_Add_Accessories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
+            this.Btn_Add_Accessories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Add_Accessories.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add_Accessories.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_Add_Accessories.Location = new System.Drawing.Point(289, 317);
+            this.Btn_Add_Accessories.Name = "Btn_Add_Accessories";
+            this.Btn_Add_Accessories.Size = new System.Drawing.Size(92, 35);
+            this.Btn_Add_Accessories.TabIndex = 36;
+            this.Btn_Add_Accessories.Text = "Registrar";
+            this.Btn_Add_Accessories.UseVisualStyleBackColor = false;
+            this.Btn_Add_Accessories.Visible = false;
+            this.Btn_Add_Accessories.Click += new System.EventHandler(this.Btn_Add_Accessories_Click);
+            // 
             // Add_Delivery_Instrument_ByGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 680);
+            this.ClientSize = new System.Drawing.Size(849, 726);
+            this.Controls.Add(this.Btn_Add_Accessories);
+            this.Controls.Add(this.CheckedList_Accessories);
+            this.Controls.Add(this.materialComboBox1);
             this.Controls.Add(this.Btn_AddEnginnerSignature);
             this.Controls.Add(this.Btn_Delete_Instrument);
             this.Controls.Add(this.Btn_Regist_kit);
@@ -383,5 +435,8 @@
         private MaterialSkin.Controls.MaterialButton Btn_Regist_kit;
         private MaterialSkin.Controls.MaterialButton Btn_Delete_Instrument;
         private MaterialSkin.Controls.MaterialButton Btn_AddEnginnerSignature;
+        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private System.Windows.Forms.CheckedListBox CheckedList_Accessories;
+        private System.Windows.Forms.Button Btn_Add_Accessories;
     }
 }

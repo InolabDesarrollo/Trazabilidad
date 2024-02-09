@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controler.Instruments.Assignments_
 {
-    public  class C_ConsultInstrument_Assignment: C_Instrument_Assignments
+    public  class C_Consult_Instrument_Assignment: C_Instrument_Assignments
     {
 
         public DataTable selectAllInformationInstrumentAssignment(string EquinoInstrument)

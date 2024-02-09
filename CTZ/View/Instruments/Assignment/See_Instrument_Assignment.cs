@@ -17,7 +17,7 @@ namespace CTZ.Vista.Instruments
 {
     public partial class See_Instrument_Assignment : Form
     {
-        private C_ConsultInstrument_Assignment controler;
+        private C_Consult_Instrument_Assignment controler;
         private const int engineerSignature = 6;
         private const int qualitySignature = 10;
         private const int returnEngineerSignature = 13;
@@ -55,7 +55,7 @@ namespace CTZ.Vista.Instruments
         private void initComponents()
         {
             InitializeComponent();
-            controler = new C_ConsultInstrument_Assignment();
+            controler = new C_Consult_Instrument_Assignment();
         }
 
         private void Dgv_Instrument_Assignment_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

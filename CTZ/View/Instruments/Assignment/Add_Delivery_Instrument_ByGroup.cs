@@ -1,9 +1,11 @@
 ﻿using CTZ.Controlador;
+using CTZ.Controler.Instruments.Accessory;
 using CTZ.Controler.Instruments.Assignments_;
 using CTZ.Model.Browser.Interfaces;
 using CTZ.Modelo.Browser;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,12 +22,14 @@ namespace CTZ.Vista.Instruments
     public partial class Add_Delivery_Instrument_ByGroup : MaterialForm
     {
         private C_Instruments instrumentsControler;
-        private C_RegistDeliveryInstrument assignmentController;
+        private C_Regist_Delivery_Instrument assignmentController;
         private C_User usuarioControler;
 
         public static Instrument_Assignments instrumentAssignments;
         private static List<string> instrumentsThatNeedCertificate;
         private static List<string> instrumentList;
+        private static List<string> accessoriesList = new List<string>();
+
         private DataTable engineers;
         private string equinoInstrument;
 
@@ -65,7 +69,15 @@ namespace CTZ.Vista.Instruments
 
                 if (instrumentIsAvailable)
                 {
-                    this.checkExpirationOfCertificate(equinoInstrument);
+                    if (Btn_Add_Accessories.Visible == true)
+                    {
+                        MessageBox.Show("No puedes agregar otro instrumento si no has registrado" +
+                            "los accesorios del primero");
+                    }
+                    else
+                    {
+                        this.checkExpirationOfCertificate(equinoInstrument);
+                    }                   
                 }
                 else
                 {
@@ -82,11 +94,12 @@ namespace CTZ.Vista.Instruments
         {
             CTZ.Vista.Responsabilitis.Instrument instrument = new CTZ.Vista.Responsabilitis.Instrument();
             instrument.deleteEquinoFromComboBox(ComboBox_Instruments);
+            MessageBox.Show("Se eliminaron todos los accesorios de los instrumentos");
         }
 
         private void checkExpirationOfCertificate(string equinoInstrument)
         {
-            assignmentController = new C_RegistDeliveryInstrument();
+            assignmentController = new C_Regist_Delivery_Instrument();
             bool InstrumentCertificateIsCloseToExpirin = assignmentController.checkIfInstrumentCertificateIsCloseToExpiring(equinoInstrument);
             if (InstrumentCertificateIsCloseToExpirin)
             {
@@ -103,7 +116,10 @@ namespace CTZ.Vista.Instruments
         {
             instrumentList.Add(equinoInstrument);
             ComboBox_Instruments.Items.Add(equinoInstrument);
-            checkIfEngineerNeedCertificate(equinoInstrument);
+
+            this.checkIfEngineerNeedCertificate(equinoInstrument);
+            this.checkIfNeedAllAccessoriesOfInstrument(equinoInstrument);
+
             MessageBox.Show("Se agrego Equino " + equinoInstrument);
             TxtBox_Instrumenst.Clear();
         }
@@ -116,6 +132,37 @@ namespace CTZ.Vista.Instruments
             if (resultado == DialogResult.Yes)
             {
                 instrumentsThatNeedCertificate.Add(equinoInstrument);
+            }
+        }
+
+        private void checkIfNeedAllAccessoriesOfInstrument(string equinoInstrument)
+        {
+            DialogResult resultado = MessageBox.Show("¿Prestaras todos los accesorios del Instrumento?", "Pregunta",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (Btn_Add_Accessories.Visible == true)
+            {
+                MessageBox.Show("Debes registrar los accesorios " +
+                    "del instrumento anterior antes de registrar otros");
+            }
+            else
+            {
+                if (resultado != DialogResult.Yes)
+                {
+                    C_Manage_Accessories controller = new C_Manage_Accessories();
+                    List<Accesorios_Instrumento> list = controller.selectAvailableAccessories(equinoInstrument);
+                    this.fillAccessoriesList(list);
+                    Btn_Add_Accessories.Visible = true;
+                }
+            }         
+        }
+
+        private void fillAccessoriesList(List<Accesorios_Instrumento> list)
+        {
+            CheckedList_Accessories.Visible = true;
+            foreach (var accessory in list)
+            {
+                CheckedList_Accessories.Items.Add(accessory.Id_Accesorio);
             }
         }
 
@@ -153,15 +200,29 @@ namespace CTZ.Vista.Instruments
                     instrumentAssignments.equinoInstrument = equinoInstrument;
                     instrumentAssignments.type = "Prestamo";
 
-                    assignmentController = new C_RegistDeliveryInstrument();
+                    assignmentController = new C_Regist_Delivery_Instrument();
                     assignmentController.registerDeliveryInstrument(instrumentAssignments, instrumentList, instrumentsThatNeedCertificate);
                     MessageBox.Show("Prestamos de Instrumento realizado correctamente");
 
+                    C_Regist_Delivery_Accessories controllerAccessories = new C_Regist_Delivery_Accessories();
+                    controllerAccessories.controll(accessoriesList, "PRESTADOS");
+
                     this.Close();
-                }
-                 
+                }               
             }
         }
 
+        private void Btn_Add_Accessories_Click(object sender, EventArgs e)
+        {
+            foreach (string accessory in CheckedList_Accessories.CheckedItems)
+            {
+                accessoriesList.Add(accessory);
+            }       
+            MessageBox.Show("Accesorios agregados correctamente");
+
+            CheckedList_Accessories.Items.Clear();
+            CheckedList_Accessories.Visible = false;
+            Btn_Add_Accessories.Visible = false;
+        }
     }
 }

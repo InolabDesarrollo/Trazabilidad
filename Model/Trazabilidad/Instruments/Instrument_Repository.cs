@@ -174,7 +174,6 @@ namespace Model
         public DataTable selectAllInformationOfInstrument(string id)
         {
             DataTable table = new DataTable();
-
             try
             {
                 using (database = new Entities())
@@ -189,9 +188,7 @@ namespace Model
                         instrument.UBICACIÓN, instrument.OBSERVACIÓN, instrument.INTERVALO_DE_MEDIA,
                         instrument.USO, instrument.MAGNITUD, instrument.ESTATUS);
                 }
-
                 return table;
-
             }
             catch (Exception ex)
             {
@@ -218,6 +215,5 @@ namespace Model
             
             return instruments;
         }
-
     }
 }

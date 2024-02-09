@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
@@ -26,6 +28,62 @@ namespace Model.Trazabilidad.Instruments
             {
                 Trace.WriteLine(ex);
             }
+        }
+
+        public List<Accesorios_Instrumento> selectAvailableAccessories (string idInstrument)
+        {
+            try {
+                using (database = new Entities())
+                {
+                    var accessories = database.Accesorios_Instrumento.
+                        Where(ins => ins.Id_Instrumento == idInstrument
+                        ).ToList(); ;
+
+                    return accessories;
+                }
+            }catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+                return null;
+            }          
+        }
+
+        public void updateStatusAssignment(string idAccessory, string statusAssignment)
+        {
+            try
+            {
+               database = new Entities();              
+               var accessory = database.Accesorios_Instrumento.
+                    FirstOrDefault(acce => acce.Id_Accesorio == idAccessory);
+
+               if (accessory != null)
+               {
+                    accessory.Estatus_Asignacion = statusAssignment;
+                    database.SaveChanges();
+               }
+            }catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+            }
+        }
+
+        private DataTable createAccessoriesTable(List<Accesorios_Instrumento> accessories)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Id_Instrumento", typeof(string));
+            table.Columns.Add("Id_Accesorio", typeof(string));
+            table.Columns.Add("Estatus_Asignacion", typeof(string));
+
+            if (accessories != null)
+            {
+                foreach (var accessory in accessories)
+                {
+                    table.Rows.Add(accessory.Id_Instrumento);
+                    table.Rows.Add(accessory.Id_Accesorio);
+                    table.Rows.Add(accessory.Estatus_Asignacion);
+                }              
+            }
+            return table;
         }
 
     }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CTZ.Controler.Instruments.Assignments_
 {
-    public class C_RegistDeliveryInstrument: C_Instrument_Assignments
+    public class C_Regist_Delivery_Instrument: C_Instrument_Assignments
     {
         public void registerDeliveryInstrument(Instrument_Assignments instrumentAssignments, List<string> instrumentList, List<string> instrumentsThatNeedCertificate)
         {

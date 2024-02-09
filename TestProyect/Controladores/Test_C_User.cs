@@ -1,6 +1,8 @@
 ﻿using CTZ.Controlador;
+using CTZ.Controler.Instruments.Accessory;
 using CTZ.Model.Browser.Interfaces;
 using CTZ.Modelo;
+using CTZ.View.Instruments.Accessories;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,6 +29,28 @@ namespace TestProyect.Controladores
             //Assert
             Assert.AreEqual(valueExpected, emailEngineer);
         }
+
+        [Test]
+        public void Test_Delivery_Accessory()
+        {
+            List<Relation_Accesory_Instrument> relationList = new List<Relation_Accesory_Instrument>();
+            Relation_Accesory_Instrument relation = new Relation_Accesory_Instrument();
+            relation.instrument = "EQ.INO-TEST";
+            relation.accessories.Add("1");
+            relation.accessories.Add("2");
+            relationList.Add(relation);
+
+            Relation_Accesory_Instrument relation2 = new Relation_Accesory_Instrument();
+            relation2.instrument = "EQ.INO-TEST2";
+            relation2.accessories.Add("4");
+            relation2.accessories.Add("5");
+            relationList.Add(relation2);
+
+            C_Regist_Delivery_Accessories controller = new C_Regist_Delivery_Accessories();
+            controller.controll(relationList);
+            Assert.AreEqual(relation2.instrument, "EQ.INO-TEST2");
+        }
+
     }
 
     public class TestRepository : IUserRepository

@@ -17,7 +17,7 @@ namespace CTZ.Vista.Instruments
     public partial class Serch_Instruments_Assignments : MaterialForm 
     {
         C_Instruments controler;
-        C_ConsultInstrument_Assignment controlerInstrumentAssignment;
+        C_Consult_Instrument_Assignment controlerInstrumentAssignment;
         public Serch_Instruments_Assignments()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Number_Enterprise_Click(object sender, EventArgs e)
         {
-            controlerInstrumentAssignment = new C_ConsultInstrument_Assignment();
+            controlerInstrumentAssignment = new C_Consult_Instrument_Assignment();
             if (controlerInstrumentAssignment.checkInformationWidthNumberEnterprise(TxtBox_Number_Enterprise.Text))
             {
                 DataTable informationInstrumentAssignment = controlerInstrumentAssignment.selectAllByNumberEnterprise(TxtBox_Number_Enterprise.Text);
@@ -63,10 +63,10 @@ namespace CTZ.Vista.Instruments
             C_User userControler = new C_User(userRepository);
             if (userControler.checkIfExistEngineer(TxtBox_Engineer.Text))
             {
-                controlerInstrumentAssignment = new C_ConsultInstrument_Assignment();
+                controlerInstrumentAssignment = new C_Consult_Instrument_Assignment();
                 if (controlerInstrumentAssignment.checkIfEngineerHasAssignment(TxtBox_Engineer.Text))
                 {
-                    controlerInstrumentAssignment = new C_ConsultInstrument_Assignment();
+                    controlerInstrumentAssignment = new C_Consult_Instrument_Assignment();
                     DataTable instrumenAssignmentInformation = controlerInstrumentAssignment.selectAllByEngineer(TxtBox_Engineer.Text);
                     See_Instrument_Assignment instrument_Assignment = new See_Instrument_Assignment(instrumenAssignmentInformation);
                     instrument_Assignment.Show();

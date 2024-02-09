@@ -25,5 +25,6 @@ namespace Model
         public string Uso { get; set; }
         public string Observacion { get; set; }
         public string Id_Accesorio { get; set; }
+        public string Estatus_Asignacion { get; set; }
     }
 }

@@ -61,5 +61,6 @@
     <Property Name="Uso" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Id_Accesorio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Estatus_Asignacion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
