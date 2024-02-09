@@ -19,7 +19,7 @@ namespace CTZ.Controler.Instruments.Accessory
 
         public List<Accesorios_Instrumento> selectAvailableAccessories(string idInstrument)
         {
-            return repository.selectAvailableAccessories(idInstrument);
+            return repository.selectAll(idInstrument);
         }
     }
 }

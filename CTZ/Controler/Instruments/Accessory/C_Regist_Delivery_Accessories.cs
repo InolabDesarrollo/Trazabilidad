@@ -16,12 +16,24 @@ namespace CTZ.Controler.Instruments.Accessory
             repository = new Instrument_Accessories_Repository();
         }
 
-        public void controll(List<string> accessoriesList, string statusAssignment)
+        public void updateStatusAssignment(List<string> accessoriesList, string statusAssignment)
         {
             foreach (string accessory in accessoriesList)
             {
                 repository.updateStatusAssignment(accessory, statusAssignment);
             }
         }
+
+        public void updateStatusAssignment(string idInstrument, string statusOfAssignment)
+        {
+            List<string> accessoriesOfInstrument =
+                repository.selectAccessoriesOfInstrument(idInstrument);
+
+            foreach (string accessory in accessoriesOfInstrument)
+            {
+                repository.updateStatusAssignment(accessory, statusOfAssignment);
+            }
+        }
+
     }
 }

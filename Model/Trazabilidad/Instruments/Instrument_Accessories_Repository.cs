@@ -30,7 +30,7 @@ namespace Model.Trazabilidad.Instruments
             }
         }
 
-        public List<Accesorios_Instrumento> selectAvailableAccessories (string idInstrument)
+        public List<Accesorios_Instrumento> selectAll (string idInstrument)
         {
             try {
                 using (database = new Entities())
@@ -64,6 +64,24 @@ namespace Model.Trazabilidad.Instruments
             }catch (Exception ex)
             {
                 Trace.WriteLine(ex.Message);
+            }
+        }
+
+        public List<string> selectAccessoriesOfInstrument(string idInstrument)        
+        {
+            try
+            {
+                database = new Entities();
+                var accessories = database.Accesorios_Instrumento.
+                    Where(acce => acce.Id_Instrumento == idInstrument).
+                    Select(acce => acce.Id_Accesorio).ToList();
+
+                return accessories;
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine (ex.Message);
+                return null;
             }
         }
 

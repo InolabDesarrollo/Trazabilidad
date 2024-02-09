@@ -10,12 +10,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CTZ.Vista.Instruments
 {
@@ -24,6 +26,7 @@ namespace CTZ.Vista.Instruments
         private C_Instruments instrumentsControler;
         private C_Regist_Delivery_Instrument assignmentController;
         private C_User usuarioControler;
+        private C_Regist_Delivery_Accessories controllerAccessories;
 
         public static Instrument_Assignments instrumentAssignments;
         private static List<string> instrumentsThatNeedCertificate;
@@ -92,9 +95,20 @@ namespace CTZ.Vista.Instruments
 
         private void Btn_Delete_Instrument_Click(object sender, EventArgs e)
         {
-            CTZ.Vista.Responsabilitis.Instrument instrument = new CTZ.Vista.Responsabilitis.Instrument();
+            try
+            {
+                controllerAccessories = new C_Regist_Delivery_Accessories();
+                controllerAccessories.updateStatusAssignment
+                    (ComboBox_Instruments.SelectedItem.ToString(), "");
+                MessageBox.Show("Se eliminaron todos los accesorios de los instrumentos");
+            }
+            catch(Exception ex)
+            {
+                Trace.WriteLine(ex.ToString());
+            }
+
+            CTZ.Vista.Responsabilitis.Instrument instrument = new CTZ.Vista.Responsabilitis.Instrument();                 
             instrument.deleteEquinoFromComboBox(ComboBox_Instruments);
-            MessageBox.Show("Se eliminaron todos los accesorios de los instrumentos");
         }
 
         private void checkExpirationOfCertificate(string equinoInstrument)
@@ -119,7 +133,6 @@ namespace CTZ.Vista.Instruments
 
             this.checkIfEngineerNeedCertificate(equinoInstrument);
             this.checkIfNeedAllAccessoriesOfInstrument(equinoInstrument);
-
             MessageBox.Show("Se agrego Equino " + equinoInstrument);
             TxtBox_Instrumenst.Clear();
         }
@@ -128,7 +141,6 @@ namespace CTZ.Vista.Instruments
         {
             DialogResult resultado = MessageBox.Show("¿Quieres que se envie certificado de este instrumento?", "Pregunta",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             if (resultado == DialogResult.Yes)
             {
                 instrumentsThatNeedCertificate.Add(equinoInstrument);
@@ -147,20 +159,25 @@ namespace CTZ.Vista.Instruments
             }
             else
             {
-                if (resultado != DialogResult.Yes)
+                if (resultado == DialogResult.No)
                 {
                     C_Manage_Accessories controller = new C_Manage_Accessories();
-                    List<Accesorios_Instrumento> list = controller.selectAvailableAccessories(equinoInstrument);
-                    this.fillAccessoriesList(list);
+                    List<Accesorios_Instrumento> accessoriesList = controller.selectAvailableAccessories(equinoInstrument);
+                    this.fillAccessoriesList(accessoriesList);
                     Btn_Add_Accessories.Visible = true;
+                }
+                else
+                {
+                    controllerAccessories = new C_Regist_Delivery_Accessories();
+                    controllerAccessories.updateStatusAssignment(equinoInstrument,"PRESTADO");
                 }
             }         
         }
 
-        private void fillAccessoriesList(List<Accesorios_Instrumento> list)
+        private void fillAccessoriesList(List<Accesorios_Instrumento> accessoriesList)
         {
             CheckedList_Accessories.Visible = true;
-            foreach (var accessory in list)
+            foreach (var accessory in accessoriesList)
             {
                 CheckedList_Accessories.Items.Add(accessory.Id_Accesorio);
             }
@@ -202,11 +219,9 @@ namespace CTZ.Vista.Instruments
 
                     assignmentController = new C_Regist_Delivery_Instrument();
                     assignmentController.registerDeliveryInstrument(instrumentAssignments, instrumentList, instrumentsThatNeedCertificate);
-                    MessageBox.Show("Prestamos de Instrumento realizado correctamente");
+                    MessageBox.Show("Prestamo de Instrumento(s) realizado correctamente");
 
-                    C_Regist_Delivery_Accessories controllerAccessories = new C_Regist_Delivery_Accessories();
-                    controllerAccessories.controll(accessoriesList, "PRESTADOS");
-
+                    controllerAccessories.updateStatusAssignment(accessoriesList, "PRESTADOS");
                     this.Close();
                 }               
             }

@@ -41,7 +41,6 @@ namespace CTZ.Vista.Responsabilitis
             return controler.selectAllFromInstrument(equino);
         }
 
-
         public void deleteEquinoFromComboBox(MaterialComboBox comboBox)
         {
             try
