@@ -17,7 +17,7 @@ namespace CTZ.Controler.Instruments.Accessory
             repository = new Instrument_Accessories_Repository();
         }
 
-        public List<Accesorios_Instrumento> selectAvailableAccessories(string idInstrument)
+        public List<Accesorios_Instrumento> selectAll(string idInstrument)
         {
             return repository.selectAll(idInstrument);
         }

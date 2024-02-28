@@ -1,6 +1,7 @@
 ﻿using ADGV;
 using CTZ.Controlador;
 using CTZ.Controler.Instruments;
+using CTZ.Controler.Instruments.Accessory;
 using CTZ.Vista;
 using CTZ.Vista.Responsabilitis;
 using MaterialSkin.Controls;
@@ -239,6 +240,18 @@ namespace CTZ.View.Instruments
             
             colorCellsStatus(columnStatusForDvgInstruments, Dgv_Instruments);
             colorDatesOfCalibration(columnNextCalibration, Dgv_Instruments_Certificates);
+        }
+
+        private void Btn_Serch_Accessory_Click(object sender, EventArgs e)
+        {
+            C_Manage_Accessories controller = new C_Manage_Accessories();
+            Dgv_Accessories.DataSource = controller.selectAll(TxtBox_Accessory.Text);
+        }
+
+        private void Btn_Add_Accessory_Click(object sender, EventArgs e)
+        {
+            SerchInstrument serchInstrument = new SerchInstrument("Accessory");
+            serchInstrument.Show();
         }
     }
 }

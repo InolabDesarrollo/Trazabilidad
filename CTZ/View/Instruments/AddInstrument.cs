@@ -73,6 +73,10 @@ namespace CTZ.Vista.Responsabilitis
                 numberOfAccessories++;
                 Add_Accessory accessory = new Add_Accessory(TxtBox_Id.Text);
                 accessory.Show();
+            }
+            else
+            {
+                MessageBox.Show("El instrumento no es valido, no puedes agregar accesorio");
             }           
         }
 
@@ -87,11 +91,11 @@ namespace CTZ.Vista.Responsabilitis
                 bool instrumentExist = controller.serchInstrument(equino);
                 if (instrumentExist)
                 {
-                    return true;
+                    return false;
                 }
                 else
                 {
-                    return false;
+                    return true;
                 }
             }        
         }

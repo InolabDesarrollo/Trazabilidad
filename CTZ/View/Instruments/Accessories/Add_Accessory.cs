@@ -23,7 +23,6 @@ namespace CTZ.View.Instruments
             InitializeComponent();
             Lbl_Instrument.Text = instrument;
             controller = new C_Add_Accessory();
-
             this.instrument = instrument;
         }
 

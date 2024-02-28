@@ -85,24 +85,5 @@ namespace Model.Trazabilidad.Instruments
             }
         }
 
-        private DataTable createAccessoriesTable(List<Accesorios_Instrumento> accessories)
-        {
-            DataTable table = new DataTable();
-            table.Columns.Add("Id_Instrumento", typeof(string));
-            table.Columns.Add("Id_Accesorio", typeof(string));
-            table.Columns.Add("Estatus_Asignacion", typeof(string));
-
-            if (accessories != null)
-            {
-                foreach (var accessory in accessories)
-                {
-                    table.Rows.Add(accessory.Id_Instrumento);
-                    table.Rows.Add(accessory.Id_Accesorio);
-                    table.Rows.Add(accessory.Estatus_Asignacion);
-                }              
-            }
-            return table;
-        }
-
     }
 }

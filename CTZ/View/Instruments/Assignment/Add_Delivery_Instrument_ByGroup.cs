@@ -162,7 +162,7 @@ namespace CTZ.Vista.Instruments
                 if (resultado == DialogResult.No)
                 {
                     C_Manage_Accessories controller = new C_Manage_Accessories();
-                    List<Accesorios_Instrumento> accessoriesList = controller.selectAvailableAccessories(equinoInstrument);
+                    List<Accesorios_Instrumento> accessoriesList = controller.selectAll(equinoInstrument);
                     this.fillAccessoriesList(accessoriesList);
                     Btn_Add_Accessories.Visible = true;
                 }

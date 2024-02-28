@@ -91,6 +91,11 @@
             this.Estatus_Certificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instrumentosCertificadoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.trazabilidadTestDataSet3 = new CTZ.TrazabilidadTestDataSet3();
+            this.Page_Accessories = new System.Windows.Forms.TabPage();
+            this.Btn_Serch_Accessory = new System.Windows.Forms.Button();
+            this.TxtBox_Accessory = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Dgv_Accessories = new ADGV.AdvancedDataGridView();
             this.instrumentosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Btn_Add = new System.Windows.Forms.Button();
@@ -105,6 +110,7 @@
             this.instrumentos_CertificadoTableAdapter = new CTZ.TrazabilidadTestDataSet3TableAdapters.Instrumentos_CertificadoTableAdapter();
             this.instrumentosCertificadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Btn_Reload_Data = new System.Windows.Forms.Button();
+            this.Btn_Add_Accessory = new System.Windows.Forms.Button();
             this.TabControl_Instruments.SuspendLayout();
             this.Page_Instruments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instruments)).BeginInit();
@@ -115,6 +121,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instruments_Certificates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet3)).BeginInit();
+            this.Page_Accessories.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Accessories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource4)).BeginInit();
@@ -130,6 +138,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControl_Instruments.Controls.Add(this.Page_Instruments);
             this.TabControl_Instruments.Controls.Add(this.Page_Instruments_Certificates);
+            this.TabControl_Instruments.Controls.Add(this.Page_Accessories);
             this.TabControl_Instruments.Location = new System.Drawing.Point(4, 81);
             this.TabControl_Instruments.Name = "TabControl_Instruments";
             this.TabControl_Instruments.SelectedIndex = 0;
@@ -196,7 +205,7 @@
             this.Btn_SerchByInstrumentName.UseVisualStyleBackColor = true;
             this.Btn_SerchByInstrumentName.Click += new System.EventHandler(this.Btn_SerchByInstrumentName_Click);
             // 
-            // TxtBox_InstrumentName
+            // TxtBox_InstrumentDescription
             // 
             this.TxtBox_InstrumentDescription.Location = new System.Drawing.Point(388, 18);
             this.TxtBox_InstrumentDescription.Name = "TxtBox_InstrumentDescription";
@@ -743,6 +752,59 @@
             this.trazabilidadTestDataSet3.DataSetName = "TrazabilidadTestDataSet3";
             this.trazabilidadTestDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // Page_Accessories
+            // 
+            this.Page_Accessories.Controls.Add(this.Btn_Serch_Accessory);
+            this.Page_Accessories.Controls.Add(this.TxtBox_Accessory);
+            this.Page_Accessories.Controls.Add(this.label1);
+            this.Page_Accessories.Controls.Add(this.Dgv_Accessories);
+            this.Page_Accessories.Location = new System.Drawing.Point(4, 22);
+            this.Page_Accessories.Name = "Page_Accessories";
+            this.Page_Accessories.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_Accessories.Size = new System.Drawing.Size(1213, 340);
+            this.Page_Accessories.TabIndex = 2;
+            this.Page_Accessories.Text = "Accesorios";
+            this.Page_Accessories.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Serch_Accessory
+            // 
+            this.Btn_Serch_Accessory.Location = new System.Drawing.Point(251, 18);
+            this.Btn_Serch_Accessory.Name = "Btn_Serch_Accessory";
+            this.Btn_Serch_Accessory.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Serch_Accessory.TabIndex = 18;
+            this.Btn_Serch_Accessory.Text = "Buscar";
+            this.Btn_Serch_Accessory.UseVisualStyleBackColor = true;
+            this.Btn_Serch_Accessory.Click += new System.EventHandler(this.Btn_Serch_Accessory_Click);
+            // 
+            // TxtBox_Accessory
+            // 
+            this.TxtBox_Accessory.Location = new System.Drawing.Point(89, 21);
+            this.TxtBox_Accessory.Name = "TxtBox_Accessory";
+            this.TxtBox_Accessory.Size = new System.Drawing.Size(156, 20);
+            this.TxtBox_Accessory.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(64, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(19, 18);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Id";
+            // 
+            // Dgv_Accessories
+            // 
+            this.Dgv_Accessories.AutoGenerateContextFilters = true;
+            this.Dgv_Accessories.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
+            this.Dgv_Accessories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Accessories.DateWithTime = false;
+            this.Dgv_Accessories.Location = new System.Drawing.Point(6, 56);
+            this.Dgv_Accessories.Name = "Dgv_Accessories";
+            this.Dgv_Accessories.Size = new System.Drawing.Size(1201, 238);
+            this.Dgv_Accessories.TabIndex = 0;
+            this.Dgv_Accessories.TimeFilter = false;
+            // 
             // instrumentosBindingSource1
             // 
             this.instrumentosBindingSource1.DataMember = "Instrumentos";
@@ -851,11 +913,26 @@
             this.Btn_Reload_Data.UseVisualStyleBackColor = false;
             this.Btn_Reload_Data.Click += new System.EventHandler(this.Btn_Reload_Data_Click);
             // 
+            // Btn_Add_Accessory
+            // 
+            this.Btn_Add_Accessory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
+            this.Btn_Add_Accessory.FlatAppearance.BorderSize = 0;
+            this.Btn_Add_Accessory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Add_Accessory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add_Accessory.Location = new System.Drawing.Point(668, 468);
+            this.Btn_Add_Accessory.Name = "Btn_Add_Accessory";
+            this.Btn_Add_Accessory.Size = new System.Drawing.Size(181, 47);
+            this.Btn_Add_Accessory.TabIndex = 13;
+            this.Btn_Add_Accessory.Text = "Agregar Accesorio";
+            this.Btn_Add_Accessory.UseVisualStyleBackColor = false;
+            this.Btn_Add_Accessory.Click += new System.EventHandler(this.Btn_Add_Accessory_Click);
+            // 
             // Instruments_SubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1233, 528);
+            this.Controls.Add(this.Btn_Add_Accessory);
             this.Controls.Add(this.Btn_Reload_Data);
             this.Controls.Add(this.BtnUpdate_Instrument);
             this.Controls.Add(this.BtnDelete_Instruments);
@@ -876,6 +953,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Instruments_Certificates)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trazabilidadTestDataSet3)).EndInit();
+            this.Page_Accessories.ResumeLayout(false);
+            this.Page_Accessories.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Accessories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instrumentosCertificadoBindingSource4)).EndInit();
@@ -967,5 +1047,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Laboratorio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estatus_Certificado;
         private System.Windows.Forms.Button Btn_Reload_Data;
+        private System.Windows.Forms.TabPage Page_Accessories;
+        private System.Windows.Forms.Button Btn_Serch_Accessory;
+        private System.Windows.Forms.TextBox TxtBox_Accessory;
+        private System.Windows.Forms.Label label1;
+        private ADGV.AdvancedDataGridView Dgv_Accessories;
+        private System.Windows.Forms.Button Btn_Add_Accessory;
     }
 }
